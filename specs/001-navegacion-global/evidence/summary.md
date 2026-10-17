@@ -48,3 +48,9 @@ Se guardaron install_script/start_skill actualizados y la adición de cdn.playwr
 al borrador de red, preservando Spec Kit y presets existentes. Guardar el borrador no lo
 aplica ni publica: la descarga de Firefox/WebKit sigue sin validar. El usuario puede revisar,
 guardar y publicar desde configuración del entorno. No se hizo commit ni push en esta fase.
+
+2026-10-17 — Corrección compartida durante004 (G03): repetir CTA con mismo hash
+restaura foco de encabezado sin alterar navegación nativa ni historia; prueba regresión
+falló antes y pasó después. Suite001 completa:45 aprobadas; suites002:23 y003:29
+aprobadas. Detalle en [evidencia004](../../004-presentacion-app/evidence/navigation.md).
+No acredita nuevos cierres integrados ni sustituye los resultados históricos anteriores.

@@ -1,0 +1,6 @@
+---
+import type {AppData} from '../../content/app';
+interface Props{content:AppData['overview']}
+const {content}=Astro.props;
+---
+<section class="app-section app-split" data-app-block="overview"><img data-phone src={content.image.src} alt={content.image.alt} width={content.image.width} height={content.image.height} loading="lazy"/><div><p class="app-eyebrow">¿QUÉ ES PRIVA APP?</p><h2>{content.title}</h2><p>{content.description}</p><p class="app-notice">{content.notice}</p><div class="app-benefits">{content.benefits.map(item=><div data-benefit><h3>{item.title}</h3><p>{item.description}</p></div>)}</div></div></section>

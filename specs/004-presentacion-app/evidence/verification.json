@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-17",
+  "scope": "contract-only",
+  "unitPassed": 52,
+  "appChromiumPassed": 31,
+  "regressions": {
+    "001": 45,
+    "002": 23,
+    "003": 29
+  },
+  "totalPassed": 180,
+  "astroRoot": {
+    "errors": 0,
+    "warnings": 0,
+    "hints": 0
+  },
+  "astroApp": {
+    "errors": 0,
+    "warnings": 0,
+    "hints": 0
+  },
+  "firefox": {
+    "status": "launch-failed",
+    "reason": "Could not find profile folder"
+  },
+  "webkit": {
+    "status": "launch-failed",
+    "reason": "Missing host libraries"
+  },
+  "productionBuild": {
+    "status": "blocked",
+    "reason": "Contacto missing; editorial gates pending"
+  },
+  "realEntry": {
+    "status": "blocked",
+    "http": 500,
+    "reason": "assertAppPublication in app.astro confirmed in logs"
+  },
+  "integration": {
+    "status": "blocked",
+    "reason": "No real URL/Contacto/materials; list-only collection is not execution"
+  }
+}

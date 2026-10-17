@@ -38,3 +38,11 @@ function focusFragment() {
 }
 window.addEventListener('hashchange', focusFragment);
 window.addEventListener('load', focusFragment);
+// A repeated native fragment navigation emits no hashchange; restore the same focus contract.
+document.addEventListener('click',event=>{
+ if(event.defaultPrevented||event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+ const anchor=event.target instanceof Element?event.target.closest<HTMLAnchorElement>('a[href]'):null;
+ if(!anchor||anchor.hasAttribute('download')||(anchor.target&&anchor.target.toLowerCase()!=='_self'))return;
+ const url=new URL(anchor.href,location.href);
+ if(url.origin===location.origin&&url.pathname===location.pathname&&url.search===location.search&&url.hash&&url.hash===location.hash)requestAnimationFrame(focusFragment);
+});

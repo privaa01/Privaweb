@@ -1,0 +1,8 @@
+---
+import PublicLayout from '../../../../../src/layouts/PublicLayout.astro';
+import AppContent from '../../../../../src/components/app/AppContent.astro';
+import {resolveDownloads} from '../../../../../src/lib/app-downloads';
+import {fixtureApp,fixtureDownloads} from '../content';
+const downloads=resolveDownloads(fixtureDownloads('10'));
+---
+<PublicLayout pageId="app" title="Priva App — banco de pruebas" contentLayout="full" brand={fixtureApp.brand}><p class="app-fixture-notice">Banco de pruebas004. Imágenes y destinos sintéticos; copy pendiente. No publicable.</p><AppContent content={fixtureApp} downloads={downloads}/></PublicLayout>

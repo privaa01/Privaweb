@@ -1,0 +1,6 @@
+---
+import type {AppData} from '../../content/app';
+interface Props{content:AppData['hero']}
+const {content}=Astro.props;
+---
+<section class="app-section app-split app-hero" data-app-block="hero"><div><p class="app-eyebrow">{content.eyebrow}</p><h1>{content.title}</h1><p>{content.description}</p><p class="app-notice" data-prototype-notice>{content.notice}</p><div class="app-actions"><a class="app-link app-primary" href="#descarga">Descargar app</a><a class="app-link" href="#como-funciona">Ver cómo funciona</a></div></div><img src={content.image.src} alt={content.image.alt} width={content.image.width} height={content.image.height} fetchpriority="high" /></section>

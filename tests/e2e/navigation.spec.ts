@@ -44,3 +44,8 @@ for (const path of routes) {
     }
   });
 }
+test('US2: repeated same fragment restores heading focus without navigation history change',async({page})=>{
+ await page.goto('/app.html#descarga');const heading=page.locator('#descarga h2');await expect(heading).toBeFocused();const before=await page.evaluate(()=>history.length);
+ const link=page.locator('.header-cta');await link.click();await expect(heading).toBeFocused();await expect(heading).toBeInViewport();expect(await page.evaluate(()=>history.length)).toBe(before);
+ await link.focus();await link.press('Enter');await expect(heading).toBeFocused();
+});

@@ -26,13 +26,13 @@
 | H10 | Metodología con imagen | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
 | H11 | Identidad en dos bloques y SABER MÁS | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
 | H12 | CTA final de Historias | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
-| A01 | Hero de Priva App | [004-presentacion-app](004-presentacion-app/spec.md) | No ejecutado |
-| A02 | Qué es Priva App y mockup Conversar | [004-presentacion-app](004-presentacion-app/spec.md) | No ejecutado |
-| A03 | Tres beneficios del prototipo | [004-presentacion-app](004-presentacion-app/spec.md) | No ejecutado |
-| A04 | Cómo se usa el prototipo | [004-presentacion-app](004-presentacion-app/spec.md) | No ejecutado |
-| A05 | Para qué serviría Priva App | [004-presentacion-app](004-presentacion-app/spec.md) | No ejecutado |
-| A06 | Descarga por plataforma | [004-presentacion-app](004-presentacion-app/spec.md) | No ejecutado |
-| A07 | Texto bajo descargas | [004-presentacion-app](004-presentacion-app/spec.md) | No ejecutado |
+| A01 | Hero de Priva App | [004-presentacion-app](004-presentacion-app/spec.md) | Contrato verificado; cierre integrado pendiente |
+| A02 | Qué es Priva App y mockup Conversar | [004-presentacion-app](004-presentacion-app/spec.md) | Contrato verificado; cierre integrado pendiente |
+| A03 | Tres beneficios del prototipo | [004-presentacion-app](004-presentacion-app/spec.md) | Contrato verificado; cierre integrado pendiente |
+| A04 | Cómo se usa el prototipo | [004-presentacion-app](004-presentacion-app/spec.md) | Contrato verificado; cierre integrado pendiente |
+| A05 | Para qué serviría Priva App | [004-presentacion-app](004-presentacion-app/spec.md) | Contrato verificado; cierre integrado pendiente |
+| A06 | Descarga por plataforma | [004-presentacion-app](004-presentacion-app/spec.md) | Contrato verificado; cierre integrado pendiente |
+| A07 | Texto bajo descargas | [004-presentacion-app](004-presentacion-app/spec.md) | Contrato verificado; cierre integrado pendiente |
 | C01 | Hero Contacto e imagen | [005-contacto-publico](005-contacto-publico/spec.md) | No ejecutado |
 | C02 | Indicadores del hero de Contacto | [005-contacto-publico](005-contacto-publico/spec.md) | No ejecutado |
 | C03 | Tarjeta Instagram | [005-contacto-publico](005-contacto-publico/spec.md) | No ejecutado |
@@ -124,3 +124,23 @@ identificados como dependencias. Generación documental sin implementación ni p
 67pruebas de regresión001/002 aprobadas. H01–H12 tienen evidencia contractual en
 [summary.md](003-historias-educativas/evidence/summary.md), sin cierre integrado.
 T028/T030 parciales y T031–T033 bloqueadas por harness, navegadores, recursos y servicios.
+
+2026-10-17 — Especificación 004 revisada: A01–A07 conservados, tres historias,
+escenarios de prototipo/anclas y cuatro combinaciones de descarga, seis criterios de éxito
+y checklist documental. Recursos/copy final y URLs oficiales siguen pendientes; ambas
+plataformas en Próximamente es un estado válido. Sin implementación ni pruebas ejecutadas.
+
+2026-10-17 — Plan004: A01–A07 vinculados al [plan](004-presentacion-app/plan.md),
+modelo de contenido/disponibilidad, contrato de interfaz y guía de validación futura.
+Presentación estática y plataformas independientes; ambas pendientes es estado válido.
+Sin implementación ni pruebas; recursos/revisión y aceptación integrada siguen pendientes.
+
+2026-10-17 — [Tareas 004](004-presentacion-app/tasks.md): 32 tareas locales para tres historias,
+con cobertura A01–A07/SC-001–006, cuatro estados de descarga y pendientes válidos.
+Recursos/revisión, navegadores y entorno se verifican por separado; sin implementación ni pruebas.
+
+2026-10-17 — Implementación004:28/32 tareas completas,52unitarias,31UI004 y97regresiones
+001/002/003 aprobadas. A01–A07 tienen evidencia contractual en
+[summary.md](004-presentacion-app/evidence/summary.md), sin cierre integrado.
+G03 de001 amplía regresión contractual por corrección de foco al repetir fragmento.
+Recursos/revisión, Firefox/WebKit, lector/fidelidad y entorno005 siguen pendientes.

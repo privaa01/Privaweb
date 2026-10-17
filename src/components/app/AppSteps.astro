@@ -1,0 +1,6 @@
+---
+import type {AppData} from '../../content/app';
+interface Props{content:AppData['steps']}
+const {content}=Astro.props;
+---
+<section id={content.id} class="app-section" data-app-block="steps"><h2 tabindex="-1">{content.title}</h2><p>{content.description}</p><ol class="app-steps">{content.items.map((item,i)=><li data-step><span class="app-number" aria-hidden="true">{i+1}</span><h3>{item.title}</h3><p>{item.description}</p></li>)}</ol></section>

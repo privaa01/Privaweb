@@ -1,0 +1,13 @@
+---
+import type {AppData} from '../../content/app';
+import type {EffectiveDownload} from '../../lib/app-downloads';
+import AppHero from './AppHero.astro';
+import AppOverview from './AppOverview.astro';
+import AppSteps from './AppSteps.astro';
+import AppFeatures from './AppFeatures.astro';
+import AppDownloads from './AppDownloads.astro';
+import '../../styles/app.css';
+interface Props{content:AppData;downloads:readonly EffectiveDownload[]}
+const {content,downloads}=Astro.props;
+---
+<div class="app-presentation" data-app><AppHero content={content.hero}/><AppOverview content={content.overview}/><AppSteps content={content.steps}/><AppFeatures content={content.features}/><AppDownloads content={content.downloads} downloads={downloads}/></div>

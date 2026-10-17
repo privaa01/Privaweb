@@ -1,0 +1,12 @@
+---
+import {resolve} from 'node:path';
+import PublicLayout from '../layouts/PublicLayout.astro';
+import AppContent from '../components/app/AppContent.astro';
+import {appContent} from '../content/app';
+import {appDownloadConfig} from '../config/app-downloads';
+import {assertAppPublication} from '../lib/app-publication';
+import {resolveDownloads} from '../lib/app-downloads';
+assertAppPublication(appContent,appDownloadConfig,resolve('public'));
+const downloads=resolveDownloads(appDownloadConfig);
+---
+<PublicLayout pageId="app" title="Priva App — Priva" contentLayout="full" brand={appContent.brand}><AppContent content={appContent} downloads={downloads}/></PublicLayout>

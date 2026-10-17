@@ -1,0 +1,65 @@
+[WebServer] npm notice New major version of npm available! 11.9.0 -> 12.2.0
+[WebServer] npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+[WebServer] npm notice To update run: npm install -g npm@12.2.0
+[WebServer] npm notice
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:35:43] "GET / HTTP/1.1" 200 -
+
+Running 1 test using 1 worker
+
+(node:22591) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:35:44] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:35:44] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:35:44] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:35:44] code 404, message File not found
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:35:44] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:35:44] "GET /index.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:35:44] "GET /test-hero.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:35:44] "GET /test-identidad.svg HTTP/1.1" 304 -
+  ✘  1 [chromium] › tests/e2e/home.spec.ts:22:1 › US2: cuatro áreas informativas y entrada por ancla (5.1s)
+Testing stopped early after 1 maximum allowed failures.
+
+
+  1) [chromium] › tests/e2e/home.spec.ts:22:1 › US2: cuatro áreas informativas y entrada por ancla ─
+
+    Test timeout of 5000ms exceeded.
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#que-hacemos h2')
+    Expected: "Informamos para que estés en control."
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveText" locator('#que-hacemos h2') with timeout 5000ms
+      - waiting for locator('#que-hacemos h2')
+      - Test timeout of 5000ms exceeded.
+
+
+      22 | test('US2: cuatro áreas informativas y entrada por ancla', async ({ page }) => {
+      23 |  await page.goto('/index.html#que-hacemos'); await page.reload();
+    > 24 |  await expect(page.locator('#que-hacemos h2')).toHaveText('Informamos para que estés en control.');
+         |                                                ^
+      25 |  await expect(page.locator('#que-hacemos h2')).toBeInViewport();
+      26 |  await expect(page.locator('#que-hacemos h3')).toHaveText(['Educación Digital', 'Historias reales', 'Herramientas Seguras', 'Acompañamiento']);
+      27 |  await expect(page.locator('#que-hacemos a, #que-hacemos button, #que-hacemos [tabindex="0"]')).toHaveCount(0);
+        at /workspace/Privaweb/tests/e2e/home.spec.ts:24:48
+
+    Error Context: test-results/home-US2-cuatro-áreas-informativas-y-entrada-por-ancla-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/home-US2-cuatro-áreas-informativas-y-entrada-por-ancla-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/home-US2-cuatro-áreas-informativas-y-entrada-por-ancla-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/e2e/home.spec.ts:22:1 › US2: cuatro áreas informativas y entrada por ancla ──
+  1 error was not a part of any test, see above for details
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

@@ -1,0 +1,9 @@
+---
+import type { Block } from '../../content/home';
+interface Props { content: Block }
+const { content } = Astro.props;
+---
+<section id={content.id} class="home-section home-hero"><div class="home-row">
+<div class="home-copy"><p class="home-eyebrow home-badge">{content.eyebrow}</p><h1>{content.title}</h1><p>{content.description}</p><a href="#somos-priva" class="home-button">Conocer más <span aria-hidden="true">→</span></a></div>
+<div class="home-visual"><img src={content.image.src} alt={content.image.alt} width={content.image.width} height={content.image.height} loading="eager" decoding="async" /></div>
+</div></section>

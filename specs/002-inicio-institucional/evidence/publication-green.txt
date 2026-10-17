@@ -1,0 +1,31 @@
+✔ datos reales pendientes no son publicables (2.930122ms)
+✔ ejemplo sintético válido comprueba camino de aceptación, no aprobación real (1.795577ms)
+✔ rechaza imagen pendiente (0.940069ms)
+✔ rechaza archivo inexistente verificado (1.331152ms)
+✔ rechaza dimensiones inválidas (0.798741ms)
+✔ rechaza imagen informativa sin alternativa (0.701436ms)
+✔ rechaza imagen decorativa con alternativa (0.603957ms)
+✔ rechaza imagen sin procedencia (0.572425ms)
+✔ rechaza ruta fuera de public (0.763762ms)
+✔ rechaza fixture no publicable (0.799839ms)
+✔ rechaza URL externa (0.687211ms)
+✔ rechaza C16 cambiado (0.663405ms)
+✔ rechaza ancla inválida (0.605207ms)
+✔ rechaza tarjetas reordenadas (0.81381ms)
+✔ rechaza revisión sin decisión (0.666763ms)
+✔ rechaza copy modificado tras revisar (0.812319ms)
+✔ rechaza tipografía pendiente (0.561196ms)
+✔ rechaza paleta sin referencia (1.05387ms)
+✔ rechaza revisión 0 pendiente (0.572429ms)
+✔ rechaza revisión 1 pendiente (0.561287ms)
+✔ rechaza revisión 2 pendiente (0.415186ms)
+✔ rechaza revisión 3 pendiente (0.423529ms)
+✔ rechaza revisión 4 pendiente (0.367538ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 138.825621

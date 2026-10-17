@@ -1,0 +1,11 @@
+---
+import { resolve } from 'node:path';
+import PublicLayout from '../layouts/PublicLayout.astro';
+import HomeContent from '../components/home/HomeContent.astro';
+import { homeContent } from '../content/home';
+import { assertHomePublication } from '../lib/home-publication';
+assertHomePublication(homeContent, resolve('public'));
+---
+<PublicLayout pageId="inicio" title="Priva — La privacidad también es una forma de libertad" contentLayout="full" brand={homeContent.brand}>
+<HomeContent content={homeContent} />
+</PublicLayout>

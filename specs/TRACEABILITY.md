@@ -10,10 +10,10 @@
 | G04 | Footer: logo, lema y copyright | [001-navegacion-global](001-navegacion-global/spec.md) | Validación contractual Chromium; integración pendiente |
 | G05 | Footer: panel administrador | [001-navegacion-global](001-navegacion-global/spec.md) | Validación contractual Chromium; integración pendiente |
 | G06 | Footer: Términos, Manifiesto, Contacto Seguro | [001-navegacion-global](001-navegacion-global/spec.md) | Validación contractual Chromium; integración pendiente |
-| I01 | Hero Inicio: etiqueta, título, texto, imagen, Conocer más | [002-inicio-institucional](002-inicio-institucional/spec.md) | No ejecutado |
-| I02 | Quiénes somos | [002-inicio-institucional](002-inicio-institucional/spec.md) | No ejecutado |
-| I03 | Qué hacemos: introducción y cuatro tarjetas | [002-inicio-institucional](002-inicio-institucional/spec.md) | No ejecutado |
-| I04 | CTA final de Inicio | [002-inicio-institucional](002-inicio-institucional/spec.md) | No ejecutado |
+| I01 | Hero Inicio: etiqueta, título, texto, imagen, Conocer más | [002-inicio-institucional](002-inicio-institucional/spec.md) | Contrato Chromium validado; publicación/integración pendientes |
+| I02 | Quiénes somos | [002-inicio-institucional](002-inicio-institucional/spec.md) | Contrato Chromium validado; publicación/integración pendientes |
+| I03 | Qué hacemos: introducción y cuatro tarjetas | [002-inicio-institucional](002-inicio-institucional/spec.md) | Contrato Chromium validado; publicación/integración pendientes |
+| I04 | CTA final de Inicio | [002-inicio-institucional](002-inicio-institucional/spec.md) | Contrato Chromium validado; publicación/integración pendientes |
 | H01 | Hero Historias | [003-historias-educativas](003-historias-educativas/spec.md) | No ejecutado |
 | H02 | Casos destacados: encabezado y Ver todas las historias | [003-historias-educativas](003-historias-educativas/spec.md) | No ejecutado |
 | H03 | Caso 1: Enlace Falso / Phishing | [003-historias-educativas](003-historias-educativas/spec.md) | No ejecutado |
@@ -89,3 +89,20 @@ G01–G06 conservan tareas y estado No ejecutado. No se acredita cierre integrad
 2026-10-16 — Implementación 001: componentes compartidos y tooling reproducible;
 21/28 tareas completadas, 7 parciales/bloqueadas. G01–G06 tienen evidencia contractual,
 no cierre integrado. Evidencia en [summary.md](001-navegacion-global/evidence/summary.md).
+
+2026-10-16 — Especificación 002 revisada: I01–I04 conservados y trazados a tres historias
+y sus escenarios; checklist documental completado. P01/P03/P04 y pruebas de aplicación
+continúan pendientes; sin ampliación de alcance ni implementación.
+
+2026-10-16 — Plan 002: I01–I04 vinculados al [plan](002-inicio-institucional/plan.md),
+modelo de contenido/recursos/revisión, contrato de anclas y guía de pruebas futuras.
+Se conserva estado No ejecutado y dependencias P01/P03/P04/003, sin contenido aprobado inventado.
+
+2026-10-16 — [Tareas 002](002-inicio-institucional/tasks.md): 28 tareas locales
+trazadas a I01–I04/SC-001–005, con recursos/revisión y destino 003 como dependencias.
+Sin implementación o pruebas ejecutadas; los estados de aplicación no cambian.
+
+2026-10-16 — Implementación 002: 23 tareas completas y 5 parciales/bloqueadas;
+23 pruebas de publicación, 23 UI de Inicio y 44 de regresión 001 aprobadas.
+Evidencia en [summary.md](002-inicio-institucional/evidence/summary.md).
+P01/P03/P04, lector de pantalla y aceptación integrada siguen pendientes.

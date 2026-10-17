@@ -1,0 +1,65 @@
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm notice
+[WebServer] npm notice New major version of npm available! 11.9.0 -> 12.2.0
+[WebServer] npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+[WebServer] npm notice To update run: npm install -g npm@12.2.0
+[WebServer] npm notice
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:19] "GET / HTTP/1.1" 200 -
+
+Running 1 test using 1 worker
+
+(node:23337) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:20] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:20] "GET /_astro/index.BTdLG3nn.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:20] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:20] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:20] code 404, message File not found
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:20] "GET /favicon.ico HTTP/1.1" 404 -
+  ✘  1 [chromium] › tests/e2e/home.spec.ts:29:1 › US3: cierre y CTA hacia Historias (5.1s)
+Testing stopped early after 1 maximum allowed failures.
+
+
+  1) [chromium] › tests/e2e/home.spec.ts:29:1 › US3: cierre y CTA hacia Historias ──────────────────
+
+    Test timeout of 5000ms exceeded.
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#cierre h2')
+    Expected: "Infórmate, protégete, conéctate con seguridad."
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveText" locator('#cierre h2') with timeout 5000ms
+      - waiting for locator('#cierre h2')
+      - Test timeout of 5000ms exceeded.
+
+
+      31 |  for (const keyboard of [false, true]) {
+      32 |   await page.goto('/index.html');
+    > 33 |   await expect(page.locator('#cierre h2')).toHaveText('Infórmate, protégete, conéctate con seguridad.');
+         |                                            ^
+      34 |   await expect(page.locator('#cierre').getByText(text, { exact: true })).toBeVisible();
+      35 |   await expect(page.getByText(/Únete a miles de personas/)).toHaveCount(0);
+      36 |   const link = page.getByRole('main').getByRole('link', { name: 'Explora nuestras historias' });
+        at /workspace/Privaweb/tests/e2e/home.spec.ts:33:44
+
+    Error Context: test-results/home-US3-cierre-y-CTA-hacia-Historias-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/home-US3-cierre-y-CTA-hacia-Historias-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/home-US3-cierre-y-CTA-hacia-Historias-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/e2e/home.spec.ts:29:1 › US3: cierre y CTA hacia Historias ───────────────────
+  1 error was not a part of any test, see above for details
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

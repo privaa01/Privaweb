@@ -1,0 +1,43 @@
+00:37:08 [types] Generated 131ms
+00:37:08 [build] output: "static"
+00:37:08 [build] mode: "static"
+00:37:08 [build] directory: /workspace/Privaweb/.test-output/rejected-home/
+00:37:08 [build] Collecting build info...
+00:37:08 [build] ✓ Completed in 172ms.
+00:37:08 [build] Building static entrypoints...
+00:37:08 [vite] ✓ built in 185ms
+00:37:08 [vite] ✓ built in 21ms
+00:37:08 [build] Rearranging server assets...
+
+ generating static routes
+00:37:08   ├─ /index.html00:37:08 [ERROR] Error: BLOQUEADO 002: Informamos para que estés en control.: revisión editorial pendiente o inválida; Educación Digital: revisión editorial pendiente o inválida; Historias reales: revisión editorial pendiente o inválida; Herramientas Seguras: revisión editorial pendiente o inválida; Acompañamiento: revisión editorial pendiente o inválida; hero: recurso oficial no verificado; hero: dimensiones pendientes; hero: ruta oficial local pendiente o inválida; identidad: recurso oficial no verificado; identidad: dimensiones pendientes; identidad: ruta oficial local pendiente o inválida; cierre: recurso oficial no verificado; cierre: dimensiones pendientes; cierre: ruta oficial local pendiente o inválida; marca: recurso oficial no verificado; marca: dimensiones pendientes; marca: ruta oficial local pendiente o inválida; typography: referencia visual pendiente; palette: referencia visual pendiente
+    at assertHomePublication (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/chunks/index_SilT_T8e.mjs:338:27)
+    at file:///workspace/Privaweb/.test-output/rejected-home/.prerender/chunks/index_SilT_T8e.mjs:348:2
+    at index (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/chunks/index_SilT_T8e.mjs:29:10)
+    at callComponentAsTemplateResultOrResponse (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/chunks/server_B1uYQQ_H.mjs:2729:30)
+    at renderToString (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/chunks/server_B1uYQQ_H.mjs:2719:31)
+    at renderPage (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/chunks/server_B1uYQQ_H.mjs:3212:22)
+    at handlePages (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/prerender-entry.iVtyIKQs.mjs:3136:22)
+    at async callMiddleware (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/prerender-entry.iVtyIKQs.mjs:4034:9)
+    at async handleMiddleware (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/prerender-entry.iVtyIKQs.mjs:4163:18)
+    at async render (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/prerender-entry.iVtyIKQs.mjs:5662:15)
+00:37:08 [ERROR] [build] Caught error rendering /: Error: BLOQUEADO 002: Informamos para que estés en control.: revisión editorial pendiente o inválida; Educación Digital: revisión editorial pendiente o inválida; Historias reales: revisión editorial pendiente o inválida; Herramientas Seguras: revisión editorial pendiente o inválida; Acompañamiento: revisión editorial pendiente o inválida; hero: recurso oficial no verificado; hero: dimensiones pendientes; hero: ruta oficial local pendiente o inválida; identidad: recurso oficial no verificado; identidad: dimensiones pendientes; identidad: ruta oficial local pendiente o inválida; cierre: recurso oficial no verificado; cierre: dimensiones pendientes; cierre: ruta oficial local pendiente o inválida; marca: recurso oficial no verificado; marca: dimensiones pendientes; marca: ruta oficial local pendiente o inválida; typography: referencia visual pendiente; palette: referencia visual pendiente
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+Error: BLOQUEADO 002: Informamos para que estés en control.: revisión editorial pendiente o inválida; Educación Digital: revisión editorial pendiente o inválida; Historias reales: revisión editorial pendiente o inválida; Herramientas Seguras: revisión editorial pendiente o inválida; Acompañamiento: revisión editorial pendiente o inválida; hero: recurso oficial no verificado; hero: dimensiones pendientes; hero: ruta oficial local pendiente o inválida; identidad: recurso oficial no verificado; identidad: dimensiones pendientes; identidad: ruta oficial local pendiente o inválida; cierre: recurso oficial no verificado; cierre: dimensiones pendientes; cierre: ruta oficial local pendiente o inválida; marca: recurso oficial no verificado; marca: dimensiones pendientes; marca: ruta oficial local pendiente o inválida; typography: referencia visual pendiente; palette: referencia visual pendiente
+    at assertHomePublication (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/chunks/index_SilT_T8e.mjs:338:27)
+    at file:///workspace/Privaweb/.test-output/rejected-home/.prerender/chunks/index_SilT_T8e.mjs:348:2
+    at index (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/chunks/index_SilT_T8e.mjs:29:10)
+    at callComponentAsTemplateResultOrResponse (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/chunks/server_B1uYQQ_H.mjs:2729:30)
+    at renderToString (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/chunks/server_B1uYQQ_H.mjs:2719:31)
+    at renderPage (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/chunks/server_B1uYQQ_H.mjs:3212:22)
+    at handlePages (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/prerender-entry.iVtyIKQs.mjs:3136:22)
+    at async callMiddleware (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/prerender-entry.iVtyIKQs.mjs:4034:9)
+    at async handleMiddleware (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/prerender-entry.iVtyIKQs.mjs:4163:18)
+    at async render (file:///workspace/Privaweb/.test-output/rejected-home/.prerender/prerender-entry.iVtyIKQs.mjs:5662:15) {
+  id: 'src/pages/index.astro'
+}
+
+Node.js v24.19.0

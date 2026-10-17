@@ -1,0 +1,5 @@
+
+> privaweb@0.1.0 build
+> node scripts/require-pages.mjs && node scripts/require-home-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build
+
+BLOQUEADO T023: faltan páginas reales de features 002–005: historias, app, contacto. Use npm run build:contract para validar navegación.

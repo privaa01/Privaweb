@@ -1,0 +1,65 @@
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:43] "GET /test-cierre.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:43] "GET /index.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:43] code 404, message File not found
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:43] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:43] "GET /test-marca.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:43] "GET /_astro/index.Dsxzl-wi.css HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:43] "GET /test-hero.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:43] "GET /test-identidad.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:43] "GET /test-cierre.svg HTTP/1.1" 304 -
+  ✓  2 [chromium] › tests/e2e/home-accessibility.spec.ts:2:1 › base: layout de Inicio permite ancho completo (818ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /index.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /_astro/index.Dsxzl-wi.css HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /test-marca.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /test-hero.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /test-identidad.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /test-cierre.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /_astro/index.Dsxzl-wi.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /test-marca.svg HTTP/1.1" 200 -
+  ✓  1 [chromium] › tests/e2e/home.spec.ts:2:1 › US1: hero, identidad y Conocer más (1.2s)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /test-cierre.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /index.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /_astro/index.Dsxzl-wi.css HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /test-marca.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /test-hero.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /test-identidad.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /test-cierre.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /_astro/index.Dsxzl-wi.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /test-marca.svg HTTP/1.1" 200 -
+  ✓  3 [chromium] › tests/e2e/home.spec.ts:16:1 › US1: identidad accesible por URL y recarga (676ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:44] "GET /test-cierre.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /index.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /_astro/index.Dsxzl-wi.css HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /test-marca.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /test-hero.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /test-identidad.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /test-cierre.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /_astro/index.Dsxzl-wi.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /test-marca.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /test-cierre.svg HTTP/1.1" 200 -
+  ✓  4 [chromium] › tests/e2e/home.spec.ts:22:1 › US2: cuatro áreas informativas y entrada por ancla (766ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /index.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /_astro/index.Dsxzl-wi.css HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /test-marca.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /test-hero.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /test-cierre.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /test-identidad.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:36:45] "GET /historias.html HTTP/1.1" 304 -
+  ✓  5 [chromium] › tests/e2e/home.spec.ts:29:1 › US3: cierre y CTA hacia Historias (882ms)
+
+  5 passed (5.2s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

@@ -9,20 +9,25 @@
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
-    "build": "ASTRO_TELEMETRY_DISABLED=1 node scripts/require-pages.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "build": "node scripts/require-pages.mjs && node scripts/require-home-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check:contract": "ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/navigation",
     "build:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/navigation",
     "test:e2e:contract": "playwright test",
-    "test:e2e:integration": "PRIVA_TEST_MODE=integration playwright test"
+    "test:e2e:integration": "PRIVA_TEST_MODE=integration playwright test",
+    "check:home:contract": "ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/home",
+    "build:home:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/home",
+    "test:e2e:home:contract": "playwright test --config=playwright.home.config.ts",
+    "test:e2e:home:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.home.config.ts"
   },
   "dependencies": {
     "astro": "7.4.0"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
-    "typescript": "5.9.3",
+    "@axe-core/playwright": "4.14.0",
     "@playwright/test": "1.64.1",
-    "@axe-core/playwright": "4.14.0"
+    "@types/node": "24.19.2",
+    "typescript": "5.9.3"
   }
 }

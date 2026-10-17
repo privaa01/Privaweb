@@ -1,0 +1,9 @@
+---
+import PublicLayout from '../../../../../src/layouts/PublicLayout.astro';
+import HomeContent from '../../../../../src/components/home/HomeContent.astro';
+import { fixtureHome } from '../content';
+---
+<PublicLayout pageId="inicio" title="Inicio — banco de pruebas" contentLayout="full" brand={fixtureHome.brand}>
+<p class="home-fixture-notice">Banco de pruebas de Inicio. Recursos ficticios y textos pendientes de revisión; no publicable.</p>
+<HomeContent content={fixtureHome} />
+</PublicLayout>

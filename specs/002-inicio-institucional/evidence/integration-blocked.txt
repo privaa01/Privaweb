@@ -1,0 +1,20 @@
+
+> privaweb@0.1.0 test:e2e:home:integration
+> PRIVA_TEST_MODE=integration playwright test --config=playwright.home.config.ts
+
+Error: BLOQUEADO 002: falta PRIVA_INTEGRATION_BASE_URL real; no usar fixtures.
+    at file:///workspace/Privaweb/playwright.home.config.ts:4:35
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at node:internal/modules/esm/loader:643:26
+    at requireOrImport (/workspace/Privaweb/node_modules/playwright/lib/common/index.js:1096:12)
+    at loadUserConfig (/workspace/Privaweb/node_modules/playwright/lib/common/index.js:1283:46)
+    at loadConfig (/workspace/Privaweb/node_modules/playwright/lib/common/index.js:1290:22)
+    at Object.loadConfigFromFile (/workspace/Privaweb/node_modules/playwright/lib/common/index.js:1508:10)
+    at runTests (/workspace/Privaweb/node_modules/playwright/lib/cli/testActions.js:44:18)
+    at _Command.<anonymous> (/workspace/Privaweb/node_modules/playwright/lib/program.js:55:7)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

@@ -1,0 +1,9 @@
+---
+import type { HomeData } from '../../content/home';
+interface Props { content: HomeData['areas'] }
+const { content } = Astro.props;
+---
+<section id={content.id} class="home-section home-areas" aria-labelledby="areas-title"><div class="home-row">
+<div class="home-copy"><p class="home-eyebrow">{content.eyebrow}</p><h2 id="areas-title" tabindex="-1">{content.title}</h2><p>{content.description}</p></div>
+<div class="home-cards">{content.cards.map((card, index) => <article class="home-card"><span class="home-card-number" aria-hidden="true">0{index + 1}</span><h3>{card.title}</h3><p>{card.description}</p></article>)}</div>
+</div></section>

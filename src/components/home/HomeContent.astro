@@ -1,0 +1,11 @@
+---
+import type { HomeData } from '../../content/home';
+import HomeHero from './HomeHero.astro';
+import HomeIdentity from './HomeIdentity.astro';
+import HomeAreas from './HomeAreas.astro';
+import HomeClosing from './HomeClosing.astro';
+import '../../styles/home.css';
+interface Props { content: HomeData }
+const { content } = Astro.props;
+---
+<div class="home"><HomeHero content={content.hero} /><HomeIdentity content={content.identity} /><HomeAreas content={content.areas} /><HomeClosing content={content.closing} /></div>

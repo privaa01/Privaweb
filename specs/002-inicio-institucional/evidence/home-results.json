@@ -1,0 +1,265 @@
+{
+  "stats": {
+    "startTime": "2026-10-17T00:38:55.359Z",
+    "duration": 46835.044,
+    "expected": 23,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "base: layout de Inicio permite ancho completo",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1262
+        }
+      ]
+    },
+    {
+      "title": "matriz Inicio 360px texto 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6540
+        }
+      ]
+    },
+    {
+      "title": "matriz Inicio 360px texto 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7193
+        }
+      ]
+    },
+    {
+      "title": "matriz Inicio 390px texto 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5002
+        }
+      ]
+    },
+    {
+      "title": "matriz Inicio 390px texto 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4788
+        }
+      ]
+    },
+    {
+      "title": "matriz Inicio 430px texto 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4443
+        }
+      ]
+    },
+    {
+      "title": "matriz Inicio 430px texto 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4592
+        }
+      ]
+    },
+    {
+      "title": "matriz Inicio 768px texto 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4257
+        }
+      ]
+    },
+    {
+      "title": "matriz Inicio 768px texto 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4271
+        }
+      ]
+    },
+    {
+      "title": "matriz Inicio 1024px texto 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5146
+        }
+      ]
+    },
+    {
+      "title": "matriz Inicio 1024px texto 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4731
+        }
+      ]
+    },
+    {
+      "title": "matriz Inicio 1280px texto 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4977
+        }
+      ]
+    },
+    {
+      "title": "matriz Inicio 1280px texto 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4563
+        }
+      ]
+    },
+    {
+      "title": "matriz Inicio 1440px texto 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4818
+        }
+      ]
+    },
+    {
+      "title": "matriz Inicio 1440px texto 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4755
+        }
+      ]
+    },
+    {
+      "title": "imagen hero fallida conserva texto y controles",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1469
+        }
+      ]
+    },
+    {
+      "title": "imagen identidad fallida conserva texto y controles",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1745
+        }
+      ]
+    },
+    {
+      "title": "imagen cierre fallida conserva texto y controles",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1396
+        }
+      ]
+    },
+    {
+      "title": "contenido y enlaces funcionan sin JavaScript",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1435
+        }
+      ]
+    },
+    {
+      "title": "US1: hero, identidad y Conocer m\u00e1s",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1612
+        }
+      ]
+    },
+    {
+      "title": "US1: identidad accesible por URL y recarga",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1082
+        }
+      ]
+    },
+    {
+      "title": "US2: cuatro \u00e1reas informativas y entrada por ancla",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1143
+        }
+      ]
+    },
+    {
+      "title": "US3: cierre y CTA hacia Historias",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1367
+        }
+      ]
+    }
+  ]
+}

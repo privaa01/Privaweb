@@ -1,0 +1,496 @@
+{
+  "stats": {
+    "startTime": "2026-10-17T00:09:01.579Z",
+    "duration": 145143.421,
+    "expected": 44,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "US1: disclosure, Escape, resize y foco",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1025
+        }
+      ]
+    },
+    {
+      "title": "US1: navegaci\u00f3n sin JavaScript",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 893
+        }
+      ]
+    },
+    {
+      "title": "Matriz: 360px, texto 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 19413
+        }
+      ]
+    },
+    {
+      "title": "Matriz: 360px, texto 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 19246
+        }
+      ]
+    },
+    {
+      "title": "Matriz: 390px, texto 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 18787
+        }
+      ]
+    },
+    {
+      "title": "Matriz: 390px, texto 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 18126
+        }
+      ]
+    },
+    {
+      "title": "Matriz: 430px, texto 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 18310
+        }
+      ]
+    },
+    {
+      "title": "Matriz: 430px, texto 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 18764
+        }
+      ]
+    },
+    {
+      "title": "Matriz: 768px, texto 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 19201
+        }
+      ]
+    },
+    {
+      "title": "Matriz: 768px, texto 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 19333
+        }
+      ]
+    },
+    {
+      "title": "Matriz: 1024px, texto 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 20178
+        }
+      ]
+    },
+    {
+      "title": "Matriz: 1024px, texto 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 20275
+        }
+      ]
+    },
+    {
+      "title": "Matriz: 1280px, texto 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 17840
+        }
+      ]
+    },
+    {
+      "title": "Matriz: 1280px, texto 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 17535
+        }
+      ]
+    },
+    {
+      "title": "Matriz: 1440px, texto 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 17635
+        }
+      ]
+    },
+    {
+      "title": "Matriz: 1440px, texto 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 17609
+        }
+      ]
+    },
+    {
+      "title": "US1: entrada directa, activo y logo /index.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 542
+        }
+      ]
+    },
+    {
+      "title": "US1: /index.html \u2192 /index.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 501
+        }
+      ]
+    },
+    {
+      "title": "US1: /index.html \u2192 /historias.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 695
+        }
+      ]
+    },
+    {
+      "title": "US1: /index.html \u2192 /app.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 743
+        }
+      ]
+    },
+    {
+      "title": "US1: /index.html \u2192 /contacto.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 741
+        }
+      ]
+    },
+    {
+      "title": "US1: entrada directa, activo y logo /historias.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 765
+        }
+      ]
+    },
+    {
+      "title": "US1: /historias.html \u2192 /index.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 654
+        }
+      ]
+    },
+    {
+      "title": "US1: /historias.html \u2192 /historias.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 759
+        }
+      ]
+    },
+    {
+      "title": "US1: /historias.html \u2192 /app.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 660
+        }
+      ]
+    },
+    {
+      "title": "US1: /historias.html \u2192 /contacto.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 775
+        }
+      ]
+    },
+    {
+      "title": "US1: entrada directa, activo y logo /app.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 831
+        }
+      ]
+    },
+    {
+      "title": "US1: /app.html \u2192 /index.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 676
+        }
+      ]
+    },
+    {
+      "title": "US1: /app.html \u2192 /historias.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 756
+        }
+      ]
+    },
+    {
+      "title": "US1: /app.html \u2192 /app.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 648
+        }
+      ]
+    },
+    {
+      "title": "US1: /app.html \u2192 /contacto.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 699
+        }
+      ]
+    },
+    {
+      "title": "US1: entrada directa, activo y logo /contacto.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 802
+        }
+      ]
+    },
+    {
+      "title": "US1: /contacto.html \u2192 /index.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 601
+        }
+      ]
+    },
+    {
+      "title": "US1: /contacto.html \u2192 /historias.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 784
+        }
+      ]
+    },
+    {
+      "title": "US1: /contacto.html \u2192 /app.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 655
+        }
+      ]
+    },
+    {
+      "title": "US1: /contacto.html \u2192 /contacto.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 664
+        }
+      ]
+    },
+    {
+      "title": "US2: CTA /index.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 647
+        }
+      ]
+    },
+    {
+      "title": "US2: CTA /historias.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 604
+        }
+      ]
+    },
+    {
+      "title": "US2: CTA /app.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 508
+        }
+      ]
+    },
+    {
+      "title": "US2: CTA /contacto.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 648
+        }
+      ]
+    },
+    {
+      "title": "US3: footer /index.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 576
+        }
+      ]
+    },
+    {
+      "title": "US3: footer /historias.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 519
+        }
+      ]
+    },
+    {
+      "title": "US3: footer /app.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 684
+        }
+      ]
+    },
+    {
+      "title": "US3: footer /contacto.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 502
+        }
+      ]
+    }
+  ]
+}

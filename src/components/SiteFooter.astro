@@ -1,0 +1,10 @@
+---
+import { footer, type BrandAsset } from '../config/navigation';
+interface Props { brand?: BrandAsset }
+const { brand } = Astro.props;
+---
+<footer class="site-footer"><div class="footer-inner">
+<div class="footer-heading"><a href="/index.html" class="brand" aria-label="Priva — Inicio">{brand ? <img src={brand.src} alt={brand.alt} width="40" height="40" /> : <span>Priva</span>}</a><p>{footer.tagline}</p></div>
+<nav aria-label="Enlaces complementarios" class="footer-links"><ul>{footer.links.map(link => <li><a href={link.href}>{link.label}</a></li>)}</ul></nav>
+<p class="copyright">{footer.copyright}</p>
+</div></footer>

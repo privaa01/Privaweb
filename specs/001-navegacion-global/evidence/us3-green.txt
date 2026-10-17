@@ -1,0 +1,57 @@
+
+> privaweb@0.1.0 test:e2e:contract
+> playwright test --project=chromium
+
+[WebServer] (node:10317) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10330) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm notice
+[WebServer] npm notice New major version of npm available! 11.9.0 -> 12.2.0
+[WebServer] npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+[WebServer] npm notice To update run: npm install -g npm@12.2.0
+[WebServer] npm notice
+
+Running 30 tests using 2 workers
+
+(node:10364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10363) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/navigation-accessibility.spec.ts:19:1 › US1: navegación sin JavaScript (792ms)
+  ✓   2 [chromium] › tests/e2e/navigation-accessibility.spec.ts:2:1 › US1: disclosure, Escape, resize y foco (941ms)
+  ✓   3 [chromium] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /index.html (780ms)
+  ✓   4 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /index.html (742ms)
+  ✓   5 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /historias.html (703ms)
+  ✓   6 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /app.html (721ms)
+  ✓   7 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /contacto.html (645ms)
+  ✓   8 [chromium] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /historias.html (907ms)
+  ✓   9 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /index.html (602ms)
+  ✓  10 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /historias.html (728ms)
+  ✓  11 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /app.html (733ms)
+  ✓  12 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /contacto.html (719ms)
+  ✓  13 [chromium] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /app.html (856ms)
+  ✓  14 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /index.html (629ms)
+  ✓  15 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /historias.html (731ms)
+  ✓  16 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /app.html (617ms)
+  ✓  17 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /contacto.html (754ms)
+  ✓  18 [chromium] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /contacto.html (714ms)
+  ✓  19 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /index.html (773ms)
+  ✓  20 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /historias.html (683ms)
+  ✓  21 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /app.html (667ms)
+  ✓  22 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /contacto.html (723ms)
+  ✓  23 [chromium] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /index.html (672ms)
+  ✓  24 [chromium] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /historias.html (612ms)
+  ✓  25 [chromium] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /app.html (605ms)
+  ✓  26 [chromium] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /contacto.html (720ms)
+  ✓  27 [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /index.html (537ms)
+  ✓  28 [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /historias.html (538ms)
+  ✓  29 [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /app.html (574ms)
+  ✓  30 [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /contacto.html (549ms)
+
+  30 passed (13.7s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

@@ -1,0 +1,70 @@
+
+> privaweb@0.1.0 test:e2e:contract
+> playwright test --project=chromium --grep US3: footer /index --max-failures=1 --timeout=5000
+
+[WebServer] (node:10100) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10113) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm notice
+[WebServer] npm notice New major version of npm available! 11.9.0 -> 12.2.0
+[WebServer] npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+[WebServer] npm notice To update run: npm install -g npm@12.2.0
+[WebServer] npm notice
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:13] "GET / HTTP/1.1" 200 -
+
+Running 1 test using 1 worker
+
+(node:10146) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:14] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:14] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:14] code 404, message File not found
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:14] "GET /favicon.ico HTTP/1.1" 404 -
+  ✘  1 [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /index.html (5.0s)
+Testing stopped early after 1 maximum allowed failures.
+
+
+  1) [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /index.html ──────────────────────
+
+    Test timeout of 5000ms exceeded.
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('contentinfo').getByText('Defendiendo la soberanía digital individual.', { exact: true })
+    Expected: visible
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('contentinfo').getByText('Defendiendo la soberanía digital individual.', { exact: true }) with timeout 5000ms
+      - waiting for getByRole('contentinfo').getByText('Defendiendo la soberanía digital individual.', { exact: true })
+      - Test timeout of 5000ms exceeded.
+
+
+      38 |     await page.goto(path);
+      39 |     const footer = page.getByRole('contentinfo');
+    > 40 |     await expect(footer.getByText('Defendiendo la soberanía digital individual.', { exact: true })).toBeVisible();
+         |                                                                                                     ^
+      41 |     await expect(footer.getByText('© 2026 Priva. Todos los derechos reservados. Navega con dignidad.', { exact: true })).toBeVisible();
+      42 |     for (const [label, href] of [['panel administrador', '/admin/login'], ['Términos de Servicio', '/terminos.html'], ['Manifiesto de Datos', '/manifiesto-datos.html'], ['Contacto Seguro', '/contacto.html#escribir']]) {
+      43 |       await expect(footer.getByRole('link', { name: label, exact: true })).toHaveAttribute('href', href);
+        at /workspace/Privaweb/tests/e2e/navigation.spec.ts:40:101
+
+    Error Context: test-results/navigation-US3-footer-index-html-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/navigation-US3-footer-index-html-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/navigation-US3-footer-index-html-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /index.html ───────────────────────
+  1 error was not a part of any test, see above for details
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

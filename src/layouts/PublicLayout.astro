@@ -1,0 +1,16 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import type { PageId, BrandAsset } from '../config/navigation';
+import '../styles/global.css';
+interface Props { pageId: PageId; title: string; brand?: BrandAsset }
+const { pageId, title, brand } = Astro.props;
+---
+<!doctype html>
+<html lang="es"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width" /><title>{title}</title></head>
+<body data-page={pageId}>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<slot name="header"><SiteHeader pageId={pageId} brand={brand} /></slot>
+<main id="contenido" tabindex="-1"><slot /></main>
+<slot name="footer"><SiteFooter brand={brand} /></slot>
+</body></html>

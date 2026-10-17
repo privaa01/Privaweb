@@ -1,0 +1,79 @@
+
+> privaweb@0.1.0 test:e2e:contract
+> playwright test --project=chromium --grep entrada directa.*index --max-failures=1 --timeout=5000
+
+[WebServer] (node:6866) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:6880) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm notice
+[WebServer] npm notice New major version of npm available! 11.9.0 -> 12.2.0
+[WebServer] npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+[WebServer] npm notice To update run: npm install -g npm@12.2.0
+[WebServer] npm notice
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:04:31] "GET / HTTP/1.1" 200 -
+
+Running 1 test using 1 worker
+
+(node:6915) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:04:33] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:04:33] code 404, message File not found
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:04:33] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:04:33] "GET /index.html HTTP/1.1" 304 -
+  ✘  1 [chromium] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /index.html (5.1s)
+Testing stopped early after 1 maximum allowed failures.
+
+
+  1) [chromium] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /index.html
+
+    Test timeout of 5000ms exceeded.
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: getByRole('navigation', { name: 'Principal' }).getByRole('link')
+    - Expected  - 6
+    + Received  + 1
+
+    - Array [
+    -   "Inicio",
+    -   "Historias",
+    -   "Priva App",
+    -   "Contáctanos",
+    - ]
+    + Array []
+
+    Call log:
+      - Expect "toHaveText" getByRole('navigation', { name: 'Principal' }).getByRole('link') with timeout 5000ms
+      - waiting for getByRole('navigation', { name: 'Principal' }).getByRole('link')
+        13 × locator resolved to 0 elements
+      - Test timeout of 5000ms exceeded.
+
+
+       7 |     await page.reload();
+       8 |     const nav = page.getByRole('navigation', { name: 'Principal' });
+    >  9 |     await expect(nav.getByRole('link')).toHaveText(labels);
+         |                                         ^
+      10 |     await expect(nav.locator('[aria-current="page"]')).toHaveText(labels[origin]);
+      11 |     await page.getByRole('banner').getByRole('link', { name: 'Priva — Inicio' }).click();
+      12 |     await expect(page).toHaveURL(/\/index\.html$/);
+        at /workspace/Privaweb/tests/e2e/navigation.spec.ts:9:41
+
+    Error Context: test-results/navigation-US1-entrada-directa-activo-y-logo-index-html-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/navigation-US1-entrada-directa-activo-y-logo-index-html-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/navigation-US1-entrada-directa-activo-y-logo-index-html-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /index.html
+  1 error was not a part of any test, see above for details
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

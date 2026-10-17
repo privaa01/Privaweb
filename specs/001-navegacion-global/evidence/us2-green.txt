@@ -1,0 +1,153 @@
+
+> privaweb@0.1.0 test:e2e:contract
+> playwright test --project=chromium
+
+[WebServer] (node:8730) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:8743) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm notice
+[WebServer] npm notice New major version of npm available! 11.9.0 -> 12.2.0
+[WebServer] npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+[WebServer] npm notice To update run: npm install -g npm@12.2.0
+[WebServer] npm notice
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:52] "GET / HTTP/1.1" 200 -
+
+Running 26 tests using 2 workers
+
+(node:8777) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:8776) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:53] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:53] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:53] code 404, message File not found
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:53] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:54] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:54] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:54] code 404, message File not found
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:54] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:54] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:54] "GET /test-brand.svg HTTP/1.1" 304 -
+  ✓   1 [chromium] › tests/e2e/navigation-accessibility.spec.ts:19:1 › US1: navegación sin JavaScript (963ms)
+  ✓   2 [chromium] › tests/e2e/navigation-accessibility.spec.ts:2:1 › US1: disclosure, Escape, resize y foco (1.0s)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:54] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:54] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:54] "GET /index.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:54] "GET /test-brand.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:55] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:55] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:55] "GET /index.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:55] "GET /test-brand.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:55] "GET /index.html HTTP/1.1" 304 -
+  ✓   3 [chromium] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /index.html (765ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:55] "GET /test-brand.svg HTTP/1.1" 304 -
+  ✓   4 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /index.html (714ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:55] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:55] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:55] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:55] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:55] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:55] "GET /test-brand.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:56] "GET /app.html HTTP/1.1" 200 -
+  ✓   5 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /historias.html (664ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:56] "GET /test-brand.svg HTTP/1.1" 304 -
+  ✓   6 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /app.html (708ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:56] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:56] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:56] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:56] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:56] "GET /historias.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:56] "GET /test-brand.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:56] "GET /contacto.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:56] "GET /test-brand.svg HTTP/1.1" 304 -
+  ✓   7 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /contacto.html (843ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:57] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:57] "GET /test-brand.svg HTTP/1.1" 304 -
+  ✓   8 [chromium] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /historias.html (876ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:57] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:57] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:57] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:57] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:57] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:57] "GET /test-brand.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:57] "GET /historias.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:57] "GET /test-brand.svg HTTP/1.1" 304 -
+  ✓   9 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /index.html (860ms)
+  ✓  10 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /historias.html (799ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:58] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:58] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:58] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:58] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:58] "GET /app.html HTTP/1.1" 200 -
+  ✓  11 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /app.html (688ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:58] "GET /contacto.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:58] "GET /test-brand.svg HTTP/1.1" 304 -
+  ✓  12 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /contacto.html (742ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:58] "GET /app.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:58] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:58] "GET /app.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:58] "GET /test-brand.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:59] "GET /app.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:59] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:59] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:59] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:59] "GET /test-brand.svg HTTP/1.1" 304 -
+  ✓  14 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /index.html (659ms)
+  ✓  13 [chromium] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /app.html (914ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:59] "GET /app.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:59] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:59] "GET /app.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:59] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:59] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:06:59] "GET /test-brand.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:00] "GET /app.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:00] "GET /test-brand.svg HTTP/1.1" 304 -
+  ✓  15 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /historias.html (625ms)
+  ✓  16 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /app.html (709ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:00] "GET /app.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:00] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:00] "GET /contacto.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:00] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:00] "GET /contacto.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:00] "GET /contacto.html HTTP/1.1" 304 -
+  ✓  17 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /contacto.html (651ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:00] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:00] "GET /test-brand.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:01] "GET /contacto.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:01] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:01] "GET /index.html HTTP/1.1" 200 -
+  ✓  18 [chromium] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /contacto.html (870ms)
+  ✓  19 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /index.html (465ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:01] "GET /contacto.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:01] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:01] "GET /contacto.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:01] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:01] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:01] "GET /app.html HTTP/1.1" 200 -
+  ✓  20 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /historias.html (759ms)
+  ✓  21 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /app.html (695ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:02] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:02] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:02] "GET /contacto.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:02] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:02] "GET /historias.html HTTP/1.1" 200 -
+  ✓  23 [chromium] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /index.html (659ms)
+  ✓  22 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /contacto.html (692ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:02] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:02] "GET /app.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:02] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:02] "GET /test-brand.svg HTTP/1.1" 200 -
+  ✓  25 [chromium] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /app.html (618ms)
+  ✓  24 [chromium] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /historias.html (630ms)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:03] "GET /contacto.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:03] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:07:03] "GET /app.html HTTP/1.1" 200 -
+  ✓  26 [chromium] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /contacto.html (376ms)
+
+  26 passed (12.9s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

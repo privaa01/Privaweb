@@ -2,105 +2,238 @@
 
 **Feature Directory**: `specs/001-navegacion-global`
 **Created**: 2026-10-16
-**Status**: Borrador derivado de R35; implementación y pruebas no ejecutadas.
-**Input**: Separación funcional del SPEC PRIVA R35 aportado por la usuaria.
-**Fuente**: [SPEC original](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md). Requisitos originales: G01, G02, G03, G04, G05, G06.
-
-## Alcance
-
-Permitir que cualquier visitante se ubique y recorra las páginas públicas y sus destinos comunes.
-
-**Fuera de alcance**: Contenido particular de cada página; autenticación del panel; redacción legal.
+**Updated**: 2026-10-16
+**Status**: navegación compartida implementada y validada contractualmente en Chromium; integración de aplicación y fidelidad pendientes.
+**Input**: `$speckit-specify 001`: desarrollar la feature existente sin crear otra ni ampliar alcance.
+**Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), requisitos G01–G06; [constitución 1.0.0](../../.specify/memory/constitution.md), CONST-01–04 y CONST-08–12.
 
 ## User Scenarios & Testing
 
-### User Story 1 — Recorrer el sitio (Priority: P1)
+### User Story 1 — Ubicarse y recorrer las páginas (Priority: P1)
 
-Como persona usuaria o responsable de Priva, quiero recorrer el sitio para completar el recorrido descrito sin incumplir el alcance.
+Como visitante, quiero reconocer dónde estoy y acceder a las cuatro páginas principales
+para explorar Priva sin perder mi orientación.
 
-**Why this priority**: Es el resultado principal de esta funcionalidad.
+**Why this priority**: El encabezado permite acceder al contenido principal desde cualquier página.
 
-**Independent Test**: Preparar el estado indicado y comprobar el resultado observable; puede usarse contenido de prueba identificado sin declararlo material oficial.
-
-**Acceptance Scenarios**:
-
-1. **Dado** una página pública abierta, **cuando** la persona usa el logo o un elemento del menú, **entonces** llega al destino correcto y el elemento activo coincide con la página.
-
-### User Story 2 — Usar llamadas a la acción (Priority: P2)
-
-Como persona usuaria o responsable de Priva, quiero usar llamadas a la acción para completar el recorrido descrito sin incumplir el alcance.
-
-**Why this priority**: Completa el recorrido y evita resultados incorrectos en sus alternativas.
-
-**Independent Test**: Preparar el estado indicado y comprobar el resultado observable; puede usarse contenido de prueba identificado sin declararlo material oficial.
+**Independent Test**: Abrir cada una de las cuatro páginas y comprobar logo, orden del menú,
+destinos y estado activo, primero con navegación visible y después con menú compacto.
 
 **Acceptance Scenarios**:
 
-1. **Dado** Inicio, Historias, App o Contacto abiertos, **cuando** la persona activa el CTA del encabezado, **entonces** PROTÉGETE HOY lleva a los casos y DESCARGAR APP lleva a la sección de descarga.
+1. **Dado** cualquiera de las cuatro páginas públicas, **cuando** consulto el encabezado,
+   **entonces** encuentro Inicio, Historias, Priva App y Contáctanos en ese orden y solo
+   el elemento correspondiente a mi página está marcado como actual. (G01)
+2. **Dado** cualquiera de esas páginas, **cuando** activo el logo,
+   **entonces** llego a Inicio y este aparece como página actual. (G01)
+3. **Dado** cada opción del menú, **cuando** la activo desde cualquiera de las cuatro páginas,
+   **entonces** llego a la página que identifica su etiqueta, sin destinos vacíos. (G01)
+4. **Dado** un menú compacto cerrado, **cuando** lo abro y recorro con teclado,
+   **entonces** accedo a las mismas cuatro opciones, con foco visible; al cerrarlo con Escape
+   el foco vuelve al control de apertura y no queda atrapado. (G01, X01 compartido)
+5. **Dado** un enlace del menú con foco, **cuando** lo activo con teclado,
+   **entonces** puedo completar el mismo recorrido que con un puntero. (G01)
 
-### User Story 3 — Consultar el footer (Priority: P2)
+### User Story 2 — Llegar a los casos y a la descarga (Priority: P2)
 
-Como persona usuaria o responsable de Priva, quiero consultar el footer para completar el recorrido descrito sin incumplir el alcance.
+Como visitante, quiero que el CTA del encabezado me lleve directamente al contenido
+anunciado para explorar historias o consultar la disponibilidad de la app.
 
-**Why this priority**: Completa el recorrido y evita resultados incorrectos en sus alternativas.
+**Why this priority**: Reduce la búsqueda del contenido destacado en cada página.
 
-**Independent Test**: Preparar el estado indicado y comprobar el resultado observable; puede usarse contenido de prueba identificado sin declararlo material oficial.
+**Independent Test**: Activar el CTA desde las cuatro páginas y comprobar la página y sección
+de llegada tanto con teclado como con puntero, aunque no haya historias o descargas disponibles.
 
 **Acceptance Scenarios**:
 
-1. **Dado** cualquiera de las cuatro páginas, **cuando** la persona usa sus enlaces, **entonces** accede a documentos, Contacto o login sin exponer contenido privado.
+1. **Dado** Inicio, **cuando** activo PROTÉGETE HOY, **entonces** llego a la sección Casos
+   de Historias y su encabezado permanece visible. (G02)
+2. **Dado** Historias, **cuando** activo PROTÉGETE HOY, **entonces** llego a su propia
+   sección Casos, sin abrir una página diferente. (G02)
+3. **Dado** Priva App o Contáctanos, **cuando** activo DESCARGAR APP, **entonces** llego
+   al bloque de descarga de Priva App, con su encabezado visible. No inicio una descarga
+   automáticamente ni afirmo disponibilidad de una plataforma. (G03)
+4. **Dado** un CTA enfocado, **cuando** lo activo con teclado, **entonces** alcanzo la
+   misma sección y puedo continuar navegando sin quedar atrapado. (G02, G03)
+
+### User Story 3 — Consultar información y acceder a administración (Priority: P2)
+
+Como visitante o integrante autorizado de Priva, quiero encontrar un footer consistente
+para consultar información, contactar al equipo o abrir el acceso administrativo.
+
+**Why this priority**: Facilita destinos complementarios sin mezclarlos con el menú principal.
+
+**Independent Test**: Revisar el footer de cada página y activar sus cuatro destinos; comprobar
+por separado que entrar al acceso administrativo no revela datos privados sin sesión.
+
+**Acceptance Scenarios**:
+
+1. **Dado** cualquiera de las cuatro páginas, **cuando** consulto el footer, **entonces**
+   encuentro logo, lema y copyright idénticos, con año fijo 2026. (G04)
+2. **Dado** el footer, **cuando** activo panel administrador, **entonces** abro el acceso
+   administrativo; sin sesión no se muestran historias privadas ni consultas. (G05)
+3. **Dado** el footer, **cuando** activo Términos de Servicio o Manifiesto de Datos,
+   **entonces** abro el documento correspondiente con contenido aprobado, sin textos
+   de borrador presentados como definitivos. (G06)
+4. **Dado** el footer de cualquier página, **cuando** activo Contacto Seguro,
+   **entonces** llego al formulario de Contacto y puedo identificar su encabezado. (G06)
 
 ### Edge Cases
 
-- Comprobar los límites, fallos y estados pendientes expresados en los requisitos de esta feature.
-- Si falta un recurso o dato operativo indicado en Pendientes, mantenerlo identificado y no confirmar disponibilidad ni éxito sin evidencia.
-- Aplicar los estados de error y accesibilidad pertinentes de 011, sin exponer información privada.
+- Una visita directa o recarga de cualquiera de las cuatro páginas debe conservar el activo
+  correcto; no debe depender de haber usado antes el menú.
+- Activar una opción de la página actual no debe llevar a otra sección o página inesperada.
+- Un encabezado fijo no debe ocultar el título de una sección al seguir un ancla.
+- Si no hay historias activas, PROTÉGETE HOY sigue llegando a Casos; el estado vacío pertenece a 003.
+- Si no hay descargas habilitadas, DESCARGAR APP sigue llegando al bloque informativo;
+  su estado Próximamente pertenece a 004.
+- Un cambio de ancho no debe dejar opciones invisibles con foco ni impedir cerrar el menú.
+- Una ruta legal o sección pendiente impide cerrar su recorrido integrado: no se sustituye
+  por `#`, URL vacía, contenido inventado o un falso éxito.
+- Abrir el acceso administrativo sin sesión nunca debe exponer información privada;
+  la protección efectiva se verifica junto con 006.
 
 ## Requirements
 
 ### Functional Requirements
 
-- **FR-001 / G01 — Encabezado y navegación**: Logo a Inicio; menú idéntico en orden Inicio, Historias, Priva App, Contáctanos; activo correcto en escritorio y móvil (C06).
-- **FR-002 / G02 — CTA PROTÉGETE HOY**: PROTÉGETE HOY lleva a /historias.html#casos desde Inicio y a #casos desde Historias; comprobar encabezado visible y teclado (C10)
-- **FR-003 / G03 — CTA DESCARGAR APP**: Abre app y sección de descarga; ancla accesible con teclado
-- **FR-004 / G04 — Footer: logo, lema y copyright**: Texto exacto © 2026 Priva. Todos los derechos reservados. Navega con dignidad.; idéntico en las cuatro páginas. El PDF requiere 2025 → 2026 en sus cuatro footers (C34).
-- **FR-005 / G05 — Footer: panel administrador**: Enlace visible abre acceso administrativo; rutas protegidas no muestran datos sin sesión
-- **FR-006 / G06 — Footer: Términos, Manifiesto, Contacto Seguro**: Cada enlace abre contenido aprobado; Contacto Seguro conduce al formulario
+- **FR-001 / G01 — Encabezado y navegación**: El sitio DEBE mostrar el logo enlazado a Inicio
+  y el menú Inicio → Historias → Priva App → Contáctanos, con las mismas etiquetas y orden
+  en escritorio y móvil. DEBE identificar la página actual de forma visible y perceptible
+  con tecnologías de asistencia. Todo enlace DEBE tener destino real y ser operable con teclado.
+  El menú compacto DEBE permitir abrir, cerrar con Escape y devolver foco al control de apertura,
+  sin atrapar a la persona. Fuente: C06 y accesibilidad transversal X01.
+- **FR-002 / G02 — CTA PROTÉGETE HOY**: Inicio e Historias DEBEN mostrar PROTÉGETE HOY en el
+  encabezado. Desde Inicio conduce a Casos de Historias; desde Historias conduce a sus propios
+  casos. El título de destino DEBE quedar visible y el recorrido ser utilizable con teclado.
+  Fuente: C10.
+- **FR-003 / G03 — CTA DESCARGAR APP**: Priva App y Contáctanos DEBEN mostrar DESCARGAR APP en
+  el encabezado. El destino DEBE ser la sección de descarga de Priva App, sin activar descargas
+  por plataforma ni aparentar disponibilidad. DEBE funcionar con teclado.
+- **FR-004 / G04 — Identidad del footer**: Las cuatro páginas DEBEN compartir logo, lema
+  “Defendiendo la soberanía digital individual.” y copyright exacto
+  “© 2026 Priva. Todos los derechos reservados. Navega con dignidad.”. El año es fijo.
+  La corrección de los cuatro footers del PDF de 2025 a 2026 sigue registrada en X04;
+  actualizar la web no acredita haber editado el PDF. Fuente: C34.
+- **FR-005 / G05 — Acceso administrativo**: El footer DEBE ofrecer un enlace visible
+  panel administrador al acceso privado. El recorrido sin sesión NO DEBE mostrar datos
+  privados. Esta feature define el enlace y su integración; 006 define autenticación,
+  sesiones y autorización de operaciones.
+- **FR-006 / G06 — Destinos informativos y Contacto Seguro**: El footer DEBE incluir
+  Términos de Servicio, Manifiesto de Datos y Contacto Seguro. Los dos primeros DEBEN abrir
+  su contenido aprobado; el último DEBE llevar al formulario de Contacto. No se aceptan
+  enlaces vacíos o borradores publicados para dar por completo el recorrido.
 
-### Reglas y contenido complementario
+### Contrato de destinos
 
-Navegación única: Inicio → Historias → Priva App → Contáctanos. Logo a Inicio. Rutas propuestas: /index.html, /historias.html, /app.html, /contacto.html. Anclas: #somos-priva, #que-hacemos, #casos, #como-funciona, #descarga y #escribir; no usar #maria. Footer: “Defendiendo la soberanía digital individual.” y “© 2026 Priva. Todos los derechos reservados. Navega con dignidad.”. Contacto Seguro lleva al formulario. Los destinos legales pertenecen a 010; los controles accesibles, a 011.
+Las rutas siguientes proceden de propuestas de R35, no son prueba de URLs implementadas.
+Son la referencia de planificación; un cambio debe conservar el destino funcional y registrarse
+conforme a CONST-01/04. No se requiere decidir tecnología para especificar estos recorridos.
+
+| Control o destino | Referencia de ruta | Responsable del contenido |
+|---|---|---|
+| Logo / Inicio | `/index.html` | 002 |
+| Historias | `/historias.html` | 003 |
+| Priva App | `/app.html` | 004 |
+| Contáctanos | `/contacto.html` | 005 |
+| PROTÉGETE HOY desde Inicio | `/historias.html#casos` | 003 |
+| PROTÉGETE HOY desde Historias | `#casos` | 003 |
+| DESCARGAR APP desde App | `#descarga` | 004 |
+| DESCARGAR APP desde Contacto | `/app.html#descarga` | 004 |
+| panel administrador | `/admin/login` | 006 |
+| Términos de Servicio | `/terminos.html` | 010 |
+| Manifiesto de Datos | `/manifiesto-datos.html` | 010 |
+| Contacto Seguro | `/contacto.html#escribir` | 005 |
+
+El enlace de Contacto Seguro desde Contacto puede usar su propia ancla `#escribir`.
+Las anclas de contenido #somos-priva/#que-hacemos pertenecen a 002 y #como-funciona a 004.
+No se introduce #maria. Las otras CTA internas y enlaces externos quedan en sus respectivas features.
 
 ### Key Entities
 
-Página pública; elemento de navegación; destino de CTA.
+- **Página pública**: nombre, destino y condición de página actual; cuatro páginas principales.
+- **Elemento de navegación**: etiqueta, orden y destino compartidos en distintas presentaciones.
+- **CTA de encabezado**: etiqueta y sección de destino según la página de origen.
+- **Footer común**: identidad, lema, copyright y cuatro enlaces complementarios.
 
 ## Success Criteria
 
 ### Measurable Outcomes
 
-- **SC-001**: Se demuestra el resultado esperado de los 3 escenarios anteriores; ningún fallo se registra como éxito.
-- **SC-002**: El 100% de los 6 requisitos originales asignados a esta feature cuenta con evidencia de aceptación o bloqueo explícito antes de cerrar; un bloqueo no equivale a cumplimiento.
-- **SC-003**: No se publica ningún recurso, enlace, dato o promesa pendiente como si estuviera verificado.
+- **SC-001**: En los 16 recorridos posibles entre cuatro páginas mediante el menú, el visitante
+  llega al destino anunciado y reconoce exactamente una página actual; el logo vuelve a Inicio
+  desde las cuatro páginas.
+- **SC-002**: Los cuatro CTA de encabezado llegan a la sección correcta con el título visible,
+  usando teclado y puntero, sin iniciar descargas automáticamente.
+- **SC-003**: Las cuatro páginas muestran idénticos lema y copyright de 2026 y sus 16 enlaces
+  complementarios abren el destino anunciado; ninguna entrada administrativa sin sesión revela datos privados.
+- **SC-004**: Los recorridos anteriores pueden completarse a 360/390/430/768/1024/1280/1440 px
+  y con texto al 200%, sin contenido cortado, scroll horizontal ni controles inaccesibles.
+- **SC-005**: Una persona que usa solo teclado puede abrir el menú compacto, elegir cada destino
+  y cerrarlo con Escape recuperando el foco; ningún recorrido presenta una trampa de foco.
+
+Los resultados contractuales se registran en evidence/summary.md; no equivalen a aceptación integrada de aplicación.
 
 ## Assumptions
 
-- Se conserva el alcance del R35; la prioridad de estas historias y la división son una propuesta de organización, no decisiones nuevas de producto.
-- La documentación no equivale a implementación. No hay pruebas de aplicación ejecutadas por esta separación.
-- Dependencias de trabajo: No exige otra feature para redactar o planificar; su validación final depende de los recorridos que afecta.
-- Las restricciones transversales de 009 y 011 aplican donde corresponda, aunque cada ID original tenga un único responsable.
+- El argumento “001” selecciona el directorio existente; no crea una feature adicional ni cambia alcance.
+- Se conservan G01–G06 y sus IDs locales FR-001–006. La descomposición de escenarios no reconstruye
+  el catálogo histórico 07 ausente.
+- La navegación pública no exige cuenta ni utiliza datos de Contacto o selecciones educativas.
+- Las prioridades organizan el trabajo y no añaden compromisos de producto.
+- La presentación del menú puede variar según el ancho disponible; no se fija un breakpoint,
+  framework, proveedor o método de implementación en esta especificación.
+- El footer definido aquí es común a las cuatro páginas principales; no se impone un diseño nuevo
+  para páginas auxiliares ni para el panel privado.
 
-## Pendientes y condiciones de cierre
+## Dependencias y condiciones de cierre
 
-Los destinos pueden prepararse antes que sus contenidos, pero no se acepta un recorrido final con enlaces rotos. Las rutas son propuestas del spec, no URLs existentes.
+- 002/003/004/005 proporcionan los contenidos y anclas públicas; 006, el acceso protegido;
+  010, documentos aprobados; 011, validación transversal de accesibilidad y fidelidad.
+- 009 aplica a cualquier tratamiento de datos o servicio integrado, sin que esta feature añada captura.
+- Logo original, tipografía y colores precisos siguen pendientes de recursos oficiales.
+- Estos pendientes no impiden planificar el encabezado y footer; sí impiden cerrar fidelidad o
+  recorridos integrados que dependan de recursos, secciones o documentos ausentes.
+- No hay una decisión material de alcance sin resolver propia de 001. La redacción legal y
+  autenticación se resuelven en sus features sin inventarlas en esta.
 
 ## Trazabilidad y verificación
 
-| ID original | Requisito local | Fuente original | Estado |
-|---|---|---|---|
-| G01 | FR-001 | PDF 1–4 | No ejecutado |
-| G02 | FR-002 | PDF 1–2 | No ejecutado |
-| G03 | FR-003 | PDF 3–4 | No ejecutado |
-| G04 | FR-004 | PDF 1–4 | No ejecutado |
-| G05 | FR-005 | PDF 1–4 + imágenes | No ejecutado |
-| G06 | FR-006 | PDF 1–4 | No ejecutado |
+Los números de escenario son locales a esta feature, no IDs históricos del catálogo 07.
+
+| ID original | Requisito local | Escenarios | Fuente | Estado de aplicación |
+|---|---|---|---|---|
+| G01 | FR-001 | US1.1–US1.5 | PDF 1–4 / C06 | Contractual Chromium validado; integración pendiente |
+| G02 | FR-002 | US2.1, US2.2, US2.4 | PDF 1–2 / C10 | Contractual Chromium validado; integración pendiente |
+| G03 | FR-003 | US2.3, US2.4 | PDF 3–4 | Contractual Chromium validado; integración pendiente |
+| G04 | FR-004 | US3.1 | PDF 1–4 / C34 | Contractual Chromium validado; integración pendiente |
+| G05 | FR-005 | US3.2 | PDF 1–4 + captura de acceso | Contractual Chromium validado; integración pendiente |
+| G06 | FR-006 | US3.3, US3.4 | PDF 1–4 | Contractual Chromium validado; integración pendiente |
+
+### Registro documental
+
+2026-10-16 — `$speckit-specify 001`: reemplazada la descomposición inicial genérica por
+escenarios concretos, destinos, casos límite y resultados medibles, conservando G01–G06.
+Constitución 1.0.0 aplicada; revisión de requisitos en `checklists/requirements.md`.
+Sin implementación, cambios al PDF, nuevas decisiones de alcance ni pruebas de aplicación.
+
+2026-10-16 — `$speckit-plan 001`: enfoque técnico y validación documentados en
+[plan.md](plan.md), sin alterar requisitos ni resultados de aplicación.
+
+2026-10-16 — `$speckit-clarify`: revisión del alcance activo G01–G06 sin preguntas:
+no se detectaron ambigüedades críticas propias de 001. Se mantienen los requisitos y
+el plan existentes. Los recursos oficiales y destinos de otras features son dependencias
+abiertas ya identificadas, no decisiones resueltas en esta revisión. Checklist documental
+revalidado: 16/16 antes y después; implementación y pruebas de aplicación no ejecutadas.
+
+2026-10-16 — `$speckit-tasks 001`: generadas [28 tareas](tasks.md) con dependencia y
+trazabilidad; ningún requisito ni prueba de aplicación se marca completado.
+
+2026-10-16 — Correcciones autorizadas I1/U1/U2 sincronizadas en plan, contrato,
+tareas y guía. Sin cambios de alcance: separación de builds; dependencia explícita de
+contrato 006; precisión de cobertura de SC-004 a cada ancho y texto 100%/200%.
+
+2026-10-16 — `$speckit-implement 001`: componentes Header/Footer/Layout y tooling
+implementados; banco aislado y evidencia en [summary.md](evidence/summary.md).
+Se conservan requisitos y bloqueos de recursos y otras features. La validación de fixtures
+no acredita documentos legales aprobados ni autorización del servidor.

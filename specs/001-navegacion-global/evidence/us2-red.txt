@@ -1,0 +1,63 @@
+
+> privaweb@0.1.0 test:e2e:contract
+> playwright test --project=chromium --grep US2: CTA /index --max-failures=1 --timeout=5000
+
+[WebServer] (node:8388) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:8402) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm notice
+[WebServer] npm notice New major version of npm available! 11.9.0 -> 12.2.0
+[WebServer] npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+[WebServer] npm notice To update run: npm install -g npm@12.2.0
+[WebServer] npm notice
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:05:36] "GET / HTTP/1.1" 200 -
+
+Running 1 test using 1 worker
+
+(node:8443) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:05:37] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:05:37] "GET /test-brand.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:05:37] code 404, message File not found
+[WebServer] 127.0.0.1 - - [17/Oct/2026 00:05:37] "GET /favicon.ico HTTP/1.1" 404 -
+  ✘  1 [chromium] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /index.html (5.1s)
+Testing stopped early after 1 maximum allowed failures.
+
+
+  1) [chromium] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /index.html ─────────────────────────
+
+    Test timeout of 5000ms exceeded.
+
+    Error: locator.focus: Test timeout of 5000ms exceeded.
+    Call log:
+      - waiting for getByRole('banner').getByRole('link', { name: 'PROTÉGETE HOY' })
+
+
+      28 |     const downloads: string[] = []; page.on('download', event => downloads.push(event.suggestedFilename()));
+      29 |     const link = page.getByRole('banner').getByRole('link', { name: expectedLabel });
+    > 30 |     await link.focus(); await page.keyboard.press('Enter');
+         |                ^
+      31 |     await expect(page).toHaveURL(new RegExp(expectedPath.replace('.', '\\.') + '$'));
+      32 |     await expect(page.locator(expectedPath.split('.html')[1]).getByRole('heading')).toBeInViewport();
+      33 |     expect(downloads).toEqual([]);
+        at /workspace/Privaweb/tests/e2e/navigation.spec.ts:30:16
+
+    Error Context: test-results/navigation-US2-CTA-index-html-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/navigation-US2-CTA-index-html-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/navigation-US2-CTA-index-html-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /index.html ──────────────────────────
+  1 error was not a part of any test, see above for details
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

@@ -22,7 +22,7 @@ Separación del SPEC R35, sin implementación ni cambios de alcance. La fuente o
 
 Esta división usa la estructura de la plantilla instalada. No ejecuta `$speckit-specify` once veces ni activa una feature arbitrariamente. No se crearon ramas, planes técnicos ni tareas de implementación.
 
-1. Completar `$speckit-constitution` con los principios del proyecto: la constitución instalada sigue siendo una plantilla.
+1. Completar `$speckit-constitution` con los principios del proyecto: la constitución vigente está en `.specify/memory/constitution.md`.
 2. Elegir una sola feature y pedir a Codex que trabaje en su directorio existente, sin regenerarla desde cero. Por ejemplo:
 
    ```text
@@ -38,7 +38,7 @@ Esta división usa la estructura de la plantilla instalada. No ejecuta `$speckit
    export SPECIFY_FEATURE_DIRECTORY="/workspace/Privaweb/specs/005-contacto-publico"
    ```
 
-   Si se usa otro proceso o sesión, volver a indicar la ruta. Puede persistirse la selección en `.specify/feature.json` con `{"feature_directory":"specs/005-contacto-publico"}`; cambiarla al trabajar otra feature. No se guarda una selección global en esta entrega.
+   Si se usa otro proceso o sesión, volver a indicar la ruta. Puede persistirse la selección en `.specify/feature.json` con `{"feature_directory":"specs/005-contacto-publico"}`; cambiarla al trabajar otra feature. La feature activa está seleccionada en `.specify/feature.json`; comprobarla y cambiarla antes de trabajar otra funcionalidad.
 
 4. Aclarar solo los pendientes relevantes; ejecutar `$speckit-plan`, `$speckit-tasks`, `$speckit-analyze`, `$speckit-implement` y `$speckit-converge` por feature. Indicar siempre la ruta elegida en el mensaje al agente.
 5. Registrar decisiones, evidencia y trazabilidad al cambiar requisitos. La aceptación de una feature no cierra las otras.

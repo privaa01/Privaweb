@@ -4,12 +4,12 @@
 
 | ID | Componente original | Feature responsable | Estado |
 |---|---|---|---|
-| G01 | Encabezado y navegación | [001-navegacion-global](001-navegacion-global/spec.md) | No ejecutado |
-| G02 | CTA PROTÉGETE HOY | [001-navegacion-global](001-navegacion-global/spec.md) | No ejecutado |
-| G03 | CTA DESCARGAR APP | [001-navegacion-global](001-navegacion-global/spec.md) | No ejecutado |
-| G04 | Footer: logo, lema y copyright | [001-navegacion-global](001-navegacion-global/spec.md) | No ejecutado |
-| G05 | Footer: panel administrador | [001-navegacion-global](001-navegacion-global/spec.md) | No ejecutado |
-| G06 | Footer: Términos, Manifiesto, Contacto Seguro | [001-navegacion-global](001-navegacion-global/spec.md) | No ejecutado |
+| G01 | Encabezado y navegación | [001-navegacion-global](001-navegacion-global/spec.md) | Validación contractual Chromium; integración pendiente |
+| G02 | CTA PROTÉGETE HOY | [001-navegacion-global](001-navegacion-global/spec.md) | Validación contractual Chromium; integración pendiente |
+| G03 | CTA DESCARGAR APP | [001-navegacion-global](001-navegacion-global/spec.md) | Validación contractual Chromium; integración pendiente |
+| G04 | Footer: logo, lema y copyright | [001-navegacion-global](001-navegacion-global/spec.md) | Validación contractual Chromium; integración pendiente |
+| G05 | Footer: panel administrador | [001-navegacion-global](001-navegacion-global/spec.md) | Validación contractual Chromium; integración pendiente |
+| G06 | Footer: Términos, Manifiesto, Contacto Seguro | [001-navegacion-global](001-navegacion-global/spec.md) | Validación contractual Chromium; integración pendiente |
 | I01 | Hero Inicio: etiqueta, título, texto, imagen, Conocer más | [002-inicio-institucional](002-inicio-institucional/spec.md) | No ejecutado |
 | I02 | Quiénes somos | [002-inicio-institucional](002-inicio-institucional/spec.md) | No ejecutado |
 | I03 | Qué hacemos: introducción y cuatro tarjetas | [002-inicio-institucional](002-inicio-institucional/spec.md) | No ejecutado |
@@ -67,3 +67,25 @@
 | P03 — textos finales | 002, 003, 004, 005, 010 |
 | P04 — diseño y configuración | 007, 008, 011 |
 | P05 — verificación y entrega material | Todas para pruebas; 011 para fidelidad y PDF |
+
+## Revisión documental de la feature 001
+
+2026-10-16 — G01–G06 conservan su responsable y estado de aplicación No ejecutado.
+Se completaron escenarios y resultados medibles en [001](001-navegacion-global/spec.md)
+y su [checklist documental](001-navegacion-global/checklists/requirements.md).
+Esta revisión no acredita implementación ni sustituye los criterios históricos ausentes.
+
+2026-10-16 — Planificación de G01–G06 completada en [plan 001](001-navegacion-global/plan.md),
+con investigación, modelo, contrato UI y guía de validación futura. Sin implementación ni
+pruebas de aplicación; se conserva el estado No ejecutado y los bloqueos de integración.
+
+2026-10-16 — [Tareas 001](001-navegacion-global/tasks.md): 28 tareas locales con
+correspondencia G01–G06 e historias US1–US3. Generación documental, sin ejecución.
+
+2026-10-16 — Corrección autorizada de análisis 001: I1 resuelto por builds separados;
+U1 registrado como contrato privado pendiente de 006; U2 precisa cobertura de SC-004.
+G01–G06 conservan tareas y estado No ejecutado. No se acredita cierre integrado G05.
+
+2026-10-16 — Implementación 001: componentes compartidos y tooling reproducible;
+21/28 tareas completadas, 7 parciales/bloqueadas. G01–G06 tienen evidencia contractual,
+no cierre integrado. Evidencia en [summary.md](001-navegacion-global/evidence/summary.md).

@@ -14,18 +14,18 @@
 | I02 | Quiénes somos | [002-inicio-institucional](002-inicio-institucional/spec.md) | Contrato Chromium validado; publicación/integración pendientes |
 | I03 | Qué hacemos: introducción y cuatro tarjetas | [002-inicio-institucional](002-inicio-institucional/spec.md) | Contrato Chromium validado; publicación/integración pendientes |
 | I04 | CTA final de Inicio | [002-inicio-institucional](002-inicio-institucional/spec.md) | Contrato Chromium validado; publicación/integración pendientes |
-| H01 | Hero Historias | [003-historias-educativas](003-historias-educativas/spec.md) | No ejecutado |
-| H02 | Casos destacados: encabezado y Ver todas las historias | [003-historias-educativas](003-historias-educativas/spec.md) | No ejecutado |
-| H03 | Caso 1: Enlace Falso / Phishing | [003-historias-educativas](003-historias-educativas/spec.md) | No ejecutado |
-| H04 | Caso 2: La llamada sospechosa / Ingeniería Social | [003-historias-educativas](003-historias-educativas/spec.md) | No ejecutado |
-| H05 | Caso 3: La contraseña compartida / Contraseñas | [003-historias-educativas](003-historias-educativas/spec.md) | No ejecutado |
-| H06 | Audio de cada caso | [003-historias-educativas](003-historias-educativas/spec.md) | No ejecutado |
-| H07 | Ejercicio Caso 1 | [003-historias-educativas](003-historias-educativas/spec.md) | No ejecutado |
-| H08 | Ejercicio Caso 2 | [003-historias-educativas](003-historias-educativas/spec.md) | No ejecutado |
-| H09 | Ejercicio Caso 3 | [003-historias-educativas](003-historias-educativas/spec.md) | No ejecutado |
-| H10 | Metodología con imagen | [003-historias-educativas](003-historias-educativas/spec.md) | No ejecutado |
-| H11 | Identidad en dos bloques y SABER MÁS | [003-historias-educativas](003-historias-educativas/spec.md) | No ejecutado |
-| H12 | CTA final de Historias | [003-historias-educativas](003-historias-educativas/spec.md) | No ejecutado |
+| H01 | Hero Historias | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
+| H02 | Casos destacados: encabezado y Ver todas las historias | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
+| H03 | Caso 1: Enlace Falso / Phishing | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
+| H04 | Caso 2: La llamada sospechosa / Ingeniería Social | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
+| H05 | Caso 3: La contraseña compartida / Contraseñas | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
+| H06 | Audio de cada caso | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
+| H07 | Ejercicio Caso 1 | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
+| H08 | Ejercicio Caso 2 | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
+| H09 | Ejercicio Caso 3 | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
+| H10 | Metodología con imagen | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
+| H11 | Identidad en dos bloques y SABER MÁS | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
+| H12 | CTA final de Historias | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
 | A01 | Hero de Priva App | [004-presentacion-app](004-presentacion-app/spec.md) | No ejecutado |
 | A02 | Qué es Priva App y mockup Conversar | [004-presentacion-app](004-presentacion-app/spec.md) | No ejecutado |
 | A03 | Tres beneficios del prototipo | [004-presentacion-app](004-presentacion-app/spec.md) | No ejecutado |
@@ -115,3 +115,12 @@ nueve explicaciones, Instagram e integración 007 pendientes; estado No ejecutad
 modelo, contrato público de catálogo/medios/reflexión y guía de validación futura.
 Consumidor estático con lectura vigente propuesta a007; sin backend ni pruebas ejecutadas.
 Recursos, revisión editorial, Instagram e integración siguen pendientes; estado No ejecutado.
+
+2026-10-17 — [Tareas 003](003-historias-educativas/tasks.md): 35 tareas locales,
+cuatro historias y cobertura H01–H12/SC-001–007; catálogo007, materiales y revisión
+identificados como dependencias. Generación documental sin implementación ni pruebas ejecutadas.
+
+2026-10-17 — Implementación003: 30/35 tareas completas;40unitarias,29UI003 y
+67pruebas de regresión001/002 aprobadas. H01–H12 tienen evidencia contractual en
+[summary.md](003-historias-educativas/evidence/summary.md), sin cierre integrado.
+T028/T030 parciales y T031–T033 bloqueadas por harness, navegadores, recursos y servicios.

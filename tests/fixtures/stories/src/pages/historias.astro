@@ -1,0 +1,6 @@
+---
+import PublicLayout from '../../../../../src/layouts/PublicLayout.astro';
+import StoriesContent from '../../../../../src/components/stories/StoriesContent.astro';
+import {fixtureContent} from '../content';
+---
+<PublicLayout pageId="historias" title="Historias — banco de pruebas" contentLayout="full" brand={fixtureContent.brand}><p class="stories-notice">Banco de pruebas 003. Imágenes, audios y explicaciones sintéticos; no publicable.</p><StoriesContent content={fixtureContent}/></PublicLayout>

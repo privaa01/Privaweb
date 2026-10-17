@@ -2,8 +2,8 @@
 
 **Feature Directory**: `specs/003-historias-educativas`
 **Created**: 2026-10-16
-**Updated**: 2026-10-16
-**Status**: Especificación revisada documentalmente; implementación y pruebas de 003 no ejecutadas.
+**Updated**: 2026-10-17
+**Status**: Componentes implementados y pruebas contractuales verificadas; materiales, publicación y aceptación integrada pendientes.
 **Input**: `/speckit-specify 003`: desarrollar el spec existente sin ampliar alcance.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), H01–H12, PDF 2 y
 [constitución 1.0.0](../../.specify/memory/constitution.md), en particular CONST-03/05/07–10.
@@ -238,11 +238,11 @@ los estados actuales, ni se decide aquí tecnología, proveedor o intervalo de a
   presentadas como funcionales ni testimonios/capacidades no respaldados. La comparación
   visual y los materiales se verifican por separado de las pruebas con fixtures.
 
-Son resultados requeridos para la fase de implementación, no pruebas ejecutadas ahora.
+Son criterios de aceptación; resultados contractuales y bloqueos en [evidence/summary.md](evidence/summary.md).
 
 ## Assumptions
 
-- “003” selecciona el directorio existente, conservando H01–H12 y FR-001–FR-012; no autoriza código.
+- La invocación original de specify seleccionó el directorio003 conservando H01–H12 y FR-001–FR-012; la implementación posterior fue solicitada con `$speckit-implement 003`.
 - Las prioridades de historias organizan el trabajo, sin ampliar el alcance de producto.
 - Los tres casos iniciales siguen sujetos a materiales y publicación; el estado vacío no es
   una excepción para entregar sin los materiales previstos ni para inventarlos.
@@ -272,18 +272,18 @@ Son resultados requeridos para la fase de implementación, no pruebas ejecutadas
 
 | ID original | Requisito local | Escenarios | Fuente | Estado de aplicación |
 |---|---|---|---|---|
-| H01 | FR-001 | US1.1, US1.2 | PDF 2 | No ejecutado |
-| H02 | FR-002 | US1.3–US1.5 | PDF 2 / C11 | No ejecutado |
-| H03 | FR-003 | US1.3, US2.1/4 | PDF 2 | No ejecutado |
-| H04 | FR-004 | US1.3, US2.1/4 | PDF 2 / P03 | No ejecutado |
-| H05 | FR-005 | US1.3, US2.1/4 | PDF 2 | No ejecutado |
-| H06 | FR-006 | US2.1–US2.4 | PDF 2 | No ejecutado |
-| H07 | FR-007 | US3.1–US3.3/5/6 | PDF 2 / C05/C08/C09 | No ejecutado |
-| H08 | FR-008 | US3.1–US3.6 | PDF 2 | No ejecutado |
-| H09 | FR-009 | US3.1–US3.6 | PDF 2 | No ejecutado |
-| H10 | FR-010 | US4.1 | PDF 2 | No ejecutado |
-| H11 | FR-011 | US4.2 | PDF 2 | No ejecutado |
-| H12 | FR-012 | US4.3, US4.4 | PDF 2 / C16 | No ejecutado |
+| H01 | FR-001 | US1.1, US1.2 | PDF 2 | Contrato verificado; cierre integrado pendiente |
+| H02 | FR-002 | US1.3–US1.5 | PDF 2 / C11 | Contrato verificado; cierre integrado pendiente |
+| H03 | FR-003 | US1.3, US2.1/4 | PDF 2 | Contrato verificado; cierre integrado pendiente |
+| H04 | FR-004 | US1.3, US2.1/4 | PDF 2 / P03 | Contrato verificado; cierre integrado pendiente |
+| H05 | FR-005 | US1.3, US2.1/4 | PDF 2 | Contrato verificado; cierre integrado pendiente |
+| H06 | FR-006 | US2.1–US2.4 | PDF 2 | Contrato verificado; cierre integrado pendiente |
+| H07 | FR-007 | US3.1–US3.3/5/6 | PDF 2 / C05/C08/C09 | Contrato verificado; cierre integrado pendiente |
+| H08 | FR-008 | US3.1–US3.6 | PDF 2 | Contrato verificado; cierre integrado pendiente |
+| H09 | FR-009 | US3.1–US3.6 | PDF 2 | Contrato verificado; cierre integrado pendiente |
+| H10 | FR-010 | US4.1 | PDF 2 | Contrato verificado; cierre integrado pendiente |
+| H11 | FR-011 | US4.2 | PDF 2 | Contrato verificado; cierre integrado pendiente |
+| H12 | FR-012 | US4.3, US4.4 | PDF 2 / C16 | Contrato verificado; cierre integrado pendiente |
 
 ### Registro documental
 
@@ -299,3 +299,8 @@ pendientes; la obtención/actualización del catálogo de 007 se resolverá en p
 Checklist revalidado: 16/16 → 16/16, sin cambios de estado. Solo se actualizó este registro;
 no se aprobaron recursos ni se ejecutaron pruebas de aplicación. Lista para planificación
 independiente, con los bloqueos de publicación e integración ya documentados.
+
+2026-10-17 — `$speckit-implement 003`: componentes, consumidor de catálogo y banco
+contractual verificados; 30/35 tareas completas. Evidencia en evidence/summary.md.
+Recursos oficiales, revisión editorial, navegadores adicionales y aceptación integrada
+permanecen pendientes. Sin backend007, promesas de publicación ni cambios de alcance.

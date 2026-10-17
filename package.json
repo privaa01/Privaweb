@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
-    "build": "node scripts/require-pages.mjs && node scripts/require-home-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "build": "node scripts/require-pages.mjs && node scripts/require-home-publication.mjs && node scripts/require-stories-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check:contract": "ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/navigation",
     "build:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/navigation",
@@ -18,7 +18,11 @@
     "check:home:contract": "ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/home",
     "build:home:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/home",
     "test:e2e:home:contract": "playwright test --config=playwright.home.config.ts",
-    "test:e2e:home:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.home.config.ts"
+    "test:e2e:home:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.home.config.ts",
+    "check:stories:contract": "ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/stories",
+    "build:stories:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/stories",
+    "test:e2e:stories:contract": "playwright test --config=playwright.stories.config.ts",
+    "test:e2e:stories:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.stories.config.ts"
   },
   "dependencies": {
     "astro": "7.4.0"

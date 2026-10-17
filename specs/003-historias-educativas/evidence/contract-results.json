@@ -1,0 +1,246 @@
+{
+  "date": "2026-10-17",
+  "scope": "Fixture contract only, not publication",
+  "stats": {
+    "startTime": "2026-10-17T18:00:59.981Z",
+    "duration": 45918.215000000004,
+    "expected": 29,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "stories 360px text 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "stories 360px text 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "stories 390px text 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "stories 390px text 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "stories 430px text 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "stories 430px text 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "stories 768px text 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "stories 768px text 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "stories 1024px text 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "stories 1024px text 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "stories 1280px text 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "stories 1280px text 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "stories 1440px text 100%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "stories 1440px text 200%",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "no JavaScript gives honest fallback and static destinations",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "catalog expands without duplicates or losing selection and fragment works",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "three or fewer stays same collection",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "empty differs from error; retry recovers",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "reject invalid response",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "reject type response",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "reject network response",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "real media plays pauses seeks and exposes equivalent fixture transcript",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "media error missing.wav retains transcript and activity",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "media error broken.wav retains transcript and activity",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "all nine feedbacks by pointer and keyboard, independent, no transmission/storage, reload reset",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "pageshow restoration revalidates and clears selection; failure removes stale cards",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "method and continuation exact contracts, image failure preserves text",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "delayed old request never replaces new catalog; visibility refresh uses same contract",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    },
+    {
+      "title": "catalog values render as text and controls have unique ids and live region",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        "passed"
+      ]
+    }
+  ]
+}

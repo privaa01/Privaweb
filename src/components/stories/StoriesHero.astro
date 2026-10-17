@@ -1,0 +1,6 @@
+---
+import type { StoriesBlock } from '../../content/stories';
+interface Props { content:StoriesBlock }
+const {content}=Astro.props;
+---
+<section class="stories-section stories-hero"><div><p class="eyebrow">HISTORIAS REALES</p><h1>{content.title}</h1><p>{content.description}</p><a class="stories-button" href="#casos">Explorar episodios</a></div><img src={content.image.src} alt={content.image.alt} width={content.image.width} height={content.image.height} fetchpriority="high" /></section>

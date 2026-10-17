@@ -1,0 +1,7 @@
+---
+import { methodSteps } from '../../content/stories';
+import type { StoriesBlock } from '../../content/stories';
+interface Props {content:StoriesBlock}
+const {content}=Astro.props;
+---
+<section class="stories-section stories-method"><div><p class="eyebrow">METODOLOGÍA DIDÁCTICA</p><h2>{content.title}</h2><p>{content.description}</p><ol class="stories-steps">{methodSteps.map(step=><li><h3 data-method-step>{step.title}</h3><p>{step.description}</p></li>)}</ol></div><img src={content.image.src} alt={content.image.alt} width={content.image.width} height={content.image.height} loading="lazy" /></section>

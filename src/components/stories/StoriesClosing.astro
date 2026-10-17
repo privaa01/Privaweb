@@ -1,0 +1,6 @@
+---
+import type { StoriesData } from '../../content/stories';
+interface Props{content:StoriesData['closing'];social:StoriesData['social']}
+const {content,social}=Astro.props;
+---
+<section class="stories-closing"><div class="stories-section stories-hero"><div><p class="eyebrow">TU PRIVACIDAD IMPORTA</p><h2>{content.title}</h2><p>{content.description}</p>{social.url?<a class="stories-button" href={social.url}>EXPLORAR MÁS CONTENIDOS</a>:<p>Instagram oficial pendiente de verificación.</p>}</div><img src={content.image.src} alt={content.image.alt} width={content.image.width} height={content.image.height} loading="lazy" /></div></section>

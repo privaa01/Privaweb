@@ -1,0 +1,13 @@
+---
+import type { StoriesData } from '../../content/stories';
+import StoriesHero from './StoriesHero.astro';
+import StoriesCatalog from './StoriesCatalog.astro';
+import StoriesMethod from './StoriesMethod.astro';
+import StoriesIdentity from './StoriesIdentity.astro';
+import StoriesClosing from './StoriesClosing.astro';
+import '../../styles/stories.css';
+interface Props{content:StoriesData}
+const {content}=Astro.props;
+---
+<div class="stories" data-stories data-endpoint={content.endpoint} data-media-origins={JSON.stringify(content.mediaOrigins)}><StoriesHero content={content.hero}/><StoriesCatalog/><StoriesMethod content={content.method}/><StoriesIdentity content={content.identity}/><StoriesClosing content={content.closing} social={content.social}/></div>
+<script>import '../../scripts/stories-catalog';</script>

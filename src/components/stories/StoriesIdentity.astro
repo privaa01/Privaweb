@@ -1,0 +1,6 @@
+---
+import type { StoriesData } from '../../content/stories';
+interface Props{content:StoriesData['identity']}
+const {content}=Astro.props;
+---
+<section class="stories-section stories-identity" aria-label="Conoce Priva">{content.map((item,index)=><div><p class="eyebrow">{index===0?'QUIÉNES SOMOS':'QUÉ HACEMOS'}</p><h2>{item.title}</h2><p>{item.description}</p><a href={item.href} aria-label={`Saber más de ${index===0?'Somos Priva':'Qué hacemos'}`}>Saber más</a></div>)}</section>

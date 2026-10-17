@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-17",
+  "scope": "contract-only",
+  "checkRoot": {
+    "errors": 0,
+    "warnings": 0,
+    "hints": 0
+  },
+  "checkStories": {
+    "errors": 0,
+    "warnings": 0,
+    "hints": 0
+  },
+  "regression001": {
+    "passed": 44,
+    "failed": 0
+  },
+  "regression002": {
+    "passed": 23,
+    "failed": 0
+  },
+  "storiesChromium": {
+    "passed": 29,
+    "failed": 0
+  },
+  "firefox": {
+    "status": "launch-failed",
+    "reason": "Could not find profile folder"
+  },
+  "webkit": {
+    "status": "launch-failed",
+    "reason": "Missing host libraries"
+  },
+  "productionBuild": {
+    "status": "blocked",
+    "reason": "app/contacto pages missing; editorial gates also pending"
+  },
+  "realEntry": {
+    "status": "blocked",
+    "http": 500,
+    "reason": "assertStoriesPublication before render; confirmed dev logs"
+  },
+  "integration": {
+    "status": "blocked",
+    "reason": "No real base URL or 007 transition harness"
+  }
+}

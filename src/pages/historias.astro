@@ -1,0 +1,9 @@
+---
+import { resolve } from 'node:path';
+import PublicLayout from '../layouts/PublicLayout.astro';
+import StoriesContent from '../components/stories/StoriesContent.astro';
+import { storiesContent } from '../content/stories';
+import { assertStoriesPublication } from '../lib/stories-publication';
+assertStoriesPublication(storiesContent,resolve('public'));
+---
+<PublicLayout pageId="historias" title="Historias — Priva" contentLayout="full" brand={storiesContent.brand}><StoriesContent content={storiesContent}/></PublicLayout>

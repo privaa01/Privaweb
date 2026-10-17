@@ -2,7 +2,7 @@
 
 **Branch real**: `main` | **Date**: 2026-10-16 | **Spec**: [spec.md](spec.md)
 **Feature activa de los scripts**: `003-historias-educativas` (no crea rama Git).
-**Estado**: fases 0 y 1 de diseño; sin código ni pruebas de aplicación de 003.
+**Estado**: componentes y banco contractual implementados; publicación y aceptación integrada pendientes.
 
 ## Summary
 
@@ -63,12 +63,14 @@ specs/003-historias-educativas/
 ├── data-model.md
 ├── contracts/historias.md
 ├── quickstart.md
-└── checklists/requirements.md
+├── checklists/requirements.md
+├── tasks.md
+└── evidence/
 ```
 
-`tasks.md` se genera después con `$speckit-tasks 003`; no se crea en este comando.
+[tasks.md](tasks.md) generado con `$speckit-tasks 003`; resultados y bloqueos en [evidence/summary.md](evidence/summary.md).
 
-### Source Code (previsto, no creado)
+### Source Code (implementado; integración externa pendiente)
 
 ```text
 src/pages/historias.astro
@@ -131,3 +133,7 @@ pruebas independientes; no introducir una segunda app, almacén de respuestas o 
 
 2026-10-16 — `$speckit-plan 003`: diseño de fases 0/1 y contratos de consumidor.
 Sin código, instalación, pruebas de aplicación, commit o publicación.
+
+2026-10-17 — Implementación: consumidor/DTO, audio nativo, reflexión local, shell completo,
+gate y banco aislado. Contrato007 no desplegado; medios y revisiones oficiales pendientes.
+Sin nuevo proveedor ni dependencia. Resultados y límites en evidence/summary.md.

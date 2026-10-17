@@ -1,0 +1,5 @@
+---
+import {closing} from '../../content/contact';
+interface Props {tracking?:boolean} const {tracking=false}=Astro.props;
+---
+<section class="contact-closing" aria-labelledby="contact-closing-title"><h2 id="contact-closing-title">Tu privacidad importa. Escríbenos con total tranquilidad.</h2><div>{closing.map(text=><p>{text}</p>)}{tracking&&<p>Sin cookies de rastreo</p>}</div></section>

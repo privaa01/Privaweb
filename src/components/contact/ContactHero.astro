@@ -1,0 +1,6 @@
+---
+import type {ContactContent} from '../../content/contact';
+import {indicators} from '../../content/contact';
+interface Props {content:ContactContent;tracking?:boolean} const {content:c,tracking=false}=Astro.props;
+---
+<section class="contact-hero"><div><p class="contact-eyebrow">{c.eyebrow}</p><h1>{c.title}</h1><p>{c.intro}</p><ul>{indicators.map(text=><li>{text}</li>)}{tracking&&<li>Cero rastreo publicitario</li>}</ul></div>{c.image.src&&<img src={c.image.src} alt={c.image.alt} width={c.image.width} height={c.image.height}/>}</section>

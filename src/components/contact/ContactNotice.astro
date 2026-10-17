@@ -1,0 +1,5 @@
+---
+import {warning,type ContactContent} from '../../content/contact';
+interface Props {content:ContactContent} const {content:c}=Astro.props;
+---
+<aside class="contact-notice" aria-label="Uso de tus datos"><p>{warning}</p><p>Puedes usar un alias; esto no hace anónimo tu correo.</p><p>{c.notice.text}</p><p>Responsable: {c.notice.responsible||'Pendiente de revisión.'}</p>{c.notice.channel&&<p>Eliminación anticipada: <a href={c.notice.channel}>Solicitar eliminación</a></p>}<a href={c.notice.manifesto}>Manifiesto de Datos</a></aside>

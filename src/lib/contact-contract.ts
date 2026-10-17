@@ -1,0 +1,9 @@
+export type ContactInput = {nameOrAlias:string;email:string;message:string};
+export type NormalizedContact = Readonly<ContactInput>;
+export type Field = keyof ContactInput;
+export type FieldErrors = Partial<Record<Field,'required'|'length'|'format'>>;
+export type Validation = {ok:true;value:NormalizedContact}|{ok:false;errors:FieldErrors};
+export type SignedAttempt = {attemptId:string;token:string;expiresAt:string};
+export type Receipt = {result:'stored'|'conflict'|'retired';attemptId:string}|{result:'not_stored';attemptId:string;errors:FieldErrors};
+export type FormState = 'editing'|'invalid'|'preparing'|'submitting'|'confirmed'|'rejected'|'unknown';
+export const fields:Field[]=['nameOrAlias','email','message'];

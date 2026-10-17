@@ -1,0 +1,3 @@
+import {defineConfig} from '@playwright/test';
+import {projects} from './playwright.contact.config';
+export default defineConfig({testDir:'./tests/e2e',testMatch:'**/contact-service.spec.ts',outputDir:'.test-output/contact-service-artifacts',workers:1,timeout:30000,reporter:[['list'],['json',{outputFile:'.test-output/contact-service-results.json'}]],use:{baseURL:'http://127.0.0.1:4327',trace:'retain-on-failure'},projects,webServer:{command:'npm run build:contact:contract && node --experimental-strip-types tests/fixtures/contact-service/serve.ts',url:'http://127.0.0.1:4327/contacto.html',reuseExistingServer:false,timeout:120000}});

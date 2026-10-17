@@ -10,3 +10,10 @@ playwright-report/
 .DS_Store
 __pycache__/
 *.pyc
+
+# Private Contact runtime files (including SQLite sidecars)
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.key

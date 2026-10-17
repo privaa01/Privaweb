@@ -1,0 +1,16 @@
+---
+import ContactNotice from './ContactNotice.astro';
+import type {ContactContent} from '../../content/contact';
+interface Props {content:ContactContent} const {content}=Astro.props;
+---
+<section id="escribir" tabindex="-1" aria-labelledby="contact-form-title"><p class="contact-eyebrow">CANAL DIRECTO</p><h2 id="contact-form-title">También puedes escribirnos</h2><p>¿Tienes una pregunta o quieres colaborar con nosotros? Envíanos tu consulta completando el siguiente formulario.</p><form data-contact method="post" action="/api/contacto/consultas" novalidate data-timeout="10000">
+<div data-error-summary tabindex="-1" hidden></div>
+<div class="contact-field-grid"><div><label for="contact-name">Nombre o alias</label><input id="contact-name" name="nameOrAlias" required autocomplete="nickname" aria-describedby="error-nameOrAlias"/><p id="error-nameOrAlias" class="contact-error"></p></div><div>
+<label for="contact-email">Correo electrónico</label><input id="contact-email" name="email" type="email" required autocomplete="email" aria-describedby="error-email"/><p id="error-email" class="contact-error"></p></div></div>
+<label for="contact-message">Mensaje</label><textarea id="contact-message" name="message" required rows="6" aria-describedby="error-message"></textarea><p id="error-message" class="contact-error"></p>
+<ContactNotice content={content}/><p data-js-required>Para enviar la consulta necesitas JavaScript. Puedes consultar los avisos y el canal alternativo de Instagram.</p>
+<button data-send type="submit" disabled>Enviar mensaje</button><p role="status" aria-live="polite" data-contact-status></p>
+<button data-retry type="button" hidden>Reintentar</button><button data-new type="button" hidden>Otra consulta</button>
+<div data-new-warning hidden><p>La consulta anterior podría estar guardada. Continuar no la cancela. La nueva consulta será independiente.</p><button data-continue type="button">Continuar con otra consulta</button><button data-stay type="button">Volver al intento anterior</button></div>
+</form></section>
+<script>import '../../scripts/contact-form';</script>

@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
-    "build": "node scripts/require-pages.mjs && node scripts/require-home-publication.mjs && node scripts/require-stories-publication.mjs && node scripts/require-app-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "build": "node scripts/require-pages.mjs && node scripts/require-home-publication.mjs && node scripts/require-stories-publication.mjs && node scripts/require-app-publication.mjs && node scripts/require-contact-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check:contract": "ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/navigation",
     "build:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/navigation",
@@ -26,7 +26,14 @@
     "check:app:contract": "ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/app",
     "build:app:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/app",
     "test:e2e:app:contract": "playwright test --config=playwright.app.config.ts",
-    "test:e2e:app:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.app.config.ts"
+    "test:e2e:app:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.app.config.ts",
+    "check:contact:service": "tsc -p server/contact/tsconfig.json",
+    "check:contact:contract": "ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/contact",
+    "build:contact:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/contact",
+    "test:contact": "node --experimental-strip-types --test tests/contact-*.test.ts",
+    "test:e2e:contact:contract": "playwright test --config=playwright.contact.config.ts",
+    "test:e2e:contact:service": "playwright test --config=playwright.contact.service.config.ts",
+    "test:e2e:contact:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.contact.config.ts"
   },
   "dependencies": {
     "astro": "7.4.0"

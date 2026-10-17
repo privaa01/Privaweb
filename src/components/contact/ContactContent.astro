@@ -1,0 +1,6 @@
+---
+import ContactHero from './ContactHero.astro';import ContactInstagram from './ContactInstagram.astro';import ContactForm from './ContactForm.astro';import ContactClosing from './ContactClosing.astro';
+import type {ContactContent} from '../../content/contact';import '../../styles/contact.css';
+interface Props {content:ContactContent;tracking?:boolean} const {content,tracking=false}=Astro.props;
+---
+<div class="contact-page"><ContactHero content={content} tracking={tracking}/><div class="contact-columns"><ContactInstagram content={content}/><ContactForm content={content}/></div><ContactClosing tracking={tracking}/></div>

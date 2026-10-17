@@ -144,3 +144,29 @@ Recursos/revisión, navegadores y entorno se verifican por separado; sin impleme
 [summary.md](004-presentacion-app/evidence/summary.md), sin cierre integrado.
 G03 de001 amplía regresión contractual por corrección de foco al repetir fragmento.
 Recursos/revisión, Firefox/WebKit, lector/fidelidad y entorno005 siguen pendientes.
+
+2026-10-17 — Especificación005 revisada: C01–C07 conservados, cuatro historias,
+validación de fronteras, guardado privado confirmado y reintento/concurrencia sin duplicados,
+incluido resultado desconocido. Siete criterios de éxito y checklist documental.
+Persistencia/datos operativos, recursos/Instagram, aviso y conservación siguen pendientes;
+sin implementación ni pruebas ejecutadas.
+
+2026-10-17 — Plan005: C01–C07 vinculados al [plan](005-contacto-publico/plan.md),
+modelo de consulta/intento/ledger, contratoUI/HTTP/repositorio y guía de validación.
+Frontend estático, receptorNode separado y SQLite real de referencia local, sin proveedor
+productivo inventado. OpciónA, idempotencia/borrado y gates documentados; sin implementación
+ni pruebas de aplicación. P01/P02/P03/P04 y aceptación integrada siguen pendientes.
+
+2026-10-17 — `$speckit-tasks 005`: [49 tareas locales](005-contacto-publico/tasks.md),
+organizadas en cuatro historias (8/11/6/8), ocho tareas de preparación/fundamentos y ocho
+de cierre. C01–C07/SC-001–SC-007 vinculados a tareas y pruebas futuras, incluida opción A,
+SQLite durable, validación en servidor y recuperación/borrado. 12 oportunidades [P]; todas
+pendientes. Materiales, operación productiva y verificación integrada siguen abiertos;
+sin implementación ni pruebas de aplicación ejecutadas por esta generación.
+
+2026-10-17 — `$speckit-implement 005`: [44/49 tareas](005-contacto-publico/tasks.md)
+completadas, [evidencia](005-contacto-publico/evidence.md) local para C01–C07/SC-001–SC-007.
+Página y receptor Node separado con SQLite de archivo, validación cliente/servidor, guardado
+Pendiente y reintentos/opción A. 66 Node + 39 UI + 4 navegador/SQLite de 005 pasan; regresión
+115 Node + 128 navegador pasa. T044–T048 siguen abiertas; recepción productiva y fidelidad final
+no aprobadas. No hay commit/push/despliegue ni cierre de CT01/006/008/009/010.

@@ -1,0 +1,9 @@
+import type {SocialLink} from '../config/social.ts';
+export interface Review {status:'pendiente'|'revisado';reference:string;value:string}
+export interface ContactImage {src:string;alt:string;width:number;height:number;status:'pendiente'|'verificado';reference:string}
+export interface ContactContent {testOnly:boolean;eyebrow:string;title:string;intro:string;image:ContactImage;brand:ContactImage;topics:string[];notice:{responsible:string;channel:string;manifesto:string;text:string};review:Review;visual:{typography:string;palette:string};social:SocialLink}
+export const warning='No incluyas contraseñas, códigos, datos bancarios ni información sensible tuya o de otras personas.';
+export const indicators=['Respuesta por correo electrónico','Deja tu consulta en el formulario'];
+export const closing=['Respondemos al correo que indiques','Puedes usar un alias'];
+const image=():ContactImage=>({src:'',alt:'',width:0,height:0,status:'pendiente',reference:''});
+export function draftContact(social:SocialLink):ContactContent{return {testOnly:false,eyebrow:'ESTAMOS AQUÍ PARA TI',title:'Contáctanos',intro:'Si tienes dudas, sugerencias o quieres compartir una historia, escríbenos. En Priva creemos en una comunidad más informada y segura, y tu mensaje es importante para nosotros.',image:image(),brand:image(),topics:['Anti-phishing','Contraseñas','Móviles','Brechas'],notice:{responsible:'',channel:'',manifesto:'/manifiesto-datos.html',text:'Tu nombre o alias, correo y mensaje se almacenan para consulta privada del equipo autorizado. La respuesta se envía al correo que indiques y se conserva asociada a tu consulta. Conservación: 90 días desde la última actividad. Puedes solicitar eliminación anticipada por el canal indicado. El tratamiento de copias y respaldos debe revisarse antes de la recepción real.'},review:{status:'pendiente',reference:'',value:''},visual:{typography:'',palette:''},social};}

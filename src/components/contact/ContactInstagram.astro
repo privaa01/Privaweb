@@ -1,0 +1,5 @@
+---
+import type {ContactContent} from '../../content/contact';
+interface Props {content:ContactContent} const {content:c}=Astro.props;
+---
+<section class="contact-instagram" aria-labelledby="instagram-contact"><h2 id="instagram-contact">Síguenos en Instagram</h2><p>En nuestro Instagram compartimos tips, noticias, casos y más contenido sobre la protección de datos y hábitos de navegación privada.</p><h3>Temas frecuentes que compartimos</h3><ul>{c.topics.map(topic=><li>{topic}</li>)}</ul>{c.social.status==='verificado'&&c.social.url?<a class="contact-button" href={c.social.url} target="_blank" rel="noopener noreferrer">Ir a Instagram<span class="sr-only"> (abre otra pestaña)</span></a>:<p>Instagram oficial pendiente de verificación.</p>}</section>

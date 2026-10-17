@@ -1,0 +1,133 @@
+# Implementation Plan: Historias, audio y reflexión educativa
+
+**Branch real**: `main` | **Date**: 2026-10-16 | **Spec**: [spec.md](spec.md)
+**Feature activa de los scripts**: `003-historias-educativas` (no crea rama Git).
+**Estado**: fases 0 y 1 de diseño; sin código ni pruebas de aplicación de 003.
+
+## Summary
+
+Construir /historias.html sobre PublicLayout de 001, con hero, catálogo, audio/transcripción,
+reflexión local, metodología, identidad y cierre en orden PDF 2. Reutilizar Astro y TypeScript;
+no añadir framework, reproductor externo, servicio analítico ni backend en esta feature.
+El shell estático obtiene una proyección pública actual desde un contrato de lectura de 007;
+no incrustar registros de administración ni un catálogo de producción congelado al compilar.
+Componentes y pruebas independientes usan fixtures identificados; no sustituyen integración
+ni materiales oficiales. H01–H12 y SC-001–007 se conservan.
+
+## Technical Context
+
+**Language/Version**: TypeScript 5.9.3 estricto, HTML/CSS; Node 24.19.0 y npm 11.9.0 existentes.
+**Primary Dependencies**: Astro 7.4.0, @astrojs/check 0.9.10, Playwright 1.64.1,
+axe 4.14.0 y @types/node 24.19.2. Sin dependencias nuevas previstas.
+**Storage**: configuración editorial versionada; catálogo persistido y recursos a cargo de 007.
+Selecciones únicamente en memoria DOM/JS, sin localStorage, sessionStorage, cookies ni envíos.
+**Testing**: validadores con node:test; Astro check/build de banco separado; Playwright/axe;
+regresión 001/002; aceptación integrada contra 007 real, medios y destinos aprobados.
+**Target Platform**: shell Astro estático, navegadores de escritorio/móvil; lectura JSON same-origin
+mediante fetch, controles HTMLMediaElement. API y distribución de recursos pendientes de 007.
+**Project Type**: página pública y consumidor de catálogo, no editor ni API implementada aquí.
+**Performance Goals**: hero/enlaces/metodología en HTML; preload=metadata, sin autoplay,
+imágenes con dimensiones reservadas y lazy fuera de hero. Feedback sin red ni espera asíncrona.
+No introducir SLA, volumen máximo, analítica o paginación arbitrarios. Medir catálogo completo
+con volumen representativo acordado con 007 antes de cerrar integración.
+**Constraints**: 7 anchos × texto 100%/200%, contraste 4.5:1 normal/3:1 grande y controles,
+controles objetivo 44px; recursos/copy/revisiones oficiales pendientes. Sin proveedor elegido.
+**Scale/Scope**: una página, tres casos iniciales elegibles, nuevas historias activas sin límite
+artificial de tres, tres opciones por caso, nueve explicaciones iniciales; cero respuestas almacenadas.
+
+## Constitution Check
+
+| Principios | Antes de investigación | Tras diseño |
+|---|---|---|
+| CONST-01–03 | H01–H12 y composición PDF 2 delimitan trabajo | Sin caso María adicional, comentarios, puntuación, editor o catálogo separado |
+| CONST-04 | IDs y escenarios locales preservados | Contratos/modelo/guía enlazados; no inventar IDs históricos ausentes |
+| CONST-05–06 | No recopilar selecciones ni secretos | Lectura pública sin credenciales; feedback local; render de texto sin HTML arbitrario |
+| CONST-07 | Solo publicada y activa pública | 007 filtra en servidor y controla recursos; sin fallback estático obsoleto |
+| CONST-08–09 | Materiales y hechos requieren validación | Gate editorial, audio real, transcripción, feedback anunciado, destinos verificados |
+| CONST-10–12 | Diseño no significa aceptación | Fixtures separados; recursos, integración y revisión visual bloquean cierre afectado |
+
+Gates previos y posteriores: pasa para diseño independiente, sin excepciones constitucionales.
+No hay incógnitas técnicas propias de 003 sin tratamiento; servicio, hosting y revocación de
+recursos siguen dependencias de 007, no hechos operativos confirmados. No autoriza publicar
+la página como completa sin esos servicios y materiales.
+
+## Project Structure
+
+### Documentation (this feature)
+
+```text
+specs/003-historias-educativas/
+├── spec.md
+├── plan.md
+├── research.md
+├── data-model.md
+├── contracts/historias.md
+├── quickstart.md
+└── checklists/requirements.md
+```
+
+`tasks.md` se genera después con `$speckit-tasks 003`; no se crea en este comando.
+
+### Source Code (previsto, no creado)
+
+```text
+src/pages/historias.astro
+src/components/stories/{StoriesContent,StoriesHero,StoriesCatalog,StoryCard,StoryAudio,StoryExercise,StoriesMethod,StoriesIdentity,StoriesClosing}.astro
+src/content/stories.ts
+src/config/social.ts
+src/lib/{stories-contract,stories-publication}.ts
+src/scripts/{stories-catalog,stories-audio,stories-exercise}.ts
+src/styles/stories.css
+scripts/require-stories-publication.mjs
+public/images/stories/
+playwright.stories.config.ts
+tests/stories-publication.test.ts
+tests/stories-contract.test.ts
+tests/fixtures/stories/{astro.config.mjs,tsconfig.json,public/,src/pages/}
+tests/e2e/{stories,stories-accessibility,stories-integration}.spec.ts
+```
+
+**Structure Decision**: PublicLayout pageId=historias y contentLayout=full ya disponibles;
+no copiar header/footer, lógica de menú o anclas de 001. CSS acotado a stories.
+Los componentes Astro definen shell y plantilla segura de tarjeta; el script instancia
+contenido desde DTO validado con textContent/atributos seguros, sin innerHTML de respuesta.
+Un solo camino de render/interacción se usa en producción y banco; fixtures no duplican UI.
+Contrato público en stories-contract sin importar modelos privados de 007.
+
+## Phase 0 — Investigación
+
+[research.md](research.md): reutilización, catálogo vigente frente a build estático,
+medios nativos, interacción local, gates y aislamiento. Investigación delegada según skill;
+consolidación basada en archivos del repo, sin servicios externos ni instalaciones.
+
+## Phase 1 — Diseño
+
+[data-model.md](data-model.md) define DTO/estados y validación;
+[contracts/historias.md](contracts/historias.md) fija interfaz de lectura propuesta a 007,
+DOM, errores, privacidad y pruebas; [quickstart.md](quickstart.md) separa comandos actuales
+de futuros y aceptación contractual de integrada. Cambios en el contrato durante planificación
+007 deben sincronizar consumidor y pruebas, sin ampliar requisitos por decisión técnica.
+
+## Estrategia de ejecución posterior
+
+1. Banco stories con salidas/cache/trazas/puerto propios; pruebas negativas de validación y publicación.
+2. Shell y hero/método/identidad/cierre; catálogo con carga/error/vacío/listado y expansión sin duplicar.
+3. Audio real nativo, metadatos, errores y transcripción; radios locales y feedback accesible.
+4. Gate de recursos/editorial/Instagram/marca y contrato configurado, previo a build y en entrada real.
+   Mantener guards de páginas y de Inicio. No añadir páginas ficticias ni bypass público.
+5. Matriz, privacidad, fallos y regresión; registrar resultados reales y bloqueos.
+6. Integrar 007, recursos y estado vigente incluyendo desactivar/reactivar/editar, URLs de recursos,
+   navegación a Inicio y cuenta Instagram compartida con 005. Solo entonces cierre integral.
+
+No se implementa endpoint, subida, autenticación, hosting ni publicación administrativa en 003.
+El guard local no prueba vigencia remota: cierre requiere evidencia de integración real.
+
+## Complexity Tracking
+
+Sin infracciones. fetch/DTO y banco separado se justifican por estado persistido vigente y
+pruebas independientes; no introducir una segunda app, almacén de respuestas o framework UI.
+
+## Registro
+
+2026-10-16 — `$speckit-plan 003`: diseño de fases 0/1 y contratos de consumidor.
+Sin código, instalación, pruebas de aplicación, commit o publicación.

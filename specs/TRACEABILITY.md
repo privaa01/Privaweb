@@ -106,3 +106,12 @@ Sin implementación o pruebas ejecutadas; los estados de aplicación no cambian.
 23 pruebas de publicación, 23 UI de Inicio y 44 de regresión 001 aprobadas.
 Evidencia en [summary.md](002-inicio-institucional/evidence/summary.md).
 P01/P03/P04, lector de pantalla y aceptación integrada siguen pendientes.
+
+2026-10-16 — Especificación 003 revisada: H01–H12 conservados, cuatro historias y
+escenarios concretos, siete criterios de éxito y checklist documental. Recursos,
+nueve explicaciones, Instagram e integración 007 pendientes; estado No ejecutado.
+
+2026-10-16 — Plan 003: H01–H12 enlazados al [plan](003-historias-educativas/plan.md),
+modelo, contrato público de catálogo/medios/reflexión y guía de validación futura.
+Consumidor estático con lectura vigente propuesta a007; sin backend ni pruebas ejecutadas.
+Recursos, revisión editorial, Instagram e integración siguen pendientes; estado No ejecutado.

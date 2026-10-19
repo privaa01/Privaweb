@@ -1,6 +1,7 @@
 # Contratos de acceso, sesión y recuperación — 006
 
-Fecha: 2026-10-19. Contratos futuros; ninguna ruta o cuenta se ha desplegado por este plan.
+Fecha: 2026-10-19. Contratos implementados y comprobados localmente; ninguna ruta o cuenta
+productiva se ha desplegado. Ver [evidencia](../evidence.md).
 Entidades/TTL: [modelo](../data-model.md). Requisitos originales AD01/AD02 intactos.
 
 ## C1 — Rutas de documento y frontera privada
@@ -28,7 +29,8 @@ y un cambio de cuenta obliga a limpiar/revalidar las otras vistas locales.
 Todo admin/API: Cache-Control:no-store, Referrer-Policy:no-referrer, X-Content-Type-Options:nosniff,
 CSP default-src 'self', script/style-src 'self', connect-src 'self', frame-ancestors 'none',
 base-uri 'none', form-action 'self'; sin servicios externos en acceso/reset ni framing autorizado.
-Solo origen HTTPS exacto configurado; link de correo usa ese origen, nunca Host/Forwarded del request.
+Solo origen HTTPS exacto configurado (`PRIVA_ADMIN_PUBLIC_ORIGIN`); link de correo usa ese origen,
+nunca Host/Forwarded del request.
 
 API mutadora: POST application/json UTF8, cuerpo <=8 KiB, Origin exacto obligatorio y header
 X-Priva-Request:1. Rechazar Sec-Fetch-Site:cross-site, CORS amplio, GET mutador y payload en URL.
@@ -50,6 +52,10 @@ ni desactivar verificación. HTTP local no acredita HTTPS/proxy productivos.
 Sin credenciales en logs, mensajes públicos o respuestas de error. Resultados se correlacionan con
 petición/generación del formulario; timeout cliente 10s pasa a unknown cuando el resultado puede
 haber ocurrido. No autoplay de una edición/respuesta pendiente después de nuevo login.
+Tras confirmar el login, el cliente navega exclusivamente a `/admin` del mismo origen. No se
+admiten destinos de retorno proporcionados por URL, formulario ni respuesta de API (por ejemplo,
+returnTo/next/redirect); se ignoran también variantes externas, relativas al protocolo o codificadas.
+La navegación no ejecuta modificaciones: cada acción posterior requiere autorización y decisión nuevas.
 
 | Método/ruta | Entrada / contexto | Resultado |
 |---|---|---|
@@ -91,7 +97,8 @@ SQL/debug, correo de prueba, introspección de sesión de otra persona o inyecci
 
 ## C4 — Guard transaccional y serialización
 
-Interfaz interna withAuthorizedTransaction(sessionToken,operation) inicia unidad transaccional,
+Interfaz interna withAuthorizedTransaction(sessionToken,operation) exige callback síncrono (sin await/Promise),
+rechaza funciones async antes de ejecutarlas e inicia unidad transaccional,
 comprueba cuenta/sesión/vigencia/versión y ejecuta lectura/cambio dentro del mismo límite; solo
 confirma tras commit. Lecturas también comprueban antes de entregar datos. Logout/revocación/reset
 usan la misma coordinación para que una operación posterior a su commit no use la autorización vieja.
@@ -123,8 +130,10 @@ No comparar tiempos con el proveedor dentro del request. Ventana objetivo para r
 válida: mínimo 250ms desde recepción + jitter 0–50ms independiente de existencia; límite de respuesta
 no se presume si la infraestructura está saturada. No afirmar tiempo constante por esta pausa.
 Aceptación temporal en entorno controlado: 20 muestras alternadas por clase, identidades sintéticas
-sin superar buckets, mismo cuerpo/headers/status y diferencias entre medianas <=50ms y p95 <=100ms
-para conocidas/desconocidas/desautorizadas y fallos de worker. Registrar carga y valores observados.
+sin superar buckets y mismo cuerpo/headers/status. Para cada par de clases A/B (conocida,
+desconocida, desautorizada y fallo de worker), exigir abs(mediana(A)-mediana(B)) <=50ms y
+abs(p95(A)-p95(B)) <=100ms. Estos umbrales comparan clases, no limitan la latencia absoluta
+de una respuesta; se mantiene el mínimo de 250ms + jitter 0–50ms. Registrar carga y valores observados.
 Si no se cumple, corregir o bloquear calificación; no ensanchar tolerancias en silencio ni presentar
 esta prueba como garantía criptográfica o de comportamiento bajo toda carga productiva.
 

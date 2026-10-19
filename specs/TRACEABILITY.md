@@ -40,8 +40,8 @@
 | C05 | Validación y carga de Contacto | [005-contacto-publico](005-contacto-publico/spec.md) | No ejecutado |
 | C06 | Guardado y estados de Contacto | [005-contacto-publico](005-contacto-publico/spec.md) | No ejecutado |
 | C07 | Bloque final y aviso de Contacto | [005-contacto-publico](005-contacto-publico/spec.md) | No ejecutado |
-| AD01 | Acceso, recuperación y cierre de sesión | [006-acceso-administrativo](006-acceso-administrativo/spec.md) | No ejecutado |
-| AD02 | Panel y permisos | [006-acceso-administrativo](006-acceso-administrativo/spec.md) | No ejecutado |
+| AD01 | Acceso, recuperación y cierre de sesión | [006-acceso-administrativo](006-acceso-administrativo/spec.md) | Verificado localmente; aceptación productiva pendiente |
+| AD02 | Panel y permisos | [006-acceso-administrativo](006-acceso-administrativo/spec.md) | Verificado localmente; aceptación productiva pendiente |
 | AD03 | Resumen y contadores | [007-gestion-historias](007-gestion-historias/spec.md) | No ejecutado |
 | AD04 | Tabla de historias | [007-gestion-historias](007-gestion-historias/spec.md) | No ejecutado |
 | AD05 | Activar/desactivar historia | [007-gestion-historias](007-gestion-historias/spec.md) | No ejecutado |
@@ -182,3 +182,17 @@ modelo, contrato y guía de validación para AD01/AD02/SC-001–SC-007. Astro es
 fuera de dist, servicio Node, referencia SQLite y autorización transaccional; hash/sesión/recuperación
 con políticas explícitas y correo separado del acuse público. Sin implementación ni pruebas 006;
 proveedor/provisión/correo P02, privacidad 009, avisos y revisión visual permanecen pendientes.
+
+2026-10-19 — `$speckit-tasks 006`: [63 tareas locales](006-acceso-administrativo/tasks.md),
+por cuatro historias (12/9/7/15), 12 de preparación/fundamentos y ocho de cierre; 11 oportunidades
+[P]. AD01/AD02 y SC-001–SC-007 enlazados a pruebas futuras de acceso, autorización por operación,
+cierre, recuperación/correo y calificación real. Todas pendientes; sin implementación ni pruebas
+de aplicación. P02/009/010/011 siguen identificados y no se aprueban por generar tareas.
+
+2026-10-19 — `$speckit-implement 006`: AD01/AD02 implementados y verificados localmente
+con cuentas sintéticas, SQLite real, scrypt, guard en la misma transacción que la operación,
+cookies/CSRF, cierre durable, recuperación con proof de un uso/outbox cifrado/worker y provisión
+restringida. 58/63 tareas verificadas; T058–T062 abiertas por navegadores, recursos/revisión manual,
+P02/009/010, correo/entorno reales y build de entrega. [Evidencia](006-acceso-administrativo/evidence.md)
+separa Node, UI mock, servicio real con doble local y operación productiva no verificada.
+No cierra AD01/AD02, gestión007/bandeja008, CT01 o política009; sin commit/push/despliegue.

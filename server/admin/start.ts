@@ -1,0 +1,128 @@
+import { createServer } from "node:http";
+import { resolve, isAbsolute } from "node:path";
+import { pathToFileURL } from "node:url";
+import { lstatSync, existsSync } from "node:fs";
+import { adminContent } from "../../src/content/admin.ts";
+import { adminReadiness } from "../../src/config/admin.ts";
+import { adminPublicationIssues } from "../../src/lib/admin-publication.ts";
+import { openAdminRuntime } from "./runtime.ts";
+import { AdminService } from "./service.ts";
+import { RecoveryService } from "./recovery.ts";
+import { MailWorker } from "./mail-worker.ts";
+import { createAdminHandler } from "./http.ts";
+import type { MailAdapter } from "./repository.ts";
+export async function startAdmin() {
+  const issues = adminPublicationIssues(adminContent, adminReadiness);
+  if (issues.length) throw Error("Administrative publication not qualified");
+  const raw = process.env.PRIVA_ADMIN_PUBLIC_ORIGIN,
+    dir = process.env.PRIVA_ADMIN_DATA_DIR,
+    adapterPath = process.env.PRIVA_ADMIN_MAIL_ADAPTER;
+  const origin = new URL(raw ?? "invalid");
+  if (
+    origin.protocol !== "https:" ||
+    origin.origin !== raw ||
+    origin.username ||
+    origin.password ||
+    !dir ||
+    !isAbsolute(dir) ||
+    !adapterPath ||
+    !isAbsolute(adapterPath)
+  )
+    throw Error("Missing qualified runtime configuration");
+  const st = lstatSync(adapterPath);
+  if (!st.isFile() || st.isSymbolicLink() || (st.mode & 0o022) !== 0)
+    throw Error("Unsafe operator adapter");
+  const adapter = (await import(pathToFileURL(adapterPath).href))
+    .mailAdapter as MailAdapter;
+  if (
+    !adapter ||
+    typeof adapter.send !== "function" ||
+    typeof adapter.idempotent !== "boolean"
+  )
+    throw Error("Invalid MailAdapter");
+  const port = Number(process.env.PRIVA_ADMIN_PORT ?? "4329");
+  if (!Number.isInteger(port) || port < 1024 || port > 65535)
+    throw Error("Invalid port");
+  const viewsRoot = resolve(".private-build/admin");
+  for (const page of [
+    "login",
+    "panel",
+    "historias",
+    "contacto",
+    "recuperar",
+    "restablecer",
+  ])
+    if (!existsSync(resolve(viewsRoot, page + ".html")))
+      throw Error("Private templates missing");
+  if (!existsSync(resolve("public", "." + adminReadiness.officialBrand)))
+    throw Error("Official brand missing");
+  const runtime = openAdminRuntime(dir, [
+    resolve("public"),
+    resolve("dist"),
+    viewsRoot,
+    resolve(".git"),
+  ]);
+  const service = new AdminService(
+    runtime.repository,
+    runtime.hasher,
+    runtime.abuseKey,
+  );
+  const recovery = new RecoveryService(
+    runtime.repository,
+    runtime.hasher,
+    runtime.abuseKey,
+    runtime.mailKey,
+    origin.origin,
+  );
+  const worker = new MailWorker(
+    runtime.repository,
+    new Map([["v1", runtime.mailKey]]),
+    adapter,
+  );
+  let work: Promise<unknown> | undefined;
+  const timer = setInterval(() => {
+    if (!work)
+      work = (async () => {
+        runtime.repository.purge();
+        await worker.tick();
+      })()
+        .catch(() => {
+          console.error("admin_maintenance_failed");
+        })
+        .finally(() => {
+          work = undefined;
+        });
+  }, 1000);
+  const server = createServer(
+    createAdminHandler({
+      ...runtime,
+      service,
+      recovery,
+      origin: origin.origin,
+      viewsRoot,
+    }),
+  );
+  server.requestTimeout = 30000;
+  server.headersTimeout = 30000;
+  server.listen(port, "127.0.0.1");
+  const stop = () => {
+    clearInterval(timer);
+    server.close(async () => {
+      await work;
+      runtime.repository.close();
+    });
+  };
+  process.on("SIGTERM", stop);
+  process.on("SIGINT", stop);
+  return { server, stop };
+}
+if (
+  process.argv[1] &&
+  import.meta.url === pathToFileURL(resolve(process.argv[1])).href
+)
+  startAdmin().catch(() => {
+    console.error(
+      "BLOQUEADO 006: configuración, recursos u operación no calificados. No se inició administración.",
+    );
+    process.exitCode = 1;
+  });

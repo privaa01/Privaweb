@@ -2,8 +2,8 @@
 
 **Feature Directory**: `specs/006-acceso-administrativo`
 **Created**: 2026-10-16
-**Updated**: 2026-10-17
-**Status**: Especificación revisada documentalmente; implementación y pruebas de 006 no ejecutadas.
+**Updated**: 2026-10-19
+**Status**: Implementación local verificada; aceptación final pendiente de T058–T062. Ver [evidencia](evidence.md).
 **Input**: `/speckit-specify 006`: desarrollar la feature existente sin ampliar el alcance.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), AD01/AD02 y C26;
 [constitución 1.0.0](../../.specify/memory/constitution.md), especialmente CONST-03–06/08–10;
@@ -341,12 +341,13 @@ Son criterios para la implementación, no pruebas ejecutadas por este comando.
 
 | ID original | Requisito local | Escenarios | Fuente | Estado |
 |---|---|---|---|---|
-| AD01 | FR-001 | US1.1–6; US2.3–6; US3.1–4; US4.1–7 | Captura login / R35 C26 | No ejecutado |
-| AD02 | FR-002 | US1.2; US2.1–6; US3.4 | Captura consola / R35 C26 | No ejecutado |
+| AD01 | FR-001 | US1.1–6; US2.3–6; US3.1–4; US4.1–7 | Captura login / R35 C26 | Verificado localmente; correo real/P02 y cierre final pendientes |
+| AD02 | FR-002 | US1.2; US2.1–6; US3.4 | Captura consola / R35 C26 | Guard/navegación verificados localmente; integración operativa pendiente |
 
 Los escenarios son locales a 006, no IDs de historias/criterios históricos ausentes.
-P02 y las revisiones de privacidad/recursos siguen abiertas; este documento no acredita una sesión
-real, un correo recibido ni la protección ya desplegada de 007/008.
+P02 y las revisiones de privacidad/recursos siguen abiertas. La evidencia acredita sesiones reales
+en SQLite local con cuentas sintéticas; no acredita correo productivo recibido ni despliegue o
+protección integrada de las funciones futuras 007/008.
 
 ## Registro
 
@@ -354,3 +355,7 @@ real, un correo recibido ni la protección ya desplegada de 007/008.
 medibles de acceso, permisos, cierre y recuperación. Defaults de seguridad derivados identificados;
 provisión/correo/políticas/recursos pendientes separados. Sin código, pruebas de aplicación, commit,
 push ni cambios de rama. Siguiente fase: aclaración y planificación de las decisiones aplicables.
+
+2026-10-19 — `$speckit-implement 006`: acceso, guard transaccional, cierre y recuperación locales,
+provisión restringida y worker cifrado implementados. Evidencia, tareas y trazabilidad sincronizadas;
+58/63 tareas verificadas, sin commit/push/despliegue. AD01/AD02 conservan aceptación final pendiente.

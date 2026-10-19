@@ -1,0 +1,9 @@
+---
+import {adminContent as content} from '../../content/admin';
+---
+<main class="admin-auth"><a class="admin-brand" href="/">{content.brand}</a><h1>{content.welcome}</h1><p>{content.introduction}</p>
+<form data-admin-login method="post" novalidate><label for="admin-email">Correo</label><input id="admin-email" name="email" type="email" autocomplete="username" required aria-describedby="email-error"/><small id="email-error" data-error="email"></small>
+<label for="admin-password">Contraseña</label><div class="password-field"><input id="admin-password" name="password" type="password" autocomplete="current-password" required aria-describedby="password-error"/><button type="button" data-toggle aria-label="Mostrar contraseña" aria-pressed="false">Mostrar</button></div><small id="password-error" data-error="password"></small>
+<button type="submit" disabled>Entrar <span aria-hidden="true">→</span></button><p role="status" aria-live="polite" data-feedback></p></form>
+<a href="/admin/recuperar">Recuperar contraseña</a><noscript><p>Activa JavaScript para iniciar sesión. No se enviarán credenciales por URL.</p></noscript></main>
+<script>import '../../scripts/admin-login';</script>

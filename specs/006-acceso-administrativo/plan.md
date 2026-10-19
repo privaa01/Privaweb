@@ -2,7 +2,7 @@
 
 **Rama real**: `main` | **Fecha**: 2026-10-19 | **Spec**: [spec.md](spec.md)
 **Feature activa**: `006-acceso-administrativo`; la selección SDD no crea una rama Git.
-**Estado**: diseño de fases 0/1; sin código ni pruebas de aplicación de 006.
+**Estado**: implementación local verificada según [tareas](tasks.md) y [evidencia](evidence.md); operación/aceptación final pendientes.
 **Input**: AD01/AD02, C26, capturas administrativas y constitución 1.0.0.
 Clarificación previa: no se encontraron preguntas funcionales críticas; políticas técnicas para este plan.
 
@@ -78,9 +78,10 @@ specs/006-acceso-administrativo/
 └── checklists/requirements.md
 ```
 
-No generar tasks.md ni código mediante este comando.
+[tasks.md](tasks.md) contiene el desglose de ejecución generado después de este plan;
+la generación de documentación no implementa código.
 
-### Código previsto, no creado
+### Código implementado para verificación local
 
 ```text
 src/components/admin/{AdminLogin,AdminRecovery,AdminReset,AdminShell,AdminNavigation}.astro
@@ -108,6 +109,7 @@ server/admin/
     ├── tsconfig.json
     └── src/pages/{login,recuperar,restablecer,panel,historias,contacto}.astro
 scripts/require-admin-publication.mjs
+playwright.admin.projects.ts
 playwright.admin.config.ts
 playwright.admin.service.config.ts
 tests/admin-{validation,password,publication,session,recovery,repository,http}.test.ts
@@ -121,7 +123,9 @@ tests/e2e/admin-{access,session,recovery,accessibility,service,integration}.spec
 Node resuelve una tabla exacta de rutas a plantillas: público login/recuperar/restablecer; privado
 panel/historias/contacto. Solo assets compilados permitidos se sirven sin autenticación. Denegar
 alias .html privados, traversal y acceso directo a .private-build. En público, `/admin/login`
-conserva el contrato de 001 aunque el fichero interno sea login.html.
+conserva el contrato de 001 aunque el fichero interno sea login.html. Tras confirmar acceso,
+el cliente navega siempre a `/admin` del mismo origen; no admite destinos de retorno de URL,
+formulario ni API y no reproduce acciones pendientes (contrato C3; T014/T019/T022).
 
 Entrada separada `server/admin/start.ts`, origen configurado y proxy reservado `/admin`/`/api/admin`;
 no introducir fallback que atienda estas rutas desde hosting estático. `server/contact/start.ts` y su
@@ -132,14 +136,14 @@ no verificar sesión en una conexión y escribir en otra sin coordinación equiv
 ## Phase 0 — Investigación
 
 [research.md](research.md) consolida investigación delegada de sesiones/hash y recuperación/correo,
-lectura de 005, spec/constitución y patrones de fixtures. No se ejecutó benchmark ni prueba de 006.
+lectura de 005, spec/constitución y patrones de fixtures. En esa fase no se ejecutó benchmark ni prueba de 006; los resultados posteriores están en [evidence.md](evidence.md).
 La disponibilidad del runtime se conoce del entorno y 005, no certifica criptografía o rendimiento de 006.
 
 ## Phase 1 — Diseño
 
 [data-model.md](data-model.md) fija entidades, límites y transiciones.
 [contracts/admin-access.md](contracts/admin-access.md) define rutas, seguridad, políticas y transacciones.
-[quickstart.md](quickstart.md) distingue comandos futuros y pruebas de UI, SQLite local y operación real.
+[quickstart.md](quickstart.md) distingue comandos disponibles y pruebas de UI, SQLite local y operación real.
 Las decisiones técnicas propias quedan definidas. Proveedor/remitente/responsable y políticas P02/009
 siguen siendo requisitos operativos externos, no incertidumbres ocultas ni autorización para inventarlos.
 
@@ -167,3 +171,7 @@ Son mecanismos para los flujos aprobados, no nuevas funciones de panel o un sist
 
 2026-10-19 — `$speckit-plan 006`: fases 0/1 documentadas; AD01/AD02 intactos. Sin implementación,
 pruebas de aplicación, benchmark, correos, creación de cuentas ni despliegue.
+
+2026-10-19 — Implementación local: vistas privadas fuera de dist, servicio independiente, guard
+transaccional, scrypt/cookies/CSRF, reset de un uso y worker cifrado. T058–T062 abiertas;
+no se eligió proveedor, remitente ni política productiva. Resultados en evidence.md.

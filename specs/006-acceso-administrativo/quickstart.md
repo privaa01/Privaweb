@@ -1,116 +1,135 @@
 # Guía de validación — 006
 
-Fecha: 2026-10-19. Comandos previstos tras implementar; **todavía no existen los scripts/archivos
-nuevos**. Este documento no acredita autenticación, benchmark ni correo recibido.
+Fecha: 2026-10-19. Implementación local disponible; la aceptación final está pendiente.
+Resultados y bloqueos: [evidence.md](evidence.md). El correo del banco es un doble privado,
+no recepción productiva. Requisitos AD01/AD02; [contrato](contracts/admin-access.md).
 
-## Prerrequisitos
+## Entorno y comandos
 
-Raíz /workspace/Privaweb, Node 24.19.0, dependencias del lock (`npm ci` existente), Python 3 y
-Chromium del sistema. Mantener verificaciones TLS e integridad de paquetes. No añadir dependencias
-por defecto. TSC del servicio debe incluir server/admin, módulos compartidos y wrappers de pruebas;
-Astro check del frontend no acredita tipos del backend por accidente.
-
-Leer [contrato](contracts/admin-access.md), [modelo](data-model.md) y [plan](plan.md).
-Recursos/cuentas de prueba se crean por proceso privado y son sintéticos; no credenciales reales en
-capturas, trazas, consola o repositorio. Ninguna prueba debe enviar correo a terceros sin autorización.
-
-## Comandos futuros, no ejecutados
+Usar el checkout existente `/workspace/Privaweb`, Node24+ para el servicio, dependencias del lock,
+Python3 y Chromium `/usr/bin/chromium`. No hacen falta paquetes nuevos ni modificar el lock.
+Mantener TLS, integridad de paquetes, Secure y sandbox. Revisar cambios locales antes de trabajar.
 
 ```bash
-npm run test:admin
 npm run check:admin:service
 npm run check:admin:contract
+npm run test:admin
 npm run build:admin:contract
 PRIVA_CHROMIUM_EXECUTABLE=/usr/bin/chromium npm run test:e2e:admin:contract -- --project=chromium
 PRIVA_CHROMIUM_EXECUTABLE=/usr/bin/chromium npm run test:e2e:admin:service -- --project=chromium
-PLAYWRIGHT_BROWSERS_PATH=/workspace/.cache/ms-playwright npm run test:e2e:admin:contract -- --project=firefox --project=webkit
 ```
 
-Scripts deberán separar UI mock Python4328 (.test-output/admin, admin-cache/admin-artifacts y
-admin-results.json) de servicio Node4329 con SQLite real (admin-service-artifacts y
-admin-service-results.json). Datos/claves/sobres del banco bajo .test-output/admin-service-data
-0700, fuera de cualquier staticroot; el root de vistas solo contiene contenido sintético/shell vacío.
-Node tests usan directorios/puertos aislados y reloj inyectado por proceso. Fallos controlados solo
-mediante DI/archivo del wrapper privado, sin ruta/header/query de prueba en servidor real.
-No ejecutar dos builds del mismo root ni bancos que compartan DB simultáneamente.
+Los scripts de Playwright construyen, arrancan y cierran sus servicios automáticamente. No ejecutar
+simultáneamente dos comandos del mismo banco/root/puerto. No se requiere un servidor persistente.
 
-Producción compila root server/admin/views a .private-build/admin mediante build:admin:views;
-este root NO se sirve con Python ni se copia a public/dist. Entry futuro server/admin/start.ts
-exige calificación de configuración/gates. Proxy del origen HTTPS reserva /admin y /api/admin
-al servicio; no fallback estático privado. .private-build, DB/key/WAL/SHM y sobres deben ignorarse en Git.
+| Banco | Arranque/puerto | Salida y alcance |
+|---|---|---|
+| UI | Python4328, `tests/fixtures/admin/serve.py` | `.test-output/admin`; componentes reales/API mock explícita |
+| Servicio | Node4329, `tests/fixtures/admin-service/serve.ts` | `.private-build/admin`; SQLite/cookies/CSRF/worker reales con cuentas y buzón sintéticos |
+| Node | Puertos/directorios temporales aislados | Archivo SQLite real, procesos independientes, reloj inyectado |
 
-## Recorrido por capas
+El supervisor privado de pruebas siembra cuentas solo al iniciar el banco. SIGUSR2 reinicia el
+proceso servidor sin resembrar; su PID, DB, claves e inbox están en `.test-output/admin-service-data`
+0700/0600 fuera del staticroot. `writer.ts` recibe JSON por stdin de procesos autorizados, nunca por
+HTTP. El servidor productivo no importa estos helpers ni contiene endpoints/flags de prueba.
+No extraer claves, cookies, passwords, CSRF, comprobantes o enlaces en consola/evidencia.
 
-1. **Validación y publicación**: correo coherente en provisión/login/recuperación, contraseña
-   14/15/128/129 puntos de código y Unicode/espacios sin transformación; rechazo explícito de
-   surrogates aislados/controles, sin sustitución silenciosa al codificar; gestores/pegado/toggle;
-   fixtures rechazados por gate, recursos/copy/revisiones pendientes no publicables.
-2. **Hash/capacidad**: verificar salt/parámetros y comparación; usuario desconocido usa hash dummy;
-   dos trabajos activos/ocho en espera, saturación uniforme y memoria/latencia medidas. No llamar
-   benchmark a importar crypto ni rebajar coste para obtener un check verde.
-3. **SQLite/provisión real de prueba**: archivo privado, WAL/FULL/FK/busy_timeout efectivos por
-   conexión; permisos DB/clave/WAL/SHM y rechazo de rutas públicas/symlinks. Crear dos cuentas
-   sintéticas mediante helper privado y demostrar permisos iguales; reiniciar y releer por proceso
-   autorizado, sin endpoint SQL/debug/alta. CLI de producción sin cuenta default ni contraseña en argv.
-4. **Acceso**: login válido/erróneo/desconocido/desautorizado, datos inválidos y fallos antes/después
-   de commit; ningún éxito antes de guardado ni identidad vieja por callback tardío. Capturar atributos
-   de cookie, no su valor; probar rotación, CSRF y origen ajeno/ausente. Una respuesta perdida obliga
-   a consultar sesión vigente y correlacionar la cuenta, nunca repetir credencial automáticamente.
-5. **Frontera privada**: GET de HTML y lecturas/cambios directos con sesión ausente/inválida/expirada/
-   cerrada o cuenta revocada; denegar antes de entregar datos o modificar. Prueba de operación privada
-   inyectada comparte transacción con guard. Dos procesos compiten logout/reset/revocación vs write:
-   solo se aceptan acciones ordenadas antes de invalidación; código de prueba no crea rutas de demo.
-6. **Salida/navegador**: cierre normal, repetido, expirado y desconocido; DOM privado vacío desde el
-   clic, sin reaparición por respuesta/finally viejos. Historial/pageshow, recarga, dos pestañas y vuelta
-   visible revalidan. No polling que renueve 30min de inactividad; probar 30min/8h y sus fronteras con reloj.
-7. **Recuperación con doble identificado**: 202/copy/headers iguales para direcciones conocidas,
-   desconocidas y sin autorización; errores selectivos del worker no llegan al request. No conservar
-   correo desconocido/IP cruda; comprobar HMAC/buckets/TTL. Comparar muestras temporales de C5,
-   sin confundir una pausa con prueba de no enumeración. Dobles no prueban recepción de correo.
-8. **Reset/transacciones**: recuperar token solo del buzón sintético privado del doble local; ver/GET
-   no consume, token no queda en URL/storage/log. 15min de vigencia, alteración/uso ajeno/expiración,
-   dos escritores, reset con navegador sin sesión y con sesión de la misma/otra cuenta,
-   reset mientras login calcula hash, revocación mientras worker prepara correo;
-   solo un cambio, clave vieja rechazada, sesiones/tokens anteriores inválidos y commit incierto sin
-   éxito falso. Probar outbox cifrado, reinicio/lease/retry/expiry y aceptación externa desconocida.
-9. **Browser compuesto**: componentes compilados reales + cookies/CSRF/servicio/SQLite reales,
-   sin intercepción de API. Verificación de DB por proceso privado, sin secretos en reportes.
-   Repetir permisos y salidas con dos cuentas; no afirmar que implementa gestión 007/bandeja008.
-10. **Accesibilidad/recursos**: 360/390/430/768/1024/1280/1440 × texto100/200 antes de navegación,
-    carga/error/empty/unknown, teclado/foco/feedback, axe/contraste/controles y overflow; lector/fidelidad
-    manual separados. Sin JS, formulario inactivo y aviso honesto, sin GET con contraseña o correo.
+Traces, vídeo, screenshots y snapshots automáticos de error se desactivan para los flujos 006;
+`PLAYWRIGHT_NO_COPY_PROMPT=1` evita capturar contraseñas escritas en snapshots de Playwright1.64.1.
+Los reportes no deben convertirse en evidencia con secretos. No usar cuentas reales en estos bancos.
 
-## Configuración y calificación productiva
+Reportes: `.test-output/admin-results.json`, `admin-service-results.json` y respectivos artifacts.
+`PRIVA_ADMIN_REPORT_TAG=browser-smoke` o `session` separa verificaciones focalizadas del reporte general.
+Los logs y reportes son locales/ignorados; evidence.md conserva resultados saneados.
 
-Prever nombres de configuración, no valores secretos: PUBLIC_ORIGIN, PRIVA_ADMIN_DATA_DIR,
-PRIVA_ADMIN_PORT, referencias/versiones de claves privadas, adaptador de correo/remitente y proxy
-confiable. No suponer que hay proveedor por existir esos nombres; confirmar bindings disponibles
-antes de pedir credenciales, sin imprimir sus valores. Claves se generan/guardan por runtime
-restringido y no se pasan por argv. Versiones antiguas de cifrado solo mientras haya sobres vigentes.
+## Qué se comprueba
 
-Antes de calificar: recursos/copy/avisos revisados, política de cuentas/seguridad/copias con 009/P02,
-provisión responsable, directorio y adaptador productivos, HTTPS/proxy/cookies/CSRF, medición scrypt,
-abuso sin enumeración y proveedor/remitente/buzón de prueba controlado. Un certificado local no
-califica transporte externo ni el guard local demuestra disponibilidad del proveedor.
+- Correo 1–254 puntos de código, trim y emailKey minúscula conservando puntos/+; sin maxlength
+  HTML que trunque Unicode. Password nueva 15–128 puntos, sin controles/surrogates/transformación;
+  login admite claves previas estructuralmente válidas. Lista local versionada, revisión P02 pendiente.
+- Scrypt-v1 N131072/r8/p1, salt16/hash64/maxmem192MiB; hash dummy, comparación constante,
+  dos trabajos activos/ocho en cola y saturación antes de consultar identidad. Benchmark local ≠ SLA.
+- SQLite WAL/FULL/FK/busy_timeout5000, directorio0700/archivos0600 y rechazo de roots públicos/symlinks.
+- Sesiones con 30min inactividad/8h absoluto; estado/contexto no renuevan actividad. Cookies __Host,
+  Secure/HttpOnly/SameSite=Strict/Path=/; login rota sesión y consume preauth de5min. CSRF/origen/header
+  no simple, JSON UTF8≤8KiB y no-store/CSP. No registro público ni roles adicionales.
+- Navegación posterior al login siempre `/admin` del mismo origen; ignora returnTo/next/redirect de
+  URL/formulario/API y nunca reproduce modificaciones. Guard antes de HTML y dentro de la misma
+  transacción que cada operación privada; callback síncrono obligatorio, sin await/Promise. Dos cuentas con igual permiso; slots 007/008 sin datos falsos.
+- Salida durable del acceso actual, replay denegado, historial/tabs/expiración, resultado desconocido
+  sin reabrir datos, respuestas tardías descartadas y reinicio completo del proceso.
+- Recuperación indistinguible: 202 condicional aun ante límite de identidad/fallo selectivo, sin
+  afirmar entrega. Límites globales/conexión antes de lookup; HMAC sin IP/correo desconocido crudos.
+- Proof32B/15min/digest, GET no consume; outbox AES256GCM/AAD/nonce/tag/keyVersion y worker con lease60s,
+  máximo3 intentos/30s–120s/timeout10s. Sin reenvío ciego de aceptación desconocida no deduplicable.
+  Versiones de claves anteriores se retiran del keyring al no quedar sobres vigentes (máximo15min).
+- Reset: hash fuera de transacción, revalidación final, nuevo hash/verificación/version++/todos los
+  proofs/sesiones invalidados atómicamente. Sin autologin ni reenvío automático de contraseña.
+  CSRF puede provenir de otra sesión, pero solo el proof decide qué cuenta se recupera.
+- Temporización C5: 20 muestras alternadas por clase bajo carga registrada; comparar cada par de
+  medianas≤50ms y p95≤100ms, conservando mínimo250ms+jitter0–50ms. No equivale a tiempo constante.
+- Matriz 7 anchos×texto100/200 antes de carga, labels/errores/foco/teclado/aria-live/axe/contraste y
+  controles≥44px, overflow y sin JS sin GET de credenciales. Lector y fidelidad manual siguen pendientes.
+
+## Vistas y provisión
 
 ```bash
-PRIVA_INTEGRATION_BASE_URL=https://entorno-real-verificado.example npm run test:e2e:admin:integration
-npm run build
+npm run build:admin:views:local
 ```
 
-URL ilustrativa, nunca usarla como destino de entrega. Suite integrada requiere adaptadores privados
-locales configurados para provisión/verificación y lectura de buzón (contratos de pruebas, no rutas
-HTTP públicas). Credenciales mediante configuración segura, sin contenido secreto en argumentos.
-Ausencia de URL/medio autorizado bloquea integración sin fallback al banco mock.
+Compila para verificación local fuera de public/dist. No sirve ni publica administración. El servidor
+Node mapea rutas exactas, protege `/admin`, `/admin/historias`, `/admin/contacto` antes de HTML y
+permite solo assets compilados de la whitelist. Nunca servir `.private-build/admin` con Python.
+El banco UI es independiente y sintético. Las vistas no incluyen identidad ni datos privados compilados.
 
-Prueba real completa: cuenta sintética autorizada creada por procedimiento restringido; login/
-permisos/cierre, solicitar recuperación, comprobar correo efectivamente recibido en buzón controlado,
-seguir enlace y restablecer, rechazar contraseña antigua/sesiones/tokens usados. Un servicio de correo
-que acepta envío no acredita recepción ni lectura. No hacer esa prueba con correo real de otra persona.
+Provisión real: `server/admin/provision.ts crear|habilitar|deshabilitar correo`, solo operador con
+`PRIVA_ADMIN_DATA_DIR` privado y permisos adecuados. No password por argv/env/demo ni alta HTTP.
+Crear/rehabilitar deja credencial/buzón pendientes hasta completar la recuperación por correo.
+Deshabilitar/rehabilitar invalida versiones/sesiones/proofs. No ejecutar contra producción sin P02.
 
-Registrar fecha/navegador/entorno/escenario/SC/resultado/evidencia, latencias y límites efectivos;
-no contraseñas, bearer, CSRF, resetURL, contenido de correo ni datos de cuentas reales en trazas.
-Firefox falló con perfil y WebKit con bibliotecas ausentes en 005; revalidar, no presentarlos como
-aprobados ni quitar seguridad para forzar ejecución. Gates de 001–005 deben conservarse; pendiente
-editorial, proveedor, recurso o navegador es bloqueo, no éxito. No crear evidencia ni marcar tareas
-completas al redactar este plan.
+## Producción e integración — bloqueadas actualmente
+
+`npm run build` conserva gates001–005 y añade006; `npm run build:admin:views` exige el gate006.
+`server/admin/start.ts` no inicia si falta calificación. No quitar guards para simular entrega.
+
+Configuración del operador, sin valores secretos en repositorio ni chat:
+
+- `PRIVA_ADMIN_PUBLIC_ORIGIN`: origen HTTPS canónico exacto sin slash final, ruta ni credenciales.
+- `PRIVA_ADMIN_DATA_DIR`: directorio privado absoluto fuera de staticroots/Git.
+- `PRIVA_ADMIN_PORT`: puerto interno de loopback, por defecto4329; proxy del mismo origen reserva
+  `/admin` y `/api/admin`, sin fallback a archivos estáticos privados. XFF arbitrario no es confiable;
+  esta referencia aplica límites por conexión de socket y globales. Calificar el efecto del proxy en P02.
+- `PRIVA_ADMIN_MAIL_ADAPTER`: módulo absoluto privado del operador que exporta `mailAdapter` con
+  `idempotent:boolean` y `send({deliveryId,to,resetURL},signal)→accepted|rejected|unknown`.
+  Debe declarar idempotencia real y no asumir que aceptación prueba recepción.
+- Claves separadas admin-csrf/admin-abuse/admin-mail-v1, generadas por runtime en archivos privados.
+  Calificar rotación/custodia/copias con P02: drenar/expirar sobres≤15min y reiniciar de forma coordinada;
+  solapamiento versionado solo con keyring del operador y mientras haya sobres vigentes. Sin claves
+  antiguas persistentes innecesarias. La gestión productiva del keyring no se certifica por tests locales.
+
+Requiere revisión exacta de copy/marca/recursos, avisos, política009 de cuentas/sesiones/registros/copias,
+responsable/procedimiento de provisión, proveedor/remitente/buzón controlado, almacenamiento/TLS/proxy,
+cookies/CSRF, capacidad hash/cola/abuso/tiempos. No heredar90d de Contacto ni inventar esas aprobaciones.
+Los bindings de producción/integración no estaban presentes al comprobar sus nombres, sin revelar valores.
+
+Integración necesita `PRIVA_INTEGRATION_BASE_URL` HTTPS real y
+`PRIVA_ADMIN_INTEGRATION_ADAPTER` absoluto que exporte `integrationAdapter`:
+`prepare()→{accounts:[{email,password},{email,password}]}`, `readMailbox(email)→{resetURL}|null`,
+`verifySessionRevoked(email)→boolean`, `cleanup()`. Provisión/lectura del buzón/verificación permanecen
+privadas en el runner, sin endpoints de pruebas ni cuentas de terceros. cleanup debe respetar P02/009.
+
+```bash
+npm run test:e2e:admin:integration
+```
+
+Sin origen/adaptadores reales falla explícitamente antes de usar fixtures. La suite espera correo
+realmente recibido y comprueba reset, proof usado, clave vieja/nueva y cierre; todavía NO se ejecutó
+contra un entorno real. El doble local no acredita recepción productiva.
+
+Firefox/WebKit: binarios encontrados en `/workspace/.cache/ms-playwright`; smoke falló al arrancar.
+Firefox: perfil inaccesible incluso al cambiar TMPDIR a workspace. WebKit: bibliotecas del sistema
+faltantes. Descarga por APT del repositorio configurado recibió403 del proxy; no se instaló ni se
+retiraron verificaciones para aprobar. Volver a ejecutar cuando el entorno tenga esos prerrequisitos.
+
+Regresión afectada: `test:e2e:contract` y `test:e2e:contact:contract` con Chromium del sistema, más
+Node de002–005; resultados en evidence.md. Los fallos de build/recurso/navegador son bloqueos abiertos.

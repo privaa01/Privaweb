@@ -1,0 +1,183 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #143d2d;
+  background: #f6f9f6;
+  line-height: 1.5;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+a {
+  color: #165238;
+  text-underline-offset: 0.2em;
+}
+button,
+input {
+  font: inherit;
+}
+button,
+a,
+input {
+  touch-action: manipulation;
+}
+button,
+input {
+  min-height: 46px;
+}
+button {
+  cursor: pointer;
+  border: 1px solid #174c36;
+  border-radius: 1rem;
+  padding: 0.65rem 1rem;
+  background: #143d2d;
+  color: #fff;
+}
+button:disabled {
+  cursor: wait;
+  background: #405e4f;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid #b65b08;
+  outline-offset: 4px;
+}
+input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #648475;
+  border-radius: 1rem;
+  padding: 0.8rem;
+  background: #fff;
+  color: #143d2d;
+}
+input[aria-invalid="true"] {
+  border: 2px solid #9a2525;
+}
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+small[data-error] {
+  display: block;
+  color: #9a2525;
+  min-height: 1.4em;
+}
+h1 {
+  line-height: 1.2;
+  font-size: 2rem;
+  overflow-wrap: anywhere;
+}
+.admin-auth {
+  width: min(100% - 2rem, 32rem);
+  margin: clamp(2rem, 10vh, 8rem) auto;
+  text-align: center;
+}
+.admin-brand {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+.admin-auth > p {
+  color: #425d50;
+}
+.admin-auth form {
+  text-align: left;
+  margin: 2rem 0 1rem;
+}
+.admin-auth button[type="submit"] {
+  width: 100%;
+  margin-top: 1rem;
+}
+.password-field {
+  display: flex;
+  gap: 0.5rem;
+}
+.password-field button {
+  background: #fff;
+  color: #143d2d;
+  flex-shrink: 0;
+}
+.admin-shell {
+  padding: 1rem;
+}
+.admin-shell [data-private] {
+  display: grid;
+  grid-template-columns: 14rem minmax(0, 1fr);
+  gap: 2rem;
+  min-height: 95vh;
+}
+.admin-shell aside {
+  border-right: 1px solid #abc1b4;
+  padding: 1rem;
+  overflow-wrap: anywhere;
+}
+.admin-shell nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 2rem 0;
+}
+.admin-shell nav a {
+  padding: 0.7rem;
+  min-height: 44px;
+  border-radius: 0.8rem;
+  background: #dfebe1;
+}
+.admin-shell section {
+  padding: 1rem;
+  min-width: 0;
+}
+.admin-eyebrow {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+.admin-retry {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.admin-retry a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+[hidden] {
+  display: none !important;
+}
+[role="status"] {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 48rem) {
+  .admin-shell [data-private] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .admin-shell aside {
+    border-right: 0;
+    border-bottom: 1px solid #abc1b4;
+  }
+  .admin-shell nav {
+    margin: 1rem 0;
+  }
+  .password-field {
+    flex-wrap: wrap;
+  }
+  .password-field input {
+    flex: 1 1 12rem;
+  }
+}
+.admin-auth > a,
+.admin-auth p > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}

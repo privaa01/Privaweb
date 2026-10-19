@@ -1,6 +1,7 @@
 # Modelo de datos — 006
 
-Fecha: 2026-10-19. Contrato para implementación futura; no se crearon tablas, cuentas ni claves.
+Fecha: 2026-10-19. Modelo implementado localmente; tablas/cuentas/claves sintéticas de prueba,
+sin provisión productiva. Ver [evidencia](evidence.md).
 Todas las fechas son UTC de reloj servidor. Secretos aleatorios: 32 bytes/base64url canónico sin padding.
 
 ## AdminAccount

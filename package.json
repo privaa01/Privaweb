@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
-    "build": "node scripts/require-pages.mjs && node scripts/require-home-publication.mjs && node scripts/require-stories-publication.mjs && node scripts/require-app-publication.mjs && node scripts/require-contact-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "build": "node scripts/require-pages.mjs && node scripts/require-home-publication.mjs && node scripts/require-stories-publication.mjs && node scripts/require-app-publication.mjs && node scripts/require-contact-publication.mjs && node scripts/require-admin-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build && npm run build:admin:views",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check:contract": "ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/navigation",
     "build:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/navigation",
@@ -33,7 +33,16 @@
     "test:contact": "node --experimental-strip-types --test tests/contact-*.test.ts",
     "test:e2e:contact:contract": "playwright test --config=playwright.contact.config.ts",
     "test:e2e:contact:service": "playwright test --config=playwright.contact.service.config.ts",
-    "test:e2e:contact:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.contact.config.ts"
+    "test:e2e:contact:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.contact.config.ts",
+    "test:admin": "node --experimental-strip-types --test tests/admin-*.test.ts",
+    "check:admin:service": "tsc -p server/admin/tsconfig.json",
+    "check:admin:contract": "ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/admin",
+    "build:admin:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/admin",
+    "build:admin:views:local": "ASTRO_TELEMETRY_DISABLED=1 astro build --root server/admin/views",
+    "test:e2e:admin:contract": "playwright test --config=playwright.admin.config.ts",
+    "test:e2e:admin:service": "playwright test --config=playwright.admin.service.config.ts",
+    "test:e2e:admin:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.admin.config.ts",
+    "build:admin:views": "node scripts/require-admin-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build --root server/admin/views"
   },
   "dependencies": {
     "astro": "7.4.0"

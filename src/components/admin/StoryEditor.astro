@@ -1,0 +1,13 @@
+---
+const fields=[['title','Título',160],['category','Categoría',80],['description','Descripción',3000],['imageAlt','Alternativa de imagen',500],['transcript','Transcripción',20000],['question','Pregunta',300]] as const;
+---
+<section data-editor hidden aria-labelledby="story-editor-heading"><h2 id="story-editor-heading">Editar historia</h2><p data-editor-state role="status"></p>
+<form data-story-form novalidate>
+<p>Los campos pueden quedar incompletos al guardar un borrador. Para publicar, completa todos los campos y selecciona imagen y audio válidos.</p>
+{fields.map(([name,label,max])=><div class="story-field"><label for={'story-'+name}>{label}</label>{['description','transcript'].includes(name)?<textarea id={'story-'+name} name={name} rows={name==='transcript'?6:3} aria-describedby={'story-error-'+name}></textarea>:<input id={'story-'+name} name={name} type="text" aria-describedby={'story-error-'+name}/>}<small>Máximo {max} caracteres.</small><span class="story-error" id={'story-error-'+name} data-story-error={name}></span></div>)}
+<div class="story-field"><label for="story-image">Imagen (PNG, JPEG o WebP estático, hasta 8 MiB)</label><input id="story-image" type="file" data-upload="image" accept="image/png,image/jpeg,image/webp"/><span data-story-error="imageResourceId" class="story-error"></span><p data-file-status="image"></p></div>
+<div class="story-field"><label for="story-audio">Audio (MP3 o WAV PCM, hasta 50 MiB y 30 minutos)</label><input id="story-audio" type="file" data-upload="audio" accept="audio/mpeg,audio/wav"/><span data-story-error="audioResourceId" class="story-error"></span><p data-file-status="audio"></p></div>
+{[0,1,2].map(i=><fieldset><legend>Opción {i+1}</legend><label for={'story-option-'+i}>Texto de opción</label><input id={'story-option-'+i} name={'option-'+i} type="text" aria-describedby={'error-option-'+i}/><span id={'error-option-'+i} data-story-error={'options.'+i+'.label'} class="story-error"></span><label for={'story-explanation-'+i}>Explicación del riesgo y prevención</label><textarea id={'story-explanation-'+i} name={'explanation-'+i} rows="3" aria-describedby={'error-explanation-'+i}></textarea><span id={'error-explanation-'+i} data-story-error={'options.'+i+'.explanation'} class="story-error"></span></fieldset>)}
+<p data-story-error="options" class="story-error"></p><p data-story-error="form" class="story-error"></p>
+<div class="story-actions"><button type="submit">Guardar borrador</button><button type="button" data-publish>Publicar</button><button type="button" data-close-editor>Cerrar editor</button></div>
+</form></section>

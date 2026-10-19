@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
-    "build": "node scripts/require-pages.mjs && node scripts/require-home-publication.mjs && node scripts/require-stories-publication.mjs && node scripts/require-app-publication.mjs && node scripts/require-contact-publication.mjs && node scripts/require-admin-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build && npm run build:admin:views",
+    "build": "node scripts/require-pages.mjs && node scripts/require-home-publication.mjs && node scripts/require-stories-publication.mjs && node scripts/require-app-publication.mjs && node scripts/require-contact-publication.mjs && node scripts/require-admin-publication.mjs && node scripts/require-story-management-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build && npm run build:admin:views",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check:contract": "ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/navigation",
     "build:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/navigation",
@@ -42,7 +42,14 @@
     "test:e2e:admin:contract": "playwright test --config=playwright.admin.config.ts",
     "test:e2e:admin:service": "playwright test --config=playwright.admin.service.config.ts",
     "test:e2e:admin:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.admin.config.ts",
-    "build:admin:views": "node scripts/require-admin-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build --root server/admin/views"
+    "build:admin:views": "node scripts/require-admin-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build --root server/admin/views",
+    "check:story-management:service": "tsc -p server/stories/tsconfig.json",
+    "test:story-management": "node --experimental-strip-types --test tests/story-management-*.test.ts",
+    "check:story-management:contract": "ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/story-management",
+    "build:story-management:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/story-management",
+    "test:e2e:story-management:contract": "playwright test --config=playwright.story-management.config.ts",
+    "test:e2e:story-management:service": "playwright test --config=playwright.story-management.service.config.ts",
+    "test:e2e:story-management:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.story-management.service.config.ts"
   },
   "dependencies": {
     "astro": "7.4.0"

@@ -1,3 +1,5 @@
+import {composeStories} from '../stories/composition.ts';
+import {storyManagementReadiness,storyManagementIssues} from '../../src/config/story-management.ts';
 import { createServer } from "node:http";
 import { resolve, isAbsolute } from "node:path";
 import { pathToFileURL } from "node:url";
@@ -12,7 +14,7 @@ import { MailWorker } from "./mail-worker.ts";
 import { createAdminHandler } from "./http.ts";
 import type { MailAdapter } from "./repository.ts";
 export async function startAdmin() {
-  const issues = adminPublicationIssues(adminContent, adminReadiness);
+  const issues = [...adminPublicationIssues(adminContent, adminReadiness),...storyManagementIssues(storyManagementReadiness)];
   if (issues.length) throw Error("Administrative publication not qualified");
   const raw = process.env.PRIVA_ADMIN_PUBLIC_ORIGIN,
     dir = process.env.PRIVA_ADMIN_DATA_DIR,
@@ -79,11 +81,14 @@ export async function startAdmin() {
     new Map([["v1", runtime.mailKey]]),
     adapter,
   );
+  const stories=composeStories({repository:runtime.repository,directory:dir,origin:origin.origin,csrfKey:runtime.csrfKey,contactDatabase:process.env.PRIVA_CONTACT_DATABASE});
+  let maintenanceAt=0;
   let work: Promise<unknown> | undefined;
   const timer = setInterval(() => {
     if (!work)
       work = (async () => {
         runtime.repository.purge();
+        if(Date.now()-maintenanceAt>3600000){stories.media.cleanup();maintenanceAt=Date.now();}
         await worker.tick();
       })()
         .catch(() => {
@@ -98,11 +103,12 @@ export async function startAdmin() {
       ...runtime,
       service,
       recovery,
+      stories:stories.handler,
       origin: origin.origin,
       viewsRoot,
     }),
   );
-  server.requestTimeout = 30000;
+  server.requestTimeout = 120000;
   server.headersTimeout = 30000;
   server.listen(port, "127.0.0.1");
   const stop = () => {

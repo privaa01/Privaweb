@@ -1,0 +1,1 @@
+{"extends":"astro/tsconfigs/strict","include":[".astro/types.d.ts","**/*","../../../src/scripts/admin-stories.ts","../../../src/components/admin/StoryEditor.astro","../../../src/components/admin/StoriesManager.astro"],"exclude":["dist"]}

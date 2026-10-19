@@ -42,14 +42,14 @@
 | C07 | Bloque final y aviso de Contacto | [005-contacto-publico](005-contacto-publico/spec.md) | No ejecutado |
 | AD01 | Acceso, recuperación y cierre de sesión | [006-acceso-administrativo](006-acceso-administrativo/spec.md) | Verificado localmente; aceptación productiva pendiente |
 | AD02 | Panel y permisos | [006-acceso-administrativo](006-acceso-administrativo/spec.md) | Verificado localmente; aceptación productiva pendiente |
-| AD03 | Resumen y contadores | [007-gestion-historias](007-gestion-historias/spec.md) | No ejecutado |
-| AD04 | Tabla de historias | [007-gestion-historias](007-gestion-historias/spec.md) | No ejecutado |
-| AD05 | Activar/desactivar historia | [007-gestion-historias](007-gestion-historias/spec.md) | No ejecutado |
-| AD06 | Crear, editar, borrador y publicar | [007-gestion-historias](007-gestion-historias/spec.md) | No ejecutado |
+| AD03 | Resumen y contadores | [007-gestion-historias](007-gestion-historias/spec.md) | Implementado/verificado localmente; cierre pendiente |
+| AD04 | Tabla de historias | [007-gestion-historias](007-gestion-historias/spec.md) | Implementado/verificado localmente; cierre pendiente |
+| AD05 | Activar/desactivar historia | [007-gestion-historias](007-gestion-historias/spec.md) | Implementado/verificado localmente; cierre pendiente |
+| AD06 | Crear, editar, borrador y publicar | [007-gestion-historias](007-gestion-historias/spec.md) | Implementado/verificado localmente; cierre pendiente |
 | AD07 | Bandeja privada de Contacto | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | No ejecutado |
 | AD08 | Estado Pendiente → Respondido | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | No ejecutado |
 | AD09 | Redactar y conservar respuesta | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | No ejecutado |
-| AD10 | Ver historias en la web | [007-gestion-historias](007-gestion-historias/spec.md) | No ejecutado |
+| AD10 | Ver historias en la web | [007-gestion-historias](007-gestion-historias/spec.md) | Implementado/verificado localmente; cierre pendiente |
 | AD11 | Origen de comentarios y alcance público | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | No ejecutado |
 | X01 | Adaptación y accesibilidad | [011-accesibilidad-fidelidad](011-accesibilidad-fidelidad/spec.md) | No ejecutado |
 | X02 | Seguridad, rastreo y conservación | [009-privacidad-conservacion](009-privacidad-conservacion/spec.md) | No ejecutado |
@@ -196,3 +196,40 @@ restringida. 58/63 tareas verificadas; T058–T062 abiertas por navegadores, rec
 P02/009/010, correo/entorno reales y build de entrega. [Evidencia](006-acceso-administrativo/evidence.md)
 separa Node, UI mock, servicio real con doble local y operación productiva no verificada.
 No cierra AD01/AD02, gestión007/bandeja008, CT01 o política009; sin commit/push/despliegue.
+
+2026-10-19 — `/speckit-specify 007`: [gestión de historias](007-gestion-historias/spec.md)
+desarrollada conservando AD03/AD04/AD05/AD06/AD10 literalmente; cinco historias,31 escenarios
+y ocho criterios medibles. Q1: la usuaria eligió conservar borrador de cambios y publicación previa
+vigente hasta Publicar; identidad/enlaces y activación independientes, sin historial de versiones adicional.
+Tabla/contadores y catálogo de003 distinguen contenido publicado de cambios privados; Contacto depende
+de005/008 y no de ejercicios. Checklist16/16 revisado, sin implementación ni pruebas de aplicación007.
+P04 técnico, materiales, integración y operación permanecen pendientes; selección activa007,
+sin nueva rama, commit/push o despliegue.
+
+2026-10-19 — `$speckit-plan 007`: [plan](007-gestion-historias/plan.md), investigación,
+modelo, contrato y guía de validación para AD03/AD04/AD05/AD06/AD10 y SC-001–SC-008.
+Q1 conserva trabajo privado y publicación vigente; guard006/CAS/recibos, recursos privados,
+productor dinámico del catálogo003 y contador agregado real005/008. Límites técnicos definidos;
+compatibilidad de pregunta editorial003 prevista sin alterar los tres textos iniciales.
+Revisión constitucional previa/posterior conforme para trabajo local; materiales/P02/009/010/011
+siguen condicionando cierre. Sin código, tareas, pruebas de aplicación, commit/push o despliegue.
+
+2026-10-19 — `$speckit-tasks 007`: [60 tareas pendientes](007-gestion-historias/tasks.md),
+por cinco historias (8/12/5/5/7), preparación/fundamentos y cierre transversal;
+17 oportunidades[P] condicionadas a dependencias/archivos distintos. AD03/AD04/AD05/AD06/AD10,
+31escenarios y SC-001–SC-008 enlazados a pruebas futuras de borradores, publicaciónQ1,
+activación, tabla/contador, autorización y accesibilidad. Sin implementación ni pruebas ejecutadas;
+P01/P02/P03/009/010/011 y calificación externa no se aprueban al generar tareas. Sin commit/push.
+
+2026-10-19 — Correcciones del análisis007 autorizadas: aislamiento de medios concretado en
+investigación/plan/contrato/guía/T004/T023 (bwrap+prlimit, límites y pruebas adversas),
+verificación públicaUS1 trasladada deT019 aT031 después del productorT027 y ejemplo paraleloUS2
+corregido. Se conservan60tareas pendientes y alcance; sin implementación ni pruebas de aplicación.
+
+2026-10-19 — `$speckit-implement 007`: 56/60 tareas verificadas localmente; T056–T059 abiertas.
+AD03/04/05/06/10 implementados con autorización006/SQLite real, borrador/publicaciónQ1 separados,
+CAS/recibos, activación explícita, recursos privados/decoder bwrap+prlimit, tabla/resumen y catálogo003.
+Contacto usa conteo agregado005 real, no ejercicios ni datos públicos. [Evidencia](007-gestion-historias/evidence.md)
+separa dominio/HTTP, decoder real, navegador con servicio y simulacionesUI identificadas de la
+operación productiva no verificada. RecursosP01/P03, P02/009/010/011, Firefox/WebKit y build de
+entrega permanecen abiertos. Sin commit/push/despliegue ni correo a terceros.

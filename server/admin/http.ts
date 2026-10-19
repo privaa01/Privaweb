@@ -28,6 +28,7 @@ export interface HandlerOptions {
   origin: string;
   viewsRoot: string;
   recovery?: RecoveryAPI;
+  stories?: (req: IncomingMessage, res: ServerResponse) => Promise<boolean>;
 }
 const publicPaths: Record<string, string> = {
   "/admin/login": "login",
@@ -44,7 +45,7 @@ export const securityHeaders = {
   "Referrer-Policy": "no-referrer",
   "X-Content-Type-Options": "nosniff",
   "Content-Security-Policy":
-    "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+    "default-src 'self'; img-src 'self' blob:; media-src 'self' blob:; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
 };
 function json(res: ServerResponse, status: number, body: unknown) {
   res.writeHead(status, { "Content-Type": "application/json; charset=utf-8" });
@@ -59,10 +60,15 @@ async function body(req: IncomingMessage) {
     throw new AdminError(415, "invalid");
   const chunks: Buffer[] = [];
   let n = 0;
-  for await (const chunk of req) {
-    n += chunk.length;
-    if (n > 8192) throw new AdminError(413, "invalid");
-    chunks.push(Buffer.from(chunk));
+  const timer = setTimeout(() => req.destroy(), 30000);
+  try {
+    for await (const chunk of req) {
+      n += chunk.length;
+      if (n > 8192) throw new AdminError(413, "invalid");
+      chunks.push(Buffer.from(chunk));
+    }
+  } finally {
+    clearTimeout(timer);
   }
   try {
     const text = new TextDecoder("utf-8", { fatal: true }).decode(
@@ -80,6 +86,7 @@ export function createAdminHandler(o: HandlerOptions) {
   return async (req: IncomingMessage, res: ServerResponse) => {
     for (const [k, v] of Object.entries(securityHeaders)) res.setHeader(k, v);
     try {
+      if (o.stories && (await o.stories(req, res))) return;
       const raw = (req.url ?? "").split("?")[0];
       const url = new URL(req.url ?? "/", o.origin);
       const path = url.pathname;

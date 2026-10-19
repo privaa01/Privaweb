@@ -13,7 +13,7 @@ Proyección de 007, nunca el registro administrativo. Campos obligatorios:
 | image | src autorizada, alt con propósito, width/height positivos |
 | audio | src de recurso publicado válido y type de formato admitido; sin duración del wireframe |
 | transcript | Texto completo equivalente validado; no depende de descarga del audio |
-| question | Texto aprobado ¿QUÉ ERROR SE COMETIÓ? |
+| question | Texto editorial no vacío; los tres casos iniciales conservan ¿QUÉ ERROR SE COMETIÓ? |
 | options | Exactamente 3 objetos id/label/explanation; IDs únicos dentro del caso |
 | explanation | Específica de riesgo y prevención, no vacía, validada contra relato |
 

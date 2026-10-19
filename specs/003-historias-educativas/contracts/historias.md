@@ -1,6 +1,6 @@
 # Contratos públicos y de interfaz — 003
 
-Fecha: 2026-10-16. Contrato de diseño para consumidor003 y futuro productor007; no API desplegada.
+Fecha inicial: 2026-10-16. Actualización007: productor local implementado; operación productiva no calificada.
 
 ## C1 — Lectura de catálogo (H02–H09 / US1–3)
 
@@ -20,7 +20,7 @@ Fecha: 2026-10-16. Contrato de diseño para consumidor003 y futuro productor007;
 - 007 debe demostrar publicación, desactivación, reactivación, edición conservando IDs y recursos
   públicos vigentes, sin caché obsoleta. URLs de borradores nunca deben incluirse ni ser públicas;
   comprobar tratamiento de recursos de desactivadas y cachés en integración antes del cierre.
-- La API aún no existe. 003 implementa consumidor/validador y fixtures de respuestas; no instala
+- 007 incorpora el productor local; 003 conserva consumidor/validador y fixtures. No acredita despliegue ni instala
   backend ni fija proveedor. Cambios de ruta/esquema requieren sincronizar este contrato y007.
 
 ## C2 — Documento y catálogo (H01–H05)
@@ -81,3 +81,6 @@ correspondencia con archivos, testimonio o vigencia operativa: comprobar en inte
 
 En fixture se pueden probar rechazo de DTO privados/inválidos y comportamiento, pero solo
 servidor007 real acredita que no entrega borradores o archivos privados. No confundir resultados.
+
+2026-10-19 — Integración007: schemaVersion1 conserva forma; question admite texto editorial no vacío,
+manteniendo la pregunta aprobada de los tres iniciales. Sin puntuación ni respuesta correcta.

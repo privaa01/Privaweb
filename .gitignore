@@ -21,3 +21,9 @@ __pycache__/
 # Private administrative templates and encrypted runtime data
 .private-build/
 *.envelope
+
+# Build and editor scratch outputs
+build/
+coverage/
+*.tmp
+*.swp

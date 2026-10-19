@@ -32,7 +32,7 @@ export function parseCatalog(value:unknown,policy:CatalogPolicy):PublicCatalog{
   if(typeof img.width!=='number'||typeof img.height!=='number'||!Number.isFinite(img.width)||!Number.isFinite(img.height)||img.width<=0||img.height<=0)return fail();
   const audio=record(s.audio,['src','type']);const type=text(audio.type);
   if(!/^audio\/[a-z0-9.+-]+$/i.test(type))return fail();
-  if(s.question!=='¿QUÉ ERROR SE COMETIÓ?'||!Array.isArray(s.options)||s.options.length!==3)return fail();
+  if((typeof s.question!=='string'||!s.question.trim())||!Array.isArray(s.options)||s.options.length!==3)return fail();
   const optionIds=new Set<string>();
   const options=s.options.map(v=>{const o=record(v,['id','label','explanation']);const optionId=id(o.id);if(optionIds.has(optionId))return fail();optionIds.add(optionId);return{id:optionId,label:text(o.label),explanation:text(o.explanation)};});
   return {id:storyId,title:text(s.title),category:text(s.category),description:text(s.description),image:{src:safeMediaURL(img.src,policy),alt:text(img.alt),width:img.width,height:img.height},audio:{src:safeMediaURL(audio.src,policy),type},transcript:text(s.transcript),question:text(s.question),options};

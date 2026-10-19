@@ -1,0 +1,13 @@
+---
+import StoryEditor from './StoryEditor.astro';
+---
+<div data-story-manager>
+<div class="story-heading"><h2>Gestionar historias</h2><button type="button" data-add-story>Agregar historia</button></div>
+<p data-management-status role="status" aria-live="polite"></p><button type="button" data-stories-retry>Actualizar historias</button><button type="button" data-check-operation hidden>Comprobar operación pendiente</button><button type="button" data-retry-operation hidden>Reintentar la misma operación</button>
+<button type="button" data-abandon-upload hidden>Conservar texto y elegir otro archivo</button>
+<div class="story-summary" aria-label="Resumen global"><p>Historias activas <strong data-count="active">No disponible</strong></p><p>Borradores <strong data-count="drafts">No disponible</strong></p><p>Consultas recibidas <strong data-count="contact">No disponible</strong></p></div>
+<div class="story-toolbar"><label for="story-search">Buscar historia por título<input id="story-search" type="search" data-story-search/></label><label for="story-filter">Mostrar<select id="story-filter" data-story-filter><option value="all">Todas</option><option value="active">Activas</option><option value="inactive">Inactivas</option></select></label></div>
+<div class="story-table-wrap"><table><caption>Historias guardadas y estado de publicación</caption><thead><tr><th scope="col">Historia</th><th scope="col">Categoría</th><th scope="col">Duración</th><th scope="col">Publicación</th><th scope="col">Estado</th><th scope="col">Acciones</th></tr></thead><tbody data-story-rows data-private-data></tbody></table></div>
+<StoryEditor/><p><a href="/historias.html#casos">Ver historias en la web</a></p>
+</div>
+<script>import '../../scripts/admin-stories';</script>

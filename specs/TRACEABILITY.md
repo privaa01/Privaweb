@@ -170,3 +170,15 @@ Página y receptor Node separado con SQLite de archivo, validación cliente/serv
 Pendiente y reintentos/opción A. 66 Node + 39 UI + 4 navegador/SQLite de 005 pasan; regresión
 115 Node + 128 navegador pasa. T044–T048 siguen abiertas; recepción productiva y fidelidad final
 no aprobadas. No hay commit/push/despliegue ni cierre de CT01/006/008/009/010.
+
+2026-10-17 — `/speckit-specify 006`: [especificación de acceso](006-acceso-administrativo/spec.md)
+desarrollada con AD01/AD02 sin cambios de alcance; cuatro historias (acceso, permisos/protección,
+cierre y recuperación), 23 escenarios y siete criterios. Checklist documental 16/16, sin ejecución
+de pruebas ni implementación. Provisión/correo P02, políticas 009, avisos 010 y recursos/revisión
+siguen abiertos. Selección activa 006; sin cambio de rama ni proveedor/cuenta inventados.
+
+2026-10-19 — `$speckit-plan 006`: [plan](006-acceso-administrativo/plan.md), investigación,
+modelo, contrato y guía de validación para AD01/AD02/SC-001–SC-007. Astro estático/vistas privadas
+fuera de dist, servicio Node, referencia SQLite y autorización transaccional; hash/sesión/recuperación
+con políticas explícitas y correo separado del acuse público. Sin implementación ni pruebas 006;
+proveedor/provisión/correo P02, privacidad 009, avisos y revisión visual permanecen pendientes.

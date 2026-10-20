@@ -1,0 +1,1 @@
+{"extends":"../admin/tsconfig.json","include":["./*.ts","../../src/lib/inbox-*.ts","../../src/config/inbox.ts","../../tests/inbox-*.test.ts","../../tests/fixtures/inbox-service/*.ts"]}

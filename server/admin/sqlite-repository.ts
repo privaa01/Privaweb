@@ -158,9 +158,13 @@ export class SqliteAdminRepository {
     account: AdminAccount;
   } | null {
     if (!canonicalToken(token)) return null;
+    return this.sessionByDigest(digest(token));
+  }
+  /** Internal worker proof only; never expose this digest as a bearer in HTTP. */
+  sessionByDigest(tokenDigest: string): {session: AdminSession; account: AdminAccount} | null {
     const s = this.db
       .prepare("SELECT * FROM admin_sessions WHERE tokenDigest=?")
-      .get(digest(token)) as unknown as AdminSession | undefined;
+      .get(tokenDigest) as unknown as AdminSession | undefined;
     if (
       !s ||
       s.revokedAt !== null ||

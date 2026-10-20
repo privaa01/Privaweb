@@ -1,6 +1,6 @@
 # Trazabilidad del SPEC R35
 
-53 requisitos originales, una feature responsable por ID. Todos sin implementación verificada.
+53 requisitos originales, una feature responsable por ID. Los estados distinguen verificación local y cierre integrado pendiente.
 
 | ID | Componente original | Feature responsable | Estado |
 |---|---|---|---|
@@ -46,17 +46,17 @@
 | AD04 | Tabla de historias | [007-gestion-historias](007-gestion-historias/spec.md) | Implementado/verificado localmente; cierre pendiente |
 | AD05 | Activar/desactivar historia | [007-gestion-historias](007-gestion-historias/spec.md) | Implementado/verificado localmente; cierre pendiente |
 | AD06 | Crear, editar, borrador y publicar | [007-gestion-historias](007-gestion-historias/spec.md) | Implementado/verificado localmente; cierre pendiente |
-| AD07 | Bandeja privada de Contacto | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | No ejecutado |
-| AD08 | Estado Pendiente → Respondido | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | No ejecutado |
-| AD09 | Redactar y conservar respuesta | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | No ejecutado |
+| AD07 | Bandeja privada de Contacto | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | Implementado/verificado localmente; cierre pendiente |
+| AD08 | Estado Pendiente → Respondido | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | Implementado/verificado localmente; cierre pendiente |
+| AD09 | Redactar y conservar respuesta | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | Implementado/verificado localmente; cierre pendiente |
 | AD10 | Ver historias en la web | [007-gestion-historias](007-gestion-historias/spec.md) | Implementado/verificado localmente; cierre pendiente |
-| AD11 | Origen de comentarios y alcance público | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | No ejecutado |
+| AD11 | Origen de comentarios y alcance público | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | Implementado/verificado localmente; cierre pendiente |
 | X01 | Adaptación y accesibilidad | [011-accesibilidad-fidelidad](011-accesibilidad-fidelidad/spec.md) | No ejecutado |
 | X02 | Seguridad, rastreo y conservación | [009-privacidad-conservacion](009-privacidad-conservacion/spec.md) | No ejecutado |
 | X03 | Auxiliares y documentos informativos | [010-documentos-recuperacion](010-documentos-recuperacion/spec.md) | No ejecutado |
 | X04 | Recursos y fidelidad | [011-accesibilidad-fidelidad](011-accesibilidad-fidelidad/spec.md) | No ejecutado |
 | X05 | Sincronización y cierre | [011-accesibilidad-fidelidad](011-accesibilidad-fidelidad/spec.md) | No ejecutado |
-| CT01 | Flujo completo de Contacto | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | No ejecutado |
+| CT01 | Flujo completo de Contacto | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | Parcial local; correo/operación reales pendientes |
 
 ## Pendientes compartidos
 
@@ -208,7 +208,7 @@ sin nueva rama, commit/push o despliegue.
 
 2026-10-19 — `$speckit-plan 007`: [plan](007-gestion-historias/plan.md), investigación,
 modelo, contrato y guía de validación para AD03/AD04/AD05/AD06/AD10 y SC-001–SC-008.
-Q1 conserva trabajo privado y publicación vigente; guard006/CAS/recibos, recursos privados,
+Q1 conserva trabajo privado y publicación vigente; guard 006/CAS/recibos, recursos privados,
 productor dinámico del catálogo003 y contador agregado real005/008. Límites técnicos definidos;
 compatibilidad de pregunta editorial003 prevista sin alterar los tres textos iniciales.
 Revisión constitucional previa/posterior conforme para trabajo local; materiales/P02/009/010/011
@@ -227,9 +227,59 @@ verificación públicaUS1 trasladada deT019 aT031 después del productorT027 y e
 corregido. Se conservan60tareas pendientes y alcance; sin implementación ni pruebas de aplicación.
 
 2026-10-19 — `$speckit-implement 007`: 56/60 tareas verificadas localmente; T056–T059 abiertas.
-AD03/04/05/06/10 implementados con autorización006/SQLite real, borrador/publicaciónQ1 separados,
+AD03/04/05/06/10 implementados con autorización 006/SQLite real, borrador/publicaciónQ1 separados,
 CAS/recibos, activación explícita, recursos privados/decoder bwrap+prlimit, tabla/resumen y catálogo003.
 Contacto usa conteo agregado005 real, no ejercicios ni datos públicos. [Evidencia](007-gestion-historias/evidence.md)
 separa dominio/HTTP, decoder real, navegador con servicio y simulacionesUI identificadas de la
 operación productiva no verificada. RecursosP01/P03, P02/009/010/011, Firefox/WebKit y build de
 entrega permanecen abiertos. Sin commit/push/despliegue ni correo a terceros.
+
+2026-10-19 — `/speckit-specify 008`: [bandeja y respuestas](008-bandeja-respuestas/spec.md)
+desarrollada conservando AD07/AD08/AD09/AD11/CT01 literalmente; cuatro historias, 26 escenarios,
+ocho criterios medibles y [checklist documental 16/16](008-bandeja-respuestas/checklists/requirements.md).
+Distingue estado de consulta, fallo, incertidumbre y aceptación; entrega/lectura se verifican aparte.
+Destinatario guardado 005, autorización 006, contadores coherentes 007 y conservación 009;
+reintento/concurrencia/reconciliación sin reenvío a ciegas, sin comentarios públicos ni por historia.
+P02/P04/009/010/011 y calificación real siguen pendientes. Sin implementación ni pruebas de
+aplicación 008, cambio de rama, commit/push o despliegue. Selección activa 008 local.
+
+2026-10-19 — `$speckit-clarify 008`: Q1 respondida por la usuaria con opción A.
+Una consulta Respondida permite otra respuesta deliberada tras revisar el historial vigente y
+resolver cualquier envío pendiente de confirmación. Cada aceptación se añade a la misma consulta;
+no reemplaza respuestas previas ni aumenta el total de consultas. Actualizados Clarifications,
+US2.5, R-04 y Assumptions; se conservan los cinco FR originales y 26 escenarios.
+Checklist documental revalidado 16/16 sin cambios de marcadores. Proveedor/P02, diseño técnico P04,
+operación 009 y verificación externa permanecen pendientes para el plan y el cierre integrado.
+Sin implementación ni pruebas de aplicación 008.
+
+2026-10-19 — `$speckit-plan 008`: [plan](008-bandeja-respuestas/plan.md), investigación,
+modelo, contrato y guía de validación para AD07/AD08/AD09/AD11/CT01 y SC-001–SC-008.
+Mantiene Q1, fuente única contact.sqlite, guard 006 con locks admin → contacto y sin atomicidad
+multiarchivo; migración compatible 005, operación durable/CAS, worker y adaptador 008 separados
+con lookup/unknown bloqueante, historial, conteos 007 y borrado coordinado 009. Límite técnico
+5000 puntos Unicode y diseño P04 definidos. No hay proveedor/remitente inventados; P02/009/010/011
+y calificación productiva pendientes. Revisión constitucional previa/posterior conforme para diseño
+local, sin implementación 008 ni pruebas de aplicación, tareas, commit/push o despliegue.
+
+2026-10-19 — `$speckit-tasks 008`: [66 tareas locales pendientes](008-bandeja-respuestas/tasks.md),
+cinco de preparación, diez de fundamentos, US1(10)/US2(12)/US3(12)/US4(9) y ocho de cierre.
+Cobertura AD07/AD08/AD09/AD11/CT01, 26 escenarios y SC-001–SC-008; migración 005 compatible,
+autorización bajo locks, aceptación/historial Q1, concurrencia/unknown/lookup y borrado coordinado.
+19 oportunidades [P] condicionadas a prerrequisitos y archivos distintos. MVP de lectura privada US1;
+P02/009/010/011 y calificación externa siguen bloqueando cierre integrado. Generación documental,
+sin implementación 008, pruebas de aplicación, commit/push ni despliegue.
+
+2026-10-19 — Correcciones autorizadas del análisis 008: I1 resuelto serializando T059→T060
+(escritura compartida de evidence.md) y retirando sus marcas [P]; quedan 17 oportunidades [P]
+y 66 tareas pendientes, sin cambio de alcance. I2 resuelto escapando separadores de unión en la
+tabla C3 del contrato HTTP. Verificados formato, dependencias y enlaces; sin pruebas de aplicación,
+implementación, commit/push ni despliegue.
+
+2026-10-19 — `$speckit-implement 008`: 60/66 tareas verificadas localmente; abiertas T056/T057/
+T060/T062/T063/T064. Bandeja privada con fuente 005, guard 006 admin→contacto, migración offline,
+conteos 007, respuesta adicional Q1, intención durable/CAS/cifrado y worker/adaptador 008 separados,
+unknown/lookup sin reenvío, reintento estable y eliminación coordinada. [Evidencia](008-bandeja-respuestas/evidence.md):
+43 Node,14 navegador con servicio Chromium/Firefox,5 UI simuladas y 215 regresiones únicas aprobadas;
+WebKit/lector/revisión manual, P02/009/010/011 y build de entrega pendientes. Gates permanecen
+cerrados; no se acredita CT01 productivo, recepción real ni eliminación de proveedores/copias.
+Checklist documental 16/16 sin modificar marcadores. Sin commit/push/despliegue ni correo a terceros.

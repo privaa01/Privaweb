@@ -1,0 +1,1 @@
+import {defineConfig} from 'astro/config';export default defineConfig({output:'static',outDir:'../../../.test-output/inbox-ui',cacheDir:'../../../.test-output/inbox-cache',vite:{server:{fs:{allow:['../../..']}}}});

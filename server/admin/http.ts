@@ -28,6 +28,7 @@ export interface HandlerOptions {
   origin: string;
   viewsRoot: string;
   recovery?: RecoveryAPI;
+  inbox?: (req: IncomingMessage, res: ServerResponse) => Promise<boolean>;
   stories?: (req: IncomingMessage, res: ServerResponse) => Promise<boolean>;
 }
 const publicPaths: Record<string, string> = {
@@ -86,6 +87,7 @@ export function createAdminHandler(o: HandlerOptions) {
   return async (req: IncomingMessage, res: ServerResponse) => {
     for (const [k, v] of Object.entries(securityHeaders)) res.setHeader(k, v);
     try {
+      if (o.inbox && (await o.inbox(req, res))) return;
       if (o.stories && (await o.stories(req, res))) return;
       const raw = (req.url ?? "").split("?")[0];
       const url = new URL(req.url ?? "/", o.origin);

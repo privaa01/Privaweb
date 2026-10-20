@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
-    "build": "node scripts/require-pages.mjs && node scripts/require-home-publication.mjs && node scripts/require-stories-publication.mjs && node scripts/require-app-publication.mjs && node scripts/require-contact-publication.mjs && node scripts/require-admin-publication.mjs && node scripts/require-story-management-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build && npm run build:admin:views",
+    "build": "node scripts/require-pages.mjs && node scripts/require-home-publication.mjs && node scripts/require-stories-publication.mjs && node scripts/require-app-publication.mjs && node scripts/require-contact-publication.mjs && node scripts/require-admin-publication.mjs && node scripts/require-story-management-publication.mjs && node scripts/require-inbox-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build && npm run build:admin:views",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check:contract": "ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/navigation",
     "build:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/navigation",
@@ -49,7 +49,14 @@
     "build:story-management:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/story-management",
     "test:e2e:story-management:contract": "playwright test --config=playwright.story-management.config.ts",
     "test:e2e:story-management:service": "playwright test --config=playwright.story-management.service.config.ts",
-    "test:e2e:story-management:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.story-management.service.config.ts"
+    "test:e2e:story-management:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.story-management.service.config.ts",
+    "check:inbox:service": "tsc -p server/inbox/tsconfig.json",
+    "test:inbox": "node --experimental-strip-types --test tests/inbox-*.test.ts",
+    "check:inbox:contract": "ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/inbox",
+    "build:inbox:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/inbox",
+    "test:e2e:inbox:contract": "playwright test --config=playwright.inbox.config.ts",
+    "test:e2e:inbox:service": "playwright test --config=playwright.inbox.service.config.ts",
+    "test:e2e:inbox:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.inbox.service.config.ts"
   },
   "dependencies": {
     "astro": "7.4.0"

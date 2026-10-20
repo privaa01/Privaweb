@@ -1,0 +1,19 @@
+<section class="inbox" data-inbox aria-label="Bandeja privada de Contacto">
+ <p>Consulta los mensajes de Contacto y responde al correo indicado. Los mensajes y las respuestas son privados.</p>
+ <p data-inbox-summary role="status">Cargando resumen…</p>
+ <nav class="inbox-filters" aria-label="Filtrar consultas"><button type="button" data-filter="Pendiente" aria-pressed="true">Pendiente</button><button type="button" data-filter="Respondido" aria-pressed="false">Respondido</button><button type="button" data-refresh>Actualizar bandeja</button></nav>
+ <p role="status" aria-live="polite" data-inbox-feedback></p>
+ <div data-inbox-list data-private-data></div><button type="button" data-more hidden>Más consultas</button>
+ <section data-inbox-detail hidden aria-label="Consulta seleccionada">
+  <h2 tabindex="-1" data-detail-title>Consulta</h2><div data-detail-data data-private-data></div>
+  <h3>Historial de respuestas</h3><div data-history data-private-data></div><button type="button" data-history-more hidden>Más respuestas</button>
+  <form data-reply-form novalidate>
+   <p>La aceptación del servicio confirma el envío; no demuestra entrega ni lectura.</p>
+   <label><input type="checkbox" data-reviewed /> He revisado la consulta y su historial actual</label>
+   <label for="inbox-reply">Tu respuesta (obligatoria, máximo 5000 caracteres)</label><textarea id="inbox-reply" name="reply" rows="7" required aria-describedby="inbox-reply-help inbox-reply-error"></textarea>
+   <p data-reply-count aria-live="polite">0 / 5000 caracteres</p><p id="inbox-reply-help">Texto plano, sin adjuntos. No incluyas información sensible.</p><p id="inbox-reply-error" data-reply-error role="alert"></p>
+   <button type="submit" data-send>Enviar respuesta</button><button type="button" data-check hidden>Comprobar resultado</button>
+  </form>
+ </section>
+</section>
+<script>import '../../scripts/admin-inbox';</script>

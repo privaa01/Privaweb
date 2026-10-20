@@ -60,6 +60,14 @@ export async function storyRequest(
     clearTimeout(timer);
   }
 }
+/** Private Contact uses the same session state; no CSRF token is exposed globally. */
+export async function inboxRequest(path:string,method='GET',body?:unknown){
+ if(!sessionAuthorized)throw Error('Acceso no disponible.');
+ const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),10000);
+ try{const response=await fetch('/api/admin/contacto'+path,{method,credentials:'same-origin',cache:'no-store',signal:controller.signal,headers:{'X-Priva-Request':'1',...(method==='POST'?{'X-CSRF-Token':sessionCsrf,'Content-Type':'application/json'}:{})},body:body===undefined?undefined:JSON.stringify(body)});
+ if(response.status===401||response.status===403)announceAccess(false);
+ return {ok:response.ok,status:response.status,value:await response.json()};}finally{clearTimeout(timer);}
+}
 import { api, channel } from "./admin-client";
 const root = document.querySelector<HTMLElement>("[data-private]");
 if (root) {

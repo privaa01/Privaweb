@@ -3,6 +3,7 @@ import { lstatSync, realpathSync } from "node:fs";
 import { isAbsolute } from "node:path";
 export function contactSummary(
   path: string | undefined,
+  now: number = Date.now(),
 ): { state: "available"; total: number } | { state: "unavailable" } {
   let db: DatabaseSync | undefined;
   try {
@@ -17,7 +18,16 @@ export function contactSummary(
       throw Error();
     db = new DatabaseSync(path, { readOnly: true });
     db.exec("PRAGMA busy_timeout=5000");
-    const n = db.prepare("SELECT count(*) AS n FROM consultations").get()!.n;
+    const cols = db
+      .prepare("PRAGMA table_info(consultations)")
+      .all()
+      .map((c) => c.name);
+    const query = cols.includes("lifecycle")
+      ? "SELECT count(*) AS n FROM consultations WHERE lifecycle='active' AND lastActivityAt>?"
+      : "SELECT count(*) AS n FROM consultations";
+    const n = cols.includes("lifecycle")
+      ? db.prepare(query).get(new Date(now - 90 * 86400000).toISOString())!.n
+      : db.prepare(query).get()!.n;
     return { state: "available", total: Number(n) };
   } catch {
     return { state: "unavailable" };

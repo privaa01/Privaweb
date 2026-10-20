@@ -1,20 +1,23 @@
+import {composeInbox} from '../inbox/composition.ts';
+import {inboxIssues} from '../../src/config/inbox.ts';
+import type {ReplyMailAdapter} from '../inbox/mail-adapter.ts';
 import {composeStories} from '../stories/composition.ts';
 import {storyManagementReadiness,storyManagementIssues} from '../../src/config/story-management.ts';
 import { createServer } from "node:http";
 import { resolve, isAbsolute } from "node:path";
 import { pathToFileURL } from "node:url";
-import { lstatSync, existsSync } from "node:fs";
+import { lstatSync, existsSync, realpathSync, readdirSync } from "node:fs";
 import { adminContent } from "../../src/content/admin.ts";
 import { adminReadiness } from "../../src/config/admin.ts";
 import { adminPublicationIssues } from "../../src/lib/admin-publication.ts";
-import { openAdminRuntime } from "./runtime.ts";
+import { openAdminRuntime, loadKey } from "./runtime.ts";
 import { AdminService } from "./service.ts";
 import { RecoveryService } from "./recovery.ts";
 import { MailWorker } from "./mail-worker.ts";
 import { createAdminHandler } from "./http.ts";
 import type { MailAdapter } from "./repository.ts";
 export async function startAdmin() {
-  const issues = [...adminPublicationIssues(adminContent, adminReadiness),...storyManagementIssues(storyManagementReadiness)];
+  const issues = [...adminPublicationIssues(adminContent, adminReadiness),...storyManagementIssues(storyManagementReadiness),...inboxIssues()];
   if (issues.length) throw Error("Administrative publication not qualified");
   const raw = process.env.PRIVA_ADMIN_PUBLIC_ORIGIN,
     dir = process.env.PRIVA_ADMIN_DATA_DIR,
@@ -82,14 +85,26 @@ export async function startAdmin() {
     adapter,
   );
   const stories=composeStories({repository:runtime.repository,directory:dir,origin:origin.origin,csrfKey:runtime.csrfKey,contactDatabase:process.env.PRIVA_CONTACT_DATABASE});
+  const replyAdapterPath=process.env.PRIVA_INBOX_MAIL_ADAPTER, sender=process.env.PRIVA_INBOX_SENDER, contactDatabase=process.env.PRIVA_CONTACT_DATABASE;
+  if(!replyAdapterPath||!isAbsolute(replyAdapterPath)||realpathSync(replyAdapterPath)!==replyAdapterPath||!sender||!contactDatabase)throw Error('Missing qualified inbox configuration');
+  const replyStat=lstatSync(replyAdapterPath);
+  if(!replyStat.isFile()||replyStat.isSymbolicLink()||(replyStat.mode&0o022))throw Error('Unsafe reply adapter');
+  const replyAdapter=(await import(pathToFileURL(replyAdapterPath).href)).replyMailAdapter as ReplyMailAdapter;
+  const keyVersion=process.env.PRIVA_INBOX_KEY_VERSION??'v1';
+  if(!/^v[1-9][0-9]{0,5}$/.test(keyVersion))throw Error('Invalid inbox key version');
+  loadKey(resolve(dir,'inbox-mail-'+keyVersion+'.key'));
+  const keys=new Map<string,Buffer>();
+  for(const file of readdirSync(dir)){const match=file.match(/^inbox-mail-(v[1-9][0-9]{0,5})\.key$/);if(match)keys.set(match[1],loadKey(resolve(dir,file)));}
+  const inbox=composeInbox({repository:runtime.repository,contactDatabase,keys,currentKey:keyVersion,csrfKey:runtime.csrfKey,origin:origin.origin,sender,adapter:replyAdapter});
   let maintenanceAt=0;
   let work: Promise<unknown> | undefined;
   const timer = setInterval(() => {
     if (!work)
       work = (async () => {
         runtime.repository.purge();
-        if(Date.now()-maintenanceAt>3600000){stories.media.cleanup();maintenanceAt=Date.now();}
+        if(Date.now()-maintenanceAt>3600000){stories.media.cleanup();inbox.repository.purgeExpired();maintenanceAt=Date.now();}
         await worker.tick();
+        await inbox.worker.tick();
       })()
         .catch(() => {
           console.error("admin_maintenance_failed");
@@ -104,6 +119,7 @@ export async function startAdmin() {
       service,
       recovery,
       stories:stories.handler,
+      inbox:inbox.handler,
       origin: origin.origin,
       viewsRoot,
     }),
@@ -115,6 +131,7 @@ export async function startAdmin() {
     clearInterval(timer);
     server.close(async () => {
       await work;
+      inbox.repository.close();
       runtime.repository.close();
     });
   };

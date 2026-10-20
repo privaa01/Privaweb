@@ -21,7 +21,7 @@ test("global counts published pending work once, real contact total/unavailable 
     db.exec(
       "CREATE TABLE consultations(id TEXT PRIMARY KEY,status TEXT); INSERT INTO consultations VALUES('one','Pendiente')",
     );
-    f.service.contactCount = () => contactSummary(path);
+    f.service.contactCount = () => contactSummary(path, f.time());
     const a = create(f),
       d = complete(f, a.storyId);
     create(f);
@@ -58,7 +58,7 @@ test("actual 005 signed submission/dedup/removal feeds authorized 007 HTTP aggre
     path = join(f.dir, "contact-real.sqlite"),
     tokens = new AttemptTokens(f.abuseKey, f.time),
     contact = new SqliteContactRepository(path, tokens, { clock: f.time });
-  f.service.contactCount = () => contactSummary(path);
+  f.service.contactCount = () => contactSummary(path, f.time());
   const handler = createStoriesHandler({
       service: f.service,
       media: f.media,

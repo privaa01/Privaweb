@@ -1,3 +1,4 @@
+import {initializeContactSchema,removeConsultation} from './schema.ts';
 import {DatabaseSync} from 'node:sqlite';
 import {createHash,randomUUID} from 'node:crypto';
 import {lstatSync,existsSync,realpathSync} from 'node:fs';
@@ -14,8 +15,7 @@ export class SqliteContactRepository implements ContactRepository {
   for(const f of[path,path+'-wal',path+'-shm'])if(existsSync(f)){const s=lstatSync(f);if(!s.isFile()||s.isSymbolicLink()||(s.mode&0o077)!==0)throw new Error('Unsafe database file');}
   const mask=process.umask(0o077);try{this.db=new DatabaseSync(path);this.db.exec('PRAGMA journal_mode=WAL; PRAGMA synchronous=FULL; PRAGMA foreign_keys=ON; PRAGMA busy_timeout=5000;');
    if(this.db.prepare('PRAGMA synchronous').get()!.synchronous!==2||this.db.prepare('PRAGMA foreign_keys').get()!.foreign_keys!==1||this.db.prepare('PRAGMA journal_mode').get()!.journal_mode!=='wal'||this.db.prepare('PRAGMA busy_timeout').get()!.timeout!==5000)throw new Error('Unsafe database configuration');
-   this.db.exec(`CREATE TABLE IF NOT EXISTS consultations(id TEXT PRIMARY KEY,nameOrAlias TEXT NOT NULL,email TEXT NOT NULL,message TEXT NOT NULL,receivedAt TEXT NOT NULL,lastActivityAt TEXT NOT NULL,status TEXT NOT NULL CHECK(status='Pendiente'));
-CREATE TABLE IF NOT EXISTS attempts(tokenDigest TEXT PRIMARY KEY,attemptId TEXT NOT NULL,expiresAt INTEGER NOT NULL,state TEXT NOT NULL CHECK(state IN ('COMMITTED','REJECTED','REVOKED')),consultationId TEXT UNIQUE REFERENCES consultations(id) ON DELETE RESTRICT,CHECK((state='COMMITTED' AND consultationId IS NOT NULL) OR (state!='COMMITTED' AND consultationId IS NULL)));`);
+   initializeContactSchema(this.db);
   }finally{process.umask(mask);}
  }
  private now(){return (this.options.clock??this.tokens.clock)();}
@@ -38,12 +38,12 @@ CREATE TABLE IF NOT EXISTS attempts(tokenDigest TEXT PRIMARY KEY,attemptId TEXT 
     const verified=this.tokens.verify(a.attemptId,a.token);
     if(!verified)receipt={result:'retired',attemptId:a.attemptId};
     else if(!result.ok){this.db.prepare('INSERT INTO attempts VALUES(?,?,?,?,NULL)').run(digest,a.attemptId,verified.expiresAt,'REJECTED');receipt={result:'not_stored',attemptId:a.attemptId,errors:result.errors};}
-    else {this.lastWasInsert=true;const id=randomUUID(),date=new Date(this.now()).toISOString();this.db.prepare('INSERT INTO consultations VALUES(?,?,?,?,?,?,?)').run(id,result.value.nameOrAlias,result.value.email,result.value.message,date,date,'Pendiente');this.db.prepare('INSERT INTO attempts VALUES(?,?,?,?,?)').run(digest,a.attemptId,verified.expiresAt,'COMMITTED',id);receipt={result:'stored',attemptId:a.attemptId};}
+    else {this.lastWasInsert=true;const id=randomUUID(),date=new Date(this.now()).toISOString();this.db.prepare('INSERT INTO consultations(id,nameOrAlias,email,message,receivedAt,lastActivityAt,status) VALUES(?,?,?,?,?,?,?)').run(id,result.value.nameOrAlias,result.value.email,result.value.message,date,date,'Pendiente');this.db.prepare('INSERT INTO attempts VALUES(?,?,?,?,?)').run(digest,a.attemptId,verified.expiresAt,'COMMITTED',id);receipt={result:'stored',attemptId:a.attemptId};}
    }
    this.options.failure?.('beforeCommit');this.db.exec('COMMIT');committed=true;this.options.failure?.('afterCommit');return receipt;
   }catch(error){if(!committed){try{this.db.exec('ROLLBACK');}catch{/* Outcome cannot be asserted here. */}}throw error;}
  }
- revoke(id:string){this.db.exec('BEGIN IMMEDIATE');try{this.db.prepare("UPDATE attempts SET state='REVOKED',consultationId=NULL WHERE consultationId=?").run(id);this.db.prepare('DELETE FROM consultations WHERE id=?').run(id);this.db.exec('COMMIT');}catch(e){this.db.exec('ROLLBACK');throw e;}}
+ revoke(id:string){this.db.exec('BEGIN IMMEDIATE');try{removeConsultation(this.db,id);this.db.exec('COMMIT');}catch(e){this.db.exec('ROLLBACK');throw e;}}
  sweepOpaqueReceipts(){this.db.prepare("DELETE FROM attempts WHERE state!='COMMITTED' AND expiresAt<=?").run(this.now());}
  close(){if(!this.closed){this.closed=true;this.db.close();}}
 }

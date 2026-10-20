@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-20",
+  "scope": "local synthetic reference, not production",
+  "node": {
+    "total": 43,
+    "passed": 43,
+    "failed": 0
+  },
+  "browser": {
+    "chromium": 3,
+    "firefox": 3,
+    "passed": 6,
+    "webkit": "blocked: host dependency discovery"
+  },
+  "regression": {
+    "unique_cases": 225,
+    "initial_passed": 220,
+    "initial_environment_failures": 5,
+    "retry_affected_files_passed": 15,
+    "unique_outcome_passed": 225,
+    "reason": "bwrap required execution outside outer sandbox, application isolation retained"
+  },
+  "performance": {
+    "consultations_per_fixture": 1000,
+    "replies_per_consultation": 10,
+    "full_batch_size": 100,
+    "warmup_full_batches": 10,
+    "measured_full_batches": 30,
+    "p95_ms": 961.472
+  },
+  "logs": {
+    "node_sha256": "4484816383628716e29e3f57ab8352f2b8d9f618750bf4fd42fe20ec38ea5d02",
+    "browser_sha256": "0731ad075b4ee536c9c2308730c1a4f507698ca877896b7d16e30b5de4fdfdaa"
+  },
+  "production_mail_sent": false,
+  "production_data_migrated": false,
+  "deployed": false
+}

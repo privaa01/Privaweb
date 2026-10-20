@@ -1,8 +1,13 @@
-import {composeInbox} from '../inbox/composition.ts';
-import {inboxIssues} from '../../src/config/inbox.ts';
-import type {ReplyMailAdapter} from '../inbox/mail-adapter.ts';
-import {composeStories} from '../stories/composition.ts';
-import {storyManagementReadiness,storyManagementIssues} from '../../src/config/story-management.ts';
+import { requirePrivacy } from "../privacy/readiness.ts";
+import { productionPrivacy, operatorModule } from "../privacy/runtime.ts";
+import { composeInbox } from "../inbox/composition.ts";
+import { inboxIssues } from "../../src/config/inbox.ts";
+import type { ReplyMailAdapter } from "../inbox/mail-adapter.ts";
+import { composeStories } from "../stories/composition.ts";
+import {
+  storyManagementReadiness,
+  storyManagementIssues,
+} from "../../src/config/story-management.ts";
 import { createServer } from "node:http";
 import { resolve, isAbsolute } from "node:path";
 import { pathToFileURL } from "node:url";
@@ -17,7 +22,12 @@ import { MailWorker } from "./mail-worker.ts";
 import { createAdminHandler } from "./http.ts";
 import type { MailAdapter } from "./repository.ts";
 export async function startAdmin() {
-  const issues = [...adminPublicationIssues(adminContent, adminReadiness),...storyManagementIssues(storyManagementReadiness),...inboxIssues()];
+  requirePrivacy();
+  const issues = [
+    ...adminPublicationIssues(adminContent, adminReadiness),
+    ...storyManagementIssues(storyManagementReadiness),
+    ...inboxIssues(),
+  ];
   if (issues.length) throw Error("Administrative publication not qualified");
   const raw = process.env.PRIVA_ADMIN_PUBLIC_ORIGIN,
     dir = process.env.PRIVA_ADMIN_DATA_DIR,
@@ -61,6 +71,17 @@ export async function startAdmin() {
       throw Error("Private templates missing");
   if (!existsSync(resolve("public", "." + adminReadiness.officialBrand)))
     throw Error("Official brand missing");
+  const privacyOperator = await operatorModule(
+    process.env.PRIVA_PRIVACY_OPERATOR_MODULE,
+  );
+  if (typeof privacyOperator.beforeAdminStart !== "function")
+    throw Error(
+      "Qualified privacy supervisor required before opening databases",
+    );
+  const privacyAdmission = await privacyOperator.beforeAdminStart({
+    directory: dir,
+    contactDatabase: process.env.PRIVA_CONTACT_DATABASE,
+  });
   const runtime = openAdminRuntime(dir, [
     resolve("public"),
     resolve("dist"),
@@ -84,25 +105,85 @@ export async function startAdmin() {
     new Map([["v1", runtime.mailKey]]),
     adapter,
   );
-  const stories=composeStories({repository:runtime.repository,directory:dir,origin:origin.origin,csrfKey:runtime.csrfKey,contactDatabase:process.env.PRIVA_CONTACT_DATABASE});
-  const replyAdapterPath=process.env.PRIVA_INBOX_MAIL_ADAPTER, sender=process.env.PRIVA_INBOX_SENDER, contactDatabase=process.env.PRIVA_CONTACT_DATABASE;
-  if(!replyAdapterPath||!isAbsolute(replyAdapterPath)||realpathSync(replyAdapterPath)!==replyAdapterPath||!sender||!contactDatabase)throw Error('Missing qualified inbox configuration');
-  const replyStat=lstatSync(replyAdapterPath);
-  if(!replyStat.isFile()||replyStat.isSymbolicLink()||(replyStat.mode&0o022))throw Error('Unsafe reply adapter');
-  const replyAdapter=(await import(pathToFileURL(replyAdapterPath).href)).replyMailAdapter as ReplyMailAdapter;
-  const keyVersion=process.env.PRIVA_INBOX_KEY_VERSION??'v1';
-  if(!/^v[1-9][0-9]{0,5}$/.test(keyVersion))throw Error('Invalid inbox key version');
-  loadKey(resolve(dir,'inbox-mail-'+keyVersion+'.key'));
-  const keys=new Map<string,Buffer>();
-  for(const file of readdirSync(dir)){const match=file.match(/^inbox-mail-(v[1-9][0-9]{0,5})\.key$/);if(match)keys.set(match[1],loadKey(resolve(dir,file)));}
-  const inbox=composeInbox({repository:runtime.repository,contactDatabase,keys,currentKey:keyVersion,csrfKey:runtime.csrfKey,origin:origin.origin,sender,adapter:replyAdapter});
-  let maintenanceAt=0;
+  const stories = composeStories({
+    repository: runtime.repository,
+    directory: dir,
+    origin: origin.origin,
+    csrfKey: runtime.csrfKey,
+    contactDatabase: process.env.PRIVA_CONTACT_DATABASE,
+  });
+  const replyAdapterPath = process.env.PRIVA_INBOX_MAIL_ADAPTER,
+    sender = process.env.PRIVA_INBOX_SENDER,
+    contactDatabase = process.env.PRIVA_CONTACT_DATABASE;
+  if (
+    !replyAdapterPath ||
+    !isAbsolute(replyAdapterPath) ||
+    realpathSync(replyAdapterPath) !== replyAdapterPath ||
+    !sender ||
+    !contactDatabase
+  )
+    throw Error("Missing qualified inbox configuration");
+  const replyStat = lstatSync(replyAdapterPath);
+  if (
+    !replyStat.isFile() ||
+    replyStat.isSymbolicLink() ||
+    replyStat.mode & 0o022
+  )
+    throw Error("Unsafe reply adapter");
+  const replyAdapter = (await import(pathToFileURL(replyAdapterPath).href))
+    .replyMailAdapter as ReplyMailAdapter;
+  const keyVersion = process.env.PRIVA_INBOX_KEY_VERSION ?? "v1";
+  if (!/^v[1-9][0-9]{0,5}$/.test(keyVersion))
+    throw Error("Invalid inbox key version");
+  loadKey(resolve(dir, "inbox-mail-" + keyVersion + ".key"));
+  const keys = new Map<string, Buffer>();
+  for (const file of readdirSync(dir)) {
+    const match = file.match(/^inbox-mail-(v[1-9][0-9]{0,5})\.key$/);
+    if (match) keys.set(match[1], loadKey(resolve(dir, file)));
+  }
+  const inbox = composeInbox({
+    repository: runtime.repository,
+    contactDatabase,
+    keys,
+    currentKey: keyVersion,
+    csrfKey: runtime.csrfKey,
+    origin: origin.origin,
+    sender,
+    adapter: replyAdapter,
+  });
+  const privacy = await productionPrivacy({
+    admin: runtime.repository,
+    contactDatabase,
+    origin: origin.origin,
+    csrfKey: runtime.csrfKey,
+    inbox,
+    stories,
+  });
+  const stopPrivacy = privacy.worker.start();
+  let privacyMailWork: Promise<unknown> | undefined;
+  const privacyMailTimer = setInterval(() => {
+    if (!privacyMailWork)
+      privacyMailWork = privacy.mailWorker
+        .tick()
+        .catch(() => console.error("privacy_mail_failed"))
+        .finally(() => {
+          privacyMailWork = undefined;
+        });
+  }, 1000);
+  const privacyInitialWork = privacy.worker
+    .tick()
+    .catch(() => console.error("privacy_maintenance_failed"));
+  let maintenanceAt = 0;
   let work: Promise<unknown> | undefined;
   const timer = setInterval(() => {
     if (!work)
       work = (async () => {
         runtime.repository.purge();
-        if(Date.now()-maintenanceAt>3600000){stories.media.cleanup();inbox.repository.purgeExpired();maintenanceAt=Date.now();}
+        if (Date.now() - maintenanceAt > 3600000) {
+          stories.media.cleanup();
+          inbox.repository.purgeExpired();
+          maintenanceAt = Date.now();
+        }
         await worker.tick();
         await inbox.worker.tick();
       })()
@@ -116,10 +197,11 @@ export async function startAdmin() {
   const server = createServer(
     createAdminHandler({
       ...runtime,
+      privacy: privacy.handler,
       service,
       recovery,
-      stories:stories.handler,
-      inbox:inbox.handler,
+      stories: stories.handler,
+      inbox: inbox.handler,
       origin: origin.origin,
       viewsRoot,
     }),
@@ -129,10 +211,16 @@ export async function startAdmin() {
   server.listen(port, "127.0.0.1");
   const stop = () => {
     clearInterval(timer);
+    clearInterval(privacyMailTimer);
     server.close(async () => {
       await work;
+      await privacyInitialWork;
+      await privacyMailWork;
+      await stopPrivacy();
+      privacy.close();
       inbox.repository.close();
       runtime.repository.close();
+      await privacyAdmission?.close?.();
     });
   };
   process.on("SIGTERM", stop);

@@ -63,7 +63,7 @@ export async function inboxFixture(now?: number) {
   };
 }
 export function receive(
-  f: Awaited<ReturnType<typeof inboxFixture>>,
+  f: Pick<Awaited<ReturnType<typeof inboxFixture>>, "tokens" | "contact">,
   message = "Consulta sintética",
 ) {
   const a = f.tokens.issue();

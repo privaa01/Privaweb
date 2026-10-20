@@ -23,10 +23,15 @@ export function contactSummary(
       .all()
       .map((c) => c.name);
     const query = cols.includes("lifecycle")
-      ? "SELECT count(*) AS n FROM consultations WHERE lifecycle='active' AND lastActivityAt>?"
+      ? "SELECT count(*) AS n FROM consultations WHERE lifecycle='active' AND lastActivityAt>? AND lastActivityAt<=?"
       : "SELECT count(*) AS n FROM consultations";
     const n = cols.includes("lifecycle")
-      ? db.prepare(query).get(new Date(now - 90 * 86400000).toISOString())!.n
+      ? db
+          .prepare(query)
+          .get(
+            new Date(now - 90 * 86400000).toISOString(),
+            new Date(now).toISOString(),
+          )!.n
       : db.prepare(query).get()!.n;
     return { state: "available", total: Number(n) };
   } catch {

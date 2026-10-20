@@ -1,0 +1,15 @@
+
+Running 6 tests using 1 worker
+
+(node:283716) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/privacy-service.spec.ts:5:1 › browser submits scoped request and explicit confirmation to real protected service (974ms)
+  ✓  2 [chromium] › tests/privacy-service.spec.ts:65:1 › browser cross-origin/unauthenticated operation cannot confirm (838ms)
+  ✓  3 [chromium] › tests/privacy-tracking.spec.ts:3:1 › local private-service fixture adds no tracking requests or persistent visitor data (966ms)
+(node:283928) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  4 [firefox] › tests/privacy-service.spec.ts:5:1 › browser submits scoped request and explicit confirmation to real protected service (1.6s)
+  ✓  5 [firefox] › tests/privacy-service.spec.ts:65:1 › browser cross-origin/unauthenticated operation cannot confirm (958ms)
+  ✓  6 [firefox] › tests/privacy-tracking.spec.ts:3:1 › local private-service fixture adds no tracking requests or persistent visitor data (1.0s)
+
+  6 passed (8.5s)

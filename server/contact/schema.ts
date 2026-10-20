@@ -1,3 +1,4 @@
+import { isPrivacy, queueErasure } from "../privacy/schema.ts";
 import type { DatabaseSync } from "node:sqlite";
 const consultation = `CREATE TABLE consultations(id TEXT PRIMARY KEY,nameOrAlias TEXT NOT NULL,email TEXT NOT NULL,message TEXT NOT NULL,receivedAt TEXT NOT NULL,lastActivityAt TEXT NOT NULL,status TEXT NOT NULL CHECK(status IN('Pendiente','Respondido')),revision INTEGER NOT NULL DEFAULT 1 CHECK(revision>0),lifecycle TEXT NOT NULL DEFAULT 'active' CHECK(lifecycle IN('active','deleting')));`;
 const attempts = `CREATE TABLE attempts(tokenDigest TEXT PRIMARY KEY,attemptId TEXT NOT NULL,expiresAt INTEGER NOT NULL,state TEXT NOT NULL CHECK(state IN ('COMMITTED','REJECTED','REVOKED')),consultationId TEXT UNIQUE REFERENCES consultations(id) ON DELETE RESTRICT,CHECK((state='COMMITTED' AND consultationId IS NOT NULL) OR (state!='COMMITTED' AND consultationId IS NULL)));`;
@@ -14,7 +15,8 @@ export function initializeContactSchema(db: DatabaseSync) {
     )
     .get();
   if (exists) {
-    if (version !== 8) throw Error("Offline contact migration required");
+    if (version !== 8 && version !== 9)
+      throw Error("Offline contact migration required");
     const cols = db
       .prepare("PRAGMA table_info(consultations)")
       .all()
@@ -69,7 +71,16 @@ export function migrateContactSchema(db: DatabaseSync) {
     db.exec("PRAGMA foreign_keys=ON");
   }
 }
-export function removeConsultation(db: DatabaseSync, id: string) {
+export function removeConsultation(
+  db: DatabaseSync,
+  id: string,
+  now = Date.now(),
+  reason: "expiry" | "request" = "request",
+) {
+  if (isPrivacy(db)) {
+    queueErasure(db, id, now, undefined, reason);
+    return;
+  }
   db.prepare(
     "UPDATE consultations SET lifecycle='deleting',revision=revision+1 WHERE id=?",
   ).run(id);

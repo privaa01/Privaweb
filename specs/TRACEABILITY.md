@@ -52,7 +52,7 @@
 | AD10 | Ver historias en la web | [007-gestion-historias](007-gestion-historias/spec.md) | Implementado/verificado localmente; cierre pendiente |
 | AD11 | Origen de comentarios y alcance público | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | Implementado/verificado localmente; cierre pendiente |
 | X01 | Adaptación y accesibilidad | [011-accesibilidad-fidelidad](011-accesibilidad-fidelidad/spec.md) | No ejecutado |
-| X02 | Seguridad, rastreo y conservación | [009-privacidad-conservacion](009-privacidad-conservacion/spec.md) | No ejecutado |
+| X02 | Seguridad, rastreo y conservación | [009-privacidad-conservacion](009-privacidad-conservacion/spec.md) | Implementado/verificado localmente; cierre integrado pendiente |
 | X03 | Auxiliares y documentos informativos | [010-documentos-recuperacion](010-documentos-recuperacion/spec.md) | No ejecutado |
 | X04 | Recursos y fidelidad | [011-accesibilidad-fidelidad](011-accesibilidad-fidelidad/spec.md) | No ejecutado |
 | X05 | Sincronización y cierre | [011-accesibilidad-fidelidad](011-accesibilidad-fidelidad/spec.md) | No ejecutado |
@@ -283,3 +283,75 @@ unknown/lookup sin reenvío, reintento estable y eliminación coordinada. [Evide
 WebKit/lector/revisión manual, P02/009/010/011 y build de entrega pendientes. Gates permanecen
 cerrados; no se acredita CT01 productivo, recepción real ni eliminación de proveedores/copias.
 Checklist documental 16/16 sin modificar marcadores. Sin commit/push/despliegue ni correo a terceros.
+
+2026-10-20 — `/speckit-specify 009`: [privacidad y conservación](009-privacidad-conservacion/spec.md)
+desarrollada conservando X02/FR-001 literalmente; cuatro historias, 25 escenarios, nueve reglas
+y ocho criterios medibles. [Checklist documental 16/16](009-privacidad-conservacion/checklists/requirements.md).
+Conservación, solicitud anticipada, copias/restauración, acceso privado y ausencia de rastreo
+trazados sin nuevas políticas para cuentas/historias/logs. A1 mantiene el criterio de última actividad
+como supuesto propuesto revisable en aclaración; P02, frecuencia/límites operativos, canal,
+proveedores/buzones/respaldos y avisos010 pendientes de calificación real. La implementación local008
+no aprueba esas políticas. Selección activa009; sin plan, tareas, código o pruebas de aplicación.
+
+2026-10-20 — `$speckit-clarify 009`, Q1: la usuaria elige A; última actividad es la fecha
+más reciente entre recepción y aceptación original de una nueva respuesta por el servicio de correo.
+Lectura, borradores, fallos y confirmaciones repetidas no reinician el plazo. Actualizados
+Clarifications, US1.4, casos límite, R-02, A1 y dependencia del plan. Las restantes decisiones
+operativas siguen pendientes; checklist revalidado 16/16 sin cambiar sus marcadores ni notas históricas.
+
+2026-10-20 — `$speckit-clarify 009`, Q2: la usuaria elige A; revisión de vencimientos
+al menos horaria y eliminación física operativa como máximo una hora después del vencimiento,
+sin acceso ni nuevos envíos desde el vencimiento. Actualizados US1.6, R-03, SC-002, A2 y P02.
+Un plazo incumplido por fallo o interrupción se registra como tal. Copias/proveedores y evidencia
+productiva siguen pendientes. Checklist documental 16/16 → 16/16, sin cambios de marcadores.
+
+2026-10-20 — `$speckit-clarify 009`, Q3: la usuaria elige A; verificación de eliminación
+mediante enlace o código de un solo uso enviado exclusivamente al correo guardado, vinculado
+al alcance solicitado y sin documentos de identidad. Actualizados US2.2, R-04, SC-003, A3 y P02.
+Canal oficial, plazos, proveedor y calificación real siguen pendientes. Checklist documental
+16/16 → 16/16 sin cambios de marcadores; no se ha enviado correo ni implementado este flujo.
+
+2026-10-20 — `$speckit-clarify 009`, Q4 y cierre: la usuaria elige A; borrado operativo
+como máximo 24 horas desde la confirmación válida, respetando cualquier límite anterior de
+conservación. Fallos/repeticiones no reinician el plazo. Actualizados US2.4, R-04, SC-003,
+A3, casos límite, estado y dependencias. Q1–Q4 integradas; canal/proveedores/ciclos de copias
+y calificación operativa pendientes, sin inventar aprobaciones. Checklist 16/16 → 16/16,
+sin cambios de marcadores o contenido. Lista para planificar partes definidas; sin código,
+pruebas de aplicación, correo enviado, commit o despliegue en esta fase.
+
+2026-10-20 — `$speckit-plan 009`: [plan](009-privacidad-conservacion/plan.md), investigación,
+modelo, contrato y guía de validación para X02/FR-001, cuatro historias/25escenarios y ochoSC.
+Q1–Q4 se traducen en política común, mantenimiento dedicado, limpieza SQLite/WAL, código de
+un uso por canal oficial y eliminación≤24h; diario mínimo replicado y barrera de restore evitan
+resurrección desde copias antiguas. Guard006 y fuente005/008 conservados, sin pantalla pública
+ni roles nuevos. Gate constitucional previo/posterior conforme para diseño local; P02, proveedor,
+canal/ciclos de copias y010/011 requieren evidencia real. Sin tareas, código o pruebas009,
+commit/push/despliegue o envío de correos en esta fase; rama real main y selección009.
+
+2026-10-20 — `$speckit-tasks 009`: [67 tareas pendientes](009-privacidad-conservacion/tasks.md),
+cinco de preparación, doce de fundamentos, US1(10)/US2(15)/US3(9)/US4(8) y ocho de cierre.
+X02/FR-001, Q1–Q4,25 escenarios y SC-001–008 trazados a casos V01–V15; diario y barrera
+preceden a borrado, correo009 separado, códigos de un uso, plazos1h/24h y restauración segura.
+13 oportunidades[P] condicionadas a dependencias y archivos distintos; evidencia compartida
+serializada. Formato/IDs/rutas y grafo sin ciclos verificados documentalmente. MVP localT001–T027;
+P02/proveedores/copias/010/011 y entrega real siguen condicionando cierre. Sin implementación009,
+pruebas de aplicación, commit/push/despliegue o correos enviados por esta generación.
+
+2026-10-20 — Corrección autorizada del análisis009: I1 del informe (manifiestos) resuelto
+con primitivos básicos en T012 antes de T014, ampliación T045 sin duplicación; I2 resuelto con
+captura mínima durable de handles externos en T013 antes del borrado T021/T022, seguimiento
+en T049 sin reconstrucción desde datos borrados; I3 unifica el objetivo interno15min desde
+vencimiento/confirmación, manteniendo máximos aprobados1h/24h. Sincronizados plan, research,
+modelo, contrato, guía y tareas. Conservadas67tareas pendientes y13marcas[P]; sin código,
+pruebas de aplicación, commit/push/despliegue o calificación externa.
+
+2026-10-20 — `$speckit-implement 009`:57/67 tareas verificadas localmente; pendientes
+T053/T058/T059/T060/T061/T062/T063/T064/T065/T066. X02/FR-001 implementado con esquema9,
+conservación Q1/Q2,confirmación por código Q3/Q4,guard006,diario/captura durable previa,
+borrado SQLite/WAL por lotes,restauración sin resurrección y retirada acotada con prueba firmada.
+[Evidencia](009-privacidad-conservacion/evidence.md):43Node,6navegador Chromium/Firefox y225
+regresionesNode únicas aprobadas;p95lote completo≈0.962s en30muestras tras calentamiento.
+WebKit no ejecuta por descubrimiento de dependencias del host; canal/proveedor/ciclos reales,
+HTTPS/soporte/avisos010/auditoría integrada/revisión manual y build de entrega pendientes.
+Checklist16/16 intacto; gates no habilitados. Sin correo a terceros,migración de datos reales,
+commit/push/despliegue o cierre de CT01/010/011 en esta fase.

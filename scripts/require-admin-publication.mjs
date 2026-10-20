@@ -1,3 +1,4 @@
+import './require-privacy-publication.mjs';
 import { adminContent } from "../src/content/admin.ts";
 import { adminReadiness } from "../src/config/admin.ts";
 import { adminPublicationIssues } from "../src/lib/admin-publication.ts";

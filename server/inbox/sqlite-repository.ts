@@ -1,3 +1,4 @@
+import { visible } from "../privacy/policy.ts";
 import { DatabaseSync } from "node:sqlite";
 import { lstatSync, realpathSync, chmodSync } from "node:fs";
 import { isAbsolute, dirname } from "node:path";
@@ -83,7 +84,7 @@ export class InboxRepository {
     }
     try {
       this.db.exec(
-        "PRAGMA journal_mode=WAL;PRAGMA synchronous=FULL;PRAGMA foreign_keys=ON;PRAGMA busy_timeout=5000",
+        "PRAGMA journal_mode=WAL;PRAGMA secure_delete=ON;PRAGMA temp_store=MEMORY;PRAGMA synchronous=FULL;PRAGMA foreign_keys=ON;PRAGMA busy_timeout=5000",
       );
       initializeContactSchema(this.db);
       chmodSync(path, 0o600);
@@ -152,12 +153,7 @@ export class InboxRepository {
     const c = this.db
       .prepare("SELECT * FROM consultations WHERE id=? AND lifecycle='active'")
       .get(id) as unknown as Consultation | undefined;
-    if (
-      !c ||
-      !Number.isFinite(Date.parse(c.lastActivityAt)) ||
-      Date.parse(c.lastActivityAt) + RETENTION <= this.now()
-    )
-      throw new InboxError(404, "not_found");
+    if (!c || !visible(c, this.now())) throw new InboxError(404, "not_found");
     return c;
   }
   op(id: string) {
@@ -195,9 +191,9 @@ export class InboxRepository {
   summary() {
     const row = this.db
       .prepare(
-        "SELECT count(*) total,coalesce(sum(status='Pendiente'),0) pending,coalesce(sum(status='Respondido'),0) responded FROM consultations WHERE lifecycle='active' AND lastActivityAt>?",
+        "SELECT count(*) total,coalesce(sum(status='Pendiente'),0) pending,coalesce(sum(status='Respondido'),0) responded FROM consultations WHERE lifecycle='active' AND lastActivityAt>? AND lastActivityAt<=?",
       )
-      .get(this.cutoff())!;
+      .get(this.cutoff(), new Date(this.now()).toISOString())!;
     return {
       total: Number(row.total),
       pending: Number(row.pending),
@@ -253,10 +249,11 @@ export class InboxRepository {
       throw new InboxError(422, "cursor");
     const rows = this.db
       .prepare(
-        "SELECT * FROM consultations WHERE lifecycle='active' AND lastActivityAt>? AND status=? AND (? IS NULL OR receivedAt<? OR (receivedAt=? AND id<?)) ORDER BY receivedAt DESC,id DESC LIMIT ?",
+        "SELECT * FROM consultations WHERE lifecycle='active' AND lastActivityAt>? AND lastActivityAt<=? AND status=? AND (? IS NULL OR receivedAt<? OR (receivedAt=? AND id<?)) ORDER BY receivedAt DESC,id DESC LIMIT ?",
       )
       .all(
         this.cutoff(),
+        new Date(this.now()).toISOString(),
         String(status),
         last?.date ?? null,
         last?.date ?? null,
@@ -481,7 +478,7 @@ export class InboxRepository {
           try {
             c = this.consultation(o.consultationId);
           } catch {
-            removeConsultation(this.db, o.consultationId);
+            removeConsultation(this.db, o.consultationId, this.now(), "expiry");
             continue;
           }
           if (o.state === "queued") {
@@ -533,7 +530,7 @@ export class InboxRepository {
       try {
         this.consultation(o.consultationId);
       } catch {
-        removeConsultation(this.db, o.consultationId);
+        removeConsultation(this.db, o.consultationId, this.now(), "expiry");
         return;
       }
       this.failure?.("beforeSettlement");
@@ -599,14 +596,15 @@ export class InboxRepository {
     });
   }
   revoke(id: string) {
-    this.tx(() => removeConsultation(this.db, id));
+    this.tx(() => removeConsultation(this.db, id, this.now()));
   }
   purgeExpired() {
     return this.tx(() => {
       const ids = this.db
         .prepare("SELECT id FROM consultations WHERE lastActivityAt<=?")
         .all(this.cutoff());
-      for (const r of ids) removeConsultation(this.db, String(r.id));
+      for (const r of ids)
+        removeConsultation(this.db, String(r.id), this.now(), "expiry");
       return ids.length;
     });
   }

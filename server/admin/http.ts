@@ -28,6 +28,7 @@ export interface HandlerOptions {
   origin: string;
   viewsRoot: string;
   recovery?: RecoveryAPI;
+  privacy?: (req: IncomingMessage, res: ServerResponse) => Promise<boolean>;
   inbox?: (req: IncomingMessage, res: ServerResponse) => Promise<boolean>;
   stories?: (req: IncomingMessage, res: ServerResponse) => Promise<boolean>;
 }
@@ -87,6 +88,7 @@ export function createAdminHandler(o: HandlerOptions) {
   return async (req: IncomingMessage, res: ServerResponse) => {
     for (const [k, v] of Object.entries(securityHeaders)) res.setHeader(k, v);
     try {
+      if(o.privacy && (await o.privacy(req,res)))return;
       if (o.inbox && (await o.inbox(req, res))) return;
       if (o.stories && (await o.stories(req, res))) return;
       const raw = (req.url ?? "").split("?")[0];

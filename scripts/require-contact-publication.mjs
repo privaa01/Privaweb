@@ -1,3 +1,4 @@
+import './require-privacy-publication.mjs';
 import {resolve} from 'node:path';
 import {contactContent,contactReadiness} from '../src/config/contact.ts';
 import {assertContactPublication} from '../src/lib/contact-publication.ts';

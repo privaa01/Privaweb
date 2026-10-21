@@ -23,7 +23,7 @@
 .home-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .home-card { background: var(--neutral-white); border: 1px solid var(--primary-lightest); border-radius: 1rem; padding: 1.4rem; }
 .home-card p { font-size: .9rem; margin-bottom: 0; }
-.home-card-number { display: inline-block; padding: .5rem; background: var(--primary-lightest); border-radius: .5rem; font-size: .8rem; font-weight: 700; }
+.home-card-icon { display: inline-flex; align-items: center; justify-content: center; padding: .5rem; background: var(--primary-lightest); border-radius: .5rem; font-size: .8rem; font-weight: 700; }
 @media (max-width: 50rem) { .home-areas .home-row { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 32rem) { .home-cards { grid-template-columns: minmax(0, 1fr); } }
 .home-closing { background: var(--primary-dark); color: var(--neutral-white); }

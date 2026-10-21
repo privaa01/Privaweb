@@ -1,0 +1,24 @@
+
+> privaweb@0.1.0 test:e2e:home:integration
+> PRIVA_TEST_MODE=integration playwright test --config=playwright.home.config.ts --list
+
+Listing tests:
+  [chromium] › home-integration.spec.ts:14:2 › Inicio real: entrada directa y recarga #somos-priva
+  [chromium] › home-integration.spec.ts:14:2 › Inicio real: entrada directa y recarga #que-hacemos
+  [chromium] › home-integration.spec.ts:24:2 › Inicio real: Conocer más con puntero conserva foco y recorrido
+  [chromium] › home-integration.spec.ts:28:2 › Inicio real: CTA con puntero llega a Historias real
+  [chromium] › home-integration.spec.ts:24:2 › Inicio real: Conocer más con teclado conserva foco y recorrido
+  [chromium] › home-integration.spec.ts:28:2 › Inicio real: CTA con teclado llega a Historias real
+  [firefox] › home-integration.spec.ts:14:2 › Inicio real: entrada directa y recarga #somos-priva
+  [firefox] › home-integration.spec.ts:14:2 › Inicio real: entrada directa y recarga #que-hacemos
+  [firefox] › home-integration.spec.ts:24:2 › Inicio real: Conocer más con puntero conserva foco y recorrido
+  [firefox] › home-integration.spec.ts:28:2 › Inicio real: CTA con puntero llega a Historias real
+  [firefox] › home-integration.spec.ts:24:2 › Inicio real: Conocer más con teclado conserva foco y recorrido
+  [firefox] › home-integration.spec.ts:28:2 › Inicio real: CTA con teclado llega a Historias real
+  [webkit] › home-integration.spec.ts:14:2 › Inicio real: entrada directa y recarga #somos-priva
+  [webkit] › home-integration.spec.ts:14:2 › Inicio real: entrada directa y recarga #que-hacemos
+  [webkit] › home-integration.spec.ts:24:2 › Inicio real: Conocer más con puntero conserva foco y recorrido
+  [webkit] › home-integration.spec.ts:28:2 › Inicio real: CTA con puntero llega a Historias real
+  [webkit] › home-integration.spec.ts:24:2 › Inicio real: Conocer más con teclado conserva foco y recorrido
+  [webkit] › home-integration.spec.ts:28:2 › Inicio real: CTA con teclado llega a Historias real
+Total: 18 tests in 1 file

@@ -1,7 +1,6 @@
-# Guía de validación futura — Inicio 002
+# Guía de validación — Inicio 002
 
-**Estado**: componentes, scripts y banco contractual implementados. Pruebas de Chromium
-y publicación ejecutadas; aceptación integrada, recursos y revisión editorial pendientes.
+**Estado**: Chromium, Firefox y pruebas de publicación verificados contractualmente. Cinco textos educativos aprobados; marca, fuente y paleta recibidas. Imágenes institucionales, revisión final, WebKit e integración pendientes.
 
 ## Prerrequisitos y comandos existentes
 
@@ -28,7 +27,7 @@ canales autorizados. No desactivar TLS ni considerar probado Firefox/WebKit por 
 
 ## Scripts implementados
 
-| Comando previsto | Resultado y condición |
+| Comando | Resultado y condición |
 |---|---|
 | npm run check:home:contract | Astro check del banco tests/fixtures/home y componentes importados |
 | npm run build:home:contract | Build .html del banco en .test-output/home, caché separada |
@@ -42,7 +41,7 @@ Fixtures incluyen página Inicio con HomeContent real y destino Historias identi
 ficticio. No contienen servicios privados, documentación aprobada ni assets oficiales inventados.
 No crear enlaces de preview de localhost en la UI de onboarding.
 
-## Recorrido contractual después de crear el banco y sus pruebas
+## Recorrido contractual existente
 
 ```bash
 npm run check:home:contract
@@ -84,9 +83,7 @@ npm run check
 npm run build
 ```
 
-Estos comandos no acreditan entrega de 002 mientras falten recursos/revisión y el build
-seguirá bloqueado si faltan las demás páginas reales de 003–005. No añadir páginas ficticias
-para superar scripts/require-pages.mjs.
+Las páginas reales 003–005 ya existen en código. Estos comandos no acreditan entrega mientras falten imágenes oficiales, revisión visual e integración o fallen los guards de otras features. La revisión editorial de los cinco textos actuales sí está aprobada; no repetirla. No añadir páginas ficticias ni eludir scripts/require-pages.mjs.
 
 Para el recorrido integrado usar un entorno real con /index.html, sus anclas y /historias.html;
 configurar PRIVA_INTEGRATION_BASE_URL con la URL proporcionada por ese entorno y ejecutar
@@ -98,16 +95,18 @@ silencioso ni fallback a fixtures. No se requieren credenciales para Inicio púb
 Registrar fecha, entorno/navegador, ancho/texto, ID y escenario, resultado y evidencia.
 Separar aprobado/fallido/bloqueado/no ejecutado; pruebas contractuales no cierran destino
 real de 003 ni fidelidad sin recursos. I01–I04 y SC-001–005 se actualizan solo tras pruebas.
-Publicación exige recursos oficiales y copy revisado; faltantes P01/P03/P04 permanecen abiertos.
+Publicación exige recursos oficiales y copy revisado. P03 resuelto para los cinco textos vigentes; P01/P04 siguen abiertos para imágenes institucionales y fidelidad final.
 
 ## Resultados y límites de esta implementación
 
 Ver evidence/summary.md. @types/node se incorporó como desarrollo para tipado de fs/path.
 Las suites tienen salidas/reportes y trazas separados; no lanzar suites que compartan
-outputDir. Firefox/WebKit se descargaron, pero su arranque/regresión sigue bloqueado
-por perfil de Firefox y bibliotecas de WebKit ausentes. No se necesita aprobación adicional
-para decisiones ya registradas; sí resolver recursos/copy pendientes antes de publicar.
+outputDir. Firefox ya pasó los recorridos principales; WebKit sigue bloqueado por dependencias del host. No se necesita aprobación adicional para los cinco textos ni los recursos comunes recibidos; faltan tres imágenes oficiales, revisión visual/manual y entorno integrado antes de publicar.
 
 ## Reanudación 2026-10-21
 
 Marca, fuente y paleta recibidas desde disenovisual; cinco textos educativos aprobados explícitamente y aplicados con evidencia en [editorial-review.md](evidence/editorial-review.md). Las imágenes oficiales siguen pendientes; el enlace provisional placehold.co/448x332 devuelve HTTP 403 al descargar. Firefox ya permite verificar recorridos principales; WebKit sigue bloqueado por bibliotecas del host. Páginas 003–005 existen en código; falta URL real para aceptación integrada. No se acredita publicación ni fidelidad final. Estado actual y resultados en [evidence/summary.md](evidence/summary.md); las notas anteriores son históricas.
+
+## Convergencia aplicada — 2026-10-20 (America/Bogota)
+
+T029: estados vigentes sincronizados en el cuerpo del documento. La reanudación previa está fechada 2026-10-21 UTC en sus logs (2026-10-20 en America/Bogota); no representa una aprobación distinta. Se conservan las decisiones y evidencias existentes, sin cerrar imágenes, fidelidad o integración por edición documental.

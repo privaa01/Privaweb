@@ -1,0 +1,5 @@
+
+> privaweb@0.1.0 build
+> node scripts/require-documents-publication.mjs && node scripts/require-pages.mjs && node scripts/require-home-publication.mjs && node scripts/require-stories-publication.mjs && node scripts/require-app-publication.mjs && node scripts/require-contact-publication.mjs && node scripts/require-admin-publication.mjs && node scripts/require-story-management-publication.mjs && node scripts/require-inbox-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build && npm run build:admin:views
+
+BLOQUEADO010: documentos, revisión o calificación operativa pendientes: operation:responsible, operation:contact, operation:channel, operation:providers, operation:location, operation:copies, operation:categories, operation:cookies, operation:permissions, operation:evidence, operation:channel/contact, document:terms, content:terms, document:manifesto, content:manifesto, operation:content, review:terms, review:manifesto, review:notice, privacy:policy, privacy:channel, privacy:confirmationMail, privacy:operationalErasure, privacy:replica, privacy:backups, privacy:restore, privacy:providers, privacy:tracking, privacy:notices

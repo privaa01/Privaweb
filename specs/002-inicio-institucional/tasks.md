@@ -2,7 +2,7 @@
 
 **Input**: [spec](spec.md), [plan](plan.md), [investigación](research.md),
 [modelo](data-model.md), [contrato](contracts/home.md), [guía](quickstart.md) y constitución 1.0.0.
-**Fecha**: 2026-10-16 (America/Bogota). **Estado**: 23 completadas; T023/T025–T028 permanecen parciales o bloqueadas.
+**Fecha**: 2026-10-16. **Actualización**: 2026-10-20 (America/Bogota). **Estado**: 24/33 completas; T023/T025–T028 y T030–T033 permanecen parciales o bloqueadas.
 **Tests**: incluidos por los escenarios verificables del spec. Escribir y comprobar el fallo
 funcional antes del comportamiento correspondiente; imports ausentes o entorno roto no
 prueban la ausencia de funcionalidad. No imponer cobertura numérica arbitraria.
@@ -141,7 +141,7 @@ No desplegar ni publicar como parte de este comando o de los fixtures.
 2026-10-16 — `$speckit-tasks 002`: generadas 28 tareas: Setup 3, Foundational 4,
 US1 5, US2 4, US3 4, Polish 8. Sin implementación, instalación ni pruebas de aplicación ejecutadas.
 
-## Estado tras implementación — actualización 2026-10-21
+## Estado histórico tras implementación — 2026-10-21 UTC
 
 T001–T022 y T024 completas: 23/28. Componentes, contenido, validación y banco contractual implementados; resultados vigentes en evidence/summary.md y evidence/contract.md.
 T023 parcial: matriz Chromium y recorridos principales Firefox; WebKit intentado y bloqueado por bibliotecas del host. No se marca completo por navegador ausente.
@@ -150,3 +150,30 @@ T026 parcial: adaptación, texto y axe contractuales; lector de pantalla y fidel
 T027 parcial: casos integrados preparados; falta URL real. Las páginas 003–005 ya existen en código.
 T028 parcial: documentación sincronizada; cierre integral pendiente.
 Checklist documental 16/16 sin cambios; no se aprueban recursos faltantes ni se publica con fixtures.
+
+
+## Phase 7: Convergence
+
+Evaluación de convergencia previa a esta implementación: 2026-10-20 (America/Bogota). Alcance: feature 002; implementación previa confirmada en el estado de tareas y evidencias. Revisados 4 FR, 5 SC, 11 escenarios de aceptación, 7 casos límite, 28 tareas, 10 decisiones técnicas y 12 principios constitucionales. Hallazgos: 1 contradicción y 4 parciales; 1 CRITICAL, 3 HIGH y 1 MEDIUM. Sin hallazgos missing/unrequested. Los nuevos IDs desglosan remediaciones residuales de tareas existentes: no autorizan repetir lo ya verificado ni duplicar implementación. Cada cierre debe enlazar su tarea original y evidencia. Este comando solo añade esta sección; las tareas y estados previos se conservan íntegros.
+
+- [X] T029 CRITICAL — F1: Corregir la contradicción documental per Constitution CONST-04 y T028 (contradicts): sincronizar en el cuerpo vigente de `specs/002-inicio-institucional/spec.md`, `plan.md` y `quickstart.md` los estados de revisión editorial aprobada, marca/fuente/paleta recibidas, Firefox verificado y páginas 003–005 existentes; conservar imágenes, fidelidad y aceptación integrada pendientes. Actualizar `specs/TRACEABILITY.md` y evidencia cuando proceda, mantener los registros históricos identificados como tales y no cambiar alcance ni decisiones ya aprobadas. Evidencia: FR-003 aún declara «P03 sigue abierto» y quickstart mantiene revisión editorial/Firefox pendientes pese al registro de reanudación y a `src/content/home.ts`. Usar fecha de la usuaria America/Bogota para nuevos registros y distinguir las fechas UTC de los logs; no inventar nuevas aprobaciones. Esta tarea completa la sincronización residual de T028, sin rehacer implementación.
+
+- [ ] T030 HIGH — F2: Completar los recursos institucionales pendientes per FR-001, FR-002, FR-004, SC-005 y T025 (partial): recibir los tres archivos oficiales de hero, Somos Priva y cierre e incorporarlos en `public/images/home/`; comprobar dimensiones reales, propósito/alt y procedencia antes de configurar `src/content/home.ts` como verificado y actualizar `evidence/resources.md`. Mantener las cinco revisiones editoriales y los recursos comunes ya resueltos. El enlace provisional placehold.co/448x332 no acredita recursos oficiales; si sigue sin archivo verificable, conservar el bloqueo. Ejecutar `tests/home-publication.test.ts` y `scripts/require-home-publication.mjs` con evidencia de aceptación real solo cuando estén todos los recursos. Cierra únicamente el trabajo residual de T025; no generar placeholders de entrega.
+
+- [ ] T031 HIGH — F3: Completar la aceptación integrada per US1/AC2, US1/AC4, US2/AC2, US3/AC3, SC-002 y T027 (partial): ampliar `tests/e2e/home-integration.spec.ts` para activar Conocer más y Explora nuestras historias con teclado y puntero, comprobar título visible/foco y continuidad de navegación, ambas anclas directas/recargadas y destino Historias real de 003. La suite actual solo visita anclas y activa el CTA con click. Tras resolver recursos y revisión final de T025–T026, ejecutar sobre `PRIVA_INTEGRATION_BASE_URL` real sin mocks ni fallback, comprobar check/build completo con las páginas reales y registrar comandos, entorno, criterios y resultados en `evidence/integration.md`. Si falta entorno o depende del cierre de otra feature, documentar bloqueo sin desactivar sus guards ni crear relleno. Esta tarea amplía y completa T027, no duplica el componente de Inicio.
+
+- [ ] T032 HIGH — F4: Completar la revisión visual y manual per SC-004, SC-005, plan: fidelidad/accesibilidad y T026 (partial): una vez recibidas las imágenes de T025, comparar el render real de Inicio con PDF 1, comprobar orden al apilar, contraste medido 4.5:1 normal y 3:1 grande/componentes, controles aproximadamente 44px, teclado/foco y lectura con lector de pantalla identificado. Repetir la matriz de siete anchos y texto real 100%/200% con los recursos finales; corregir los defectos observados y conservar capturas/método/resultados en `evidence/accessibility.md`. Las capturas sintéticas y axe existentes no cierran esta revisión. Si faltan PDF accesible, recursos o tecnología de asistencia, registrar exactamente la parte no ejecutada. Completa solo el residual de T026.
+
+- [ ] T033 MEDIUM — F5: Completar la regresión principal pendiente per plan: Chromium/Firefox/WebKit y T023 (partial): habilitar las dependencias de host ausentes de WebKit mediante el mecanismo permitido del entorno y ejecutar secuencialmente los recorridos principales de `tests/e2e/home.spec.ts` y `home-accessibility.spec.ts` con `playwright.home.config.ts`, sin contarlos como matriz completa de otros motores. Registrar navegador, comando, casos y resultados en `evidence/contract.md` e `integration.md`; mantener separados los resultados Chromium/Firefox ya acreditados. No desactivar sandbox, TLS ni comprobaciones de dependencias. Si no puede habilitarse el motor, mantener el bloqueo explícito y T023 parcial. Tras estas remediaciones y el cierre integrado, conciliar T023/T025–T028 con sus evidencias sin marcar casillas por mera existencia de código.
+
+## Resultado de la implementación de convergencia — 2026-10-20 (America/Bogota)
+
+24/33 tareas completas. T029 cerrada: cuerpos de spec, plan y quickstart sincronizados con decisiones y evidencia; no se reabrió P03 ni se aprobaron recursos faltantes.
+
+- T030/T025 bloqueadas por los tres archivos oficiales pendientes; el gate de Inicio sigue rechazando únicamente esas imágenes.
+- T031/T027 parciales: seis escenarios integrados (18 definiciones entre tres motores) cubren ambos controles con teclado/puntero y ambas anclas directas/recargadas con foco y continuidad. Helpers compartidos comprobados contractualmente; falta URL real, recursos y revisión final.
+- T032/T026 parciales: PDF 1 disponible y renderizado, revisión preliminar de capturas 1440/390 y corrección de números por los cuatro iconos de referencia. Falta comparación final con imágenes oficiales y lector de pantalla; no se simula esa revisión.
+- T033/T023 parciales: bibliotecas locales permiten resolver las dependencias enlazadas, pero el validador de Playwright no encuentra libGLESv2.so.2 en la caché del sistema. No hay sudo y no se omitió la validación. WebKit no aprobado.
+- T028 parcial: trazabilidad y evidencia del avance actualizadas; cierre integral pendiente.
+
+Pruebas y comandos en [evidence/convergence.md](evidence/convergence.md). Las tareas nuevas son remediaciones trazadas a las originales; no duplican implementación. Checklist de requisitos 16/16 preservado. Sin despliegue, commit ni push en esta fase.

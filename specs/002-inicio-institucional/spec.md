@@ -2,8 +2,8 @@
 
 **Feature Directory**: `specs/002-inicio-institucional`
 **Created**: 2026-10-16
-**Updated**: 2026-10-16
-**Status**: componentes implementados y validados contractualmente en Chromium; publicación, fidelidad e integración pendientes.
+**Updated**: 2026-10-20 (America/Bogota)
+**Status**: componentes validados contractualmente en Chromium y Firefox; cinco textos educativos y recursos comunes aprobados/recibidos. Imágenes institucionales, fidelidad final e integración pendientes.
 **Input**: `/speckit-specify 002`: desarrollar la especificación existente conservando alcance e IDs.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), I01–I04,
 PDF página 1 y [constitución 1.0.0](../../.specify/memory/constitution.md).
@@ -53,8 +53,7 @@ sus descripciones con el contenido revisado y el estado de las capacidades anunc
    **entonces** alcanzo la sección correcta con su encabezado visible. (I03)
 3. **Dado** una descripción que anuncia curaduría, asistencia u otra capacidad pendiente,
    **cuando** se revisa la página para publicación, **entonces** esa promesa no se publica
-   como un servicio existente sin respaldo; queda pendiente de revisión P03, sin eliminar
-   silenciosamente la tarjeta ni inventar una redacción aprobada. (I03)
+   como un servicio existente sin respaldo; requiere revisión identificable sin eliminar silenciosamente la tarjeta ni inventar una redacción aprobada. La revisión de los cinco textos educativos actuales ya está aprobada; cualquier cambio material invalida esa revisión. (I03)
 4. **Dado** las cuatro tarjetas informativas del dibujo, **cuando** recorro la página con
    teclado, **entonces** no encuentro enlaces o botones ficticios añadidos a esas tarjetas. (I03)
 
@@ -110,7 +109,7 @@ sobre los riesgos relacionados con mis datos.
 - **FR-003 / I03 — Qué hacemos**: La sección #que-hacemos DEBE conservar etiqueta, título
   “Informamos para que estés en control.”, introducción y las cuatro tarjetas Educación Digital,
   Historias reales, Herramientas Seguras y Acompañamiento, en ese orden. Las descripciones
-  DEBEN revisarse contra las capacidades existentes antes de publicarse: P03 sigue abierto.
+  DEBEN revisarse contra las capacidades existentes antes de publicarse. P03 está resuelto para los cinco textos educativos actuales mediante aprobación explícita registrada en [editorial-review.md](evidence/editorial-review.md); un cambio material exige nueva revisión.
   NO DEBEN inventarse servicios, promesas verificadas o acciones en tarjetas informativas.
 - **FR-004 / I04 — Cierre hacia Historias**: Inicio DEBE conservar título, etiqueta e imagen
   del cierre del PDF 1, con Explora nuestras historias enlazado a Historias. DEBE sustituir
@@ -142,11 +141,7 @@ La descripción de Somos Priva es:
 Creemos en un internet más transparente, libre y seguro, donde la información sea un derecho
 inalienable y nunca un riesgo.”
 
-La introducción de Qué hacemos y las descripciones de las tarjetas se conservan como fuente
-para revisión editorial, no como capacidades acreditadas. El PDF menciona guías, experiencias,
-curaduría de navegadores/VPN y asistencia ante filtraciones; R35 exige comprobar las capacidades
-antes de publicarlas. Si se necesita cambiar copy, registrar el texto y su decisión; no aprobarlo
-silenciosamente durante especificación o implementación. No reintroducir garantías absolutas.
+La introducción de Qué hacemos y las cuatro descripciones vigentes son los cinco textos educativos aprobados explícitamente en [editorial-review.md](evidence/editorial-review.md), aplicados literalmente en `src/content/home.ts`. Mantienen títulos y orden, sin prometer curaduría o asistencia operativas. La referencia del PDF se conserva como fuente histórica, no como capacidades acreditadas. Un cambio material requiere registrar el nuevo texto y su decisión antes de publicar; no reintroducir garantías absolutas.
 
 ### Límites de alcance y contratos con otras features
 
@@ -154,7 +149,7 @@ silenciosamente durante especificación o implementación. No reintroducir garan
   PROTÉGETE HOY y footer. Se reutilizan sus comportamientos sin duplicar requisitos o componentes.
 - Referencias de ruta de R35: Inicio `/index.html`; anclas `/index.html#somos-priva` y
   `/index.html#que-hacemos`; CTA final `/historias.html`. Son destinos propuestos para integración,
-  no evidencia de rutas ya disponibles. Cambios de ruta exigen sincronizar fuentes y consumidores.
+  las páginas y anclas ya existen en código, sin acreditar por ello un entorno integrado. Cambios de ruta exigen sincronizar fuentes y consumidores.
 - Los enlaces Saber más de Historias (003) pueden consumir las dos anclas de Inicio; 002 asegura
   que existan, sin implementar en esta feature los controles ni episodios de Historias.
 - Fuera de alcance: formularios, autenticación, nuevas ofertas, cuentas de visitantes, comentarios,
@@ -189,7 +184,7 @@ silenciosamente durante especificación o implementación. No reintroducir garan
   el fallo de una imagen no elimina texto ni controles. No quedan recursos ficticios o placeholders
   en la entrega final. Los textos y controles cumplen los objetivos de accesibilidad de 011.
 
-Son criterios para implementación futura, no resultados de pruebas ejecutadas en esta fase.
+Son criterios de aceptación. La evidencia contractual de Chromium/Firefox no sustituye la revisión final con imágenes oficiales ni la aceptación integrada; ver [estado actual](evidence/summary.md).
 
 ## Assumptions
 
@@ -204,12 +199,11 @@ Son criterios para implementación futura, no resultados de pruebas ejecutadas e
 ## Dependencias y condiciones de cierre
 
 - **001**: navegación, layout y footer compartidos; la integración debe mantener activo Inicio.
-- **003**: destino real del CTA final; ausencia de Historias bloquea aceptación del recorrido final.
-- **011 / P01 / P04**: imágenes y logo originales, fuente y colores exactos para fidelidad;
+- **003**: la página Historias ya existe en código; el recorrido real del CTA final aún debe verificarse contra un entorno integrado.
+- **011 / P01 / P04**: logo, fuente y colores exactos recibidos desde `disenovisual/`; siguen pendientes las tres imágenes institucionales oficiales y la revisión final de fidelidad;
   objetivos de contraste 4.5:1 texto normal y 3:1 texto grande/componentes, controles aproximadamente
   44 px, foco visible y alternativas adecuadas. Se evalúan, no se atribuyen al dibujo como mediciones.
-- **P03**: revisión de introducción, descripciones y capacidades de las cuatro tarjetas antes de
-  publicación. La falta de respaldo no permite retirar o reescribir silenciosamente el bloque.
+- **P03**: revisión de la introducción y las cuatro descripciones educativas aprobada y aplicada. La decisión no acredita servicios operativos; cualquier cambio material debe revisarse y no permite retirar o reescribir silenciosamente el bloque.
 - **009**: restricciones de privacidad aplicables; esta feature no añade recopilación ni rastreo.
 - Los pendientes de material/editoriales permiten avanzar en estructura y planificación
   independiente, pero impiden afirmar publicación o fidelidad completas hasta resolverse.
@@ -219,12 +213,12 @@ Son criterios para implementación futura, no resultados de pruebas ejecutadas e
 
 | ID original | Requisito local | Escenarios | Fuente | Estado de aplicación |
 |---|---|---|---|---|
-| I01 | FR-001 | US1.1, US1.2 | PDF 1 | Validación contractual Chromium; integración pendiente |
-| I02 | FR-002 | US1.2–US1.4 | PDF 1 / C07 | Validación contractual Chromium; integración pendiente |
-| I03 | FR-003 | US2.1–US2.4 | PDF 1 / P03 | Validación contractual Chromium; integración pendiente |
-| I04 | FR-004 | US3.1–US3.3 | PDF 1 / C16 | Validación contractual Chromium; integración pendiente |
+| I01 | FR-001 | US1.1, US1.2 | PDF 1 | Validación contractual Chromium/Firefox; imágenes/fidelidad e integración pendientes |
+| I02 | FR-002 | US1.2–US1.4 | PDF 1 / C07 | Validación contractual Chromium/Firefox; imágenes/fidelidad e integración pendientes |
+| I03 | FR-003 | US2.1–US2.4 | PDF 1 / P03 | Validación contractual Chromium/Firefox; imágenes/fidelidad e integración pendientes |
+| I04 | FR-004 | US3.1–US3.3 | PDF 1 / C16 | Validación contractual Chromium/Firefox; imágenes/fidelidad e integración pendientes |
 
-### Registro documental
+### Registro documental histórico
 
 2026-10-16 — `/speckit-specify 002`: ampliada la separación inicial con tres historias,
 escenarios concretos, composición, anclas, criterios medibles y pendientes P01/P03/P04.
@@ -251,3 +245,7 @@ siguen abiertos. Ningún resultado contractual acredita destino real 003 o aprob
 ## Reanudación 2026-10-21
 
 Marca, fuente y paleta recibidas desde disenovisual; cinco textos educativos aprobados explícitamente y aplicados con evidencia en [editorial-review.md](evidence/editorial-review.md). Las imágenes oficiales siguen pendientes; el enlace provisional placehold.co/448x332 devuelve HTTP 403 al descargar. Firefox ya permite verificar recorridos principales; WebKit sigue bloqueado por bibliotecas del host. Páginas 003–005 existen en código; falta URL real para aceptación integrada. No se acredita publicación ni fidelidad final. Estado actual y resultados en [evidence/summary.md](evidence/summary.md); las notas anteriores son históricas.
+
+## Convergencia aplicada — 2026-10-20 (America/Bogota)
+
+T029: estados vigentes sincronizados en el cuerpo del documento. La reanudación previa está fechada 2026-10-21 UTC en sus logs (2026-10-20 en America/Bogota); no representa una aprobación distinta. Se conservan las decisiones y evidencias existentes, sin cerrar imágenes, fidelidad o integración por edición documental.

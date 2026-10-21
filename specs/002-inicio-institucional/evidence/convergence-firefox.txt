@@ -1,0 +1,204 @@
+
+> privaweb@0.1.0 test:e2e:home:contract
+> playwright test --config=playwright.home.config.ts --project=firefox --grep-invert=matriz Inicio
+
+[WebServer] (node:382862) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:41] "GET / HTTP/1.1" 200 -
+
+Running 15 tests using 2 workers
+
+(node:383057) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:383058) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:43] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:43] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:43] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:43] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:43] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:43] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:43] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:43] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:43] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:43] code 404, message File not found
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:43] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:43] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:43] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:43] "GET /test-cierre.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:43] "GET /historias.html HTTP/1.1" 200 -
+  ✓   2 [firefox] › tests/e2e/home-accessibility.spec.ts:2:1 › base: layout de Inicio permite ancho completo (1.3s)
+  ✓   1 [firefox] › tests/e2e/home-accessibility.spec.ts:48:2 › imagen hero fallida conserva texto y controles (1.8s)
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:44] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:44] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:44] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:44] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:44] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:44] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:44] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:44] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:44] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:44] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:44] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:44] "GET /test-cierre.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:44] "GET /historias.html HTTP/1.1" 200 -
+  ✓   3 [firefox] › tests/e2e/home-accessibility.spec.ts:48:2 › imagen identidad fallida conserva texto y controles (897ms)
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:44] "GET /historias.html HTTP/1.1" 200 -
+  ✓   4 [firefox] › tests/e2e/home-accessibility.spec.ts:48:2 › imagen cierre fallida conserva texto y controles (965ms)
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /test-cierre.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] code 404, message File not found
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] code 404, message File not found
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /index.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /brand/priva-logo.png HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /test-hero.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /test-identidad.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /test-cierre.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /index.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 304 -
+  ✓   5 [firefox] › tests/e2e/home-accessibility.spec.ts:63:1 › contenido y enlaces funcionan sin JavaScript (789ms)
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /brand/priva-logo.png HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /test-hero.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /test-identidad.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /test-cierre.svg HTTP/1.1" 304 -
+  ✓   6 [firefox] › tests/e2e/home.spec.ts:2:1 › US1: hero, identidad y Conocer más (839ms)
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /test-cierre.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:45] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] code 404, message File not found
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /index.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /brand/priva-logo.png HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-identidad.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-hero.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-cierre.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-hero.svg HTTP/1.1" 200 -
+  ✓   7 [firefox] › tests/e2e/home.spec.ts:16:1 › US1: identidad accesible por URL y recarga (494ms)
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-cierre.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] code 404, message File not found
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /index.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /brand/priva-logo.png HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-cierre.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-hero.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-identidad.svg HTTP/1.1" 304 -
+  ✓   8 [firefox] › tests/e2e/home.spec.ts:22:1 › US2: cuatro áreas informativas y entrada por ancla (529ms)
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] code 404, message File not found
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-cierre.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-cierre.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] code 404, message File not found
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /index.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /brand/priva-logo.png HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-hero.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-identidad.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:46] "GET /test-cierre.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /historias.html HTTP/1.1" 304 -
+  ✓  10 [firefox] › tests/e2e/home.spec.ts:44:1 › US1 Conocer más repeated activation keeps heading focus and history (684ms)
+  ✓   9 [firefox] › tests/e2e/home.spec.ts:29:1 › US3: cierre y CTA hacia Historias (937ms)
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] code 404, message File not found
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] code 404, message File not found
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /test-cierre.svg HTTP/1.1" 200 -
+  ✓  11 [firefox] › tests/e2e/home.spec.ts:48:1 › received brand, font and palette are actually loaded without approving institutional fixtures (554ms)
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /historias.html HTTP/1.1" 200 -
+  ✓  12 [firefox] › tests/e2e/home.spec.ts:57:2 › recorridos compartidos de aceptación: puntero (solo contrato) (787ms)
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:47] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] code 404, message File not found
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /test-cierre.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] code 404, message File not found
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /test-cierre.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /index.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /brand/priva-logo.png HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /test-hero.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /test-cierre.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /test-identidad.svg HTTP/1.1" 304 -
+  ✓  13 [firefox] › tests/e2e/home.spec.ts:57:2 › recorridos compartidos de aceptación: teclado (solo contrato) (841ms)
+  ✓  14 [firefox] › tests/e2e/home.spec.ts:65:2 › ancla y continuidad compartidas: #somos-priva (solo contrato) (724ms)
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /test-hero.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /test-identidad.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /test-cierre.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] code 404, message File not found
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:48] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:49] "GET /index.html HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:49] "GET /_astro/index.CGGX4c3s.css HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:49] "GET /brand/priva-logo.png HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:49] "GET /test-hero.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:49] "GET /test-identidad.svg HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:52:49] "GET /test-cierre.svg HTTP/1.1" 304 -
+  ✓  15 [firefox] › tests/e2e/home.spec.ts:65:2 › ancla y continuidad compartidas: #que-hacemos (solo contrato) (709ms)
+
+  15 passed (10.4s)

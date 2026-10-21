@@ -17,3 +17,7 @@ Los logs resume-2026-10-21-* conservan estos resultados. La matriz Chromium reco
 Se observó fallo de la nueva prueba de metadatos oficiales antes de conectar los recursos. Una ejecución intermedia posterior a la aprobación editorial tuvo dos fallos al guardar trazas por intentar iniciar Firefox mientras Chromium seguía activo; Firefox además rechazó el puerto ocupado. Se repitieron ambas suites secuencialmente: los resultados finales de la tabla no incluyen esos intentos como aprobados.
 
 La regresión compartida 001 ya documentada en esta sesión (46 Chromium y 32 Firefox) pertenece a la incorporación previa de recursos comunes, no a una nueva ejecución de 002. No se modificó el layout compartido en esta reanudación de 002. La build contractual se ejecuta dentro de las suites; no equivale al build publicable de la aplicación.
+
+## Ejecución vigente de convergencia — 2026-10-20 (America/Bogota)
+
+29 Chromium y 15 Firefox aprobadas tras ampliar recorridos y corregir iconos de tarjetas; 24 pruebas de publicación y ambos Astro checks sin errores/advertencias. WebKit sigue bloqueado por detección de libGLESv2 en la caché del host, aun con bibliotecas locales. Ver comandos, resultados y límites en [convergence.md](convergence.md); los conteos anteriores son históricos.

@@ -50,3 +50,23 @@ test('received brand, font and palette are actually loaded without approving ins
  const logo=page.getByRole('banner').getByRole('img',{name:'Priva',exact:true});await expect(logo).toHaveAttribute('src','/brand/priva-logo.png');expect(await logo.evaluate(i=>({w:(i as HTMLImageElement).naturalWidth,h:(i as HTMLImageElement).naturalHeight}))).toEqual({w:104,h:40});
  expect(await page.evaluate(()=>[...document.fonts].some(f=>f.family.includes('Jakarta')&&f.status==='loaded'))).toBe(true);expect(await page.locator('.home-closing').evaluate(e=>getComputedStyle(e).backgroundColor)).toBe('rgb(13, 34, 25)');await expect(page.locator('#hero img')).toHaveAttribute('src','/test-hero.svg');
 });
+
+// Exercise the shared journey assertions contractually; this does not execute integration.
+import { continueFromHomeAnchor, expectHomeAnchor, followHomeLearn, followHomeStories, type InputMethod } from '../helpers/home-journeys';
+for (const method of ['puntero', 'teclado'] as InputMethod[]) {
+ test(`recorridos compartidos de aceptación: ${method} (solo contrato)`, async ({ page }) => {
+  await page.goto('/index.html');
+  await followHomeLearn(page, method);
+  await followHomeStories(page, method);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Destino Historias de prueba');
+ });
+}
+for (const anchor of ['somos-priva', 'que-hacemos'] as const) {
+ test(`ancla y continuidad compartidas: #${anchor} (solo contrato)`, async ({ page }) => {
+  await page.goto(`/index.html#${anchor}`);
+  await expectHomeAnchor(page, anchor);
+  await page.reload();
+  await expectHomeAnchor(page, anchor);
+  await continueFromHomeAnchor(page);
+ });
+}

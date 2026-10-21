@@ -1,0 +1,36 @@
+
+> privaweb@0.1.0 test:e2e:home:contract
+> playwright test --config=playwright.home.config.ts --project=webkit --grep=base: layout
+
+[WebServer] (node:373697) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [21/Oct/2026 01:48:33] "GET / HTTP/1.1" 200 -
+
+Running 1 test using 1 worker
+
+(node:373751) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [webkit] › tests/e2e/home-accessibility.spec.ts:2:1 › base: layout de Inicio permite ancho completo (2ms)
+
+
+  1) [webkit] › tests/e2e/home-accessibility.spec.ts:2:1 › base: layout de Inicio permite ancho completo
+
+    Error: browserType.launch:
+    ╔══════════════════════════════════════════════════════╗
+    ║ Host system is missing dependencies to run browsers. ║
+    ║ Missing libraries:                                   ║
+    ║     libGLESv2.so.2                                   ║
+    ╚══════════════════════════════════════════════════════╝
+
+    Error Context: .test-output/home-artifacts/home-accessibility-base-la-d5bbd-icio-permite-ancho-completo-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    .test-output/home-artifacts/home-accessibility-base-la-d5bbd-icio-permite-ancho-completo-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace .test-output/home-artifacts/home-accessibility-base-la-d5bbd-icio-permite-ancho-completo-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [webkit] › tests/e2e/home-accessibility.spec.ts:2:1 › base: layout de Inicio permite ancho completo

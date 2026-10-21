@@ -3,7 +3,7 @@
 **Branch real**: `main` | **Date**: 2026-10-16 | **Spec**: [spec.md](spec.md)
 **Feature Directory**: `specs/002-inicio-institucional`
 **Input**: I01–I04, constitución 1.0.0 y componentes existentes de 001.
-**Estado**: componentes y banco contractual implementados; publicación y aceptación integrada pendientes.
+**Estado**: componentes y banco contractual implementados; Chromium/Firefox verificados, cinco textos educativos aprobados y recursos comunes recibidos. Imágenes institucionales, revisión final, WebKit e integración pendientes.
 El BRANCH de los scripts SDD representa la feature activa, no una rama Git creada.
 
 ## Summary
@@ -32,7 +32,7 @@ servir archivos del banco, como en 001.
 solo reutilizar JS existente para navegación/anclas. Imágenes con dimensiones reservadas;
 lazy loading solo fuera del primer bloque, no imagen hero. No se inventa objetivo de latencia.
 **Constraints**: orden PDF 1; siete anchos y texto 100%/200%; contraste 4.5:1 texto normal,
-3:1 grande/componentes; controles aproximadamente 44 px. Recursos/copy final pendientes.
+3:1 grande/componentes; controles aproximadamente 44 px. Logo/fuente/paleta recibidos y cinco textos educativos aprobados; imágenes institucionales y revisión final pendientes.
 **Scale/Scope**: una página /index.html, cuatro bloques, cuatro tarjetas informativas,
 tres ubicaciones de imagen institucional (hero, identidad, cierre), dos controles de contenido
 y dos anclas públicas. Header/footer y sus activos de marca pertenecen a 001.
@@ -49,7 +49,7 @@ y dos anclas públicas. Header/footer y sus activos de marca pertenecen a 001.
 | CONST-10–12 | Separar plan, código y evidencia | Pruebas futuras y bloqueos explícitos, sin resultados ficticios |
 
 Revisión previa y posterior de diseño: pasa sin excepciones. No acredita implementación.
-P01/P03/P04 son dependencias de entrega, no decisiones técnicas que puedan inventarse.
+P03 está resuelto para los cinco textos educativos vigentes. P01/P04 mantienen pendientes las tres imágenes institucionales y la revisión visual final; marca, fuente y paleta ya están recibidas. No se inventan decisiones para cerrar esas dependencias.
 La estructura puede implementarse independientemente; la publicación no se cierra con fixtures.
 
 ## Project Structure
@@ -67,9 +67,9 @@ specs/002-inicio-institucional/
 └── checklists/requirements.md
 ```
 
-[tasks.md](tasks.md) generado posteriormente con `$speckit-tasks 002`; evidencias y ejecución siguen pendientes.
+[tasks.md](tasks.md) contiene las tareas iniciales y las remediaciones de convergencia. Las evidencias contractuales están en `evidence/`; aceptación integrada y fidelidad final siguen pendientes.
 
-### Source Code (previsto, no creado por este comando)
+### Source Code (implementado; imágenes oficiales pendientes)
 
 ```text
 src/
@@ -101,10 +101,10 @@ tests/
 ```
 
 **Structure Decision**: PublicLayout recibe pageId='inicio' y conserva header/footer sin
-copiarlos. HomeContent reúne cuatro secciones; componentes reciben contenido explícito.
-CSS específico evita afectar navegación global. El main actual de PublicLayout tiene ancho
-máximo y padding globales: añadir una opción de layout de contenido full-width para Inicio,
-con valor por defecto contenido idéntico a 001. No usar márgenes negativos que causen overflow;
+copiarlos. HomeContent reúne cuatro secciones; componentes reciben contenido explícito. Las tarjetas conservan los iconos decorativos del PDF (libro, sobre, marcador y comunidad), sin acciones ni foco añadidos.
+CSS específico evita afectar navegación global. El main por defecto de PublicLayout conserva su ancho
+máximo y padding globales; la opción full-width implementada para Inicio es aditiva
+y mantiene el contenido por defecto de 001. No usar márgenes negativos que causen overflow;
 probar que el cierre oscuro ocupa el ancho previsto y que la navegación 001 no cambia. El archivo index real verifica antes de render
 los requisitos editoriales y de recursos mediante home-publication; los fixtures importan
 HomeContent y layout directamente con datos de prueba identificados. No hay bandera pública
@@ -120,7 +120,7 @@ propias de 002. No se eligen proveedores ni se inventa aprobación editorial.
 
 [data-model.md](data-model.md) define contenido/estados; [contracts/home.md](contracts/home.md)
 define anclas, composición y controles; [quickstart.md](quickstart.md) distingue comandos
-existentes de scripts futuros y validación contractual de integrada.
+scripts implementados y validación contractual de integrada.
 
 ## Estrategia de ejecución posterior
 
@@ -137,16 +137,14 @@ existentes de scripts futuros y validación contractual de integrada.
 6. Integrar con Historias real y recursos aprobados, verificar build completo solo al existir
    las otras páginas; registrar evidencia por I01–I04/SC-001–SC-005.
 
-El guard scripts/require-pages.mjs conserva la exigencia de las cuatro páginas reales;
-crear Inicio no autoriza crear relleno para 003–005 ni quitar ese guard. Solo una vez
-resueltas las dependencias se puede certificar el sitio integrado.
+El guard scripts/require-pages.mjs conserva la exigencia de las cuatro páginas reales, ahora presentes en código. Su presencia no acredita el build integrado: los guards editoriales, de recursos y operativos de las otras features también deben pasar. No se crea relleno ni se retiran guards para certificar el sitio.
 
 ## Complexity Tracking
 
 Sin infracciones ni excepciones. Se justifica la separación home/navigation de los bancos
 por aislamiento de salidas y conservación de la regresión existente; no se duplica código de UI.
 
-## Registro
+## Registro histórico
 
 2026-10-16 — `$speckit-plan 002`: planificación sobre componentes/tooling ya verificados en
 001; sin instalación, cambios de dependencias, contenido publicado o pruebas ejecutadas de 002.
@@ -158,3 +156,7 @@ alcance. Resultados en evidence/summary.md; recursos/revisión y validación int
 ## Reanudación 2026-10-21
 
 Marca, fuente y paleta recibidas desde disenovisual; cinco textos educativos aprobados explícitamente y aplicados con evidencia en [editorial-review.md](evidence/editorial-review.md). Las imágenes oficiales siguen pendientes; el enlace provisional placehold.co/448x332 devuelve HTTP 403 al descargar. Firefox ya permite verificar recorridos principales; WebKit sigue bloqueado por bibliotecas del host. Páginas 003–005 existen en código; falta URL real para aceptación integrada. No se acredita publicación ni fidelidad final. Estado actual y resultados en [evidence/summary.md](evidence/summary.md); las notas anteriores son históricas.
+
+## Convergencia aplicada — 2026-10-20 (America/Bogota)
+
+T029: estados vigentes sincronizados en el cuerpo del documento. La reanudación previa está fechada 2026-10-21 UTC en sus logs (2026-10-20 en America/Bogota); no representa una aprobación distinta. Se conservan las decisiones y evidencias existentes, sin cerrar imágenes, fidelidad o integración por edición documental.

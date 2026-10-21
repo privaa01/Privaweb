@@ -13,3 +13,7 @@ Actualización: 2026-10-21 (UTC).
 Se intentó descargar https://placehold.co/448x332 y su variante /png: ambas devolvieron HTTP 403. No se incorporó un archivo vacío ni una petición externa en ejecución. Las dimensiones del enlace son nominales, sin archivo recibido que permita verificarlas. No se marcó verificado este recurso provisional.
 
 Los SVG test-* permanecen exclusivamente en el banco y no acreditan recursos oficiales. El gate real continúa bloqueado por las tres imágenes, pero ya no por marca, fuente, colores o revisión editorial. El texto C16 y los títulos/orden de tarjetas se conservan.
+
+## Convergencia — 2026-10-20 (America/Bogota)
+
+Inspección del árbol actual: public solo contiene logo oficial y fuentes locales; disenovisual contiene el logo y referencias de fuente/color. No se recibieron tres imágenes institucionales oficiales nuevas. T025/T030 siguen abiertas; no se repitió una solicitud ya contestada ni se inventaron imágenes. El PDF sí está disponible en attachments y se usó para revisión preliminar.

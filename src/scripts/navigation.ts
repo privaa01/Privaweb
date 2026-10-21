@@ -38,11 +38,32 @@ function focusFragment() {
 }
 window.addEventListener('hashchange', focusFragment);
 window.addEventListener('load', focusFragment);
-// A repeated native fragment navigation emits no hashchange; restore the same focus contract.
+// Same-fragment navigation does not emit hashchange. Let native activation finish
+// before improving focus; Enter's keyup can reset focus after its synthetic click in Gecko.
+function isCurrentFragment(anchor: HTMLAnchorElement): boolean {
+ if(anchor.hasAttribute('download')||(anchor.target&&anchor.target.toLowerCase()!=='_self'))return false;
+ const url=new URL(anchor.href,location.href);
+ return url.origin===location.origin&&url.pathname===location.pathname&&url.search===location.search&&!!url.hash&&url.hash===location.hash;
+}
+function focusAfterActivation(href:string){
+ window.setTimeout(()=>requestAnimationFrame(()=>{if(location.href===href)focusFragment();}),0);
+}
 document.addEventListener('click',event=>{
  if(event.defaultPrevented||event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
  const anchor=event.target instanceof Element?event.target.closest<HTMLAnchorElement>('a[href]'):null;
- if(!anchor||anchor.hasAttribute('download')||(anchor.target&&anchor.target.toLowerCase()!=='_self'))return;
- const url=new URL(anchor.href,location.href);
- if(url.origin===location.origin&&url.pathname===location.pathname&&url.search===location.search&&url.hash&&url.hash===location.hash)requestAnimationFrame(focusFragment);
+ if(anchor&&isCurrentFragment(anchor))focusAfterActivation(anchor.href);
 });
+let keyboardFragment:string|null=null;
+document.addEventListener('keydown',event=>{
+ if(event.key!=='Enter')return;
+ keyboardFragment=null;
+ if(event.defaultPrevented||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+ const anchor=event.target instanceof Element?event.target.closest<HTMLAnchorElement>('a[href]'):null;
+ if(anchor&&isCurrentFragment(anchor))keyboardFragment=anchor.href;
+});
+document.addEventListener('keyup',event=>{
+ if(event.key!=='Enter')return;
+ const href=keyboardFragment;keyboardFragment=null;
+ if(href&&!event.defaultPrevented)focusAfterActivation(href);
+});
+window.addEventListener('blur',()=>{keyboardFragment=null;});

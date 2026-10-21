@@ -4,7 +4,7 @@ import type { PageId } from '../../../../src/config/navigation';
 interface Props { pageId: PageId; title: string; section?: string }
 const { pageId, title, section } = Astro.props;
 ---
-<PublicLayout pageId={pageId} title={title} brand={{ src: "/test-brand.svg", alt: "Marca ficticia de prueba" }}>
+<PublicLayout pageId={pageId} title={title}>
 <p>Banco de pruebas de navegación; contenido ficticio, no publicable.</p>
 <h1>{title}</h1>
 {section && <section id={section}><h2 tabindex="-1">{section}</h2><p>Destino de prueba sin servicio ni contenido oficial.</p></section>}

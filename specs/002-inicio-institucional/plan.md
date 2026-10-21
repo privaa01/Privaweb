@@ -154,3 +154,7 @@ por aislamiento de salidas y conservación de la regresión existente; no se dup
 2026-10-16 — Implementación: modelo de contenido pendiente, componentes, gate de publicación
 y banco contractual creados. Corrección de desarrollo @types/node registrada; sin nuevo
 alcance. Resultados en evidence/summary.md; recursos/revisión y validación integrada abiertos.
+
+## Reanudación 2026-10-21
+
+Marca, fuente y paleta recibidas desde disenovisual; cinco textos educativos aprobados explícitamente y aplicados con evidencia en [editorial-review.md](evidence/editorial-review.md). Las imágenes oficiales siguen pendientes; el enlace provisional placehold.co/448x332 devuelve HTTP 403 al descargar. Firefox ya permite verificar recorridos principales; WebKit sigue bloqueado por bibliotecas del host. Páginas 003–005 existen en código; falta URL real para aceptación integrada. No se acredita publicación ni fidelidad final. Estado actual y resultados en [evidence/summary.md](evidence/summary.md); las notas anteriores son históricas.

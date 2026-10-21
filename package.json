@@ -64,7 +64,8 @@
     "build:documents:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/documents",
     "test:documents": "node --experimental-strip-types --test tests/documents-*.test.ts",
     "test:e2e:documents:contract": "playwright test --config=playwright.documents.config.ts",
-    "test:e2e:documents:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.documents.config.ts"
+    "test:e2e:documents:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.documents.config.ts",
+    "test:navigation:service": "node --experimental-strip-types --test tests/navigation-service.test.ts"
   },
   "dependencies": {
     "astro": "7.4.0"

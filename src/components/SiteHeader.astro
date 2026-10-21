@@ -1,11 +1,13 @@
 ---
 import { headerCtas, pages, type PageId, type BrandAsset } from '../config/navigation';
+import { officialBrand } from '../config/brand';
 interface Props { pageId?: PageId; brand?: BrandAsset }
-const { pageId, brand } = Astro.props;
+const { pageId, brand: providedBrand } = Astro.props;
+const brand=providedBrand?.src?providedBrand:officialBrand;
 const cta = pageId ? headerCtas[pageId] : undefined;
 ---
 <header class="site-header"><div class="header-inner">
-<a class="brand" href="/index.html" aria-label="Priva — Inicio">{brand ? <img src={brand.src} alt={brand.alt} width="40" height="40" /> : <span>Priva</span>}</a>
+<a class="brand" href="/index.html" aria-label="Priva — Inicio">{brand ? <img src={brand.src} alt={brand.alt} width={brand.width ?? 40} height={brand.height ?? 40} /> : <span>Priva</span>}</a>
 <div data-navigation class="navigation-disclosure">
 <button type="button" class="menu-toggle" aria-label="Menú principal" aria-controls="principal" aria-expanded="false" hidden>Menú <span aria-hidden="true">☰</span></button>
 <nav id="principal" aria-label="Principal"><ul>{pages.map(page => <li><a href={page.href} aria-current={page.id === pageId ? 'page' : undefined}>{page.label}</a></li>)}</ul></nav>

@@ -45,3 +45,9 @@ for (const [name, mutate] of invalid) test(`rechaza ${name}`, () => {
  try { mutate(content, root); assert.ok(publicationIssues(content, root).length > 0); assert.throws(() => assertHomePublication(content, root), /BLOQUEADO/); }
  finally { rmSync(root, { recursive: true }); }
 });
+
+test('official shared brand and visual references are configured; approved editorial does not unblock missing institutional images',()=>{
+ assert.equal(homeContent.brand.src,'/brand/priva-logo.png');assert.equal(homeContent.brand.width,104);assert.equal(homeContent.brand.height,40);assert.equal(homeContent.brand.status,'verificado');
+ assert.equal(homeContent.visual.typography.status,'verificado');assert.equal(homeContent.visual.palette.status,'verificado');
+ const issues=publicationIssues(homeContent,'public');assert(issues.some(x=>x.includes('hero:')));assert(!issues.some(x=>x.includes('revisión editorial')));assert(!issues.some(x=>/^marca:|^typography:|^palette:/.test(x)));
+});

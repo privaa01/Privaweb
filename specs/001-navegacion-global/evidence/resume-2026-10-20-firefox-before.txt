@@ -1,0 +1,84 @@
+
+> privaweb@0.1.0 test:e2e:contract
+> playwright test --project=firefox --grep-invert=Matriz:
+
+[WebServer] (node:335875) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 31 tests using 2 workers
+
+(node:335915) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:335914) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [firefox] › tests/e2e/navigation-accessibility.spec.ts:19:1 › US1: navegación sin JavaScript (1.6s)
+  ✓   2 [firefox] › tests/e2e/navigation-accessibility.spec.ts:2:1 › US1: disclosure, Escape, resize y foco (1.7s)
+  ✓   3 [firefox] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /index.html (587ms)
+  ✓   4 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /index.html (480ms)
+  ✓   5 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /historias.html (462ms)
+  ✓   6 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /app.html (556ms)
+  ✓   7 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /contacto.html (526ms)
+  ✓   8 [firefox] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /historias.html (546ms)
+  ✓   9 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /index.html (499ms)
+  ✓  10 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /historias.html (477ms)
+  ✓  11 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /app.html (517ms)
+  ✓  12 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /contacto.html (513ms)
+  ✓  13 [firefox] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /app.html (591ms)
+  ✓  14 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /index.html (671ms)
+  ✓  15 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /historias.html (593ms)
+  ✓  16 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /app.html (616ms)
+  ✓  17 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /contacto.html (593ms)
+  ✓  18 [firefox] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /contacto.html (610ms)
+  ✓  19 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /index.html (1.7s)
+  ✓  20 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /historias.html (1.5s)
+  ✓  21 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /app.html (490ms)
+  ✓  22 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /contacto.html (566ms)
+  ✓  23 [firefox] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /index.html (454ms)
+  ✓  24 [firefox] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /historias.html (421ms)
+  ✓  25 [firefox] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /app.html (426ms)
+  ✓  26 [firefox] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /contacto.html (445ms)
+  ✓  27 [firefox] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /index.html (416ms)
+  ✓  28 [firefox] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /historias.html (369ms)
+  ✓  29 [firefox] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /app.html (403ms)
+  ✓  30 [firefox] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /contacto.html (414ms)
+  ✘  31 [firefox] › tests/e2e/navigation.spec.ts:47:1 › US2: repeated same fragment restores heading focus without navigation history change (5.5s)
+
+
+  1) [firefox] › tests/e2e/navigation.spec.ts:47:1 › US2: repeated same fragment restores heading focus without navigation history change
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('#descarga h2')
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('#descarga h2') with timeout 5000ms
+      - waiting for locator('#descarga h2')
+        14 × locator resolved to <h2 tabindex="-1">descarga</h2>
+           - unexpected value "inactive"
+
+
+      47 | test('US2: repeated same fragment restores heading focus without navigation history change',async({page})=>{
+      48 |  await page.goto('/app.html#descarga');const heading=page.locator('#descarga h2');await expect(heading).toBeFocused();const before=await page.evaluate(()=>history.length);
+    > 49 |  const link=page.locator('.header-cta');await link.click();await expect(heading).toBeFocused();await expect(heading).toBeInViewport();expect(await page.evaluate(()=>history.length)).toBe(before);
+         |                                                                                  ^
+      50 |  await link.focus();await link.press('Enter');await expect(heading).toBeFocused();
+      51 | });
+      52 |
+        at /workspace/Privaweb/tests/e2e/navigation.spec.ts:49:82
+
+    Error Context: test-results/navigation-US2-repeated-sa-99de5-t-navigation-history-change-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/navigation-US2-repeated-sa-99de5-t-navigation-history-change-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/navigation-US2-repeated-sa-99de5-t-navigation-history-change-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [firefox] › tests/e2e/navigation.spec.ts:47:1 › US2: repeated same fragment restores heading focus without navigation history change
+  30 passed (18.7s)

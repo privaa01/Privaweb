@@ -1,0 +1,32 @@
+✔ datos reales pendientes no son publicables (6.006522ms)
+✔ ejemplo sintético válido comprueba camino de aceptación, no aprobación real (1.401808ms)
+✔ rechaza imagen pendiente (0.805321ms)
+✔ rechaza archivo inexistente verificado (0.763909ms)
+✔ rechaza dimensiones inválidas (0.556597ms)
+✔ rechaza imagen informativa sin alternativa (0.608364ms)
+✔ rechaza imagen decorativa con alternativa (0.490588ms)
+✔ rechaza imagen sin procedencia (0.556587ms)
+✔ rechaza ruta fuera de public (0.653914ms)
+✔ rechaza fixture no publicable (0.954495ms)
+✔ rechaza URL externa (0.793954ms)
+✔ rechaza C16 cambiado (0.966003ms)
+✔ rechaza ancla inválida (0.522636ms)
+✔ rechaza tarjetas reordenadas (0.674714ms)
+✔ rechaza revisión sin decisión (0.617118ms)
+✔ rechaza copy modificado tras revisar (0.544359ms)
+✔ rechaza tipografía pendiente (1.307616ms)
+✔ rechaza paleta sin referencia (0.528375ms)
+✔ rechaza revisión 0 pendiente (0.514244ms)
+✔ rechaza revisión 1 pendiente (0.669697ms)
+✔ rechaza revisión 2 pendiente (0.377418ms)
+✔ rechaza revisión 3 pendiente (0.533853ms)
+✔ rechaza revisión 4 pendiente (0.394623ms)
+✔ official shared brand and visual references are configured; approved editorial does not unblock missing institutional images (0.43897ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 128.83063

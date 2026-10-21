@@ -2,7 +2,7 @@ import {createServer} from 'node:http';
 import {readFileSync,realpathSync,statSync} from 'node:fs';
 import {resolve,relative,isAbsolute,extname} from 'node:path';
 import {pathToFileURL} from 'node:url';
-const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.woff2':'font/woff2'};
+const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.woff2':'font/woff2','.ttf':'font/ttf'};
 /** Local validation only. Private services must be routed separately by real hosting. */
 export function documentsServer(directory){
  const root=realpathSync(directory);

@@ -1,0 +1,23 @@
+
+> privaweb@0.1.0 test:e2e:documents:contract
+> playwright test --config=playwright.documents.config.ts --project=chromium
+
+[WebServer] (node:351413) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:351450) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 2 workers
+
+(node:351458) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:351459) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [chromium] › tests/e2e/documents-notice.spec.ts:2:1 › V06 notice before sending, manifesto and return without new persistence (1.7s)
+  ✓  3 [chromium] › tests/e2e/documents-recovery.spec.ts:2:1 › V07/V09 recovery preserves404 and returns home by keyboard without leaking URL (1.7s)
+  ✓  4 [chromium] › tests/e2e/documents-recovery.spec.ts:6:1 › V10 four canonical anchors and headings (1.5s)
+  ✓  5 [chromium] › tests/e2e/documents.spec.ts:2:1 › V04 two direct and eight footer routes, accessible auxiliary navigation (8.0s)
+  ✓  1 [chromium] › tests/e2e/documents-accessibility.spec.ts:3:1 › V12 seven widths and text200%, no loss of content or focus (20.4s)
+  ✓  6 [chromium] › tests/e2e/documents-accessibility.spec.ts:14:1 › local documents and error introduce no external traffic, storage or private URL reflection (470ms)
+
+  6 passed (24.1s)

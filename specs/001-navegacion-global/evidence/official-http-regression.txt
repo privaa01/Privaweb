@@ -1,0 +1,10 @@
+✔ V07 missing public routes return own404, HEAD empty, root and assets valid (33.477026ms)
+✔ V08 confinement, no directory listings or private fallback (13.767281ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 223.245533

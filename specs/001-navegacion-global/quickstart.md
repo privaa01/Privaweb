@@ -1,8 +1,6 @@
 # Guía de validación futura — 001
 
-**Estado**: tooling, componentes y banco contractual implementados. Instalación, check y
-build contractual verificados; páginas de aplicación e integración real pendientes.
-Los comandos de build/preview de aplicación siguen bloqueados hasta T023.
+**Estado**: actualizado2026-10-20. Componentes y páginas públicas existen; contrato006 recibido y pruebasG05 definidas. Build/entrega integrada siguen bloqueados por recursos, revisión editorial, operación009/010 y baseURL real, no por ausencia de archivos002–005.
 
 ## Prerrequisitos
 
@@ -43,13 +41,20 @@ el proyecto de fixtures y componentes importados; `build:contract` lo construye.
 No ejecutar check/build de aplicación como prerrequisito de T007: sus páginas aún no existen.
 T007 valida arranque del entorno; ejecutar la suite solo después de escribir sus casos desde T008.
 
-En este entorno la descarga Playwright recibió 403. Para usar Chromium instalado:
+La descarga Playwright recibió403 durante el primer setup. Actualmente hay Chromium del sistema y Firefox instalado; WebKit tiene dependencias del host pendientes. Para Chromium:
 
 ```bash
 PRIVA_CHROMIUM_EXECUTABLE=/usr/bin/chromium npm run test:e2e:contract -- --project=chromium
 ```
 
-Firefox/WebKit requieren sus binarios oficiales; no se consideran probados por Chromium.
+Para la regresiónFirefox de recorridos principales:
+
+```bash
+PLAYWRIGHT_BROWSERS_PATH=/workspace/.cache/ms-playwright npm run test:e2e:contract -- --project=firefox --grep-invert="Matriz:"
+npm run test:navigation:service
+```
+
+Firefox requiere autorización del ejecutor fuera del sandbox exterior en este entorno, sin desactivar sus protecciones. La matriz exhaustiva sigue en Chromium. WebKit no se considera aprobado por otros motores. Ejecutar suites de navegador001 en secuencia para no compartir servidor/reportes simultáneamente.
 El servidor contractual es `tests/fixtures/navigation/serve.py` (Python 3), usado por webServer,
 con salida Astro real en `.test-output/navigation/`. El preview de Astro no inició en este
 entorno; se eligió servir los archivos estáticos directamente para validar sus rutas.
@@ -122,9 +127,8 @@ sin contarlas como aprobadas. Los fixtures solo acreditan contrato, no integraci
 T025 automatiza los siete anchos con texto 100%; T026 completa la misma matriz con texto
 real al 200% mediante revisión manual o herramienta cuyo método se documente.
 
-Antes de ejecutar la parte administrativa, usar el contrato pendiente con 006 descrito en
-[contracts/navigation.md](contracts/navigation.md). La ausencia del inventario de rutas
-privadas bloquea esa parte de T021/T027; no inventar endpoints ni aceptar un 404 como protección.
+Antes de ejecutar la parte administrativa, usar el contrato006 recibido y su inventario consumidor descritos en
+[contracts/navigation.md](contracts/navigation.md). El inventario está en `tests/helpers/navigation-private-contract.ts`; los casos locales usan el handler006 real con SQLite aislado, no simulan autorización. La ejecución de T027 necesita origen integrado real; no aceptar404 como protección.
 
 Chromium cubre matriz completa; Firefox/WebKit cubren menú, CTA, anclas y foco como
 regresión. Documentar navegador/versión y resultados; no afirmar auditoría total por axe.
@@ -136,3 +140,19 @@ Guardar por requisito: fecha, entorno, navegador/ancho, escenario, resultado y e
 Separar aprobado/fallido/bloqueado/no ejecutado y suites contractuales/integradas.
 No usar mocks de login o documentos para aprobar G05/G06. El logo original y demás
 recursos pendientes bloquean fidelidad final. La evidencia de ejecución contractual y los bloqueos integrados están en `evidence/`; esta guía no acredita cierre de la feature.
+
+## Reanudación2026-10-20
+
+T021 completa: pruebas integradas preparadas desde contrato006 C1/C2/C3, sin la excepción histórica de inventario ausente. `npm run test:navigation:service` verifica GET/HEAD privados401 y sesión401/403 reales; no envía correo ni crea cuentas. El fixture solo aporta templates sintéticos que no se entregan antes de autorizar; no acredita diseño del login ni operación productiva.
+
+Las cuatro páginas002–005 consumen PublicLayout; todavía no se aprueban dist, anclas integradas o recursos por leer sus archivos. Build normal bloqueado por gates010/009 y pendientes de otras features. No usar Astro directo o fixtures para saltar aprobaciones. Ausencia de `PRIVA_INTEGRATION_BASE_URL` falla explícitamente; `--list` comprueba definición, no ejecuta ni califica un sitio.
+
+## Recursos oficiales incorporados
+
+`disenovisual/Link-PrivaHome.png` y `referencias.txt` recibidos y aplicados a001; T024 completa.
+PNG sin cambios enpublic/brand; PlusJakartaSans normal/italic conOFL enpublic/fonts y variables
+CSS de la referencia englobal.css. No cargar hojas remotasGoogleFonts. El banco001 sirvepublic
+real; bancoshome/stories/app/contact/documents copian brand/fonts compartidos albuild manteniendo
+materiales sintéticos de cada uno. Comprobar licencia, hashes, imagen104×40 y carga de fuente
+con `navigation-brand.spec.ts`; no publicar los bancos como sitio final. El cierre sigue requiriendo
+lectura asistida/fidelidad y contenido/operación real de otrasfeatures.

@@ -1,21 +1,19 @@
-# Resultados de contrato — 002
+# Resultados contractuales — 002
 
-Fecha: 2026-10-16 (America/Bogota). Entorno Linux, Node 24.19.0 y Chromium 154.0.8037.57.
+Actualización: 2026-10-21 (UTC). Resultados finales tras aplicar los cinco textos aprobados. No se suman ejecuciones anteriores ni reintentos.
 
-| Ejecución | Resultado |
+| Comando | Resultado |
 |---|---|
-| npm ci final | Correcto, lockfile actualizado reproducible |
-| npm run check:home:contract | 0 errores, 0 advertencias |
-| node --test tests/home-publication.test.ts | 23 aprobadas, 0 fallidas/omitidas |
-| test:e2e:home:contract --project=chromium con PRIVA_CHROMIUM_EXECUTABLE | 23 aprobadas, 0 fallidas/omitidas, ~47s |
-| test:e2e:contract --project=chromium (regresión 001) | 44 aprobadas, 0 fallidas/omitidas, ~3.4min |
+| node --experimental-strip-types --test tests/home-publication.test.ts | 24 aprobadas; 0 fallidas/omitidas |
+| npm run check:home:contract | 96 archivos; 0 errores/advertencias; 1 hint previo returnValue en administración |
+| PRIVA_CHROMIUM_EXECUTABLE=/usr/bin/chromium PLAYWRIGHT_BROWSERS_PATH=/workspace/.cache/ms-playwright npm run test:e2e:home:contract -- --project=chromium | 25 aprobadas; 0 fallidas/omitidas; 25 s |
+| PLAYWRIGHT_BROWSERS_PATH=/workspace/.cache/ms-playwright npm run test:e2e:home:contract -- --project=firefox --grep-invert='matriz Inicio' | 11 aprobadas; 0 fallidas/omitidas; matriz de 14 casos excluida por diseño |
+| Mismo comando --project=webkit --grep='base: layout' | 1 intento fallido al arrancar; dependencias host ausentes; 0 aprobadas |
+| node scripts/require-home-publication.mjs | Salida 1 esperada; tres imágenes institucionales pendientes |
+| npm run test:e2e:home:integration | Salida 1; falta URL real; ninguna prueba integrada ejecutada |
 
-Las suites construyen y sirven salida .html real, con fixtures inequívocos que importan
-componentes de src. Salidas home/navigation, cachés/reportes y trazas separados.
-La primera ejecución concurrente de home tuvo dos errores al escribir trazas por colisión
-de outputDir; se corrigió config y se repitieron los 23 casos sin errores. No se presentan
-esos fallos de infraestructura como errores de producto ni se ignoran en conteos históricos.
+Los logs resume-2026-10-21-* conservan estos resultados. La matriz Chromium recorre siete anchos y texto 100%/200%, axe, ausencia de almacenamiento/tráfico externo y ambas anclas. Casos adicionales verifican carga real de logo/fuente/paleta y repetición de Conocer más sin alterar historial. Las imágenes institucionales y destino Historias siguen siendo fixtures inequívocos.
 
-home-results.json contiene cada prueba y navigation-regression.json las estadísticas de
-esta regresión. No incluyen volcados de entorno o credenciales. No hay pruebas de integración
-real ejecutadas; ver integration.md. Build de aplicación sigue bloqueado, sin dist de entrega.
+Se observó fallo de la nueva prueba de metadatos oficiales antes de conectar los recursos. Una ejecución intermedia posterior a la aprobación editorial tuvo dos fallos al guardar trazas por intentar iniciar Firefox mientras Chromium seguía activo; Firefox además rechazó el puerto ocupado. Se repitieron ambas suites secuencialmente: los resultados finales de la tabla no incluyen esos intentos como aprobados.
+
+La regresión compartida 001 ya documentada en esta sesión (46 Chromium y 32 Firefox) pertenece a la incorporación previa de recursos comunes, no a una nueva ejecución de 002. No se modificó el layout compartido en esta reanudación de 002. La build contractual se ejecuta dentro de las suites; no equivale al build publicable de la aplicación.

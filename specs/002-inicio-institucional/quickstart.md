@@ -107,3 +107,7 @@ Las suites tienen salidas/reportes y trazas separados; no lanzar suites que comp
 outputDir. Firefox/WebKit se descargaron, pero su arranque/regresión sigue bloqueado
 por perfil de Firefox y bibliotecas de WebKit ausentes. No se necesita aprobación adicional
 para decisiones ya registradas; sí resolver recursos/copy pendientes antes de publicar.
+
+## Reanudación 2026-10-21
+
+Marca, fuente y paleta recibidas desde disenovisual; cinco textos educativos aprobados explícitamente y aplicados con evidencia en [editorial-review.md](evidence/editorial-review.md). Las imágenes oficiales siguen pendientes; el enlace provisional placehold.co/448x332 devuelve HTTP 403 al descargar. Firefox ya permite verificar recorridos principales; WebKit sigue bloqueado por bibliotecas del host. Páginas 003–005 existen en código; falta URL real para aceptación integrada. No se acredita publicación ni fidelidad final. Estado actual y resultados en [evidence/summary.md](evidence/summary.md); las notas anteriores son históricas.

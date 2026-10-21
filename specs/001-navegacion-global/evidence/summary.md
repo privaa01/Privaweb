@@ -1,56 +1,59 @@
-# Resultado de implementación — 001 Navegación global
+# Resultado de implementación —001 Navegación global
 
-Fecha: 2026-10-16 (America/Bogota). Estado: trabajo independiente implementado;
-feature sin cierre integral por dependencias externas y validaciones pendientes.
+**Actualización**:2026-10-20 (America/Bogota). **Estado**:23/28 tareas completas, cinco parciales/bloqueadas. Componentes y contrato local verificados; sin cierre de publicación/fidelidad/integración.
 
 ## Implementado
 
-- Configuración central tipada, Header/Footer/Layout reutilizables y CSS adaptable.
-- Menú nativo y página activa, disclosure accesible, Escape/resize/foco y degradación sin JS.
-- CTA a casos/descarga y navegación por anclas; copyright fijo 2026 y footer común.
-- Build contractual aislado que importa componentes reales; ninguna página de relleno
-  en src/pages ni publicación de fixtures como sitio final.
-- Lockfile y scripts repetibles, telemetría Astro desactivada, pruebas contractuales/integradas separadas.
+Header/Footer/Layout reutilizables, menú con activo correcto, disclosure compacto con Escape/resize/foco, enlaces nativos sinJS, cuatroCTA y footer común2026. Sin captura de datos, nuevas cookies o servicios de navegación.
 
-## Evidencia ejecutada
+La001 ya está conectada en las páginas002–005. La010 añadió contexto auxiliar sin activo falso; las cuatro páginas principales conservan sus IDs/CTA. La usuaria aportó logo y referencia de fuente/paleta oficiales; T024 completa. Faltan imágenes/textos y calificación de otras features para compilar/publicar el conjunto.
 
-`PRIVA_CHROMIUM_EXECUTABLE=/usr/bin/chromium npm run test:e2e:contract -- --project=chromium`
-terminó con exit 0: **44 aprobadas, 0 fallidas, 0 omitidas**, duración aproximada 2.4 minutos.
-Resultados de cada caso y stats en [contract-results.json](contract-results.json).
+## Reanudación y corrección
 
-14 celdas de matriz = siete anchos (360/390/430/768/1024/1280/1440) × texto 100%/200%.
-Cada celda prueba 80 recorridos con teclado/puntero; total 1120 recorridos contractuales,
-además de los 30 casos básicos. La ampliación cambia tamaños CSS reales, no píxeles de captura.
-Axe sin violaciones en las 14 celdas, sin cookies/storage ni solicitudes a servicios externos
-observadas en esos recorridos. Esto no certifica proveedores ni toda la futura aplicación.
+006 ya aportó contratoC1/C2/C3 y servicio local: se retiró la excepción de prueba que siempre declaraba inventario ausente. T021 completa como preparación de casos: rutasGET/HEAD protegidas401JSON, estado de sesión401 con header requerido/403sin él, nunca404 como prueba de seguridad. Banco de Node usa handler006/SQLite reales y templates sintéticos; no acredita login visual productivo, proveedor/correo o alojamiento.
 
-`npm run check:contract`: sin errores/advertencias. Build contractual de siete páginas
-(incluye tres destinos ficticios) completado, excluido del build de entrega.
-Tras ajustar el color de foco del footer se repitieron check/build y regresión focalizada.
-Ver [accessibility.md](accessibility.md), capturas y evidencias por historia.
+La primera regresiónFirefox tuvo30pases y un fallo al reactivar el mismo fragmento. El foco podía volver albody después delclick/keyupEnter. Se difiere la mejora de foco tras la activación nativa y se completa después dekeyup; no hay preventDefault ni cambio deURL/historial/clic modificado. El caso existente falló antes y pasa después con puntero/Enter. Sin ampliación de alcance.
 
-## Bloqueos y límites
+## Evidencia actual
 
-- T021: casos privados pendientes del inventario/servicio de 006.
-- T023: páginas reales y secciones de 002–005 ausentes; build de aplicación sale con bloqueo explícito.
-- T024: logo, tipografía y colores oficiales ausentes; no se certifica fidelidad.
-- T025: regresión Firefox/WebKit no ejecutada por binarios ausentes y descarga 403.
-- T026: revisión con lector de pantalla y fidelidad final pendientes.
-- T027: sin entorno integrado ni documentos aprobados 010/formulario real 005; cero pruebas integradas ejecutadas.
-- T028: documentación de progreso actualizada; cierre integral pendiente.
+| Verificación | Resultado | Registro |
+| --- | --- | --- |
+| Chromium contractual completo |46aprobadas,0fallos/omitidas, incluido logo/fuente/paleta oficiales | [log](official-chromium.txt) |
+| Firefox recorridos principales |32aprobadas,0fallos/omitidas, incluidos recursos oficiales; matriz exhaustiva excluida por diseño | [log](official-firefox.txt) |
+| Guard006 real, Node |2aprobadas;12combinaciones de documento más sesión401/403 | [log](resume-2026-10-20-service.txt) |
+| Astrocheck contractual |0errores/0warnings;1hint preexistente returnValue de inbox | [log](official-check.txt) |
+| Build contractual |Completado por webServer antes de suites; siete páginas/artefactos de prueba fuera de dist | Logs de navegador |
+| WebKit |No arranca por bibliotecas delhost;0casos aprobados | [bloqueo](resume-2026-10-20-webkit-blocked.txt) |
+| Integración |39casos definidos/listados en tres motores, ninguno ejecutado sin baseURL real | [listado](resume-2026-10-20-integration-list.txt), [bloqueo](resume-2026-10-20-integration-blocked.txt) |
+| Build de entrega |Exit1 por010/009 pendientes; siguen gates y requisitos de otras features | [bloqueo](resume-2026-10-20-build-blocked.txt) |
 
-21/28 tareas completadas; las siete anteriores permanecen abiertas total o parcialmente.
-No se modificó el checklist de calidad ni se certificó G01–G06 integrado por pruebas de fixtures.
+La matrizChromium contiene14celdas: siete anchos360/390/430/768/1024/1280/1440×texto100%/200%. Cada celda recorre menú/logos/CTA/footer con teclado/puntero:80recorridos,1120en total; axe/overflow/storage/red incluidos. Texto ampliado mediante fuente real32px, no escalado de captura. Son fixtures explícitas, no auditoría de recursos/proveedores reales ni aprobación de documentos010.
 
-## Configuración del entorno
+Los46casos actuales incluyen32casos de recorridos/recursos y14celdas; no sumar1120como pruebas adicionales. La repetición específica de foco está incluida en32Firefox, y los30pases iniciales tampoco se suman. Históricos:44Chromium el16 y45tras corrección004; quedan en sus archivos/versiones, no se atribuyen a esta ejecución. [Resumen estructurado](resume-2026-10-20-validation.json).
 
-Se guardaron install_script/start_skill actualizados y la adición de cdn.playwright.dev
-al borrador de red, preservando Spec Kit y presets existentes. Guardar el borrador no lo
-aplica ni publica: la descarga de Firefox/WebKit sigue sin validar. El usuario puede revisar,
-guardar y publicar desde configuración del entorno. No se hizo commit ni push en esta fase.
+## Pendientes
 
-2026-10-17 — Corrección compartida durante004 (G03): repetir CTA con mismo hash
-restaura foco de encabezado sin alterar navegación nativa ni historia; prueba regresión
-falló antes y pasó después. Suite001 completa:45 aprobadas; suites002:23 y003:29
-aprobadas. Detalle en [evidencia004](../../004-presentacion-app/evidence/navigation.md).
-No acredita nuevos cierres integrados ni sustituye los resultados históricos anteriores.
+- T023: páginas existen y usanlayout, pero dist/anclas sobre entrega real bloqueados por contenido/recursos y operación pendientes.
+- T024 completada: logo y referencias recibidos de la usuaria; copia intacta, dimensiones104×40/proporción2.6, fuente localOFL y variablesCSS verificadas. Revisión visual final T026 sigue separada.
+- T025: Chromium/Firefox conformes localmente; WebKit y aceptación con recursos/sitio real pendientes.
+- T026: fuente200%/teclado/contraste provisional local; lector de pantalla y fidelidad con materiales finales pendientes.
+- T027: baseURL real, acceso006 alojado, documentos010 aprobados, Contacto005 calificado y build de entrega pendientes.39casos listados no son39pruebas aprobadas.
+- T028: progreso sincronizado; cierre integral depende de los anteriores, no se marca completo por documentación.
+
+[Integración](integration.md), [recursos](resources.md) y [accesibilidad](accessibility.md) detallan alcance. Checklist requisitos16/16 leído sin cambios, no evidencia de implementación. No commit/push/despliegue, edición delPDF, cuentas productivas o envío de correo en esta fase. Gate constitucional de trabajo local conforme; aceptación final deG01–G06 pendiente.
+
+## Incorporación de recursos oficiales
+
+Origen recibido en `disenovisual/` desde GitHub a commitcde01b0, preservando trabajo local.
+Header/footer usan el PNG original104×40; fuentePlusJakartaSans normal/italic200–800 alojada
+localmente conOFL, paleta exacta de referencias.txt y soporte blanco para el wordmark oscuro
+en footer sin modificar sus bytes. Manifest con hashes en [official-assets.json](official-assets.json).
+Capturas [390px](official-navigation-390.png) y [1440px](official-navigation-1440.png) inspeccionadas:
+marca/controles legibles, sin corte observado; contenido central sigue siendo fixture explícita.
+
+Nueva regresión de documentos010:6Chromium aprobadas, incluida carga real de la fuente y
+texto200% con recursos compartidos;2Node de entregaHTTP pasan tras añadir MIMEfont/ttf
+al servidor local010. [Navegador](official-documents-regression.txt), [HTTP](official-http-regression.txt).
+Los bancos públicos copian solo brand/fonts compartidos preservando sus recursos sintéticos.
+No hay peticiones aGoogleFonts en runtime. No se aprueban recursos/editorial específicos
+faltantes de002–005 ni la configuración productiva009/010.

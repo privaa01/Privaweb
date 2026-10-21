@@ -247,3 +247,7 @@ con dependencias, gates de publicación y evidencia prevista; ninguna ejecutada.
 2026-10-16 — `$speckit-implement 002`: bloques y controles implementados, gate de
 publicación y pruebas contractuales. Evidencia en evidence/summary.md; P01/P03/P04
 siguen abiertos. Ningún resultado contractual acredita destino real 003 o aprobación editorial.
+
+## Reanudación 2026-10-21
+
+Marca, fuente y paleta recibidas desde disenovisual; cinco textos educativos aprobados explícitamente y aplicados con evidencia en [editorial-review.md](evidence/editorial-review.md). Las imágenes oficiales siguen pendientes; el enlace provisional placehold.co/448x332 devuelve HTTP 403 al descargar. Firefox ya permite verificar recorridos principales; WebKit sigue bloqueado por bibliotecas del host. Páginas 003–005 existen en código; falta URL real para aceptación integrada. No se acredita publicación ni fidelidad final. Estado actual y resultados en [evidence/summary.md](evidence/summary.md); las notas anteriores son históricas.

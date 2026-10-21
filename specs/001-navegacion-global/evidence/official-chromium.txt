@@ -1,0 +1,61 @@
+
+> privaweb@0.1.0 test:e2e:contract
+> playwright test --project=chromium
+
+[WebServer] (node:349010) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 46 tests using 2 workers
+
+(node:349088) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:349087) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/navigation-accessibility.spec.ts:19:1 › US1: navegación sin JavaScript (788ms)
+  ✓   2 [chromium] › tests/e2e/navigation-accessibility.spec.ts:2:1 › US1: disclosure, Escape, resize y foco (837ms)
+  ✓   3 [chromium] › tests/e2e/navigation-accessibility.spec.ts:49:5 › Matriz: 360px, texto 100% (19.4s)
+  ✓   4 [chromium] › tests/e2e/navigation-accessibility.spec.ts:49:5 › Matriz: 360px, texto 200% (19.9s)
+  ✓   5 [chromium] › tests/e2e/navigation-accessibility.spec.ts:49:5 › Matriz: 390px, texto 100% (19.5s)
+  ✓   6 [chromium] › tests/e2e/navigation-accessibility.spec.ts:49:5 › Matriz: 390px, texto 200% (19.5s)
+  ✓   7 [chromium] › tests/e2e/navigation-accessibility.spec.ts:49:5 › Matriz: 430px, texto 100% (18.1s)
+  ✓   8 [chromium] › tests/e2e/navigation-accessibility.spec.ts:49:5 › Matriz: 430px, texto 200% (17.9s)
+  ✓   9 [chromium] › tests/e2e/navigation-accessibility.spec.ts:49:5 › Matriz: 768px, texto 100% (17.6s)
+  ✓  10 [chromium] › tests/e2e/navigation-accessibility.spec.ts:49:5 › Matriz: 768px, texto 200% (17.8s)
+  ✓  11 [chromium] › tests/e2e/navigation-accessibility.spec.ts:49:5 › Matriz: 1024px, texto 100% (17.4s)
+  ✓  12 [chromium] › tests/e2e/navigation-accessibility.spec.ts:49:5 › Matriz: 1024px, texto 200% (17.9s)
+  ✓  13 [chromium] › tests/e2e/navigation-accessibility.spec.ts:49:5 › Matriz: 1280px, texto 100% (19.2s)
+  ✓  14 [chromium] › tests/e2e/navigation-accessibility.spec.ts:49:5 › Matriz: 1280px, texto 200% (19.4s)
+  ✓  15 [chromium] › tests/e2e/navigation-accessibility.spec.ts:49:5 › Matriz: 1440px, texto 100% (22.2s)
+  ✓  17 [chromium] › tests/e2e/navigation-brand.spec.ts:2:1 › official104x40 brand, approved tokens and locally loaded variable font (839ms)
+  ✓  18 [chromium] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /index.html (982ms)
+  ✓  16 [chromium] › tests/e2e/navigation-accessibility.spec.ts:49:5 › Matriz: 1440px, texto 200% (23.3s)
+  ✓  19 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /index.html (819ms)
+  ✓  20 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /historias.html (995ms)
+  ✓  21 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /app.html (1.1s)
+  ✓  22 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /contacto.html (1.1s)
+  ✓  23 [chromium] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /historias.html (1.1s)
+  ✓  24 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /index.html (1.1s)
+  ✓  25 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /historias.html (853ms)
+  ✓  26 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /app.html (1.0s)
+  ✓  27 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /contacto.html (1.2s)
+  ✓  28 [chromium] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /app.html (1.1s)
+  ✓  29 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /index.html (993ms)
+  ✓  30 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /historias.html (1.1s)
+  ✓  31 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /app.html (761ms)
+  ✓  32 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /contacto.html (849ms)
+  ✓  33 [chromium] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /contacto.html (885ms)
+  ✓  34 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /index.html (803ms)
+  ✓  35 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /historias.html (802ms)
+  ✓  36 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /app.html (791ms)
+  ✓  37 [chromium] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /contacto.html (858ms)
+  ✓  38 [chromium] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /index.html (796ms)
+  ✓  39 [chromium] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /historias.html (663ms)
+  ✓  40 [chromium] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /app.html (719ms)
+  ✓  41 [chromium] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /contacto.html (806ms)
+  ✓  42 [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /index.html (741ms)
+  ✓  43 [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /historias.html (836ms)
+  ✓  44 [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /app.html (606ms)
+  ✓  45 [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /contacto.html (752ms)
+  ✓  46 [chromium] › tests/e2e/navigation.spec.ts:47:1 › US2: repeated same fragment restores heading focus without navigation history change (790ms)
+
+  46 passed (2.5m)

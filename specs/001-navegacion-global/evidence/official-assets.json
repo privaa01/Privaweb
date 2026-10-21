@@ -1,0 +1,28 @@
+{
+  "sourceCommit": "cde01b0",
+  "approvedBy": "User identified official logo and visual reference in conversation2026-10-20",
+  "logo": {
+    "source": "disenovisual/Link-PrivaHome.png",
+    "public": "public/brand/priva-logo.png",
+    "width": 104,
+    "height": 40,
+    "sha256": "2c69522411375fe55a78020745ed1274116c4a8a23b42694f1fe2ac6c4db0945"
+  },
+  "reference": "disenovisual/referencias.txt",
+  "fonts": [
+    {
+      "file": "public/fonts/plus-jakarta-sans-variable.ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/plusjakartasans/PlusJakartaSans%5Bwght%5D.ttf",
+      "sha256": "89b3fb38aa0d275d7a731d0d817a4f1622b316b4d7fbdedcf02ee9099ff68bc8",
+      "weight": "200–800",
+      "license": "SIL OFL1.1; public/fonts/OFL-Plus-Jakarta-Sans.txt"
+    },
+    {
+      "file": "public/fonts/plus-jakarta-sans-italic-variable.ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/plusjakartasans/PlusJakartaSans-Italic%5Bwght%5D.ttf",
+      "sha256": "9529eb888668b6a3c6dd75b6341a2fc5263fb6c9e788822e6117c29dd9e8b115",
+      "weight": "200–800",
+      "license": "SIL OFL1.1; public/fonts/OFL-Plus-Jakarta-Sans.txt"
+    }
+  ]
+}

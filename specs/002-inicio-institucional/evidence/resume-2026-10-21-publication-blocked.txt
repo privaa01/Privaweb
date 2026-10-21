@@ -1,0 +1,1 @@
+BLOQUEADO 002: hero: recurso oficial no verificado; hero: dimensiones pendientes; hero: ruta oficial local pendiente o inválida; identidad: recurso oficial no verificado; identidad: dimensiones pendientes; identidad: ruta oficial local pendiente o inválida; cierre: recurso oficial no verificado; cierre: dimensiones pendientes; cierre: ruta oficial local pendiente o inválida

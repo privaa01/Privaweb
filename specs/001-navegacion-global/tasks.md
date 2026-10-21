@@ -2,7 +2,7 @@
 
 **Input**: [spec](spec.md), [plan](plan.md), [research](research.md), [modelo](data-model.md),
 [contrato](contracts/navigation.md), [guía](quickstart.md) y constitución 1.0.0.
-**Fecha**: 2026-10-16. **Estado**: 21 tareas completadas; 7 parciales/bloqueadas por recursos, servicios o validación pendiente.
+**Fecha**: 2026-10-16. **Actualización**:2026-10-20. **Estado**:23 tareas completadas;5 parciales/bloqueadas por recursos, operación o validación pendiente.
 **Tests**: incluidos porque el spec exige recorridos observables y accesibilidad verificable.
 Escribir pruebas antes del comportamiento y comprobar el fallo pertinente; no confundir fallo
 por entorno roto con fallo funcional. No se impone cobertura numérica arbitraria.
@@ -54,7 +54,7 @@ G04–G06; prueba independiente: identidad/footer en cuatro fixtures y contratos
 - [X] T018 [US3] Añadir pruebas US3.1–US3.4 a `tests/e2e/navigation.spec.ts` para lema/copyright idénticos y 16 enlaces de footer; contratos de destino sin afirmar que un fixture prueba login o texto legal aprobado; registrar fallo previo. Depende de T017 por archivo compartido.
 - [X] T019 [US3] Implementar `src/components/SiteFooter.astro` desde FooterDefinition común: lema “Defendiendo la soberanía digital individual.”, copyright “© 2026 Priva. Todos los derechos reservados. Navega con dignidad.”, año fijo y cuatro enlaces exactos; logo sujeto a recurso oficial pendiente. Depende de T018.
 - [X] T020 [US3] Integrar footer en `src/layouts/PublicLayout.astro` y diseño adaptable/foco en `src/styles/global.css`; comprobar orden y nombres de enlaces sin publicar documentos o formularios ficticios. Depende de T019.
-- [ ] T021 [US3] Crear `tests/e2e/navigation-integration.spec.ts` para login real `/admin/login`, documentos aprobados 010 y formulario 005; consumir el inventario de rutas privadas y respuestas sin sesión que debe entregar 006 según `specs/001-navegacion-global/contracts/navigation.md`; no inventar endpoints ni considerar 404 evidencia de autorización; exigir base real y no mocks, registrar dependencia faltante como bloqueo/error explícito sin ejecución vacía. Depende de T020; escribir ahora los casos cuyos destinos están definidos; mantener bloqueados la definición/ejecución de casos privados hasta recibir contrato 006 y ejecutarlos solo con servicios reales disponibles. La parte bloqueada no impide T022.
+- [X] T021 [US3] Preparar `tests/e2e/navigation-integration.spec.ts` para login006, documentos010 y formulario005; consumir el contrato006 C1/C2/C3 recibido mediante `tests/helpers/navigation-private-contract.ts`. Definidos GET/HEAD de páginas privadas y GET de sesión con401/403 exactos, sin aceptar404 o login ficticio como autorización. `tests/navigation-service.test.ts` verifica el guard real006/SQLite local con cookies ausentes/inválidas; no acredita templates oficiales ni alojamiento. Ejecución integrada pendiente en T027, sin mocks ni baseURL inventada. Depende de T020 y contrato006 disponible.
 - [X] T022 [US3] Ejecutar US3 contractual y registrar resultados en `specs/001-navegacion-global/evidence/us3.md`; distinguir enlace correcto de G05/G06 integrados pendientes. Depende de la parte independiente de T021; el contrato privado pendiente no bloquea la suite contractual.
 
 ## Phase 6: Polish — integración, accesibilidad y evidencia
@@ -62,7 +62,7 @@ G04–G06; prueba independiente: identidad/footer en cuatro fixtures y contratos
 Concluir trabajo independiente y mantener abiertas las tareas que requieran recursos o servicios ausentes.
 
 - [ ] T023 Conectar layout a `src/pages/index.astro`, `src/pages/historias.astro`, `src/pages/app.astro` y `src/pages/contacto.astro` cuando existan contenidos de 002–005; verificar archivos dist/*.html y anclas casos/descarga/escribir sobre build real. Si no existen, registrar bloqueo sin implementarlas fuera de alcance. Depende de T013/T017/T022 y 002–005.
-- [ ] T024 Integrar recursos oficiales recibidos en `public/brand/` y referencias de `src/components/SiteHeader.astro`/`src/components/SiteFooter.astro`; inventario y faltantes en `specs/001-navegacion-global/evidence/resources.md`. No inventar logo/tipografía/hex; fidelidad sigue bloqueada mientras falten. Depende de T020 y recursos oficiales.
+- [X] T024 Integrar recursos oficiales recibidos en `public/brand/` y referencias de `src/components/SiteHeader.astro`/`src/components/SiteFooter.astro`; inventario y faltantes en `specs/001-navegacion-global/evidence/resources.md`. No inventar logo/tipografía/hex; fidelidad sigue bloqueada mientras falten. Depende de T020 y recursos oficiales.
 - [ ] T025 Completar matriz automatizada en `tests/e2e/navigation-accessibility.spec.ts`: Chromium a cada ancho 360/390/430/768/1024/1280/1440 px con texto 100%, repitiendo 16 recorridos del menú, cuatro retornos por logo, cuatro CTA y 16 enlaces del footer con teclado/puntero; comprobar destinos/títulos visibles, sin overflow, foco/resize y axe; recorridos principales Firefox/WebKit; ausencia de cookies/storage/solicitudes externas de navegación. No declarar auditoría completa por axe. Depende de T023–T024 para la aceptación final; puede adelantarse en fixtures tras T022.
 - [ ] T026 Repetir a texto realmente ampliado al 200% en cada uno de los siete anchos la matriz de T025 (16 recorridos de menú, cuatro logos, cuatro CTA y 16 enlaces de footer, teclado/puntero); revisar lector de pantalla, foco, contraste 4.5:1 normal y 3:1 grande/componentes, controles aproximadamente 44 px y fidelidad; guardar método, entorno, capturas y resultado en `specs/001-navegacion-global/evidence/accessibility.md`. Si no hay capacidad o recurso necesario, registrar no ejecutado/bloqueado, no aprobación. Depende de T025.
 - [ ] T027 Ejecutar check/build de aplicación desde T023, check:contract/build:contract y suites contractuales y `tests/e2e/navigation-integration.spec.ts` con destinos reales 005/006/010; registrar comandos, conteos y resultados separados en `specs/001-navegacion-global/evidence/integration.md`; G05 exige autorización real, no 404 o login estático vacío. Depende de T023–T026 y servicios/contenidos reales.
@@ -135,17 +135,14 @@ aplicación (T001/T005/T007/T023/T027); U1 hace explícito contrato privado pend
 006 sin bloquear trabajo independiente (T021/T022); U2 detalla matriz por ancho y texto
 100%/200% (T025/T026). Se conservan 28 tareas sin ejecutar y los IDs G01–G06.
 
-## Estado tras implementación
+## Estado tras implementación y reanudación2026-10-20
 
-- T001–T020/T022: tooling reproducible y componentes implementados, pruebas contractuales realizadas; ver evidence/.
-- T021 parcial: destinos definidos tienen casos; contrato privado de 006 ausente, caso explícitamente bloqueado y sin ejecución integrada.
-- T023 bloqueada: páginas reales 002–005 ausentes; build de aplicación falla explícitamente.
-- T024 bloqueada: logo/tipografía/colores oficiales ausentes; inventario registrado.
-- T025 parcial: matriz contractual Chromium ejecutada; falta aceptación real y regresión Firefox/WebKit por descarga 403.
-- T026 parcial: texto real al 200% validado en fixtures; falta revisión con lector de pantalla y fidelidad/recursos reales.
-- T027 parcial: check/build contractual y detección de bloqueos ejecutados; ninguna prueba integrada de aplicación aprobada.
-- T028 parcial: documentación sincronizada; cierre integral pendiente de las tareas anteriores.
+- T001–T022 completas: tooling/componentes y contratoG05 preparado; T021 se completa al recibir contrato006 y definir casos concretos. Dos casos de servicio006 real con SQLite aislado verifican guard401/403; no se apruebaG05 integrado por esa prueba local.
+- T023 parcial: páginas002–005 ya existen y consumen layout común con pageId correcto; falta build/dist y comprobación integrada de anclas. La ausencia actual es aprobación/recursos/operación, no archivos inexistentes.
+- T024 completa: logo oficial104×40 y referencia de paleta/PlusJakartaSans recibidos por instrucción de la usuaria; integrados y verificados localmente. Fuente local conOFL y hashes; sin llamadas externas del visitante. No equivale a fidelidad finalT026.
+- T025 parcial: matrizChromium existente y nueva regresiónFirefox; WebKit y aceptación real pendientes. Ver resultados definitivos en evidence/summary.md.
+- T026 parcial: texto200% contractual; lector de pantalla, materiales/fidelidad finales pendientes.
+- T027 parcial: check/build contractual; integración preparada y bloqueada sin baseURL real; build de aplicación bloqueado por010/009 y gates de otras features sin relajar.
+- T028 parcial: documentación actualizada; cierre total depende de aceptación integrada y recursos reales.
 
-No se modificaron markers del checklist de calidad. Los fixtures no se publican ni sustituyen
-las otras features. La observación I2 del análisis queda aclarada en quickstart: la suite
-se ejecuta después de crear casos, no como una ejecución de cero tests en T007.
+Corrección de foco de reactivación del mismo fragmento: Firefox completa la activación nativa después del click y puede devolver foco albody en keyupEnter. Se difiere mejora de foco tras activación ykeyup; sin preventDefault, cambios de URL/historial ni interferencia con clics modificados. El caso existente falló antes y pasó después. No se modificaron checklists ni se publicaron fixtures.23/28 completas no equivale a23 requisitos originales ni cierre productivo.

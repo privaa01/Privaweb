@@ -2,8 +2,8 @@
 
 **Feature Directory**: `specs/001-navegacion-global`
 **Created**: 2026-10-16
-**Updated**: 2026-10-16
-**Status**: navegación compartida implementada y validada contractualmente en Chromium; integración de aplicación y fidelidad pendientes.
+**Updated**: 2026-10-20
+**Status**: implementación local retomada;23/28 tareas completas, contrato006 recibido y corrección de focoFirefox verificada. Logo/fuente/paleta incorporados; WebKit, fidelidad final y aceptación integrada pendientes.
 **Input**: `$speckit-specify 001`: desarrollar la feature existente sin crear otra ni ampliar alcance.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), requisitos G01–G06; [constitución 1.0.0](../../.specify/memory/constitution.md), CONST-01–04 y CONST-08–12.
 
@@ -191,7 +191,7 @@ Los resultados contractuales se registran en evidence/summary.md; no equivalen a
 - 002/003/004/005 proporcionan los contenidos y anclas públicas; 006, el acceso protegido;
   010, documentos aprobados; 011, validación transversal de accesibilidad y fidelidad.
 - 009 aplica a cualquier tratamiento de datos o servicio integrado, sin que esta feature añada captura.
-- Logo original, tipografía y colores precisos siguen pendientes de recursos oficiales.
+- Logo original y referencia de tipografía/paleta recibidos e incorporados en2026-10-20; revisión final de fidelidad y lector de pantalla siguen pendientes.
 - Estos pendientes no impiden planificar el encabezado y footer; sí impiden cerrar fidelidad o
   recorridos integrados que dependan de recursos, secciones o documentos ausentes.
 - No hay una decisión material de alcance sin resolver propia de 001. La redacción legal y
@@ -203,12 +203,12 @@ Los números de escenario son locales a esta feature, no IDs históricos del cat
 
 | ID original | Requisito local | Escenarios | Fuente | Estado de aplicación |
 |---|---|---|---|---|
-| G01 | FR-001 | US1.1–US1.5 | PDF 1–4 / C06 | Contractual Chromium validado; integración pendiente |
-| G02 | FR-002 | US2.1, US2.2, US2.4 | PDF 1–2 / C10 | Contractual Chromium validado; integración pendiente |
-| G03 | FR-003 | US2.3, US2.4 | PDF 3–4 | Contractual Chromium validado; integración pendiente |
-| G04 | FR-004 | US3.1 | PDF 1–4 / C34 | Contractual Chromium validado; integración pendiente |
-| G05 | FR-005 | US3.2 | PDF 1–4 + captura de acceso | Contractual Chromium validado; integración pendiente |
-| G06 | FR-006 | US3.3, US3.4 | PDF 1–4 | Contractual Chromium validado; integración pendiente |
+| G01 | FR-001 | US1.1–US1.5 | PDF 1–4 / C06 | Contrato local validado; integración y recursos pendientes |
+| G02 | FR-002 | US2.1, US2.2, US2.4 | PDF 1–2 / C10 | Contrato local validado; integración y recursos pendientes |
+| G03 | FR-003 | US2.3, US2.4 | PDF 3–4 | Contrato local validado; integración y recursos pendientes |
+| G04 | FR-004 | US3.1 | PDF 1–4 / C34 | Contrato local validado; integración y recursos pendientes |
+| G05 | FR-005 | US3.2 | PDF 1–4 + captura de acceso | Contrato local validado; integración y recursos pendientes |
+| G06 | FR-006 | US3.3, US3.4 | PDF 1–4 | Contrato local validado; integración y recursos pendientes |
 
 ### Registro documental
 
@@ -237,3 +237,16 @@ contrato 006; precisión de cobertura de SC-004 a cada ancho y texto 100%/200%.
 implementados; banco aislado y evidencia en [summary.md](evidence/summary.md).
 Se conservan requisitos y bloqueos de recursos y otras features. La validación de fixtures
 no acredita documentos legales aprobados ni autorización del servidor.
+
+2026-10-20 — Reanudación `$speckit-implement 001`: inventario privado006 C1/C2/C3 recibido,
+casosG05 definidos y guard real probado localmente con SQLite, sin mocks de autorización.
+Se corrige foco al reactivar el mismo fragmento con puntero/Enter enFirefox; no se altera
+URL/historial ni clic modificado. T021 completa;22/28 tareas cerradas, T023–T028 parciales
+o bloqueadas por entrega/recursos/operación/validación. Los archivos públicos existen;
+su aprobación y build integrado siguen pendientes. Ver evidencia vigente en evidence/summary.md.
+
+2026-10-20 — La usuaria identifica `disenovisual/Link-PrivaHome.png` y
+`disenovisual/referencias.txt` como recursos oficiales. T024 completada con copia intacta
+104×40, variables de paleta y PlusJakartaSans local200–800/OFL. Header/footer comparten
+recurso y geometría correctos, sin tráfico aGoogleFonts.23/28 tareas; T023/T025/T026/T027/T028
+siguen parciales/bloqueadas, sin aprobar imágenes/textos de002 ni cierre integrado.

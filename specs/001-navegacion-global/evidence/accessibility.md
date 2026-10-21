@@ -24,3 +24,18 @@ Controles del CSS tienen min-height:44px; el texto crece y las filas se adaptan.
 Revisión visual de captura móvil: menú y footer legibles sin recorte al tamaño capturado.
 Falta revisión manual con lector de pantalla y fidelidad con recursos finales: T026 parcial.
 El resultado automatizado definitivo se registra en summary.md y contract-results.json.
+
+2026-10-20 — Reanudación:45casosChromium pasan con14celdas100%/200%;31recorridos
+principalesFirefox pasan (sin ejecutar allí la matriz exhaustiva). Corrección compartida
+de foco tras reactivar la misma ancla ykeyupEnter: fallo inicial documentado, regresión
+con puntero/teclado conforme y sin historial añadido. WebKit no arranca por bibliotecas
+delhost, incluidalibGLESv2.so.2; no se desactivan protecciones ni se cuenta éxito.
+Lector de pantalla y fidelidad/recursos finales siguen pendientes. Evidencia en summary.md.
+
+2026-10-20 — Recursos comunes recibidos: capturas390/1440 con logo oficial sin
+alterar104×40, PlusJakartaSans local y paleta aprobada inspeccionadas. MatrizChromium
+repetida con recursos reales:46casos pasan;32recorridos/recursosFirefox pasan. Datos fuente
+y hashes en resources.md/official-assets.json. Contraste sRGB actual: texto#153226 sobre
+#F6F9F6=13.06:1; blanco sobrefooter#0D2219=16.67:1; foco#047857 sobre#F6F9F6=5.17:1;
+focofooter#D7E4D8 sobre#0D2219=12.68:1. El soporte blanco dellogo preserva el PNG oscuro.
+No hay certificación de comparación final conwireframes o lector de pantalla; T026 permanece parcial.

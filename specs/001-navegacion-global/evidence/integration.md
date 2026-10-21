@@ -1,14 +1,14 @@
-# Integración — 001
+# Integración —001
 
-Fecha: 2026-10-16 (America/Bogota). Estado: bloqueada; no hay entorno real.
+**Actualización**:2026-10-20 (America/Bogota). Contrato recibido; aceptación de entorno real pendiente.
 
-- `npm run build`: exit 1 esperado por guard de T023; faltan páginas reales index/historias/app/contacto de 002–005.
-- `npm run test:e2e:integration`: exit 1 por ausencia de PRIVA_INTEGRATION_BASE_URL; cero pruebas integradas ejecutadas.
-- G05: falta servicio 006 e inventario versionado de rutas/métodos/resultados sin sesión.
-- G06: faltan documentos revisados de 010 y formulario de 005.
-- Casos de destinos conocidos escritos en navigation-integration.spec.ts; caso privado explícitamente bloqueado, no sustituido por mocks o 404.
-- Descarga de navegadores Playwright: 403 Domain forbidden en cdn.playwright.dev. Chromium del sistema disponible; regresión Firefox/WebKit no ejecutada.
+- Páginas `src/pages/index.astro`, `historias.astro`, `app.astro`, `contacto.astro` existen y usan PublicLayout/pageId correcto. Los destinos de casos/descarga/escribir existen en sus componentes responsables. Leer código no acredita dist o rutas en un alojamiento.
+-006 C1/C2/C3 ya aporta documentos/login y estado de sesión. Inventario consumidor versionado en `tests/helpers/navigation-private-contract.ts`; no quedan endpoints privados indefinidos para el alcance de entradaG05.
+- `npm run test:navigation:service`: dos casos pasan con handler006/SQLite reales y templates sintéticos: doce combinaciones GET/HEAD por tres rutas y cookie ausente/inválida→401JSON/HEADvacío, más lecturas de sesión401/403. No se enviaron correos, crearon cuentas o trataron datos reales. No acredita login visual oficial ni producción.
+- `tests/e2e/navigation-integration.spec.ts` preparado para destinos públicos reales, documentos sin borradores/fixtures,16recorridos de footer, navegación/CTA y rechazos privados401/403. `--list` valida definición, no ejecución; el dominioexample.invalid solo se usó en listado sin solicitudes.
+- `npm run test:e2e:integration`: exit1 explícito al faltar `PRIVA_INTEGRATION_BASE_URL`; cero casos integrados ejecutados.
+- `npm run build`: exit1 por gate010/009 sin calificar. También siguen pendientes recursos/editorial de002–005; no se eliminan gates ni se compilan fixtures como dist.
 
-Estos resultados no son pruebas de aplicación aprobadas. Logs adjuntos en
-application-build-blocked.txt e integration-blocked.txt. T021/T023/T024/T026/T027/T028
-permanecen total o parcialmente pendientes; consultar tasks.md para estado preciso.
+T021 completa como preparación y verificación local de contrato. T023/T025–T028 mantienen cierre parcial/bloqueado; no se apruebaG05/G06 integrado ni se cuenta404 como autorización. Logs de reanudación en archivos resume-* de este directorio.
+
+T024 completada tras aporte oficial de logo/fuente/paleta por la usuaria; no implica aprobar imágenes/textos de002–005 ni baseURL/operación009/010.

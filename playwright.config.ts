@@ -4,7 +4,7 @@ const baseURL = integrated ? process.env.PRIVA_INTEGRATION_BASE_URL : 'http://12
 if (integrated && !baseURL) throw new Error('BLOQUEADO T021/T027: falta PRIVA_INTEGRATION_BASE_URL real; no se usarán fixtures.');
 export default defineConfig({
   testDir: './tests/e2e',
-  testMatch: integrated ? '**/navigation-integration.spec.ts' : ['**/navigation.spec.ts', '**/navigation-accessibility.spec.ts'],
+  testMatch: integrated ? '**/navigation-integration.spec.ts' : ['**/navigation.spec.ts', '**/navigation-accessibility.spec.ts', '**/navigation-brand.spec.ts'],
   fullyParallel: true, workers: 2, retries: 0, timeout: 30000,
   reporter: [['list'], ['json', { outputFile: integrated ? '.test-output/integration-results.json' : '.test-output/contract-results.json' }]],
   use: { baseURL, trace: 'retain-on-failure' },

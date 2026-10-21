@@ -22,4 +22,4 @@ export const footer = {
     { label: 'Contacto Seguro', href: '/contacto.html#escribir' },
   ],
 } as const;
-export interface BrandAsset { src: string; alt: string }
+export interface BrandAsset { src: string; alt: string; width?: number; height?: number }

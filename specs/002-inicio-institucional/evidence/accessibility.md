@@ -25,3 +25,19 @@ cuadrícula y cierre oscuro. home-390.png conserva evidencia móvil. Ambas son d
 recursos ficticios visibles y aviso de prueba; no se certifican fuente ni colores oficiales.
 Pendientes: revisión manual con lector de pantalla y comparación final con recursos aprobados.
 T026 permanece parcial; axe y capturas no acreditan accesibilidad integral del sitio publicado.
+
+## Actualización 2026-10-21
+
+Los valores provisionales y capturas anteriores son históricos. La nueva matriz Chromium completa pasa con fuente local Plus Jakarta Sans y paleta recibida; Firefox pasa 11 recorridos principales. No hay nuevas capturas certificadas ni revisión manual final.
+
+Contraste calculado con luminancia sRGB del CSS actualizado:
+
+| Texto | Fondo | Razón |
+|---|---|---|
+| #153226 | #F6F9F6 | 13.06:1 |
+| #FFFFFF | #153226 | 13.85:1 |
+| #FFFFFF | #0D2219 | 16.67:1 |
+| #D7E4D8 | #0D2219 | 12.68:1 |
+| #153226 | #D7E4D8 | 10.54:1 |
+
+Las 14 celdas repiten axe y texto 200%; no sustituyen lector de pantalla ni fidelidad contra PDF con imágenes finales. T026 permanece parcial; WebKit no inicia por bibliotecas ausentes.

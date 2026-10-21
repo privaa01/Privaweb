@@ -141,14 +141,12 @@ No desplegar ni publicar como parte de este comando o de los fixtures.
 2026-10-16 — `$speckit-tasks 002`: generadas 28 tareas: Setup 3, Foundational 4,
 US1 5, US2 4, US3 4, Polish 8. Sin implementación, instalación ni pruebas de aplicación ejecutadas.
 
-## Estado tras implementación
+## Estado tras implementación — actualización 2026-10-21
 
-T001–T022 completadas: tooling, contenido tipado pendiente de revisión, validación,
-layout aditivo y cuatro bloques reales con pruebas contractuales; ver evidence/.
-T024 completa: 23 pruebas UI de Inicio, 23 de publicación y 44 de regresión 001 aprobadas; check y npm ci final correctos.
-T023 parcial: matriz completa Chromium ejecutada; Firefox/WebKit no ejecutados por arranque/dependencias.
-T025 bloqueada: recursos oficiales y revisión P03 ausentes, inventario registrado.
-T026 parcial: adaptación/texto/axe/contraste y capturas de fixtures; falta lector de pantalla y fidelidad final.
-T027 parcial: casos integrados escritos y bloqueo comprobado; faltan entorno real y otras páginas.
-T028 parcial: documentación de progreso actualizada; cierre integral depende de los anteriores.
-No se modificaron marcadores del checklist documental ni se aprobó contenido pendiente.
+T001–T022 y T024 completas: 23/28. Componentes, contenido, validación y banco contractual implementados; resultados vigentes en evidence/summary.md y evidence/contract.md.
+T023 parcial: matriz Chromium y recorridos principales Firefox; WebKit intentado y bloqueado por bibliotecas del host. No se marca completo por navegador ausente.
+T025 parcial: marca, tipografía, paleta y cinco revisiones editoriales explícitas incorporadas; tres imágenes oficiales pendientes. El enlace provisional aportado devuelve HTTP 403.
+T026 parcial: adaptación, texto y axe contractuales; lector de pantalla y fidelidad con imágenes finales pendientes.
+T027 parcial: casos integrados preparados; falta URL real. Las páginas 003–005 ya existen en código.
+T028 parcial: documentación sincronizada; cierre integral pendiente.
+Checklist documental 16/16 sin cambios; no se aprueban recursos faltantes ni se publica con fixtures.

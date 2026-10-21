@@ -4,7 +4,7 @@
 **Feature**: `001-navegacion-global`
 **Input**: G01–G06; constitución 1.0.0. El valor BRANCH devuelto por Spec Kit identifica
 la feature seleccionada; no acredita una rama Git creada.
-**Estado**: componentes y banco contractual implementados y validados en Chromium; aplicación e integración final pendientes.
+**Estado**: reanudado2026-10-20;23/28 tareas completas. Contrato006 recibido, guard local probado y foco de fragmento repetido corregido paraFirefox. Recursos comunes recibidos; fidelidad final y entrega integrada pendientes; evidencia en evidence/summary.md.
 
 ## Summary
 
@@ -68,7 +68,7 @@ specs/001-navegacion-global/
 └── checklists/requirements.md
 ```
 
-[tasks.md](tasks.md) fue generado posteriormente con `$speckit-tasks 001`; su ejecución permanece pendiente.
+[tasks.md](tasks.md) registra ejecución local y las seis tareas parciales/bloqueadas; no equivale a aprobación productiva.
 
 ### Source Code (repository root)
 
@@ -158,3 +158,15 @@ Astro preview no inició en este entorno; el banco sirve su build real con Pytho
 Scripts desactivan telemetría Astro y no incorporan servicios externos al navegador.
 Firefox/WebKit pendientes por descarga 403; recursos oficiales e integración faltan.
 Ver evidence/summary.md para evidencia y tasks.md para tareas pendientes.
+
+### Reanudación —2026-10-20
+
+Páginas002–005 y servicios006 existen localmente. La dependencia de inventarioG05 se resuelve con006 C1/C2/C3 y su guard real, sin construir autenticación en001. Pruebas integradas consumidoras preparadas; su ejecución y010 aprobado siguen pendientes. Artefactos privados no se colocan en dist público. Se corrige en navigation.ts el foco tras reactivación del mismo fragmento y keyupEnter enFirefox conservando navegación nativa. Sin ampliación de alcance o excepción constitucional; sin aprobación de recursos/operación por fixtures.
+
+### Recursos recibidos —2026-10-20
+
+Identificados por la usuaria logo104×40 y paleta/PlusJakartaSans en disenovisual/.
+Copia oficial a public/brand, fuente variable local desdegoogle/fonts conOFL, sin
+fuentes remotas en runtime. Hook compartido copia brand/fonts en bancos públicos sin
+mezclar sus contenidos con dist. T024 completa; contraste, dimensiones/carga y navegación
+se verifican con recursos reales, sin cerrar la revisión visual final de otrasfeatures.

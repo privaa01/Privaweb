@@ -1,0 +1,47 @@
+
+> privaweb@0.1.0 test:e2e:contract
+> playwright test --project=firefox --grep-invert=Matriz:
+
+[WebServer] (node:353236) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 32 tests using 2 workers
+
+(node:353419) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:353418) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [firefox] › tests/e2e/navigation-accessibility.spec.ts:19:1 › US1: navegación sin JavaScript (1.8s)
+  ✓   2 [firefox] › tests/e2e/navigation-accessibility.spec.ts:2:1 › US1: disclosure, Escape, resize y foco (1.7s)
+  ✓   3 [firefox] › tests/e2e/navigation-brand.spec.ts:2:1 › official104x40 brand, approved tokens and locally loaded variable font (507ms)
+  ✓   4 [firefox] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /index.html (677ms)
+  ✓   5 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /index.html (606ms)
+  ✓   6 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /historias.html (589ms)
+  ✓   7 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /app.html (599ms)
+  ✓   8 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /contacto.html (571ms)
+  ✓   9 [firefox] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /historias.html (608ms)
+  ✓  10 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /index.html (590ms)
+  ✓  11 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /historias.html (595ms)
+  ✓  12 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /app.html (629ms)
+  ✓  13 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /contacto.html (566ms)
+  ✓  14 [firefox] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /app.html (667ms)
+  ✓  15 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /index.html (624ms)
+  ✓  16 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /historias.html (641ms)
+  ✓  17 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /app.html (694ms)
+  ✓  18 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /contacto.html (602ms)
+  ✓  19 [firefox] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /contacto.html (1.6s)
+  ✓  21 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /historias.html (528ms)
+  ✓  20 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /index.html (1.7s)
+  ✓  22 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /app.html (545ms)
+  ✓  23 [firefox] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /contacto.html (565ms)
+  ✓  24 [firefox] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /index.html (475ms)
+  ✓  25 [firefox] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /historias.html (479ms)
+  ✓  26 [firefox] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /app.html (456ms)
+  ✓  27 [firefox] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /contacto.html (451ms)
+  ✓  28 [firefox] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /index.html (398ms)
+  ✓  29 [firefox] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /historias.html (383ms)
+  ✓  31 [firefox] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /contacto.html (429ms)
+  ✓  30 [firefox] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /app.html (435ms)
+  ✓  32 [firefox] › tests/e2e/navigation.spec.ts:47:1 › US2: repeated same fragment restores heading focus without navigation history change (510ms)
+
+  32 passed (14.9s)

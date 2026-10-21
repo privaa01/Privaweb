@@ -61,18 +61,26 @@ spec, matriz, consumidores y pruebas en la misma revisión. No introducir redire
 fallback SPA para ocultar enlaces rotos. La URL /admin/login requiere el servicio/ruteo
 real de 006 en el entorno integrado; el servidor estático de 001 no lo proporciona.
 
-## Contrato de integración administrativa pendiente — propietario 006
+## Contrato de integración administrativa — propietario006
 
-El único destino definido hoy para acceso es `/admin/login`. Antes de completar los
-casos privados de T021, 006 debe aportar un inventario versionado de rutas privadas:
-URL y método de cada operación real, tipo página/API, resultado esperado sin sesión
-(código y redirección si aplica) y comprobación de que no expone datos privados.
-Para cada página protegida, el contrato debe precisar la llegada al acceso; para API,
-el rechazo de autorización y cuerpo sin datos. Los códigos concretos y endpoints se
-fijan en 006, no se deducen ni inventan desde 001.
+Actualizado2026-10-20: el contrato006 C1/C2/C3 está disponible en
+[admin-access.md](../../006-acceso-administrativo/contracts/admin-access.md), revisión2026-10-19.
+El inventario consumidor para G05 está versionado en `tests/helpers/navigation-private-contract.ts`.
+No sustituye las operaciones de007/008 ni decide códigos desde001; se contrasta con el handler006.
 
-Los tests consumirán ese inventario y un entorno de prueba real. Un 404, una página
-vacía o un formulario estático no acreditan autorización. Si falta inventario o servicio,
-los casos privados y aceptación integrada G05 quedan bloqueados explícitamente; el
-footer y sus pruebas contractuales continúan. T021 no se marca completa hasta definir
-sus casos privados; T022 depende solo de su parte independiente.
+| Método/ruta | Sin sesión | Verificación |
+| --- | --- | --- |
+| GET `/admin/login` |200 HTML público | Formulario de correo/contraseña; no contenido privado |
+| GET/HEAD `/admin`, `/admin/historias`, `/admin/contacto` |401 JSON, `result:unauthenticated` | Sin redirección/HTML privado; HEAD sin cuerpo; no-store |
+| GET `/api/admin/sesion`, header `X-Priva-Request:1` |401 JSON, `result:unauthenticated` | No identidad/datos privados; no-store |
+| GET `/api/admin/sesion`, sin header requerido |403 JSON, `result:forbidden` | No es404 ni fallback estático |
+
+006 rechaza documentos protegidos con401 JSON: no se inventa una redirección al login.
+El enlace público del footer sí abre `/admin/login`. En producción el origenHTTPS y el
+ruteo del servicio deben calificarse; un documento/login estático no satisface estos casos.
+
+`tests/navigation-service.test.ts` comprueba el handler real con SQLite aislado, GET/HEAD,
+sin cookie y cookie inválida; su banco tiene templates sintéticos y solo acredita el guard,
+no el login visual real, el correo o el alojamiento. Los casos integrados usan un origen
+real suministrado, sin mocks, y comprueban401/403 exactos;404 nunca acredita protección.
+Faltan entorno integrado, documentos010 aprobados y recursos oficiales para cerrar G05/G06.

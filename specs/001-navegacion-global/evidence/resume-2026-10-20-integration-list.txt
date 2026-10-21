@@ -1,0 +1,41 @@
+Listing tests:
+  [chromium] › navigation-integration.spec.ts:7:2 › Destino integrado real /admin/login
+  [chromium] › navigation-integration.spec.ts:7:2 › Destino integrado real /terminos.html
+  [chromium] › navigation-integration.spec.ts:7:2 › Destino integrado real /manifiesto-datos.html
+  [chromium] › navigation-integration.spec.ts:7:2 › Destino integrado real /contacto.html#escribir
+  [chromium] › navigation-integration.spec.ts:16:2 › G05 GET /admin sin sesión conserva guard006
+  [chromium] › navigation-integration.spec.ts:16:2 › G05 HEAD /admin sin sesión conserva guard006
+  [chromium] › navigation-integration.spec.ts:16:2 › G05 GET /admin/historias sin sesión conserva guard006
+  [chromium] › navigation-integration.spec.ts:16:2 › G05 HEAD /admin/historias sin sesión conserva guard006
+  [chromium] › navigation-integration.spec.ts:16:2 › G05 GET /admin/contacto sin sesión conserva guard006
+  [chromium] › navigation-integration.spec.ts:16:2 › G05 HEAD /admin/contacto sin sesión conserva guard006
+  [chromium] › navigation-integration.spec.ts:21:1 › G05 API de sesión real devuelve401/403, nunca404 de un sitio estático
+  [chromium] › navigation-integration.spec.ts:24:1 › G01/G02/G03 navegación y CTA sobre páginas reales
+  [chromium] › navigation-integration.spec.ts:32:1 › G04/G05/G06 cuatrofooters y16destinos complementarios reales
+  [firefox] › navigation-integration.spec.ts:7:2 › Destino integrado real /admin/login
+  [firefox] › navigation-integration.spec.ts:7:2 › Destino integrado real /terminos.html
+  [firefox] › navigation-integration.spec.ts:7:2 › Destino integrado real /manifiesto-datos.html
+  [firefox] › navigation-integration.spec.ts:7:2 › Destino integrado real /contacto.html#escribir
+  [firefox] › navigation-integration.spec.ts:16:2 › G05 GET /admin sin sesión conserva guard006
+  [firefox] › navigation-integration.spec.ts:16:2 › G05 HEAD /admin sin sesión conserva guard006
+  [firefox] › navigation-integration.spec.ts:16:2 › G05 GET /admin/historias sin sesión conserva guard006
+  [firefox] › navigation-integration.spec.ts:16:2 › G05 HEAD /admin/historias sin sesión conserva guard006
+  [firefox] › navigation-integration.spec.ts:16:2 › G05 GET /admin/contacto sin sesión conserva guard006
+  [firefox] › navigation-integration.spec.ts:16:2 › G05 HEAD /admin/contacto sin sesión conserva guard006
+  [firefox] › navigation-integration.spec.ts:21:1 › G05 API de sesión real devuelve401/403, nunca404 de un sitio estático
+  [firefox] › navigation-integration.spec.ts:24:1 › G01/G02/G03 navegación y CTA sobre páginas reales
+  [firefox] › navigation-integration.spec.ts:32:1 › G04/G05/G06 cuatrofooters y16destinos complementarios reales
+  [webkit] › navigation-integration.spec.ts:7:2 › Destino integrado real /admin/login
+  [webkit] › navigation-integration.spec.ts:7:2 › Destino integrado real /terminos.html
+  [webkit] › navigation-integration.spec.ts:7:2 › Destino integrado real /manifiesto-datos.html
+  [webkit] › navigation-integration.spec.ts:7:2 › Destino integrado real /contacto.html#escribir
+  [webkit] › navigation-integration.spec.ts:16:2 › G05 GET /admin sin sesión conserva guard006
+  [webkit] › navigation-integration.spec.ts:16:2 › G05 HEAD /admin sin sesión conserva guard006
+  [webkit] › navigation-integration.spec.ts:16:2 › G05 GET /admin/historias sin sesión conserva guard006
+  [webkit] › navigation-integration.spec.ts:16:2 › G05 HEAD /admin/historias sin sesión conserva guard006
+  [webkit] › navigation-integration.spec.ts:16:2 › G05 GET /admin/contacto sin sesión conserva guard006
+  [webkit] › navigation-integration.spec.ts:16:2 › G05 HEAD /admin/contacto sin sesión conserva guard006
+  [webkit] › navigation-integration.spec.ts:21:1 › G05 API de sesión real devuelve401/403, nunca404 de un sitio estático
+  [webkit] › navigation-integration.spec.ts:24:1 › G01/G02/G03 navegación y CTA sobre páginas reales
+  [webkit] › navigation-integration.spec.ts:32:1 › G04/G05/G06 cuatrofooters y16destinos complementarios reales
+Total: 39 tests in 1 file

@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-20",
+  "timezone": "America/Bogota",
+  "baseCommit": "33a5a56",
+  "tasks": {
+    "done": 23,
+    "total": 28,
+    "pending": [
+      "T023",
+      "T025",
+      "T026",
+      "T027",
+      "T028"
+    ]
+  },
+  "verification": {
+    "chromiumContract": 46,
+    "firefoxMain": 32,
+    "guard006Node": 2,
+    "webkit": "blocked: host dependencies",
+    "integrated": "blocked: real baseURL missing",
+    "build": "blocked:010/009 gates; other publication prerequisites pending",
+    "documentsChromiumRegression": 6,
+    "documentsHTTPNodeRegression": 2
+  },
+  "scope": "local test content; official shared logo/font/palette; no production qualification",
+  "assetsSourceCommit": "cde01b0"
+}

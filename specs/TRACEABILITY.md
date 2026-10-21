@@ -4,16 +4,16 @@
 
 | ID | Componente original | Feature responsable | Estado |
 |---|---|---|---|
-| G01 | Encabezado y navegación | [001-navegacion-global](001-navegacion-global/spec.md) | Validación contractual Chromium; integración pendiente |
-| G02 | CTA PROTÉGETE HOY | [001-navegacion-global](001-navegacion-global/spec.md) | Validación contractual Chromium; integración pendiente |
-| G03 | CTA DESCARGAR APP | [001-navegacion-global](001-navegacion-global/spec.md) | Validación contractual Chromium; integración pendiente |
-| G04 | Footer: logo, lema y copyright | [001-navegacion-global](001-navegacion-global/spec.md) | Validación contractual Chromium; integración pendiente |
-| G05 | Footer: panel administrador | [001-navegacion-global](001-navegacion-global/spec.md) | Validación contractual Chromium; integración pendiente |
-| G06 | Footer: Términos, Manifiesto, Contacto Seguro | [001-navegacion-global](001-navegacion-global/spec.md) | Validación contractual Chromium; integración pendiente |
-| I01 | Hero Inicio: etiqueta, título, texto, imagen, Conocer más | [002-inicio-institucional](002-inicio-institucional/spec.md) | Contrato Chromium validado; publicación/integración pendientes |
-| I02 | Quiénes somos | [002-inicio-institucional](002-inicio-institucional/spec.md) | Contrato Chromium validado; publicación/integración pendientes |
-| I03 | Qué hacemos: introducción y cuatro tarjetas | [002-inicio-institucional](002-inicio-institucional/spec.md) | Contrato Chromium validado; publicación/integración pendientes |
-| I04 | CTA final de Inicio | [002-inicio-institucional](002-inicio-institucional/spec.md) | Contrato Chromium validado; publicación/integración pendientes |
+| G01 | Encabezado y navegación | [001-navegacion-global](001-navegacion-global/spec.md) | Contrato y recursos comunes verificados; integración/fidelidad final pendientes |
+| G02 | CTA PROTÉGETE HOY | [001-navegacion-global](001-navegacion-global/spec.md) | Contrato y recursos comunes verificados; integración/fidelidad final pendientes |
+| G03 | CTA DESCARGAR APP | [001-navegacion-global](001-navegacion-global/spec.md) | Contrato y recursos comunes verificados; integración/fidelidad final pendientes |
+| G04 | Footer: logo, lema y copyright | [001-navegacion-global](001-navegacion-global/spec.md) | Contrato y recursos comunes verificados; integración/fidelidad final pendientes |
+| G05 | Footer: panel administrador | [001-navegacion-global](001-navegacion-global/spec.md) | Contrato y recursos comunes verificados; integración/fidelidad final pendientes |
+| G06 | Footer: Términos, Manifiesto, Contacto Seguro | [001-navegacion-global](001-navegacion-global/spec.md) | Contrato y recursos comunes verificados; integración/fidelidad final pendientes |
+| I01 | Hero Inicio: etiqueta, título, texto, imagen, Conocer más | [002-inicio-institucional](002-inicio-institucional/spec.md) | Contrato Chromium/Firefox validado; imágenes/publicación/integración pendientes |
+| I02 | Quiénes somos | [002-inicio-institucional](002-inicio-institucional/spec.md) | Contrato Chromium/Firefox validado; imágenes/publicación/integración pendientes |
+| I03 | Qué hacemos: introducción y cuatro tarjetas | [002-inicio-institucional](002-inicio-institucional/spec.md) | Contrato Chromium/Firefox validado; imágenes/publicación/integración pendientes |
+| I04 | CTA final de Inicio | [002-inicio-institucional](002-inicio-institucional/spec.md) | Contrato Chromium/Firefox validado; imágenes/publicación/integración pendientes |
 | H01 | Hero Historias | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
 | H02 | Casos destacados: encabezado y Ver todas las historias | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
 | H03 | Caso 1: Enlace Falso / Phishing | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
@@ -405,3 +405,24 @@ y84regresionesnavegador(45navegación+39ContactoChromium) aprobadas; checksAstro
 sin errores. Checklist16/16 intacto. WebKit/lector/materiales/textos/P02/P03/operación009,
 alojamiento real/QR/auditoría integrada y build de entrega permanecen pendientes; ningún
 gate se habilita por datos sintéticos. Sin commit/push/despliegue ni correo a terceros.
+
+2026-10-20 — Reanudación `$speckit-implement 001`:22/28 tareas completas, T023–T028
+parciales/bloqueadas. T021 completada al consumir contrato006 C1/C2/C3 recibido; casos
+privados concretos y dos pruebasNode de handler006/SQLite real, sin mocks de autorización
+ni aceptar404. Corrección de foco del mismo fragmento enFirefox tras click/keyupEnter,
+sin alterarURL/historial/clic modificado:45Chromium y31Firefox aprobadas, sin sumar reintentos.
+CheckAstro contractual sin errores; WebKit bloqueado por dependenciashost. Páginas002–005
+existen, pero recursos/textos/operación009/010/build/baseURL real y revisión manual siguen
+pendientes. [Evidencia](001-navegacion-global/evidence/summary.md). Checklist16/16 intacto;
+sin commit/push/despliegue, cuentas productivas o correo a terceros en esta fase.
+
+2026-10-20 — Recursos001 identificados por la usuaria: `disenovisual/Link-PrivaHome.png`
+y `disenovisual/referencias.txt`, recibidos desdeGitHub a cde01b0 sin sobrescribir trabajo local.
+T024 completa: PNG104×40 intacto, paletaCSS y PlusJakartaSans local200–800 normal/italic conOFL,
+fuente/carga/dimensiones/contrastes comprobados.23/28 tareas; pendientesT023/T025–T028.
+46Chromium+32Firefox001 y6Chromium010+2NodeHTTP de regresión aprobados; sin sumar ejecuciones
+anteriores como casos nuevos. No tráficoGoogleFonts del visitante ni aprobación editorial/de
+recursos particulares de otrasfeatures. WebKit/lector/fidelidad final/baseURL/build siguen pendientes.
+Sin commit/push/despliegue en esta incorporación. [Recursos](001-navegacion-global/evidence/resources.md).
+
+2026-10-21 — Reanudación `$speckit-implement 002`: 23/28 tareas, marca/fuente/paleta recibidas y cinco textos educativos aprobados explícitamente/aplicados. Imágenes oficiales pendientes; enlace provisional placehold.co/448x332 devuelve HTTP 403. Matriz Chromium y recorridos Firefox disponibles; WebKit bloqueado. Gate de Inicio conserva bloqueo por tres imágenes; integración sin URL real. [Evidencia actual](002-inicio-institucional/evidence/summary.md). Checklist 16/16 intacto; sin commit/push ni despliegue.

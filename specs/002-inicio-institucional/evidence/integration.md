@@ -1,12 +1,11 @@
 # Integración y navegadores — 002
 
-Sin PRIVA_INTEGRATION_BASE_URL real: la suite integrada termina con error explícito y
-ninguna prueba integrada ejecutada, sin fallback a fixtures. Faltan 003 real y recursos/copy
-revisado. Build de aplicación y publicación siguen bloqueados, no aprobados.
+Actualización: 2026-10-21 (UTC).
 
-La descarga oficial de Firefox y WebKit pudo completarse en esta sesión, con reintentos
-sobre mirrors oficiales y TLS. Firefox no inicia: “Could not find profile folder”; repetir con
-TMPDIR escribible bajo workspace no lo resuelve. WebKit requiere libgtk-4, libgraphene,
-libharfbuzz-icu, libmanette, libhyphen y libGLESv2 ausentes. apt-cache no pudo leer la configuración
-administrada del sistema. No se desactivaron verificaciones o sandbox para forzar arranque.
-Regresión de Firefox/WebKit: no ejecutada; no se contabiliza como pase por probar Chromium.
+`npm run test:e2e:home:integration` termina con salida 1: falta PRIVA_INTEGRATION_BASE_URL real. Ninguna prueba integrada ejecutada, sin fallback a fixtures. Las páginas 003–005 ya existen en código; su presencia no acredita un entorno publicado ni recorridos reales.
+
+Firefox: recorridos principales ejecutados con el motor disponible, manteniendo las protecciones del navegador. Ver resultados en contract.md. Sustituye el bloqueo histórico de perfil de la ejecución del 2026-10-16.
+
+WebKit: intento de `base: layout` falla antes de abrir navegador por libgtk-4, libgraphene, libharfbuzz-icu, libmanette, libhyphen y libGLESv2 ausentes. Una prueba intentada, ninguna aprobada. No se desactivaron comprobaciones de dependencias.
+
+El gate propio de Inicio continúa con salida 1 por tres imágenes institucionales; las cinco revisiones editoriales y referencias comunes ya están resueltas. Publicación/fidelidad y aceptación integrada siguen pendientes.

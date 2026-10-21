@@ -53,7 +53,7 @@
 | AD11 | Origen de comentarios y alcance público | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | Implementado/verificado localmente; cierre pendiente |
 | X01 | Adaptación y accesibilidad | [011-accesibilidad-fidelidad](011-accesibilidad-fidelidad/spec.md) | No ejecutado |
 | X02 | Seguridad, rastreo y conservación | [009-privacidad-conservacion](009-privacidad-conservacion/spec.md) | Implementado/verificado localmente; cierre integrado pendiente |
-| X03 | Auxiliares y documentos informativos | [010-documentos-recuperacion](010-documentos-recuperacion/spec.md) | No ejecutado |
+| X03 | Auxiliares y documentos informativos | [010-documentos-recuperacion](010-documentos-recuperacion/spec.md) | Implementado/verificado localmente; cierre integrado pendiente |
 | X04 | Recursos y fidelidad | [011-accesibilidad-fidelidad](011-accesibilidad-fidelidad/spec.md) | No ejecutado |
 | X05 | Sincronización y cierre | [011-accesibilidad-fidelidad](011-accesibilidad-fidelidad/spec.md) | No ejecutado |
 | CT01 | Flujo completo de Contacto | [008-bandeja-respuestas](008-bandeja-respuestas/spec.md) | Parcial local; correo/operación reales pendientes |
@@ -355,3 +355,53 @@ WebKit no ejecuta por descubrimiento de dependencias del host; canal/proveedor/c
 HTTPS/soporte/avisos010/auditoría integrada/revisión manual y build de entrega pendientes.
 Checklist16/16 intacto; gates no habilitados. Sin correo a terceros,migración de datos reales,
 commit/push/despliegue o cierre de CT01/010/011 en esta fase.
+
+2026-10-20 — Especificación010 desarrollada a solicitud `/speckit-specify 010` sobre
+el directorio existente: X03/FR-001 conservado literalmente; tres historias con 16 escenarios,
+nueve reglas complementarias y siete criterios medibles. C32, navegación001 y decisiones009
+sincronizadas documentalmente; recuperación404 separada de recuperación de cuentas y restauración.
+[Checklist](010-documentos-recuperacion/checklists/requirements.md) documental 16/16.
+P02/P03, revisión de textos finales, políticas de otras categorías, proveedores/copias/rastreo
+reales y validación011 siguen pendientes antes de publicar. Sin plan, tareas, implementación,
+pruebas de aplicación, commit/push ni despliegue de010; trabajo009 conservado.
+
+2026-10-20 — Aclaración010 revisada sin ambigüedades críticas que justifiquen nuevas
+preguntas (0 formuladas/0 respondidas). Registrada sesión en el spec; X03 literal,
+decisiones009 y rutas001 conservadas. Checklist revalidado 16/16 → 16/16, sin cambios
+de casillas. P02/P03 y evidencias reales siguen pendientes; puede planificarse el trabajo
+independiente, sin aprobar publicación, políticas desconocidas ni textos finales. Sin pruebas
+de aplicación, implementación, commit/push o despliegue en esta fase.
+
+2026-10-20 — Plan010 y artefactos de diseño generados: investigación, modelo, tres
+contratos y quickstart. Astro estático, contexto auxiliar sin activo falso, contenido/aviso
+compartido, revisión ligada a huella, gates editoriales y009 acíclicos,404 con cuerpo propio
+y status preservado en host. Revisión constitucional previa/posterior conforme para diseño.
+P02/P03, calificación de alojamiento/operación/rastreo y011 pendientes; no hay tareas010,
+implementación ni pruebas de aplicación ejecutadas por esta fase. Cambios009 conservados;
+sin commit/push/despliegue. [Plan](010-documentos-recuperacion/plan.md).
+
+2026-10-20 — `$speckit-tasks 010`:44 tareas pendientes, preparación4/fundamentos5,
+US1(7)/US2(6)/US3(7)/transversal15. X03/FR-001,16 escenarios y sieteSC trazados
+mediante12casos de validación; 9 oportunidades[P] condicionadas al grafo y archivos
+independientes. MVP local documentos T001–T016; P02/P03/009, revisión humana, alojamiento
+real y011 conservados como dependencias de publicación. Formato/IDs y cobertura revisados;
+sin implementación, pruebas de aplicación, commit/push o despliegue por esta generación.
+[Tareas](010-documentos-recuperacion/tasks.md).
+
+2026-10-20 — Correcciones autorizadas del análisis010: I1 resuelto con servidor
+estático temporal explícito en T004 para US1/US2 y sustitución por servidor404 en T027,
+sin usar el error genérico como evidencia. I2 resuelto ordenando T030(pruebas negativas)
+antes de T031(implementación/verificación) y T032(gate); dependencias de T039 actualizadas.
+Plan y quickstart sincronizados;44 tareas siguen pendientes,9marcas[P],X03 intacto.
+Reanálisis documental: sin hallazgos residuales de I1/I2, cobertura17/17 elementos normativos
+y16escenarios; sin pruebas de aplicación, implementación, commit/push o despliegue.
+
+2026-10-20 — `$speckit-implement 010`:33/44 tareas verificadas localmente; pendientes
+T028/T033/T034/T035/T037/T038/T039/T040/T041/T042/T043. X03 literal, documentos/aviso
+canónicos, contexto auxiliar, revisión vinculada a huella y evidencia009 notices ligada al
+bundle;404 local con status/cuerpo/HEAD/no-referrer y confinamiento. [Evidencia](010-documentos-recuperacion/evidence.md):
+27Node010,12navegador010(6Chromium+6Firefox),109regresionesNode(66Contacto+43privacidad)
+y84regresionesnavegador(45navegación+39ContactoChromium) aprobadas; checksAstro/TypeScript
+sin errores. Checklist16/16 intacto. WebKit/lector/materiales/textos/P02/P03/operación009,
+alojamiento real/QR/auditoría integrada y build de entrega permanecen pendientes; ningún
+gate se habilita por datos sintéticos. Sin commit/push/despliegue ni correo a terceros.

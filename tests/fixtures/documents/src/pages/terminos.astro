@@ -1,0 +1,6 @@
+---
+import PublicLayout from '../../../../../src/layouts/PublicLayout.astro';
+import InformativeDocument from '../../../../../src/components/documents/InformativeDocument.astro';
+import {content} from '../../content';
+---
+<PublicLayout title={content.documents.terms.title}><InformativeDocument bundle={content} documentId="terms" /></PublicLayout>

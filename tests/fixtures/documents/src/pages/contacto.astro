@@ -1,0 +1,8 @@
+---
+import PublicLayout from '../../../../../src/layouts/PublicLayout.astro';
+import ContactForm from '../../../../../src/components/contact/ContactForm.astro';
+import {draftContact} from '../../../../../src/content/contact';
+import {content} from '../../content';
+const c=draftContact({url:'',status:'pendiente',reviewRef:''});c.testOnly=true;c.notice={...content.notice};
+---
+<PublicLayout pageId="contacto" title="Contáctanos"><h1>Contáctanos</h1><p>Contenido sintético de prueba. No enviar datos reales.</p><ContactForm content={c}/></PublicLayout>

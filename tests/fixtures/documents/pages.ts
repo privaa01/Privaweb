@@ -1,0 +1,1 @@
+export const fixturePages=[{id:'inicio',title:'Inicio',section:'somos-priva'},{id:'historias',title:'Historias',section:'casos'},{id:'app',title:'Priva App',section:'como-funciona'},{id:'contacto',title:'Contáctanos',section:'escribir'}] as const;

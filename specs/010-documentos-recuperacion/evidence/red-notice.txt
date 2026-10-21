@@ -1,0 +1,37 @@
+✖ V05 Contacto consumes canonical notice including required precautions (2.080769ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 91.523628
+
+✖ failing tests:
+
+test at tests/documents-notice.test.ts:3:1
+✖ V05 Contacto consumes canonical notice including required precautions (2.080769ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      channel: '',
+      manifesto: '/manifiesto-datos.html',
+      responsible: '',
+  +   text: 'Tu nombre o alias, correo y mensaje se almacenan para consulta privada del equipo autorizado. La respuesta se envía al correo que indiques y se conserva asociada a tu consulta. Conservación: 90 días desde la última actividad. Puedes solicitar eliminación anticipada por el canal indicado. El tratamiento de copias y respaldos debe revisarse antes de la recepción real.'
+  -   text: 'Para enviar tu consulta completa nombre o alias, correo y mensaje, todos obligatorios. Puedes usar un seudónimo; no necesitamos tu nombre legal. Guardamos estos datos para consulta privada del equipo autorizado y respuesta por correo; la respuesta se conserva asociada. Tus mensajes y respuestas no se publican en la web. Conservación: 90 días desde la última actividad, según el Manifiesto. Puedes solicitar eliminación anticipada por el canal verificado. No incluyas contraseñas, códigos de acceso, datos bancarios, documentos ni información sensible o de otras personas.'
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/Privaweb/tests/documents-notice.test.ts:3:122)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { responsible: '', channel: '', manifesto: '/manifiesto-datos.html', text: 'Tu nombre o alias, correo y mensaje se almacenan para consulta privada del equipo autorizado. La respuesta se envía al correo que indiques y se conserva asociada a tu consulta. Conservación: 90 días desde la última actividad. Puedes solicitar eliminación anticipada por el canal indicado. El tratamiento de copias y respaldos debe revisarse antes de la recepción real.' },
+    expected: { responsible: '', channel: '', manifesto: '/manifiesto-datos.html', text: 'Para enviar tu consulta completa nombre o alias, correo y mensaje, todos obligatorios. Puedes usar un seudónimo; no necesitamos tu nombre legal. Guardamos estos datos para consulta privada del equipo autorizado y respuesta por correo; la respuesta se conserva asociada. Tus mensajes y respuestas no se publican en la web. Conservación: 90 días desde la última actividad, según el Manifiesto. Puedes solicitar eliminación anticipada por el canal verificado. No incluyas contraseñas, códigos de acceso, datos bancarios, documentos ni información sensible o de otras personas.' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

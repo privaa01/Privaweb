@@ -1,0 +1,4 @@
+
+> privaweb@0.1.0 check:privacy:service
+> tsc -p server/privacy/tsconfig.json
+

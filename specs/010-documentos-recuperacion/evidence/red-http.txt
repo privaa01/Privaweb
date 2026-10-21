@@ -1,0 +1,45 @@
+✖ V07 missing public routes return own404, HEAD empty, root and assets valid (16.345537ms)
+✖ V08 confinement, no directory listings or private fallback (5.419532ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 128.248005
+
+✖ failing tests:
+
+test at tests/documents-http.test.ts:6:1
+✖ V07 missing public routes return own404, HEAD empty, root and assets valid (16.345537ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  200 !== 404
+  
+      at TestContext.<anonymous> (file:///workspace/Privaweb/tests/documents-http.test.ts:6:248)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 200,
+    expected: 404,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/documents-http.test.ts:7:1
+✖ V08 confinement, no directory listings or private fallback (5.419532ms)
+  AssertionError [ERR_ASSERTION]: /../secret
+      at TestContext.<anonymous> (file:///workspace/Privaweb/tests/documents-http.test.ts:7:267)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

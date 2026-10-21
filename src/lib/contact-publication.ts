@@ -1,3 +1,6 @@
+import {documents} from '../config/documents.ts';
+import type {DocumentBundle} from '../content/documents.ts';
+import {documentsIssues} from './documents-publication.ts';
 import {realpathSync,statSync} from 'node:fs';
 import {resolve,relative,isAbsolute} from 'node:path';
 import {instagram,type SocialLink} from '../config/social.ts';
@@ -7,8 +10,9 @@ export function contactSnapshot(c:ContactContent){return JSON.stringify({...c,re
 export function readinessSnapshot(r:ContactReadiness){return JSON.stringify({origin:r.origin,provider:r.provider,qualificationReference:r.qualificationReference,privacyReference:r.privacyReference});}
 export function trackingVerified(r:ContactReadiness):boolean{return !!r.tracking.reference.trim()&&!!r.tracking.scope.trim()&&r.tracking.reviewedValue===readinessSnapshot(r);}
 function httpsAddress(value:string,originOnly=false):boolean{try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password&&(!originOnly||u.origin===value);}catch{return false;}}
-export function contactPublicationIssues(c:ContactContent,r:ContactReadiness,root:string,canonical:SocialLink=instagram):string[]{
- const issues:string[]=[];const filled=(v:string)=>!!v?.trim();
+export function contactPublicationIssues(c:ContactContent,r:ContactReadiness,root:string,canonical:SocialLink=instagram,bundle:DocumentBundle=documents):string[]{
+ const issues:string[]=[];
+ if(documentsIssues(bundle).length||JSON.stringify(c.notice)!==JSON.stringify(bundle.notice))issues.push('documentos/aviso pendientes o discrepantes');const filled=(v:string)=>!!v?.trim();
  if(c.testOnly)issues.push('fixture no publicable');
  if(c.review.status!=='revisado'||!filled(c.review.reference)||c.review.value!==contactSnapshot(c))issues.push('revisión editorial pendiente o desactualizada');
  if(!filled(c.eyebrow)||!filled(c.title)||!filled(c.intro)||JSON.stringify(c.topics)!==JSON.stringify(['Anti-phishing','Contraseñas','Móviles','Brechas']))issues.push('contenido incompleto');

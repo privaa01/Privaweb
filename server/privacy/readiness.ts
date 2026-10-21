@@ -1,3 +1,5 @@
+import {documents} from '../../src/config/documents.ts';
+import {bundleHash} from '../../src/lib/documents-review.ts';
 import { readFileSync, lstatSync, realpathSync } from "node:fs";
 import { createHash } from "node:crypto";
 import {
@@ -10,6 +12,7 @@ export function evidenceIssues(
   refs: Record<string, unknown> = privacyReadiness,
   revision = process.env.PRIVA_RELEASE_REVISION ?? "",
   now = Date.now(),
+  expectedNoticesHash = bundleHash(documents),
 ) {
   const issues = privacyIssues(refs, now);
   for (const scope of privacyScopes) {
@@ -37,7 +40,8 @@ export function evidenceIssues(
         e.verifiedAt !== r.verifiedAt ||
         e.expiresAt !== r.expiresAt ||
         e.result !== "pass" ||
-        e.synthetic !== false
+        e.synthetic !== false ||
+        (scope === "notices" && (!/^[a-f0-9]{64}$/.test(expectedNoticesHash) || e.bundleHash !== expectedNoticesHash))
       )
         throw Error();
     } catch {

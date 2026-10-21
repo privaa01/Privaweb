@@ -1,0 +1,64 @@
+
+> privaweb@0.1.0 test:privacy
+> node --experimental-strip-types --test --test-concurrency=2 tests/privacy-*.test.ts
+
+✔ operator migration8→9 and restore CLIs hold real exclusive flock, preserve tuples and suppress old backup (3976.933576ms)
+✔ V05/V06 code scope, one use, explicit confirmation and 24h deadline (1802.492217ms)
+✔ wrong attempts commit, fifth locks; no tampered scopes or target destinations (935.64433ms)
+✔ lost HTTP retry uses same scope, no duplicate code or quota, and unknown cannot confirm (912.082991ms)
+✔ retained keys are required and rotation can confirm an older valid challenge (834.344237ms)
+✔ V11 suppression cannot retire until complete current inventory proves affected copies inaccessible (1.267056ms)
+✔ journal retirement requires authenticated current complete inventory, keeps signed anchor and next append valid (812.583868ms)
+✔ V03/V04 expiry removes tuples, responses, WAL markers but preserves live records (865.950621ms)
+✔ capture failure preserves source refs and retries with original deadline (845.245157ms)
+✔ crash afterReplica resumes without duplicating journal or changing deadline (1084.703709ms)
+✔ crash afterCapture resumes without duplicating journal or changing deadline (709.361318ms)
+✔ crash afterDelete resumes without duplicating journal or changing deadline (722.19392ms)
+✔ crash afterPhysical resumes without duplicating journal or changing deadline (795.973778ms)
+✔ V15 missed deadline remains overdue and is never restarted (666.855734ms)
+✔ unavailable replica has bounded wait, keeps data inaccessible and does not starve a healthy job (801.402188ms)
+✔ schema9 idempotent and all existing writers use secure_delete, original tuple retained (728.122238ms)
+✔ journal append idempotent, conflict/fork/tamper rejected (742.150261ms)
+✔ coherent backup gets authenticated manifest and changed bytes are refused (883.379407ms)
+✔ private paths reject symlinks, public roots and loose permissions (0.735316ms)
+✔ V12 HTTP rejects direct anonymous, revoked, cross-origin/CSRF and oversize requests (709.217767ms)
+✔ V05–V08 real HTTP create/recover/confirm returns no code and logs contain no PII (658.532707ms)
+✔ lost response after contact commit recovers requestId without duplicated outbox (685.651875ms)
+✔ V08 confirmation mail accepted never resends unknown (736.401248ms)
+✔ V08 confirmation mail rejected never resends unknown (660.768643ms)
+✔ V08 confirmation mail lost never resends unknown (666.231867ms)
+✔ V08 confirmation mail unknown never resends unknown (685.707173ms)
+✔ expired code clears encrypted payload and cannot be revived by late delivery (649.22432ms)
+✔ revocation before reservation cancels send; no original session bearer persisted (656.012239ms)
+✔ forged proof, future acceptance or network timeout cannot enable confirmation (1942.350508ms)
+✔ independent privacy worker purges expired codes even without confirmation mail worker (801.205703ms)
+✔ external shared holder blocks exclusive cleanup until drained; never steal inode (64.226348ms)
+✔ supervisor drains every participant and reopens after exclusive child (99.293749ms)
+privacy deadline batch query p95(ms): 0.183
+privacy full100-row batch maximum(ms): 1012.909
+privacy deadline batch query p95(ms): 0.210
+privacy full100-row batch maximum(ms): 3209.717
+privacy deadline batch query p95(ms): 0.359
+privacy full100-row batch maximum(ms): 1397.195
+privacy deadline batch query p95(ms): 0.192
+privacy full100-row batch maximum(ms): 1283.816
+privacy full-batch p95 across30 post-warmup samples(ms): 2901.541
+✔ V03 1000 contacts/10 replies each: indexed 100-row deadline batches p95 <=5s and expired exclusion (56477.687335ms)
+✔ V01 exact UTC boundaries and deletion deadlines (1.335489ms)
+✔ V02 only original new acceptance advances; invalid and future activity fail closed (0.324689ms)
+✔ privacy gates reject null, boolean, fixture, expired and arbitrary evidence (0.862398ms)
+✔ evidence content, hash, revision and expiry are all bound (10.400904ms)
+✔ V10 dispatch reserved before deletion may complete but late acceptance cannot recreate erased data (773.053017ms)
+✔ V09 old backup does not resurrect early deleted contact, reply permission or receipt (803.797167ms)
+✔ V10 missing, forked or lower than known head fails closed; pending expiry prevents reopening (673.241055ms)
+✔ authorization and scope reject unknown users, mixed recipients, duplicates and injected objects (663.618436ms)
+✔ deleting conversation retires original receipt and purges linked confirmation payloads (727.397127ms)
+✔ new confirmation cannot extend earlier retention deadline or modify stored activity (682.566143ms)
+ℹ tests 43
+ℹ suites 0
+ℹ pass 43
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 69029.547156

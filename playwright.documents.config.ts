@@ -1,0 +1,8 @@
+import {defineConfig,devices} from '@playwright/test';
+import {createServer} from 'node:net';
+const integration=process.env.PRIVA_TEST_MODE==='integration';
+const port=process.env.PRIVA_DOCUMENTS_PORT?Number(process.env.PRIVA_DOCUMENTS_PORT):await new Promise<number>((resolve,reject)=>{const s=createServer();s.on('error',reject);s.listen(0,'127.0.0.1',()=>{const p=(s.address() as {port:number}).port;s.close(()=>resolve(p));});});
+process.env.PRIVA_DOCUMENTS_PORT=String(port);
+const baseURL=integration?process.env.PRIVA_INTEGRATION_BASE_URL:`http://127.0.0.1:${port}`;
+if(!baseURL)throw Error('BLOQUEADO010: falta baseURL real; no se usará fixture.');
+export default defineConfig({testDir:'./tests/e2e',testMatch:integration?'**/documents-integration.spec.ts':['**/documents.spec.ts','**/documents-notice.spec.ts','**/documents-recovery.spec.ts','**/documents-accessibility.spec.ts'],workers:2,retries:0,timeout:30000,outputDir:`.test-output/documents-artifacts-${port}`,reporter:[['list'],['json',{outputFile:integration?`.test-output/documents-integration-${port}.json`:`.test-output/documents-results-${port}.json`}]],use:{baseURL,trace:'retain-on-failure'},projects:[{name:'chromium',use:{...devices['Desktop Chrome'],launchOptions:process.env.PRIVA_CHROMIUM_EXECUTABLE?{executablePath:process.env.PRIVA_CHROMIUM_EXECUTABLE}:undefined}},{name:'firefox',use:{...devices['Desktop Firefox']}},{name:'webkit',use:{...devices['Desktop Safari']}}],webServer:integration?undefined:{command:`npm run build:documents:contract && node scripts/serve-documents.mjs .test-output/documents ${port}`,url:baseURL+'/index.html',reuseExistingServer:false,timeout:120000}});

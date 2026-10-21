@@ -1,0 +1,15 @@
+---
+import type {DocumentBundle,DocumentId} from '../../content/documents';
+import '../../styles/documents.css';
+interface Props {bundle:DocumentBundle;documentId:DocumentId}
+const {bundle,documentId}=Astro.props;const doc=bundle.documents[documentId];
+---
+<article class="informative-document">
+{bundle.testOnly && <p class="review-note">Contenido sintético de prueba; no es información oficial.</p>}
+{Object.values(bundle.reviews).some(r=>r.status!=='revisado') && <p class="review-note">Borrador en revisión. Información operativa pendiente; no habilita la recepción de datos reales.</p>}
+<h1>{doc.title}</h1>
+{doc.effectiveDate && <p>Vigencia: <time datetime={doc.effectiveDate}>{doc.effectiveDate}</time></p>}
+{doc.sections.map(s=><section aria-labelledby={s.id}><h2 id={s.id}>{s.title}</h2>{s.paragraphs.map(p=><p>{p}</p>)}{s.links?.map(l=><p><a href={l.href}>{l.label}</a></p>)}</section>)}
+<p><a href="/index.html">Volver a Inicio</a></p>
+{documentId==='manifesto' ? <p><a href="/contacto.html#escribir">Volver a Contacto</a></p> : <p><a href="/manifiesto-datos.html">Consultar el Manifiesto de Datos</a></p>}
+</article>

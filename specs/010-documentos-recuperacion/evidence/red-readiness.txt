@@ -1,0 +1,58 @@
+✖ V11 notices binds exact bundle as well as revision, hash, expiry and all scopes (7.702364ms)
+✖ V11 reject missing (1.278794ms)
+✔ V11 reject synthetic (0.802857ms)
+✔ V11 reject future (0.846212ms)
+✔ V11 reject expired (0.559712ms)
+✔ V11 reject revision (0.490788ms)
+✔ V11 reject bytes (0.570688ms)
+✔ V11 reject other-scope (0.481113ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 6
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 134.25843
+
+✖ failing tests:
+
+test at tests/documents-readiness.test.ts:7:1
+✖ V11 notices binds exact bundle as well as revision, hash, expiry and all scopes (7.702364ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert(evidenceIssues(f.refs,f.revision,f.now,f.expected).includes('privacy:notices'))
+  
+      at TestContext.<anonymous> (file:///workspace/Privaweb/tests/documents-readiness.test.ts:12:2)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/documents-readiness.test.ts:14:99
+✖ V11 reject missing (1.278794ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert(evidenceIssues(f.refs,f.revision,f.now,f.expected).length>0)
+  
+      at TestContext.<anonymous> (file:///workspace/Privaweb/tests/documents-readiness.test.ts:23:2)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

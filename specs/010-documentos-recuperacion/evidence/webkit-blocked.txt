@@ -1,0 +1,42 @@
+
+> privaweb@0.1.0 test:e2e:documents:contract
+> playwright test --config=playwright.documents.config.ts --project=webkit --grep V04
+
+[WebServer] (node:302459) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:302544) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:302712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [webkit] › tests/e2e/documents.spec.ts:2:1 › V04 two direct and eight footer routes, accessible auxiliary navigation (6ms)
+
+
+  1) [webkit] › tests/e2e/documents.spec.ts:2:1 › V04 two direct and eight footer routes, accessible auxiliary navigation 
+
+    Error: browserType.launch: 
+    ╔══════════════════════════════════════════════════════╗
+    ║ Host system is missing dependencies to run browsers. ║
+    ║ Missing libraries:                                   ║
+    ║     libgtk-4.so.1                                    ║
+    ║     libgraphene-1.0.so.0                             ║
+    ║     libharfbuzz-icu.so.0                             ║
+    ║     libmanette-0.2.so.0                              ║
+    ║     libhyphen.so.0                                   ║
+    ║     libGLESv2.so.2                                   ║
+    ╚══════════════════════════════════════════════════════╝
+
+    Error Context: .test-output/documents-artifacts/documents-V04-two-direct-a-d035d-ssible-auxiliary-navigation-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    .test-output/documents-artifacts/documents-V04-two-direct-a-d035d-ssible-auxiliary-navigation-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace .test-output/documents-artifacts/documents-V04-two-direct-a-d035d-ssible-auxiliary-navigation-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [webkit] › tests/e2e/documents.spec.ts:2:1 › V04 two direct and eight footer routes, accessible auxiliary navigation 

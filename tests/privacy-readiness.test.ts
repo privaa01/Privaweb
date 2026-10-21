@@ -1,3 +1,5 @@
+import {documents} from '../src/config/documents.ts';
+import {bundleHash} from '../src/lib/documents-review.ts';
 import test from "node:test";
 import assert from "node:assert/strict";
 import { privacyIssues, privacyScopes } from "../src/config/privacy.ts";
@@ -33,6 +35,7 @@ test("evidence content, hash, revision and expiry are all bound", () => {
           expiresAt,
           result: "pass",
           synthetic: false,
+          ...(scope === "notices" ? {bundleHash:bundleHash(documents)} : {}),
         });
       writeFileSync(path, content);
       refs[scope] = {

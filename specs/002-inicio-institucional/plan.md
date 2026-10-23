@@ -3,7 +3,7 @@
 **Branch real**: `main` | **Date**: 2026-10-16 | **Spec**: [spec.md](spec.md)
 **Feature Directory**: `specs/002-inicio-institucional`
 **Input**: I01–I04, constitución 1.0.0 y componentes existentes de 001.
-**Estado**: componentes y banco contractual implementados; Chromium/Firefox verificados, cinco textos educativos aprobados y recursos comunes recibidos. Imágenes institucionales, revisión final, WebKit e integración pendientes.
+**Estado**: componentes y banco contractual implementados; Chromium/Firefox verificados, cinco textos educativos aprobados y recursos comunes recibidos. Imágenes institucionales recibidas y conectadas; revisión final, WebKit e integración pendientes.
 El BRANCH de los scripts SDD representa la feature activa, no una rama Git creada.
 
 ## Summary
@@ -32,7 +32,7 @@ servir archivos del banco, como en 001.
 solo reutilizar JS existente para navegación/anclas. Imágenes con dimensiones reservadas;
 lazy loading solo fuera del primer bloque, no imagen hero. No se inventa objetivo de latencia.
 **Constraints**: orden PDF 1; siete anchos y texto 100%/200%; contraste 4.5:1 texto normal,
-3:1 grande/componentes; controles aproximadamente 44 px. Logo/fuente/paleta recibidos y cinco textos educativos aprobados; imágenes institucionales y revisión final pendientes.
+3:1 grande/componentes; controles aproximadamente 44 px. Logo/fuente/paleta recibidos y cinco textos educativos aprobados; imágenes institucionales recibidas; revisión final pendiente.
 **Scale/Scope**: una página /index.html, cuatro bloques, cuatro tarjetas informativas,
 tres ubicaciones de imagen institucional (hero, identidad, cierre), dos controles de contenido
 y dos anclas públicas. Header/footer y sus activos de marca pertenecen a 001.
@@ -49,7 +49,7 @@ y dos anclas públicas. Header/footer y sus activos de marca pertenecen a 001.
 | CONST-10–12 | Separar plan, código y evidencia | Pruebas futuras y bloqueos explícitos, sin resultados ficticios |
 
 Revisión previa y posterior de diseño: pasa sin excepciones. No acredita implementación.
-P03 está resuelto para los cinco textos educativos vigentes. P01/P04 mantienen pendientes las tres imágenes institucionales y la revisión visual final; marca, fuente y paleta ya están recibidas. No se inventan decisiones para cerrar esas dependencias.
+P03 está resuelto para los cinco textos educativos vigentes. P01/P04 tienen recibidas las tres imágenes institucionales; queda pendiente la revisión visual final; marca, fuente y paleta ya están recibidas. No se inventan decisiones para cerrar esas dependencias.
 La estructura puede implementarse independientemente; la publicación no se cierra con fixtures.
 
 ## Project Structure
@@ -69,7 +69,7 @@ specs/002-inicio-institucional/
 
 [tasks.md](tasks.md) contiene las tareas iniciales y las remediaciones de convergencia. Las evidencias contractuales están en `evidence/`; aceptación integrada y fidelidad final siguen pendientes.
 
-### Source Code (implementado; imágenes oficiales pendientes)
+### Source Code (implementado; imágenes oficiales recibidas)
 
 ```text
 src/
@@ -160,3 +160,7 @@ Marca, fuente y paleta recibidas desde disenovisual; cinco textos educativos apr
 ## Convergencia aplicada — 2026-10-20 (America/Bogota)
 
 T029: estados vigentes sincronizados en el cuerpo del documento. La reanudación previa está fechada 2026-10-21 UTC en sus logs (2026-10-20 en America/Bogota); no representa una aprobación distinta. Se conservan las decisiones y evidencias existentes, sin cerrar imágenes, fidelidad o integración por edición documental.
+
+## Recursos recibidos — 2026-10-23 (America/Bogota)
+
+Las imágenes aportadas están conectadas como `/images/home/hero.png`, `/images/home/identidad.png` y `/images/home/cierre.png`, 500 × 350px, con procedencia y clasificación en [evidence/resources.md](evidence/resources.md). T025/T030 completas y gate de Inicio aprobado. Los bloqueos de imágenes anotados en registros anteriores son históricos; no se cierran por ello fidelidad manual, WebKit o aceptación integrada.

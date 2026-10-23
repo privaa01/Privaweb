@@ -1,6 +1,6 @@
 # Guía de validación — Inicio 002
 
-**Estado**: Chromium, Firefox y pruebas de publicación verificados contractualmente. Cinco textos educativos aprobados; marca, fuente y paleta recibidas. Imágenes institucionales, revisión final, WebKit e integración pendientes.
+**Estado**: Chromium, Firefox y pruebas de publicación verificados contractualmente. Cinco textos educativos aprobados; marca, fuente y paleta recibidas. Imágenes institucionales recibidas y conectadas; revisión final, WebKit e integración pendientes.
 
 ## Prerrequisitos y comandos existentes
 
@@ -83,7 +83,7 @@ npm run check
 npm run build
 ```
 
-Las páginas reales 003–005 ya existen en código. Estos comandos no acreditan entrega mientras falten imágenes oficiales, revisión visual e integración o fallen los guards de otras features. La revisión editorial de los cinco textos actuales sí está aprobada; no repetirla. No añadir páginas ficticias ni eludir scripts/require-pages.mjs.
+Las páginas reales 003–005 ya existen en código. Estos comandos no acreditan entrega mientras falten revisión visual e integración o fallen los guards de otras features. La revisión editorial de los cinco textos actuales sí está aprobada; no repetirla. No añadir páginas ficticias ni eludir scripts/require-pages.mjs.
 
 Para el recorrido integrado usar un entorno real con /index.html, sus anclas y /historias.html;
 configurar PRIVA_INTEGRATION_BASE_URL con la URL proporcionada por ese entorno y ejecutar
@@ -95,13 +95,13 @@ silencioso ni fallback a fixtures. No se requieren credenciales para Inicio púb
 Registrar fecha, entorno/navegador, ancho/texto, ID y escenario, resultado y evidencia.
 Separar aprobado/fallido/bloqueado/no ejecutado; pruebas contractuales no cierran destino
 real de 003 ni fidelidad sin recursos. I01–I04 y SC-001–005 se actualizan solo tras pruebas.
-Publicación exige recursos oficiales y copy revisado. P03 resuelto para los cinco textos vigentes; P01/P04 siguen abiertos para imágenes institucionales y fidelidad final.
+Publicación exige recursos oficiales y copy revisado. P03 resuelto para los cinco textos vigentes; P01/P04 tienen imágenes institucionales recibidas; falta cerrar fidelidad final.
 
 ## Resultados y límites de esta implementación
 
 Ver evidence/summary.md. @types/node se incorporó como desarrollo para tipado de fs/path.
 Las suites tienen salidas/reportes y trazas separados; no lanzar suites que compartan
-outputDir. Firefox ya pasó los recorridos principales; WebKit sigue bloqueado por dependencias del host. No se necesita aprobación adicional para los cinco textos ni los recursos comunes recibidos; faltan tres imágenes oficiales, revisión visual/manual y entorno integrado antes de publicar.
+outputDir. Firefox ya pasó los recorridos principales; WebKit sigue bloqueado por dependencias del host. No se necesita aprobación adicional para los cinco textos ni los recursos comunes recibidos; las tres imágenes oficiales ya están conectadas; faltan revisión visual/manual y entorno integrado antes de publicar.
 
 ## Reanudación 2026-10-21
 
@@ -110,3 +110,7 @@ Marca, fuente y paleta recibidas desde disenovisual; cinco textos educativos apr
 ## Convergencia aplicada — 2026-10-20 (America/Bogota)
 
 T029: estados vigentes sincronizados en el cuerpo del documento. La reanudación previa está fechada 2026-10-21 UTC en sus logs (2026-10-20 en America/Bogota); no representa una aprobación distinta. Se conservan las decisiones y evidencias existentes, sin cerrar imágenes, fidelidad o integración por edición documental.
+
+## Recursos recibidos — 2026-10-23 (America/Bogota)
+
+Las imágenes aportadas están conectadas como `/images/home/hero.png`, `/images/home/identidad.png` y `/images/home/cierre.png`, 500 × 350px, con procedencia y clasificación en [evidence/resources.md](evidence/resources.md). T025/T030 completas y gate de Inicio aprobado. Los bloqueos de imágenes anotados en registros anteriores son históricos; no se cierran por ello fidelidad manual, WebKit o aceptación integrada.

@@ -1,19 +1,28 @@
 # Inventario de recursos y revisión — 002
 
-Actualización: 2026-10-21 (UTC).
+Actualización: 2026-10-23 (America/Bogota).
 
-| Elemento | Estado y procedencia |
+Las tres imágenes fueron aportadas por la usuaria para Inicio, recibidas en GitHub en el commit `10e683a`, inspeccionadas visualmente y conectadas según el orden indicado. Se renombraron sin modificar sus bytes para usar rutas locales sin espacios, compatibles con el guard existente.
+
+| Bloque | Ruta local | Nombre aportado | Dimensiones PNG verificadas | Identificación |
+|---|---|---|---|---|
+| Hero | `/images/home/hero.png` | `candado 2.0.png` | 500 × 350 | Candado verde con escudo |
+| Somos Priva | `/images/home/identidad.png` | `mano2.0.png` | 500 × 350 | Mano moviendo piezas de ajedrez |
+| Cierre | `/images/home/cierre.png` | `teclas 2.0.png` | 500 × 350 | Garra levantando una tecla con escudo |
+
+Las ilustraciones complementan el texto sin aportar información necesaria adicional; se clasifican como decorativas con alt vacío. Los encabezados y párrafos contienen el mensaje completo. Hero conserva carga eager; identidad y cierre conservan lazy. No hay recursos remotos ni imágenes de prueba en la entrada real.
+
+| Recurso común/editorial | Evidencia |
 |---|---|
-| Marca | Oficial identificada por la usuaria: disenovisual/Link-PrivaHome.png; copia local idéntica public/brand/priva-logo.png, 104 × 40, alt Priva |
-| Tipografía | disenovisual/referencias.txt: Plus Jakarta Sans; archivos locales normales/cursivos y licencia OFL en public/fonts; sin peticiones a Google en ejecución |
-| Paleta | disenovisual/referencias.txt; src/styles/home.css usa variables compartidas aprobadas |
-| Introducción y cuatro descripciones | Aprobación explícita de los cinco textos educativos; aplicados con reviewedText exacto y referencia a editorial-review.md |
-| Hero, Somos Priva y cierre | Imágenes oficiales pendientes. La usuaria suministró un enlace a placehold.co/448x332; es una referencia provisional, no tres imágenes oficiales verificadas |
+| Marca | disenovisual/Link-PrivaHome.png, copia idéntica public/brand/priva-logo.png, 104 × 40, alt Priva |
+| Tipografía | disenovisual/referencias.txt: Plus Jakarta Sans local con licencia OFL, public/fonts |
+| Paleta | disenovisual/referencias.txt, variables compartidas |
+| Introducción y cuatro descripciones | Cinco textos educativos aprobados explícitamente; ver editorial-review.md |
 
-Se intentó descargar https://placehold.co/448x332 y su variante /png: ambas devolvieron HTTP 403. No se incorporó un archivo vacío ni una petición externa en ejecución. Las dimensiones del enlace son nominales, sin archivo recibido que permita verificarlas. No se marcó verificado este recurso provisional.
+T025 y T030 completas. `scripts/require-home-publication.mjs` pasa; el antiguo bloqueo por imágenes y el enlace provisional placehold.co quedan superados por los archivos recibidos. Esto no acredita accesibilidad manual, WebKit, integración con Historias o publicación del sitio completo.
 
-Los SVG test-* permanecen exclusivamente en el banco y no acreditan recursos oficiales. El gate real continúa bloqueado por las tres imágenes, pero ya no por marca, fuente, colores o revisión editorial. El texto C16 y los títulos/orden de tarjetas se conservan.
+## Integridad de los archivos
 
-## Convergencia — 2026-10-20 (America/Bogota)
-
-Inspección del árbol actual: public solo contiene logo oficial y fuentes locales; disenovisual contiene el logo y referencias de fuente/color. No se recibieron tres imágenes institucionales oficiales nuevas. T025/T030 siguen abiertas; no se repitió una solicitud ya contestada ni se inventaron imágenes. El PDF sí está disponible en attachments y se usó para revisión preliminar.
+- `hero.png`: SHA-256 `46a871b3fc5e04b2476ac6c92260dbd942af9517a532d6d8f3881913c55280a7`.
+- `identidad.png`: SHA-256 `6a797e643eaffd20f175cd3b0a662aaf818ec0cb4b99da86eab9a50f1ecde0ac`.
+- `cierre.png`: SHA-256 `3d83d918c7d9edc355ec04e68af48b4da632a89ddf2d2825b6be7516c5420333`.

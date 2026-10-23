@@ -3,7 +3,7 @@
 **Feature Directory**: `specs/002-inicio-institucional`
 **Created**: 2026-10-16
 **Updated**: 2026-10-20 (America/Bogota)
-**Status**: componentes validados contractualmente en Chromium y Firefox; cinco textos educativos y recursos comunes aprobados/recibidos. Imágenes institucionales, fidelidad final e integración pendientes.
+**Status**: componentes validados contractualmente en Chromium y Firefox; cinco textos educativos y recursos comunes aprobados/recibidos. Imágenes institucionales recibidas y conectadas; fidelidad final e integración pendientes.
 **Input**: `/speckit-specify 002`: desarrollar la especificación existente conservando alcance e IDs.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), I01–I04,
 PDF página 1 y [constitución 1.0.0](../../.specify/memory/constitution.md).
@@ -200,7 +200,7 @@ Son criterios de aceptación. La evidencia contractual de Chromium/Firefox no su
 
 - **001**: navegación, layout y footer compartidos; la integración debe mantener activo Inicio.
 - **003**: la página Historias ya existe en código; el recorrido real del CTA final aún debe verificarse contra un entorno integrado.
-- **011 / P01 / P04**: logo, fuente y colores exactos recibidos desde `disenovisual/`; siguen pendientes las tres imágenes institucionales oficiales y la revisión final de fidelidad;
+- **011 / P01 / P04**: logo, fuente y colores exactos recibidos desde `disenovisual/`; las tres imágenes institucionales oficiales están recibidas y conectadas, y sigue pendiente la revisión final de fidelidad;
   objetivos de contraste 4.5:1 texto normal y 3:1 texto grande/componentes, controles aproximadamente
   44 px, foco visible y alternativas adecuadas. Se evalúan, no se atribuyen al dibujo como mediciones.
 - **P03**: revisión de la introducción y las cuatro descripciones educativas aprobada y aplicada. La decisión no acredita servicios operativos; cualquier cambio material debe revisarse y no permite retirar o reescribir silenciosamente el bloque.
@@ -213,10 +213,10 @@ Son criterios de aceptación. La evidencia contractual de Chromium/Firefox no su
 
 | ID original | Requisito local | Escenarios | Fuente | Estado de aplicación |
 |---|---|---|---|---|
-| I01 | FR-001 | US1.1, US1.2 | PDF 1 | Validación contractual Chromium/Firefox; imágenes/fidelidad e integración pendientes |
-| I02 | FR-002 | US1.2–US1.4 | PDF 1 / C07 | Validación contractual Chromium/Firefox; imágenes/fidelidad e integración pendientes |
-| I03 | FR-003 | US2.1–US2.4 | PDF 1 / P03 | Validación contractual Chromium/Firefox; imágenes/fidelidad e integración pendientes |
-| I04 | FR-004 | US3.1–US3.3 | PDF 1 / C16 | Validación contractual Chromium/Firefox; imágenes/fidelidad e integración pendientes |
+| I01 | FR-001 | US1.1, US1.2 | PDF 1 | Validación contractual Chromium/Firefox; recursos recibidos; fidelidad e integración pendientes |
+| I02 | FR-002 | US1.2–US1.4 | PDF 1 / C07 | Validación contractual Chromium/Firefox; recursos recibidos; fidelidad e integración pendientes |
+| I03 | FR-003 | US2.1–US2.4 | PDF 1 / P03 | Validación contractual Chromium/Firefox; recursos recibidos; fidelidad e integración pendientes |
+| I04 | FR-004 | US3.1–US3.3 | PDF 1 / C16 | Validación contractual Chromium/Firefox; recursos recibidos; fidelidad e integración pendientes |
 
 ### Registro documental histórico
 
@@ -249,3 +249,7 @@ Marca, fuente y paleta recibidas desde disenovisual; cinco textos educativos apr
 ## Convergencia aplicada — 2026-10-20 (America/Bogota)
 
 T029: estados vigentes sincronizados en el cuerpo del documento. La reanudación previa está fechada 2026-10-21 UTC en sus logs (2026-10-20 en America/Bogota); no representa una aprobación distinta. Se conservan las decisiones y evidencias existentes, sin cerrar imágenes, fidelidad o integración por edición documental.
+
+## Recursos recibidos — 2026-10-23 (America/Bogota)
+
+Las imágenes aportadas están conectadas como `/images/home/hero.png`, `/images/home/identidad.png` y `/images/home/cierre.png`, 500 × 350px, con procedencia y clasificación en [evidence/resources.md](evidence/resources.md). T025/T030 completas y gate de Inicio aprobado. Los bloqueos de imágenes anotados en registros anteriores son históricos; no se cierran por ello fidelidad manual, WebKit o aceptación integrada.

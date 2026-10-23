@@ -47,3 +47,7 @@ Las 14 celdas repiten axe y texto 200%; no sustituyen lector de pantalla ni fide
 PDF aportado disponible en el entorno: `wireframes web (2).pdf`, página 1 renderizada con pdftoppm a 1440px y vista como imagen. Se compararon capturas actuales del banco a 1440 y 390px con logo/fuente/paleta recibidos e imágenes institucionales sintéticas claramente identificadas. La revisión observó números decorativos en tarjetas donde el PDF usa libro, sobre, marcador y comunidad; `HomeAreas.astro` los sustituye por SVG decorativos ocultos a tecnología de asistencia y sin foco/acciones. Capturas `convergence-home-1440.png` y `convergence-home-390.png`.
 
 Se conserva la secuencia hero → identidad → áreas → cierre y el apilado de tarjetas. Esta comparación preliminar no certifica espaciados/fidelidad final de los recursos ausentes. No hay lector de pantalla instalado identificado (orca/NVDA ausentes); axe y foco automatizado no lo sustituyen. T026/T032 permanecen parciales. Las diferencias aprobadas de texto y año se conservan.
+
+## Actualización — 2026-10-23
+
+Imágenes institucionales recibidas y conectadas; el guard de Inicio pasa con los datos reales. Ver [received-images.md](received-images.md) para pruebas y límites actuales. Los bloqueos de material anteriores son históricos; esto no acredita integración real ni revisión completa con lector de pantalla.

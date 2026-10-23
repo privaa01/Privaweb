@@ -11,3 +11,7 @@ WebKit: intento de `base: layout` falla antes de abrir navegador por libgtk-4, l
 El gate propio de Inicio continúa con salida 1 por tres imágenes institucionales; las cinco revisiones editoriales y referencias comunes ya están resueltas. Publicación/fidelidad y aceptación integrada siguen pendientes.
 
 Suite ampliada por T031: seis escenarios por motor (18 definiciones) verifican entrada y recarga de cada ancla, ambos controles con teclado/puntero, foco visible, título accesible y siguiente enlace de contenido. Los helpers se ejecutan en el banco contractual con datos inequívocos; la suite integrada mantiene guard de URL real y rechaza marcadores del banco. El listado con https://example.invalid no hace peticiones ni acredita integración. Resultado actual en [convergence.md](convergence.md).
+
+## Actualización — 2026-10-23
+
+Imágenes institucionales recibidas y conectadas; el guard de Inicio pasa con los datos reales. Ver [received-images.md](received-images.md) para pruebas y límites actuales. Los bloqueos de material anteriores son históricos; esto no acredita integración real ni revisión completa con lector de pantalla.

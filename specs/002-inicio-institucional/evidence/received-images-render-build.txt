@@ -1,0 +1,18 @@
+23:48:54 [types] Generated 253ms
+23:48:54 [build] output: "static"
+23:48:54 [build] mode: "static"
+23:48:54 [build] directory: /workspace/Privaweb/.test-output/home-official-render/
+23:48:54 [build] Collecting build info...
+23:48:54 [build] ✓ Completed in 272ms.
+23:48:54 [build] Building static entrypoints...
+23:48:54 [vite] ✓ built in 289ms
+23:48:55 [vite] ✓ built in 54ms
+23:48:55 [build] Rearranging server assets...
+
+ generating static routes
+23:48:55   ├─ /index.html (+13ms)
+23:48:55 ✓ Completed in 26ms.
+
+23:48:55 [build] ✓ Completed in 419ms.
+23:48:55 [build] 1 page(s) built in 693ms
+23:48:55 [build] Complete!

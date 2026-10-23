@@ -21,3 +21,7 @@ La regresión compartida 001 ya documentada en esta sesión (46 Chromium y 32 Fi
 ## Ejecución vigente de convergencia — 2026-10-20 (America/Bogota)
 
 29 Chromium y 15 Firefox aprobadas tras ampliar recorridos y corregir iconos de tarjetas; 24 pruebas de publicación y ambos Astro checks sin errores/advertencias. WebKit sigue bloqueado por detección de libGLESv2 en la caché del host, aun con bibliotecas locales. Ver comandos, resultados y límites en [convergence.md](convergence.md); los conteos anteriores son históricos.
+
+## Actualización — 2026-10-23
+
+Imágenes institucionales recibidas y conectadas; el guard de Inicio pasa con los datos reales. Ver [received-images.md](received-images.md) para pruebas y límites actuales. Los bloqueos de material anteriores son históricos; esto no acredita integración real ni revisión completa con lector de pantalla.

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { homeContent, type HomeData } from '../src/content/home.ts';
@@ -17,7 +17,7 @@ function approvedSynthetic() {
  for (const entry of Object.values(content.visual)) Object.assign(entry, { status: 'verificado', sourceReference: 'Referencia sintética de test' });
  return { root, content };
 }
-test('datos reales pendientes no son publicables', () => assert.throws(() => assertHomePublication(homeContent, '/no-existing-public'), /BLOQUEADO/));
+test('raíz pública inexistente bloquea los recursos reales', () => assert.throws(() => assertHomePublication(homeContent, '/no-existing-public'), /BLOQUEADO/));
 test('ejemplo sintético válido comprueba camino de aceptación, no aprobación real', () => {
  const { content, root } = approvedSynthetic(); try { assert.deepEqual(publicationIssues(content, root), []); } finally { rmSync(root, { recursive: true }); }
 });
@@ -46,8 +46,16 @@ for (const [name, mutate] of invalid) test(`rechaza ${name}`, () => {
  finally { rmSync(root, { recursive: true }); }
 });
 
-test('official shared brand and visual references are configured; approved editorial does not unblock missing institutional images',()=>{
+test('official home images, brand and editorial pass publication with real local files',()=>{
  assert.equal(homeContent.brand.src,'/brand/priva-logo.png');assert.equal(homeContent.brand.width,104);assert.equal(homeContent.brand.height,40);assert.equal(homeContent.brand.status,'verificado');
  assert.equal(homeContent.visual.typography.status,'verificado');assert.equal(homeContent.visual.palette.status,'verificado');
- const issues=publicationIssues(homeContent,'public');assert(issues.some(x=>x.includes('hero:')));assert(!issues.some(x=>x.includes('revisión editorial')));assert(!issues.some(x=>/^marca:|^typography:|^palette:/.test(x)));
+ for (const image of [homeContent.hero.image, homeContent.identity.image, homeContent.closing.image]) {
+  const png = readFileSync(join('public', image.src.slice(1)));
+  assert.equal(png.subarray(0,8).toString('hex'), '89504e470d0a1a0a');
+  assert.equal(image.width, png.readUInt32BE(16));
+  assert.equal(image.height, png.readUInt32BE(20));
+  assert.equal(image.status, 'verificado');
+ }
+ assert.deepEqual(publicationIssues(homeContent,'public'), []);
+ assert.doesNotThrow(()=>assertHomePublication(homeContent,'public'));
 });

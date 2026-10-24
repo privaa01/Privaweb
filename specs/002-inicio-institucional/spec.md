@@ -3,7 +3,7 @@
 **Feature Directory**: `specs/002-inicio-institucional`
 **Created**: 2026-10-16
 **Updated**: 2026-10-20 (America/Bogota)
-**Status**: componentes validados contractualmente en Chromium y Firefox; cinco textos educativos y recursos comunes aprobados/recibidos. Imágenes institucionales recibidas y conectadas; fidelidad final e integración pendientes.
+**Status**: componentes validados contractualmente en Chromium y Firefox; cinco textos educativos y recursos comunes aprobados/recibidos. Imágenes institucionales recibidas; revisión visual/manual aceptada por la usuaria. WebKit e integración pendientes.
 **Input**: `/speckit-specify 002`: desarrollar la especificación existente conservando alcance e IDs.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), I01–I04,
 PDF página 1 y [constitución 1.0.0](../../.specify/memory/constitution.md).
@@ -253,3 +253,7 @@ T029: estados vigentes sincronizados en el cuerpo del documento. La reanudación
 ## Recursos recibidos — 2026-10-23 (America/Bogota)
 
 Las imágenes aportadas están conectadas como `/images/home/hero.png`, `/images/home/identidad.png` y `/images/home/cierre.png`, 500 × 350px, con procedencia y clasificación en [evidence/resources.md](evidence/resources.md). T025/T030 completas y gate de Inicio aprobado. Los bloqueos de imágenes anotados en registros anteriores son históricos; no se cierran por ello fidelidad manual, WebKit o aceptación integrada.
+
+## Revisión manual aceptada — 2026-10-23
+
+La responsable aprobó visualmente Inicio, confirmó el rotor de encabezados y aceptó los pasos guiados con VoiceOver en su Mac (`localhost:4321`). T026/T032 completas en el alcance de revisión de Inicio; 28/33 tareas. [Registro y límites](evidence/manual-review.md). La confirmación no equivale a auditoría externa ni sustituye WebKit, integración real o datos operativos pendientes de otras features.

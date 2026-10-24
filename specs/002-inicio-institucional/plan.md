@@ -3,7 +3,7 @@
 **Branch real**: `main` | **Date**: 2026-10-16 | **Spec**: [spec.md](spec.md)
 **Feature Directory**: `specs/002-inicio-institucional`
 **Input**: I01–I04, constitución 1.0.0 y componentes existentes de 001.
-**Estado**: componentes y banco contractual implementados; Chromium/Firefox verificados, cinco textos educativos aprobados y recursos comunes recibidos. Imágenes institucionales recibidas y conectadas; revisión final, WebKit e integración pendientes.
+**Estado**: componentes y banco contractual implementados; Chromium/Firefox verificados, cinco textos educativos aprobados y recursos comunes recibidos. Imágenes institucionales recibidas; revisión visual/manual aceptada por la usuaria. WebKit e integración pendientes.
 El BRANCH de los scripts SDD representa la feature activa, no una rama Git creada.
 
 ## Summary
@@ -164,3 +164,7 @@ T029: estados vigentes sincronizados en el cuerpo del documento. La reanudación
 ## Recursos recibidos — 2026-10-23 (America/Bogota)
 
 Las imágenes aportadas están conectadas como `/images/home/hero.png`, `/images/home/identidad.png` y `/images/home/cierre.png`, 500 × 350px, con procedencia y clasificación en [evidence/resources.md](evidence/resources.md). T025/T030 completas y gate de Inicio aprobado. Los bloqueos de imágenes anotados en registros anteriores son históricos; no se cierran por ello fidelidad manual, WebKit o aceptación integrada.
+
+## Revisión manual aceptada — 2026-10-23
+
+La responsable aprobó visualmente Inicio, confirmó el rotor de encabezados y aceptó los pasos guiados con VoiceOver en su Mac (`localhost:4321`). T026/T032 completas en el alcance de revisión de Inicio; 28/33 tareas. [Registro y límites](evidence/manual-review.md). La confirmación no equivale a auditoría externa ni sustituye WebKit, integración real o datos operativos pendientes de otras features.

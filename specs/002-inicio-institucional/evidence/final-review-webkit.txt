@@ -1,0 +1,7 @@
+browserType.launch:
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Missing libraries:                                   ║
+║     libGLESv2.so.2                                   ║
+╚══════════════════════════════════════════════════════╝
+{"engine":"webkit","passed":0,"failed":0,"blocked":1}

@@ -165,3 +165,7 @@ No paralelizar modificaciones de `package.json`, `src/content/documents.ts`, `sr
 ## Estado de implementación local
 
 T028: mapa y fixture conformes; destinos reales/QR final pendientes. T033/T034: Chromium/Firefox y axe conformes, WebKit/lector/material final pendientes. T035: auditoría local conforme, integración009/productiva pendiente. T037–T043: datos/textos/evidencias/alojamiento/build/guía integrada bloqueados. T044 sincroniza entrega parcial; no sustituye estos cierres. Véase `evidence.md`.
+
+## Avance P02 — 2026-10-23
+
+T037 parcial: responsable Priva y correo público de contacto/solicitudes `Priva202611@gmail.com` aportados por la usuaria e incorporados a src/config/documents.ts; Términos, Manifiesto y aviso sincronizados sin aprobación final. Pendientes alojamiento, proveedores/envío de correo, ubicación/ciclos/categorías/cookies/permisos y evidencia operativa. T038/T039 sin cierre. 33/44 tareas completas; 27 pruebas de documentos y check raíz aprobados. Ver content-review.md y evidence/official-contact-*.txt.

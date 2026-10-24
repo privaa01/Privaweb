@@ -1,6 +1,6 @@
 # Resultado de implementación — Inicio 002
 
-Actualización: 2026-10-23 (America/Bogota). Componentes implementados y probados; publicación e integración sin cierre integral.
+Actualización: 2026-10-23 (America/Bogota). Componentes implementados y probados; revisión visual y manual guiada aceptadas por la usuaria; WebKit e integración sin cierre integral.
 
 ## Cambios
 
@@ -16,13 +16,21 @@ Actualización: 2026-10-23 (America/Bogota). Componentes implementados y probado
 
 ## Tareas y pendientes
 
-26/33 completas: T001–T022, T024, T025, T029 y T030.
+28/33 completas: T001–T022, T024–T026, T029, T030 y T032.
 
 - T023/T033: WebKit sigue pendiente.
-- T026/T032: revisión manual con lector y fidelidad final pendientes; ya hay imágenes oficiales.
+- T026/T032 completas: aceptación visual y manual guiada reportada por la usuaria en Mac con VoiceOver; ver [manual-review.md](manual-review.md).
 - T027/T031: falta entorno integrado real; casos preparados.
 - T028: cierre integral de documentación condicionado a las verificaciones anteriores.
 
 Imágenes oficiales conectadas y gate de Inicio aprobado. Ver [recursos recibidos](received-images.md) para la verificación vigente; los resultados de convergencia previos son históricos.
 
 Checklist de requisitos 16/16, sin modificar sus marcadores. Sin despliegue, commit ni push en esta fase. Los cambios previos de 001 se conservaron.
+
+## Prueba con imágenes finales
+
+[Resultados actuales](final-validation.md): 18 recorridos Chromium y 8 Firefox aprobados sobre la entrada real, sin imágenes ficticias; 24 pruebas de publicación aprobadas. Revisión visual aprobada explícitamente. Revisión manual guiada en Mac aceptada posteriormente; pendientes WebKit y entorno integrado real. No se cambió código de producto ni se cerraron tareas por aprobar capturas.
+
+## Siguiente bloqueo
+
+La revisión de Inicio queda aceptada en su alcance visual/manual. Continúan pendientes WebKit e integración, y se revisa el gate de documentos010 que impide el build completo. Se requieren datos oficiales del responsable/contacto/canal y operación verificada; no se infieren por aprobar Inicio.

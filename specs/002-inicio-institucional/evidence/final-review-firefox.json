@@ -1,0 +1,41 @@
+{
+  "recordedAt": "2026-10-24T00:02:57.815Z",
+  "scope": "isolated real Home entry, not site integration",
+  "engine": "firefox",
+  "version": "157.0",
+  "base": "http://127.0.0.1:4327",
+  "results": [
+    {
+      "name": "390px text 100%",
+      "status": "passed"
+    },
+    {
+      "name": "390px text 200%",
+      "status": "passed"
+    },
+    {
+      "name": "1440px text 100%",
+      "status": "passed"
+    },
+    {
+      "name": "1440px text 200%",
+      "status": "passed"
+    },
+    {
+      "name": "failed official image hero",
+      "status": "passed"
+    },
+    {
+      "name": "failed official image identidad",
+      "status": "passed"
+    },
+    {
+      "name": "failed official image cierre",
+      "status": "passed"
+    },
+    {
+      "name": "real home without JavaScript",
+      "status": "passed"
+    }
+  ]
+}

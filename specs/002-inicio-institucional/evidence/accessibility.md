@@ -51,3 +51,13 @@ Se conserva la secuencia hero → identidad → áreas → cierre y el apilado d
 ## Actualización — 2026-10-23
 
 Imágenes institucionales recibidas y conectadas; el guard de Inicio pasa con los datos reales. Ver [received-images.md](received-images.md) para pruebas y límites actuales. Los bloqueos de material anteriores son históricos; esto no acredita integración real ni revisión completa con lector de pantalla.
+
+## Validación con imágenes finales — 2026-10-23
+
+La usuaria aprobó explícitamente distribución, imágenes y textos; ver [visual-approval.md](visual-approval.md). La matriz real pasa en Chromium (14 celdas) y los recorridos principales Firefox (4 celdas), con axe sin violaciones, texto al 200%, controles/foco/anclas y carga real de los PNG. Cada motor también pasa los tres fallos de imagen y contenido sin JS. Detalle, límites y reproducción en [final-validation.md](final-validation.md). No son pruebas de integración con Historias.
+
+Para revisión manual se eligió Mac con VoiceOver. Pendiente URL navegable desde el Mac y registrar los anuncios/recorrido. T026/T032 no se cierran solo por aprobación visual o por automatización. WebKit sigue bloqueado por detección host de libGLESv2.so.2.
+
+## Cierre de revisión manual de Inicio — 2026-10-23
+
+La usuaria confirmó los encabezados con VoiceOver («todo esta bien») y aceptó los pasos guiados restantes («aceptamos todo, sigamos con lo que sigue»), además de la aprobación visual previa. Se registra como verificación manual reportada por ella en su Mac, no ejecutada remotamente por el asistente. Ver [manual-review.md](manual-review.md) para respuestas exactas, método y límites. T026/T032 completas en este alcance; WebKit y recorrido integrado siguen pendientes.

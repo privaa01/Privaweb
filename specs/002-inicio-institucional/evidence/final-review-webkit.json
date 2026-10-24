@@ -1,0 +1,13 @@
+{
+  "recordedAt": "2026-10-24T00:01:25.723Z",
+  "scope": "isolated real Home entry, not site integration",
+  "engine": "webkit",
+  "base": "http://127.0.0.1:4327",
+  "results": [
+    {
+      "name": "browser launch",
+      "status": "blocked",
+      "error": "browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝\n    at /workspace/Privaweb/specs/002-inicio-institucional/evidence/final-review.cjs:32:28\n    at Object.<anonymous> (/workspace/Privaweb/specs/002-inicio-institucional/evidence/final-review.cjs:109:3)"
+    }
+  ]
+}

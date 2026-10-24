@@ -1,0 +1,203 @@
+FAIL 360px text 100%: expect(locator).toBeFocused() failed
+
+Locator:  locator('#somos-priva h2')
+Expected: focused
+Received: inactive
+Timeout:  5000ms
+
+Call log:
+  - Expect "toBeFocused" locator('#somos-priva h2') with timeout 5000ms
+  - waiting for locator('#somos-priva h2')
+    14 × locator resolved to <h2 tabindex="-1" id="identity-title">Somos Priva</h2>
+       - unexpected value "inactive"
+
+FAIL 360px text 200%: expect(locator).toBeFocused() failed
+
+Locator:  locator('#somos-priva h2')
+Expected: focused
+Received: inactive
+Timeout:  5000ms
+
+Call log:
+  - Expect "toBeFocused" locator('#somos-priva h2') with timeout 5000ms
+  - waiting for locator('#somos-priva h2')
+    14 × locator resolved to <h2 tabindex="-1" id="identity-title">Somos Priva</h2>
+       - unexpected value "inactive"
+
+FAIL 390px text 100%: expect(locator).toBeFocused() failed
+
+Locator:  locator('#somos-priva h2')
+Expected: focused
+Received: inactive
+Timeout:  5000ms
+
+Call log:
+  - Expect "toBeFocused" locator('#somos-priva h2') with timeout 5000ms
+  - waiting for locator('#somos-priva h2')
+    14 × locator resolved to <h2 tabindex="-1" id="identity-title">Somos Priva</h2>
+       - unexpected value "inactive"
+
+FAIL 390px text 200%: expect(locator).toBeFocused() failed
+
+Locator:  locator('#somos-priva h2')
+Expected: focused
+Received: inactive
+Timeout:  5000ms
+
+Call log:
+  - Expect "toBeFocused" locator('#somos-priva h2') with timeout 5000ms
+  - waiting for locator('#somos-priva h2')
+    14 × locator resolved to <h2 tabindex="-1" id="identity-title">Somos Priva</h2>
+       - unexpected value "inactive"
+
+FAIL 430px text 100%: expect(locator).toBeFocused() failed
+
+Locator:  locator('#somos-priva h2')
+Expected: focused
+Received: inactive
+Timeout:  5000ms
+
+Call log:
+  - Expect "toBeFocused" locator('#somos-priva h2') with timeout 5000ms
+  - waiting for locator('#somos-priva h2')
+    14 × locator resolved to <h2 tabindex="-1" id="identity-title">Somos Priva</h2>
+       - unexpected value "inactive"
+
+FAIL 430px text 200%: expect(locator).toBeFocused() failed
+
+Locator:  locator('#somos-priva h2')
+Expected: focused
+Received: inactive
+Timeout:  5000ms
+
+Call log:
+  - Expect "toBeFocused" locator('#somos-priva h2') with timeout 5000ms
+  - waiting for locator('#somos-priva h2')
+    14 × locator resolved to <h2 tabindex="-1" id="identity-title">Somos Priva</h2>
+       - unexpected value "inactive"
+
+FAIL 768px text 100%: expect(locator).toBeFocused() failed
+
+Locator:  locator('#somos-priva h2')
+Expected: focused
+Received: inactive
+Timeout:  5000ms
+
+Call log:
+  - Expect "toBeFocused" locator('#somos-priva h2') with timeout 5000ms
+  - waiting for locator('#somos-priva h2')
+    14 × locator resolved to <h2 tabindex="-1" id="identity-title">Somos Priva</h2>
+       - unexpected value "inactive"
+
+FAIL 768px text 200%: expect(locator).toBeFocused() failed
+
+Locator:  locator('#somos-priva h2')
+Expected: focused
+Received: inactive
+Timeout:  5000ms
+
+Call log:
+  - Expect "toBeFocused" locator('#somos-priva h2') with timeout 5000ms
+  - waiting for locator('#somos-priva h2')
+    14 × locator resolved to <h2 tabindex="-1" id="identity-title">Somos Priva</h2>
+       - unexpected value "inactive"
+
+FAIL 1024px text 100%: expect(locator).toBeFocused() failed
+
+Locator:  locator('#somos-priva h2')
+Expected: focused
+Received: inactive
+
+Call log:
+  - Expect "toBeFocused" locator('#somos-priva h2') with timeout 5000ms
+  - waiting for locator('#somos-priva h2')
+    14 × locator resolved to <h2 tabindex="-1" id="identity-title">Somos Priva</h2>
+       - unexpected value "inactive"
+  - Target page, context or browser has been closed
+
+FAIL 1024px text 200%: browserContext.newPage: Target page, context or browser has been closed
+Browser logs:
+
+<launching> /usr/bin/chromium --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-HG0QCs --remote-debugging-pipe --no-startup-window
+<launched> pid=671159
+[pid=671159][err] [671159:671159:1023/235950.849208:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:208] open /home/agent/.config/chromium/Crash Reports/settings.dat: Read-only file system (30)
+[pid=671159][err] [671159:671159:1023/235950.849324:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:208] open /home/agent/.config/chromium/Crash Reports/settings.dat: Read-only file system (30)
+[pid=671159][err] [671159:671187:1023/235950.894417:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[pid=671159][err] [671159:671187:1023/235950.894450:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=671159][err] [671159:671187:1023/235950.898215:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[pid=671159][err] [671159:671187:1023/235950.898572:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[pid=671159][err] [671159:671187:1023/235950.898579:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=671159][err] [671159:671199:1023/235950.901005:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671201: Read-only file system (30)
+[pid=671159][err] [671159:671185:1023/235950.906693:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:208] open /home/agent/.config/chromium/Crash Reports/settings.dat: Read-only file system (30)
+[pid=671159][err] [671159:671187:1023/235950.947695:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=671159][err] [671159:671199:1023/235950.949033:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671227: Read-only file system (30)
+[pid=671159][err] [671159:671159:1023/235950.963565:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type:
+[pid=671159][err] [671159:671187:1023/235950.963638:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=671159][err] [671159:671159:1023/235950.963671:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type:
+[pid=671159][err] [671159:671187:1023/235950.963703:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=671159][err] [671159:671159:1023/235950.967388:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type:
+[pid=671159][err] [671159:671187:1023/235950.967470:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=671159][err] [671159:671187:1023/235950.968875:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[pid=671159][err] [671159:671187:1023/235950.968890:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[pid=671159][err] [671159:671159:1023/235950.968903:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type:
+[pid=671159][err] [671159:671159:1023/235950.968923:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type:
+[pid=671159][err] [671159:671187:1023/235950.968959:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=671159][err] [671159:671159:1023/235950.970075:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type:
+[pid=671159][err] [671159:671159:1023/235950.970340:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.Properties.GetAll: object_path= /org/freedesktop/UPower/devices/DisplayDevice: unknown error type:
+[pid=671159][err] [671159:671159:1023/235950.970353:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type:
+[pid=671159][err] [671159:671187:1023/235950.970385:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=671159][err] [671159:671159:1023/235950.971861:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type:
+[pid=671159][err] [671159:671187:1023/235950.971922:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[pid=671159][err] [671159:671159:1023/235950.972290:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type:
+[pid=671159][err]
+[pid=671159][err] (process:671159): dconf-CRITICAL **: 23:59:50.985: unable to create file '/home/agent/.cache/dconf/user': Read-only file system.  dconf will not work properly.
+[pid=671159][err]
+[pid=671159][err] (process:671159): dconf-CRITICAL **: 23:59:50.985: unable to create file '/home/agent/.cache/dconf/user': Read-only file system.  dconf will not work properly.
+[pid=671159][err]
+[pid=671159][err] (process:671159): dconf-CRITICAL **: 23:59:50.985: unable to create file '/home/agent/.cache/dconf/user': Read-only file system.  dconf will not work properly.
+[pid=671159][err] [671159:671199:1023/235951.013985:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671246: Read-only file system (30)
+[pid=671159][err] [671159:671199:1023/235951.033977:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671255: Read-only file system (30)
+[pid=671159][err] [671159:671199:1023/235951.036052:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671256: Read-only file system (30)
+[pid=671159][err] [671159:671199:1023/235951.804422:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671290: Read-only file system (30)
+[pid=671159][err] [671159:671199:1023/235957.398086:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671373: Read-only file system (30)
+[pid=671159][err] [671159:671199:1023/235957.412777:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671381: Read-only file system (30)
+[pid=671159][err] [671159:671199:1023/235957.415950:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671384: Read-only file system (30)
+[pid=671159][err] [671159:671199:1023/235958.132575:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671417: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000003.707947:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671474: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000003.725152:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671483: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000003.726727:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671485: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000004.423559:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671522: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000010.045438:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671587: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000010.063350:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671596: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000010.065563:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671598: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000010.985624:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671776: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000016.662252:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671981: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000016.693253:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671990: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000016.694903:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 671992: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000017.418354:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672023: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000022.995096:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672262: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000023.018999:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672271: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000023.020289:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672272: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000023.749220:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672305: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000029.295057:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672337: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000029.311263:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672344: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000029.312532:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672347: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000030.042268:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672384: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000035.633693:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672406: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000035.649769:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672415: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000035.651193:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672416: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000036.397921:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672449: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000041.986714:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672508: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000042.004196:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672517: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000042.006446:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672519: Read-only file system (30)
+[pid=671159][err] [671159:671199:1024/000042.758020:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:300] Failed to adjust OOM score of renderer with pid 672566: Read-only file system (30)
+[pid=671159] <gracefully close start>
+FAIL 1280px text 100%: browser.newContext: Target page, context or browser has been closed
+FAIL 1280px text 200%: browser.newContext: Target page, context or browser has been closed
+FAIL 1440px text 100%: browser.newContext: Target page, context or browser has been closed
+FAIL 1440px text 200%: browser.newContext: Target page, context or browser has been closed
+FAIL failed official image hero: browser.newContext: Target page, context or browser has been closed
+FAIL failed official image identidad: browser.newContext: Target page, context or browser has been closed
+FAIL failed official image cierre: browser.newContext: Target page, context or browser has been closed
+FAIL real home without JavaScript: browser.newContext: Target page, context or browser has been closed
+{"engine":"chromium","passed":0,"failed":18,"blocked":0}

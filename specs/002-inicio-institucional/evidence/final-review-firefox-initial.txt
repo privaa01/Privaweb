@@ -1,0 +1,94 @@
+FAIL 390px text 100%: locator.evaluate: Invalid image request.
+FAIL 390px text 200%: locator.evaluate: Invalid image request.
+FAIL 1440px text 100%: expect(locator).toBeFocused() failed
+
+Locator:  locator('#somos-priva h2')
+Expected: focused
+Received: inactive
+Timeout:  5000ms
+
+Call log:
+  - Expect "toBeFocused" locator('#somos-priva h2') with timeout 5000ms
+  - waiting for locator('#somos-priva h2')
+    14 × locator resolved to <h2 tabindex="-1" id="identity-title">Somos Priva</h2>
+       - unexpected value "inactive"
+
+FAIL 1440px text 200%: locator.evaluate: Invalid image request.
+PASS failed official image hero
+PASS failed official image identidad
+PASS failed official image cierre
+FAIL real home without JavaScript: locator.evaluate: Target page, context or browser has been closed
+Browser logs:
+
+<launching> /workspace/.cache/ms-playwright/firefox-1555/firefox/firefox -no-remote -headless -profile /tmp/playwright_firefoxdev_profile-DadGPG -juggler-pipe -silent
+<launched> pid=671631
+[pid=671631][err] *** You are running in headless mode.
+[pid=671631][err] JavaScript warning: resource://services-settings/Utils.sys.mjs, line 125: unreachable code after return statement
+[pid=671631][out]
+[pid=671631][out] Juggler listening to the pipe
+[pid=671631][out] console.warn: services.settings: #fetchAttachment: Forcing fallbackToDump to false due to Utils.LOAD_DUMPS being false
+[pid=671631][out] console.error: (new NotFoundError("Could not find fa0fc42c-d91d-fca7-34eb-806ff46062dc in cache or dump", "resource://services-settings/Attachments.sys.mjs", 48))
+[pid=671631][out] console.warn: "Unable to find the attachment for" "fa0fc42c-d91d-fca7-34eb-806ff46062dc"
+[pid=671631][out] console.error: "Error fetching the wallpaper attachments URL" (new SyntaxError("JSON.parse: unexpected end of data at line 1 column 1 of the JSON data", ""))
+[pid=671631][out] console.error: services.settings:
+[pid=671631][out]   Message: EmptyDatabaseError: "main/nimbus-desktop-experiments" has not been synced yet
+[pid=671631][out]   Stack:
+[pid=671631][out]     EmptyDatabaseError@resource://services-settings/Database.sys.mjs:19:5
+[pid=671631][out] list@resource://services-settings/Database.sys.mjs:96:13
+[pid=671631][out]
+[pid=671631][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]
+[pid=671631][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]
+[pid=671631][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]
+[pid=671631][out]
+[pid=671631][out]         ERROR: error in channel "content::13/16/4": exception while running method "callFunction" in namespace "page": Cannot find object with id = id-75 evaluateFunction/args<@chrome://juggler/content/content/Runtime.js:401:17
+[pid=671631][out] evaluateFunction@chrome://juggler/content/content/Runtime.js:398:17
+[pid=671631][out] callFunction@chrome://juggler/content/content/Runtime.js:107:41
+[pid=671631][out] _onMessageInternal@chrome://juggler/content/SimpleChannel.js:237:37
+[pid=671631][out] _onMessage@chrome://juggler/content/SimpleChannel.js:194:12
+[pid=671631][out] bindToActor/actor.receiveMessage@chrome://juggler/content/SimpleChannel.js:39:44
+[pid=671631][out]  _onMessageInternal@chrome://juggler/content/SimpleChannel.js:208:24
+[pid=671631][out] _onMessage@chrome://juggler/content/SimpleChannel.js:194:12
+[pid=671631][out] bindToActor/actor.receiveMessage@chrome://juggler/content/SimpleChannel.js:39:44
+[pid=671631][out]
+[pid=671631][out]
+[pid=671631][out]         ERROR: error in channel "content::13/16/5": exception while running method "callFunction" in namespace "page": Cannot find object with id = id-91 evaluateFunction/args<@chrome://juggler/content/content/Runtime.js:401:17
+[pid=671631][out] evaluateFunction@chrome://juggler/content/content/Runtime.js:398:17
+[pid=671631][out] callFunction@chrome://juggler/content/content/Runtime.js:107:41
+[pid=671631][out] _onMessageInternal@chrome://juggler/content/SimpleChannel.js:237:37
+[pid=671631][out] _onMessage@chrome://juggler/content/SimpleChannel.js:194:12
+[pid=671631][out] bindToActor/actor.receiveMessage@chrome://juggler/content/SimpleChannel.js:39:44
+[pid=671631][out]  _onMessageInternal@chrome://juggler/content/SimpleChannel.js:208:24
+[pid=671631][out] _onMessage@chrome://juggler/content/SimpleChannel.js:194:12
+[pid=671631][out] bindToActor/actor.receiveMessage@chrome://juggler/content/SimpleChannel.js:39:44
+[pid=671631][out]
+[pid=671631][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]
+[pid=671631][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]
+[pid=671631][out]       console.error: [Exception... "Favicon at "http://127.0.0.1:4327/favicon.ico" failed to load."  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "JS frame :: resource:///modules/FaviconLoader.sys.mjs :: onStopRequest :: line 282"  data: no]
+[pid=671631][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]
+[pid=671631][out] console.error: [Exception... "Favicon at "http://127.0.0.1:4327/favicon.ico" failed to load."  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "JS frame :: resource:///modules/FaviconLoader.sys.mjs :: onStopRequest :: line 282"  data: no]
+[pid=671631][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]
+[pid=671631][out] console.error: [Exception... "Favicon at "http://127.0.0.1:4327/favicon.ico" failed to load."  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "JS frame :: resource:///modules/FaviconLoader.sys.mjs :: onStopRequest :: line 282"  data: no]
+[pid=671631][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]
+[pid=671631][out] console.warn: BackupService: "There was an error while trying to get the Document's directory" [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIProperties.get]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource:///modules/backup/BackupService.sys.mjs :: get docsDirFolderPath :: line 1299"  data: no]
+[pid=671631][out] console.error: services.settings:
+[pid=671631][out]   Message: EmptyDatabaseError: "main/nimbus-desktop-experiments" has not been synced yet
+[pid=671631][out]   Stack:
+[pid=671631][out]     EmptyDatabaseError@resource://services-settings/Database.sys.mjs:19:5
+[pid=671631][out] list@resource://services-settings/Database.sys.mjs:96:13
+[pid=671631][out]
+[pid=671631][out] 1792800041717	addons.xpi	ERROR	System addon update list error Error: Failed downloading XML, status: 0, channelStatus: 2152400251, errorCode: 2, reason: error
+[pid=671631][out] console.error: "Could not download new icon" (new ServerInfoError("Server response is invalid SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data", "resource://services-settings/Attachments.sys.mjs", 40))
+[pid=671631] <gracefully close start>
+[pid=671631][out]
+[pid=671631][out]         ERROR: Failed "callFunction": connector for namespace "page" in channel "undefined" is disposed. _rejectCallbacksFromConnector@chrome://juggler/content/SimpleChannel.js:108:25
+[pid=671631][out] dispose@chrome://juggler/content/SimpleChannel.js:119:27
+[pid=671631][out] dispose@chrome://juggler/content/protocol/PageHandler.js:152:23
+[pid=671631][out] _dispose@chrome://juggler/content/protocol/Dispatcher.js:117:21
+[pid=671631][out] destroySession@chrome://juggler/content/protocol/Dispatcher.js:35:13
+[pid=671631][out] dispose@chrome://juggler/content/protocol/BrowserHandler.js:77:24
+[pid=671631][out] _dispose@chrome://juggler/content/protocol/Dispatcher.js:117:21
+[pid=671631][out] _dispose@chrome://juggler/content/protocol/Dispatcher.js:41:23
+[pid=671631][out] observe/browserHandler<@chrome://juggler/content/components/Juggler.js:143:22
+[pid=671631][out] Browser.close@chrome://juggler/content/protocol/BrowserHandler.js:156:10
+[pid=671631][out]
+{"engine":"firefox","passed":3,"failed":5,"blocked":0}

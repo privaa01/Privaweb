@@ -1,0 +1,15 @@
+
+> privaweb@0.1.0 check:home:contract
+> ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/home
+
+00:01:27 [types] Generated 52ms
+00:01:27 [check] Getting diagnostics for Astro files in /workspace/Privaweb/tests/fixtures/home...
+src/scripts/admin-inbox.ts:436:9 - warning ts(6385): 'returnValue' is deprecated.
+
+436       e.returnValue = "";
+            ~~~~~~~~~~~
+
+Result (96 files):
+- 0 errors
+- 0 warnings
+- 1 hint

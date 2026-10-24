@@ -1,0 +1,39 @@
+
+> privaweb@0.1.0 test:documents
+> node --experimental-strip-types --test tests/documents-*.test.ts
+
+✔ normal delivery keeps010 gate before Astro and exits nonzero without official facts (90.094181ms)
+✔ real target sections exist in their owning features (0.727524ms)
+✔ V07 missing public routes return own404, HEAD empty, root and assets valid (23.084862ms)
+✔ V08 confinement, no directory listings or private fallback (9.262803ms)
+✔ V05 Contacto consumes canonical notice including required precautions (1.293045ms)
+✔ review binds content and public operation, independent of key ordering (11.575461ms)
+✔ draft missing facts and review cannot publish (0.458379ms)
+✔ reject fixture (1.54905ms)
+✔ reject future (1.145233ms)
+✔ reject reference (0.893383ms)
+✔ reject hash (1.118612ms)
+✔ reject operation (0.694294ms)
+✔ reject placeholder (0.738581ms)
+✔ reject section (1.011551ms)
+✔ reject unsafe (1.207526ms)
+✔ reject path (1.016649ms)
+✔ reject notice (0.587013ms)
+✔ reject policy (0.783719ms)
+✔ reject blank (1.085443ms)
+✔ V11 notices binds exact bundle as well as revision, hash, expiry and all scopes (4.77441ms)
+✔ V11 reject missing (0.729948ms)
+✔ V11 reject synthetic (0.529316ms)
+✔ V11 reject future (0.971551ms)
+✔ V11 reject expired (0.609887ms)
+✔ V11 reject revision (0.607764ms)
+✔ V11 reject bytes (0.955007ms)
+✔ V11 reject other-scope (1.831745ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 256.323606

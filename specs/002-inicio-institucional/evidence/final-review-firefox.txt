@@ -1,0 +1,9 @@
+PASS 390px text 100%
+PASS 390px text 200%
+PASS 1440px text 100%
+PASS 1440px text 200%
+PASS failed official image hero
+PASS failed official image identidad
+PASS failed official image cierre
+PASS real home without JavaScript
+{"engine":"firefox","passed":8,"failed":0,"blocked":0}

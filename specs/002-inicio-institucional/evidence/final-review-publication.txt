@@ -1,0 +1,32 @@
+✔ raíz pública inexistente bloquea los recursos reales (3.733406ms)
+✔ ejemplo sintético válido comprueba camino de aceptación, no aprobación real (6.838107ms)
+✔ rechaza imagen pendiente (1.550743ms)
+✔ rechaza archivo inexistente verificado (3.588869ms)
+✔ rechaza dimensiones inválidas (0.849708ms)
+✔ rechaza imagen informativa sin alternativa (0.823599ms)
+✔ rechaza imagen decorativa con alternativa (0.667454ms)
+✔ rechaza imagen sin procedencia (0.847074ms)
+✔ rechaza ruta fuera de public (0.700594ms)
+✔ rechaza fixture no publicable (0.914075ms)
+✔ rechaza URL externa (0.836438ms)
+✔ rechaza C16 cambiado (0.824681ms)
+✔ rechaza ancla inválida (0.821185ms)
+✔ rechaza tarjetas reordenadas (0.693183ms)
+✔ rechaza revisión sin decisión (0.763719ms)
+✔ rechaza copy modificado tras revisar (0.818551ms)
+✔ rechaza tipografía pendiente (1.130381ms)
+✔ rechaza paleta sin referencia (0.607443ms)
+✔ rechaza revisión 0 pendiente (0.427894ms)
+✔ rechaza revisión 1 pendiente (0.374374ms)
+✔ rechaza revisión 2 pendiente (0.344118ms)
+✔ rechaza revisión 3 pendiente (0.402846ms)
+✔ rechaza revisión 4 pendiente (0.4325ms)
+✔ official home images, brand and editorial pass publication with real local files (0.948036ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 165.939695

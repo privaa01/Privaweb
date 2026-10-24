@@ -39,3 +39,11 @@ y hashes en resources.md/official-assets.json. Contraste sRGB actual: texto#1532
 #F6F9F6=13.06:1; blanco sobrefooter#0D2219=16.67:1; foco#047857 sobre#F6F9F6=5.17:1;
 focofooter#D7E4D8 sobre#0D2219=12.68:1. El soporte blanco dellogo preserva el PNG oscuro.
 No hay certificación de comparación final conwireframes o lector de pantalla; T026 permanece parcial.
+
+## Revalidación — 2026-10-23
+
+46Chromium y32Firefox aprobados con marca/fuente/paleta oficiales. La matriz100/200 permanece conforme;4 comprobaciones adicionales de controles de Inicio real (390/1440px×100/200) verifican activo, Enter/Tab/Escape/foco, menú/footer, controles≥44px, axe y overflow. La revisión manual específica001 fue solicitada en Mac/VoiceOver; la confirmación anterior002 no se reutiliza como pase de estos controles. WebKit sigue bloqueado. T025/T026 permanecen parciales por sus dependencias de aceptación final. Ver [closure-status.md](closure-status.md).
+
+## Respuesta manual recibida — 2026-10-23
+
+La usuaria confirmó que menú/activo, apertura y Escape con retorno de foco y nombres del footer funcionan correctamente en Mac con VoiceOver. Evidencia: manual-navigation-review.md. Esta confirmación cubre los controles compartidos de Inicio anteriores al cambio solicitado de Contacto Seguro; el nuevo destino se valida automáticamente con teclado/puntero. Revisión final de las otras páginas e integración siguen pendientes, sin cambiar casillas de tareas.

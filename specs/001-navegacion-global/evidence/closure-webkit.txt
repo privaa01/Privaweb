@@ -1,0 +1,35 @@
+
+> privaweb@0.1.0 test:e2e:contract
+> playwright test --project=webkit --grep=official104x40
+
+[WebServer] (node:685759) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:685795) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [webkit] › tests/e2e/navigation-brand.spec.ts:2:1 › official104x40 brand, approved tokens and locally loaded variable font (1ms)
+
+
+  1) [webkit] › tests/e2e/navigation-brand.spec.ts:2:1 › official104x40 brand, approved tokens and locally loaded variable font
+
+    Error: browserType.launch:
+    ╔══════════════════════════════════════════════════════╗
+    ║ Host system is missing dependencies to run browsers. ║
+    ║ Missing libraries:                                   ║
+    ║     libGLESv2.so.2                                   ║
+    ╚══════════════════════════════════════════════════════╝
+
+    Error Context: test-results/navigation-brand-official1-30ea9-ocally-loaded-variable-font-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/navigation-brand-official1-30ea9-ocally-loaded-variable-font-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/navigation-brand-official1-30ea9-ocally-loaded-variable-font-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [webkit] › tests/e2e/navigation-brand.spec.ts:2:1 › official104x40 brand, approved tokens and locally loaded variable font

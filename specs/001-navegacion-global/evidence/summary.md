@@ -1,6 +1,6 @@
 # Resultado de implementación —001 Navegación global
 
-**Actualización**:2026-10-20 (America/Bogota). **Estado**:23/28 tareas completas, cinco parciales/bloqueadas. Componentes y contrato local verificados; sin cierre de publicación/fidelidad/integración.
+**Actualización**:2026-10-23 (America/Bogota). **Estado**:23/28 tareas completas, cinco parciales/bloqueadas. Componentes y contrato local verificados; sin cierre de publicación/fidelidad/integración.
 
 ## Implementado
 
@@ -57,3 +57,11 @@ al servidor local010. [Navegador](official-documents-regression.txt), [HTTP](off
 Los bancos públicos copian solo brand/fonts compartidos preservando sus recursos sintéticos.
 No hay peticiones aGoogleFonts en runtime. No se aprueban recursos/editorial específicos
 faltantes de002–005 ni la configuración productiva009/010.
+
+## Revisión vigente de cierre — 2026-10-23
+
+46Chromium+32Firefox+2Node aprobados nuevamente;4 comprobaciones adicionales del menú/footer de Inicio real conformes. Las14celdas de navegación100/200 siguen pasando. WebKit bloqueado por libGLESv2; build completo por010/009; integración sin URL real. La prueba manual específica de controles en Inicio fue confirmada posteriormente; ver manual-navigation-review.md.23/28 tareas, cinco parciales; [estado exacto por tarea](closure-status.md). Los bloqueos históricos por ausencia de imágenes de Inicio ya están resueltos; otros destinos siguen pendientes.
+
+## Confirmación manual y cambio de Contacto Seguro — 2026-10-23
+
+La usuaria confirmó menú, activo, Escape/foco y nombres del footer con VoiceOver en su Mac. Solicitó que Contacto Seguro abra `/contacto.html` sin #escribir. Configuración, pruebas y contratos001/005 actualizados; se conserva el ancla del formulario para otros consumidores. Ver manual-navigation-review.md y contact-footer-change.md. No se cierra la aceptación de destinos todavía bloqueados ni la revisión final de las cuatro páginas;23/28 tareas.

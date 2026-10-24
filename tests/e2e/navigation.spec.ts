@@ -39,8 +39,17 @@ for (const path of routes) {
     const footer = page.getByRole('contentinfo');
     await expect(footer.getByText('Defendiendo la soberanía digital individual.', { exact: true })).toBeVisible();
     await expect(footer.getByText('© 2026 Priva. Todos los derechos reservados. Navega con dignidad.', { exact: true })).toBeVisible();
-    for (const [label, href] of [['panel administrador', '/admin/login'], ['Términos de Servicio', '/terminos.html'], ['Manifiesto de Datos', '/manifiesto-datos.html'], ['Contacto Seguro', '/contacto.html#escribir']]) {
+    for (const [label, href] of [['panel administrador', '/admin/login'], ['Términos de Servicio', '/terminos.html'], ['Manifiesto de Datos', '/manifiesto-datos.html'], ['Contacto Seguro', '/contacto.html']]) {
       await expect(footer.getByRole('link', { name: label, exact: true })).toHaveAttribute('href', href);
+    }
+    for (const keyboard of [false, true]) {
+      await page.goto(path);
+      const contact = page.getByRole('contentinfo').getByRole('link', { name: 'Contacto Seguro', exact: true });
+      if (keyboard) { await contact.focus(); await page.keyboard.press('Enter'); } else await contact.click();
+      await expect(page).toHaveURL(/\/contacto\.html$/);
+      expect(new URL(page.url()).hash).toBe('');
+      await expect(page.getByRole('heading', { level: 1 })).toBeInViewport();
+      await expect(page.getByRole('navigation', { name: 'Principal' }).locator('[aria-current="page"]')).toHaveText('Contáctanos');
     }
   });
 }

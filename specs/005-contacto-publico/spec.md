@@ -37,9 +37,10 @@ para mostrar las afirmaciones de privacidad.
 2. **Dado** la tarjeta Instagram y su URL oficial verificada, **cuando** consulto sus temas o
    activo Ir a Instagram, **entonces** encuentro anti-phishing, contraseñas, móviles y brechas,
    y llego a la misma cuenta oficial enlazada desde Historias; no una cuenta inventada ni un #. (C03)
-3. **Dado** Contacto Seguro del footer o /contacto.html#escribir, **cuando** activo el enlace,
-   entro directamente o recargo, **entonces** llego al formulario con su encabezado visible
-   y foco de destino coherente con la navegación compartida. (C04; integración 001)
+3. **Dado** un acceso a /contacto.html#escribir, **cuando** entro directamente o recargo,
+   **entonces** llego al formulario con su encabezado visible y foco de destino coherente.
+   Contacto Seguro del footer abre /contacto.html desde el inicio, según decisión explícita
+   de la usuaria; no activa el ancla del formulario. (C04; integración 001)
 4. **Dado** el formulario antes del envío, **cuando** leo su aviso, **entonces** conozco que
    nombre/alias, correo y mensaje se guardan para consulta privada del equipo autorizado;
    la respuesta por correo y su registro corresponden al flujo privado, no a publicación web.
@@ -255,7 +256,8 @@ la composición: contenido final y avisos requieren P03, sin declaraciones no co
 | Control/destino | Referencia | Responsable |
 |---|---|---|
 | Contacto | /contacto.html | 005 |
-| Formulario / Contacto Seguro | /contacto.html#escribir | 005 ofrece sección; 001 enlaza |
+| Contacto Seguro del footer | /contacto.html | 001 enlaza la página; 005 aporta contenido |
+| Acceso directo al formulario | /contacto.html#escribir | 005 conserva la sección para otros consumidores |
 | DESCARGAR APP del encabezado | /app.html#descarga | Integración 001/004 |
 | Ir a Instagram | URL oficial compartida con Historias | 005/P01; configuración única ya prevista en 003 |
 | Manifiesto de Datos desde aviso | /manifiesto-datos.html | 010 |
@@ -375,3 +377,5 @@ SQLite real y ledger, estados/errores y opción A implementados en bancos locale
 Node y 43 de navegador de 005 pasan; regresión separada: 115 Node y 128 navegador. Esto no
 cierra aceptación integrada: navegadores adicionales, materiales/revisión manual, P02/009/010,
 integración y build final siguen pendientes. Detalle y trazabilidad en evidence.md/tasks.md.
+
+2026-10-23 — Decisión explícita de navegación: Contacto Seguro del footer pasa a `/contacto.html` sin salto al formulario. Se conserva `#escribir` para acceso directo, aviso/Manifiesto y demás consumidores. No se altera validación, guardado ni tratamiento de consultas.

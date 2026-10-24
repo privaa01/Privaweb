@@ -4,7 +4,7 @@
 **Feature**: `001-navegacion-global`
 **Input**: G01–G06; constitución 1.0.0. El valor BRANCH devuelto por Spec Kit identifica
 la feature seleccionada; no acredita una rama Git creada.
-**Estado**: reanudado2026-10-20;23/28 tareas completas. Contrato006 recibido, guard local probado y foco de fragmento repetido corregido paraFirefox. Recursos comunes recibidos; fidelidad final y entrega integrada pendientes; evidencia en evidence/summary.md.
+**Estado**: reanudado2026-10-20;23/28 tareas completas, revalidadas2026-10-23. Contrato006 recibido, guard local probado y foco de fragmento repetido corregido paraFirefox. Recursos comunes recibidos; fidelidad final y entrega integrada pendientes; evidencia en evidence/summary.md.
 
 ## Summary
 
@@ -31,7 +31,7 @@ Chromium para matriz de tamaños y Firefox/WebKit para regresión de recorridos 
 para construir el menú; ningún framework de UI hidratado ni llamada externa de navegación.
 Sin presupuesto numérico de latencia no respaldado por requisitos.
 **Constraints**: 360/390/430/768/1024/1280/1440 px; texto 200%; contraste 4.5:1 normal y
-3:1 grande/componentes; controles aproximadamente 44 px. Logo/tipografía/colores oficiales pendientes.
+3:1 grande/componentes; controles aproximadamente 44 px. Logo/tipografía/colores comunes recibidos; revisión final de destinos pendiente.
 **Scale/Scope**: cuatro páginas públicas, cuatro entradas del menú, dos CTA según origen,
 footer común con cuatro enlaces. G01–G06 no implican contenido completo de otras features.
 
@@ -68,7 +68,7 @@ specs/001-navegacion-global/
 └── checklists/requirements.md
 ```
 
-[tasks.md](tasks.md) registra ejecución local y las seis tareas parciales/bloqueadas; no equivale a aprobación productiva.
+[tasks.md](tasks.md) registra ejecución local y las cinco tareas parciales/bloqueadas; no equivale a aprobación productiva.
 
 ### Source Code (repository root)
 
@@ -170,3 +170,9 @@ Copia oficial a public/brand, fuente variable local desdegoogle/fonts conOFL, si
 fuentes remotas en runtime. Hook compartido copia brand/fonts en bancos públicos sin
 mezclar sus contenidos con dist. T024 completa; contraste, dimensiones/carga y navegación
 se verifican con recursos reales, sin cerrar la revisión visual final de otrasfeatures.
+
+## Revisión de cierre — 2026-10-23
+
+Navegación001 revalidada en Chromium/Firefox y guard006; pruebas adicionales de controles en Inicio real conformes.23/28 tareas, sin casillas nuevas cerradas: faltan build/destinos finales, WebKit, revisión manual específica y entorno integrado. Las imágenes de Inicio ya no son un bloqueo; continúan las dependencias de003/004/005/006/009/010. Evidencia actual y siguiente paso por cada tarea en [evidence/closure-status.md](evidence/closure-status.md).
+
+2026-10-23 — Contacto Seguro del footer abre `/contacto.html` sin ancla, por instrucción explícita de la usuaria. Se conserva `#escribir` para los consumidores del formulario ajenos al footer. La revisión manual guiada de controles de Inicio con VoiceOver fue confirmada; aceptación integrada de destinos sigue pendiente.

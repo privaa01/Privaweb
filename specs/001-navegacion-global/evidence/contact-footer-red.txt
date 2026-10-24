@@ -1,0 +1,168 @@
+
+> privaweb@0.1.0 test:e2e:contract
+> playwright test --project=chromium --grep=US3: footer
+
+[WebServer] (node:686745) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 2 workers
+
+(node:686783) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:686782) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /historias.html (5.7s)
+  ✘  1 [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /index.html (5.7s)
+(node:687060) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:687059) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /app.html (5.6s)
+  ✘  3 [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /contacto.html (5.7s)
+
+
+  1) [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /index.html ──────────────────────
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByRole('contentinfo').getByRole('link', { name: 'Contacto Seguro', exact: true })
+    Expected: "/contacto.html"
+    Received: "/contacto.html#escribir"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByRole('contentinfo').getByRole('link', { name: 'Contacto Seguro', exact: true }) with timeout 5000ms
+      - waiting for getByRole('contentinfo').getByRole('link', { name: 'Contacto Seguro', exact: true })
+        14 × locator resolved to <a href="/contacto.html#escribir">Contacto Seguro</a>
+           - unexpected value "/contacto.html#escribir"
+
+
+      41 |     await expect(footer.getByText('© 2026 Priva. Todos los derechos reservados. Navega con dignidad.', { exact: true })).toBeVisible();
+      42 |     for (const [label, href] of [['panel administrador', '/admin/login'], ['Términos de Servicio', '/terminos.html'], ['Manifiesto de Datos', '/manifiesto-datos.html'], ['Contacto Seguro', '/contacto.html']]) {
+    > 43 |       await expect(footer.getByRole('link', { name: label, exact: true })).toHaveAttribute('href', href);
+         |                                                                            ^
+      44 |     }
+      45 |     for (const keyboard of [false, true]) {
+      46 |       await page.goto(path);
+        at /workspace/Privaweb/tests/e2e/navigation.spec.ts:43:76
+
+    Error Context: test-results/navigation-US3-footer-index-html-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/navigation-US3-footer-index-html-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/navigation-US3-footer-index-html-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /historias.html ──────────────────
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByRole('contentinfo').getByRole('link', { name: 'Contacto Seguro', exact: true })
+    Expected: "/contacto.html"
+    Received: "/contacto.html#escribir"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByRole('contentinfo').getByRole('link', { name: 'Contacto Seguro', exact: true }) with timeout 5000ms
+      - waiting for getByRole('contentinfo').getByRole('link', { name: 'Contacto Seguro', exact: true })
+        14 × locator resolved to <a href="/contacto.html#escribir">Contacto Seguro</a>
+           - unexpected value "/contacto.html#escribir"
+
+
+      41 |     await expect(footer.getByText('© 2026 Priva. Todos los derechos reservados. Navega con dignidad.', { exact: true })).toBeVisible();
+      42 |     for (const [label, href] of [['panel administrador', '/admin/login'], ['Términos de Servicio', '/terminos.html'], ['Manifiesto de Datos', '/manifiesto-datos.html'], ['Contacto Seguro', '/contacto.html']]) {
+    > 43 |       await expect(footer.getByRole('link', { name: label, exact: true })).toHaveAttribute('href', href);
+         |                                                                            ^
+      44 |     }
+      45 |     for (const keyboard of [false, true]) {
+      46 |       await page.goto(path);
+        at /workspace/Privaweb/tests/e2e/navigation.spec.ts:43:76
+
+    Error Context: test-results/navigation-US3-footer-historias-html-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/navigation-US3-footer-historias-html-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/navigation-US3-footer-historias-html-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /app.html ────────────────────────
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByRole('contentinfo').getByRole('link', { name: 'Contacto Seguro', exact: true })
+    Expected: "/contacto.html"
+    Received: "/contacto.html#escribir"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByRole('contentinfo').getByRole('link', { name: 'Contacto Seguro', exact: true }) with timeout 5000ms
+      - waiting for getByRole('contentinfo').getByRole('link', { name: 'Contacto Seguro', exact: true })
+        14 × locator resolved to <a href="/contacto.html#escribir">Contacto Seguro</a>
+           - unexpected value "/contacto.html#escribir"
+
+
+      41 |     await expect(footer.getByText('© 2026 Priva. Todos los derechos reservados. Navega con dignidad.', { exact: true })).toBeVisible();
+      42 |     for (const [label, href] of [['panel administrador', '/admin/login'], ['Términos de Servicio', '/terminos.html'], ['Manifiesto de Datos', '/manifiesto-datos.html'], ['Contacto Seguro', '/contacto.html']]) {
+    > 43 |       await expect(footer.getByRole('link', { name: label, exact: true })).toHaveAttribute('href', href);
+         |                                                                            ^
+      44 |     }
+      45 |     for (const keyboard of [false, true]) {
+      46 |       await page.goto(path);
+        at /workspace/Privaweb/tests/e2e/navigation.spec.ts:43:76
+
+    Error Context: test-results/navigation-US3-footer-app-html-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/navigation-US3-footer-app-html-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/navigation-US3-footer-app-html-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /contacto.html ───────────────────
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByRole('contentinfo').getByRole('link', { name: 'Contacto Seguro', exact: true })
+    Expected: "/contacto.html"
+    Received: "/contacto.html#escribir"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByRole('contentinfo').getByRole('link', { name: 'Contacto Seguro', exact: true }) with timeout 5000ms
+      - waiting for getByRole('contentinfo').getByRole('link', { name: 'Contacto Seguro', exact: true })
+        14 × locator resolved to <a href="/contacto.html#escribir">Contacto Seguro</a>
+           - unexpected value "/contacto.html#escribir"
+
+
+      41 |     await expect(footer.getByText('© 2026 Priva. Todos los derechos reservados. Navega con dignidad.', { exact: true })).toBeVisible();
+      42 |     for (const [label, href] of [['panel administrador', '/admin/login'], ['Términos de Servicio', '/terminos.html'], ['Manifiesto de Datos', '/manifiesto-datos.html'], ['Contacto Seguro', '/contacto.html']]) {
+    > 43 |       await expect(footer.getByRole('link', { name: label, exact: true })).toHaveAttribute('href', href);
+         |                                                                            ^
+      44 |     }
+      45 |     for (const keyboard of [false, true]) {
+      46 |       await page.goto(path);
+        at /workspace/Privaweb/tests/e2e/navigation.spec.ts:43:76
+
+    Error Context: test-results/navigation-US3-footer-contacto-html-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/navigation-US3-footer-contacto-html-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/navigation-US3-footer-contacto-html-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /index.html ───────────────────────
+    [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /historias.html ───────────────────
+    [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /app.html ─────────────────────────
+    [chromium] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /contacto.html ────────────────────

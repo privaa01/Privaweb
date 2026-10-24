@@ -12,3 +12,7 @@
 T021 completa como preparación y verificación local de contrato. T023/T025–T028 mantienen cierre parcial/bloqueado; no se apruebaG05/G06 integrado ni se cuenta404 como autorización. Logs de reanudación en archivos resume-* de este directorio.
 
 T024 completada tras aporte oficial de logo/fuente/paleta por la usuaria; no implica aprobar imágenes/textos de002–005 ni baseURL/operación009/010.
+
+## Diagnóstico vigente — 2026-10-23
+
+La conexión de las cuatro páginas a PublicLayout ya existe; no se reconstruye. La suite integrada continúa sin ejecutar por falta de PRIVA_INTEGRATION_BASE_URL real; build completo rechazado por010/009. Guards individuales003/004/005/006/010 también siguen bloqueados, mientras002 pasa. Detalle y acciones concretas en [closure-status.md](closure-status.md) y closure-dependencies.json. Dos pruebas de guard006 con SQLite real pasan, pero no sustituyen los recorridos integrados.

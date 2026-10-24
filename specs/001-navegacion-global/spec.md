@@ -2,7 +2,7 @@
 
 **Feature Directory**: `specs/001-navegacion-global`
 **Created**: 2026-10-16
-**Updated**: 2026-10-20
+**Updated**: 2026-10-23
 **Status**: implementación local retomada;23/28 tareas completas, contrato006 recibido y corrección de focoFirefox verificada. Logo/fuente/paleta incorporados; WebKit, fidelidad final y aceptación integrada pendientes.
 **Input**: `$speckit-specify 001`: desarrollar la feature existente sin crear otra ni ampliar alcance.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), requisitos G01–G06; [constitución 1.0.0](../../.specify/memory/constitution.md), CONST-01–04 y CONST-08–12.
@@ -76,7 +76,7 @@ por separado que entrar al acceso administrativo no revela datos privados sin se
    **entonces** abro el documento correspondiente con contenido aprobado, sin textos
    de borrador presentados como definitivos. (G06)
 4. **Dado** el footer de cualquier página, **cuando** activo Contacto Seguro,
-   **entonces** llego al formulario de Contacto y puedo identificar su encabezado. (G06)
+   **entonces** llego a la página de Contacto desde su inicio, sin salto automático al formulario, y puedo identificar su encabezado principal. (G06)
 
 ### Edge Cases
 
@@ -121,7 +121,7 @@ por separado que entrar al acceso administrativo no revela datos privados sin se
   sesiones y autorización de operaciones.
 - **FR-006 / G06 — Destinos informativos y Contacto Seguro**: El footer DEBE incluir
   Términos de Servicio, Manifiesto de Datos y Contacto Seguro. Los dos primeros DEBEN abrir
-  su contenido aprobado; el último DEBE llevar al formulario de Contacto. No se aceptan
+  su contenido aprobado; el último DEBE abrir `/contacto.html` sin fragmento, desde el inicio de la página. No se aceptan
   enlaces vacíos o borradores publicados para dar por completo el recorrido.
 
 ### Contrato de destinos
@@ -143,9 +143,9 @@ conforme a CONST-01/04. No se requiere decidir tecnología para especificar esto
 | panel administrador | `/admin/login` | 006 |
 | Términos de Servicio | `/terminos.html` | 010 |
 | Manifiesto de Datos | `/manifiesto-datos.html` | 010 |
-| Contacto Seguro | `/contacto.html#escribir` | 005 |
+| Contacto Seguro | `/contacto.html` | 005 |
 
-El enlace de Contacto Seguro desde Contacto puede usar su propia ancla `#escribir`.
+Contacto Seguro abre `/contacto.html` también desde Contacto; no utiliza `#escribir`. El ancla del formulario se conserva para otros enlaces que sí la requieran.
 Las anclas de contenido #somos-priva/#que-hacemos pertenecen a 002 y #como-funciona a 004.
 No se introduce #maria. Las otras CTA internas y enlaces externos quedan en sus respectivas features.
 
@@ -203,12 +203,12 @@ Los números de escenario son locales a esta feature, no IDs históricos del cat
 
 | ID original | Requisito local | Escenarios | Fuente | Estado de aplicación |
 |---|---|---|---|---|
-| G01 | FR-001 | US1.1–US1.5 | PDF 1–4 / C06 | Contrato local validado; integración y recursos pendientes |
-| G02 | FR-002 | US2.1, US2.2, US2.4 | PDF 1–2 / C10 | Contrato local validado; integración y recursos pendientes |
-| G03 | FR-003 | US2.3, US2.4 | PDF 3–4 | Contrato local validado; integración y recursos pendientes |
-| G04 | FR-004 | US3.1 | PDF 1–4 / C34 | Contrato local validado; integración y recursos pendientes |
-| G05 | FR-005 | US3.2 | PDF 1–4 + captura de acceso | Contrato local validado; integración y recursos pendientes |
-| G06 | FR-006 | US3.3, US3.4 | PDF 1–4 | Contrato local validado; integración y recursos pendientes |
+| G01 | FR-001 | US1.1–US1.5 | PDF 1–4 / C06 | Contrato y recursos comunes validados; aceptación de destinos e integración pendientes |
+| G02 | FR-002 | US2.1, US2.2, US2.4 | PDF 1–2 / C10 | Contrato y recursos comunes validados; aceptación de destinos e integración pendientes |
+| G03 | FR-003 | US2.3, US2.4 | PDF 3–4 | Contrato y recursos comunes validados; aceptación de destinos e integración pendientes |
+| G04 | FR-004 | US3.1 | PDF 1–4 / C34 | Contrato y recursos comunes validados; aceptación de destinos e integración pendientes |
+| G05 | FR-005 | US3.2 | PDF 1–4 + captura de acceso | Contrato y recursos comunes validados; aceptación de destinos e integración pendientes |
+| G06 | FR-006 | US3.3, US3.4 | PDF 1–4 | Contrato y recursos comunes validados; aceptación de destinos e integración pendientes |
 
 ### Registro documental
 
@@ -250,3 +250,11 @@ su aprobación y build integrado siguen pendientes. Ver evidencia vigente en evi
 104×40, variables de paleta y PlusJakartaSans local200–800/OFL. Header/footer comparten
 recurso y geometría correctos, sin tráfico aGoogleFonts.23/28 tareas; T023/T025/T026/T027/T028
 siguen parciales/bloqueadas, sin aprobar imágenes/textos de002 ni cierre integrado.
+
+## Revisión de cierre — 2026-10-23
+
+Navegación001 revalidada en Chromium/Firefox y guard006; pruebas adicionales de controles en Inicio real conformes.23/28 tareas, sin casillas nuevas cerradas: faltan build/destinos finales, WebKit, revisión manual específica y entorno integrado. Las imágenes de Inicio ya no son un bloqueo; continúan las dependencias de003/004/005/006/009/010. Evidencia actual y siguiente paso por cada tarea en [evidence/closure-status.md](evidence/closure-status.md).
+
+## Decisión de navegación — 2026-10-23
+
+La usuaria confirmó que menú, activo, Escape/foco y enlaces anunciados del footer funcionan correctamente en su revisión guiada con VoiceOver. Solicitó que Contacto Seguro abra directamente la página de Contacto. Se actualizan G06/FR-006, US3.4 y contrato a `/contacto.html` sin fragmento. La confirmación de controles no acredita los destinos integrados todavía bloqueados.

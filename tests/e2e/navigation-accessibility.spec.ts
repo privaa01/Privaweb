@@ -30,7 +30,7 @@ const paths = ['/index.html', '/historias.html', '/app.html', '/contacto.html'];
 const names = ['Inicio', 'Historias', 'Priva App', 'Contáctanos'];
 const footers = [
   ['panel administrador', '/admin/login'], ['Términos de Servicio', '/terminos.html'],
-  ['Manifiesto de Datos', '/manifiesto-datos.html'], ['Contacto Seguro', '/contacto.html#escribir'],
+  ['Manifiesto de Datos', '/manifiesto-datos.html'], ['Contacto Seguro', '/contacto.html'],
 ];
 async function activate(page: Page, link: Locator, keyboard: boolean) {
   if (keyboard) { await link.focus(); await page.keyboard.press('Enter'); }
@@ -81,7 +81,7 @@ for (const width of [360, 390, 430, 768, 1024, 1280, 1440]) {
             await activate(page, page.getByRole('contentinfo').getByRole('link', { name: label, exact: true }), keyboard);
             await expect(page).toHaveURL(new RegExp(href.replace('.', '\\.') + '$'));
             await expect(page.getByRole('main')).toBeVisible();
-            if (label === 'Contacto Seguro') await expect(page.locator('#escribir').getByRole('heading')).toBeInViewport();
+            if (label === 'Contacto Seguro') await expect(page.getByRole('heading', { level: 1 })).toBeInViewport();
             await fits(page);
           }
         }

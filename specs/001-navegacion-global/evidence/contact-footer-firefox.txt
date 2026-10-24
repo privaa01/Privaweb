@@ -1,0 +1,19 @@
+
+> privaweb@0.1.0 test:e2e:contract
+> playwright test --project=firefox --grep=US3: footer
+
+[WebServer] (node:688028) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 2 workers
+
+(node:688069) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:688070) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [firefox] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /index.html (1.9s)
+  ✓  2 [firefox] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /historias.html (1.9s)
+  ✓  3 [firefox] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /app.html (971ms)
+  ✓  4 [firefox] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /contacto.html (919ms)
+
+  4 passed (6.2s)

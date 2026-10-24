@@ -2,7 +2,7 @@
 
 **Input**: [spec](spec.md), [plan](plan.md), [research](research.md), [modelo](data-model.md),
 [contrato](contracts/navigation.md), [guía](quickstart.md) y constitución 1.0.0.
-**Fecha**: 2026-10-16. **Actualización**:2026-10-20. **Estado**:23 tareas completadas;5 parciales/bloqueadas por recursos, operación o validación pendiente.
+**Fecha**: 2026-10-16. **Actualización**:2026-10-23. **Estado**:23/28 tareas completas;5 parciales por integración de destinos, WebKit y revisión manual específica. Ver evidence/closure-status.md.
 **Tests**: incluidos porque el spec exige recorridos observables y accesibilidad verificable.
 Escribir pruebas antes del comportamiento y comprobar el fallo pertinente; no confundir fallo
 por entorno roto con fallo funcional. No se impone cobertura numérica arbitraria.
@@ -146,3 +146,11 @@ aplicación (T001/T005/T007/T023/T027); U1 hace explícito contrato privado pend
 - T028 parcial: documentación actualizada; cierre total depende de aceptación integrada y recursos reales.
 
 Corrección de foco de reactivación del mismo fragmento: Firefox completa la activación nativa después del click y puede devolver foco albody en keyupEnter. Se difiere mejora de foco tras activación ykeyup; sin preventDefault, cambios de URL/historial ni interferencia con clics modificados. El caso existente falló antes y pasó después. No se modificaron checklists ni se publicaron fixtures.23/28 completas no equivale a23 requisitos originales ni cierre productivo.
+
+## Revisión de tareas abiertas — 2026-10-23
+
+Revalidación solicitada para cerrar001:46Chromium,32Firefox y2Node de autorización aprobados;4 comprobaciones adicionales del menú/footer sobre Inicio real también conformes. Checks raíz y contractual sin errores/advertencias. Las cuatro páginas existen y usan el layout compartido. El guard de Inicio pasa; los de003/004/005/006/010 conservan pendientes y el build completo falla en010. WebKit falla antes de iniciar por libGLESv2.so.2. Suite integrada bloqueada sin baseURL real.
+
+T023/T025/T026/T027/T028 permanecen parciales según sus criterios originales;23/28 completas, sin cerrar integración mediante fixtures. La aceptación manual de002 no se atribuye a menú/footer de001; se solicitó revisión específica en el Mac de la usuaria, aún pendiente. Estado detallado, evidencia por tarea y secuencia para desbloquear en [evidence/closure-status.md](evidence/closure-status.md).
+
+2026-10-23 — Respuesta de revisión manual001 recibida: controles de menú/footer en Inicio confirmados por la usuaria en Mac/VoiceOver; ver evidence/manual-navigation-review.md. Cambio explícito de Contacto Seguro a `/contacto.html` sin ancla implementado y reflejado en contrato001/spec005 y pruebas. T026 avanza en su parte manual; sigue pendiente aceptación final de las cuatro páginas junto con T023/T025/T027/T028.23/28 tareas sin cierres ficticios.

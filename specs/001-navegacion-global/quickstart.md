@@ -156,3 +156,9 @@ real; bancoshome/stories/app/contact/documents copian brand/fonts compartidos al
 materiales sintéticos de cada uno. Comprobar licencia, hashes, imagen104×40 y carga de fuente
 con `navigation-brand.spec.ts`; no publicar los bancos como sitio final. El cierre sigue requiriendo
 lectura asistida/fidelidad y contenido/operación real de otrasfeatures.
+
+## Revisión de cierre — 2026-10-23
+
+Navegación001 revalidada en Chromium/Firefox y guard006; pruebas adicionales de controles en Inicio real conformes.23/28 tareas, sin casillas nuevas cerradas: faltan build/destinos finales, WebKit, revisión manual específica y entorno integrado. Las imágenes de Inicio ya no son un bloqueo; continúan las dependencias de003/004/005/006/009/010. Evidencia actual y siguiente paso por cada tarea en [evidence/closure-status.md](evidence/closure-status.md).
+
+2026-10-23 — Contacto Seguro del footer abre `/contacto.html` sin ancla, por instrucción explícita de la usuaria. Se conserva `#escribir` para los consumidores del formulario ajenos al footer. La revisión manual guiada de controles de Inicio con VoiceOver fue confirmada; aceptación integrada de destinos sigue pendiente.

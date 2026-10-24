@@ -1,0 +1,30 @@
+[
+  {
+    "file": "src/pages/index.astro",
+    "exists": true,
+    "sharedLayoutImport": true,
+    "pageIdConfigured": true,
+    "guardsIntact": true
+  },
+  {
+    "file": "src/pages/historias.astro",
+    "exists": true,
+    "sharedLayoutImport": true,
+    "pageIdConfigured": true,
+    "guardsIntact": true
+  },
+  {
+    "file": "src/pages/app.astro",
+    "exists": true,
+    "sharedLayoutImport": true,
+    "pageIdConfigured": true,
+    "guardsIntact": true
+  },
+  {
+    "file": "src/pages/contacto.astro",
+    "exists": true,
+    "sharedLayoutImport": true,
+    "pageIdConfigured": true,
+    "guardsIntact": true
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "width": 390,
+    "text": 100,
+    "result": "pass",
+    "scope": "shared controls on real Home; external destinations not navigated"
+  },
+  {
+    "width": 390,
+    "text": 200,
+    "result": "pass",
+    "scope": "shared controls on real Home; external destinations not navigated"
+  },
+  {
+    "width": 1440,
+    "text": 100,
+    "result": "pass",
+    "scope": "shared controls on real Home; external destinations not navigated"
+  },
+  {
+    "width": 1440,
+    "text": 200,
+    "result": "pass",
+    "scope": "shared controls on real Home; external destinations not navigated"
+  }
+]

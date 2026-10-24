@@ -3,12 +3,12 @@ import {navigationPrivateContract as contract} from '../helpers/navigation-priva
 // Only integration mode, against a supplied real environment; no fixture webServer.
 const routes=['/index.html','/historias.html','/app.html','/contacto.html'];
 const labels=['Inicio','Historias','Priva App','Contáctanos'];
-for(const path of ['/admin/login','/terminos.html','/manifiesto-datos.html','/contacto.html#escribir']){
+for(const path of ['/admin/login','/terminos.html','/manifiesto-datos.html','/contacto.html']){
  test(`Destino integrado real ${path}`,async({page})=>{
  const response=await page.goto(path);expect(response?.status()).toBe(200);await expect(page.getByRole('main')).toBeVisible();
  expect(await page.locator('body').textContent()).not.toMatch(/contenido ficticio|destino exclusivamente de prueba|contenido sintético|fixture|borrador en revisión|pendiente de revisión/i);
  if(path==='/admin/login'){await expect(page.getByRole('textbox',{name:/correo/i})).toBeVisible();await expect(page.getByLabel(/contraseña/i).first()).toBeVisible();}
- else if(path.includes('#'))await expect(page.locator('#escribir').getByRole('textbox').first()).toBeVisible();
+ else if(path==='/contacto.html')await expect(page.getByRole('heading',{level:1})).toBeInViewport();
  else await expect(page.getByRole('heading',{level:1,name:path.includes('terminos')?'Términos de Servicio':'Manifiesto de Datos',exact:true})).toBeVisible();
  });
 }
@@ -30,12 +30,12 @@ test('G01/G02/G03 navegación y CTA sobre páginas reales',async({page})=>{
 });
 
 test('G04/G05/G06 cuatrofooters y16destinos complementarios reales',async({page})=>{
- const destinations=[['panel administrador','/admin/login'],['Términos de Servicio','/terminos.html'],['Manifiesto de Datos','/manifiesto-datos.html'],['Contacto Seguro','/contacto.html#escribir']];
+ const destinations=[['panel administrador','/admin/login'],['Términos de Servicio','/terminos.html'],['Manifiesto de Datos','/manifiesto-datos.html'],['Contacto Seguro','/contacto.html']];
  for(const origin of routes)for(const [name,path] of destinations){
  await page.goto(origin);const footer=page.getByRole('contentinfo');await expect(footer.getByText('Defendiendo la soberanía digital individual.',{exact:true})).toBeVisible();await expect(footer.getByText('© 2026 Priva. Todos los derechos reservados. Navega con dignidad.',{exact:true})).toBeVisible();
  const link=footer.getByRole('link',{name,exact:true});await link.focus();await page.keyboard.press('Enter');await expect(page).toHaveURL(new RegExp(path.replace('.','\\.')+'$'));await expect(page.getByRole('main')).toBeVisible();
  expect(await page.locator('body').textContent()).not.toMatch(/contenido ficticio|destino exclusivamente de prueba|contenido sintético|fixture|borrador en revisión|pendiente de revisión/i);
  if(name==='panel administrador')await expect(page.getByRole('button',{name:'Entrar',exact:true})).toBeVisible();
- if(name==='Contacto Seguro')await expect(page.locator('#escribir').getByRole('heading')).toBeInViewport();
+ if(name==='Contacto Seguro')await expect(page.getByRole('heading',{level:1})).toBeInViewport();
  }
 });

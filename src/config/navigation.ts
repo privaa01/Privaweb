@@ -19,7 +19,7 @@ export const footer = {
     { label: 'panel administrador', href: '/admin/login' },
     { label: 'Términos de Servicio', href: '/terminos.html' },
     { label: 'Manifiesto de Datos', href: '/manifiesto-datos.html' },
-    { label: 'Contacto Seguro', href: '/contacto.html#escribir' },
+    { label: 'Contacto Seguro', href: '/contacto.html' },
   ],
 } as const;
 export interface BrandAsset { src: string; alt: string; width?: number; height?: number }

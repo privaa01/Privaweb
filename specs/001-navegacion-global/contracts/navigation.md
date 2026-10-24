@@ -25,9 +25,9 @@ G04: logo; lema “Defendiendo la soberanía digital individual.”; texto exact
 | panel administrador | /admin/login | 006 |
 | Términos de Servicio | /terminos.html | 010 |
 | Manifiesto de Datos | /manifiesto-datos.html | 010 |
-| Contacto Seguro | /contacto.html#escribir | 005 |
+| Contacto Seguro | /contacto.html | 005 |
 
-En Contacto se admite #escribir. No destino vacío ni # aislado.
+Decisión explícita de la usuaria, 2026-10-23: Contacto Seguro abre la página desde el inicio, también desde Contacto. No añade #escribir, no abre una pestaña nueva ni omite el contenido inicial. El ancla del formulario sigue disponible para otros consumidores.
 
 ## Componentes previstos
 

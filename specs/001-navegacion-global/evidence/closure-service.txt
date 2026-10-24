@@ -1,0 +1,14 @@
+
+> privaweb@0.1.0 test:navigation:service
+> node --experimental-strip-types --test tests/navigation-service.test.ts
+
+✔ G05 real006 handler protects private documents GET/HEAD, no session or forged cookie (96.934416ms)
+✔ G05 session API: actual401 JSON with required header;403 without, no static fallback (8.353667ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 374.117241

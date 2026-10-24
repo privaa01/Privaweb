@@ -1,0 +1,32 @@
+[
+  {
+    "script": "require-home-publication.mjs",
+    "exitCode": 0,
+    "message": ""
+  },
+  {
+    "script": "require-stories-publication.mjs",
+    "exitCode": 1,
+    "message": "BLOQUEADO 003: Aprende de casos reales sobre robo de datos.: revisión editorial pendiente o desactualizada; Identifica el error y aprende: revisión editorial pendiente o desactualizada; Sigue explorando, aprende y mantente seguro.: revisión editorial pendiente o desactualizada; Somos Priva: revisión editorial pendiente o desactualizada; Informamos para que estés en control.: revisión editorial pendiente o desactualizada; recurso oficial pendiente; dimensiones pendientes; ruta oficial inválida; recurso oficial pendiente; dimensiones pendientes; ruta oficial inválida; recurso oficial pendiente; dimensiones pendientes; ruta oficial inválida; recurso oficial pendiente; dimensiones pendientes; ruta oficial inválida; Instagram oficial inválido o ausente; Instagram pendiente de verificación; referencia visual pendiente; referencia visual pendiente"
+  },
+  {
+    "script": "require-app-publication.mjs",
+    "exitCode": 1,
+    "message": "BLOQUEADO 004: revisión editorial pendiente o desactualizada; recurso oficial pendiente; dimensiones pendientes; alternativa/propósito inválido; revisión de recurso pendiente o desactualizada; ruta de recurso oficial inválida; recurso oficial pendiente; dimensiones pendientes; alternativa/propósito inválido; teléfono debe describir representación del prototipo; revisión de recurso pendiente o desactualizada; ruta de recurso oficial inválida; recurso oficial pendiente; dimensiones pendientes; alternativa/propósito inválido; revisión de recurso pendiente o desactualizada; mockup incompatible con disponibilidad efectiva; ruta de recurso oficial inválida; recurso oficial pendiente; dimensiones pendientes; alternativa/propósito inválido; revisión de recurso pendiente o desactualizada; ruta de recurso oficial inválida; referencia visual pendiente; referencia visual pendiente"
+  },
+  {
+    "script": "require-contact-publication.mjs",
+    "exitCode": 1,
+    "message": "BLOQUEADO 009: canal, conservación, copias, recuperación y rastreo sin calificar.\nBLOQUEADO 005: documentos/aviso pendientes o discrepantes; revisión editorial pendiente o desactualizada; Instagram oficial pendiente; recurso oficial pendiente; ruta de recurso inválida; recurso oficial pendiente; ruta de recurso inválida; referencias visuales pendientes; operación productiva pendiente"
+  },
+  {
+    "script": "require-admin-publication.mjs",
+    "exitCode": 1,
+    "message": "BLOQUEADO 009: canal, conservación, copias, recuperación y rastreo sin calificar.\nBLOQUEADO 006: Falta revisión ligada al contenido exacto; Faltan recursos oficiales revisados; Falta calificación: provision; Falta calificación: mailAdapter; Falta calificación: senderMailbox; Falta calificación: httpsProxy; Falta calificación: storage; Falta calificación: hashCapacity; Falta calificación: abuseTiming; Falta calificación: cookiesCsrf; Falta calificación: privacyRetention; Falta calificación: notices; Falta calificación: manualAccessibility"
+  },
+  {
+    "script": "require-documents-publication.mjs",
+    "exitCode": 1,
+    "message": "BLOQUEADO010: documentos, revisión o calificación operativa pendientes: operation:providers, operation:location, operation:copies, operation:categories, operation:cookies, operation:permissions, operation:evidence, document:terms, document:manifesto, review:terms, review:manifesto, review:notice, privacy:policy, privacy:channel, privacy:confirmationMail, privacy:operationalErasure, privacy:replica, privacy:backups, privacy:restore, privacy:providers, privacy:tracking, privacy:notices"
+  }
+]

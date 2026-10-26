@@ -1,5 +1,5 @@
 # Imagen de Contacto
 
-Sube aquí la imagen de la página Contáctanos con el nombre `contacto.png`.
+`contacto.png`: ilustración «Priva está contigo», aportada y aprobada por la responsable, 1122 × 1402 px.
 
-Después de recibir el archivo, se verificarán sus dimensiones y se conectará al contenido de Contacto. Crear esta carpeta no incorpora ni publica la imagen.
+Conectada en `src/content/contact.ts`. La aprobación de esta imagen no habilita por sí sola el formulario ni sustituye la configuración operativa y documental pendiente.

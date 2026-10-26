@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {contactContent,contactReadiness} from '../src/config/contact.ts';
 import {contactPublicationIssues,contactSnapshot} from '../src/lib/contact-publication.ts';
 const make=()=>structuredClone(contactContent);
-test('draft bloqueado por recursos, aviso, social y operación',()=>assert.ok(contactPublicationIssues(make(),contactReadiness,'public').length>=5));
+test('recursos recibidos no sustituyen revisión editorial, documentos y operación',()=>{const issues=contactPublicationIssues(make(),contactReadiness,'public');for(const issue of ['documentos/aviso pendientes o discrepantes','revisión editorial pendiente o desactualizada','operación productiva pendiente'])assert.ok(issues.includes(issue));for(const issue of ['recurso oficial pendiente','ruta de recurso inválida','archivo oficial ausente o fuera de public','referencias visuales pendientes'])assert.ok(!issues.includes(issue));});
 test('fixture no publicable aunque revisión diga revisado',()=>{const c=make();c.testOnly=true;c.review={status:'revisado',reference:'sintética',value:contactSnapshot(c)};assert.ok(contactPublicationIssues(c,contactReadiness,'public').includes('fixture no publicable'));});
 import {mkdtempSync,mkdirSync,writeFileSync,rmSync} from 'node:fs';import {tmpdir} from 'node:os';import {join} from 'node:path';
 import {readinessSnapshot,trackingVerified} from '../src/lib/contact-publication.ts';

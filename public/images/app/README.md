@@ -1,7 +1,5 @@
 # Imágenes de Priva App
 
-Archivo pendiente de incorporar: `asistente-zyro.png`.
+`asistente-zyro.png`: mockup original aportado y aprobado por la responsable, 1024 × 1536 px. Se normalizó únicamente el nombre del archivo; sus bytes se conservan.
 
-La responsable aportó en el chat un mockup vertical del Asistente Zyro: teléfono con una conversación sobre eliminación de una cuenta de Instagram. Se identifica como recurso propuesto para el hero «MANEJA TU PRIVACIDAD». Es una ilustración del prototipo, no prueba de un chat operativo ni de disponibilidad de descarga.
-
-El archivo original todavía no está disponible en este entorno. La ruta del Mac de la responsable no es accesible desde el entorno en la nube. Al recibirlo, verificar dimensiones, conservar su proporción y conectar el recurso en `src/content/app.ts`; no marcar como verificado antes de inspeccionar el PNG local.
+Conectado en `src/content/app.ts` a la presentación, vista general y descarga. Representa un prototipo; no acredita un chat operativo ni disponibilidad en tiendas.

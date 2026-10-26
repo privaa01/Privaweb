@@ -1,0 +1,27 @@
+{
+  "title": "Enlace falso",
+  "category": "Ingeniería social",
+  "description": "Carolina sigue un anuncio de adopción, entrega datos y transfiere dinero a quienes suplantan una campaña.",
+  "imageResourceId": null,
+  "imageAlt": "",
+  "audioResourceId": null,
+  "transcript": "Hola, chicos, ¿cómo están? Mi nombre es Carolina y el día de hoy les voy a traer una historia de un acontecimiento que me sucedió, una experiencia personal. Bueno, desde hace varios meses yo estaba siguiendo varias páginas de adopción de animalitos porque yo quería adoptar una mascota. Entonces, seguía varios grupos de Instagram, Facebook, WhatsApp.\n\nUno de ellos era una fundación que se llamaba Unidos por las Huellitas o Unidos por las Patitas y tenía de foto de perfil también como una asociación con la Policía Nacional. A mí no me parecía extraño porque tenían logo, tenían contenido que constantemente actualizaban, una comunidad, unas historias. Entonces, yo le di click a un anuncio de WhatsApp y ya directamente me redirigió con el perfil de un supuesto patrullero que trabajaba para la campaña de adopción y me empezaron a pedir un montón de información.\n\nEntonces, yo llené un formulario de adopción donde me pedían mis datos personales, correo electrónico, cédula. Eh, me empezó a parecer muy extraño porque que esa información, además de ser delicada, también me estaban pidiendo, por ejemplo, números de cuenta y comenzaban a presionarme muchísimo y a preocuparme por el supuesto animalito que me iban a dar en adopción y que necesitaban esa ayuda urgente. Entonces, con esa presión me pedían mucha plata. Estaban pidiendo aproximadamente más de 1 millón de pesos.\n\nEntonces, pues yo terminé transfiriendo una platica ahí inicialmente y cuando empecé a pedir como los datos que verificaban o documentos para verificar que era real, me empezaron a enviar información falsa, videos hechos con IA, eh también audios hechos con IA. Entonces, ahí fue el momento en el que me di cuenta de que había perdido esa platica y de que era una estafa. Bueno, pues ¿qué se puede aprender de eso? Siempre hay que ser muy escépticos porque ellos son muy inteligentes, entonces, utilizan narrativa que es como muy coherente y hay que siempre pedir información para respaldar de manera verídica que ellos realmente existen. Entonces, es eso, muchachos, siempre sean muy escépticos, pidan fotos, videos y si los presionan, no se dan ante la presión, porque pues esa es la técnica que más utilizan.",
+  "question": "¿QUÉ ERROR SE COMETIÓ?",
+  "options": [
+    {
+      "id": "opcion-1",
+      "label": "Confiar en logos y perfiles sin verificar la organización",
+      "explanation": "Riesgo: el contenido del perfil y su aparente relación con una autoridad hicieron creíble la falsa campaña. Prevención: verifica la existencia de la organización y su relación con la campaña mediante contactos oficiales obtenidos de forma independiente."
+    },
+    {
+      "id": "opcion-2",
+      "label": "Entregar datos personales y de cuenta a un contacto sin verificar",
+      "explanation": "Riesgo: el formulario solicitaba información sensible y números de cuenta sin una identidad comprobada. Prevención: comprueba quién recoge los datos y para qué, y evita entregar información innecesaria a contactos no verificados."
+    },
+    {
+      "id": "opcion-3",
+      "label": "Transferir dinero por la presión de una supuesta urgencia",
+      "explanation": "Riesgo: la presión emocional llevó a Carolina a transferir dinero antes de verificar la adopción. Prevención: detente y comprueba la campaña por canales independientes; fotos, audios o videos enviados por el mismo contacto también pueden ser falsificados."
+    }
+  ]
+}

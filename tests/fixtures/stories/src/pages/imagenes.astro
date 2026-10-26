@@ -1,0 +1,10 @@
+---
+import PublicLayout from '../../../../../src/layouts/PublicLayout.astro';
+import StoriesContent from '../../../../../src/components/stories/StoriesContent.astro';
+import { storiesContent } from '../../../../../src/content/stories';
+const content={...storiesContent,testOnly:true};
+---
+<PublicLayout pageId="historias" title="Historias — revisión de imágenes" contentLayout="full" brand={content.brand}>
+<p class="stories-notice">Revisión de imágenes oficiales. Catálogo, audios y textos de prueba; no acredita publicación.</p>
+<StoriesContent content={content}/>
+</PublicLayout>

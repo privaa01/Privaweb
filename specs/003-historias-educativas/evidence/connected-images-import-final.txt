@@ -1,0 +1,11 @@
+✔ operator import requires access, initial ID, materials and review; no fake seeds (666.289795ms)
+✔ restricted import keeps three initial IDs/order and repeated import preserves managed changes (synthetic materials only) (1687.82292ms)
+✔ initial import selects supplied official covers when no imagePath is specified, without publishing (1687.514275ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4159.191775

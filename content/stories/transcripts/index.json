@@ -1,0 +1,35 @@
+{
+  "source": "content/stories/transcripts/TRANSCRIPCIONES.pdf",
+  "sourceSha256": "a8a9a7eb01c3c7ade87ee907347c25f84fd410b69388032af99a5f3183fd3b28",
+  "verification": "User-supplied transcript; not independently checked against audio",
+  "stories": [
+    {
+      "number": 1,
+      "materialKey": "contrasena-compartida",
+      "transcript": "content/stories/transcripts/contrasena-compartida.txt",
+      "draft": "content/stories/drafts/contrasena-compartida.json",
+      "status": "source-received-exercise-draft-pending-review"
+    },
+    {
+      "number": 2,
+      "materialKey": "llamada-sospechosa",
+      "transcript": "content/stories/transcripts/llamada-sospechosa.txt",
+      "draft": "content/stories/drafts/llamada-sospechosa.json",
+      "status": "source-received-exercise-draft-pending-review"
+    },
+    {
+      "number": 3,
+      "materialKey": "enlace-falso",
+      "transcript": "content/stories/transcripts/enlace-falso.txt",
+      "draft": "content/stories/drafts/enlace-falso.json",
+      "status": "source-received-exercise-draft-pending-review"
+    },
+    {
+      "number": 4,
+      "materialKey": "numero-desconocido",
+      "transcript": "content/stories/transcripts/numero-desconocido.txt",
+      "draft": "content/stories/drafts/numero-desconocido.json",
+      "status": "source-received-exercise-draft-pending-review"
+    }
+  ]
+}

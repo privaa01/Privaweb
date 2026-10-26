@@ -15,6 +15,7 @@
     "build:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/navigation",
     "test:e2e:contract": "playwright test",
     "test:e2e:integration": "PRIVA_TEST_MODE=integration playwright test",
+    "test:e2e:contract:webkit": "bash scripts/with-webkit-libraries.sh npm run test:e2e:contract -- --project=webkit --grep-invert=Matriz:",
     "check:home:contract": "ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/home",
     "build:home:contract": "ASTRO_TELEMETRY_DISABLED=1 astro build --root tests/fixtures/home",
     "test:e2e:home:contract": "playwright test --config=playwright.home.config.ts",

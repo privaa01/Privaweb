@@ -1,0 +1,87 @@
+{
+  "scope": "official images with synthetic catalog/audio; not publication",
+  "results": [
+    {
+      "viewport": 1440,
+      "images": [
+        {
+          "src": "/images/stories/aprende.png",
+          "width": 500,
+          "height": 350,
+          "displayRatio": 1.4286037479733042
+        },
+        {
+          "src": "/images/stories/enlace.png",
+          "width": 660,
+          "height": 195,
+          "displayRatio": 3.384967672413793
+        },
+        {
+          "src": "/images/stories/llamada.png",
+          "width": 660,
+          "height": 195,
+          "displayRatio": 3.3846464646464645
+        },
+        {
+          "src": "/images/stories/contra.png",
+          "width": 660,
+          "height": 195,
+          "displayRatio": 3.384967672413793
+        },
+        {
+          "src": "/images/stories/identifica.png",
+          "width": 500,
+          "height": 350,
+          "displayRatio": 1.4286037479733042
+        },
+        {
+          "src": "/images/stories/explora.png",
+          "width": 500,
+          "height": 350,
+          "displayRatio": 1.4286037479733042
+        }
+      ]
+    },
+    {
+      "viewport": 390,
+      "images": [
+        {
+          "src": "/images/stories/aprende.png",
+          "width": 500,
+          "height": 350,
+          "displayRatio": 1.4285714285714286
+        },
+        {
+          "src": "/images/stories/enlace.png",
+          "width": 660,
+          "height": 195,
+          "displayRatio": 3.384802431610942
+        },
+        {
+          "src": "/images/stories/llamada.png",
+          "width": 660,
+          "height": 195,
+          "displayRatio": 3.384802431610942
+        },
+        {
+          "src": "/images/stories/contra.png",
+          "width": 660,
+          "height": 195,
+          "displayRatio": 3.384802431610942
+        },
+        {
+          "src": "/images/stories/identifica.png",
+          "width": 500,
+          "height": 350,
+          "displayRatio": 1.4285714285714286
+        },
+        {
+          "src": "/images/stories/explora.png",
+          "width": 500,
+          "height": 350,
+          "displayRatio": 1.4285714285714286
+        }
+      ]
+    }
+  ]
+}

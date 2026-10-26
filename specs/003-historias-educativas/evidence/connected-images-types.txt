@@ -1,0 +1,3 @@
+
+> privaweb@0.1.0 check:story-management:service
+> tsc -p server/stories/tsconfig.json

@@ -2,7 +2,7 @@
 
 **Input**: [spec](spec.md), [plan](plan.md), [research](research.md), [modelo](data-model.md),
 [contrato](contracts/navigation.md), [guía](quickstart.md) y constitución 1.0.0.
-**Fecha**: 2026-10-16. **Actualización**:2026-10-23. **Estado**:23/28 tareas completas;5 parciales por integración de destinos, WebKit y revisión manual específica. Ver evidence/closure-status.md.
+**Fecha**: 2026-10-16. **Actualización**:2026-10-23. **Estado**:23/28 tareas completas;5 parciales por integración de destinos y revisión final de las cuatro páginas; WebKit y controles manuales de Inicio ya verificados. Ver evidence/closure-status.md.
 **Tests**: incluidos porque el spec exige recorridos observables y accesibilidad verificable.
 Escribir pruebas antes del comportamiento y comprobar el fallo pertinente; no confundir fallo
 por entorno roto con fallo funcional. No se impone cobertura numérica arbitraria.
@@ -154,3 +154,7 @@ Revalidación solicitada para cerrar001:46Chromium,32Firefox y2Node de autorizac
 T023/T025/T026/T027/T028 permanecen parciales según sus criterios originales;23/28 completas, sin cerrar integración mediante fixtures. La aceptación manual de002 no se atribuye a menú/footer de001; se solicitó revisión específica en el Mac de la usuaria, aún pendiente. Estado detallado, evidencia por tarea y secuencia para desbloquear en [evidence/closure-status.md](evidence/closure-status.md).
 
 2026-10-23 — Respuesta de revisión manual001 recibida: controles de menú/footer en Inicio confirmados por la usuaria en Mac/VoiceOver; ver evidence/manual-navigation-review.md. Cambio explícito de Contacto Seguro a `/contacto.html` sin ancla implementado y reflejado en contrato001/spec005 y pruebas. T026 avanza en su parte manual; sigue pendiente aceptación final de las cuatro páginas junto con T023/T025/T027/T028.23/28 tareas sin cierres ficticios.
+
+## WebKit completado — 2026-10-26
+
+32recorridos principales de WebKit27.2 aprobados,0fallos/omitidos, mediante nuevo script reproducible `npm run test:e2e:contract:webkit`. Se resolvió la detección de bibliotecas mediante caché privada y bwrap rootless, sin cambiar el sistema ni omitir controles. Evidencia en evidence/webkit-runtime.md. La parte navegador de T025/T026 ya está verificada en los tres motores; permanecen pendientes sus criterios de aceptación final dependientes de T023. T023 espera build/destinos completos; T027 espera integración real; T028 espera cierre integrado.23/28 tareas completas, sin nuevos cierres por una comprobación parcial.

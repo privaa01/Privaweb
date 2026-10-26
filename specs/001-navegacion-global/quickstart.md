@@ -41,7 +41,7 @@ el proyecto de fixtures y componentes importados; `build:contract` lo construye.
 No ejecutar check/build de aplicación como prerrequisito de T007: sus páginas aún no existen.
 T007 valida arranque del entorno; ejecutar la suite solo después de escribir sus casos desde T008.
 
-La descarga Playwright recibió403 durante el primer setup. Actualmente hay Chromium del sistema y Firefox instalado; WebKit tiene dependencias del host pendientes. Para Chromium:
+La descarga Playwright recibió403 durante el primer setup. Actualmente hay Chromium y Firefox; WebKit también está verificado con el entorno aislado descrito en evidence/webkit-runtime.md. Para Chromium:
 
 ```bash
 PRIVA_CHROMIUM_EXECUTABLE=/usr/bin/chromium npm run test:e2e:contract -- --project=chromium
@@ -162,3 +162,11 @@ lectura asistida/fidelidad y contenido/operación real de otrasfeatures.
 Navegación001 revalidada en Chromium/Firefox y guard006; pruebas adicionales de controles en Inicio real conformes.23/28 tareas, sin casillas nuevas cerradas: faltan build/destinos finales, WebKit, revisión manual específica y entorno integrado. Las imágenes de Inicio ya no son un bloqueo; continúan las dependencias de003/004/005/006/009/010. Evidencia actual y siguiente paso por cada tarea en [evidence/closure-status.md](evidence/closure-status.md).
 
 2026-10-23 — Contacto Seguro del footer abre `/contacto.html` sin ancla, por instrucción explícita de la usuaria. Se conserva `#escribir` para los consumidores del formulario ajenos al footer. La revisión manual guiada de controles de Inicio con VoiceOver fue confirmada; aceptación integrada de destinos sigue pendiente.
+
+## WebKit local en este entorno Linux
+
+```bash
+npm run test:e2e:contract:webkit
+```
+
+32casos aprobados el2026-10-26. El wrapper genera una caché privada real y usa bwrap rootless; no modifica el sistema ni omite verificación de dependencias. Requiere bibliotecas Debian verificadas disponibles y permiso de namespaces del ejecutor. Configurables PRIVA_WEBKIT_LIB_DIR y PLAYWRIGHT_BROWSERS_PATH. En Mac usar el runner Playwright nativo. No mezclar este resultado contractual con aceptación de destinos reales; ver evidence/webkit-runtime.md.

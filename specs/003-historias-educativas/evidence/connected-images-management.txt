@@ -1,0 +1,51 @@
+
+> privaweb@0.1.0 test:story-management
+> node --experimental-strip-types --test tests/story-management-*.test.ts
+
+✔ editorial question supported without changing initial literal or relaxing DTO shape (2.643718ms)
+✔ delivery gate rejects real pending operation and fixtures (0.750539ms)
+✔ HTTP authorization before payload, CSRF, methods, UTF8 and size guard (719.9335ms)
+✔ HTTP persisted draft, receipt and public DTO; server excludes drafts regardless of client (923.406787ms)
+✔ HTTP public/private media authorization, HEAD and Range semantics using explicit synthetic domain bytes (965.615271ms)
+✔ rate limit produces Retry-After without repeated database mutations (1290.355698ms)
+✔ real binary upload enforces size/empty limits and unavailable inspector leaves no private metadata (1911.943937ms)
+✔ real accepted image/audio upload persists privately, publishes atomically and supports catalog/Range (2080.814823ms)
+✔ revocation during an actual upload denies resource registration and removes staging bytes (1145.694391ms)
+✔ JSON30s/upload120s deadlines and two-upload semaphore enforce bounds without optimistic writes (1087.076664ms)
+✔ operator import requires access, initial ID, materials and review; no fake seeds (707.522572ms)
+✔ restricted import keeps three initial IDs/order and repeated import preserves managed changes (synthetic materials only) (2411.40085ms)
+✔ initial import selects supplied official covers when no imagePath is specified, without publishing (3436.361837ms)
+✔ cleanup removes only old unreferenced private blobs, keeps current and referenced files (657.464073ms)
+✔ media rejects symlink and permissions before opening public bytes (841.862143ms)
+✔ real sandbox decodes static image and WAV, derives metadata and denies invalid image/audio formats (1191.586251ms)
+✔ same sandbox cannot read host sentinel and respects total wall deadline (147.700524ms)
+✔ actual JPEG/WebP and MP3 are supported; oversized dimensions are rejected (1303.446847ms)
+✔ sandbox policy actually denies host file access, writes/network and excess memory/CPU/output (26021.841982ms)
+✔ MP3 codec in an unapproved container cannot be mislabeled as an MP3 file (328.202681ms)
+{"benchmark":"007-local","node":"v24.19.0","records":1000,"samples":30,"listP95ms":94.3088580000001,"publicationP95ms":12.139936000000034}
+✔ 1000 records local metadata list and prepared publication p95 below 1s (2049.841868ms)
+✔ draft survives reopening repository, stable ID and same-key creation receipt (1043.974332ms)
+✔ atomic authorization, revoked/expired sessions and same permission (1905.925661ms)
+✔ revision conflict and reused operation key never overwrite or duplicate (1153.23063ms)
+✔ before-commit rollback and after-commit lost response are distinguishable by receipt (1197.650309ms)
+✔ Q1 save keeps public A, publish swaps whole B, activation stays independent (1555.549738ms)
+✔ draft activation and cross-story resource reference rejected; public DTO never leaks private fields (854.750442ms)
+✔ missing media blocks publication preserving draft and old publication (872.60582ms)
+✔ actual close/reopen retains draft, session and durable operation receipt (985.467763ms)
+✔ replacement resources stay private until Publish then old exclusive resources cease eligibility (1264.151439ms)
+✔ sandbox launcher fixes resource bounds, namespace and restricted input (0.953745ms)
+✔ unavailable sandbox or corrupt input fails closed; no metadata can be accepted (202.282566ms)
+✔ every private route refuses missing or revoked authority before data/effect, no anonymous metadata (1651.694133ms)
+✔ global counts published pending work once, real contact total/unavailable never fabricated zero (1050.609996ms)
+✔ actual 005 signed submission/dedup/removal feeds authorized 007 HTTP aggregate without contact data (1267.210392ms)
+✔ incomplete draft allowed; publication needs all approved fields (22.204067ms)
+✔ Unicode code points, whitespace, exact fields and safe text (1.819127ms)
+✔ exactly three distinct stable options, text constraints and typed references (1.002899ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 30931.190836

@@ -36,7 +36,7 @@ Capturas desktop-fixture.png/mobile-fixture.png inspeccionadas para estructura, 
 
 - T028 parcial: suite de integración escrita; falta harness real de transiciones007/recursos privados.
 - T030 parcial: intentosFirefox/WebKit fallaron al arrancar por perfil/bibliotecas; sin cobertura aprobada.
-- T031 bloqueada: materiales y nueve explicaciones oficiales, respaldo editorial pendientes; Instagram resuelto con @priva_inc el2026-10-26.
+- T031 parcial: seis imágenes y recursos compartidos recibidos; faltan audios, transcripciones, nueve explicaciones y respaldo editorial. Instagram resuelto con @priva_inc.
 - T032 bloqueada: lector de pantalla, teclado manual nativo y comparación visual con recursos finales.
 - T033 bloqueada: catálogo007 real, páginas/destinos/materiales y entorno de integración.
 
@@ -63,3 +63,15 @@ Se incorporaron a storiesContent el logo oficial compartido y referencias de Plu
 2026-10-26 — Recorridos principales Firefox disponibles:15aprobados,0fallos/omitidos;14casos de matriz excluidos por diseño con `--grep-invert="stories [0-9]+px text"`. Ver resume-2026-10-26-firefox.txt. Esto supera el bloqueo histórico de arranque Firefox para003. WebKit no se reejecutó en esta reanudación: conserva dependencia host pendiente según última evidencia de001; T030 sigue parcial.
 
 2026-10-26 — Perfil oficial aportado por la responsable: https://www.instagram.com/priva_inc/. Configuración compartida003/005 actualizada; validadores dejan de indicar Instagram pendiente.106pruebas Node aprobadas (40Historias+66Contacto), sin cerrar otros bloqueos. Comprobación remota impedida por rechazo CONNECT403 del proxy, sin respuesta del perfil; no se presenta como verificación de disponibilidad. Ver social-reference.md.
+
+## Imágenes conectadas —2026-10-26
+
+Hero/metodología/cierre usan imágenes500×350 verificadas; los tres casos iniciales usan portadas660×195 como valores por defecto de la importación restringida007. Sin forzar imágenes ni estados del catálogo público y sin publicación automática.41unitarias003,38Node007 y29Chromium003 aprobadas; tipo/ASTRO conformes. Vista de imágenes rotulada con audios sintéticos, proporciones sin recorte a1440/390. El guard003 solo indica cinco revisiones editoriales pendientes. Audios originales pueden subirse a content/stories/audio/, ya preparada en GitHub. Ver connected-images.md;30/35 tareas.
+
+## Recepción de audios —2026-10-26
+
+GitHub325fc49 sincronizado: cuatro MP3 aportados y aprobados por la usuaria, validados por el inspector aislado real. Duraciones109.954667/118.993042/142.999542/138.7155s, sin modificar bytes. Se registró manifiesto con hashes y aprobación; falta identificar cada caso y el uso del cuarto audio antes de asociar los reproductores. Ver audio-approval.md. Transcripciones, explicaciones y editorial siguen pendientes.30/35 tareas sin cierre por recepción de archivos.
+
+## Audios asociados —2026-10-26
+
+La responsable confirmó la correspondencia1Contraseña/2Llamada/3Enlace y4Número desconocido para el contenido ampliado. Los tres IDs iniciales ya seleccionan sus archivos MP3 aprobados en el importador007 cuando audioPath se omite, con SHA-256 e inspección real. El cuarto se identifica en el manifiesto, pendiente de ficha completa y creación/publicación/activación normal. No se inventan transcripciones ni ejercicios. Ver audio-assignment.md;30/35 tareas sin cierre de materiales/editorial/integración por aprobar archivos.

@@ -3,7 +3,7 @@
 **Feature Directory**: `specs/001-navegacion-global`
 **Created**: 2026-10-16
 **Updated**: 2026-10-23
-**Status**: implementación local retomada;23/28 tareas completas, contrato006 recibido y corrección de focoFirefox verificada. Logo/fuente/paleta incorporados; WebKit, fidelidad final y aceptación integrada pendientes.
+**Status**: implementación local retomada;23/28 tareas completas, contrato006 recibido y corrección de focoFirefox verificada. Logo/fuente/paleta incorporados; Chromium/Firefox/WebKit verificados localmente y controles de Inicio aceptados manualmente. Revisión final de destinos e integración pendientes.
 **Input**: `$speckit-specify 001`: desarrollar la feature existente sin crear otra ni ampliar alcance.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), requisitos G01–G06; [constitución 1.0.0](../../.specify/memory/constitution.md), CONST-01–04 y CONST-08–12.
 
@@ -258,3 +258,5 @@ Navegación001 revalidada en Chromium/Firefox y guard006; pruebas adicionales de
 ## Decisión de navegación — 2026-10-23
 
 La usuaria confirmó que menú, activo, Escape/foco y enlaces anunciados del footer funcionan correctamente en su revisión guiada con VoiceOver. Solicitó que Contacto Seguro abra directamente la página de Contacto. Se actualizan G06/FR-006, US3.4 y contrato a `/contacto.html` sin fragmento. La confirmación de controles no acredita los destinos integrados todavía bloqueados.
+
+2026-10-26 — WebKit27.2 disponible y32recorridos principales aprobados con caché de bibliotecas privada/namespace rootless. Sin cambios de alcance, fuente del sitio o validación de seguridad. [Reproducción y límites](evidence/webkit-runtime.md). Persisten dependencias de aceptación final de cuatro páginas y build integrado.

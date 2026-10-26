@@ -1,0 +1,34 @@
+{
+  "engine": "firefox",
+  "scope": "approved source audio Blob codec/controls; no publication or delivery claim",
+  "results": [
+    {
+      "file": "hidtoria_cuatro_editada.mp3.mpeg",
+      "storyId": null,
+      "title": "Número desconocido",
+      "duration": 109.954667,
+      "result": "passed"
+    },
+    {
+      "file": "hidtoria_dos_editada.mp3.mpeg",
+      "storyId": "llamada-sospechosa",
+      "title": null,
+      "duration": 118.993042,
+      "result": "passed"
+    },
+    {
+      "file": "historia_tres_editada.mp3.mpeg",
+      "storyId": "enlace-falso",
+      "title": null,
+      "duration": 142.999542,
+      "result": "passed"
+    },
+    {
+      "file": "historia_uno_editada.mp3.mpeg",
+      "storyId": "contrasena-compartida",
+      "title": null,
+      "duration": 138.7155,
+      "result": "passed"
+    }
+  ]
+}

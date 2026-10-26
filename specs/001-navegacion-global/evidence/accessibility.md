@@ -47,3 +47,5 @@ No hay certificación de comparación final conwireframes o lector de pantalla; 
 ## Respuesta manual recibida — 2026-10-23
 
 La usuaria confirmó que menú/activo, apertura y Escape con retorno de foco y nombres del footer funcionan correctamente en Mac con VoiceOver. Evidencia: manual-navigation-review.md. Esta confirmación cubre los controles compartidos de Inicio anteriores al cambio solicitado de Contacto Seguro; el nuevo destino se valida automáticamente con teclado/puntero. Revisión final de las otras páginas e integración siguen pendientes, sin cambiar casillas de tareas.
+
+2026-10-26 — WebKit27.2 pasa32recorridos principales, incluido Contacto Seguro a la página sin ancla. El bloqueo de biblioteca quedó resuelto por entorno aislado con caché privada, sin desactivar validaciones. Matriz exhaustiva Chromium y revisión manual de controles ya registrada se mantienen como evidencias separadas. T025/T026 siguen esperando aceptación final con las cuatro páginas. Ver webkit-runtime.md.

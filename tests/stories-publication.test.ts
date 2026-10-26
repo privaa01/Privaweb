@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync, symlinkSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync, symlinkSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { storiesContent } from '../src/content/stories.ts';
@@ -28,4 +28,12 @@ test('gate rejects symlink escaping public and empty asset',()=>{
  const outside=join(root,'../outside-priva-stories.svg');writeFileSync(outside,'<svg/>');symlinkSync(outside,join(root,'images/stories/link.svg'));
  try{const c=approved();c.hero.image.src='/images/stories/link.svg';assert.ok(storiesPublicationIssues(c,root).length>0);}finally{rmSync(outside);}
  writeFileSync(join(root,'images/stories/empty.svg'),'');const c=approved();c.hero.image.src='/images/stories/empty.svg';assert.ok(storiesPublicationIssues(c,root).length>0);
+});
+
+test('received official section images match local PNG dimensions while editorial still blocks',()=>{
+ for(const image of [storiesContent.hero.image,storiesContent.method.image,storiesContent.closing.image]){
+  const png=readFileSync(join('public',image.src.slice(1)));
+  assert.equal(png.subarray(0,8).toString('hex'),'89504e470d0a1a0a');assert.equal(image.width,png.readUInt32BE(16));assert.equal(image.height,png.readUInt32BE(20));assert.equal(image.status,'verificado');
+ }
+ const issues=storiesPublicationIssues(storiesContent,'public');assert(issues.some(i=>i.includes('revisión editorial')));assert(!issues.some(i=>/recurso oficial|dimensiones|archivo oficial|ruta oficial/.test(i)));
 });

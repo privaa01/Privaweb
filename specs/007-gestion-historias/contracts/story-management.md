@@ -124,3 +124,9 @@ además de binarios/bibliotecas/entrada. Codec y contenedor deben corresponder a
 un codecMP3 dentro de Matroska no se acepta como MP3. Si una carga queda desconocida, la UI permite
 conservar texto y elegir otro archivo sin afirmar rollback ni asociar/publicar el recurso anterior.
 Importar los tres IDs iniciales en orden canónico003; reimportar no pisa cambios gestionados.
+
+## Portadas iniciales aportadas —2026-10-26
+
+El módulo restringido server/stories/import.ts admite imagePath opcional para los tres IDs iniciales: omitirlo selecciona el archivo oficial de src/content/story-images.ts. Una ruta explícita sigue siendo válida y se inspecciona por el mismo flujo. No cambia la API HTTP de carga, permisos, sourceReference/reviewReference requeridos, inspección FFmpeg ni separación guardar/publicar. La importación continúa creando borradores inactivos y respeta registros ya gestionados. audioPath sigue requerido; recibir archivos en content/stories/audio/ no importa ni publica por sí solo.
+
+2026-10-26 — audioPath también puede omitirse para los tres IDs iniciales: usa el archivo confirmado por la responsable en initial-audio.ts (1Contraseña/2Llamada/3Enlace), comprueba su hash de aprobación y lo inspecciona. La ruta explícita continúa admitida. Un cambio de bytes del archivo predeterminado se rechaza con initial_audio_changed. No cambia autorización, API HTTP ni estados públicos. El cuarto archivo corresponde a Número desconocido, para crear mediante gestión normal al disponer de ficha; no amplía silenciosamente los IDs iniciales.

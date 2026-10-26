@@ -1,6 +1,6 @@
 # Resultado de implementación —001 Navegación global
 
-**Actualización**:2026-10-23 (America/Bogota). **Estado**:23/28 tareas completas, cinco parciales/bloqueadas. Componentes y contrato local verificados; sin cierre de publicación/fidelidad/integración.
+**Actualización**:2026-10-26 (America/Bogota). **Estado**:23/28 tareas completas, cinco parciales/bloqueadas. Componentes y contrato local verificados; sin cierre de publicación/fidelidad/integración.
 
 ## Implementado
 
@@ -23,7 +23,7 @@ La primera regresiónFirefox tuvo30pases y un fallo al reactivar el mismo fragme
 | Guard006 real, Node |2aprobadas;12combinaciones de documento más sesión401/403 | [log](resume-2026-10-20-service.txt) |
 | Astrocheck contractual |0errores/0warnings;1hint preexistente returnValue de inbox | [log](official-check.txt) |
 | Build contractual |Completado por webServer antes de suites; siete páginas/artefactos de prueba fuera de dist | Logs de navegador |
-| WebKit |No arranca por bibliotecas delhost;0casos aprobados | [bloqueo](resume-2026-10-20-webkit-blocked.txt) |
+| WebKit |32aprobadas en ejecución final;0fallos/omitidas, caché privada y namespace rootless | [verificación](webkit-runtime.md), [log](webkit-2026-10-26.txt) |
 | Integración |39casos definidos/listados en tres motores, ninguno ejecutado sin baseURL real | [listado](resume-2026-10-20-integration-list.txt), [bloqueo](resume-2026-10-20-integration-blocked.txt) |
 | Build de entrega |Exit1 por010/009 pendientes; siguen gates y requisitos de otras features | [bloqueo](resume-2026-10-20-build-blocked.txt) |
 
@@ -35,7 +35,7 @@ Los46casos actuales incluyen32casos de recorridos/recursos y14celdas; no sumar11
 
 - T023: páginas existen y usanlayout, pero dist/anclas sobre entrega real bloqueados por contenido/recursos y operación pendientes.
 - T024 completada: logo y referencias recibidos de la usuaria; copia intacta, dimensiones104×40/proporción2.6, fuente localOFL y variablesCSS verificadas. Revisión visual final T026 sigue separada.
-- T025: Chromium/Firefox conformes localmente; WebKit y aceptación con recursos/sitio real pendientes.
+- T025: Chromium/Firefox/WebKit conformes contractualmente; aceptación con las cuatro páginas finales pendiente.
 - T026: fuente200%/teclado/contraste provisional local; lector de pantalla y fidelidad con materiales finales pendientes.
 - T027: baseURL real, acceso006 alojado, documentos010 aprobados, Contacto005 calificado y build de entrega pendientes.39casos listados no son39pruebas aprobadas.
 - T028: progreso sincronizado; cierre integral depende de los anteriores, no se marca completo por documentación.
@@ -65,3 +65,7 @@ faltantes de002–005 ni la configuración productiva009/010.
 ## Confirmación manual y cambio de Contacto Seguro — 2026-10-23
 
 La usuaria confirmó menú, activo, Escape/foco y nombres del footer con VoiceOver en su Mac. Solicitó que Contacto Seguro abra `/contacto.html` sin #escribir. Configuración, pruebas y contratos001/005 actualizados; se conserva el ancla del formulario para otros consumidores. Ver manual-navigation-review.md y contact-footer-change.md. No se cierra la aceptación de destinos todavía bloqueados ni la revisión final de las cuatro páginas;23/28 tareas.
+
+## WebKit resuelto — 2026-10-26
+
+WebKit27.2 pasa32casos mediante `npm run test:e2e:contract:webkit`, sin omitir comprobaciones ni modificar caché del host. La revisión manual de controles de Inicio ya fue confirmada por la usuaria.23/28 tareas: faltan aceptación final de cuatro páginas, build completo y recorrido integrado, condicionados a contenidos/operación de otras features. [Entorno y evidencia](webkit-runtime.md). Los bloqueos WebKit descritos en registros anteriores son históricos.

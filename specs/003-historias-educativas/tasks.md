@@ -174,3 +174,9 @@ sin explicación; ver evidence/integration.md, accessibility.md y materials.md.
 ## Avance de materiales — 2026-10-26 (America/Bogota)
 
 30/35 tareas completas. T031 parcial: logo/fuente/paleta compartidos configurados y CSS alineado; seis imágenes recibidas como previsualizaciones, identificadas en evidence/materials.md pero pendientes de archivos originales para subir/conectar. Carpeta GitHub public/images/stories disponible. Se solicitó Instagram oficial. No se aprueban textos, audios, transcripciones ni explicaciones por recibir imágenes.40unitarias y29Chromium aprobadas, check contractual conforme; resultados en evidence/resume-2026-10-26-*.txt.
+
+2026-10-26 — Seis imágenes oficiales recibidas e integradas: tres bloques de página y tres portadas iniciales para el importador007. T031 parcial por audios/transcripciones/explicaciones y revisión editorial.41unitarias003,38Node007 y29Chromium003 aprobadas; tipado y Astro check conformes. Se preparó carpeta GitHub content/stories/audio/ para recibir originales. Detalle en evidence/connected-images.md;30/35 tareas sin cierres adicionales.
+
+2026-10-26 — Cuatro audios sincronizados desde325fc49 y aprobados por la responsable; inspección real aislada aceptada como MP3. T031 avanza en recepción de audio; asignación de cuatro archivos a tres casos solicitada y pendiente, además de transcripciones/explicaciones/revisión restantes. Manifiesto content/stories/audio/manifest.json y evidencia audio-approval.md. No se adivina la correspondencia ni se publica el cuarto caso sin definirlo.
+
+2026-10-26 — Correspondencia de audios confirmada y configurada:1Contraseña/2Llamada/3Enlace;4Número desconocido en el catálogo ampliado. Importador007 con valores por defecto aprobados/hash vinculados; conserva auth/inspección/estados. T031 parcial: faltan transcripciones, explicaciones y revisión; cuarto requiere ficha completa. Ver evidence/audio-assignment.md.

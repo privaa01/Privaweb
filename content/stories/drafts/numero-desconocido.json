@@ -1,0 +1,27 @@
+{
+  "title": "Número desconocido",
+  "category": "Fraude telefónico",
+  "description": "Salomé recibe una llamada de una supuesta entidad bancaria, comparte un código y observa transferencias de su cuenta.",
+  "imageResourceId": null,
+  "imageAlt": "",
+  "audioResourceId": null,
+  "transcript": "Hola, mi nombre es Salomé y les voy a contar sobre mi historia de una llamada sospechosa.\n\nLa verdad nunca me imaginé que me fuera como pasar esto y pues yo estaba supernormal en una tarde y todo, recibí una llamada de un número desconocido y la verdad yo normalmente no suelo responder a los números así, pero pues yo ese día como que decidí hacerlo porque dije, \"No, pues puede ser una llamada importante.\" De ahí me respondió una mujer muy amable y todo que me llamaba de mi entidad bancaria, dijo mi nombre, entonces yo dije, \"Ah, debe ser algo importante y todo esto.\" Y no pues no sospeché como tal nada.\n\nMe dijo que había como un intento raro de mi cuenta como a la hora de acceder, entonces yo me asusté y lo primero que pensé fue como que ay alguien estaba intentando robarme mi dinero. Entonces la mujer me dijo que pues me explicó qué se podía hacer en estos casos, eh me dijo que tenía que verificar unos datos y y todo eso y pues yo le dije que sí, obviamente por el miedo a que me fueran como a robar.\n\nEntonces lo que hice fue acceder a todo lo que la chica me decía como eh a confirmarme datos, me dijo que me enviaran un código a mi celular para que se lo dijera, entonces me lo mandaron, yo se los dije y todo eso y sin pensarlo demasiado pues lo compartí y ya. Eh terminé la llamada y pues eh me había sentido más tranquila hasta que empecé a ver transferencias de mi cuenta y yo me asusté muchísimo.\n\nEntonces ahí tuve que llamar a mi banco, reportar lo que había sucedido y si me llaman de una entidad o verifico o pregunto o si no llamo yo misma y todo esto porque la verdad me salieron robando bastante plata y todo eso y aunque lo reporté pues el daño pues fue como para mí como tal, pero pues tomé la lección. Así que sí, muchísimas gracias.",
+  "question": "¿QUÉ ERROR SE COMETIÓ?",
+  "options": [
+    {
+      "id": "opcion-1",
+      "label": "Creer que conocer su nombre demuestra que la llamada es del banco",
+      "explanation": "Riesgo: conocer un dato personal y hablar con amabilidad no demuestra la identidad de quien llama. Prevención: cuelga y contacta al banco mediante su aplicación o el número oficial que ya conoces."
+    },
+    {
+      "id": "opcion-2",
+      "label": "Compartir el código recibido en el celular",
+      "explanation": "Riesgo: después de entregar el código, Salomé observó transferencias de su cuenta. Prevención: no comuniques códigos de verificación por llamadas entrantes; ante movimientos desconocidos, contacta de inmediato al banco por su canal oficial."
+    },
+    {
+      "id": "opcion-3",
+      "label": "Confirmar datos por miedo a un supuesto acceso a la cuenta",
+      "explanation": "Riesgo: el temor a perder dinero hizo que Salomé siguiera instrucciones sin verificar a la interlocutora. Prevención: interrumpe la llamada, revisa la cuenta desde un canal oficial y reporta cualquier actividad que no reconozcas."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+✖ initial import selects supplied official covers when no imagePath is specified, without publishing (733.533263ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 844.50302
+
+✖ failing tests:
+
+test at tests/story-management-import.test.ts:127:1
+✖ initial import selects supplied official covers when no imagePath is specified, without publishing (733.533263ms)
+  TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received undefined
+      at lstatSync (node:fs:1766:10)
+      at importInitialStory (file:///workspace/Privaweb/server/stories/import.ts:63:18)
+      at TestContext.<anonymous> (file:///workspace/Privaweb/tests/story-management-import.test.ts:135:28)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    code: 'ERR_INVALID_ARG_TYPE'
+  }

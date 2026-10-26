@@ -10,6 +10,9 @@ import {
   unlinkSync,
 } from "node:fs";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { initialStoryImages } from "../../src/content/story-images.ts";
+import { initialStoryAudio } from "./initial-audio.ts";
 import { randomUUID, createHash } from "node:crypto";
 import type { StoriesService } from "./service.ts";
 import type { StoryMedia } from "./media.ts";
@@ -27,8 +30,8 @@ export async function importInitialStory(
   input: {
     id: string;
     working: StoryDraft;
-    imagePath: string;
-    audioPath: string;
+    imagePath?: string;
+    audioPath?: string;
     sourceReference: string;
     reviewReference: string;
   },
@@ -47,6 +50,16 @@ export async function importInitialStory(
   }
   if (input.working.question !== "¿QUÉ ERROR SE COMETIÓ?")
     throw new StoryError(422, "initial_question_changed");
+  // Initial assets are defaults only: authorization, inspection and publication gates stay intact.
+  const initialImage = initialStoryImages[input.id as keyof typeof initialStoryImages];
+  const imagePath = input.imagePath === undefined
+    ? fileURLToPath(new URL(`../../public${initialImage.src}`, import.meta.url))
+    : input.imagePath;
+  const initialAudio = initialStoryAudio[input.id as keyof typeof initialStoryAudio];
+  const usesApprovedAudio = input.audioPath === undefined;
+  const audioPath = usesApprovedAudio
+    ? fileURLToPath(new URL(`../../content/stories/audio/${initialAudio.file}`, import.meta.url))
+    : input.audioPath!;
   const resources: (Awaited<ReturnType<typeof inspect>> & {
     id: string;
     kind: "image" | "audio";
@@ -56,8 +69,8 @@ export async function importInitialStory(
   const written: string[] = [];
   try {
     for (const [kind, path] of [
-      ["image", input.imagePath],
-      ["audio", input.audioPath],
+      ["image", imagePath],
+      ["audio", audioPath],
     ] as const) {
       service.authorize(token);
       const st = lstatSync(path);
@@ -73,6 +86,9 @@ export async function importInitialStory(
       const id = randomUUID(),
         buf = readFileSync(path),
         dest = join(media.directory, id);
+      const mediaHash = createHash("sha256").update(buf).digest("hex");
+      if (kind === "audio" && usesApprovedAudio && mediaHash !== initialAudio.sha256)
+        throw new StoryError(422, "initial_audio_changed");
       writeFileSync(dest, buf, { flag: "wx", mode: 0o600 });
       written.push(dest);
       const fd = openSync(dest, "r");
@@ -86,7 +102,7 @@ export async function importInitialStory(
         kind,
         ...meta,
         bytes: buf.length,
-        hash: createHash("sha256").update(buf).digest("hex"),
+        hash: mediaHash,
       });
     }
     const fd = openSync(media.directory, "r");

@@ -1,0 +1,61 @@
+
+> privaweb@0.1.0 test:e2e:contract:webkit
+> bash scripts/with-webkit-libraries.sh npm run test:e2e:contract -- --project=webkit --grep-invert=Matriz:
+
+
+> privaweb@0.1.0 test:e2e:contract
+> playwright test --project=webkit --grep-invert=Matriz:
+
+[WebServer] (node:40) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 32 tests using 2 workers
+
+(node:73) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:74) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [webkit] › tests/e2e/navigation-accessibility.spec.ts:19:1 › US1: navegación sin JavaScript (906ms)
+  ✓   2 [webkit] › tests/e2e/navigation-accessibility.spec.ts:2:1 › US1: disclosure, Escape, resize y foco (941ms)
+  ✓   3 [webkit] › tests/e2e/navigation-brand.spec.ts:2:1 › official104x40 brand, approved tokens and locally loaded variable font (693ms)
+  ✓   4 [webkit] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /index.html (752ms)
+  ✓   5 [webkit] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /index.html (594ms)
+  ✓   6 [webkit] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /historias.html (605ms)
+  ✓   7 [webkit] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /app.html (659ms)
+  ✓   8 [webkit] › tests/e2e/navigation.spec.ts:15:5 › US1: /index.html → /contacto.html (679ms)
+  ✓   9 [webkit] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /historias.html (634ms)
+  ✓  10 [webkit] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /index.html (596ms)
+  ✓  11 [webkit] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /historias.html (644ms)
+  ✓  12 [webkit] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /app.html (602ms)
+  ✓  13 [webkit] › tests/e2e/navigation.spec.ts:15:5 › US1: /historias.html → /contacto.html (577ms)
+  ✓  14 [webkit] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /app.html (628ms)
+  ✓  15 [webkit] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /index.html (594ms)
+  ✓  16 [webkit] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /historias.html (662ms)
+  ✓  17 [webkit] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /app.html (680ms)
+  ✓  18 [webkit] › tests/e2e/navigation.spec.ts:15:5 › US1: /app.html → /contacto.html (574ms)
+  ✓  19 [webkit] › tests/e2e/navigation.spec.ts:5:3 › US1: entrada directa, activo y logo /contacto.html (554ms)
+  ✓  20 [webkit] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /index.html (577ms)
+  ✓  21 [webkit] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /historias.html (612ms)
+  ✓  22 [webkit] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /app.html (593ms)
+  ✓  24 [webkit] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /index.html (626ms)
+  ✓  23 [webkit] › tests/e2e/navigation.spec.ts:15:5 › US1: /contacto.html → /contacto.html (720ms)
+  ✓  25 [webkit] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /historias.html (526ms)
+  ✓  26 [webkit] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /app.html (603ms)
+  ✓  27 [webkit] › tests/e2e/navigation.spec.ts:24:3 › US2: CTA /contacto.html (618ms)
+  ✓  28 [webkit] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /index.html (994ms)
+  ✓  29 [webkit] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /historias.html (982ms)
+  ✓  30 [webkit] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /app.html (998ms)
+  ✓  31 [webkit] › tests/e2e/navigation.spec.ts:37:3 › US3: footer /contacto.html (1.0s)
+  ✓  32 [webkit] › tests/e2e/navigation.spec.ts:56:1 › US2: repeated same fragment restores heading focus without navigation history change (645ms)
+
+  32 passed (14.3s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

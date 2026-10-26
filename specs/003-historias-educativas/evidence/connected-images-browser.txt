@@ -1,0 +1,396 @@
+
+> privaweb@0.1.0 test:e2e:stories:contract
+> playwright test --config=playwright.stories.config.ts --project=chromium
+
+[WebServer] (node:983640) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:46] "GET / HTTP/1.1" 200 -
+
+Running 29 tests using 2 workers
+
+(node:983845) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:983843) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:48] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:49] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:49] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:49] "GET /images/stories/contra.png HTTP/1.1" 200 -
+  ✓   1 [chromium] › tests/e2e/stories-accessibility.spec.ts:4:82 › stories 360px text 100% (4.8s)
+  ✓   2 [chromium] › tests/e2e/stories-accessibility.spec.ts:4:82 › stories 360px text 200% (4.9s)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:52] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:52] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:52] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:52] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:52] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:53] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:53] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:53] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:53] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:53] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:53] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:53] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:53] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:53] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:53] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:53] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:53] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:53] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:53] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:53] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:53] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:54] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:54] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:54] "GET /images/stories/contra.png HTTP/1.1" 200 -
+  ✓   3 [chromium] › tests/e2e/stories-accessibility.spec.ts:4:82 › stories 390px text 100% (4.5s)
+  ✓   4 [chromium] › tests/e2e/stories-accessibility.spec.ts:4:82 › stories 390px text 200% (4.4s)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:57] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:57] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:57] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:57] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:57] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:57] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:57] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:57] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:57] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:57] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:57] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:57] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:57] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:57] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:57] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:57] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:58] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:58] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:58] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:58] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:58] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:58] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:58] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:28:58] "GET /images/stories/contra.png HTTP/1.1" 200 -
+  ✓   6 [chromium] › tests/e2e/stories-accessibility.spec.ts:4:82 › stories 430px text 200% (3.4s)
+  ✓   5 [chromium] › tests/e2e/stories-accessibility.spec.ts:4:82 › stories 430px text 100% (3.5s)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:00] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:00] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:00] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:00] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:01] "GET /images/stories/contra.png HTTP/1.1" 200 -
+  ✓   7 [chromium] › tests/e2e/stories-accessibility.spec.ts:4:82 › stories 768px text 100% (3.2s)
+  ✓   8 [chromium] › tests/e2e/stories-accessibility.spec.ts:4:82 › stories 768px text 200% (3.2s)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:04] "GET /images/stories/contra.png HTTP/1.1" 200 -
+  ✓  10 [chromium] › tests/e2e/stories-accessibility.spec.ts:4:82 › stories 1024px text 200% (2.8s)
+  ✓   9 [chromium] › tests/e2e/stories-accessibility.spec.ts:4:82 › stories 1024px text 100% (2.9s)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:06] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:06] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:06] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:06] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:07] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+  ✓  11 [chromium] › tests/e2e/stories-accessibility.spec.ts:4:82 › stories 1280px text 100% (3.0s)
+  ✓  12 [chromium] › tests/e2e/stories-accessibility.spec.ts:4:82 › stories 1280px text 200% (2.9s)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:09] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:09] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:09] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:09] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:09] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:09] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:10] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+  ✓  13 [chromium] › tests/e2e/stories-accessibility.spec.ts:4:82 › stories 1440px text 100% (2.8s)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:12] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:12] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:12] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:12] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+  ✓  14 [chromium] › tests/e2e/stories-accessibility.spec.ts:4:82 › stories 1440px text 200% (3.0s)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:12] code 404, message File not found
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:12] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:12] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:12] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:12] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:12] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+  ✓  15 [chromium] › tests/e2e/stories-accessibility.spec.ts:18:1 › no JavaScript gives honest fallback and static destinations (581ms)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:13] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+  ✓  17 [chromium] › tests/e2e/stories.spec.ts:9:1 › three or fewer stays same collection (711ms)
+  ✓  16 [chromium] › tests/e2e/stories.spec.ts:4:1 › catalog expands without duplicates or losing selection and fragment works (1.2s)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+  ✓  19 [chromium] › tests/e2e/stories.spec.ts:14:48 › reject invalid response (458ms)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+  ✓  18 [chromium] › tests/e2e/stories.spec.ts:10:1 › empty differs from error; retry recovers (934ms)
+  ✓  20 [chromium] › tests/e2e/stories.spec.ts:14:48 › reject type response (473ms)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:14] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+  ✓  21 [chromium] › tests/e2e/stories.spec.ts:14:48 › reject network response (585ms)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] code 404, message File not found
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /media/public/missing.wav HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:15] "GET /images/stories/contra.png HTTP/1.1" 200 -
+  ✓  23 [chromium] › tests/e2e/stories.spec.ts:26:48 › media error missing.wav retains transcript and activity (614ms)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /media/public/broken.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+  ✓  24 [chromium] › tests/e2e/stories.spec.ts:26:48 › media error broken.wav retains transcript and activity (564ms)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:16] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:17] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:17] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+  ✓  22 [chromium] › tests/e2e/stories.spec.ts:15:1 › real media plays pauses seeks and exposes equivalent fixture transcript (2.7s)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:17] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:17] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:17] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:17] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:17] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:17] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:17] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:17] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:17] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:17] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:17] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+  ✓  26 [chromium] › tests/e2e/stories.spec.ts:37:1 › pageshow restoration revalidates and clears selection; failure removes stale cards (568ms)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:18] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+  ✓  27 [chromium] › tests/e2e/stories.spec.ts:42:1 › method and continuation exact contracts, image failure preserves text (733ms)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+  ✓  28 [chromium] › tests/e2e/stories.spec.ts:48:1 › delayed old request never replaces new catalog; visibility refresh uses same contract (514ms)
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /historias.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /brand/priva-logo.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /images/stories/test-image.svg HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /_astro/StoriesContent.astro_astro_type_script_index_0_lang.aoomMlP6.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /fonts/plus-jakarta-sans-variable.ttf HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /media/public/test-audio-0.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /media/public/test-audio-1.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:19] "GET /images/stories/enlace.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:20] "GET /media/public/test-audio-2.wav HTTP/1.1" 206 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:20] "GET /images/stories/contra.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [26/Oct/2026 22:29:20] "GET /images/stories/llamada.png HTTP/1.1" 200 -
+  ✓  29 [chromium] › tests/e2e/stories.spec.ts:54:1 › catalog values render as text and controls have unique ids and live region (649ms)
+  ✓  25 [chromium] › tests/e2e/stories.spec.ts:30:1 › all nine feedbacks by pointer and keyboard, independent, no transmission/storage, reload reset (3.5s)
+
+  29 passed (36.1s)

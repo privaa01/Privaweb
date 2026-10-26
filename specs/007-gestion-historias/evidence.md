@@ -200,3 +200,7 @@ evidencia o bloqueos explícitos; no se declara entrega final por esa trazabilid
 
 No hay excepciones de alcance o constitucionales aprobadas ni implícitas. Se mantiene un permiso,
 sin eliminación definitiva, historial navegable, moderación pública o persistencia educativa.
+
+2026-10-26 — Importador inicial: portadas oficiales por defecto cuando imagePath se omite, manteniendo auth/revisión/inspección/borrador.38Node007 aprobados, incluye el nuevo caso con las tres imágenes/hash/dimensiones y catálogo aún vacío; tres casos del importador repetidos después del ajuste del mapa y aprobados, sin duplicarlos. Tipado007 conforme. Audio sintético solo para tests; narraciones oficiales pendientes. Ver ../003-historias-educativas/evidence/connected-images.md. No se cierran las tareas materiales/operativas pendientes por esta prueba.
+
+2026-10-26 — Audios aprobados asociados a los tres casos iniciales por confirmación de la responsable. audioPath puede omitirse para usar el archivo exacto y su huella de aprobación; una discrepancia se rechaza sin registros/medios parciales.40Node007 aprobados (incluye asociación de audios y rechazo por huella cambiada), typecheck conforme. Los cuatro MP3 pasan códec/reproducción/pausa/búsqueda en Chromium/Firefox/WebKit mediante Blob local, sin certificar publicación o entregaHTTP. Número desconocido es el cuarto material, pendiente de ficha para creación/publicación normal y aparición en el contenido ampliado. Ver ../003-historias-educativas/evidence/audio-assignment.md.

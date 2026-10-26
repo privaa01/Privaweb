@@ -2,7 +2,7 @@
 
 Fecha: 2026-10-23 (America/Bogota); logs del entorno en UTC. Solicitud: terminar las tareas abiertas de 001. Base de código al inicio: b17f4be. Se preservó el informe general local pendiente de commit.
 
-**Resultado:** todos los recorridos contractuales revalidados en Chromium/Firefox y controles compartidos comprobados sobre Inicio real. **23/28 tareas completas; las cinco restantes siguen parciales por criterios de integración, WebKit y revisión final de las cuatro páginas no satisfechos.** No se cerraron casillas por pruebas de fixtures ni se eludieron los guards de las features de destino. No se detectó fallo funcional de navegación que requiera cambiar código de producto en esta revisión.
+**Resultado:** todos los recorridos contractuales revalidados en Chromium/Firefox y controles compartidos comprobados sobre Inicio real. **23/28 tareas completas; las cinco restantes siguen parciales por criterios de integración y revisión final de las cuatro páginas no satisfechos; WebKit se resolvió el2026-10-26.** No se cerraron casillas por pruebas de fixtures ni se eludieron los guards de las features de destino. No se detectó fallo funcional de navegación que requiera cambiar código de producto en esta revisión.
 
 ## Verificación realizada
 
@@ -28,7 +28,7 @@ Las comprobaciones adicionales de Inicio importan la entrada real protegida en e
 | Tarea | Parte realizada | Qué impide cerrarla |
 |---|---|---|
 | T023 | index/historias/app/contacto existen, usan PublicLayout y configuran su pageId correcto; guards intactos | No hay build completo aprobado ni verificación de los cuatro dist/*.html con sus contenidos/anclas finales |
-| T025 | Matriz100% Chromium completa, regresiónFirefox y recursos comunes conformes; controles reales de Inicio conformes | Falta WebKit y aceptación final dependiente de T023, con las cuatro páginas reales |
+| T025 | Matriz100% Chromium completa, regresiónFirefox y recursos comunes conformes; controles reales de Inicio conformes | WebKit aprobado; falta aceptación final dependiente de T023, con las cuatro páginas reales |
 | T026 | Matriz200% Chromium completa, contraste/foco/controles y comprobación real de Inicio | Controles compartidos de Inicio confirmados manualmente; revisión final de las cuatro páginas depende de sus materiales y T025 |
 | T027 | Checks, builds contractuales, guard006 real y suites locales aprobados; suite integrada preparada | Sin URL integrada, documentos010 aprobados, Contacto005/servicio006 calificados ni build completo |
 | T028 | Progreso, guía y trazabilidad actualizados con esta evidencia | Su cierre integral depende explícitamente de T027; no se marca completa solo por editar documentación |
@@ -50,8 +50,10 @@ Detalle completo, con salidas reales de los validadores: closure-dependencies.js
 
 1. Finalizar y revisar los contenidos/materiales/configuración de003/004/005 y documentos010, con las verificaciones009/006 aplicables. Mantener la navegación001 ya implementada; no sustituir destinos por fixtures.
 2. Disponer de un entorno real integrado autorizado, accesible para el runner. localhost:4321 del Mac no es accesible desde esta máquina ni acredita por sí solo los servicios privados y el build completo.
-3. Provisionar las dependencias de WebKit mediante el mecanismo de administración del entorno; no hay sudo disponible para registrar la biblioteca faltante. No omitir validación del host, TLS ni sandbox.
+3. WebKit disponible desde2026-10-26 con `npm run test:e2e:contract:webkit`;32casos aprobados. Reutilizar el wrapper para futuras regresiones, sin modificar validaciones.
 4. Completar la revisión manual de menú/footer y las cuatro páginas finales; registrar entorno, método y respuesta real.
 5. Ejecutar build y suite integrada001 con su URL, comprobar dist/anclas/autorización y actualizar solo entonces las tareas dependientes.
 
 Checklist de requisitos 16/16, sin alterar marcadores. Selección activa del entorno:001. No se cambió código de producto, no se publicaron fixtures, no hubo commit/push/despliegue.
+
+Actualización2026-10-26: el bloqueo WebKit queda resuelto. Ver webkit-runtime.md y webkit-2026-10-26.txt. La revisión manual específica de controles ya está confirmada en manual-navigation-review.md. Persisten los criterios de aceptación final/integración de T023/T025/T026/T027/T028; no se cierra una tarea dependiente por sustituir el entorno de prueba.

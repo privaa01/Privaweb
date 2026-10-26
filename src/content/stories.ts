@@ -1,4 +1,5 @@
 import { instagram, type SocialLink } from '../config/social.ts';
+import { officialBrand, visualReference } from '../config/brand.ts';
 import type { ImageResource, Review } from './home.ts';
 export const storiesClosingText = 'Aprende a reconocer riesgos y toma decisiones más informadas sobre tus datos personales.';
 export const catalogCopy={title:'Historias que te pueden pasar a ti.',description:'Escucha, reflexiona y participa. Cada historia está basada en situaciones reales para que identifiques errores comunes y aprendas a proteger tus datos.'};
@@ -24,6 +25,6 @@ export const storiesContent:StoriesData={testOnly:false,
  method:{title:'Identifica el error y aprende',description:'Cada historia te muestra cómo un descuido puede convertirse en un riesgo real. Escucha, analiza y descubre buenas prácticas de prevención digital para tu vida diaria.',image:image('identidad'),review:review()},
  closing:{title:'Sigue explorando, aprende y mantente seguro.',description:storiesClosingText,image:image('cierre'),review:review()},
  identity:[{title:'Somos Priva',description:'Una plataforma creada para ayudarte a entender, proteger y gestionar tus datos personales. Creemos en un internet más transparente, libre y seguro donde la información sea un derecho inalienable.',href:'/index.html#somos-priva',review:review()},{title:'Informamos para que estés en control.',description:'A través de historias reales, herramientas prácticas, auditorías y recursos educativos continuos, te damos acceso a conocimiento claro sin tecnicismos innecesarios ni sesgos comerciales.',href:'/index.html#que-hacemos',review:review()}],
- brand:image('marca'),social:instagram,endpoint:'/api/public/historias',mediaOrigins:[],
- visual:{typography:{status:'pendiente',sourceReference:''},palette:{status:'pendiente',sourceReference:''}},
+ brand:{block:'marca',src:officialBrand.src,alt:'Priva',width:officialBrand.width!,height:officialBrand.height!,purpose:'informativo',status:'verificado',sourceReference:'disenovisual/Link-PrivaHome.png — recurso compartido identificado por la usuaria'},social:instagram,endpoint:'/api/public/historias',mediaOrigins:[],
+ visual:{typography:{status:'verificado',sourceReference:visualReference+' — Plus Jakarta Sans local con licencia OFL'},palette:{status:'verificado',sourceReference:visualReference}},
 };

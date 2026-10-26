@@ -147,7 +147,7 @@ y el CTA final; comprobar destinos contra Inicio y la URL oficial compartida con
 - **FR-009 / H09 — Ejercicio Caso 3**: Tres opciones de referencia; misma interacción educativa de H07, selección independiente por caso; nueve explicaciones en total, pendientes de contenido validado.
 - **FR-010 / H10 — Metodología con imagen**: Identifica el error y aprende; 1 Escucha, 2 Reflexiona, 3 Aplica en ese orden
 - **FR-011 / H11 — Identidad en dos bloques y SABER MÁS**: Somos Priva y Qué hacemos; cada enlace lleva a su sección de Inicio
-- **FR-012 / H12 — CTA final de Historias**: Conservar título/imagen; párrafo exacto C16: Aprende a reconocer riesgos y toma decisiones más informadas sobre tus datos personales. EXPLORAR MÁS CONTENIDOS abre Instagram oficial, misma URL que Contacto; URL pendiente.
+- **FR-012 / H12 — CTA final de Historias**: Conservar título/imagen; párrafo exacto C16: Aprende a reconocer riesgos y toma decisiones más informadas sobre tus datos personales. EXPLORAR MÁS CONTENIDOS abre Instagram oficial, misma URL que Contacto: https://www.instagram.com/priva_inc/, identificada por la responsable el2026-10-26.
 
 ### Reglas que precisan los requisitos
 
@@ -191,7 +191,7 @@ clasificación de visitantes ni seguimiento estadístico de ejercicios.
 | Ver todas las historias | Listado completo en esta página | 003 |
 | Saber más de Somos Priva | /index.html#somos-priva | 002 ofrece destino |
 | Saber más de Qué hacemos | /index.html#que-hacemos | 002 ofrece destino |
-| EXPLORAR MÁS CONTENIDOS | URL oficial Instagram pendiente | Misma URL que 005 |
+| EXPLORAR MÁS CONTENIDOS | https://www.instagram.com/priva_inc/ | Misma URL que 005; referencia en evidence/social-reference.md |
 
 Las rutas provienen de R35 y son contratos propuestos, no prueba de implementación.
 No reemplazar una URL pendiente por `#` aislado. El guardado/publicación/activación corresponde
@@ -304,3 +304,7 @@ independiente, con los bloqueos de publicación e integración ya documentados.
 contractual verificados; 30/35 tareas completas. Evidencia en evidence/summary.md.
 Recursos oficiales, revisión editorial, navegadores adicionales y aceptación integrada
 permanecen pendientes. Sin backend007, promesas de publicación ni cambios de alcance.
+
+## Reanudación — 2026-10-26
+
+Marca, fuente y paleta compartidas recibidas desde001 e incorporadas a003. Las seis imágenes aportadas se identifican por nombre/destino en [evidence/materials.md](evidence/materials.md); sus archivos originales todavía no están disponibles en el entorno/GitHub. No se marcan verificadas ni se inventan dimensiones. Se conserva el bloqueo de imágenes propias/editorial/Instagram y aceptación integrada. Carpeta GitHub `public/images/stories/` preparada para recibir los PNG.

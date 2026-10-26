@@ -1,0 +1,48 @@
+✔ valid full catalog and confirmed empty (2.411197ms)
+✔ reject version (1.255358ms)
+✔ reject duplicate id (0.276295ms)
+✔ reject private field (0.139169ms)
+✔ reject three options (0.162744ms)
+✔ reject duplicate option (0.155334ms)
+✔ reject empty transcript (0.191007ms)
+✔ reject empty explanation (0.153861ms)
+✔ reject dimensions (0.158348ms)
+✔ reject unsafe id (0.229916ms)
+✔ reject private envelope (0.165129ms)
+✔ reject missing audio (0.157477ms)
+✔ reject URL javascript:alert(1) (0.197908ms)
+✔ reject URL data:audio/wav;base64,AA (0.137597ms)
+✔ reject URL //other.test/audio.wav (0.151748ms)
+✔ reject URL /private/audio.wav (0.160992ms)
+✔ reject URL /media/../private.wav (0.095974ms)
+✔ reject URL /media/%2e%2e/private.wav (0.110507ms)
+✔ reject URL https://user:pass@priva.test/media/a.wav (0.256135ms)
+✔ reject URL https://unknown.test/a.wav (0.1131ms)
+✔ allow explicitly configured HTTPS media origin (0.229446ms)
+✔ production pending fails; complete synthetic metadata verifies validator only (4.784598ms)
+✔ gate rejects fixture (0.645261ms)
+✔ gate rejects missing src (0.386822ms)
+✔ gate rejects missing file (0.947615ms)
+✔ gate rejects review pending (0.294333ms)
+✔ gate rejects changed copy (0.390607ms)
+✔ gate rejects C16 (0.388074ms)
+✔ gate rejects missing brand (0.250277ms)
+✔ gate rejects dimensions (0.500483ms)
+✔ gate rejects source (0.350918ms)
+✔ gate rejects social pending (0.31238ms)
+✔ gate rejects social missing (0.298139ms)
+✔ gate rejects social unsafe (0.283036ms)
+✔ gate rejects fake endpoint (0.377568ms)
+✔ gate rejects media unsafe (0.458961ms)
+✔ gate rejects visual (0.35946ms)
+✔ gate rejects identity route (0.512731ms)
+✔ gate rejects traversal (0.397828ms)
+✔ gate rejects symlink escaping public and empty asset (0.667664ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 138.955613

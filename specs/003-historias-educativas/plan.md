@@ -137,3 +137,7 @@ Sin código, instalación, pruebas de aplicación, commit o publicación.
 2026-10-17 — Implementación: consumidor/DTO, audio nativo, reflexión local, shell completo,
 gate y banco aislado. Contrato007 no desplegado; medios y revisiones oficiales pendientes.
 Sin nuevo proveedor ni dependencia. Resultados y límites en evidence/summary.md.
+
+## Reanudación — 2026-10-26
+
+Marca, fuente y paleta compartidas recibidas desde001 e incorporadas a003. Las seis imágenes aportadas se identifican por nombre/destino en [evidence/materials.md](evidence/materials.md); sus archivos originales todavía no están disponibles en el entorno/GitHub. No se marcan verificadas ni se inventan dimensiones. Se conserva el bloqueo de imágenes propias/editorial/Instagram y aceptación integrada. Carpeta GitHub `public/images/stories/` preparada para recibir los PNG.

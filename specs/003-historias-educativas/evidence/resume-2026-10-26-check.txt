@@ -1,0 +1,10 @@
+
+> privaweb@0.1.0 check:stories:contract
+> ASTRO_TELEMETRY_DISABLED=1 astro check --root tests/fixtures/stories
+
+21:47:12 [types] Generated 62ms
+21:47:12 [check] Getting diagnostics for Astro files in /workspace/Privaweb/tests/fixtures/stories...
+Result (4 files):
+- 0 errors
+- 0 warnings
+- 0 hints

@@ -170,3 +170,7 @@ Calidad transversal: T024–T035. Resultados contractuales y bloqueos en [eviden
 T028 parcial (harness007), T030 parcial (arranque de navegadores), T031/T032/T033
 bloqueadas por recursos/revisión/servicios. Las casillas abiertas no significan trabajo omitido
 sin explicación; ver evidence/integration.md, accessibility.md y materials.md.
+
+## Avance de materiales — 2026-10-26 (America/Bogota)
+
+30/35 tareas completas. T031 parcial: logo/fuente/paleta compartidos configurados y CSS alineado; seis imágenes recibidas como previsualizaciones, identificadas en evidence/materials.md pero pendientes de archivos originales para subir/conectar. Carpeta GitHub public/images/stories disponible. Se solicitó Instagram oficial. No se aprueban textos, audios, transcripciones ni explicaciones por recibir imágenes.40unitarias y29Chromium aprobadas, check contractual conforme; resultados en evidence/resume-2026-10-26-*.txt.

@@ -75,3 +75,7 @@ lector de pantalla y navegadores disponibles son evidencias separadas de fixture
 Registrar por criterio fecha local, navegador, entorno, resultado y ruta de evidencia.
 Recursos, backend, navegador o destino faltantes se registran bloqueados, nunca aprobados.
 No emitir aceptación integral por pasar banco o por existir contrato/documentación.
+
+## Reanudación — 2026-10-26
+
+Marca, fuente y paleta compartidas recibidas desde001 e incorporadas a003. Las seis imágenes aportadas se identifican por nombre/destino en [evidence/materials.md](evidence/materials.md); sus archivos originales todavía no están disponibles en el entorno/GitHub. No se marcan verificadas ni se inventan dimensiones. Se conserva el bloqueo de imágenes propias/editorial/Instagram y aceptación integrada. Carpeta GitHub `public/images/stories/` preparada para recibir los PNG.

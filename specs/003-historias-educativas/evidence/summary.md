@@ -1,6 +1,6 @@
 # Resumen de implementación — 003
 
-Fecha: 2026-10-17 (America/Bogota). Estado: componentes y banco contractual implementados;
+Actualización: 2026-10-26 (America/Bogota). Estado: componentes y banco contractual implementados;
 publicación y aceptación integrada pendientes. Rama main; sin commit ni push en esta fase.
 
 ## Implementado
@@ -36,7 +36,7 @@ Capturas desktop-fixture.png/mobile-fixture.png inspeccionadas para estructura, 
 
 - T028 parcial: suite de integración escrita; falta harness real de transiciones007/recursos privados.
 - T030 parcial: intentosFirefox/WebKit fallaron al arrancar por perfil/bibliotecas; sin cobertura aprobada.
-- T031 bloqueada: materiales y nueve explicaciones oficiales, respaldo editorial y URLInstagram pendientes.
+- T031 bloqueada: materiales y nueve explicaciones oficiales, respaldo editorial pendientes; Instagram resuelto con @priva_inc el2026-10-26.
 - T032 bloqueada: lector de pantalla, teclado manual nativo y comparación visual con recursos finales.
 - T033 bloqueada: catálogo007 real, páginas/destinos/materiales y entorno de integración.
 
@@ -53,3 +53,13 @@ Sin cambios en componentes compartidos001/002, sin instalación ni incremento de
 El contrato007 es consumidor/propuesta documentada, no backend creado. No se guardan respuestas.
 Un intento simultáneo de navegadores fue rechazado por puerto ocupado; repetido secuencialmente.
 Firefox/WebKit fallidos y servicio ausente no se convierten en resultados aprobados.
+
+## Reanudación003 — 2026-10-26
+
+La usuaria aportó previsualizaciones de seis PNG. Se identificaron tres portadas de casos y tres ilustraciones de bloques; los archivos binarios aún no están disponibles en el entorno ni GitHub. Carpeta `public/images/stories/` preparada y subida en6e7f07e para recibirlos, sin publicar imágenes ficticias. Mapa de nombres y destinos en materials.md.
+
+Se incorporaron a storiesContent el logo oficial compartido y referencias de Plus Jakarta Sans/paleta ya recibidas; CSS usa tokens aprobados y foco claro en cierre oscuro. El banco conserva imágenes institucionales/catálogo sintéticos, pero reutiliza la marca real.40pruebas unitarias y29Chromium aprobadas tras el cambio; check contractual sin errores/advertencias/hints. Los bloqueos de marca y referencias visuales desaparecen; siguen imágenes propias, revisión editorial, Instagram y materiales/catálogo final.30/35 tareas sin cambios.
+
+2026-10-26 — Recorridos principales Firefox disponibles:15aprobados,0fallos/omitidos;14casos de matriz excluidos por diseño con `--grep-invert="stories [0-9]+px text"`. Ver resume-2026-10-26-firefox.txt. Esto supera el bloqueo histórico de arranque Firefox para003. WebKit no se reejecutó en esta reanudación: conserva dependencia host pendiente según última evidencia de001; T030 sigue parcial.
+
+2026-10-26 — Perfil oficial aportado por la responsable: https://www.instagram.com/priva_inc/. Configuración compartida003/005 actualizada; validadores dejan de indicar Instagram pendiente.106pruebas Node aprobadas (40Historias+66Contacto), sin cerrar otros bloqueos. Comprobación remota impedida por rechazo CONNECT403 del proxy, sin respuesta del perfil; no se presenta como verificación de disponibilidad. Ver social-reference.md.

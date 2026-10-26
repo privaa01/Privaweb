@@ -19,3 +19,5 @@ rechazado por puerto ocupado; se repitió secuencialmente y solo este intento fu
 
 Teclado manual de controles nativos, lector de pantalla, fuentes/paleta/activos oficiales y
 fidelidad final pendientesT030/T031/T032. Capturasfixture no acreditan aceptación visual.
+
+2026-10-26 — Recorridos principales Firefox disponibles:15aprobados,0fallos/omitidos;14casos de matriz excluidos por diseño con `--grep-invert="stories [0-9]+px text"`. Ver resume-2026-10-26-firefox.txt. Esto supera el bloqueo histórico de arranque Firefox para003. WebKit no se reejecutó en esta reanudación: conserva dependencia host pendiente según última evidencia de001; T030 sigue parcial.

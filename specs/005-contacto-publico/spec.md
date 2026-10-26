@@ -259,7 +259,7 @@ la composición: contenido final y avisos requieren P03, sin declaraciones no co
 | Contacto Seguro del footer | /contacto.html | 001 enlaza la página; 005 aporta contenido |
 | Acceso directo al formulario | /contacto.html#escribir | 005 conserva la sección para otros consumidores |
 | DESCARGAR APP del encabezado | /app.html#descarga | Integración 001/004 |
-| Ir a Instagram | URL oficial compartida con Historias | 005/P01; configuración única ya prevista en 003 |
+| Ir a Instagram | https://www.instagram.com/priva_inc/ | Configuración única compartida con003; aportada por la responsable |
 | Manifiesto de Datos desde aviso | /manifiesto-datos.html | 010 |
 | Solicitud de eliminación anticipada | Canal real pendiente de definir/verificar | 009/P02 |
 
@@ -379,3 +379,5 @@ cierra aceptación integrada: navegadores adicionales, materiales/revisión manu
 integración y build final siguen pendientes. Detalle y trazabilidad en evidence.md/tasks.md.
 
 2026-10-23 — Decisión explícita de navegación: Contacto Seguro del footer pasa a `/contacto.html` sin salto al formulario. Se conserva `#escribir` para acceso directo, aviso/Manifiesto y demás consumidores. No se altera validación, guardado ni tratamiento de consultas.
+
+2026-10-26 — La responsable identifica https://www.instagram.com/priva_inc/ como perfil oficial. Configurado en src/config/social.ts y compartido con003; el enlace general instagram.com no se utiliza como destino. Ver ../003-historias-educativas/evidence/social-reference.md para origen y limitación de comprobación remota.

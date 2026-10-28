@@ -1,3 +1,7 @@
+# Estado vigente de regresión e integración — 2026-10-28
+
+32/35tareas: T028/T030 completas.30/30pruebas principalesFirefox/WebKit y9/9integración real007, con transiciones aisladas y recursos oficiales. Pendientes cotejo/coherencia de materiales, revisión manual y calificación/build. [Evidencia](transitions-review-2026-10-28.md). Registros siguientes históricos.
+
 # Accesibilidad — resultados y límites
 
 2026-10-17, Chromium sistema. Matriz14:360/390/430/768/1024/1280/1440px×texto100/200%.

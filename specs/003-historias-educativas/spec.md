@@ -138,13 +138,13 @@ y el CTA final; comprobar destinos contra Inicio y la URL oficial compartida con
 
 - **FR-001 / H01 — Hero Historias**: Etiqueta, título, descripción e imagen; Explorar episodios lleva a #casos, sin insertar María
 - **FR-002 / H02 — Casos destacados: encabezado y Ver más historias**: Tres casos iniciales y control visibles; Ver todas muestra el listado completo de activas en esta página, incluidas nuevas publicaciones; sin borradores, desactivadas ni duplicados (C11)
-- **FR-003 / H03 — Caso 1: Enlace Falso / Phishing**: María, mensaje bancario y enlace; imagen y relato coinciden; duración 04:15 es referencia, verificar audio real
-- **FR-004 / H04 — Caso 2: La llamada sospechosa / Ingeniería Social**: Juan y código de autenticación; imagen y relato coinciden; 06:40 sujeto a archivo; corrección Confiada pendiente de revisión editorial (P03)
-- **FR-005 / H05 — Caso 3: La contraseña compartida / Contraseñas**: Luis, streaming y correo corporativo; imagen y relato coinciden; 05:20 sujeto a archivo
+- **FR-003 / H03 — Caso 1: Enlace falso / Ingeniería social**: recreación de Carolina sobre una falsa campaña de adopción; portada, audio, transcripción y ejercicio corresponden a la ficha aportada y autorizada. Duración obtenida del archivo real.
+- **FR-004 / H04 — Caso 2: La llamada sospechosa / Suplantación de identidad**: recreación de Juliana sobre compartir un código con quien dice llamar de WhatsApp; recursos y ejercicio corresponden a la ficha aportada y autorizada. Duración obtenida del archivo real.
+- **FR-005 / H05 — Caso 3: La contraseña compartida / Contraseñas**: recreación de Luisa sobre una tienda falsa y reutilización de una contraseña; recursos y ejercicio corresponden a la ficha aportada y autorizada. Duración obtenida del archivo real.
 - **FR-006 / H06 — Audio de cada caso**: Reproducir/pausar, avance, duración real y estado de carga/error; sin autoplay; transcripción equivalente; sin audio bloquea cierre de caso
-- **FR-007 / H07 — Ejercicio Caso 1**: Tres opciones de referencia; explicación específica de riesgo y prevención inmediata al seleccionar/cambiar, sin calificación, puntuación ni botón extra; teclado y anuncio accesible; sin envío/persistencia; recarga reinicia (C05/C08/C09).
-- **FR-008 / H08 — Ejercicio Caso 2**: Tres opciones de referencia; misma interacción educativa de H07, selección independiente por caso; explicación por opción validada contra el material aportado.
-- **FR-009 / H09 — Ejercicio Caso 3**: Tres opciones de referencia; misma interacción educativa de H07, selección independiente por caso; nueve explicaciones en total, pendientes de contenido validado.
+- **FR-007 / H07 — Ejercicio Caso 1**: Tres opciones de la ficha aportada y autorizada para publicar; explicación específica de riesgo y prevención inmediata al seleccionar/cambiar, sin calificación, puntuación ni botón extra; teclado y anuncio accesible; sin envío/persistencia; recarga reinicia (C05/C08/C09).
+- **FR-008 / H08 — Ejercicio Caso 2**: Tres opciones de la ficha aportada y autorizada para publicar; misma interacción educativa de H07, selección independiente por caso; explicación por opción validada contra el material aportado.
+- **FR-009 / H09 — Ejercicio Caso 3**: Tres opciones de la ficha aportada y autorizada para publicar; misma interacción educativa de H07, selección independiente por caso; nueve explicaciones en total, publicadas por mandato de la responsable; no se inventa cotejo independiente no ejecutado.
 - **FR-010 / H10 — Metodología con imagen**: Identifica el error y aprende; 1 Escucha, 2 Reflexiona, 3 Aplica en ese orden
 - **FR-011 / H11 — Identidad en dos bloques y SABER MÁS**: Somos Priva y Qué hacemos; cada enlace lleva a su sección de Inicio
 - **FR-012 / H12 — CTA final de Historias**: Conservar título/imagen; párrafo exacto C16: Aprende a reconocer riesgos y toma decisiones más informadas sobre tus datos personales. EXPLORAR MÁS CONTENIDOS abre Instagram oficial, misma URL que Contacto: https://www.instagram.com/priva_inc/, identificada por la responsable el2026-10-26.
@@ -160,22 +160,19 @@ Los audios son recreaciones educativas según decisión de la responsable del 20
 
 | Caso | Categoría | Contenido de referencia |
 |---|---|---|
-| Enlace falso | Phishing | María recibe un mensaje que aparenta ser de su banco y abre un enlace |
-| La llamada sospechosa | Ingeniería social | Juan recibe una llamada y comparte un código de autenticación |
-| La contraseña compartida | Contraseñas | Luis reutiliza una clave compartida en streaming y se compromete su correo corporativo |
+| Enlace falso | Ingeniería social | Carolina sigue un anuncio de adopción, entrega datos y transfiere dinero a quienes suplantan una campaña. |
+| La llamada sospechosa | Suplantación de identidad | Juliana comparte un código con alguien que dice llamar de WhatsApp y pierde el acceso a su cuenta. |
+| La contraseña compartida | Contraseñas | Luisa se registra en una tienda falsa usando una contraseña que también utiliza en otras cuentas. |
 
-El “Confiada” del segundo caso queda pendiente de revisión editorial, no se convierte en
-un personaje adicional. Duraciones 04:15/06:40/05:20 son solo referencia del dibujo;
-las duraciones 04:32/06:18/05:27 de la captura administrativa tampoco prueban duración real.
-Mostrar metadatos de archivos aportados; no inventar audios, guiones ni recursos de entrega.
+Las fichas y transcripciones aportadas sustituyen los personajes/escenas preliminares del dibujo, por decisión de publicación de la responsable del2026-10-28. Mostrar duración derivada de los archivos; las duraciones de referencia del wireframe no son metadatos reales. No inventar audios, guiones o recursos.
 
-**Opciones de referencia**, conservando el contenido del dibujo sin convertirlo en clave única:
+**Opciones vigentes de las fichas autorizadas** (sin clave única de corrección):
 
-| Caso | Opción 1 | Opción 2 | Opción 3 |
+| Caso | Opción1 | Opción2 | Opción3 |
 |---|---|---|---|
-| 1 | Hacer clic en un enlace desconocido | Compartir sus datos bancarios | No verificar el remitente |
-| 2 | Compartir código de autenticación en llamada | Ceder ante la falsa urgencia o presión | No colgar y verificar con la app bancaria oficial |
-| 3 | Reutilizar claves en múltiples servicios | Anotar contraseñas en chats sin cifrado | No activar autenticación de dos pasos (2FA) |
+| 1 | Confiar en logos y perfiles sin verificar la organización | Entregar datos personales y de cuenta a un contacto sin verificar | Transferir dinero por la presión de una supuesta urgencia |
+| 2 | Compartir el código de verificación durante la llamada | Confiar en quien afirma llamar de WhatsApp | Actuar para resolver un supuesto problema sin comprobarlo |
+| 3 | Reutilizar la misma contraseña en varias cuentas | Confiar en la apariencia de una tienda y en su publicidad | Registrarse sin verificar la oferta y la página |
 
 Cada opción tiene una explicación distinta de riesgo y prevención validada contra el relato.
 Ninguna se etiqueta correcta/incorrecta. Se elige una opción por caso y puede cambiarse;

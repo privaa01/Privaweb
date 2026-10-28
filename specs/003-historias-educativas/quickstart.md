@@ -1,6 +1,6 @@
 # Guía de validación — 003
 
-Fecha: 2026-10-16. Documento de ejecución futura, no resultados de pruebas.
+Actualización:2026-10-28. Implementación/pruebas locales vigentes;32/35tareas, sin cierre productivo. Registros iniciales de planificación se conservan como históricos.
 
 ## Prerrequisitos
 
@@ -101,3 +101,7 @@ Cuatro historias autorizadas/publicadas/activas en catálogo007 real, incluido N
 A petición de la responsable, el control se llama «Ver más historias» y aparece centrado debajo de las tres tarjetas iniciales, en vez de junto al encabezado. Al activarlo con teclado/puntero se añade Número desconocido sin duplicar ni reconstruir los casos previos, se lleva el foco/vista al nuevo título y se oculta el botón ya consumido. Se mantienen aria-controls/aria-expanded, recarga y estados de error/vacío. Con tres o menos se conserva no añadir tarjetas. Corrección de H02/T009–T010/T017; no cambia la publicación ni las fichas.
 
 Verificación real:3/3 recorridos completos Chromium/Firefox/WebKit, incluidos botón por debajo del catálogo, Enter, foco visible en cuarta, reproducción/transcripciones/doce explicaciones;2comprobaciones adicionales con puntero a1440px/100% y390px/200%, sin overflow. Log .test-output/stories-more-browser.log y captura .test-output/stories-more-button.png. Pruebas/contratos actualizados al nombre vigente.
+
+## Integración local vigente
+
+2026-10-28:32/35tareas, T028/T030cerradas;30/30principalFirefox/WebKit y9/9integración real007 con estados/medios/edición verificados enDBaislada. T031cotejo/coherencia, T032manual y T033calificación/build siguen pendientes. [Resultados y reproducción](evidence/transitions-review-2026-10-28.md).

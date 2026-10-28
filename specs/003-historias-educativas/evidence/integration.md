@@ -1,3 +1,7 @@
+# Estado vigente de regresión e integración — 2026-10-28
+
+32/35tareas: T028/T030 completas.30/30pruebas principalesFirefox/WebKit y9/9integración real007, con transiciones aisladas y recursos oficiales. Pendientes cotejo/coherencia de materiales, revisión manual y calificación/build. [Evidencia](transitions-review-2026-10-28.md). Registros siguientes históricos.
+
 # Integración — bloqueada
 
 2026-10-17. Falta PRIVA_INTEGRATION_BASE_URL real; ejecutar script de integración produjo

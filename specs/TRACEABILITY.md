@@ -15,9 +15,9 @@
 | I03 | Qué hacemos: introducción y cuatro tarjetas | [002-inicio-institucional](002-inicio-institucional/spec.md) | Inicio aprobado; contrato y navegación real a Historias pasan en tres motores; build completo pendiente010/009 |
 | I04 | CTA final de Inicio | [002-inicio-institucional](002-inicio-institucional/spec.md) | Inicio aprobado; contrato y navegación real a Historias pasan en tres motores; build completo pendiente010/009 |
 | H01 | Hero Historias | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
-| H02 | Casos destacados: encabezado y Ver todas las historias | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
-| H03 | Caso 1: Enlace Falso / Phishing | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
-| H04 | Caso 2: La llamada sospechosa / Ingeniería Social | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
+| H02 | Casos destacados: encabezado y Ver más historias | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
+| H03 | Caso 1: Enlace falso / Ingeniería social | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
+| H04 | Caso 2: La llamada sospechosa / Suplantación de identidad | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
 | H05 | Caso 3: La contraseña compartida / Contraseñas | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
 | H06 | Audio de cada caso | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
 | H07 | Ejercicio Caso 1 | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
@@ -480,3 +480,5 @@ Sin commit/push/despliegue en esta incorporación. [Recursos](001-navegacion-glo
 2026-10-28 —004 T028 completa: aprobación explícita del copy en snapshotinmutable;App real habilitada con ambas plataformasPróximamente.53/53Node,9/9integración y20/20render/adaptación.30/32tareas; revisión manual/fidelidad y build/calificaciónintegrada pendientes009/010. [Evidencia](004-presentacion-app/evidence/approval-2026-10-28.md).
 
 2026-10-28 —010 T028/T033 completas:35/44tareas; destinos reales con foco y recarga en3motores,84celdas de lectura200%/teclado/menú44px/axe en banco,9/9pruebas locales reales y27/27Node. Auditoría T035solo parcial; entregaHTTP/cabecera/admin, documentos y operación009 siguen pendientes. No se habilitan datos reales ni se aprueban documentos. [Evidencia](010-documentos-recuperacion/local-review-2026-10-28.md).
+
+2026-10-28 —003 T028/T030 completas:32/35.30/30principalFirefox/WebKit y9/9integración real; transiciones007 verificadas con recursos oficiales enDBaislada, sin modificar las historias de la responsable. Cotejo/materiales, manual y calificación/build pendientes. Narrativas/categorías/opciones sincronizadas con fichas autorizadas. [Evidencia](003-historias-educativas/evidence/transitions-review-2026-10-28.md).

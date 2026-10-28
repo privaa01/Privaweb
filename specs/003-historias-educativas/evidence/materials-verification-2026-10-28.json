@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-28",
+  "sourceSha256": "a8a9a7eb01c3c7ade87ee907347c25f84fd410b69388032af99a5f3183fd3b28",
+  "normalization": "Whitespace only; punctuation and spelling preserved",
+  "audioTranscriptListeningVerified": false,
+  "stories": [
+    {
+      "materialKey": "contrasena-compartida",
+      "pdfMatchesTxt": true,
+      "txtMatchesDraft": true,
+      "audioHashMatches": true,
+      "optionsWithRiskAndPrevention": 3
+    },
+    {
+      "materialKey": "llamada-sospechosa",
+      "pdfMatchesTxt": true,
+      "txtMatchesDraft": true,
+      "audioHashMatches": true,
+      "optionsWithRiskAndPrevention": 3
+    },
+    {
+      "materialKey": "enlace-falso",
+      "pdfMatchesTxt": true,
+      "txtMatchesDraft": true,
+      "audioHashMatches": true,
+      "optionsWithRiskAndPrevention": 3
+    },
+    {
+      "materialKey": "numero-desconocido",
+      "pdfMatchesTxt": true,
+      "txtMatchesDraft": true,
+      "audioHashMatches": true,
+      "optionsWithRiskAndPrevention": 3
+    }
+  ]
+}

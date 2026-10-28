@@ -61,3 +61,19 @@ La navegación desde Inicio ya está verificada; T027/T031 de002 mantienen el re
 ## Publicación local vigente
 
 Las cuatro fichas fueron publicadas por mandato explícito de la responsable el2026-10-28. Cuarta portada: reutilización de llamada.png autorizada; audios/transcripciones/ejercicios incluidos por la orden de publicación. No se afirma cotejo independiente no ejecutado. [Resultado y pruebas](local-publication.md). Pendientes anteriores de fichas sin publicar son históricos para este entorno.
+
+## Cotejo documental y coherencia — 2026-10-28
+
+Se inspeccionaron las tres páginas renderizadas del PDF original y se compararon sus cuatro relatos con los TXT y los campos transcript de las fichas JSON. Coincidencia íntegra al normalizar únicamente espacios y saltos de línea; se conservan la puntuación y las particularidades del original. SHA256 del PDF y de los cuatro audios coinciden con sus manifiestos. Resultados reproducibles por archivo: [registro de verificación](materials-verification-2026-10-28.json).
+
+Revisión editorial de las doce explicaciones (nueve iniciales y tres de la cuarta ficha): cada opción contiene riesgo y prevención, y corresponde a una acción narrada. Luisa: reutilización de contraseña, apariencia de tienda y oferta sin verificar. Juliana: código compartido, identidad telefónica no comprobada y supuesto problema de cuenta. Carolina: logos/perfiles, datos personales y de cuenta, transferencia bajo presión. Salomé: conocimiento del nombre, código compartido y temor al supuesto acceso. Las descripciones y categorías mantienen esos protagonistas y situaciones. No se introducen puntuaciones ni afirmaciones de casos reales. En Carolina, la prevención advierte que imágenes, audios y videos del mismo contacto no bastan para verificarlo, coherente con la falsificación narrada.
+
+Portadas iniciales vinculadas mediante src/content/story-images.ts; cuarta con llamada.png por autorización explícita. Instagram conserva la referencia oficial previamente confirmada por la responsable en src/config/social.ts; esta revisión no acredita disponibilidad remota actual.
+
+T031 permanece parcial: este cotejo documental no acredita equivalencia palabra por palabra entre los audios y las transcripciones mediante escucha. No se solicita de nuevo autorización de publicación ya recibida ni se modifica el contenido aprobado. T032 (revisión manual/lector) y T033 (calificación de producción/build) conservan sus pendientes.
+
+Reinicio local de esta sesión: la carpeta temporal disponible estaba vacía. Se recuperaron las cuatro publicaciones mediante el operador privado y el mandato existente, conservando hashes y contenidos. Se regeneró únicamente el identificador local de la cuarta ficha y se sincronizaron recibo/manifiesto. Esto evidencia que el almacenamiento temporal de desarrollo no sustituye persistencia productiva.
+
+## Aprobación de la responsable — 2026-10-28
+
+Después del resumen del cotejo y sus pendientes, la responsable indicó: «apruebo todo, realiza commit y sube cambios». Se registra aprobación general de los cambios presentados y autorización de commit/push. Esta declaración no documenta por sí misma la ejecución de escucha comparada, pruebas con lector de pantalla ni validación productiva; esas verificaciones conservan su estado pendiente hasta contar con evidencia.

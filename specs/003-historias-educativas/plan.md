@@ -167,3 +167,7 @@ Cuatro historias autorizadas/publicadas/activas en catálogo007 real, incluido N
 ## Acceso a la cuarta historia — 2026-10-28
 
 La responsable solicita hacer visible el botón para la cuarta historia. Situar el control Ver más historias después de las tres tarjetas iniciales. Al expandir, conservar tarjetas y selecciones existentes, añadir pendientes sin duplicar y enfocar/mostrar el título de la primera historia añadida. Ocultar el control tras añadir todas las adicionales; exponer relación aria-controls/aria-expanded. Con tres o menos se conserva el comportamiento previo sin añadir tarjetas.
+
+## Integración local vigente
+
+2026-10-28:32/35tareas, T028/T030cerradas;30/30principalFirefox/WebKit y9/9integración real007 con estados/medios/edición verificados enDBaislada. T031cotejo/coherencia, T032manual y T033calificación/build siguen pendientes. [Resultados y reproducción](evidence/transitions-review-2026-10-28.md).

@@ -8,28 +8,32 @@
       "materialKey": "contrasena-compartida",
       "transcript": "content/stories/transcripts/contrasena-compartida.txt",
       "draft": "content/stories/drafts/contrasena-compartida.json",
-      "status": "source-received-exercise-draft-pending-review"
+      "status": "local-publication-authorized-by-owner",
+      "localPublicationReference": "specs/003-historias-educativas/evidence/local-publication-authorization.json"
     },
     {
       "number": 2,
       "materialKey": "llamada-sospechosa",
       "transcript": "content/stories/transcripts/llamada-sospechosa.txt",
       "draft": "content/stories/drafts/llamada-sospechosa.json",
-      "status": "source-received-exercise-draft-pending-review"
+      "status": "local-publication-authorized-by-owner",
+      "localPublicationReference": "specs/003-historias-educativas/evidence/local-publication-authorization.json"
     },
     {
       "number": 3,
       "materialKey": "enlace-falso",
       "transcript": "content/stories/transcripts/enlace-falso.txt",
       "draft": "content/stories/drafts/enlace-falso.json",
-      "status": "source-received-exercise-draft-pending-review"
+      "status": "local-publication-authorized-by-owner",
+      "localPublicationReference": "specs/003-historias-educativas/evidence/local-publication-authorization.json"
     },
     {
       "number": 4,
       "materialKey": "numero-desconocido",
       "transcript": "content/stories/transcripts/numero-desconocido.txt",
       "draft": "content/stories/drafts/numero-desconocido.json",
-      "status": "source-received-exercise-draft-pending-review"
+      "status": "local-publication-authorized-by-owner",
+      "localPublicationReference": "specs/003-historias-educativas/evidence/local-publication-authorization.json"
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Tasks: Gestión y publicación de historias (007)
 
-**Fecha**: 2026-10-19 | **Rama real**: main | **Estado**: implementación local verificada; 56/60 tareas cerradas. T056–T059 pendientes de cierre externo.
+**Fecha**: 2026-10-19 | **Rama real**: main | **Estado**: implementación local verificada; 59/63 tareas cerradas. T056–T059 pendientes de cierre externo.
 **Input**: [spec](spec.md), [plan](plan.md), [investigación](research.md), [modelo](data-model.md),
 [contrato](contracts/story-management.md), [guía](quickstart.md) y constitución1.0.0.
 
@@ -210,3 +210,15 @@ integral; solo carga/error/vacío y error de upload se simulan explícitamente p
 Ninguna de estas casillas se cierra por aceptar archivos sintéticos, pasar tests locales o escribir
 una referencia. Sin commit/push/despliegue ni envío de correo a terceros. T060 cierra la trazabilidad
 local con bloqueos explícitos; no acredita aceptación productiva de los cinco requisitos.
+
+## Conexión local003 — 2026-10-28
+
+- [X] T061 Conectar catálogo/medios públicos del servicio007 al servidor Astro local con activación explícita, SQLite privado persistente, acceso loopback y sin rutas administrativas, cuentas ni publicación automática; verificar API/estado vacío real en navegador y exclusión de borradores/medios privados. No cierra calificación productiva T056–T059.
+
+2026-10-28 — T061 completa: catálogo real y medios públicos007 conectados a Astro local;6/6 pruebas de navegador y2/2 Node nuevas,TypeScript/check conformes. Regresión adicional17aprobadas/2bloqueadas por ffmpegLinux ausente. No publicación automática; catálogo actual vacío. [Evidencia](local-connection.md).
+
+## Adaptación local de medios — 2026-10-28
+
+- [X] T062 Adaptar el inspector y pruebas007 a los binarios ARM64 instalados mediante perfil nativo restrictivo y supervisor de recursos, conservando Linux y fail-closed; comprobar archivos, CPU/memoria/tiempo/salida, lectura privada/escrituras/red/fork y suite de subidas/importación. Resultado42/42; TypeScript/check conformes. No cierra T056–T059 ni publica fichas. [Evidencia](macos-media-validation.md).
+
+- [X] T063 Ejecutar publicación local de las cuatro fichas por mandato de la responsable, con hashes exactos, recursos oficiales y portada cuarta asignada explícitamente; usar proceso privado de operador sin credenciales web nuevas y verificar audio/transcripción/expansión/ejercicios en tres motores. Resultado confirmado; no cierra calificación productivaT056–T059. Ver ../003-historias-educativas/evidence/local-publication.md.

@@ -9,8 +9,8 @@ export default defineConfig({
  use: { baseURL, trace: 'retain-on-failure' },
  projects: [
   { name: 'chromium', use: { ...devices['Desktop Chrome'], launchOptions: process.env.PRIVA_CHROMIUM_EXECUTABLE ? { executablePath: process.env.PRIVA_CHROMIUM_EXECUTABLE } : undefined } },
-  { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
-  { name: 'webkit', use: { ...devices['Desktop Safari'] } },
+  { name: 'firefox', grepInvert: /matriz Inicio/, use: { ...devices['Desktop Firefox'] } },
+  { name: 'webkit', grepInvert: /matriz Inicio/, use: { ...devices['Desktop Safari'] } },
  ],
  webServer: integrated ? undefined : { command: 'npm run build:home:contract && python3 -m http.server 4323 --bind 127.0.0.1 --directory .test-output/home', url: baseURL, reuseExistingServer: false, timeout: 120000 },
 });

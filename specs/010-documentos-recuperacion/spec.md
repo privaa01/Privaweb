@@ -2,7 +2,7 @@
 
 **Feature Directory**: `specs/010-documentos-recuperacion`
 **Created**: 2026-10-16
-**Updated**: 2026-10-20
+**Updated**: 2026-10-27
 **Status**: Implementado/verificado localmente de forma parcial (33/44 tareas); cierre integrado, revisión de textos y operación pendientes. Véase `evidence.md`; no acredita publicación o aprobación legal.
 **Input**: `/speckit-specify 010`, desarrollando la feature existente sin ampliar su alcance.
 **Fuente**: [SPEC original R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), X03/C32; [constitución](../../.specify/memory/constitution.md), CONST-01–10/12; decisiones vigentes de [009](../009-privacidad-conservacion/spec.md).
@@ -151,3 +151,9 @@ Las reglas siguientes desarrollan X03; no crean IDs originales nuevos ni reasign
 | X03 (Derivado técnico, C32) | FR-001 | R-06/07/09 | US3.1–5 | SC-004–006: recuperación y destinos válidos | Verificado en contrato local; entrega real y WebKit pendientes |
 
 Los IDs US/R/SC son locales de esta feature. Los documentos históricos 02–07 no están aportados: no se inventan HU/CA/TSK ni evidencia de ejecución. Plan, tareas y pruebas completarán la cadena de X03 en sus fases correspondientes.
+
+## Decisiones y borrador del MVP — 2026-10-27
+
+La responsable elige Firebase para alojamiento web, difiere correo productivo y mantiene correo en modo de prueba sin proveedor. La etapa MVP no resuelve acceso ni copias. Se revisan Ley 1581 de 2012/Decreto 1377 de 2013 aportados y su compilación en Decreto1074. Se registran proveedor y estado de pruebas en el borrador; se añade marco colombiano y derechos al Manifiesto. No se aprueban textos/vigencia ni se califica privacidad; X03 mantiene los criterios de cierre. [Decisiones, fuentes y pendientes concretos](mvp-decisions-2026-10-27.md).
+
+2026-10-27 — Confirmación de la responsable: MVP de Contacto solo con datos ficticios de prueba. Se añade esta limitación a Términos y Manifiesto en revisión. Sin proveedor de correo real ni recepción de consultas reales; se mantienen controles y condiciones de cierre productivo para una etapa posterior.

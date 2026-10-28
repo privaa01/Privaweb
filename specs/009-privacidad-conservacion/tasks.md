@@ -264,3 +264,7 @@ Implementación local registrada; repetir análisis si cambia alcance/contratos 
 T067 registra esta entrega parcial y sus bloqueos conforme a la excepción de seguimiento ya
 indicada en Dependencies; no declara cumplidas T061–T065 ni cierra X02 productivo/CT01/010/011.
 El checklist de requisitos permanece intacto16/16; sus notas históricas no son evidencia de ejecución.
+
+## Progreso documental — 2026-10-27
+
+Registradas las decisiones Firebase/correo de prueba/MVP y referencias colombianas de la responsable. T061 avanza solo en la selección del alojamiento web; proveedor de correo productivo queda diferido expresamente. T062–T065 mantienen requisitos de almacenamiento, copias, operación y evidencia reales. No se cierran casillas por elegir una plataforma o citar normas. Ver [decisiones del MVP y marco normativo](../010-documentos-recuperacion/mvp-decisions-2026-10-27.md).

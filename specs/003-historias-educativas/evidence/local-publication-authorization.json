@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-28",
+  "scope": "four-local",
+  "authorization": "publica las historias",
+  "fourthCover": "reuse-llamada",
+  "coverAuthorization": "Sí, reutilizar la ilustración del teléfono",
+  "meaning": "Mandato explícito de publicar las fichas preparadas; no acredita revisión individual de cada explicación ni despliegue productivo.",
+  "stories": {
+    "enlace-falso": "df2a62ce9e656a7f238486afb73ac37e2884214d018f3398672b7064da013ace",
+    "llamada-sospechosa": "8c638e2d41847f887a306413cad44a746fda00b9c363199369c0149926a4c66b",
+    "contrasena-compartida": "635da29da623eb4ebb5aa323a6f6f997770daedcde7934c897558f47cb3cfdb3",
+    "numero-desconocido": "c7e7df37b40bba168099271174af40800968a3abc40b309711587e400451f5fd"
+  }
+}

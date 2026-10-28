@@ -28,7 +28,9 @@ for (const method of ['puntero', 'teclado'] as InputMethod[]) {
  });
  test(`Inicio real: CTA con ${method} llega a Historias real`, async ({ page }) => {
   await openRealHome(page);
+  const destination = page.waitForResponse(response => new URL(response.url()).pathname === '/historias.html' && response.request().isNavigationRequest());
   await followHomeStories(page, method);
+  expect((await destination).status(), 'Historias real debe responder HTTP 200; revisar guard editorial de 003').toBe(200);
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(page.getByText(/destino.*de prueba|banco de pruebas/i)).toHaveCount(0);
   await expect(page.locator('#casos')).toBeVisible();

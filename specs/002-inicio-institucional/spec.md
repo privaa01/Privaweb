@@ -2,8 +2,8 @@
 
 **Feature Directory**: `specs/002-inicio-institucional`
 **Created**: 2026-10-16
-**Updated**: 2026-10-20 (America/Bogota)
-**Status**: componentes validados contractualmente en Chromium y Firefox; cinco textos educativos y recursos comunes aprobados/recibidos. Imágenes institucionales recibidas; revisión visual/manual aceptada por la usuaria. WebKit e integración pendientes.
+**Updated**: 2026-10-28 (America/Bogota)
+**Status**: componentes validados contractualmente en Chromium y Firefox; cinco textos educativos y recursos comunes aprobados/recibidos. Imágenes institucionales recibidas; revisión visual/manual aceptada por la usuaria. Chromium/Firefox/WebKit verificados; navegación real a Historias verificada (18/18); build completo bloqueado por 010/009.
 **Input**: `/speckit-specify 002`: desarrollar la especificación existente conservando alcance e IDs.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), I01–I04,
 PDF página 1 y [constitución 1.0.0](../../.specify/memory/constitution.md).
@@ -48,7 +48,7 @@ sus descripciones con el contenido revisado y el estado de las capacidades anunc
 
 1. **Dado** el bloque Qué hacemos, **cuando** lo consulto, **entonces** encuentro la etiqueta,
    el título “Informamos para que estés en control.”, la introducción y cuatro tarjetas:
-   Educación Digital, Historias reales, Herramientas Seguras y Acompañamiento, en ese orden. (I03)
+   Educación Digital, Historias educativas, Herramientas Seguras y Acompañamiento, en ese orden. (I03)
 2. **Dado** un acceso directo a #que-hacemos, **cuando** abro Inicio con esa ancla,
    **entonces** alcanzo la sección correcta con su encabezado visible. (I03)
 3. **Dado** una descripción que anuncia curaduría, asistencia u otra capacidad pendiente,
@@ -108,7 +108,7 @@ sobre los riesgos relacionados con mis datos.
   una historia adicional de suplantación o un enlace/ancla #maria. Fuente: C07.
 - **FR-003 / I03 — Qué hacemos**: La sección #que-hacemos DEBE conservar etiqueta, título
   “Informamos para que estés en control.”, introducción y las cuatro tarjetas Educación Digital,
-  Historias reales, Herramientas Seguras y Acompañamiento, en ese orden. Las descripciones
+  Historias educativas, Herramientas Seguras y Acompañamiento, en ese orden. Las descripciones
   DEBEN revisarse contra las capacidades existentes antes de publicarse. P03 está resuelto para los cinco textos educativos actuales mediante aprobación explícita registrada en [editorial-review.md](evidence/editorial-review.md); un cambio material exige nueva revisión.
   NO DEBEN inventarse servicios, promesas verificadas o acciones en tarjetas informativas.
 - **FR-004 / I04 — Cierre hacia Historias**: Inicio DEBE conservar título, etiqueta e imagen
@@ -257,3 +257,17 @@ Las imágenes aportadas están conectadas como `/images/home/hero.png`, `/images
 ## Revisión manual aceptada — 2026-10-23
 
 La responsable aprobó visualmente Inicio, confirmó el rotor de encabezados y aceptó los pasos guiados con VoiceOver en su Mac (`localhost:4321`). T026/T032 completas en el alcance de revisión de Inicio; 28/33 tareas. [Registro y límites](evidence/manual-review.md). La confirmación no equivale a auditoría externa ni sustituye WebKit, integración real o datos operativos pendientes de otras features.
+
+## Validación vigente — 2026-10-28
+
+30/33 tareas completas: T023/T033 cerradas con 59/59 pruebas contractuales finales (29 Chromium, 15 Firefox, 15 WebKit), matriz Chromium de siete anchos × texto 100/200%, y 8/8 pruebas adicionales WebKit en Inicio real. Integración 12/18: seis CTA bloqueados por HTTP 500 de Historias; build detenido por guard 010/009. T027/T031 y cierre integral T028 pendientes. [Evidencia y reproducción](evidence/review-2026-10-28.md). En macOS/WebKit el helper usa Option+Tab para incluir enlaces con su configuración nativa. No se repiten aprobaciones de imágenes ni revisión visual/manual.
+
+Decisión vigente 2026-10-28: audios identificados por la responsable como recreaciones educativas. Ajustar títulos, descripciones y metodología para expresarlo; retirar auditorías y recursos continuos no acreditados, usando el alcance educativo aprobado en Inicio. No aprueba ejercicios ni publicación del catálogo.
+
+## Aprobación editorial aplicada — 2026-10-28
+
+La responsable respondió «Sí, apruebo los textos públicos corregidos» para hero, metodología, cierre, identidad, catálogo y pasos Escucha/Reflexiona/Aplica. Se registraron cinco snapshots inmutables en src/content/stories-review.json, con referencia a evidence/public-copy-review.md; el guard sigue invalidando modificaciones materiales. No se aprobaron ejercicios ni se importaron/publicaron historias.
+
+Verificación: 45/45 pruebas Node Inicio/Historias, guard003 salida 0 y Astro check (95 archivos, 0 errores/advertencias, 1 hint previo). Integración real002: 18/18 aprobadas, seis recorridos por motor Chromium/Firefox/WebKit. Historias HTTP200; /api/public/historias HTTP404: el catálogo007 aún no está conectado al servidor local. Captura .test-output/stories-approved.png. Build completo conserva salida1 en guard010/009.
+
+La navegación desde Inicio ya está verificada; T027/T031 de002 mantienen el requisito residual de build completo, y T028 el cierre integral: 30/33 tareas. No se confunde renderizado de Historias con disponibilidad del catálogo, aprobación de ejercicios ni publicación productiva. Logs: .test-output/stories-approved-unit.log, stories-approved-check.log, home-approved-integration.log y home-approved-build.log.

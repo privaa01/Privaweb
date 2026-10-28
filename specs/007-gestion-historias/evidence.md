@@ -204,3 +204,11 @@ sin eliminación definitiva, historial navegable, moderación pública o persist
 2026-10-26 — Importador inicial: portadas oficiales por defecto cuando imagePath se omite, manteniendo auth/revisión/inspección/borrador.38Node007 aprobados, incluye el nuevo caso con las tres imágenes/hash/dimensiones y catálogo aún vacío; tres casos del importador repetidos después del ajuste del mapa y aprobados, sin duplicarlos. Tipado007 conforme. Audio sintético solo para tests; narraciones oficiales pendientes. Ver ../003-historias-educativas/evidence/connected-images.md. No se cierran las tareas materiales/operativas pendientes por esta prueba.
 
 2026-10-26 — Audios aprobados asociados a los tres casos iniciales por confirmación de la responsable. audioPath puede omitirse para usar el archivo exacto y su huella de aprobación; una discrepancia se rechaza sin registros/medios parciales.40Node007 aprobados (incluye asociación de audios y rechazo por huella cambiada), typecheck conforme. Los cuatro MP3 pasan códec/reproducción/pausa/búsqueda en Chromium/Firefox/WebKit mediante Blob local, sin certificar publicación o entregaHTTP. Número desconocido es el cuarto material, pendiente de ficha para creación/publicación normal y aparición en el contenido ampliado. Ver ../003-historias-educativas/evidence/audio-assignment.md.
+
+## Conexión local003–007 vigente
+
+`npm run dev:local`: catálogo real en el mismo origen local, sin cuentas nuevas ni publicación automática.6/6 pruebas de navegador y2/2 pruebas Node nuevas;17regresiones aprobadas/2bloqueadas por ffmpegLinux ausente. Catálogo vacío confirmado. [Configuración, comandos y límites](local-connection.md).
+
+## Estado vigente del inspector macOS
+
+2026-10-28: adaptación implementada;42/42 pruebas007 aprobadas, incluidas subidas/importación y aislamiento nativo. Las limitaciones anteriores de FFmpeg ausente son históricas. `npm run build:media:macos` construye el supervisor y `npm run test:story-management:macos` verifica la suite. Memoria física supervisada cada5ms en Mac, sin afirmar equivalencia al límite virtual duro Linux. [Evidencia final y límites](macos-media-validation.md). No se publicaron fichas pendientes ni se cerró operación productiva.

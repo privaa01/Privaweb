@@ -4,7 +4,7 @@
 **Input**: [spec.md](spec.md), [plan.md](plan.md), [research.md](research.md),
 [data-model.md](data-model.md), [contrato](contracts/contact.md), [quickstart.md](quickstart.md)
 y [constitución](../../.specify/memory/constitution.md).
-**Estado**: 44/49 tareas completadas y verificadas localmente; T044–T048 siguen abiertas.
+**Estado**: 49/53 tareas completas tras la fase MVP local de 2026-10-27; T045–T048 permanecen parciales por revisión final, operación y entrega productivas. T044 y T050–T053 verificadas; no equivale a publicación con datos reales.
 **Evidencia**: [evidence.md](evidence.md). No se ha habilitado recepción productiva.
 **Tests**: solicitados por los escenarios y SC-001–SC-007 de la especificación. Escribir las
 pruebas de comportamiento antes de su implementación y observar un fallo pertinente; no confundir
@@ -134,7 +134,7 @@ externas sin esperar recursos/proveedor. Una tarea parcialmente bloqueada perman
 
 - [X] T042 Integrar página real `src/pages/contacto.astro` con PublicLayout y assert de publicación de T015; añadir guard de Contacto a `package.json` antes de Astro build sin retirar guards 001–004 ni crear páginas de relleno; verificar rechazo con configuración incompleta y que no se importe fs/sqlite/HMAC al bundle público, sin bypass de entrega.
 - [X] T043 Escribir y ejecutar matriz accesible en `tests/e2e/contact-accessibility.spec.ts`: 360/390/430/768/1024/1280/1440 px × texto 100%/200%, navegación/anclas al cargar, Instagram antes en móvil, sin recorte/desbordamiento impeditivo, teclado/foco/errores/estados anunciados, axe y contraste 4.5:1/3:1/control 44px; probar sin JS sin GET de PII, ausencia de storage/cookies de este flujo y conservar contenido cuando falla imagen; registrar evidencia en `specs/005-contacto-publico/evidence.md`.
-- [ ] T044 Revalidar Chromium/Firefox/WebKit con `playwright.contact.config.ts` y `playwright.contact.service.config.ts`, ejecutando los bancos según `specs/005-contacto-publico/quickstart.md`; diagnosticar arranques fallidos sin desactivar protecciones, registrar navegador/fecha/resultado y los fallos conocidos de Firefox/WebKit como bloqueos si persisten, no como pruebas pasadas.
+- [X] T044 Revalidar Chromium/Firefox/WebKit con `playwright.contact.config.ts` y `playwright.contact.service.config.ts`, ejecutando los bancos según `specs/005-contacto-publico/quickstart.md`; diagnosticar arranques fallidos sin desactivar protecciones, registrar navegador/fecha/resultado y los fallos conocidos de Firefox/WebKit como bloqueos si persisten, no como pruebas pasadas.
 - [ ] T045 Incorporar recursos oficiales en `public/images/contact/`, revisión exacta de textos/avisos en `src/content/contact.ts` y destino verificado compartido en `src/config/social.ts`; comparar render con PDF 4 y probar lector de pantalla/teclado real, documentando mediciones y revisión en `specs/005-contacto-publico/evidence.md`; completar solo con materiales y revisión reales, mantener tarea abierta mientras falten.
 - [ ] T046 Calificar receptor/adaptador y operación P02/009/010 para recogida real en `src/config/contact.ts` y `specs/005-contacto-publico/evidence.md`: proveedor/durabilidad/transacciones/concurrencia, HTTPS/proxy/Origin, secretos/acceso privado, responsable/canal/90d/actividad/copias/restauración y aviso coherente; probar mismo contrato en adaptador productivo sin elegirlo ficticiamente; verificar rastreo web/integraciones antes de habilitar claims, omitiéndolos si no hay evidencia; no implementar correo/UI 006/008 ni certificar retención integral en esta feature.
 - [ ] T047 Implementar y ejecutar `tests/e2e/contact-integration.spec.ts` contra `PRIVA_INTEGRATION_BASE_URL` real verificada, sin fallback a fixture, sin API interceptada y con datos sintéticos: composición/destinos, guardado real confirmado, lectura autorizada por mecanismo operativo privado y ausencia de acceso público; entorno/mecanismo no disponible bloquea esta tarea sin crear endpoint de lectura de prueba; registrar evidencia en `specs/005-contacto-publico/evidence.md` y no afirmar entrega de correo.
@@ -243,3 +243,18 @@ Sin hooks before_tasks/after_tasks configurados al generar (extensions.yml ausen
 
 T049 completa la sincronización documental del estado parcial; no marca C01–C07 como cerrados.
 No hubo commit, push ni despliegue. Checklists de calidad se conservaron sin modificación.
+
+## Fase MVP local — 2026-10-27
+
+Autorización: ejecutar005 después de confirmar Firebase futuro, correo sin proveedor y datos solo ficticios. No cambia ni cierra condiciones productivas previas.
+
+- [X] T050 Implementar modo de desarrollo integrado explícito en `server/contact/development.ts`, `server/contact/dev-integration.ts`, `astro.config.mjs`, `src/pages/contacto.astro` y componentes/formulario: loopback, misma API/persistencia real, DB fuera del checkout, aviso sintético/dominio example.test, confirmación sin correo y guards productivos intactos.
+- [X] T051 Escribir primero y ejecutar `tests/contact-development.test.ts` para dominio/rechazo terminal/replay/reinicio, aislamiento de origen/datos y denegación de arranque inseguro; no controles de fallo/lectura HTTP públicos. Revalidar pruebas005 afectadas y typecheck.
+- [X] T052 Ejecutar `tests/e2e/contact-development.spec.ts` con página real en dev explícito, recursos oficiales, API no interceptada y lectura DB privada: validación, guardado, mismo intento/doble envío, acceso a archivos denegado, sin correo ni claims; navegadores y matriz. Mantener pendientes destinos ajenos, revisión manual y producción.
+- [X] T053 Sincronizar spec, plan, contrato, guía, tareas, matriz e informe de005 con resultados reales del MVP y bloqueos de T045–T048; conservar pendientes por criterios, sin aprobación sintética ni commit/push/despliegue.
+
+## Resultado de la ejecución MVP — 2026-10-27
+
+T044 completa: 117 pruebas de UI (39 por motor) y 12 de servicio/SQLite (4 por motor), Chrome/Firefox/WebKit, sin omisiones. T050–T053 completas: modo explícito de desarrollo sobre Contacto real, aislamiento y persistencia, 70 pruebas Node, 26 pruebas del MVP (12 recorridos principales de tres motores +14 celdas Chromium) y documentación sincronizada. No se suman repeticiones de pruebas de corrección/captura como cobertura nueva.
+
+T045 parcial: imágenes/marca/fuente/paleta e Instagram recibidos y usados; faltan revisión editorial/manual/lector final. T046 parcial: Firebase web elegido y datos solo ficticios en esta etapa; no califica origen/almacenamiento/privacidad productivos. T047 parcial: integración real de componentes+API+SQLite local verificada, no integración calificada de entrega ni dependencias003/004/006/009/010. T048 parcial: checks y regresión de Contacto aprobados, build de entrega bloqueado por010/009 y otros destinos. No se marcaron estas cuatro casillas.

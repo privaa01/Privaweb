@@ -2,7 +2,7 @@
 
 **Branch real**: `main` | **Date**: 2026-10-16 | **Spec**: [spec.md](spec.md)
 **Feature activa de los scripts**: `003-historias-educativas` (no crea rama Git).
-**Estado**: componentes y banco contractual implementados; publicación y aceptación integrada pendientes.
+**Estado**: textos públicos aprobados; guard editorial y render HTTP200. Cuatro historias publicadas/activas localmente con mandato de la responsable; revisión final y cierre productivo pendientes.
 
 ## Summary
 
@@ -143,3 +143,27 @@ Sin nuevo proveedor ni dependencia. Resultados y límites en evidence/summary.md
 Marca, fuente y paleta compartidas recibidas desde001 e incorporadas a003. Las seis imágenes aportadas se identifican por nombre/destino en [evidence/materials.md](evidence/materials.md); sus archivos originales todavía no están disponibles en el entorno/GitHub. No se marcan verificadas ni se inventan dimensiones. Se conserva el bloqueo de imágenes propias/editorial/Instagram y aceptación integrada. Carpeta GitHub `public/images/stories/` preparada para recibir los PNG.
 
 2026-10-26 — Archivos de las seis imágenes recibidos en6e7f523 y conectados con dimensiones/procedencia verificadas. Tres ilustraciones de bloques y tres portadas por ID inicial, sin alterar publicación/estados007. Los avisos anteriores de falta de archivos son históricos. Audios: carpeta fuente content/stories/audio/ preparada en GitHub; revisar transcripciones/explicaciones antes de publicar. [Evidencia](evidence/connected-images.md).
+
+Decisión vigente 2026-10-28: audios identificados por la responsable como recreaciones educativas. Ajustar títulos, descripciones y metodología para expresarlo; retirar auditorías y recursos continuos no acreditados, usando el alcance educativo aprobado en Inicio. No aprueba ejercicios ni publicación del catálogo.
+
+## Aprobación editorial aplicada — 2026-10-28
+
+La responsable respondió «Sí, apruebo los textos públicos corregidos» para hero, metodología, cierre, identidad, catálogo y pasos Escucha/Reflexiona/Aplica. Se registraron cinco snapshots inmutables en src/content/stories-review.json, con referencia a evidence/public-copy-review.md; el guard sigue invalidando modificaciones materiales. No se aprobaron ejercicios ni se importaron/publicaron historias.
+
+Verificación: 45/45 pruebas Node Inicio/Historias, guard003 salida 0 y Astro check (95 archivos, 0 errores/advertencias, 1 hint previo). Integración real002: 18/18 aprobadas, seis recorridos por motor Chromium/Firefox/WebKit. Historias HTTP200; /api/public/historias HTTP404: el catálogo007 aún no está conectado al servidor local. Captura .test-output/stories-approved.png. Build completo conserva salida1 en guard010/009.
+
+La navegación desde Inicio ya está verificada; T027/T031 de002 mantienen el requisito residual de build completo, y T028 el cierre integral: 30/33 tareas. No se confunde renderizado de Historias con disponibilidad del catálogo, aprobación de ejercicios ni publicación productiva. Logs: .test-output/stories-approved-unit.log, stories-approved-check.log, home-approved-integration.log y home-approved-build.log.
+
+## Conexión local autorizada — 2026-10-28
+
+La responsable solicita conectar Historias003 con007. En desarrollo local, servir /api/public/historias y /media/public/ mediante el servicio real007 y SQLite privado persistente, en el mismo origen de Astro. Activación explícita PRIVA_STORIES_MODE=local; solo loopback/Host exacto. No provisionar cuentas, exponer endpoints administrativos ni importar/publicar fichas sin revisión. Un catálogo vacío confirmado debe mostrarse como tal, sin sustituir datos ni simular episodios. Build/preview y configuración productiva siguen independientes. Datos fuera del checkout y roots estáticos; almacenamiento0700/0600 y cierre en shutdown.
+
+Conexión007 vigente — 2026-10-28: /api/public/historias ya responde200 con SQLite real en el servidor local. No hay publicaciones activas; la UI muestra vacío confirmado.6/6 pruebas navegador aprobadas. [Detalles y límites](../007-gestion-historias/local-connection.md). Los registros anteriores de catálogo404 son históricos.
+
+## Publicación local vigente — 2026-10-28
+
+Cuatro historias autorizadas/publicadas/activas en catálogo007 real, incluido Número desconocido con portada oficial reutilizada expresamente aprobada. Tres recorridos navegador completos aprobados, audios/transcripciones/doce explicaciones y expansión verificados; no mocks. Publicación local no equivale a despliegueFirebase ni cierra revisión manual/build productivo. [Registro](evidence/local-publication.md). Los estados anteriores de catálogo vacío o fichas sin publicación son históricos.
+
+## Acceso a la cuarta historia — 2026-10-28
+
+La responsable solicita hacer visible el botón para la cuarta historia. Situar el control Ver más historias después de las tres tarjetas iniciales. Al expandir, conservar tarjetas y selecciones existentes, añadir pendientes sin duplicar y enfocar/mostrar el título de la primera historia añadida. Ocultar el control tras añadir todas las adicionales; exponer relación aria-controls/aria-expanded. Con tres o menos se conserva el comportamiento previo sin añadir tarjetas.

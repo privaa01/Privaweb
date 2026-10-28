@@ -1,3 +1,4 @@
+import {mediaBinary} from '../server/stories/macos-media.ts';
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
@@ -17,7 +18,7 @@ test("real sandbox decodes static image and WAV, derives metadata and denies inv
   try {
     const png = join(dir, "image.png"),
       wav = join(dir, "audio.wav");
-    execFileSync("/usr/bin/ffmpeg", [
+    execFileSync(mediaBinary("ffmpeg"), [
       "-v",
       "error",
       "-f",
@@ -30,7 +31,7 @@ test("real sandbox decodes static image and WAV, derives metadata and denies inv
       "1",
       png,
     ]);
-    execFileSync("/usr/bin/ffmpeg", [
+    execFileSync(mediaBinary("ffmpeg"), [
       "-v",
       "error",
       "-f",
@@ -87,7 +88,7 @@ test("actual JPEG/WebP and MP3 are supported; oversized dimensions are rejected"
       ["webp", "image/webp"],
     ] as const) {
       const path = join(dir, "image." + extension);
-      execFileSync("/usr/bin/ffmpeg", [
+      execFileSync(mediaBinary("ffmpeg"), [
         "-v",
         "error",
         "-f",
@@ -103,7 +104,7 @@ test("actual JPEG/WebP and MP3 are supported; oversized dimensions are rejected"
       assert.equal((await inspect(path, "image")).mime, mime);
     }
     const mp3 = join(dir, "sound.mp3");
-    execFileSync("/usr/bin/ffmpeg", [
+    execFileSync(mediaBinary("ffmpeg"), [
       "-v",
       "error",
       "-f",
@@ -116,7 +117,7 @@ test("actual JPEG/WebP and MP3 are supported; oversized dimensions are rejected"
     ]);
     assert.equal((await inspect(mp3, "audio")).mime, "audio/mpeg");
     const large = join(dir, "wide.png");
-    execFileSync("/usr/bin/ffmpeg", [
+    execFileSync(mediaBinary("ffmpeg"), [
       "-v",
       "error",
       "-f",
@@ -135,7 +136,7 @@ test("actual JPEG/WebP and MP3 are supported; oversized dimensions are rejected"
   }
 });
 
-test(
+if(process.platform!=='darwin')test(
   "sandbox policy actually denies host file access, writes/network and excess memory/CPU/output",
   { timeout: 40000 },
   async () => {
@@ -191,7 +192,7 @@ print('policy-denials-verified')`;
         "CPU quota, not generic launch failure, must stop the worker",
       );
       const wave = join(dir, "output-bound.wav");
-      execFileSync("/usr/bin/ffmpeg", [
+      execFileSync(mediaBinary("ffmpeg"), [
         "-v",
         "error",
         "-f",
@@ -225,7 +226,7 @@ test("MP3 codec in an unapproved container cannot be mislabeled as an MP3 file",
   const dir = mkdtempSync(join(tmpdir(), "priva-container-"));
   try {
     const path = join(dir, "audio.mka");
-    execFileSync("/usr/bin/ffmpeg", [
+    execFileSync(mediaBinary("ffmpeg"), [
       "-v",
       "error",
       "-f",

@@ -1,3 +1,11 @@
+# Resultado vigente tras aprobación editorial
+
+18/18 pruebas de integración Inicio–Historias aprobadas. Historias HTTP200; catálogo007 HTTP404 pendiente de conexión. Build completo bloqueado por010/009; 30/33 tareas, cierre total pendiente. [Registro](review-2026-10-28.md). Los resultados siguientes son históricos.
+
+# Estado vigente — 2026-10-28
+
+30/33 tareas. Contrato final 59/59; WebKit real 8/8; integración 12 aprobadas y 6 CTA fallidos por Historias HTTP 500. Build bloqueado por 010/009. T023/T033 completas; T027/T031/T028 pendientes. [Detalle vigente](review-2026-10-28.md). Los registros siguientes son históricos.
+
 # Resultado de implementación — Inicio 002
 
 Actualización: 2026-10-23 (America/Bogota). Componentes implementados y probados; revisión visual y manual guiada aceptadas por la usuaria; WebKit e integración sin cierre integral.

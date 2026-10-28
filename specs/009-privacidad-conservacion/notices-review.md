@@ -15,3 +15,7 @@ No insertar correo ficticio ni publicar marcadores como canal funcional. El cód
 el canal verificado al equipo; no hay pantalla pública nueva,cuenta visitante o rol adicional.
 Aceptación de correo≠recepción≠lectura≠confirmación del titular. Un fallo de borrado/copia se
 comunica como pendiente/fallido; superar un deadline es incumplimiento aunque luego se complete.
+
+## Marco colombiano y MVP — 2026-10-27
+
+El borrador010 incorpora referencias a Ley 1581/Decreto 1377 y compilación Decreto1074, derechos de titulares y estado MVP. Firebase está seleccionado para la web y el correo permanece en prueba sin proveedor. El aviso canónico y la política90d no cambian; los tres textos siguen en revisión y notices009 sin calificar. Faltan datos de identificación/contacto adicionales, procedimiento/área de atención, autorización aplicable y operación comprobada antes de datos reales. Ver [decisiones del MVP y marco normativo](../010-documentos-recuperacion/mvp-decisions-2026-10-27.md).

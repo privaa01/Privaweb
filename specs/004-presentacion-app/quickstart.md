@@ -1,6 +1,6 @@
 # Guía de validación — 004
 
-Fecha2026-10-17. Guía para ejecución posterior; no resultados de pruebas.
+Actualización2026-10-28.30/32 tareas; recursos/copy aprobados, guardApp pasa.53/53Node,9/9integración real y20/20render/adaptación. Revisión manual y build completo pendientes. [Evidencia vigente](evidence/review-2026-10-28.md).
 
 ## Prerrequisitos y comandos actuales
 
@@ -14,12 +14,11 @@ npm ci
 npm run check
 ```
 
-Check actual no acredita004. Build completo continúa bloqueado por Contacto faltante y gates
-editoriales deInicio/Historias; no removerlos ni crear páginas de relleno para compilar004.
+El build completo continúa bloqueado por documentos/calificación009/010 y otros guards; Contacto, Inicio e Historias ya existen y tienen pruebas locales. No remover guards ni crear relleno.
 
-## Comandos previstos (todavía no existen)
+## Comandos disponibles
 
-Crear en tasks/implement los archivos/scripts/config descritos; no ejecutar ahora como evidencia.
+Scripts/config implementados; ejecutar en el entorno configurado y conservar resultados por capa.
 
 ```bash
 node --experimental-strip-types --test tests/app-downloads.test.ts tests/app-publication.test.ts
@@ -81,3 +80,7 @@ Revisión manual con lector de pantalla, teclado de controles, imágenes/alterna
 PDF3; sustituir promesas segúnC13/C14/C17/C23/C31. Fixtures y metadatos no aprueban copy o material.
 Registrar cada criterio con fecha/navegador/entorno/resultado/evidencia; recursos/navegadores/
 destinos ausentes se reportan bloqueados, sin afirmar lanzamiento, publicación o cobertura total.
+
+## Validación de página real con copy aprobado
+
+`PRIVA_CHROMIUM_EXECUTABLE="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" node node_modules/@playwright/test/cli.js test --config playwright.app.real.config.ts --workers 1`: servidor local ya iniciado,14celdasChromium+6recorridosimagenfallida/sinJS en tres motores. [Aprobación y resultados](evidence/approval-2026-10-28.md).

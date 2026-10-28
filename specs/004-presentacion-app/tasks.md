@@ -4,7 +4,7 @@
 **Input**: [spec.md](spec.md), [plan.md](plan.md), [research.md](research.md),
 [data-model.md](data-model.md), [contrato](contracts/app.md), [quickstart.md](quickstart.md)
 y constitución 1.0.0. Se conservan A01–A07 y SC-001–006.
-**Estado**: 28/32 tareas completas; 4 parciales/bloqueadas. Ver [evidence/summary.md](evidence/summary.md).
+**Estado**: 30/32 tareas completas; 2 parciales/bloqueadas. Ver [evidence/summary.md](evidence/summary.md).
 La generación inicial fue documental; los resultados siguientes corresponden a implementación.
 **Pruebas**: corresponden a los escenarios y verificaciones exigidos por spec/contrato.
 Escribir primero pruebas de comportamiento nuevo y comprobar un fallo significativo antes de
@@ -94,8 +94,8 @@ sin esperar US2; T019 requiere su sección y serializa cambios compartidos. No e
 - [x] T024 [P] Crear `tests/e2e/app-accessibility.spec.ts`: matriz360/390/430/768/1024/1280/1440×texto 100%/200% para pendiente, más cuatro estados a 360/1440 con texto 200%; escala antes de load/fragmento, axe/contraste4.5:1 normal/3:1 grande/componentes, controles objetivo44px, orden/foco/teclado/alternativas/sin overflow, imágenes fallidas y sin JS. En contexto sin JS interceptar también URLs HTTPS.test, comprobando enlaces/anclas/estados estáticos (SC-005).
 - [x] T025 [P] Crear `tests/e2e/app-integration.spec.ts` para /app.html real y CTA desde Contacto005, anclas directas/recarga, notaA07/prototipo/mockups coherentes y destino oficial de cada plataforma habilitada; ambas pendientes es resultado válido, no test omitido. Exigir baseURL real y registrar dependencias ausentes sin fallback a fixture. Verificación de cambios publicados y redirecciones cuando existan URLs reales; no asumir contrato administrativo o API nueva (SC-002/003/004/006).
 - [x] T026 Ejecutar unitarias, check/build del banco, check raíz y suiteChromium de `specs/004-presentacion-app/quickstart.md`; comprobar gate prebuild/entrada real y bloqueos de build completo. Ejecutar regresión001 y ampliar002/003 si cambios compartidos/riesgo lo justifican; guardar resultados en `specs/004-presentacion-app/evidence/contract.md` y reportes propios `.test-output/app-results.json`. No repetir suites por rutina sin cambio/fallo que lo justifique.
-- [ ] T027 Intentar recorridos principales Firefox/WebKit y documentar evidencia actual en `specs/004-presentacion-app/evidence/accessibility.md`; resolver o registrar fallo de perfil/bibliotecas, sin contar arranque fallido o descarga de binarios como cobertura aprobada. Usar puerto/salidasapp secuencialmente para no colisionar con T026.
-- [ ] T028 Incorporar materiales oficiales recibidos en `public/images/app/` y referencias/revisión exacta en `src/content/app.ts`, registrar inventario por bloque en `specs/004-presentacion-app/evidence/materials.md`; verificar prototipo/funciones previstas, erratas y promesas, teléfonos/Conversar, compatibilidad de mockup, marca/fuente/paleta P01/P03/P04. Revisar URLs de `src/config/app-downloads.ts` solo cuando existan: referencia/fecha/plataforma/identidad/accesibilidad, sin bloquear el resto por ambas pendientes.
+- [x] T027 Intentar recorridos principales Firefox/WebKit y documentar evidencia actual en `specs/004-presentacion-app/evidence/accessibility.md`; resolver o registrar fallo de perfil/bibliotecas, sin contar arranque fallido o descarga de binarios como cobertura aprobada. Usar puerto/salidasapp secuencialmente para no colisionar con T026.
+- [x] T028 Incorporar materiales oficiales recibidos en `public/images/app/` y referencias/revisión exacta en `src/content/app.ts`, registrar inventario por bloque en `specs/004-presentacion-app/evidence/materials.md`; verificar prototipo/funciones previstas, erratas y promesas, teléfonos/Conversar, compatibilidad de mockup, marca/fuente/paleta P01/P03/P04. Revisar URLs de `src/config/app-downloads.ts` solo cuando existan: referencia/fecha/plataforma/identidad/accesibilidad, sin bloquear el resto por ambas pendientes.
 - [ ] T029 Realizar revisión visual PDF3 con diferencias aprobadas y activos finales, pruebas manuales de teclado/lector de pantalla, alternativas y coherencia del mockup en cada estado aplicable; registrar mediciones/entorno y comparaciones en `specs/004-presentacion-app/evidence/visual.md` y `specs/004-presentacion-app/evidence/accessibility.md` (depende T024 y materiales/revisión de T028, no de URLs futuras innecesarias).
 - [ ] T030 Ejecutar T025 contra entorno/páginas reales, comprobar cambio/retirada en HTML recompilado/publicado de cada plataforma sin afectar la otra y destinos/redirecciones oficiales habilitados si existen; verificar build completo solo con todas las páginas/gates resueltos. Documentar resultados o bloqueos específicos de005/materiales/entorno en `specs/004-presentacion-app/evidence/integration.md`; no declarar instalación ni exigir URL futura para aceptar ambas pendientes (depende T023/T025 y partes aplicables de T028).
 - [x] T031 Corregir fallos observados en `src/components/app/`, `src/lib/app-downloads.ts`, `src/lib/app-publication.ts` y `src/styles/app.css`; repetir pruebas afectadas/regresión justificada y registrar resolución en `specs/004-presentacion-app/evidence/summary.md`; sin fallos, documentar revisión sin refactor ajeno al alcance.
@@ -171,3 +171,11 @@ Calidad transversal: T021–T032. Resultados y bloqueos en [evidence/summary.md]
 por arranque de navegadores y T028–T030 bloqueadas por materiales/revisión/entorno.
 52unitarias,31UI004 y97regresiones aprobadas. Corrección compartida de foco en fragmento
 repetido trazada a T014/T031 y G03 de001. No se aprobaron recursos ni destinos oficiales.
+
+## Reanudación vigente — 2026-10-28
+
+T027 cerrada con22/22 recorridos principalesFirefox/WebKit y52/52Node;29/32tareas. Imágenes ya recibidas/revisadas. Solo copy bloquea el guardApp; revisión concreta preparada y solicitada, sin marcar aprobada. T028/T029/T030 continúan parciales. [Resultados y comandos](evidence/review-2026-10-28.md).
+
+## Textos aprobados y página real habilitada — 2026-10-28
+
+T028 cerrada: snapshot inmutable de copy aprobado, recursos oficiales revisados;30/32tareas. GuardApp pasa,53/53Node,9/9integración real y20/20render/adaptación/axe/sinJS. T029manual/fidelidad y T030build/calificaciónintegrada continúan pendientes. [Resultados y límites](evidence/approval-2026-10-28.md).

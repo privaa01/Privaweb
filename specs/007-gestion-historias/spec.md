@@ -431,3 +431,7 @@ atribuyen decisiones técnicas o cifras reales al wireframe. Sin código, tests 
 publicaciónQ1/activación, medios privados con inspección aislada, editor/tabla/resumen y productor003
 implementados. Evidencia local y límites en [evidence.md](evidence.md); T056–T059 permanecen abiertas.
 Los materiales sintéticos no acreditan revisión editorial, derechos o operación productiva.
+
+## Conexión local autorizada — 2026-10-28
+
+La responsable solicita conectar Historias003 con007. En desarrollo local, servir /api/public/historias y /media/public/ mediante el servicio real007 y SQLite privado persistente, en el mismo origen de Astro. Activación explícita PRIVA_STORIES_MODE=local; solo loopback/Host exacto. No provisionar cuentas, exponer endpoints administrativos ni importar/publicar fichas sin revisión. Un catálogo vacío confirmado debe mostrarse como tal, sin sustituir datos ni simular episodios. Build/preview y configuración productiva siguen independientes. Datos fuera del checkout y roots estáticos; almacenamiento0700/0600 y cierre en shutdown.

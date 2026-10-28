@@ -15,7 +15,7 @@ function approved(){
 }
 const root=mkdtempSync(join(tmpdir(),'priva-stories-'));mkdirSync(join(root,'images/stories'),{recursive:true});writeFileSync(join(root,'images/stories/approved.svg'),'<svg/>');
 process.on('exit',()=>rmSync(root,{recursive:true,force:true}));
-test('production pending fails; complete synthetic metadata verifies validator only',()=>{assert.ok(storiesPublicationIssues(storiesContent,root).length>5);assert.deepEqual(storiesPublicationIssues(approved(),root),[]);});
+test('official assets missing from isolated root fail; complete synthetic metadata verifies validator only',()=>{assert.ok(storiesPublicationIssues(storiesContent,root).length>0);assert.deepEqual(storiesPublicationIssues(approved(),root),[]);});
 for(const [name,change] of [
  ['fixture',(c:any)=>c.testOnly=true],['missing src',(c:any)=>c.hero.image.src=''],['missing file',(c:any)=>c.hero.image.src='/images/stories/absent.svg'],
  ['review pending',(c:any)=>c.hero.review.status='pendiente'],['changed copy',(c:any)=>c.hero.description+=' change'],['C16',(c:any)=>c.closing.description='replacement'],
@@ -30,10 +30,19 @@ test('gate rejects symlink escaping public and empty asset',()=>{
  writeFileSync(join(root,'images/stories/empty.svg'),'');const c=approved();c.hero.image.src='/images/stories/empty.svg';assert.ok(storiesPublicationIssues(c,root).length>0);
 });
 
-test('received official section images match local PNG dimensions while editorial still blocks',()=>{
+test('received official section images match local PNG dimensions with approved public copy',()=>{
  for(const image of [storiesContent.hero.image,storiesContent.method.image,storiesContent.closing.image]){
   const png=readFileSync(join('public',image.src.slice(1)));
   assert.equal(png.subarray(0,8).toString('hex'),'89504e470d0a1a0a');assert.equal(image.width,png.readUInt32BE(16));assert.equal(image.height,png.readUInt32BE(20));assert.equal(image.status,'verificado');
  }
- const issues=storiesPublicationIssues(storiesContent,'public');assert(issues.some(i=>i.includes('revisión editorial')));assert(!issues.some(i=>/recurso oficial|dimensiones|archivo oficial|ruta oficial/.test(i)));
+ const issues=storiesPublicationIssues(storiesContent,'public');assert(!issues.some(i=>i.includes('revisión editorial')));assert(!issues.some(i=>/recurso oficial|dimensiones|archivo oficial|ruta oficial/.test(i)));
+});
+
+test('educational recreations do not claim real testimony or audit services',()=>{
+ const copy=JSON.stringify([storiesContent.hero,storiesContent.identity]);
+ assert.doesNotMatch(copy,/relatos reales|historias reales|auditorías|recursos educativos continuos/i);
+ assert.match(storiesContent.hero.description,/recreaciones educativas/);
+ const content=approved();content.hero.title='Aprende de casos reales sobre robo de datos.';
+ content.hero.review.reviewedText=reviewText(content.hero);
+ assert(storiesPublicationIssues(content,root).some(issue=>issue.includes('referencia/C16')));
 });

@@ -2,7 +2,7 @@
 
 **Branch real**: `main` | **Date**: 2026-10-17 | **Spec**: [spec.md](spec.md)
 **Feature activa**: `004-presentacion-app`; el BRANCH del script es selección SDD, no rama creada.
-**Estado**: componentes y banco contractual implementados; recursos oficiales, revisión y aceptación integrada pendientes.
+**Estado**: 30/32 tareas. Recursos y copy aprobados; página real habilitada.53/53Node,9/9integración real y20/20adaptación/render. Revisión manual/fidelidad y build/calificaciónintegrada pendientes.
 **Input**: A01–A07, PDF 3, decisiones C13/C14/C17/C23/C31 y constitución 1.0.0.
 
 ## Summary
@@ -52,7 +52,7 @@ funciones, dos plataformas y cuatro combinaciones; hero/explicación/descarga co
 | CONST-10–12 | Plan y fixture no acreditan entrega | Gates, evidencia futura y bloqueos por material/integración explícitos |
 
 Revisión previa y posterior: pasa para diseño independiente, sin excepciones constitucionales.
-P01/P03/P04 pendientes de entrega; no se inventan aprobaciones para cerrar diseño. Ninguna
+Recursos oficialesP01/P04 recibidos/revisados; P03 resuelto para los textos públicos deApp aprobados el2026-10-28. No se inventan aprobaciones para cerrar diseño. Ninguna
 incógnita técnica propia queda sin tratamiento; las URLs pueden permanecer pendientes válidamente.
 
 ## Project Structure

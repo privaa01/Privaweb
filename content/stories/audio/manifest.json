@@ -15,12 +15,20 @@
       "placement": "expanded-catalog",
       "assignmentReference": "specs/003-historias-educativas/evidence/audio-assignment.md",
       "title": "Número desconocido",
-      "detailsStatus": "transcript-received-exercise-draft-cover-pending",
+      "detailsStatus": "local-published-cover-reuse-authorized",
       "materialKey": "numero-desconocido",
       "transcriptPath": "content/stories/transcripts/numero-desconocido.txt",
       "exerciseDraftPath": "content/stories/drafts/numero-desconocido.json",
       "transcriptSource": "content/stories/transcripts/TRANSCRIPCIONES.pdf",
-      "exerciseStatus": "draft-pending-editorial-review"
+      "exerciseStatus": "local-publication-authorized-by-owner",
+      "localPublication": {
+        "date": "2026-10-28",
+        "authorizationReference": "specs/003-historias-educativas/evidence/local-publication-authorization.json",
+        "storyId": "historia-a238ed0c-6d20-48a8-83be-7c27bc9a05a4",
+        "state": "published-active",
+        "environment": "local"
+      },
+      "coverReference": "public/images/stories/llamada.png — reutilización expresamente autorizada"
     },
     {
       "file": "hidtoria_dos_editada.mp3.mpeg",
@@ -36,7 +44,14 @@
       "transcriptPath": "content/stories/transcripts/llamada-sospechosa.txt",
       "exerciseDraftPath": "content/stories/drafts/llamada-sospechosa.json",
       "transcriptSource": "content/stories/transcripts/TRANSCRIPCIONES.pdf",
-      "exerciseStatus": "draft-pending-editorial-review"
+      "exerciseStatus": "local-publication-authorized-by-owner",
+      "localPublication": {
+        "date": "2026-10-28",
+        "authorizationReference": "specs/003-historias-educativas/evidence/local-publication-authorization.json",
+        "storyId": "llamada-sospechosa",
+        "state": "published-active",
+        "environment": "local"
+      }
     },
     {
       "file": "historia_tres_editada.mp3.mpeg",
@@ -52,7 +67,14 @@
       "transcriptPath": "content/stories/transcripts/enlace-falso.txt",
       "exerciseDraftPath": "content/stories/drafts/enlace-falso.json",
       "transcriptSource": "content/stories/transcripts/TRANSCRIPCIONES.pdf",
-      "exerciseStatus": "draft-pending-editorial-review"
+      "exerciseStatus": "local-publication-authorized-by-owner",
+      "localPublication": {
+        "date": "2026-10-28",
+        "authorizationReference": "specs/003-historias-educativas/evidence/local-publication-authorization.json",
+        "storyId": "enlace-falso",
+        "state": "published-active",
+        "environment": "local"
+      }
     },
     {
       "file": "historia_uno_editada.mp3.mpeg",
@@ -68,7 +90,14 @@
       "transcriptPath": "content/stories/transcripts/contrasena-compartida.txt",
       "exerciseDraftPath": "content/stories/drafts/contrasena-compartida.json",
       "transcriptSource": "content/stories/transcripts/TRANSCRIPCIONES.pdf",
-      "exerciseStatus": "draft-pending-editorial-review"
+      "exerciseStatus": "local-publication-authorized-by-owner",
+      "localPublication": {
+        "date": "2026-10-28",
+        "authorizationReference": "specs/003-historias-educativas/evidence/local-publication-authorization.json",
+        "storyId": "contrasena-compartida",
+        "state": "published-active",
+        "environment": "local"
+      }
     }
   ]
 }

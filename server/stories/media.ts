@@ -1,4 +1,5 @@
 import { spawn } from "node:child_process";
+import {macosSandboxCommand} from './macos-media.ts';
 import { createHash, randomUUID } from "node:crypto";
 import {
   constants,
@@ -80,7 +81,11 @@ export async function runSandbox(
   signal?: AbortSignal,
 ): Promise<string> {
   return new Promise((yes, no) => {
-    const child = spawn("/usr/bin/prlimit", sandboxArgs(path, program, args), {
+    let launch:{command:string;args:string[]};
+    try {
+      launch=process.platform==='darwin'?macosSandboxCommand(path,program,args):{command:'/usr/bin/prlimit',args:sandboxArgs(path,program,args)};
+    }catch{no(new StoryError(503,'media_isolation_unavailable'));return;}
+    const child = spawn(launch.command, launch.args, {
       detached: true,
       env: {},
       stdio: ["ignore", "pipe", "pipe"],

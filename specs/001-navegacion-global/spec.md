@@ -2,7 +2,7 @@
 
 **Feature Directory**: `specs/001-navegacion-global`
 **Created**: 2026-10-16
-**Updated**: 2026-10-23
+**Updated**: 2026-10-27
 **Status**: implementación local retomada;23/28 tareas completas, contrato006 recibido y corrección de focoFirefox verificada. Logo/fuente/paleta incorporados; Chromium/Firefox/WebKit verificados localmente y controles de Inicio aceptados manualmente. Revisión final de destinos e integración pendientes.
 **Input**: `$speckit-specify 001`: desarrollar la feature existente sin crear otra ni ampliar alcance.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), requisitos G01–G06; [constitución 1.0.0](../../.specify/memory/constitution.md), CONST-01–04 y CONST-08–12.
@@ -260,3 +260,5 @@ Navegación001 revalidada en Chromium/Firefox y guard006; pruebas adicionales de
 La usuaria confirmó que menú, activo, Escape/foco y enlaces anunciados del footer funcionan correctamente en su revisión guiada con VoiceOver. Solicitó que Contacto Seguro abra directamente la página de Contacto. Se actualizan G06/FR-006, US3.4 y contrato a `/contacto.html` sin fragmento. La confirmación de controles no acredita los destinos integrados todavía bloqueados.
 
 2026-10-26 — WebKit27.2 disponible y32recorridos principales aprobados con caché de bibliotecas privada/namespace rootless. Sin cambios de alcance, fuente del sitio o validación de seguridad. [Reproducción y límites](evidence/webkit-runtime.md). Persisten dependencias de aceptación final de cuatro páginas y build integrado.
+
+2026-10-27 — Revisión solicitada de 001 en el Mac: reproducida y corregida la pérdida de foco al pasar de menú compacto a expandido con el botón enfocado (G01/SC-004/SC-005). La navegación recibe foco en el enlace de la página actual antes de ocultar el botón. Se añade regresión con menú abierto/cerrado y continuación por teclado; WebKit/macOS usa Option+Tab nativo en las pruebas. Los destinos reales siguen bloqueados por 003/004/005/006/009/010, aunque localhost ya es accesible desde el runner. Se mantienen 23/28 tareas y todos los criterios de aceptación. [Resultados actuales](evidence/review-2026-10-27.md).

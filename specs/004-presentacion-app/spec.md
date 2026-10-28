@@ -2,8 +2,8 @@
 
 **Feature Directory**: `specs/004-presentacion-app`
 **Created**: 2026-10-16
-**Updated**: 2026-10-17
-**Status**: Componentes y pruebas contractuales verificados; recursos/revisión y aceptación integrada pendientes.
+**Updated**: 2026-10-28
+**Status**: 30/32 tareas; recursos y textos aprobados, página real habilitada y recorridos integrados conformes. Revisión manual/fidelidad y build/calificaciónintegrada pendientes.
 **Input**: `/speckit-specify 004`: desarrollar la feature existente sin ampliar el alcance.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), A01–A07, PDF 3 y
 [constitución 1.0.0](../../.specify/memory/constitution.md), especialmente CONST-03/08–10.

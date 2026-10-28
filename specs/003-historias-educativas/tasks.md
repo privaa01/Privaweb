@@ -180,3 +180,25 @@ sin explicación; ver evidence/integration.md, accessibility.md y materials.md.
 2026-10-26 — Cuatro audios sincronizados desde325fc49 y aprobados por la responsable; inspección real aislada aceptada como MP3. T031 avanza en recepción de audio; asignación de cuatro archivos a tres casos solicitada y pendiente, además de transcripciones/explicaciones/revisión restantes. Manifiesto content/stories/audio/manifest.json y evidencia audio-approval.md. No se adivina la correspondencia ni se publica el cuarto caso sin definirlo.
 
 2026-10-26 — Correspondencia de audios confirmada y configurada:1Contraseña/2Llamada/3Enlace;4Número desconocido en el catálogo ampliado. Importador007 con valores por defecto aprobados/hash vinculados; conserva auth/inspección/estados. T031 parcial: faltan transcripciones, explicaciones y revisión; cuarto requiere ficha completa. Ver evidence/audio-assignment.md.
+
+## Ajuste editorial — 2026-10-28
+
+La responsable confirmó que los audios son recreaciones educativas y autorizó ajustar las capacidades al alcance educativo de Inicio. Se retiraron promesas de auditorías y afirmaciones de relatos reales; tarjeta de Inicio renombrada Historias educativas. Los textos completos derivados están en [public-copy-review.md](evidence/public-copy-review.md), pendientes de aprobación final; no se cambian estados de revisión, publicación de catálogo ni aprobación de ejercicios. Verificación: 45/45 pruebas Node Inicio/Historias, guard de Inicio salida 0, Astro check 95 archivos sin errores ni advertencias (1 hint previo).
+
+## Aprobación editorial aplicada — 2026-10-28
+
+La responsable respondió «Sí, apruebo los textos públicos corregidos» para hero, metodología, cierre, identidad, catálogo y pasos Escucha/Reflexiona/Aplica. Se registraron cinco snapshots inmutables en src/content/stories-review.json, con referencia a evidence/public-copy-review.md; el guard sigue invalidando modificaciones materiales. No se aprobaron ejercicios ni se importaron/publicaron historias.
+
+Verificación: 45/45 pruebas Node Inicio/Historias, guard003 salida 0 y Astro check (95 archivos, 0 errores/advertencias, 1 hint previo). Integración real002: 18/18 aprobadas, seis recorridos por motor Chromium/Firefox/WebKit. Historias HTTP200; /api/public/historias HTTP404: el catálogo007 aún no está conectado al servidor local. Captura .test-output/stories-approved.png. Build completo conserva salida1 en guard010/009.
+
+La navegación desde Inicio ya está verificada; T027/T031 de002 mantienen el requisito residual de build completo, y T028 el cierre integral: 30/33 tareas. No se confunde renderizado de Historias con disponibilidad del catálogo, aprobación de ejercicios ni publicación productiva. Logs: .test-output/stories-approved-unit.log, stories-approved-check.log, home-approved-integration.log y home-approved-build.log.
+
+## Publicación local vigente — 2026-10-28
+
+Cuatro historias autorizadas/publicadas/activas en catálogo007 real, incluido Número desconocido con portada oficial reutilizada expresamente aprobada. Tres recorridos navegador completos aprobados, audios/transcripciones/doce explicaciones y expansión verificados; no mocks. Publicación local no equivale a despliegueFirebase ni cierra revisión manual/build productivo. [Registro](evidence/local-publication.md). Los estados anteriores de catálogo vacío o fichas sin publicación son históricos.
+
+## Botón de acceso a la cuarta historia — 2026-10-28
+
+A petición de la responsable, el control se llama «Ver más historias» y aparece centrado debajo de las tres tarjetas iniciales, en vez de junto al encabezado. Al activarlo con teclado/puntero se añade Número desconocido sin duplicar ni reconstruir los casos previos, se lleva el foco/vista al nuevo título y se oculta el botón ya consumido. Se mantienen aria-controls/aria-expanded, recarga y estados de error/vacío. Con tres o menos se conserva no añadir tarjetas. Corrección de H02/T009–T010/T017; no cambia la publicación ni las fichas.
+
+Verificación real:3/3 recorridos completos Chromium/Firefox/WebKit, incluidos botón por debajo del catálogo, Enter, foco visible en cuarta, reproducción/transcripciones/doce explicaciones;2comprobaciones adicionales con puntero a1440px/100% y390px/200%, sin overflow. Log .test-output/stories-more-browser.log y captura .test-output/stories-more-button.png. Pruebas/contratos actualizados al nombre vigente.

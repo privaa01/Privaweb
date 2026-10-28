@@ -1,3 +1,11 @@
+# Estado vigente tras aprobación editorial — 2026-10-28
+
+30/32tareas. Recursos/copy aprobados; guard pasa y App real200.53/53Node,9/9integración y20/20adaptación/render. T029manual/fidelidad y T030build/calificaciónintegrada pendientes. [Evidencia actual](approval-2026-10-28.md). Los registros siguientes son históricos.
+
+# Estado vigente — 2026-10-28
+
+29/32tareas: T027 cerrada con22/22 pruebas principalesFirefox/WebKit;52/52Node. Recursos oficiales ya recibidos/revisados; copyApp pendiente de aprobación. Pruebas contractuales no acreditan revisión manual/fidelidad final. [Detalle](review-2026-10-28.md). Los registros siguientes son históricos.
+
 # Accesibilidad — evidencia contractual y pendientes
 
 2026-10-17. Chromium del sistema.20 pruebas de matriz:14 combinaciones pendientes de sieteanchos

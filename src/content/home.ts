@@ -15,7 +15,7 @@ export interface HomeData {
  visual: { typography: { status: 'pendiente' | 'verificado'; sourceReference: string }; palette: { status: 'pendiente' | 'verificado'; sourceReference: string } };
 }
 export const closingText = 'Aprende a reconocer riesgos y toma decisiones más informadas sobre tus datos personales.';
-export const areaTitles = ['Educación Digital', 'Historias reales', 'Herramientas Seguras', 'Acompañamiento'] as const;
+export const areaTitles = ['Educación Digital', 'Historias educativas', 'Herramientas Seguras', 'Acompañamiento'] as const;
 const approvedReview = (reviewedText: string): Review => ({ status: 'revisado', decisionReference: 'specs/002-inicio-institucional/evidence/editorial-review.md — aprobación explícita de la usuaria, 2026-10-21', reviewedText });
 const officialHomeImage = (block: 'hero' | 'identidad' | 'cierre'): ImageResource => ({ block, status: 'verificado', src: `/images/home/${block}.png`, width: 500, height: 350, purpose: 'decorativo', alt: '', sourceReference: 'Imágenes de Inicio aportadas e identificadas por la usuaria; carga GitHub 10e683a, 2026-10-23. Inventario: specs/002-inicio-institucional/evidence/resources.md' });
 // Educational copy approved; official institutional images received and inspected.
@@ -25,7 +25,7 @@ export const homeContent: HomeData = {
  identity: { id: 'somos-priva', eyebrow: 'QUIÉNES SOMOS', title: 'Somos Priva', description: 'Una plataforma creada para ayudarte a entender, proteger y gestionar tus datos personales. Creemos en un internet más transparente, libre y seguro, donde la información sea un derecho inalienable y nunca un riesgo.', image: officialHomeImage('identidad') },
  areas: { id: 'que-hacemos', eyebrow: 'QUÉ HACEMOS', title: 'Informamos para que estés en control.', description: 'Compartimos información educativa sobre privacidad digital para ayudarte a reconocer riesgos y tomar decisiones informadas sobre tus datos.', review: approvedReview('Compartimos información educativa sobre privacidad digital para ayudarte a reconocer riesgos y tomar decisiones informadas sobre tus datos.'), cards: [
  { title: 'Educación Digital', description: 'Contenidos educativos para comprender riesgos digitales y conocer prácticas de cuidado de tus datos personales.', review: approvedReview('Contenidos educativos para comprender riesgos digitales y conocer prácticas de cuidado de tus datos personales.') },
- { title: 'Historias reales', description: 'Relatos educativos para reflexionar sobre riesgos de privacidad y aprender formas de prevención.', review: approvedReview('Relatos educativos para reflexionar sobre riesgos de privacidad y aprender formas de prevención.') },
+ { title: 'Historias educativas', description: 'Relatos educativos para reflexionar sobre riesgos de privacidad y aprender formas de prevención.', review: approvedReview('Relatos educativos para reflexionar sobre riesgos de privacidad y aprender formas de prevención.') },
  { title: 'Herramientas Seguras', description: 'Orientación educativa sobre herramientas y prácticas para cuidar tus datos.', review: approvedReview('Orientación educativa sobre herramientas y prácticas para cuidar tus datos.') },
  { title: 'Acompañamiento', description: 'Información para reconocer riesgos y preparar decisiones sobre el cuidado de tus datos personales.', review: approvedReview('Información para reconocer riesgos y preparar decisiones sobre el cuidado de tus datos personales.') },
  ] },

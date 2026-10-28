@@ -38,6 +38,8 @@ Decisión explícita de la usuaria, 2026-10-23: Contacto Seguro abre la página 
   aria-expanded sincronizado, enlaces ocultos no enfocables, Escape devuelve foco.
 - Foco visible en enlaces/botón; no roles menu/menuitem; navegación funcional sin JS.
 
+Corrección 2026-10-27 (G01/SC-004/SC-005): cuando el cambio a modo expandido oculta el botón que tiene foco, mostrar primero la navegación y enfocar su enlace de página actual; en auxiliares sin página actual, el primer enlace. El cambio a compacto conserva el retorno al botón si se ocultaría un enlace enfocado. No mover foco situado fuera de esos controles. Sin cambios de rutas o alcance.
+
 ## Anclas y propiedad de destinos
 
 003 ofrece `casos`; 004 ofrece `descarga`; 005 ofrece `escribir` junto al formulario.

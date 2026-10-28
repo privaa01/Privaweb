@@ -2,7 +2,7 @@
 
 **Branch real**: `main` | **Selección Spec Kit**: `010-documentos-recuperacion` | **Date**: 2026-10-20 | **Spec**: [spec.md](spec.md)
 **Input**: `specs/010-documentos-recuperacion/spec.md`, X03/FR-001, tres historias y 16 escenarios.
-**Estado**: implementación local33/44 tareas verificadas; publicación bloqueada por P02/P03 y calificación integrada. Evidencia y límites en `evidence.md`.
+**Estado**: implementación local35/44 tareas verificadas; publicación bloqueada por P02/P03 y calificación integrada. Evidencia y límites en `evidence.md`.
 
 ## Summary
 
@@ -120,3 +120,9 @@ Los siete anchos se verifican en las páginas auxiliares y Contacto; texto200% e
 ## Complexity Tracking
 
 Sin violaciones ni infraestructura nueva. La complejidad adicional se limita a validación editorial y servidor local necesario para comprobar el contrato HTTP de un sitio estático.
+
+## Ajuste de contexto — 2026-10-27
+
+Proveedor de alojamiento web elegido por la responsable: Firebase; pendiente proyecto/producto/región/configuración y diseño de integración del backend persistente. Se actualiza el bundle real en src/config/documents.ts con proveedor declarado, estado de correo de prueba y sección normativa/derechos para revisión. No se introduce dependencia Firebase ni se publica una configuración incompleta. Se mantienen huellas/revisiones pendientes, fechas de vigencia vacías y evidencia009 requerida. [Registro de decisión y fuentes](mvp-decisions-2026-10-27.md).
+
+2026-10-28: T028destinos reales y T033matriz accesibilidad completadas;35/44. Auditoría local parcial sin calificación productiva ni aprobación de documentos. [Resultados](local-review-2026-10-28.md).

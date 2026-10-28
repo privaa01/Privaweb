@@ -129,3 +129,7 @@ revocación durante una carga y recuperación del editor tras resultado desconoc
 restringido de la sesión no permite crear user namespaces; las pruebas del decoder se ejecutaron
 por el flujo de aprobación fuera de esa capa, manteniendo bwrap/prlimit activos y sin red.
 No se habilita un fallback sin aislamiento. Ver resultados completos y límites en evidence.md.
+
+## Adaptación macOS autorizada — 2026-10-28
+
+La responsable solicita adaptar los ejecutores tras instalar FFmpeg9ARM64. Conservar Linux bwrap/prlimit. macOS local usa Seatbelt deny-default, lectura exacta de entrada/binario y bibliotecas del sistema, sin red/escrituras/fork. Helper nativo impone CPU20/21s, NOFILE32, CORE0 y supervisa huella física del proceso con libproc cada5ms, terminando a partir de512MiB. Darwin rechaza setrlimitAS/DATA512MiB (EINVAL comprobado); no se declara equivalencia de límite duro de espacio virtual ni calificación productiva del adaptador local. FFmpeg limita además cada asignación a128MiB. Tiempo total30s/salida1MiB/cancelación se mantienen. Construcción explícita del helper desde fuente versionada; fallar cerrado si falta. Pruebas deben comprobar denegaciones y terminación real, no solo presencia de flags.

@@ -2,7 +2,7 @@
 
 **Rama real**: `main` | **Fecha**: 2026-10-19 | **Spec**: [spec.md](spec.md)
 **Feature activa**: `007-gestion-historias`; selección SDD independiente de rama Git.
-**Estado**: diseño implementado y verificado localmente; 56/60 tareas cerradas. Ver [evidence.md](evidence.md); T056–T059 abiertas.
+**Estado**: diseño implementado y verificado localmente; 59/63 tareas cerradas. Ver [evidence.md](evidence.md); T056–T059 abiertas.
 
 ## Summary
 
@@ -141,3 +141,19 @@ consolidadas en archivos reales de tests; ver tareas/evidencia. El linker del sa
 `/etc/ld.so.cache` y `/etc/alternatives` en lectura para resolver bibliotecas del sistema, sin montar
 configuración privada. La importación de los tres iniciales se ejecuta en orden canónico003 y
 se valida con materiales sintéticos; materiales oficiales y operación siguen pendientes.
+
+## Conexión local autorizada — 2026-10-28
+
+La responsable solicita conectar Historias003 con007. En desarrollo local, servir /api/public/historias y /media/public/ mediante el servicio real007 y SQLite privado persistente, en el mismo origen de Astro. Activación explícita PRIVA_STORIES_MODE=local; solo loopback/Host exacto. No provisionar cuentas, exponer endpoints administrativos ni importar/publicar fichas sin revisión. Un catálogo vacío confirmado debe mostrarse como tal, sin sustituir datos ni simular episodios. Build/preview y configuración productiva siguen independientes. Datos fuera del checkout y roots estáticos; almacenamiento0700/0600 y cierre en shutdown.
+
+## Adaptación macOS autorizada — 2026-10-28
+
+La responsable solicita adaptar los ejecutores tras instalar FFmpeg9ARM64. Conservar Linux bwrap/prlimit. macOS local usa Seatbelt deny-default, lectura exacta de entrada/binario y bibliotecas del sistema, sin red/escrituras/fork. Helper nativo impone CPU20/21s, NOFILE32, CORE0 y supervisa huella física del proceso con libproc cada5ms, terminando a partir de512MiB. Darwin rechaza setrlimitAS/DATA512MiB (EINVAL comprobado); no se declara equivalencia de límite duro de espacio virtual ni calificación productiva del adaptador local. FFmpeg limita además cada asignación a128MiB. Tiempo total30s/salida1MiB/cancelación se mantienen. Construcción explícita del helper desde fuente versionada; fallar cerrado si falta. Pruebas deben comprobar denegaciones y terminación real, no solo presencia de flags.
+
+Adaptación macOS local completada:42/42 pruebas007 y TypeScript/check conformes. [Mecanismo de memoria y límites de calificación](macos-media-validation.md).
+
+## Publicación local solicitada — 2026-10-28
+
+La responsable ordena «publica las historias». Publicar/activar las tres fichas iniciales vigentes y registrar hashes exactos, procedencia y mandato, sin atribuir revisión individual no reportada. Usar proceso privado de operador restringido al entorno local, almacenamiento propiedad del usuario y permisos existentes. Actor de auditoría deshabilitado, sin contraseña ni correo falsamente verificado; autoridad del comando local del propietario, no sesión web. El adaptador de autoridad vive solo en el comando y no altera la autenticación del servidor ni se monta por HTTP. Importación mediante validador/inspector007 y activación mediante mutaciones existentes, sin cambiar estados con SQL directo. Cuarto caso requiere portada asignada por la responsable. No equivale a despliegueFirebase ni calificación productiva.
+
+2026-10-28: publicación local de cuatro historias autorizada y verificada; operador privado sin cuenta habilitada ni sesión web. Ver ../003-historias-educativas/evidence/local-publication.md.

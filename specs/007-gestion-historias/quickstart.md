@@ -116,3 +116,11 @@ los gates006/007, vistas privadas y variables `PRIVA_ADMIN_DATA_DIR`, `PRIVA_ADM
 `PRIVA_ADMIN_MAIL_ADAPTER` y `PRIVA_CONTACT_DATABASE` según corresponda, sin valores secretos enGit.
 La raíz privada de medios se rechaza si está dentro del checkout. No se ejecutó esa entrada con
 configuración productiva ni se modificaron aprobaciones para desbloquear el build.
+
+## Conexión local003–007 vigente
+
+`npm run dev:local`: catálogo real en el mismo origen local, sin cuentas nuevas ni publicación automática.6/6 pruebas de navegador y2/2 pruebas Node nuevas;17regresiones aprobadas/2bloqueadas por ffmpegLinux ausente. Catálogo vacío confirmado. [Configuración, comandos y límites](local-connection.md).
+
+## Estado vigente del inspector macOS
+
+2026-10-28: adaptación implementada;42/42 pruebas007 aprobadas, incluidas subidas/importación y aislamiento nativo. Las limitaciones anteriores de FFmpeg ausente son históricas. `npm run build:media:macos` construye el supervisor y `npm run test:story-management:macos` verifica la suite. Memoria física supervisada cada5ms en Mac, sin afirmar equivalencia al límite virtual duro Linux. [Evidencia final y límites](macos-media-validation.md). No se publicaron fichas pendientes ni se cerró operación productiva.

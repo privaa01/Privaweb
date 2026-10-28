@@ -22,3 +22,11 @@ for(const [name,change] of[
 test('pending candidates valid but unproven verified declaration rejected',()=>{const c=approved(),pending=fixtureDownloads('00');pending[0].candidateURL='javascript:bad';assert.deepEqual(appPublicationIssues(c,pending,root,today),[]);pending[0].status='verificado';assert.ok(appPublicationIssues(c,pending,root,today).some(s=>s.startsWith('descargas:')));});
 test('missing and duplicate platforms rejected by authoring guard',()=>{assert.ok(appPublicationIssues(approved(),[],root,today).length);const pair=fixtureDownloads('00');assert.ok(appPublicationIssues(approved(),[...pair,pair[0]],root,today).length);});
 test('symlink outside public and empty resource rejected',()=>{const outside=join(root,'../outside-app004.svg');writeFileSync(outside,'<svg/>');symlinkSync(outside,join(root,'images/app/link.svg'));try{const c=approved();c.hero.image.src='/images/app/link.svg';c.hero.image.review.reviewedValue=imageSnapshot(c.hero.image);assert.ok(appPublicationIssues(c,fixtureDownloads('00'),root,today).length);}finally{rmSync(outside);}writeFileSync(join(root,'images/app/empty.svg'),'');const c=approved();c.hero.image.src='/images/app/empty.svg';c.hero.image.review.reviewedValue=imageSnapshot(c.hero.image);assert.ok(appPublicationIssues(c,fixtureDownloads('00'),root,today).length);});
+
+// Approval applies to exact public copy and permits both downloads pending.
+test('owner-approved real presentation passes with pending downloads and rejects subsequent copy edits',()=>{
+ const config=[{platform:'android',status:'pendiente',candidateURL:null,verification:null},{platform:'iphone',status:'pendiente',candidateURL:null,verification:null}];
+ assert.deepEqual(appPublicationIssues(appContent,config,'public'),[]);
+ const changed=structuredClone(appContent);changed.hero.description+=' Changed';
+ assert(appPublicationIssues(changed,config,'public').some(issue=>issue.includes('revisión editorial')));
+});

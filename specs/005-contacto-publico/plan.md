@@ -2,7 +2,7 @@
 
 **Branch real**: `main` | **Date**: 2026-10-17 | **Spec**: [spec.md](spec.md)
 **Feature activa**: `005-contacto-publico`; el BRANCH de scripts es selección SDD, no rama creada.
-**Estado**: diseño implementado y verificado localmente en 44/49 tareas; entrega final bloqueada según [evidence.md](evidence.md).
+**Estado**: MVP local integrado y verificado en 49/53 tareas (2026-10-27); entrega final T045–T048 bloqueada según [evidence.md](evidence.md).
 **Input**: C01–C07, PDF4/R35, constitución 1.0.0 y aclaración 005 opción A.
 
 ## Summary
@@ -175,3 +175,13 @@ privado de integración es un ejecutable local configurado por el operador, nunc
 Se exige firma HMAC en codificación exacta para evitar variantes del mismo token. La comparación
 con PDF 4 restauró estructura de tarjetas/invitación y campos en escritorio; identidad/copy finales
 siguen pendientes. No se declara P02, 009/010, correo ni calificación visual completos.
+
+## Implementación del MVP local — 2026-10-27
+
+Decisión autorizada en spec/Session2026-10-27. Mantener Astro estático para entrega; una integración de desarrollo atiende los dos POST mediante ContactService/repositorio/HTTP reales. Solo se activa con `PRIVA_CONTACT_TEST_MODE=synthetic`, origen HTTP loopback explícito y almacenamiento privado fuera de la raíz del proyecto. La entrada de Contacto renderiza una copia identificada como prueba solo en DEV con esa opción; nunca aprueba los datos editoriales/operativos reales. Servidor y cliente restringen correo a example.test exclusivamente en ese modo. No hay proveedor de correo, SDKFirebase, cuentas o migración.
+
+La integración exige Host y conexión loopback, no habilita CORS ni proxies, preserva controles Origin/JSON/tamaño y cierra la DB al detener el devserver. Los archivos privados quedan fuera de Vite/staticroot; prueba de acceso por /@fs debe denegarlos. La DB de desarrollo persiste reinicios bajo un directorio temporal canónico y privado, separado de los fixtures y producción. La ruta no se expone en HTML ni respuestas. No añadir inyección de fallos HTTP; las pruebas usan hooks internos existentes o pérdida de respuesta desde su propio proceso.
+
+T050–T053 registran implementación/regresión del MVP, separadas de T045–T048 productivas. T044 puede cerrarse al ejecutar los bancos de005 en los tres motores disponibles del Mac. Pruebas nuevas antes de implementación; después checks/servicio/UI y aceptación sobre página real, sin reemplazar destinos ajenos bloqueados.
+
+Verificación de fase MVP: server/contact/dev-integration.ts reutiliza el servidor HTTP005 como handler de Vite; configura límites de tiempo del HTTP devserver y exige Host/origen/peer loopback. server/contact/development.ts conserva el ledger durable para rechazar correos no ficticios sin crear consultas y sin romper replay/reinicio. src/lib/contact-test.ts solo produce contenido local identificado y regla de dominio; no importa módulos privados al cliente. La barra de desarrollo de Astro se excluye del análisis axe del MVP; ninguna regla de accesibilidad del documento se desactiva. Las 14 celdas de prueba pasan con recursos reales. No hay cambios de arquitectura productiva ni despliegueFirebase.

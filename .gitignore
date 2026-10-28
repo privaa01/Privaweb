@@ -27,3 +27,4 @@ build/
 coverage/
 *.tmp
 *.swp
+.tools/

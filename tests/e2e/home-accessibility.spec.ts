@@ -9,8 +9,7 @@ test('base: layout de Inicio permite ancho completo', async ({ page }) => {
 import AxeBuilder from '@axe-core/playwright';
 for (const width of [360,390,430,768,1024,1280,1440]) {
  for (const text of [100,200]) {
-  test(`matriz Inicio ${width}px texto ${text}%`, async ({ page, browserName, context }) => {
-   test.skip(browserName !== 'chromium', 'Matriz completa en Chromium; regresión principal en las otras suites.');
+  test(`matriz Inicio ${width}px texto ${text}%`, async ({ page, context }) => {
    const remote: string[] = [];
    page.on('request', r => { if (!r.url().startsWith('http://127.0.0.1:4323/')) remote.push(r.url()); });
    await page.setViewportSize({width,height:900});
@@ -20,13 +19,18 @@ for (const width of [360,390,430,768,1024,1280,1440]) {
     await page.goto('/index.html');
     expect(await page.locator('.home > section').evaluateAll(nodes => nodes.map(node=>node.id))).toEqual(['hero','somos-priva','que-hacemos','cierre']);
     await expect(page.getByRole('heading',{level:1})).toHaveCount(1);
-    await expect(page.locator('#que-hacemos h3')).toHaveText(['Educación Digital','Historias reales','Herramientas Seguras','Acompañamiento']);
+    await expect(page.locator('#que-hacemos h3')).toHaveText(['Educación Digital','Historias educativas','Herramientas Seguras','Acompañamiento']);
     const learn = page.getByRole('link',{name:'Conocer más'});
     if(keyboard) { await learn.focus(); await page.keyboard.press('Enter'); } else await learn.click();
     await expect(page.locator('#somos-priva h2')).toBeInViewport();
     await expect(page.locator('#somos-priva h2')).toBeFocused();
     for(const anchor of ['somos-priva','que-hacemos']) {
-     await page.goto(`/index.html#${anchor}`); await page.reload();
+     await page.goto('about:blank');
+     await page.goto(`/index.html#${anchor}`);
+     await expect(page.locator(`#${anchor} h2`)).toBeInViewport();
+     await expect(page.locator(`#${anchor} h2`)).toBeFocused();
+     await page.reload();
+     await expect(page.locator(`#${anchor} h2`)).toBeFocused();
      await expect(page.locator(`#${anchor} h2`)).toBeInViewport();
      expect(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth+1)).toBeTruthy();
     }
@@ -35,6 +39,12 @@ for (const width of [360,390,430,768,1024,1280,1440]) {
     await expect(page).toHaveURL(/\/historias\.html$/);
    }
    await page.goto('/index.html');
+   expect(await page.evaluate(()=>getComputedStyle(document.documentElement).fontSize)).toBe(`${16*text/100}px`);
+   for (const link of await page.locator('.home a').all()) {
+    await link.focus();
+    expect((await link.boundingBox())?.height).toBeGreaterThanOrEqual(44);
+    expect(await link.evaluate(node=>getComputedStyle(node).outlineStyle)).not.toBe('none');
+   }
    expect(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth+1)).toBeTruthy();
    const violations=(await new AxeBuilder({page}).analyze()).violations;
    expect(violations).toEqual([]);

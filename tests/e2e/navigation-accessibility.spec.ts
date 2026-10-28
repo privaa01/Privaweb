@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
-test('US1: disclosure, Escape, resize y foco', async ({ page }) => {
+// Native WebKit on macOS uses Option+Tab to include links in keyboard traversal.
+const nextLinkKey = (browserName: string) => browserName === 'webkit' && process.platform === 'darwin' ? 'Alt+Tab' : 'Tab';
+test('US1: disclosure, Escape, resize y foco', async ({ page, browserName }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/index.html');
   const button = page.getByRole('button', { name: 'Menú principal' });
@@ -7,7 +9,7 @@ test('US1: disclosure, Escape, resize y foco', async ({ page }) => {
   await expect(button).toHaveAttribute('aria-expanded', 'false');
   await button.focus(); await page.keyboard.press('Enter');
   await expect(button).toHaveAttribute('aria-expanded', 'true');
-  await page.keyboard.press('Tab');
+  await page.keyboard.press(nextLinkKey(browserName));
   await expect(nav.getByRole('link').first()).toBeFocused();
   await page.keyboard.press('Escape');
   await expect(button).toBeFocused(); await expect(nav).toBeHidden();
@@ -15,6 +17,24 @@ test('US1: disclosure, Escape, resize y foco', async ({ page }) => {
   await nav.getByRole('link').first().focus();
   await page.setViewportSize({ width: 390, height: 844 });
   await expect(button).toBeFocused(); await expect(nav).toBeHidden();
+});
+test('US1: al ampliar el menú compacto no se pierde el foco del control oculto', async ({ page, browserName }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/historias.html');
+  const button = page.getByRole('button', { name: 'Menú principal' });
+  const nav = page.getByRole('navigation', { name: 'Principal' });
+  const current = nav.getByRole('link', { name: 'Historias', exact: true });
+  for (const opened of [false, true]) {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await button.focus();
+    if (opened) await page.keyboard.press('Enter');
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await expect(button).toBeHidden();
+    await expect(nav).toBeVisible();
+    await expect(current).toBeFocused();
+    await page.keyboard.press(nextLinkKey(browserName));
+    await expect(nav.getByRole('link', { name: 'Priva App', exact: true })).toBeFocused();
+  }
 });
 test('US1: navegación sin JavaScript', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 360, height: 800 } });

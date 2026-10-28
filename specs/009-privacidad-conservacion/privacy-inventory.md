@@ -40,3 +40,9 @@ La prueba privada009 sin sesión no instala cookies ni escribe local/sessionStor
 Cualquier cambio de recurso/configuración/proveedor/revisión invalida la referencia afectada.
 No guardarHAR crudo,tokens,códigos o mensajes reales. Tracking,channel y demás readiness009
 continúan null hasta evidencia productiva verificable por hash/revisión/fecha/alcance.
+
+## Actualización de proveedor y etapa — 2026-10-27
+
+Firebase elegido para alojamiento de la página. Servicio de datos privados, región, subservicios, ubicación/ciclos de copias y configuración aún por definir/verificar. Correo en modo de prueba sin proveedor real; no hay entrega externa acreditada. La etapa MVP no determina identidades autorizadas ni permite inferir ausencia de copias. Los scopes productivos permanecen sin calificar. Ver [decisiones del MVP y marco normativo](../010-documentos-recuperacion/mvp-decisions-2026-10-27.md).
+
+2026-10-27 — Confirmación de la responsable: MVP de Contacto solo con datos ficticios de prueba. Se añade esta limitación a Términos y Manifiesto en revisión. Sin proveedor de correo real ni recepción de consultas reales; se mantienen controles y condiciones de cierre productivo para una etapa posterior.

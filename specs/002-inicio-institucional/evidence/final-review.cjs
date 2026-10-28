@@ -1,13 +1,15 @@
 // Reproducer for local review of the real guarded Home entry; not site integration.
 const {createRequire}=require('node:module');
 const {resolve,join}=require('node:path');
-const {writeFileSync}=require('node:fs');
+const {writeFileSync,mkdirSync}=require('node:fs');
 const assert=require('node:assert/strict');
 const req=createRequire(join(resolve(__dirname,'../../..'),'package.json'));
 const pw=req('@playwright/test');
 const AxeBuilder=req('@axe-core/playwright').default;
 const engine=process.argv[2]||'chromium';
-const base='http://127.0.0.1:4327';
+const base=process.env.PRIVA_HOME_REVIEW_BASE_URL || 'http://127.0.0.1:4327';
+const output=process.env.PRIVA_HOME_REVIEW_OUTPUT || __dirname;
+mkdirSync(output,{recursive:true});
 const results=[];
 let browser;
 async function run(name,fn){
@@ -29,7 +31,7 @@ async function heading(page,anchor){
 }
 (async()=>{
  try {
-  browser=await pw[engine].launch(engine==='chromium'?{executablePath:'/usr/bin/chromium'}:{});
+  browser=await pw[engine].launch(engine==='chromium'?{executablePath:process.env.PRIVA_CHROMIUM_EXECUTABLE || '/usr/bin/chromium'}:{});
   const widths=engine==='chromium'?[360,390,430,768,1024,1280,1440]:[390,1440];
   for(const width of widths)for(const percent of [100,200])await run(`${width}px text ${percent}%`,async()=>{
    const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce'});
@@ -41,20 +43,20 @@ async function heading(page,anchor){
     await pw.expect(page.getByRole('heading',{level:1})).toHaveCount(1);
     await pw.expect(page.getByText(/banco de pruebas|recurso ficticio/i)).toHaveCount(0);
     assert.deepEqual(await page.locator('.home > section').evaluateAll(nodes=>nodes.map(n=>n.id)),['hero','somos-priva','que-hacemos','cierre']);
-    await pw.expect(page.locator('#que-hacemos h3')).toHaveText(['Educación Digital','Historias reales','Herramientas Seguras','Acompañamiento']);
+    await pw.expect(page.locator('#que-hacemos h3')).toHaveText(['Educación Digital','Historias educativas','Herramientas Seguras','Acompañamiento']);
     await pw.expect(page.locator('#que-hacemos a, #que-hacemos button, #que-hacemos [tabindex="0"]')).toHaveCount(0);
     assert.equal(await page.evaluate(()=>getComputedStyle(document.documentElement).fontSize),`${16*percent/100}px`);
     await loaded(page);
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
     await page.goto(base+'/index.html');
-    const violations=(await new AxeBuilder({page}).analyze()).violations;
+    const violations=(await new AxeBuilder({page}).exclude('astro-dev-toolbar').analyze()).violations;
     assert.deepEqual(violations.map(v=>({id:v.id,impact:v.impact})),[]);
     for(const keyboard of [false,true]){
      await page.goto(base+'/index.html');
      const learn=page.getByRole('main').getByRole('link',{name:'Conocer más',exact:true});
      if(keyboard){await learn.focus();await page.keyboard.press('Enter');}else await learn.click();
      await heading(page,'somos-priva');
-     await page.keyboard.press('Tab');
+     await page.keyboard.press(process.platform==='darwin'&&engine==='webkit'?'Alt+Tab':'Tab');
      await pw.expect(page.getByRole('main').getByRole('link',{name:'Explora nuestras historias',exact:true})).toBeFocused();
     }
     for(const anchor of ['somos-priva','que-hacemos']){
@@ -74,7 +76,7 @@ async function heading(page,anchor){
     assert.deepEqual(remote,[]);
     if(engine==='chromium'&&[390,1440].includes(width)&&percent===100){
      await page.goto(base+'/index.html');await loaded(page);await page.evaluate(()=>scrollTo(0,0));
-     await page.screenshot({path:join(__dirname,`final-review-${width}.png`),fullPage:true});
+     await page.screenshot({path:join(output,`final-review-${width}.png`),fullPage:true});
     }
    }finally{await context.close();}
   });
@@ -101,8 +103,8 @@ async function heading(page,anchor){
  }catch(error){results.push({name:'browser launch',status:'blocked',error:error.stack});console.error(error.message);}
  finally{
   if(browser)await browser.close();
-  const report={recordedAt:new Date().toISOString(),scope:'isolated real Home entry, not site integration',engine,version:browser?.version(),base,results};
-  writeFileSync(join(__dirname,`final-review-${engine}.json`),JSON.stringify(report,null,2)+'\n');
+  const report={recordedAt:new Date().toISOString(),scope:'real guarded Home entry; destination integration verified separately',engine,version:browser?.version(),base,results};
+  writeFileSync(join(output,`final-review-${engine}.json`),JSON.stringify(report,null,2)+'\n');
   console.log(JSON.stringify({engine,passed:results.filter(r=>r.status==='passed').length,failed:results.filter(r=>r.status==='failed').length,blocked:results.filter(r=>r.status==='blocked').length}));
   if(results.some(r=>r.status!=='passed'))process.exitCode=1;
  }

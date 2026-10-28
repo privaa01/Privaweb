@@ -2,11 +2,11 @@ import { test, expect, type Page } from '@playwright/test';
 import { fixtureCatalog } from '../fixtures/stories/src/content';
 async function catalog(page:Page, data:unknown=fixtureCatalog){ await page.route('**/api/public/historias',r=>r.fulfill({json:data}));await page.goto('/historias.html');await expect(page.locator('[data-story]')).toHaveCount(3); }
 test('catalog expands without duplicates or losing selection and fragment works',async({page})=>{
- await catalog(page);await page.getByRole('radio').first().check();await page.getByRole('button',{name:'Ver todas las historias'}).click();await expect(page.locator('[data-story]')).toHaveCount(4);await expect(page.getByRole('radio').first()).toBeChecked();
+ await catalog(page);await page.getByRole('radio').first().check();await page.getByRole('button',{name:'Ver más historias'}).click();await expect(page.locator('[data-story]')).toHaveCount(4);await expect(page.getByRole('radio').first()).toBeChecked();
  await page.getByRole('link',{name:'Explorar episodios'}).click();await expect(page).toHaveURL(/#casos$/);await expect(page.locator('#casos')).toBeFocused();
  await page.reload();await expect(page.locator('#casos')).toBeFocused();expect(await page.content()).not.toContain('private@example.test');
 });
-test('three or fewer stays same collection',async({page})=>{await catalog(page,{schemaVersion:1,stories:fixtureCatalog.stories.slice(0,3)});await page.getByRole('button',{name:'Ver todas las historias'}).click();await expect(page.locator('[data-story]')).toHaveCount(3);});
+test('three or fewer stays same collection',async({page})=>{await catalog(page,{schemaVersion:1,stories:fixtureCatalog.stories.slice(0,3)});await page.getByRole('button',{name:'Ver más historias'}).click();await expect(page.locator('[data-story]')).toHaveCount(3);});
 test('empty differs from error; retry recovers',async({page})=>{
  let mode=0;await page.route('**/api/public/historias',r=>mode===0?r.fulfill({json:{schemaVersion:1,stories:[]}}):mode===1?r.fulfill({status:503,body:'private error'}):r.fulfill({json:fixtureCatalog}));
  await page.goto('/historias.html');await expect(page.locator('[data-catalog-status]')).toContainText('No hay historias');mode=1;await page.reload();await expect(page.locator('[data-catalog-status]')).toContainText('No pudimos');expect(await page.content()).not.toContain('private error');mode=2;await page.getByRole('button',{name:'Reintentar'}).click();await expect(page.locator('[data-story]')).toHaveCount(3);

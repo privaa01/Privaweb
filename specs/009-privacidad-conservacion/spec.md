@@ -2,7 +2,7 @@
 
 **Feature Directory**: `specs/009-privacidad-conservacion`
 **Created**: 2026-10-16
-**Updated**: 2026-10-20
+**Updated**: 2026-10-27
 **Status**: Implementación y verificación local; cierre productivo pendienteP02/010/011. Evidencia en [evidence.md](evidence.md).
 **Input**: `/speckit-specify 009` sobre la feature existente.
 **Fuente**: [SPEC original R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), X02 y decisiones C22/C26/C29; [constitución](../../.specify/memory/constitution.md), CONST-02–06/09–11.
@@ -179,3 +179,7 @@ Estas reglas R-01–R-09 desarrollan FR-001; no añaden requisitos originales al
 **Aclaración 2026-10-20**: cuatro preguntas respondidas por la usuaria (A en Q1–Q4), integradas en historias, reglas, métricas y dependencias. El canal y los proveedores reales, ciclos de copias y atención previa a la confirmación requieren calificación operativa; la forma y vigencia del comprobante se resolverán en el plan. No se inventan datos oficiales ni se acredita cumplimiento productivo.
 
 **Implementación 2026-10-20**:57/67 tareas verificadas localmente; [evidence.md](evidence.md) separa43Node,6navegador y225regresiones únicas de la calificación externa pendiente. No se cierra X02 productivo ni se habilitan claims/canal ficticios.
+
+## Decisiones del MVP — 2026-10-27
+
+La responsable elige Firebase para alojar la web y correo solo en modo de prueba sin proveedor por ahora. Confirma etapa MVP; no define ni elimina por ello políticas de acceso/copias. Se incorpora Colombia (Ley 1581/Decreto 1377 y compilación reglamentaria) como marco de revisión de documentos010. La elección no califica canal, recepción, almacenamiento o borrado real ni cambia los 90 días/deadlines aprobados. La responsable confirmó uso exclusivo de datos ficticios de prueba; no se habilitan consultas reales en esta etapa. Detalle en [decisiones del MVP y marco normativo](../010-documentos-recuperacion/mvp-decisions-2026-10-27.md).

@@ -1,6 +1,6 @@
 ---
 import ContactHero from './ContactHero.astro';import ContactInstagram from './ContactInstagram.astro';import ContactForm from './ContactForm.astro';import ContactClosing from './ContactClosing.astro';
 import type {ContactContent} from '../../content/contact';import '../../styles/contact.css';
-interface Props {content:ContactContent;tracking?:boolean} const {content,tracking=false}=Astro.props;
+interface Props {content:ContactContent;tracking?:boolean;synthetic?:boolean} const {content,tracking=false,synthetic=false}=Astro.props;
 ---
-<div class="contact-page"><ContactHero content={content} tracking={tracking}/><div class="contact-columns"><ContactInstagram content={content}/><ContactForm content={content}/></div><ContactClosing tracking={tracking}/></div>
+<div class="contact-page">{synthetic&&<p class="contact-test-notice" role="note"><strong>Modo de prueba del MVP.</strong> Usa solo datos ficticios y un correo como prueba@example.test. Las consultas se guardan localmente; no se envían correos ni se reciben consultas reales.</p>}<ContactHero content={content} tracking={tracking}/><div class="contact-columns"><ContactInstagram content={content}/><ContactForm content={content} synthetic={synthetic}/></div><ContactClosing tracking={tracking}/></div>

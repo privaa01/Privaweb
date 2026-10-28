@@ -3,7 +3,7 @@
 **Feature Directory**: `specs/003-historias-educativas`
 **Created**: 2026-10-16
 **Updated**: 2026-10-17
-**Status**: Componentes implementados y pruebas contractuales verificadas; materiales, publicación y aceptación integrada pendientes.
+**Status**: Textos públicos aprobados explícitamente el 2026-10-28; guard editorial y render HTTP200. Cuatro historias publicadas/activas localmente con mandato de la responsable; revisión manual final y cierre productivo pendientes.
 **Input**: `/speckit-specify 003`: desarrollar el spec existente sin ampliar alcance.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), H01–H12, PDF 2 y
 [constitución 1.0.0](../../.specify/memory/constitution.md), en particular CONST-03/05/07–10.
@@ -24,7 +24,7 @@ visible y recorrido de Ver todas sin requerir comentarios, sesión ni interacci�
 **Acceptance Scenarios**:
 
 1. **Dado** Historias abierto, **cuando** consulto el hero, **entonces** veo etiqueta
-   HISTORIAS REALES, título “Aprende de casos reales sobre robo de datos.”, descripción,
+   RECREACIONES EDUCATIVAS, título “Aprende con recreaciones educativas sobre riesgos digitales.”, descripción,
    imagen y Explorar episodios con la composición del PDF 2. No se añade un caso principal
    de María entre el hero y Casos destacados. (H01)
 2. **Dado** Explorar episodios, **cuando** lo activo con teclado o puntero, **entonces**
@@ -33,7 +33,7 @@ visible y recorrido de Ver todas sin requerir comentarios, sesión ni interacci�
    consulto Casos destacados, **entonces** identifico cada caso por imagen, categoría, título
    y descripción coherentes con sus materiales; no se inventan personas ni historias adicionales. (H02–H05)
 4. **Dado** nuevas historias publicadas activas además de los tres casos iniciales,
-   **cuando** activo Ver todas las historias, **entonces** veo el listado completo en esta
+   **cuando** activo Ver más historias, **entonces** veo el listado completo en esta
    misma página, sin duplicados, borradores o desactivadas, sin abrir un catálogo separado. (H02)
 5. **Dado** una historia desactivada o un borrador en la fuente de contenidos,
    **cuando** se obtiene/renderiza el catálogo público actualizado, **entonces** no aparecen
@@ -137,7 +137,7 @@ y el CTA final; comprobar destinos contra Inicio y la URL oficial compartida con
 ### Functional Requirements
 
 - **FR-001 / H01 — Hero Historias**: Etiqueta, título, descripción e imagen; Explorar episodios lleva a #casos, sin insertar María
-- **FR-002 / H02 — Casos destacados: encabezado y Ver todas las historias**: Tres casos iniciales y control visibles; Ver todas muestra el listado completo de activas en esta página, incluidas nuevas publicaciones; sin borradores, desactivadas ni duplicados (C11)
+- **FR-002 / H02 — Casos destacados: encabezado y Ver más historias**: Tres casos iniciales y control visibles; Ver todas muestra el listado completo de activas en esta página, incluidas nuevas publicaciones; sin borradores, desactivadas ni duplicados (C11)
 - **FR-003 / H03 — Caso 1: Enlace Falso / Phishing**: María, mensaje bancario y enlace; imagen y relato coinciden; duración 04:15 es referencia, verificar audio real
 - **FR-004 / H04 — Caso 2: La llamada sospechosa / Ingeniería Social**: Juan y código de autenticación; imagen y relato coinciden; 06:40 sujeto a archivo; corrección Confiada pendiente de revisión editorial (P03)
 - **FR-005 / H05 — Caso 3: La contraseña compartida / Contraseñas**: Luis, streaming y correo corporativo; imagen y relato coinciden; 05:20 sujeto a archivo
@@ -154,7 +154,7 @@ y el CTA final; comprobar destinos contra Inicio y la URL oficial compartida con
 **Composición**: encabezado de 001 → hero → Casos destacados → metodología → recordatorios
 Somos Priva/Qué hacemos → cierre con imagen → footer de 001. Mantener el orden del PDF 2
 al adaptar. No añadir cuarta historia principal de suplantación ni bloque #maria.
-El texto “historias reales” y las afirmaciones de testimonio requieren respaldo editorial P03.
+Los audios son recreaciones educativas según decisión de la responsable del 2026-10-28; no se presentan como testimonios reales.
 
 **Tres casos iniciales**, sujetos a materiales oficiales y condición publicada/activa:
 
@@ -188,7 +188,7 @@ clasificación de visitantes ni seguimiento estadístico de ejercicios.
 |---|---|---|
 | Página Historias | /historias.html | 003 |
 | Explorar episodios y CTA PROTÉGETE HOY de 001 | #casos | 003 ofrece la sección; 001 controla su CTA |
-| Ver todas las historias | Listado completo en esta página | 003 |
+| Ver más historias | Listado completo en esta página | 003 |
 | Saber más de Somos Priva | /index.html#somos-priva | 002 ofrece destino |
 | Saber más de Qué hacemos | /index.html#que-hacemos | 002 ofrece destino |
 | EXPLORAR MÁS CONTENIDOS | https://www.instagram.com/priva_inc/ | Misma URL que 005; referencia en evidence/social-reference.md |
@@ -261,7 +261,7 @@ Son criterios de aceptación; resultados contractuales y bloqueos en [evidence/s
   verificar propagación hacia web pública sin exponer borradores ni datos de administración.
 - **005 / P01**: Instagram oficial compartido y verificado.
 - **P01**: imágenes, audios, guiones/transcripciones y nueve explicaciones recibidas/validadas.
-- **P03**: respaldo de “historias reales”, revisión del relato de Juan y de todos los textos
+- **P03**: identificación explícita de recreaciones educativas, revisión del relato de Juan y de todos los textos
   sensibles a hechos/capacidades; no redactar hechos nuevos para dar por validado un ejercicio.
 - **009/011/P04**: privacidad, accesibilidad, recursos de marca/fuente/colores y fidelidad.
   Contraste objetivo 4.5:1 normal y 3:1 grande/componentes; controles aproximadamente 44 px.
@@ -310,3 +310,23 @@ permanecen pendientes. Sin backend007, promesas de publicación ni cambios de al
 Marca, fuente y paleta compartidas recibidas desde001 e incorporadas a003. Las seis imágenes aportadas se identifican por nombre/destino en [evidence/materials.md](evidence/materials.md); sus archivos originales todavía no están disponibles en el entorno/GitHub. No se marcan verificadas ni se inventan dimensiones. Se conserva el bloqueo de imágenes propias/editorial/Instagram y aceptación integrada. Carpeta GitHub `public/images/stories/` preparada para recibir los PNG.
 
 2026-10-26 — Archivos de las seis imágenes recibidos en6e7f523 y conectados con dimensiones/procedencia verificadas. Tres ilustraciones de bloques y tres portadas por ID inicial, sin alterar publicación/estados007. Los avisos anteriores de falta de archivos son históricos. Audios: carpeta fuente content/stories/audio/ preparada en GitHub; revisar transcripciones/explicaciones antes de publicar. [Evidencia](evidence/connected-images.md).
+
+Decisión vigente 2026-10-28: audios identificados por la responsable como recreaciones educativas. Ajustar títulos, descripciones y metodología para expresarlo; retirar auditorías y recursos continuos no acreditados, usando el alcance educativo aprobado en Inicio. No aprueba ejercicios ni publicación del catálogo.
+
+## Aprobación editorial aplicada — 2026-10-28
+
+La responsable respondió «Sí, apruebo los textos públicos corregidos» para hero, metodología, cierre, identidad, catálogo y pasos Escucha/Reflexiona/Aplica. Se registraron cinco snapshots inmutables en src/content/stories-review.json, con referencia a evidence/public-copy-review.md; el guard sigue invalidando modificaciones materiales. No se aprobaron ejercicios ni se importaron/publicaron historias.
+
+Verificación: 45/45 pruebas Node Inicio/Historias, guard003 salida 0 y Astro check (95 archivos, 0 errores/advertencias, 1 hint previo). Integración real002: 18/18 aprobadas, seis recorridos por motor Chromium/Firefox/WebKit. Historias HTTP200; /api/public/historias HTTP404: el catálogo007 aún no está conectado al servidor local. Captura .test-output/stories-approved.png. Build completo conserva salida1 en guard010/009.
+
+La navegación desde Inicio ya está verificada; T027/T031 de002 mantienen el requisito residual de build completo, y T028 el cierre integral: 30/33 tareas. No se confunde renderizado de Historias con disponibilidad del catálogo, aprobación de ejercicios ni publicación productiva. Logs: .test-output/stories-approved-unit.log, stories-approved-check.log, home-approved-integration.log y home-approved-build.log.
+
+Conexión007 vigente — 2026-10-28: /api/public/historias ya responde200 con SQLite real en el servidor local. No hay publicaciones activas; la UI muestra vacío confirmado.6/6 pruebas navegador aprobadas. [Detalles y límites](../007-gestion-historias/local-connection.md). Los registros anteriores de catálogo404 son históricos.
+
+## Publicación local vigente — 2026-10-28
+
+Cuatro historias autorizadas/publicadas/activas en catálogo007 real, incluido Número desconocido con portada oficial reutilizada expresamente aprobada. Tres recorridos navegador completos aprobados, audios/transcripciones/doce explicaciones y expansión verificados; no mocks. Publicación local no equivale a despliegueFirebase ni cierra revisión manual/build productivo. [Registro](evidence/local-publication.md). Los estados anteriores de catálogo vacío o fichas sin publicación son históricos.
+
+## Acceso a la cuarta historia — 2026-10-28
+
+La responsable solicita hacer visible el botón para la cuarta historia. Situar el control Ver más historias después de las tres tarjetas iniciales. Al expandir, conservar tarjetas y selecciones existentes, añadir pendientes sin duplicar y enfocar/mostrar el título de la primera historia añadida. Ocultar el control tras añadir todas las adicionales; exponer relación aria-controls/aria-expanded. Con tres o menos se conserva el comportamiento previo sin añadir tarjetas.

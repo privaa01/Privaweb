@@ -10,7 +10,7 @@ export function storiesPublicationIssues(content:StoriesData,publicRoot:string):
   if(!block.title.trim()||!block.description.trim())issues.push('texto incompleto');
   if(block.review.status!=='revisado'||!block.review.decisionReference.trim()||block.review.reviewedText!==reviewText(block))issues.push(`${block.title}: revisión editorial pendiente o desactualizada`);
  }
- if(content.hero.title!=='Aprende de casos reales sobre robo de datos.'||content.method.title!=='Identifica el error y aprende'||content.closing.description!==storiesClosingText)issues.push('contenido de referencia/C16 alterado');
+ if(content.hero.title!=='Aprende con recreaciones educativas sobre riesgos digitales.'||content.method.title!=='Identifica el error y aprende'||content.closing.description!==storiesClosingText)issues.push('contenido de referencia/C16 alterado');
  if(content.identity.length!==2||content.identity[0]?.href!=='/index.html#somos-priva'||content.identity[1]?.href!=='/index.html#que-hacemos'||content.identity[0]?.title!=='Somos Priva'||content.identity[1]?.title!=='Informamos para que estés en control.')issues.push('destinos institucionales incorrectos');
  const images=[content.hero.image,content.method.image,content.closing.image,content.brand];
  for(const [i,image] of images.entries()){

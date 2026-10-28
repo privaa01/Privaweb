@@ -1,3 +1,4 @@
+import {mediaBinary} from '../server/stories/macos-media.ts';
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { storyFixture } from "./fixtures/story-management-service/helpers.ts";
@@ -43,7 +44,7 @@ test("restricted import keeps three initial IDs/order and repeated import preser
   try {
     const image = join(f.dir, "synthetic.png"),
       audio = join(f.dir, "synthetic.wav");
-    execFileSync("/usr/bin/ffmpeg", [
+    execFileSync(mediaBinary("ffmpeg"), [
       "-v",
       "error",
       "-f",
@@ -56,7 +57,7 @@ test("restricted import keeps three initial IDs/order and repeated import preser
       "1",
       image,
     ]);
-    execFileSync("/usr/bin/ffmpeg", [
+    execFileSync(mediaBinary("ffmpeg"), [
       "-v",
       "error",
       "-f",
@@ -133,7 +134,7 @@ test('initial import selects supplied official covers when no imagePath is speci
   const f=await storyFixture();
   try {
     const audio=join(f.dir,'test-tone.wav');
-    execFileSync('/usr/bin/ffmpeg',['-v','error','-f','lavfi','-i','sine=frequency=440:duration=1','-threads','1',audio]);
+    execFileSync(mediaBinary('ffmpeg'),['-v','error','-f','lavfi','-i','sine=frequency=440:duration=1','-threads','1',audio]);
     for(const id of ['enlace-falso','llamada-sospechosa','contrasena-compartida']) {
       const imported=await importInitialStory(f.service,f.media,f.token,{
         id,audioPath:audio,sourceReference:'Supplied cover; synthetic test audio only',reviewReference:'Synthetic test review, not real editorial approval',

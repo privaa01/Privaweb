@@ -146,3 +146,7 @@ ni CT01 productivo con evidencias parciales009.
 
 Sin violaciones constitucionales. Diario externo y limpieza física son necesarios para impedir
 reaparición y acreditar el borrado; reutilizar solo DELETE o recibos005 de24h no cumple US3.
+
+## Actualización de arquitectura — 2026-10-27
+
+Firebase seleccionado para alojamiento web; backend Node/SQLite, Linux/flock, medios y persistencia requieren diseño compatible explícito antes de despliegue. No se seleccionan Firestore, Functions, Cloud Run, región o plan por inferencia. Correo restringido a pruebas sin proveedor en esta etapa; no habilitar códigos o despachos reales mediante dobles productivos. Acceso y copias siguen pendientes de política concreta; MVP no es una excepción a seguridad. Ver [decisiones del MVP y marco normativo](../010-documentos-recuperacion/mvp-decisions-2026-10-27.md).

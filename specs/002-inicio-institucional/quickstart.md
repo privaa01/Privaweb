@@ -1,6 +1,6 @@
 # Guía de validación — Inicio 002
 
-**Estado**: Chromium, Firefox y pruebas de publicación verificados contractualmente. Cinco textos educativos aprobados; marca, fuente y paleta recibidas. Imágenes institucionales recibidas; revisión visual/manual aceptada por la usuaria. WebKit e integración pendientes.
+**Estado**: Chromium, Firefox y pruebas de publicación verificados contractualmente. Cinco textos educativos aprobados; marca, fuente y paleta recibidas. Imágenes institucionales recibidas; revisión visual/manual aceptada por la usuaria. Chromium/Firefox/WebKit verificados; navegación real a Historias verificada (18/18); build completo bloqueado por 010/009.
 
 ## Prerrequisitos y comandos existentes
 
@@ -118,3 +118,15 @@ Las imágenes aportadas están conectadas como `/images/home/hero.png`, `/images
 ## Revisión manual aceptada — 2026-10-23
 
 La responsable aprobó visualmente Inicio, confirmó el rotor de encabezados y aceptó los pasos guiados con VoiceOver en su Mac (`localhost:4321`). T026/T032 completas en el alcance de revisión de Inicio; 28/33 tareas. [Registro y límites](evidence/manual-review.md). La confirmación no equivale a auditoría externa ni sustituye WebKit, integración real o datos operativos pendientes de otras features.
+
+## Validación vigente — 2026-10-28
+
+30/33 tareas completas: T023/T033 cerradas con 59/59 pruebas contractuales finales (29 Chromium, 15 Firefox, 15 WebKit), matriz Chromium de siete anchos × texto 100/200%, y 8/8 pruebas adicionales WebKit en Inicio real. Integración 12/18: seis CTA bloqueados por HTTP 500 de Historias; build detenido por guard 010/009. T027/T031 y cierre integral T028 pendientes. [Evidencia y reproducción](evidence/review-2026-10-28.md). En macOS/WebKit el helper usa Option+Tab para incluir enlaces con su configuración nativa. No se repiten aprobaciones de imágenes ni revisión visual/manual.
+
+## Aprobación editorial aplicada — 2026-10-28
+
+La responsable respondió «Sí, apruebo los textos públicos corregidos» para hero, metodología, cierre, identidad, catálogo y pasos Escucha/Reflexiona/Aplica. Se registraron cinco snapshots inmutables en src/content/stories-review.json, con referencia a evidence/public-copy-review.md; el guard sigue invalidando modificaciones materiales. No se aprobaron ejercicios ni se importaron/publicaron historias.
+
+Verificación: 45/45 pruebas Node Inicio/Historias, guard003 salida 0 y Astro check (95 archivos, 0 errores/advertencias, 1 hint previo). Integración real002: 18/18 aprobadas, seis recorridos por motor Chromium/Firefox/WebKit. Historias HTTP200; /api/public/historias HTTP404: el catálogo007 aún no está conectado al servidor local. Captura .test-output/stories-approved.png. Build completo conserva salida1 en guard010/009.
+
+La navegación desde Inicio ya está verificada; T027/T031 de002 mantienen el requisito residual de build completo, y T028 el cierre integral: 30/33 tareas. No se confunde renderizado de Historias con disponibilidad del catálogo, aprobación de ejercicios ni publicación productiva. Logs: .test-output/stories-approved-unit.log, stories-approved-check.log, home-approved-integration.log y home-approved-build.log.

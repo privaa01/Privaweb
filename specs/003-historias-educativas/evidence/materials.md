@@ -49,3 +49,15 @@ Se sincronizaron los cuatro archivos de GitHub325fc49 en content/stories/audio/.
 ## Correspondencia confirmada —2026-10-26
 
 1→La contraseña compartida;2→La llamada sospechosa;3→Enlace falso;4→Número desconocido para Ver todas las historias. Los tres primeros están conectados como audios por defecto del importador privado007 con huella de aprobación; no se publican/activan por recibirlos. Para el cuarto se conserva la ficha pendiente y el ID se generará mediante gestión normal. Ver audio-assignment.md.
+
+## Aprobación editorial aplicada — 2026-10-28
+
+La responsable respondió «Sí, apruebo los textos públicos corregidos» para hero, metodología, cierre, identidad, catálogo y pasos Escucha/Reflexiona/Aplica. Se registraron cinco snapshots inmutables en src/content/stories-review.json, con referencia a evidence/public-copy-review.md; el guard sigue invalidando modificaciones materiales. No se aprobaron ejercicios ni se importaron/publicaron historias.
+
+Verificación: 45/45 pruebas Node Inicio/Historias, guard003 salida 0 y Astro check (95 archivos, 0 errores/advertencias, 1 hint previo). Integración real002: 18/18 aprobadas, seis recorridos por motor Chromium/Firefox/WebKit. Historias HTTP200; /api/public/historias HTTP404: el catálogo007 aún no está conectado al servidor local. Captura .test-output/stories-approved.png. Build completo conserva salida1 en guard010/009.
+
+La navegación desde Inicio ya está verificada; T027/T031 de002 mantienen el requisito residual de build completo, y T028 el cierre integral: 30/33 tareas. No se confunde renderizado de Historias con disponibilidad del catálogo, aprobación de ejercicios ni publicación productiva. Logs: .test-output/stories-approved-unit.log, stories-approved-check.log, home-approved-integration.log y home-approved-build.log.
+
+## Publicación local vigente
+
+Las cuatro fichas fueron publicadas por mandato explícito de la responsable el2026-10-28. Cuarta portada: reutilización de llamada.png autorizada; audios/transcripciones/ejercicios incluidos por la orden de publicación. No se afirma cotejo independiente no ejecutado. [Resultado y pruebas](local-publication.md). Pendientes anteriores de fichas sin publicar son históricos para este entorno.

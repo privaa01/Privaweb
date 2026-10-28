@@ -23,7 +23,7 @@ test('US2: cuatro áreas informativas y entrada por ancla', async ({ page }) => 
  await page.goto('/index.html#que-hacemos'); await page.reload();
  await expect(page.locator('#que-hacemos h2')).toHaveText('Informamos para que estés en control.');
  await expect(page.locator('#que-hacemos h2')).toBeInViewport();
- await expect(page.locator('#que-hacemos h3')).toHaveText(['Educación Digital', 'Historias reales', 'Herramientas Seguras', 'Acompañamiento']);
+ await expect(page.locator('#que-hacemos h3')).toHaveText(['Educación Digital', 'Historias educativas', 'Herramientas Seguras', 'Acompañamiento']);
  await expect(page.locator('#que-hacemos a, #que-hacemos button, #que-hacemos [tabindex="0"]')).toHaveCount(0);
 });
 test('US3: cierre y CTA hacia Historias', async ({ page }) => {

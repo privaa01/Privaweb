@@ -1,7 +1,7 @@
 # Tasks: Documentos informativos y recuperación 404
 
 **Input**: [spec.md](spec.md), [plan.md](plan.md), [research.md](research.md), [data-model.md](data-model.md), [contracts/](contracts/public-documents.md), [quickstart.md](quickstart.md).
-**Fecha**: 2026-10-20. **Rama real**: `main`; selección010. **Estado**: 33/44 tareas verificadas localmente; 11 parciales/bloqueadas. Detalle en `evidence.md`; sin cierre productivo.
+**Fecha**: 2026-10-20. **Rama real**: `main`; selección010. **Estado**: 35/44 tareas verificadas localmente; 9 parciales/bloqueadas. Detalle en `evidence.md`; sin cierre productivo.
 
 ## Formato y reglas de ejecución
 
@@ -82,7 +82,7 @@ Las pruebas están justificadas por los escenarios/criterios verificables del sp
 - [x] T025 [US3] Crear `src/components/documents/NotFound.astro` y `src/pages/404.astro`, entrada de fixture en `tests/fixtures/documents/src/pages/404.astro`: mensaje fijo español, Inicio/recursos de raíz, sin pathname/query/hash/referer en cuerpo ni reporte externo; metadato temprano no-referrer.
 - [x] T026 [US3] Implementar servidor de prueba `scripts/serve-documents.mjs` con loopback/raíz explícita, MIME y GET/HEAD,404 preservado con cuerpo010, no-referrer, rutas confinadas y sin logs sensibles; excluir `/api/`/`/admin/` y prefijos reservados, rechazar traversal/symlink fuera de raíz y evitar listado. No presentarlo como hosting productivo.
 - [x] T027 [US3] Sustituir el servidor temporal de T004 por `scripts/serve-documents.mjs` en el modo local de `playwright.documents.config.ts`, habilitar suites de recuperación y cerrar procesos correctamente; mantener integración sin fixture ni servidor automático y pruebas V07 con puertos libres/directorios temporales.
-- [ ] T028 [US3] Verificar cuatro destinos reales003/004/005 según R-07 y condiciónQR, documentando mapa y estado en `specs/010-documentos-recuperacion/delivery-review.md`; corregir solo enlaces afectados de `src/config/navigation.ts` o encabezados responsables si incumplen, sin añadir `#maria`, destinos inventados o QR nuevo.
+- [X] T028 [US3] Verificar cuatro destinos reales003/004/005 según R-07 y condiciónQR, documentando mapa y estado en `specs/010-documentos-recuperacion/delivery-review.md`; corregir solo enlaces afectados de `src/config/navigation.ts` o encabezados responsables si incumplen, sin añadir `#maria`, destinos inventados o QR nuevo.
 - [x] T029 [US3] Ejecutar V07–V10 en navegadores disponibles y registrar resultados en `specs/010-documentos-recuperacion/evidence.md`; diferenciar sintético local de pruebas contra sitio real y preservar errores/autorización006/008/009 sin afirmar cobertura privada por excluir prefijos en fixture.
 
 ## Phase 6 — Controles y cierre transversal
@@ -92,7 +92,7 @@ Las pruebas están justificadas por los escenarios/criterios verificables del sp
 - [x] T030 Crear V11 en `tests/documents-readiness.test.ts` y ampliar `tests/privacy-readiness.test.ts`: evidencia de otro bundle/revisión, caducada/futura/sintética, archivo alterado, `notices` válido con otros scopes ausentes; observar fallos específicos por la vinculación ausente antes de T031, no fallos de entorno; debe rechazar publicación. Positivos unitarios solo validan mecanismo, sin habilitar configuración real.
 - [x] T031 Implementar correspondencia evidencia009 scope `notices`↔huella exacta del bundle/revisión de entrega en `server/privacy/readiness.ts` y `src/config/documents.ts`, mediante entrada explícita o adaptador acíclico sin imports de contenido público hacia servicios; preservar otros scopes/fechas/hashes, sin fabricar evidencia productiva; ejecutar después los casos de T030 y comprobar que pasan.
 - [x] T032 Conectar `scripts/require-documents-publication.mjs`, auxiliares en `scripts/require-pages.mjs` y gate en `package.json` antes de Astro; conservar gates005–009 y sin bypass productivo; comprobar exit no cero con datos actuales y regresión de controles relacionados.
-- [ ] T033 [P] Crear/ejecutar V12 en `tests/e2e/documents-accessibility.spec.ts`: auxiliares y aviso a360/390/430/768/1024/1280/1440px, texto200% real, teclado/foco/skip-link/menú/enlaces, contraste/tamaño de controles y axe; sin cortes que impidan leer/recuperarse y sin confundir captura ampliada con texto ampliado.
+- [X] T033 [P] Crear/ejecutar V12 en `tests/e2e/documents-accessibility.spec.ts`: auxiliares y aviso a360/390/430/768/1024/1280/1440px, texto200% real, teclado/foco/skip-link/menú/enlaces, contraste/tamaño de controles y axe; sin cortes que impidan leer/recuperarse y sin confundir captura ampliada con texto ampliado.
 - [ ] T034 Registrar revisión manual visual/lector de pantalla, recursos y límites de diseño011 en `specs/010-documentos-recuperacion/accessibility-review.md`; si falta material, navegador o tecnología de asistencia, mantener pendiente, sin certificar fidelidad.
 - [ ] T035 Auditar tráfico/storage/referrer/logs en documentos, aviso y404 y su integración con recorridos009 en `specs/010-documentos-recuperacion/delivery-review.md`; sin cookies/rastreo nuevos ni datos privados y claims solo tras evidencia real; auditoría local no cierra la productiva.
 - [x] T036 Ejecutar regresión afectada001/005/009 y checks Astro/TypeScript, revisar aislamiento de fixtures y escapes; registrar comandos/resultados únicos y fallos en `specs/010-documentos-recuperacion/evidence.md`, sin repetir suites no afectadas ni contar reintentos como casos nuevos.
@@ -169,3 +169,11 @@ T028: mapa y fixture conformes; destinos reales/QR final pendientes. T033/T034: 
 ## Avance P02 — 2026-10-23
 
 T037 parcial: responsable Priva y correo público de contacto/solicitudes `Priva202611@gmail.com` aportados por la usuaria e incorporados a src/config/documents.ts; Términos, Manifiesto y aviso sincronizados sin aprobación final. Pendientes alojamiento, proveedores/envío de correo, ubicación/ciclos/categorías/cookies/permisos y evidencia operativa. T038/T039 sin cierre. 33/44 tareas completas; 27 pruebas de documentos y check raíz aprobados. Ver content-review.md y evidence/official-contact-*.txt.
+
+## Progreso del MVP — 2026-10-27
+
+T037 parcial: Firebase seleccionado para la web y registrado en el borrador; correo solo de prueba sin proveedor. T038 parcial: marco colombiano/derechos preparados como borrador, sin aprobación humana del texto exacto ni vigencia. T039 sin calificación009 y T040 sin despliegue; no se cierran estas tareas. La etapa MVP no define acceso/copias ni autoriza eludir gates. Ver [decisiones, pruebas y pendientes](mvp-decisions-2026-10-27.md).
+
+## Destinos y accesibilidad completados — 2026-10-28
+
+T028/T033 completas:35/44tareas.9/9pruebas locales reales (6destinos+3tráfico/storage), matriz contractual84celdas/3motores aprobada,27/27Node y Astrocheckconforme. T035avanza solo en auditoría local: no cierra cabecera404,administración ni entrega productiva. Textos continúan en revisión, Contacto solo ficticio. [Evidencia y límites](local-review-2026-10-28.md).

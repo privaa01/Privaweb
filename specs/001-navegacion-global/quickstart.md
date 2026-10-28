@@ -1,11 +1,11 @@
-# Guía de validación futura — 001
+# Guía de validación — 001
 
-**Estado**: actualizado2026-10-20. Componentes y páginas públicas existen; contrato006 recibido y pruebasG05 definidas. Build/entrega integrada siguen bloqueados por recursos, revisión editorial, operación009/010 y baseURL real, no por ausencia de archivos002–005.
+**Estado**: actualizado2026-10-27. Corrección de foco al ampliar el menú y regresión en Mac en [evidence/review-2026-10-27.md](evidence/review-2026-10-27.md). Componentes y páginas públicas existen; contrato006 recibido. La baseURL local ya es accesible desde el runner del Mac, pero los destinos finales, servicios privados y build/entrega integrada siguen bloqueados por revisión editorial y operación009/010. Las imágenes de Historias/App ya están recibidas.
 
 ## Prerrequisitos
 
-- Checkout existente en /workspace/Privaweb; no crear worktree salvo petición explícita.
-- Node 24.19.0/npm 11.9.0; terminal con npm y caché escribible.
+- Checkout existente; en este Mac `/Users/samanthabolivar/Documents/proyectoPriva`. No crear worktree salvo petición explícita.
+- Node 24+ para los servicios administrativos; terminal con npm y caché escribible. Revisión actual ejecutada con Node 24.22.1.
 - Implementación de tooling y pruebas según [plan](plan.md).
 - Para aceptación integrada: páginas/secciones 002–005, acceso protegido 006,
   documentos revisados 010 y recursos oficiales para fidelidad.
@@ -13,8 +13,8 @@
 ## Estado documental comprobable ahora
 
 ```bash
-cd /workspace/Privaweb
-.specify/scripts/bash/check-prerequisites.sh --paths-only --json
+cd /Users/samanthabolivar/Documents/proyectoPriva
+SPECIFY_FEATURE_DIRECTORY="$PWD/specs/001-navegacion-global" bash .specify/scripts/bash/check-prerequisites.sh --paths-only --json
 ```
 
 Debe resolver FEATURE_DIR a specs/001-navegacion-global y plan.md a este directorio.
@@ -25,7 +25,7 @@ No ejecuta ni prueba la aplicación.
 `package.json` y `package-lock.json` ya fijan las versiones de research.md. Usar instalación reproducible:
 
 ```bash
-cd /workspace/Privaweb
+cd /Users/samanthabolivar/Documents/proyectoPriva
 export npm_config_cache=/tmp/priva-npm-cache
 npm ci
 npm exec playwright install chromium firefox webkit
@@ -55,6 +55,26 @@ npm run test:navigation:service
 ```
 
 Firefox requiere autorización del ejecutor fuera del sandbox exterior en este entorno, sin desactivar sus protecciones. La matriz exhaustiva sigue en Chromium. WebKit no se considera aprobado por otros motores. Ejecutar suites de navegador001 en secuencia para no compartir servidor/reportes simultáneamente.
+
+### Ejecución nativa en macOS
+
+Los comandos con `/usr/bin/chromium`, `/workspace/.cache` y el wrapper de bibliotecas al final de esta guía corresponden al entorno Linux histórico. En Mac, usar los navegadores oficiales instalados por Playwright o Chrome instalado:
+
+```bash
+PRIVA_CHROMIUM_EXECUTABLE="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" npm run test:e2e:contract -- --project=chromium
+npm run test:e2e:contract -- --project=firefox --project=webkit --grep-invert="Matriz:"
+TMPDIR=/private/tmp npm run test:navigation:service
+```
+
+WebKit/macOS puede requerir Option+Tab para incluir enlaces; las pruebas de recorrido de foco usan esa combinación de forma explícita, sin modificar preferencias del usuario. Las demás plataformas conservan Tab. El TMPDIR canónico evita que la validación de directorios privados rechace el alias `/var` del Mac. Ejecutar las suites contractuales e integradas en secuencia o usar directorios `outputDir` distintos para no borrar trazas de otra ejecución.
+
+Para comprobar los bloqueos actuales del servidor Astro público:
+
+```bash
+PRIVA_TEST_MODE=integration PRIVA_INTEGRATION_BASE_URL=http://127.0.0.1:4321 PRIVA_CHROMIUM_EXECUTABLE="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" npm run test:e2e:integration -- --project=chromium --grep="Destino integrado real|G05 API"
+```
+
+Esta selección ejecutó cinco casos, todos fallidos por destinos no calificados/integrados. No usar el servidor público de Astro como sustituto del servicio privado006 ni aceptar documentos en borrador como cumplimiento de G06.
 El servidor contractual es `tests/fixtures/navigation/serve.py` (Python 3), usado por webServer,
 con salida Astro real en `.test-output/navigation/`. El preview de Astro no inició en este
 entorno; se eligió servir los archivos estáticos directamente para validar sus rutas.

@@ -6,7 +6,7 @@ test('real public catalog, resources and three initial materials',async({page,re
  const response=await request.get('/api/public/historias',{headers:{'Cache-Control':'no-cache'}});expect(response.ok()).toBe(true);expect(response.headers()['cache-control']).toContain('no-store');
  const data=parseCatalog(await response.json(),{baseURL:baseURL!,mediaOrigins:storiesContent.mediaOrigins});
  for(const id of initialStoryIds)expect(data.stories.some(s=>s.id===id)).toBe(true);
- await page.goto('/historias.html');await expect(page.locator('[data-story]')).toHaveCount(Math.min(3,data.stories.length));await page.getByRole('button',{name:'Ver todas las historias'}).click();await expect(page.locator('[data-story]')).toHaveCount(data.stories.length);
+ await page.goto('/historias.html');await expect(page.locator('[data-story]')).toHaveCount(Math.min(3,data.stories.length));await page.getByRole('button',{name:'Ver más historias'}).click();await expect(page.locator('[data-story]')).toHaveCount(data.stories.length);
  for(const story of data.stories){const media=await request.get(story.audio.src,{headers:{Range:'bytes=0-99'}});expect(media.status()).toBe(206);expect(media.headers()['content-type']).toContain('audio/');}
 });
 test('real institutional destinations and verified shared Instagram',async({page})=>{

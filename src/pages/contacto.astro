@@ -1,6 +1,9 @@
 ---
 import {resolve} from 'node:path';import Layout from '../layouts/PublicLayout.astro';import Contact from '../components/contact/ContactContent.astro';
 import {contactContent,contactReadiness} from '../config/contact';import {assertContactPublication,trackingVerified} from '../lib/contact-publication';
-assertContactPublication(contactContent,contactReadiness,resolve('public'));
+import {syntheticContactContent} from '../lib/contact-test';
+const synthetic=import.meta.env.DEV&&process.env.PRIVA_CONTACT_TEST_MODE==='synthetic';
+const content=synthetic?syntheticContactContent(contactContent):contactContent;
+if(!synthetic)assertContactPublication(contactContent,contactReadiness,resolve('public'));
 ---
-<Layout pageId="contacto" title="Contáctanos | Priva" contentLayout="full" brand={{src:contactContent.brand.src,alt:contactContent.brand.alt}}><Contact content={contactContent} tracking={trackingVerified(contactReadiness)}/></Layout>
+<Layout pageId="contacto" title={synthetic?'Contáctanos — Pruebas del MVP | Priva':'Contáctanos | Priva'} contentLayout="full" brand={{src:content.brand.src,alt:content.brand.alt}}><Contact content={content} synthetic={synthetic} tracking={!synthetic&&trackingVerified(contactReadiness)}/></Layout>

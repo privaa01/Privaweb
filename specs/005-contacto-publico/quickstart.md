@@ -1,13 +1,38 @@
 # Guía de validación — 005
 
-Fecha 2026-10-17. Guía de reproducción de la implementación local. Resultados y bloqueos vigentes en [evidence.md](evidence.md); no hay despliegue productivo.
+Actualización 2026-10-27. Guía de reproducción de la implementación local y del MVP integrado. Resultados y bloqueos vigentes en [evidence.md](evidence.md); no hay despliegue productivo.
+
+## MVP integrado: ejecutar Contacto con datos ficticios
+
+Node 24+ y dependencias del proyecto. Desde el checkout existente:
+
+```bash
+npm run dev:contact:test -- --force
+```
+
+Abrir `http://127.0.0.1:4321/contacto.html`. Se muestran recursos oficiales y aviso de prueba. Usar un alias ficticio, `prueba@example.test` y un mensaje ficticio. El éxito significa guardado local, nunca correo enviado. `--force` reemplaza el devserver del mismo checkout cuando ya existe; no publica ni abre acceso de red externo.
+
+```bash
+PRIVA_CHROMIUM_EXECUTABLE="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" npm run test:e2e:contact:development
+TMPDIR=/private/tmp npm run test:contact
+npm run check:contact:service
+npm run check
+```
+
+Firefox/WebKit oficiales: `npm exec playwright install firefox webkit`; si se usa Chromium de Playwright no hace falta PRIVA_CHROMIUM_EXECUTABLE. WebKit/macOS usa Option+Tab en las pruebas de recorrido de enlaces; no se cambian preferencias del sistema. El config de desarrollo exige que el servidor anterior esté iniciado y explícitamente sintético; no sustituye la página por fixtures ni intercepta su API.
+
+Configuración opcional: `PRIVA_CONTACT_TEST_ORIGIN` debe ser un origen HTTP loopback exacto y coincidir con host/puerto del devserver; `PRIVA_CONTACT_TEST_DATA_DIR` debe ser una ruta privada canónica fuera del checkout y de cualquier directorio estático. Por defecto se usa una carpeta 0700 derivada del checkout dentro del temporal canónico del sistema, con DB/clave/sidecars privados; persiste reinicios. No meter datos reales ni copiar esa carpeta a public/dist/Git. Cambiar origen o carpeta de datos exige reiniciar el devserver.
+
+El modo se activa solo en DEV con `PRIVA_CONTACT_TEST_MODE=synthetic`. `npm run dev` sin esa opción conserva el bloqueo de publicación de Contacto. `npm run build` sigue validando documentos/privacidad y no incorpora un formulario de demostración como entrega. El correo está desactivado; el código no promete demostrar retención/copias009, recuperación por correo o CT01. No se crearon recursos Firebase.
+
+En esta sesión no había npm en PATH: se usó el Node24 incluido en Codex para invocar los CLI locales de Astro/Playwright. Los configs temporales ignorados de los bancos reemplazan únicamente los comandos que invocan npm por esos CLI directos; no cambian sus escenarios ni aserciones. Con npm disponible se usan los comandos estándar siguientes. Ejecutar bancos que compartan build/DB en secuencia.
 
 ## Prerrequisitos
 
-Repo /workspace/Privaweb, Node 24.19.0 con node:sqlite, npm/Python3 y lock actual. Capacidad SQLite
+Checkout existente (en este Mac /Users/samanthabolivar/Documents/proyectoPriva), Node24 con node:sqlite, npm/Python3 y lock actual. Capacidad SQLite
 comprobada en investigación no acredita recepción. Runtime nativo puede emitir aviso experimental;
 no presentarlo como infraestructura productiva certificada. Chromium sistema disponible;
-Firefox/WebKit tienen fallos de arranque documentados en004, revalidar/registrar según entorno.
+Firefox/WebKit nativos del Mac revalidados el2026-10-27; las notas Linux históricas al final no describen el bloqueo actual de este Mac.
 
 Comando existente: `npm ci`. No crear proveedor, claves productivas o cuenta externa en este paso.
 DB/key locales de prueba bajo .test-output/contact-service-data, ignorados y fuera del directorio

@@ -2,13 +2,23 @@
 
 **Feature Directory**: `specs/005-contacto-publico`
 **Created**: 2026-10-16
-**Updated**: 2026-10-17
-**Status**: Implementación local parcial verificada (44/49 tareas); entrega productiva pendiente de T044–T048. Véase [evidence.md](evidence.md).
+**Updated**: 2026-10-27
+**Status**: MVP local integrado y verificado (49/53 tareas); T044 y T050–T053 completas. Entrega productiva pendiente de T045–T048. Solo datos ficticios, sin correo real. Véase [evidence.md](evidence.md).
 **Input**: `/speckit-specify 005`: desarrollar la feature existente, sin ampliar el alcance.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), C01–C07, PDF 4 y
 [constitución 1.0.0](../../.specify/memory/constitution.md), especialmente CONST-05/06/08–10.
 
 ## Clarifications
+
+### Session 2026-10-27 — MVP local autorizado
+
+La responsable elige Firebase para el alojamiento futuro, correo de prueba sin proveedor y **solo datos ficticios** para Contacto. Al pedir ejecutar005 se implementa el modo local integrado, optativo y explícito, conservando C01–C07 y los criterios productivos.
+
+- En desarrollo, una opción de arranque habilita Contacto y sus dos POST en el mismo origen loopback, con los componentes/imágenes oficiales existentes y SQLite privado fuera del checkout y de los directorios servidos.
+- El aviso visible identifica pruebas, exige alias/mensajes ficticios y correo del dominio reservado `example.test`. La restricción de dominio es exclusiva de este entorno; no cambia las reglas productivas de correo de C05. No se puede comprobar automáticamente que todo texto libre sea ficticio: la advertencia y la restricción de entorno no se presentan como detección de datos personales.
+- La confirmación exige guardado real local y aclara que no se envió correo. Validación, deduplicación, errores y reintentos siguen el mismo contrato005. Sin endpoints de lectura, fallos o administración añadidos.
+- Sin la opción, o durante build/preview, se conservan los guards de publicación. El MVP no certifica plazos/retención/canal/copias009, revisión010 ni un despliegue Firebase.
+- Aceptación local: abrir `/contacto.html`, ver aviso y recursos reales, probar campos/fronteras/servidor, guardado autorizado en DB, replay/reinicio y privacidad de archivos. Comprobar tres motores y matriz accesible. Las tareas de calificación productiva conservan su bloqueo.
 
 ### Session 2026-10-17
 
@@ -261,7 +271,7 @@ la composición: contenido final y avisos requieren P03, sin declaraciones no co
 | DESCARGAR APP del encabezado | /app.html#descarga | Integración 001/004 |
 | Ir a Instagram | https://www.instagram.com/priva_inc/ | Configuración única compartida con003; aportada por la responsable |
 | Manifiesto de Datos desde aviso | /manifiesto-datos.html | 010 |
-| Solicitud de eliminación anticipada | Canal real pendiente de definir/verificar | 009/P02 |
+| Solicitud de eliminación anticipada | Priva202611@gmail.com declarado; verificación operativa pendiente | 009/P02 |
 
 Rutas son contratos, no prueba de disponibilidad. No seleccionar una cuenta Instagram, dirección
 de eliminación ni URL de servicio por inferencia. No se fija en este spec endpoint o proveedor.
@@ -285,8 +295,8 @@ de eliminación ni URL de servicio por inferencia. No se fija en este spec endpo
 ### Measurable Outcomes
 
 - **SC-001**: Hero, tarjeta Instagram, formulario, aviso y cierre conservan composición/orden del
-  PDF 4 con los cuatro reemplazos editoriales aprobados. #escribir admite enlace de footer,
-  visita directa/recarga con título visible; CTA a App e Instagram cumplen sus destinos reales.
+  PDF 4 con los cuatro reemplazos editoriales aprobados. #escribir admite
+  visita directa/recarga con título visible; el footer abre Contacto desde su inicio; CTA a App e Instagram cumplen sus destinos reales.
 - **SC-002**: Pruebas de alias 0/1/60/61 y mensaje 0/1/1500/1501 tras recortar extremos, vacíos/
   solo espacios y correos válidos/inválidos producen los mismos resultados en página y servidor;
   ningún dato inválido se guarda. Se conserva texto interno y se acepta alias sin identidad legal.
@@ -310,7 +320,7 @@ de eliminación ni URL de servicio por inferencia. No se fija en este spec endpo
   Pruebas de recepción/persistencia, lectura privada y fallos usan un servicio real de prueba;
   mocks solo acreditan contrato de interfaz, sin certificar guardado, seguridad o conservación.
 
-Son criterios para la implementación; no representan pruebas ejecutadas ahora.
+Los resultados del MVP local y los límites de aceptación productiva se registran en evidence.md; las pruebas sintéticas no cierran los criterios finales de publicación.
 
 ## Assumptions
 
@@ -329,9 +339,8 @@ Son criterios para la implementación; no representan pruebas ejecutadas ahora.
 
 - **001/004**: layout/navegación/footer, #escribir y destino App; componentes existentes no
   sustituyen la prueba de Contacto real integrado.
-- **003/P01**: URL oficial Instagram compartida; todavía no verificada, no se inventa para cerrar.
-- **P01/P04/011**: imagen, marca, fuente/paleta, alternativas y fidelidad; recursos pendientes no
-  se aprueban como placeholders de entrega.
+- **003/P01**: URL oficial Instagram aportada y configurada con referencia de la responsable; la apertura externa y revisión final integrada no se presumen por comprobar el href.
+- **P01/P04/011**: imagen, marca y fuente/paleta recibidas y conectadas. Las alternativas y fidelidad final requieren revisión manual011; no se sustituyen por placeholders.
 - **P02**: persistencia y datos operativos del servicio; falta impide certificar recepción real,
   aunque el banco de formulario y contrato pueden avanzar con pruebas identificadas.
 - **006/008**: acceso autorizado y lectura/respuesta privada. 005 exige demostrar guardado y
@@ -342,20 +351,20 @@ Son criterios para la implementación; no representan pruebas ejecutadas ahora.
   los reclamos siguen pendientes; no se reinstalan promesas del wireframe.
 - **010/P03**: aviso completado/revisado y Manifiesto real; no recoger datos reales con un aviso
   de borrador o destinos pendientes presentados como finales.
-- Trabajo independiente con fixtures no acredita backend, entrega de correo, retención,
+- Trabajo independiente con fixtures no acredita por sí solo backend productivo, entrega de correo, retención,
   seguridad, enlaces oficiales ni fidelidad. Cada parte conserva su bloqueo hasta comprobarse.
 
 ## Trazabilidad y verificación
 
 | ID original | Requisito local | Escenarios | Fuente | Estado de aplicación |
 |---|---|---|---|---|
-| C01 | FR-001 | US1.1 | PDF 4 | No ejecutado |
-| C02 | FR-002 | US1.1/6 | PDF 4 / C18/C21/C22 | No ejecutado |
-| C03 | FR-003 | US1.2 | PDF 4 | No ejecutado |
-| C04 | FR-004 | US1.3/5; US2.1/2; US3.1/2/4 | PDF 4 / C24/C25 | No ejecutado |
-| C05 | FR-005 | US2.3; US3.1–US3.6; US4.1/4 | PDF 4 | No ejecutado |
-| C06 | FR-006 | US2.1–US2.5; US3.5/6; US4.1–US4.6 | C02/C03/C28 | No ejecutado |
-| C07 | FR-007 | US1.4–US1.6; US2.4 | PDF 4 / C19/C20/C22/C29/C32 | No ejecutado |
+| C01 | FR-001 | US1.1 | PDF 4 | Verificado en bancos/MVP local; aceptación productiva pendiente |
+| C02 | FR-002 | US1.1/6 | PDF 4 / C18/C21/C22 | Verificado en bancos/MVP local; aceptación productiva pendiente |
+| C03 | FR-003 | US1.2 | PDF 4 | Verificado en bancos/MVP local; aceptación productiva pendiente |
+| C04 | FR-004 | US1.3/5; US2.1/2; US3.1/2/4 | PDF 4 / C24/C25 | Verificado en bancos/MVP local; aceptación productiva pendiente |
+| C05 | FR-005 | US2.3; US3.1–US3.6; US4.1/4 | PDF 4 | Verificado en bancos/MVP local; aceptación productiva pendiente |
+| C06 | FR-006 | US2.1–US2.5; US3.5/6; US4.1–US4.6 | C02/C03/C28 | Verificado en bancos/MVP local; aceptación productiva pendiente |
+| C07 | FR-007 | US1.4–US1.6; US2.4 | PDF 4 / C19/C20/C22/C29/C32 | Verificado en bancos/MVP local; aceptación productiva pendiente |
 
 ### Registro documental
 
@@ -381,3 +390,5 @@ integración y build final siguen pendientes. Detalle y trazabilidad en evidence
 2026-10-23 — Decisión explícita de navegación: Contacto Seguro del footer pasa a `/contacto.html` sin salto al formulario. Se conserva `#escribir` para acceso directo, aviso/Manifiesto y demás consumidores. No se altera validación, guardado ni tratamiento de consultas.
 
 2026-10-26 — La responsable identifica https://www.instagram.com/priva_inc/ como perfil oficial. Configurado en src/config/social.ts y compartido con003; el enlace general instagram.com no se utiliza como destino. Ver ../003-historias-educativas/evidence/social-reference.md para origen y limitación de comprobación remota.
+
+2026-10-27 — `$speckit-implement 005`: modo explícito local integrado con recursos oficiales y SQLite privado, restringido a loopback y correos example.test; avisos de prueba y sin correo. Tres motores revalidados, 70 Node/117 UI/12 servicio/26 MVP aprobados. Se corrige la expectativa antigua del footer en la prueba para conservar la decisión de 2026-10-23. Gates de publicación intactos incluso con la opción sintética. 49/53 tareas; T045–T048 siguen parciales por entrega/revisión/operación finales. Detalle en evidence.md y quickstart.md.

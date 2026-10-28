@@ -1,3 +1,4 @@
+import approvedCopy from './app-review.json' with { type: 'json' };
 import { officialBrand, visualReference } from '../config/brand.ts';
 import type { AvailabilityMask } from '../lib/app-downloads.ts';
 export interface AppReview {status:'pendiente'|'revisado';decisionReference:string;reviewedValue:string}
@@ -25,7 +26,7 @@ const image=(block:AppImage['block']):AppImage=>{
  asset.review={status:'revisado',decisionReference:asset.sourceReference,reviewedValue:JSON.stringify({block:asset.block,src:asset.src,width:asset.width,height:asset.height,purpose:asset.purpose,alt:asset.alt,sourceReference:asset.sourceReference,decorativeReason:asset.decorativeReason,compatibleStates:asset.compatibleStates})};
  return asset;
 };
-// Draft wording derived from C31: explicit prototype, pending P03 approval. Not final claims.
+// Explicit prototype copy approved by the project owner on 2026-10-28.
 export const appContent:AppData={testOnly:false,
  hero:{eyebrow:'MANEJA TU PRIVACIDAD',title:'Tu chat privado para proteger tus datos.',description:'Priva App es un prototipo que propone orientación paso a paso para cuidar tus datos personales.',notice:'Prototipo. Las funciones descritas están previstas; esta web no ofrece un chat ni un diagnóstico operativo.',image:image('hero')},
  overview:{title:'¿Qué es Priva App?',description:'El prototipo plantea una guía para comprender opciones de privacidad y tomar decisiones informadas.',notice:'Funciones previstas del prototipo, sujetas a desarrollo y validación.',image:image('overview'),benefits:benefitTitles.map((title,i)=>({title,description:['Se prevén instrucciones claras y fáciles de seguir.','Se prevé orientación para el cuidado de los datos personales.','Se prevé ayuda expresada de forma comprensible; no es un servicio de respuesta actual.'][i]}))},
@@ -34,3 +35,6 @@ export const appContent:AppData={testOnly:false,
  downloads:{id:'descarga',eyebrow:'LLEVA TU PRIVACIDAD CONTIGO',title:'Descubre la disponibilidad de Priva App.',description:'Consulta el estado de cada plataforma. Solo se habilitarán destinos oficiales verificados.',note:appDownloadNote,image:image('download')},
  brand:image('brand'),review:review(),visual:{typography:{status:'verificado',sourceReference:visualReference},palette:{status:'verificado',sourceReference:visualReference}},
 };
+
+// Exact approved snapshot: changes invalidate the editorial publication guard.
+appContent.review={...approvedCopy,status:'revisado'};

@@ -1,4 +1,4 @@
-import { expect, type Page } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 
 export type InputMethod = 'puntero' | 'teclado';
 
@@ -21,7 +21,8 @@ export async function expectHomeAnchor(page: Page, anchor: 'somos-priva' | 'que-
 
 export async function continueFromHomeAnchor(page: Page) {
  // Moving forward from either heading must reach the next native content link.
- await page.keyboard.press('Tab');
+ // macOS WebKit uses Option+Tab to include links with its native keyboard preference.
+ await page.keyboard.press(process.platform === 'darwin' && test.info().project.name === 'webkit' ? 'Alt+Tab' : 'Tab');
  await expect(page.getByRole('main').getByRole('link', { name: 'Explora nuestras historias', exact: true })).toBeFocused();
 }
 

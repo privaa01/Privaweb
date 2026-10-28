@@ -1,3 +1,4 @@
+import {mediaBinary} from '../server/stories/macos-media.ts';
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { createServer } from "node:http";
@@ -229,7 +230,7 @@ test("real accepted image/audio upload persists privately, publishes atomically 
     const a = create(f),
       image = join(f.dir, "synthetic.png"),
       audio = join(f.dir, "synthetic.wav");
-    execFileSync("/usr/bin/ffmpeg", [
+    execFileSync(mediaBinary("ffmpeg"), [
       "-v",
       "error",
       "-f",
@@ -242,7 +243,7 @@ test("real accepted image/audio upload persists privately, publishes atomically 
       "1",
       image,
     ]);
-    execFileSync("/usr/bin/ffmpeg", [
+    execFileSync(mediaBinary("ffmpeg"), [
       "-v",
       "error",
       "-f",
@@ -317,7 +318,7 @@ test("revocation during an actual upload denies resource registration and remove
   try {
     const a = create(f),
       path = join(f.dir, "revoked.wav");
-    execFileSync("/usr/bin/ffmpeg", [
+    execFileSync(mediaBinary("ffmpeg"), [
       "-v",
       "error",
       "-f",

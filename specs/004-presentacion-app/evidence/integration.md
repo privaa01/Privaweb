@@ -1,3 +1,7 @@
+# Estado vigente tras aprobación editorial — 2026-10-28
+
+30/32tareas. Recursos/copy aprobados; guard pasa y App real200.53/53Node,9/9integración y20/20adaptación/render. T029manual/fidelidad y T030build/calificaciónintegrada pendientes. [Evidencia actual](approval-2026-10-28.md). Los registros siguientes son históricos.
+
 # Integración — sin aceptación real
 
 2026-10-17. Suite escrita para página/estados reales, Contacto005/anclas y destinos verificados.

@@ -6,7 +6,7 @@ for(const root of document.querySelectorAll<HTMLElement>('[data-stories]')){
  const expand=root.querySelector<HTMLButtonElement>('[data-expand]')!,retry=root.querySelector<HTMLButtonElement>('[data-retry]')!;
  const template=root.querySelector<HTMLTemplateElement>('[data-story-template]')!;
  let controller:AbortController|undefined,serial=0,stories:PublicStory[]=[],cleanups:(()=>void)[]=[];
- const clear=()=>{cleanups.forEach(fn=>fn());cleanups=[];catalog.replaceChildren();stories=[];expand.hidden=true;retry.hidden=true;};
+ const clear=()=>{cleanups.forEach(fn=>fn());cleanups=[];catalog.replaceChildren();stories=[];expand.hidden=true;expand.setAttribute('aria-expanded','false');retry.hidden=true;};
  const render=(story:PublicStory)=>{
   const fragment=template.content.cloneNode(true) as DocumentFragment,card=fragment.querySelector<HTMLElement>('[data-story]')!;
   card.dataset.story=story.id;
@@ -29,7 +29,18 @@ for(const root of document.querySelectorAll<HTMLElement>('[data-stories]')){
   }catch(error){if(current!==serial)return;clear();status.textContent='No pudimos cargar las historias. Inténtalo de nuevo.';retry.hidden=false;}
   finally{if(current===serial)catalog.removeAttribute('aria-busy');}
  }
- expand.addEventListener('click',()=>{stories.slice(catalog.children.length).forEach(render);status.textContent='Todas las historias disponibles están visibles.';});
+ expand.addEventListener('click',()=>{
+  const firstAdded=catalog.children.length;
+  const additional=stories.slice(firstAdded);
+  additional.forEach(render);
+  expand.setAttribute('aria-expanded','true');
+  status.textContent='Todas las historias disponibles están visibles.';
+  if(additional.length){
+   const heading=catalog.children[firstAdded]?.querySelector<HTMLElement>('[data-story-title]');
+   if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start',behavior:'instant'});}
+   expand.hidden=true;
+  }
+ });
  retry.addEventListener('click',()=>void load());
  window.addEventListener('pageshow',event=>{if(event.persisted)void load();});
  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')void load();});

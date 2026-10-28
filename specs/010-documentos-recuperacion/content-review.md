@@ -37,3 +37,9 @@ Siguiente dato solicitado: servicio de alojamiento de web/datos de Contacto y se
 ## Infraestructura pendiente — aclaración de la responsable
 
 La usuaria confirmó que todavía no se ha definido el alojamiento. La web es informativa y educativa e incluye orientación para usar la app; el equipo de Priva redacta las respuestas dentro del panel administrativo. El servicio técnico para enviarlas por correo tampoco está seleccionado. Se mantienen pendientes proveedores, ubicación, ciclos de copias y calificación operativa; no se inventa una elección ni se interpreta el correo público de Gmail como proveedor transaccional aprobado. Se puede continuar el desarrollo y las pruebas locales sin dar por cerrada publicación o integración productiva.
+
+## Nuevas decisiones aportadas — 2026-10-27
+
+La responsable confirma Firebase como alojamiento de la web y correo en modo de prueba sin proveedor. Acceso/copias se enmarcan en MVP sin política concreta todavía. Aporta Ley1581/Decreto1377 de Colombia; verificados marco/derechos y requisitos de política en fuentes oficiales, incluida compilación Decreto1074. src/config/documents.ts incorpora proveedor, estado MVP y marco/derechos al borrador; vigencia/revisiones/evidencia permanecen pendientes. No se requiere elegir proveedor de correo productivo para continuar pruebas sintéticas; sí antes de acreditar envío real. Faltan identidad/contacto adicionales, área/procedimiento de derechos, autorización aplicable, almacenamiento/ubicación/copias y revisión final. [Detalle y fuentes](mvp-decisions-2026-10-27.md).
+
+2026-10-27 — Confirmación de la responsable: MVP de Contacto solo con datos ficticios de prueba. Se añade esta limitación a Términos y Manifiesto en revisión. Sin proveedor de correo real ni recepción de consultas reales; se mantienen controles y condiciones de cierre productivo para una etapa posterior.

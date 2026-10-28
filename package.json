@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "dev:contact:test": "PRIVA_CONTACT_TEST_MODE=synthetic ASTRO_TELEMETRY_DISABLED=1 astro dev --host 127.0.0.1 --port 4321",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
     "build": "node scripts/require-documents-publication.mjs && node scripts/require-pages.mjs && node scripts/require-home-publication.mjs && node scripts/require-stories-publication.mjs && node scripts/require-app-publication.mjs && node scripts/require-contact-publication.mjs && node scripts/require-admin-publication.mjs && node scripts/require-story-management-publication.mjs && node scripts/require-inbox-publication.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build && npm run build:admin:views",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
@@ -34,6 +35,7 @@
     "test:contact": "node --experimental-strip-types --test tests/contact-*.test.ts",
     "test:e2e:contact:contract": "playwright test --config=playwright.contact.config.ts",
     "test:e2e:contact:service": "playwright test --config=playwright.contact.service.config.ts",
+    "test:e2e:contact:development": "playwright test --config=playwright.contact.development.config.ts",
     "test:e2e:contact:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.contact.config.ts",
     "test:admin": "node --experimental-strip-types --test tests/admin-*.test.ts",
     "check:admin:service": "tsc -p server/admin/tsconfig.json",
@@ -66,7 +68,11 @@
     "test:documents": "node --experimental-strip-types --test tests/documents-*.test.ts",
     "test:e2e:documents:contract": "playwright test --config=playwright.documents.config.ts",
     "test:e2e:documents:integration": "PRIVA_TEST_MODE=integration playwright test --config=playwright.documents.config.ts",
-    "test:navigation:service": "node --experimental-strip-types --test tests/navigation-service.test.ts"
+    "test:navigation:service": "node --experimental-strip-types --test tests/navigation-service.test.ts",
+    "dev:local": "PRIVA_STORIES_MODE=local PRIVA_CONTACT_TEST_MODE=synthetic ASTRO_TELEMETRY_DISABLED=1 astro dev --host 127.0.0.1 --port 4321",
+    "test:e2e:stories:local": "playwright test --config=playwright.stories.local.config.ts",
+    "build:media:macos": "bash scripts/build-macos-media.sh",
+    "test:story-management:macos": "bash scripts/build-macos-media.sh && TMPDIR=/private/tmp node --experimental-strip-types --test --test-concurrency=2 tests/story-management-*.test.ts"
   },
   "dependencies": {
     "astro": "7.4.0"

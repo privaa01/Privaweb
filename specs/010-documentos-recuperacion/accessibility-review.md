@@ -1,3 +1,7 @@
+# Estado vigente — 2026-10-28
+
+35/44tareas: T028destinos reales y T033accesibilidad completas.9/9pruebas locales reales,3/3pruebas de matriz(84celdas) y27/27Node aprobadas. Documentos sin aprobación editorial/calificación productiva. Lector manual, HTTPno-referrer/admin y configuración de entrega continúan pendientes. [Detalle y comandos](local-review-2026-10-28.md). Los registros siguientes son históricos.
+
 # Accesibilidad010
 
 **Fecha**: 2026-10-20 (America/Bogota). Alcance local sintético.

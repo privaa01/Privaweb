@@ -1,5 +1,7 @@
 # Revisión de cierre — Navegación 001
 
+**Revisión vigente 2026-10-27:** [corrección de foco, pruebas en Mac y destinos integrados](review-2026-10-27.md). El informe siguiente conserva el corte histórico de 2026-10-23. La pérdida de foco compacto → expandido sí requirió corrección en la revisión nueva; localhost ya es accesible desde el runner y las imágenes de Historias/App están recibidas. Persisten revisiones editoriales, operación y destinos integrados pendientes; 23/28 tareas.
+
 Fecha: 2026-10-23 (America/Bogota); logs del entorno en UTC. Solicitud: terminar las tareas abiertas de 001. Base de código al inicio: b17f4be. Se preservó el informe general local pendiente de commit.
 
 **Resultado:** todos los recorridos contractuales revalidados en Chromium/Firefox y controles compartidos comprobados sobre Inicio real. **23/28 tareas completas; las cinco restantes siguen parciales por criterios de integración y revisión final de las cuatro páginas no satisfechos; WebKit se resolvió el2026-10-26.** No se cerraron casillas por pruebas de fixtures ni se eludieron los guards de las features de destino. No se detectó fallo funcional de navegación que requiera cambiar código de producto en esta revisión.

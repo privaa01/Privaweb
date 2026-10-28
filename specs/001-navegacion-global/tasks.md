@@ -2,7 +2,7 @@
 
 **Input**: [spec](spec.md), [plan](plan.md), [research](research.md), [modelo](data-model.md),
 [contrato](contracts/navigation.md), [guía](quickstart.md) y constitución 1.0.0.
-**Fecha**: 2026-10-16. **Actualización**:2026-10-23. **Estado**:23/28 tareas completas;5 parciales por integración de destinos y revisión final de las cuatro páginas; WebKit y controles manuales de Inicio ya verificados. Ver evidence/closure-status.md.
+**Fecha**: 2026-10-16. **Actualización**:2026-10-27. **Estado**:23/28 tareas completas;5 parciales por integración de destinos y revisión final de las cuatro páginas; WebKit y controles manuales de Inicio ya verificados. Pérdida de foco al ampliar corregida; revisión actual en evidence/review-2026-10-27.md.
 **Tests**: incluidos porque el spec exige recorridos observables y accesibilidad verificable.
 Escribir pruebas antes del comportamiento y comprobar el fallo pertinente; no confundir fallo
 por entorno roto con fallo funcional. No se impone cobertura numérica arbitraria.
@@ -158,3 +158,9 @@ T023/T025/T026/T027/T028 permanecen parciales según sus criterios originales;23
 ## WebKit completado — 2026-10-26
 
 32recorridos principales de WebKit27.2 aprobados,0fallos/omitidos, mediante nuevo script reproducible `npm run test:e2e:contract:webkit`. Se resolvió la detección de bibliotecas mediante caché privada y bwrap rootless, sin cambiar el sistema ni omitir controles. Evidencia en evidence/webkit-runtime.md. La parte navegador de T025/T026 ya está verificada en los tres motores; permanecen pendientes sus criterios de aceptación final dependientes de T023. T023 espera build/destinos completos; T027 espera integración real; T028 espera cierre integrado.23/28 tareas completas, sin nuevos cierres por una comprobación parcial.
+
+## Corrección y revalidación — 2026-10-27
+
+Reproducida antes de corregir la pérdida de foco de G01 al ocultar el botón en un cambio compacto → expandido. `src/scripts/navigation.ts` transfiere ahora el foco al enlace actual visible. Regresión nueva con menú abierto/cerrado y continuación por teclado; T011/T025/T026 se revalidan en su parte independiente sin alterar sus dependencias de cierre. Se adapta el recorrido de enlaces a Option+Tab en WebKit/macOS, preservando Tab en los otros entornos.
+
+T023/T027: URL real local disponible y cinco casos integrados ejecutados, todos fallidos por login/API404, Contacto500 y documentos en borrador. Los guards de 003/004 siguen rechazando revisión editorial; imágenes ya recibidas no son el bloqueo actual. T028: spec, plan, contrato, guía, matriz y evidencia actualizados. **23/28; las cinco casillas permanecen abiertas.** [Resultados, comandos y siguientes acciones por dependencia](evidence/review-2026-10-27.md).

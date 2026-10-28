@@ -59,7 +59,7 @@ Pasos Escucha→Reflexiona→Aplica; Saber más a /index.html#somos-priva y #que
 Cierre exacto “Aprende a reconocer riesgos y toma decisiones más informadas sobre tus datos personales.”
 Instagram oficial verificado desde configuración única compartida con005; no href vacío/#.
 Imágenes con dimensiones/alternativas correctas; fallo de imagen conserva contenido útil.
-Las nueve explicaciones y afirmación de historias reales requieren evidencia editorial real.
+Las nueve explicaciones y identificación de recreaciones educativas requieren evidencia editorial real.
 
 ## C6 — Gate y evidencia
 
@@ -84,3 +84,9 @@ servidor007 real acredita que no entrega borradores o archivos privados. No conf
 
 2026-10-19 — Integración007: schemaVersion1 conserva forma; question admite texto editorial no vacío,
 manteniendo la pregunta aprobada de los tres iniciales. Sin puntuación ni respuesta correcta.
+
+Decisión vigente 2026-10-28: audios identificados por la responsable como recreaciones educativas. Ajustar títulos, descripciones y metodología para expresarlo; retirar auditorías y recursos continuos no acreditados, usando el alcance educativo aprobado en Inicio. No aprueba ejercicios ni publicación del catálogo.
+
+## Acceso a la cuarta historia — 2026-10-28
+
+La responsable solicita hacer visible el botón para la cuarta historia. Situar el control Ver más historias después de las tres tarjetas iniciales. Al expandir, conservar tarjetas y selecciones existentes, añadir pendientes sin duplicar y enfocar/mostrar el título de la primera historia añadida. Ocultar el control tras añadir todas las adicionales; exponer relación aria-controls/aria-expanded. Con tres o menos se conserva el comportamiento previo sin añadir tarjetas.

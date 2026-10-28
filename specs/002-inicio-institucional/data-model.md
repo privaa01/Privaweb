@@ -21,7 +21,7 @@ Párrafo C16 exacto; no permitir versión anterior como contenido aprobado.
 
 ## AreaCard
 
-Cuatro entradas y orden fijo: Educación Digital, Historias reales, Herramientas Seguras,
+Cuatro entradas y orden fijo: Educación Digital, Historias educativas, Herramientas Seguras,
 Acompañamiento. Cada una tiene `title`, `description` y `review`.
 No href, onClick ni control enfocable agregado. Descripción no vacía y revisada para entrega.
 La introducción de Qué hacemos también requiere review por capacidades anunciadas.

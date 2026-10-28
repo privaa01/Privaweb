@@ -1,3 +1,7 @@
+# Estado vigente — 2026-10-28
+
+35/44tareas: T028destinos reales y T033accesibilidad completas.9/9pruebas locales reales,3/3pruebas de matriz(84celdas) y27/27Node aprobadas. Documentos sin aprobación editorial/calificación productiva. Lector manual, HTTPno-referrer/admin y configuración de entrega continúan pendientes. [Detalle y comandos](local-review-2026-10-28.md). Los registros siguientes son históricos.
+
 # Evidencia010 — Documentos informativos y recuperación404
 
 **Fecha**: 2026-10-20 (America/Bogota; algunos logs UTC son del21). Base `659498f`, rama `main`, selección010. **Estado**:33/44 tareas verificadas localmente;11 parciales/bloqueadas. X03/FR-001 sin cierre productivo. Sin commit/push/despliegue, correo a terceros o recepción de datos reales en esta fase.

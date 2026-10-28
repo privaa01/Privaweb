@@ -18,8 +18,14 @@ document.querySelectorAll<HTMLElement>('[data-navigation]').forEach(root => {
   });
   compact.addEventListener('change', () => {
     const focusWillHide = compact.matches && nav.contains(document.activeElement);
+    const triggerWillHide = !compact.matches && document.activeElement === button;
     open = false;
     if (focusWillHide) { button.hidden = false; button.focus(); }
+    // Reveal the destination before hiding the focused compact-menu trigger.
+    if (triggerWillHide) {
+      nav.hidden = false;
+      (nav.querySelector<HTMLAnchorElement>('a[aria-current="page"]') ?? nav.querySelector<HTMLAnchorElement>('a[href]'))?.focus();
+    }
     render();
   });
   render();

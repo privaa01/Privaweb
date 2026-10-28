@@ -25,7 +25,7 @@ márgenes negativos ni causar scroll horizontal.
 El layout conserva header/footer/skip link; 002 no crea otro main ni nav ni copia componentes.
 HomeContent compone hero, identidad, áreas y cierre, con un h1 y orden de lectura semántico.
 Anclas somos-priva y que-hacemos únicas, estables para consumidores 003.
-Tarjetas informativas en orden Educación Digital, Historias reales, Herramientas Seguras,
+Tarjetas informativas en orden Educación Digital, Historias educativas, Herramientas Seguras,
 Acompañamiento; sin botones/enlaces nuevos ni formulario.
 
 I04 conserva etiqueta/título/imagen de referencia y párrafo exacto:
@@ -59,3 +59,5 @@ encabezados visibles, foco, ausencia de overflow, contenido ante imagen fallida 
 Respetar movimiento reducido; texto nunca incrustado únicamente en imágenes.
 Cambiar anclas/ruta o componentes compartidos exige actualizar consumidores/documentos y
 regresión 001, sin dar por probados sus destinos privados o legales aún ausentes.
+
+Decisión vigente 2026-10-28: audios identificados por la responsable como recreaciones educativas. Ajustar títulos, descripciones y metodología para expresarlo; retirar auditorías y recursos continuos no acreditados, usando el alcance educativo aprobado en Inicio. No aprueba ejercicios ni publicación del catálogo.

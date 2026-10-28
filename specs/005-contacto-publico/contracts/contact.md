@@ -118,3 +118,11 @@ No afirmar que005 completó009,010,006,008 o entrega/lectura de correo.
 Pruebas del servicio incluyen borrado/replay/purga y reintento sin extender actividad; no cierran
 la política deretención integral009. Calificar adaptador productivo con mismo contrato antes de
 aceptar servicio final. Sin mediosreales/evidencia, registrar bloqueo, nunca éxito de maqueta.
+
+## C6 — Perfil de pruebas local autorizado (2026-10-27)
+
+`PRIVA_CONTACT_TEST_MODE=synthetic` solo en Astro DEV habilita documento real005 y los dos POST bajo el mismo origen HTTP loopback declarado. Base privada persistente en directorio temporal canónico fuera del checkout/public/dist, 0700/0600; no se publica su ruta en el documento. No se añaden GET de consulta, debug, controles de fallo o proveedores de correo. Host y peer loopback además de Origin exacto; JSON/tamaño/límites originales.
+
+Los correos normalizados deben pertenecer a example.test; la restricción existe solo en este perfil. Un correo de otro dominio genera rechazo terminal durable con error de formato de email y sin consulta, respetando C2/C3. Alias/mensajes siguen límites existentes; el texto libre no tiene detección automática de datos personales: solo se autoriza introducir contenido ficticio. Interfaz advierte y no ofrece correo ficticio de eliminación como canal real. Confirmación tras COMMIT/replay: guardado local de prueba y ningún correo enviado.
+
+El documento de prueba lleva una copia testOnly; no cambia revisiones ni contenido de publicación. Sin opción o fuera de DEV se aplica assertContactPublication. El script de build/entrada productiva y la calificación009 no aceptan esta opción como evidencia. La aceptación C1–C5 productiva permanece separada del cumplimiento local de esta etapa.

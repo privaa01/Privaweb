@@ -1,3 +1,7 @@
+# Estado vigente — 2026-10-28
+
+30/33 tareas. Contrato final 59/59; WebKit real 8/8; integración 12 aprobadas y 6 CTA fallidos por Historias HTTP 500. Build bloqueado por 010/009. T023/T033 completas; T027/T031/T028 pendientes. [Detalle vigente](review-2026-10-28.md). Los registros siguientes son históricos.
+
 # Resultados contractuales — 002
 
 Actualización: 2026-10-21 (UTC). Resultados finales tras aplicar los cinco textos aprobados. No se suman ejecuciones anteriores ni reintentos.

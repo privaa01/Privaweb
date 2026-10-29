@@ -1,0 +1,6 @@
+---
+import Layout from "../layouts/DemoLayout.astro";
+import StoriesContent from '../../../src/components/stories/StoriesContent.astro';
+import {storiesContent} from '../../../src/content/stories';
+---
+<Layout title="Historias — Demo Priva" pageId="historias"><StoriesContent content={{...storiesContent,endpoint:"/demo/catalog.json"}}/></Layout>

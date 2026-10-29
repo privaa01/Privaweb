@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/DemoLayout.astro';
+import {demoContact} from '../contact-model';
+---
+<Layout title="Contacto de prueba — Demo Priva" pageId="contacto"><section id="escribir" class="demo-content"><h1>Contacto de prueba</h1><p>Prueba la conexión directa con Firestore usando solo los datos ficticios de estas opciones. No se reciben consultas reales ni se envían correos.</p><p>Los registros se guardan en la base de demostración de Priva. La responsable puede revisarlos y eliminarlos desde Firebase.</p>
+<form data-demo-contact>
+<label for="demo-name">Alias ficticio</label><select id="demo-name" name="nameOrAlias" required>{demoContact.aliases.map(alias=><option>{alias}</option>)}</select>
+<label for="demo-email">Correo ficticio</label><input id="demo-email" type="email" value={demoContact.email} readonly autocomplete="off"/>
+<label for="demo-message">Mensaje ficticio</label><select id="demo-message" name="message" required>{demoContact.messages.map(message=><option>{message}</option>)}</select>
+<label class="confirmation"><input type="checkbox" name="consent" required/>Entiendo que se guardará una prueba ficticia en Firestore y que no se enviarán correos.</label>
+<p><a href="/manifiesto-datos.html">Privacidad de la demo</a></p><p data-needs-js>Activa JavaScript para enviar la prueba.</p>
+<button type="submit" disabled>Enviar prueba</button><button type="button" data-new-test hidden>Nueva prueba</button><p role="status" aria-live="polite" aria-atomic="true"></p>
+</form><a href="/historias.html">Explorar historias</a></section></Layout>
+<script>import '../scripts/demo-contact';</script>
+<style>.demo-content{max-width:50rem;margin:auto;padding:3rem 1.5rem;overflow-wrap:anywhere}form{margin-block:2rem}label:not(.confirmation){display:block;font-weight:600;margin-top:1rem}select,input[type=email]{width:100%;min-height:44px;font:inherit;padding:.75rem;border:1px solid #406b59;border-radius:.4rem;max-width:100%}select{white-space:normal}button{min-height:44px;padding:.75rem 1rem;margin:.5rem .5rem .5rem 0;font:inherit;background:#123c2d;color:white;border:0;border-radius:.4rem}button:disabled{opacity:.65}button[hidden]{display:none}.confirmation{display:flex;align-items:center;gap:.75rem;margin-top:1rem;min-height:44px}.confirmation input{width:1.4rem;height:1.4rem;flex-shrink:0}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #28785b;outline-offset:3px}</style>

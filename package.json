@@ -72,7 +72,8 @@
     "dev:local": "PRIVA_STORIES_MODE=local PRIVA_CONTACT_TEST_MODE=synthetic ASTRO_TELEMETRY_DISABLED=1 astro dev --host 127.0.0.1 --port 4321",
     "test:e2e:stories:local": "playwright test --config=playwright.stories.local.config.ts",
     "build:media:macos": "bash scripts/build-macos-media.sh",
-    "test:story-management:macos": "bash scripts/build-macos-media.sh && TMPDIR=/private/tmp node --experimental-strip-types --test --test-concurrency=2 tests/story-management-*.test.ts"
+    "test:story-management:macos": "bash scripts/build-macos-media.sh && TMPDIR=/private/tmp node --experimental-strip-types --test --test-concurrency=2 tests/story-management-*.test.ts",
+    "build:demo": "node scripts/build-demo.mjs"
   },
   "dependencies": {
     "astro": "7.4.0"

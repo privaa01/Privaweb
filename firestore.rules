@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /demo_contact/{id} {
+      allow create: if id.matches('[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}')
+        && request.resource.data.keys().hasAll(['mode','revision','nameOrAlias','email','message','consent','createdAt'])
+        && request.resource.data.keys().hasOnly(['mode','revision','nameOrAlias','email','message','consent','createdAt'])
+        && request.resource.data.mode == 'demo'
+        && request.resource.data.revision == 'demo-contact-v1'
+        && request.resource.data.nameOrAlias in ['Visitante de prueba','Equipo de prueba']
+        && request.resource.data.email == 'prueba@example.test'
+        && request.resource.data.message in ['Mensaje ficticio para probar el formulario.','Prueba educativa sobre privacidad.','Comprobación de conexión con Firestore.']
+        && request.resource.data.consent == true
+        && request.resource.data.createdAt == request.time;
+      allow read, update, delete: if false;
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

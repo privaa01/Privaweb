@@ -1,0 +1,8 @@
+---
+import Layout from "../layouts/DemoLayout.astro";
+import AppContent from '../../../src/components/app/AppContent.astro';
+import {appContent} from '../../../src/content/app';
+import {appDownloadConfig} from '../../../src/config/app-downloads';
+import {resolveDownloads} from '../../../src/lib/app-downloads';
+---
+<Layout title="Priva App — Demo" pageId="app"><AppContent content={appContent} downloads={resolveDownloads(appDownloadConfig)}/></Layout>

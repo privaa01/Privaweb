@@ -208,3 +208,9 @@ Verificación real:3/3 recorridos completos Chromium/Firefox/WebKit, incluidos b
 T028/T030 cerradas:32/35tareas.30/30recorridos principalesFirefox/WebKit y9/9integración real, con transiciones007 en entorno aislado y recursos oficiales. Base de cuatro historias de la responsable intacta. T031cotejo/coherencia, T032manual y T033calificación/build siguen pendientes. [Pruebas y límites](evidence/transitions-review-2026-10-28.md).
 
 2026-10-28 — T031: cotejo documental de cuatro transcripciones PDF/TXT/JSON conforme, huellas de cuatro audios conformes y coherencia editorial de doce explicaciones revisada. Evidencia en materials.md y materials-verification-2026-10-28.json. Pendiente cotejo mediante escucha audio/transcripción; se mantienen32/35 tareas completas.
+
+2026-10-28 — T032 parcial: matriz real42/42 aprobada (7 anchos ×100/200% ×3 motores), cuatro historias oficiales sin mocks; tipado y captura escritorio conformes. Pendientes comparación renderizada PDF2 original y revisión manual/lector. Evidencia: accessibility-final-materials-2026-10-28.md. Se mantienen32/35.
+
+T032: corrección adicional de desbordamiento interno del control Leer transcripción a200% mediante overflow-wrap:anywhere; aserción específica añadida a la matriz de materiales oficiales.
+
+2026-10-28 — T033 parcial: auditoría real de cuatroMP3 conSHA256, GET/HEAD/Range/sufijo/rango inválido conformes; catálogo completo sin truncamiento, no-store/Host403/recurso404. Build completo intentado y bloqueado por guard010/009. Sin origen/CDN desplegado ni volumen futuro acordado. Evidencia:delivery-review-2026-10-28.md y delivery-audit-2026-10-28.json. Aceptación visual general de la responsable registrada;32/35.

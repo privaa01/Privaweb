@@ -28,3 +28,11 @@ coverage/
 *.tmp
 *.swp
 .tools/
+
+# Firebase local cache
+.firebase/
+
+# Generated public demonstration
+.demo-dist/
+demo/public/
+demo/.astro/

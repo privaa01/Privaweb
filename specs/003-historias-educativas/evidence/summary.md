@@ -79,3 +79,7 @@ GitHub325fc49 sincronizado: cuatro MP3 aportados y aprobados por la usuaria, val
 ## Audios asociados —2026-10-26
 
 La responsable confirmó la correspondencia1Contraseña/2Llamada/3Enlace y4Número desconocido para el contenido ampliado. Los tres IDs iniciales ya seleccionan sus archivos MP3 aprobados en el importador007 cuando audioPath se omite, con SHA-256 e inspección real. El cuarto se identifica en el manifiesto, pendiente de ficha completa y creación/publicación/activación normal. No se inventan transcripciones ni ejercicios. Ver audio-assignment.md;30/35 tareas sin cierre de materiales/editorial/integración por aprobar archivos.
+
+## Revisión final local — 2026-10-28
+
+Corrección del desbordamiento interno de Leer transcripción al200%; matriz posterior42/42 en3motores con cuatro historias oficiales, tipado conforme. La responsable acepta visualmente el resultado. Auditoría real de entrega de cuatro audios íntegros/rangos/caché y catálogo completo conforme; build completo mantiene bloqueo operacional009/010. T031/T032/T033 parciales,32/35. Detalles:accessibility-final-materials-2026-10-28.md y delivery-review-2026-10-28.md.

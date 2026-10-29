@@ -25,3 +25,7 @@ Teclado manual de controles nativos, lector de pantalla, fuentes/paleta/activos 
 fidelidad final pendientesT030/T031/T032. Capturasfixture no acreditan aceptación visual.
 
 2026-10-26 — Recorridos principales Firefox disponibles:15aprobados,0fallos/omitidos;14casos de matriz excluidos por diseño con `--grep-invert="stories [0-9]+px text"`. Ver resume-2026-10-26-firefox.txt. Esto supera el bloqueo histórico de arranque Firefox para003. WebKit no se reejecutó en esta reanudación: conserva dependencia host pendiente según última evidencia de001; T030 sigue parcial.
+
+## Materiales finales y servicio real — 2026-10-28
+
+Matriz42/42 aprobada en Chromium/Firefox/WebKit (7 anchos ×100/200%), sin mocks del catálogo. Teclado automatizado, foco, transcripciones, feedback, contraste axe y ausencia de overflow conformes. Tipado conforme. T032 permanece parcial por comparación renderizada del diseño original y verificaciones manuales/lector. [Detalle reproducible y límites](accessibility-final-materials-2026-10-28.md).

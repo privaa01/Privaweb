@@ -62,3 +62,7 @@ T028:destinos renderizados reales y decisión/lecturaQR según material final. T
 ## Responsable y correo aportados — 2026-10-23
 
 Priva y `mailto:Priva202611@gmail.com` incorporados a la configuración documental como responsable, contacto y canal públicos declarados por la usuaria. Bundle/aviso sincronizados mediante applyOperation. No se asignaron aprobaciones, vigencia, identidad fiscal o evidencia operativa por inferencia. 27 pruebas Node aprobadas y Astro check raíz sin errores/advertencias; guard010 continúa bloqueado por datos/revisiones/scopes pendientes. Logs `evidence/official-contact-{tests,check,gate}.txt`. T037 parcial; 33/44 tareas sin cambios. Detalles y siguiente dato solicitado en content-review.md. Sin envío de correo ni commit/push.
+
+## Guía aportada por la responsable — 2026-10-28
+
+Recibida y revisada guía Word de protección/conservación de contactos en Colombia, cinco páginas. Copia de referencia no pública y correspondencia con pendientes009/010 en [revisión de la guía](../009-privacidad-conservacion/received-guide-review-2026-10-28.md). Aporta base de redacción y normativa; sus ejemplos no constituyen política final de Priva ni evidencia de controles implantados. No se vuelven a solicitar guía/hosting/correo ya recibidos, ni se cierran revisiones/calificación por recepción documental.

@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-28",
+  "environment": "local-loopback-no-CDN",
+  "catalogCount": 4,
+  "catalogBytes": 14217,
+  "catalogMilliseconds": 36.7,
+  "untrustedHostStatus": 403,
+  "unknownResourceStatus": 404,
+  "audio": [
+    {
+      "id": "enlace-falso",
+      "sha256Matches": true,
+      "GET": 200,
+      "HEAD": 200,
+      "range": 206,
+      "suffixRange": 206,
+      "invalidRange": 416,
+      "bytes": 3444518,
+      "downloadMilliseconds": 6.69,
+      "cacheControl": "no-store",
+      "crossOriginSharingEnabled": false
+    },
+    {
+      "id": "llamada-sospechosa",
+      "sha256Matches": true,
+      "GET": 200,
+      "HEAD": 200,
+      "range": 206,
+      "suffixRange": 206,
+      "invalidRange": 416,
+      "bytes": 2870231,
+      "downloadMilliseconds": 4.15,
+      "cacheControl": "no-store",
+      "crossOriginSharingEnabled": false
+    },
+    {
+      "id": "contrasena-compartida",
+      "sha256Matches": true,
+      "GET": 200,
+      "HEAD": 200,
+      "range": 206,
+      "suffixRange": 206,
+      "invalidRange": 416,
+      "bytes": 3344328,
+      "downloadMilliseconds": 4.52,
+      "cacheControl": "no-store",
+      "crossOriginSharingEnabled": false
+    },
+    {
+      "id": "historia-0f5250ed-d059-4e73-87e5-94a07186ad03",
+      "sha256Matches": true,
+      "GET": 200,
+      "HEAD": 200,
+      "range": 206,
+      "suffixRange": 206,
+      "invalidRange": 416,
+      "bytes": 2652951,
+      "downloadMilliseconds": 7.25,
+      "cacheControl": "no-store",
+      "crossOriginSharingEnabled": false
+    }
+  ],
+  "completeApprovedCollection": [
+    {
+      "id": "enlace-falso",
+      "completePublicFieldsMatchApprovedDraft": true,
+      "options": 3,
+      "transcriptCharacters": 2194
+    },
+    {
+      "id": "llamada-sospechosa",
+      "completePublicFieldsMatchApprovedDraft": true,
+      "options": 3,
+      "transcriptCharacters": 1755
+    },
+    {
+      "id": "contrasena-compartida",
+      "completePublicFieldsMatchApprovedDraft": true,
+      "options": 3,
+      "transcriptCharacters": 2114
+    },
+    {
+      "id": "historia-0f5250ed-d059-4e73-87e5-94a07186ad03",
+      "completePublicFieldsMatchApprovedDraft": true,
+      "options": 3,
+      "transcriptCharacters": 1767
+    }
+  ]
+}

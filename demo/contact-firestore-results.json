@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-28",
+  "rulesChecks": [
+    "valid-create-and-admin-verification",
+    "real-email-denied",
+    "free-message-denied",
+    "free-alias-denied",
+    "extra-field-denied",
+    "missing-confirmation-denied",
+    "wrong-mode-denied",
+    "wrong-revision-denied",
+    "fake-time-denied",
+    "other-collection-denied",
+    "invalid-id-denied",
+    "read-denied",
+    "list-denied",
+    "delete-denied",
+    "update-denied"
+  ],
+  "browsers": [
+    {
+      "name": "chromium",
+      "submit": 200,
+      "persisted": true,
+      "consentRequired": true,
+      "noDoubleSubmit": true,
+      "noPublicRead": true,
+      "axeViolations": 0,
+      "mobile200NoOverflow": true
+    },
+    {
+      "name": "firefox",
+      "submit": 200,
+      "persisted": true,
+      "consentRequired": true,
+      "noDoubleSubmit": true,
+      "noPublicRead": true,
+      "axeViolations": 0,
+      "mobile200NoOverflow": true
+    },
+    {
+      "name": "webkit",
+      "submit": 200,
+      "persisted": true,
+      "consentRequired": true,
+      "noDoubleSubmit": true,
+      "noPublicRead": true,
+      "axeViolations": 0,
+      "mobile200NoOverflow": true
+    }
+  ]
+}

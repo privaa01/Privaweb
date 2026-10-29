@@ -17,3 +17,7 @@ persistidos conservandoIDs, no-store/cachés/origen, archivos privados/desactiva
 Medir colección representativa sin truncamiento. Verificar anclasInicio real y URL compartida005,
 medios finales/nueve explicaciones, lector de pantalla y sitio completo con todas sus páginas.
 Un DTO válido o mock exitoso no verifica ninguna de esas condiciones operativas.
+
+## Auditoría de entrega vigente — 2026-10-28
+
+T033 parcial: cuatro audios íntegros verificados porSHA256, GET/HEAD200, Range/sufijo206 y rango inválido416; no-store, Host ajeno403 y recurso desconocido404. Catálogo completo14217bytes/cuatro historias sin truncamiento frente a las fichas aprobadas. Build completo ejecutado:salida1 en guard010/009. Sin despliegue/CDN que calificar. [Detalle y dependencias](delivery-review-2026-10-28.md).

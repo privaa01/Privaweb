@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-28",
+  "url": "https://priva-785cb.web.app",
+  "scope": "public-educational-demo-no-contact-submission",
+  "routes": {
+    "/": 200,
+    "/index.html": 200,
+    "/historias.html": 200,
+    "/app.html": 200,
+    "/contacto.html": 200,
+    "/terminos.html": 200,
+    "/manifiesto-datos.html": 200,
+    "/admin/login": 404,
+    "/api/admin/sesion": 404,
+    "/api/public/historias": 404,
+    "/no-existe-demo": 404
+  },
+  "audios": [
+    {
+      "id": "enlace-falso",
+      "sha256": "28a3a3c0aed63c378163bc1c1920b407322b7a2b5becaa6e054228191c66654e",
+      "rangeStatus": 206,
+      "bytes": 3444518
+    },
+    {
+      "id": "llamada-sospechosa",
+      "sha256": "e2b5cc15f2f5441b5e5af0f0b0d34958d0b9ce718de5b1eea02d361ab1ec5c4a",
+      "rangeStatus": 206,
+      "bytes": 2870231
+    },
+    {
+      "id": "contrasena-compartida",
+      "sha256": "9c2e77e15c19926031f11c18d731771fb08918818bf2f5eb2917b04d67f69ba0",
+      "rangeStatus": 206,
+      "bytes": 3344328
+    },
+    {
+      "id": "numero-desconocido",
+      "sha256": "de2e1d6f92ec362d70b2038350efea267e62c007970f43dd75878f49c21fcc55",
+      "rangeStatus": 206,
+      "bytes": 2652951
+    }
+  ],
+  "previewBrowserChecks": {
+    "base": "https://priva-785cb--demo-check-xcd85flf.web.app",
+    "report": [
+      {
+        "browser": "chromium",
+        "routes": 7,
+        "stories": 4,
+        "audiosPlayedAndPaused": 4,
+        "audioSeeking": "4-passed",
+        "noForm": true,
+        "noAPI": true,
+        "noStorage": true,
+        "noExternalRequests": true
+      },
+      {
+        "browser": "firefox",
+        "routes": 7,
+        "stories": 4,
+        "audiosPlayedAndPaused": 4,
+        "audioSeeking": "4-passed",
+        "noForm": true,
+        "noAPI": true,
+        "noStorage": true,
+        "noExternalRequests": true
+      },
+      {
+        "browser": "webkit",
+        "routes": 7,
+        "stories": 4,
+        "audiosPlayedAndPaused": 4,
+        "audioSeeking": "4-passed",
+        "noForm": true,
+        "noAPI": true,
+        "noStorage": true,
+        "noExternalRequests": true
+      }
+    ]
+  }
+}

@@ -186,3 +186,8 @@ h1 {
 .story-toolbar label{flex:1 1 12rem;min-width:0;max-width:100%}.story-summary p,.story-heading>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
 
 .inbox {max-width:68rem}.inbox-filters{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}.inbox article{padding:1rem;border:1px solid #c8d9ce;border-radius:1rem;margin:.7rem 0;background:#fff;overflow-wrap:anywhere}.inbox button{min-height:44px;cursor:pointer;padding:.65rem 1rem}.inbox button[aria-pressed=true]{background:#123e2d;color:white}.inbox textarea{display:block;width:100%;box-sizing:border-box;min-height:10rem;margin:.5rem 0;font:inherit;padding:1rem}.inbox label{display:block;margin:.8rem 0}.inbox :focus-visible{outline:3px solid #14795a;outline-offset:3px}.inbox p{white-space:pre-wrap;overflow-wrap:anywhere}.inbox [data-send]{background:#123e2d;color:white}.inbox button:disabled{opacity:.65;cursor:wait}@media(max-width:600px){.inbox-filters>*{flex:1 1 45%}.inbox article button{width:100%;overflow-wrap:anywhere}}
+
+/* Keep the inbox review checkbox compact while its full label remains a touch target. */
+.inbox label{overflow-wrap:anywhere}
+.inbox label:has([data-reviewed]){display:flex;align-items:center;gap:.7rem;min-height:44px}
+.inbox [data-reviewed]{width:1.25em;height:1.25em;min-height:1.25em;padding:0;margin:0;flex-shrink:0}

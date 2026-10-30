@@ -484,3 +484,5 @@ Sin commit/push/despliegue en esta incorporación. [Recursos](001-navegacion-glo
 2026-10-28 —003 T028/T030 completas:32/35.30/30principalFirefox/WebKit y9/9integración real; transiciones007 verificadas con recursos oficiales enDBaislada, sin modificar las historias de la responsable. Cotejo/materiales, manual y calificación/build pendientes. Narrativas/categorías/opciones sincronizadas con fichas autorizadas. [Evidencia](003-historias-educativas/evidence/transitions-review-2026-10-28.md).
 
 2026-10-28 —006/AD01–AD02,T058:90/90UI(3motores),16/24servicio real (Chromium/Firefox),8fallosWebKit por cookieSecureenHTTPdel banco. Correcciones solo de tests/servidor de prueba; sin despliegue ni cambios de autenticación. T058parcial,58/63. Evidencia:006-acceso-administrativo/revalidation-2026-10-28.md.
+
+2026-10-30 — 008/T060/SC-006: 57/57 UI en tres motores (42 celdas + 15 estados); casilla de revisión sin desbordamiento, teclado/foco/errores/axe conformes. Pendiente lector y comparación manual P04/011; 60/66. Evidencia: 008-bandeja-respuestas/accessibility-review-2026-10-30.md.

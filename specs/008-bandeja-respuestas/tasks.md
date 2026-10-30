@@ -256,3 +256,5 @@ Se ejecutó la implementación local: 60 tareas verificadas y seis abiertas. Las
 se describen en [evidence.md](evidence.md); marcar trabajo local no califica correo, privacidad ni
 entorno productivos. No se hace commit/push/despliegue por implementar esta lista. Para cierre
 integrado, resolver las dependencias externas de las seis tareas abiertas y ejecutar su aceptación.
+
+2026-10-30 — T060 parcial: 57/57 pruebas UI (42 celdas en tres motores + 15 estados existentes), tipado conforme. Corregida casilla de revisión que heredaba ancho/padding de los campos de texto. Lector y comparación manual P04/011 pendientes; 60/66 tareas. Evidencia: accessibility-review-2026-10-30.md.

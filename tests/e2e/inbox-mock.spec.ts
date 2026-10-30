@@ -1,5 +1,6 @@
 // UI-only controlled responses. These tests do not certify storage or email.
 import { test, expect } from "@playwright/test";
+import AxeBuilder from "@axe-core/playwright";
 const ids = [
   "11111111-1111-4111-8111-111111111111",
   "22222222-2222-4222-8222-222222222222",
@@ -253,3 +254,36 @@ test("confirmed rejection keeps text and explicit retry links the prior operatio
   expect(inputs[1].operationId).not.toBe(inputs[0].operationId);
   expect(inputs[1].retryOf).toBe(inputs[0].operationId);
 });
+
+// UI accessibility only: controlled synthetic DTOs never send email or certify storage.
+for (const width of [360,390,430,768,1024,1280,1440]) for (const scale of [100,200]) {
+ test(`inbox accessibility ${width}px text ${scale}%`,async({page})=>{
+  await page.addInitScript(scale=>document.addEventListener('DOMContentLoaded',()=>document.documentElement.style.fontSize=scale+'%'),scale);
+  await page.setViewportSize({width,height:1000});
+  await page.route('**/api/admin/contacto/consultas/'+ids[0],route=>{
+   const dto=detail(ids[0]);dto.consultation.message=('Consulta ficticia para comprobar lectura y ajuste del contenido. ').repeat(8)+'X'.repeat(120);
+   return route.fulfill({json:dto});
+  });
+  let mutations=0;page.on('request',r=>{if(r.method()==='POST'&&new URL(r.url()).pathname.endsWith('/respuestas'))mutations++;});
+  await page.goto('/contacto');
+  await expect(page.locator('[data-inbox-list] button')).toHaveCount(2);
+  expect(await page.evaluate(()=>parseFloat(getComputedStyle(document.documentElement).fontSize))).toBeGreaterThanOrEqual(scale===200?32:16);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+  expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);
+  const first=page.locator('[data-inbox-list] button').first();await first.focus();await first.press('Enter');
+  await expect(page.locator('[data-detail-title]')).toBeFocused();
+  const review=page.getByLabel('He revisado');await review.focus();await review.press('Space');await expect(review).toBeChecked();
+  const send=page.getByRole('button',{name:'Enviar respuesta',exact:true});await send.focus();await send.press('Enter');
+  const editor=page.getByLabel('Tu respuesta',{exact:false});await expect(editor).toBeFocused();await expect(editor).toHaveAttribute('aria-invalid','true');
+  await expect(page.locator('[data-reply-error]')).toContainText('Escribe entre 1 y 5000');
+  await expect(editor).toHaveAttribute('aria-describedby',/inbox-reply-error/);
+  expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);
+  for(const control of await page.locator('[data-inbox] button:visible,[data-inbox] textarea:visible,[data-inbox] label:has([data-reviewed]):visible').all()){
+   expect((await control.boundingBox())?.height).toBeGreaterThanOrEqual(43);
+   const dimensions=await control.evaluate(el=>({tag:el.tagName,width:el.clientWidth,scroll:el.scrollWidth}));
+   expect(dimensions.scroll,JSON.stringify(dimensions)).toBeLessThanOrEqual(dimensions.width+1);
+  }
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+  expect(mutations).toBe(0);
+ });
+}

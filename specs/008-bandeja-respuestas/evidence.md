@@ -1,3 +1,7 @@
+# Actualización del 30 de octubre de 2026
+
+T060 parcial: 57/57 pruebas UI aprobadas en Chromium, Firefox y WebKit (42 celdas de accesibilidad + 15 casos existentes). Corregido el desbordamiento de la casilla de revisión. Pendientes lector y comparación manual P04/011; total 60/66. [Evidencia actual](accessibility-review-2026-10-30.md). Los registros siguientes conservan sus fechas y alcances históricos.
+
 # Evidencia de implementación — 008
 
 **Fecha local**: 2026-10-19, America/Bogota (ejecución también registrada en UTC 2026-10-20).
@@ -127,7 +131,7 @@ condiciones/resultados sin claves, tokens o mensajes reales.
 | --- | --- |
 | T056 | P02: sin proveedor/remitente/adaptador calificado ni prueba de recepción en buzón real; doble local no lo sustituye |
 | T057 | Política 009/avisos 010: canal, verificación de solicitud, periodicidad y ciclo de proveedores/buzones/copias sin calificación real |
-| T060 | Automatización Chromium/Firefox aprobada; WebKit no inicia por librerías ausentes, lector de pantalla/revisión visual manual no ejecutados |
+| T060 | Actualizado 2026-10-30: automatización UI 57/57 en tres motores; casilla corregida y matriz completa. Lector de pantalla y revisión visual manual P04/011 pendientes. Ver accessibility-review-2026-10-30.md. |
 | T062 | Regresión local relevante 215 casos aprobada; WebKit y comprobación directa 001 de esta entrega no completadas |
 | T063 | Producción: HTTPS/proxy/capacidad/backup/claves/worker y referencias P02/009/010/011 sin calificar |
 | T064 | Tipos/builds locales pasan; build raíz de entrega bloqueado por materiales/revisiones/gates reales |

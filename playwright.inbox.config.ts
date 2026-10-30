@@ -19,7 +19,7 @@ export default defineConfig({
   projects,
   webServer: {
     command:
-      "npm run build:inbox:contract && python -m http.server 4332 --bind 127.0.0.1 --directory .test-output/inbox-ui",
+      "npm run build:inbox:contract && python3 -m http.server 4332 --bind 127.0.0.1 --directory .test-output/inbox-ui",
     url: "http://localhost:4332/contacto",
     reuseExistingServer: false,
   },

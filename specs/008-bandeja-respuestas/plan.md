@@ -162,3 +162,7 @@ claves del protocolo deben probarse antes de aceptar implementación; su diseño
 - P02/009/010/P05/011 pendientes impiden cierre integrado y publicación, no diseño/pruebas locales.
 - La implementación y las pruebas locales se registran en evidence.md; proveedor, operación real y
   cierre integrado siguen pendientes. Sin commit/push ni despliegue por esta implementación.
+
+## Revalidación del 30 de octubre de 2026
+
+T060 parcial: matriz UI completa y regresión de estados 57/57 en tres motores; corrección del checkbox acotada a .inbox. Se mantiene 60/66 por revisión manual y dependencias operativas. [Resultados](accessibility-review-2026-10-30.md).

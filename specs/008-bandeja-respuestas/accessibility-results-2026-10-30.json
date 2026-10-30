@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-30",
+  "scope": "UI-components-with-explicit-mocks",
+  "engines": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "matrixCells": 42,
+  "existingRegressionCases": 15,
+  "stats": {
+    "expected": 57,
+    "unexpected": 0,
+    "skipped": 0,
+    "duration": 43761.148
+  },
+  "manualScreenReaderVerified": false,
+  "productionQualified": false
+}

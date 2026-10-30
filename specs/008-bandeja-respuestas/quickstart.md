@@ -14,7 +14,7 @@ real; HTTP loopback solo harness. Puertos aislados propuestos 4332 para UI y 433
 
 ## Comprobaciones existentes
 
-Desde `/workspace/Privaweb`, estos comandos existen hoy y sirven de regresión; no acreditan 008:
+Desde la raíz del repositorio, estos comandos existen hoy y sirven de regresión; no acreditan 008:
 
 ```bash
 npm run check:contact:service
@@ -138,3 +138,7 @@ No escribir secretos en comandos, repositorio o evidencias; usar configuración 
 El gate008 conserva todas sus referencias pendientes, y el build de entrega sigue bloqueado por
 requisitos anteriores y calificación ausente. `test:e2e:inbox:integration` se detiene explícitamente
 antes de arrancar un doble sintético: requiere una futura calificación real con P02/009/010.
+
+## Matriz UI actual
+
+2026-10-30: `playwright.inbox.config.ts` incluye 42 celdas de accesibilidad y 15 casos de estados en los tres motores. Usa python3 para el servidor estático. Las APIs son mocks explícitos; no sustituye servicio ni correo productivo. Mantener desactivadas trazas/vídeo/capturas automáticas. [Resultados y comandos del host](accessibility-review-2026-10-30.md).

@@ -2,10 +2,14 @@
 
 **Feature Directory**: `specs/001-navegacion-global`
 **Created**: 2026-10-16
-**Updated**: 2026-10-27
-**Status**: implementación local retomada;23/28 tareas completas, contrato006 recibido y corrección de focoFirefox verificada. Logo/fuente/paleta incorporados; Chromium/Firefox/WebKit verificados localmente y controles de Inicio aceptados manualmente. Revisión final de destinos e integración pendientes.
+**Updated**: 2026-10-30
+**Status**: 001 cerrada: 28/28 tareas para el alcance demo aprobado el 2026-10-30. Matriz 14/14 y sitio publicado 15/15 en tres motores; revisión humana con teclado/VoiceOver reportada por la responsable. Foco del footer corregido y publicado. Administración y producción conservadas como alcance diferido.
 **Input**: `$speckit-specify 001`: desarrollar la feature existente sin crear otra ni ampliar alcance.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), requisitos G01–G06; [constitución 1.0.0](../../.specify/memory/constitution.md), CONST-01–04 y CONST-08–12.
+
+## Alcance vigente de aceptación de la demo
+
+La responsable aprobó cerrar001sobre la demo publicada, con cuatro páginas, footer de demo y build:demo; el panel administrativo y la operación de producción quedan diferidos. [Decisión exacta y requisitos diferidos](demo-scope-approval-2026-10-30.md). Esta sección y los criterios demo siguientes sustituyen los criterios productivos del footer para este cierre; no alteran los guards del producto completo.
 
 ## User Scenarios & Testing
 
@@ -56,27 +60,18 @@ de llegada tanto con teclado como con puntero, aunque no haya historias o descar
 4. **Dado** un CTA enfocado, **cuando** lo activo con teclado, **entonces** alcanzo la
    misma sección y puedo continuar navegando sin quedar atrapado. (G02, G03)
 
-### User Story 3 — Consultar información y acceder a administración (Priority: P2)
+### User Story 3 — Consultar información de la demo (Priority: P2)
 
-Como visitante o integrante autorizado de Priva, quiero encontrar un footer consistente
-para consultar información, contactar al equipo o abrir el acceso administrativo.
+Como visitante, quiero un footer consistente que me permita consultar los términos, la privacidad y el Contacto de prueba de la demostración.
 
-**Why this priority**: Facilita destinos complementarios sin mezclarlos con el menú principal.
-
-**Independent Test**: Revisar el footer de cada página y activar sus cuatro destinos; comprobar
-por separado que entrar al acceso administrativo no revela datos privados sin sesión.
+**Independent Test**: desde las cuatro páginas, activar los tres destinos con teclado y puntero y comprobar sus títulos reales. El panel administrativo queda diferido por decisión explícita.
 
 **Acceptance Scenarios**:
 
-1. **Dado** cualquiera de las cuatro páginas, **cuando** consulto el footer, **entonces**
-   encuentro logo, lema y copyright idénticos, con año fijo 2026. (G04)
-2. **Dado** el footer, **cuando** activo panel administrador, **entonces** abro el acceso
-   administrativo; sin sesión no se muestran historias privadas ni consultas. (G05)
-3. **Dado** el footer, **cuando** activo Términos de Servicio o Manifiesto de Datos,
-   **entonces** abro el documento correspondiente con contenido aprobado, sin textos
-   de borrador presentados como definitivos. (G06)
-4. **Dado** el footer de cualquier página, **cuando** activo Contacto Seguro,
-   **entonces** llego a la página de Contacto desde su inicio, sin salto automático al formulario, y puedo identificar su encabezado principal. (G06)
+1. En las cuatro páginas se muestra la identidad «Priva · Demostración educativa» y los mismos tres enlaces, en el mismo orden. (G04 demo)
+2. Términos de la demo abre /terminos.html y Privacidad de la demo abre /manifiesto-datos.html, con información que describe la demo actual. (G06 demo)
+3. Contacto abre /contacto.html desde su inicio; el modo de prueba se identifica sin aparentar recepción de consultas reales. (G06 demo)
+4. No se ofrecen enlaces de administración. La ausencia de rutas privadas en el sitio estático se verifica como frontera demo, sin presentarla como autenticación006. (G05 diferido)
 
 ### Edge Cases
 
@@ -88,9 +83,9 @@ por separado que entrar al acceso administrativo no revela datos privados sin se
 - Si no hay descargas habilitadas, DESCARGAR APP sigue llegando al bloque informativo;
   su estado Próximamente pertenece a 004.
 - Un cambio de ancho no debe dejar opciones invisibles con foco ni impedir cerrar el menú.
-- Una ruta legal o sección pendiente impide cerrar su recorrido integrado: no se sustituye
+- Una ruta de información demo o sección pendiente impide cerrar su recorrido integrado: no se sustituye
   por `#`, URL vacía, contenido inventado o un falso éxito.
-- Abrir el acceso administrativo sin sesión nunca debe exponer información privada;
+- Para la futura producción, abrir el acceso administrativo sin sesión nunca debe exponer información privada;
   la protección efectiva se verifica junto con 006.
 
 ## Requirements
@@ -110,23 +105,13 @@ por separado que entrar al acceso administrativo no revela datos privados sin se
 - **FR-003 / G03 — CTA DESCARGAR APP**: Priva App y Contáctanos DEBEN mostrar DESCARGAR APP en
   el encabezado. El destino DEBE ser la sección de descarga de Priva App, sin activar descargas
   por plataforma ni aparentar disponibilidad. DEBE funcionar con teclado.
-- **FR-004 / G04 — Identidad del footer**: Las cuatro páginas DEBEN compartir logo, lema
-  “Defendiendo la soberanía digital individual.” y copyright exacto
-  “© 2026 Priva. Todos los derechos reservados. Navega con dignidad.”. El año es fijo.
-  La corrección de los cuatro footers del PDF de 2025 a 2026 sigue registrada en X04;
-  actualizar la web no acredita haber editado el PDF. Fuente: C34.
-- **FR-005 / G05 — Acceso administrativo**: El footer DEBE ofrecer un enlace visible
-  panel administrador al acceso privado. El recorrido sin sesión NO DEBE mostrar datos
-  privados. Esta feature define el enlace y su integración; 006 define autenticación,
-  sesiones y autorización de operaciones.
-- **FR-006 / G06 — Destinos informativos y Contacto Seguro**: El footer DEBE incluir
-  Términos de Servicio, Manifiesto de Datos y Contacto Seguro. Los dos primeros DEBEN abrir
-  su contenido aprobado; el último DEBE abrir `/contacto.html` sin fragmento, desde el inicio de la página. No se aceptan
-  enlaces vacíos o borradores publicados para dar por completo el recorrido.
+- **FR-004 / G04 demo — Footer**: las cuatro páginas comparten «Priva · Demostración educativa» y los tres enlaces complementarios aprobados, con estructura y foco accesibles.
+- **FR-005 / G05 — Administración diferida**: el acceso administrativo queda fuera del cierre demo. No se publica un login estático ni se atribuye autorización a un404. Se conserva el contrato006 para producción.
+- **FR-006 / G06 demo — Destinos complementarios**: Términos de la demo, Privacidad de la demo y Contacto abren /terminos.html, /manifiesto-datos.html y /contacto.html sin fragmento, con páginas reales y alcance demo explícito.
 
 ### Contrato de destinos
 
-Las rutas siguientes proceden de propuestas de R35, no son prueba de URLs implementadas.
+Las rutas del encabezado se conservan. Las etiquetas del footer se adaptan por la aprobación demo; la ruta administrativa de la tabla histórica queda diferida, no es un destino de aceptación demo. Las rutas originales proceden de R35.
 Son la referencia de planificación; un cambio debe conservar el destino funcional y registrarse
 conforme a CONST-01/04. No se requiere decidir tecnología para especificar estos recorridos.
 
@@ -154,7 +139,7 @@ No se introduce #maria. Las otras CTA internas y enlaces externos quedan en sus 
 - **Página pública**: nombre, destino y condición de página actual; cuatro páginas principales.
 - **Elemento de navegación**: etiqueta, orden y destino compartidos en distintas presentaciones.
 - **CTA de encabezado**: etiqueta y sección de destino según la página de origen.
-- **Footer común**: identidad, lema, copyright y cuatro enlaces complementarios.
+- **Footer demo**: identidad educativa y tres enlaces complementarios; footer productivo conservado para una etapa posterior.
 
 ## Success Criteria
 
@@ -165,8 +150,7 @@ No se introduce #maria. Las otras CTA internas y enlaces externos quedan en sus 
   desde las cuatro páginas.
 - **SC-002**: Los cuatro CTA de encabezado llegan a la sección correcta con el título visible,
   usando teclado y puntero, sin iniciar descargas automáticamente.
-- **SC-003**: Las cuatro páginas muestran idénticos lema y copyright de 2026 y sus 16 enlaces
-  complementarios abren el destino anunciado; ninguna entrada administrativa sin sesión revela datos privados.
+- **SC-003 demo**: las cuatro páginas muestran el mismo footer y sus doce recorridos complementarios abren los destinos reales aprobados. No se ofrece acceso administrativo.
 - **SC-004**: Los recorridos anteriores pueden completarse a 360/390/430/768/1024/1280/1440 px
   y con texto al 200%, sin contenido cortado, scroll horizontal ni controles inaccesibles.
 - **SC-005**: Una persona que usa solo teclado puede abrir el menú compacto, elegir cada destino

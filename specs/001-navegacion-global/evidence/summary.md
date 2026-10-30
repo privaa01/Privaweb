@@ -1,3 +1,7 @@
+# Estado vigente — cierre demo 2026-10-30
+
+001 cerrada: 28/28 tareas para el alcance demo aprobado el 2026-10-30. Matriz 14/14 y sitio publicado 15/15 en tres motores; revisión humana con teclado/VoiceOver reportada por la responsable. Foco del footer corregido y publicado. Administración y producción conservadas como alcance diferido. [Evidencia completa](demo-closure-2026-10-30.md). Los registros siguientes son históricos.
+
 # Resultado de implementación —001 Navegación global
 
 **Actualización**:2026-10-26 (America/Bogota). **Estado**:23/28 tareas completas, cinco parciales/bloqueadas. Componentes y contrato local verificados; sin cierre de publicación/fidelidad/integración.

@@ -2,7 +2,7 @@
 
 **Input**: [spec](spec.md), [plan](plan.md), [research](research.md), [modelo](data-model.md),
 [contrato](contracts/navigation.md), [guía](quickstart.md) y constitución 1.0.0.
-**Fecha**: 2026-10-16. **Actualización**:2026-10-27. **Estado**:23/28 tareas completas;5 parciales por integración de destinos y revisión final de las cuatro páginas; WebKit y controles manuales de Inicio ya verificados. Pérdida de foco al ampliar corregida; revisión actual en evidence/review-2026-10-27.md.
+**Fecha**: 2026-10-16. **Actualización**: 2026-10-30. **Estado**: 001 cerrada: 28/28 tareas para el alcance demo aprobado el 2026-10-30. Matriz 14/14 y sitio publicado 15/15 en tres motores; revisión humana con teclado/VoiceOver reportada por la responsable. Foco del footer corregido y publicado. Administración y producción conservadas como alcance diferido.
 **Tests**: incluidos porque el spec exige recorridos observables y accesibilidad verificable.
 Escribir pruebas antes del comportamiento y comprobar el fallo pertinente; no confundir fallo
 por entorno roto con fallo funcional. No se impone cobertura numérica arbitraria.
@@ -57,16 +57,18 @@ G04–G06; prueba independiente: identidad/footer en cuatro fixtures y contratos
 - [X] T021 [US3] Preparar `tests/e2e/navigation-integration.spec.ts` para login006, documentos010 y formulario005; consumir el contrato006 C1/C2/C3 recibido mediante `tests/helpers/navigation-private-contract.ts`. Definidos GET/HEAD de páginas privadas y GET de sesión con401/403 exactos, sin aceptar404 o login ficticio como autorización. `tests/navigation-service.test.ts` verifica el guard real006/SQLite local con cookies ausentes/inválidas; no acredita templates oficiales ni alojamiento. Ejecución integrada pendiente en T027, sin mocks ni baseURL inventada. Depende de T020 y contrato006 disponible.
 - [X] T022 [US3] Ejecutar US3 contractual y registrar resultados en `specs/001-navegacion-global/evidence/us3.md`; distinguir enlace correcto de G05/G06 integrados pendientes. Depende de la parte independiente de T021; el contrato privado pendiente no bloquea la suite contractual.
 
-## Phase 6: Polish — integración, accesibilidad y evidencia
+## Phase 6: Polish — integración y cierre demo aprobado
+
+La responsable aprobó el alcance de demo el2026-10-30: ver demo-scope-approval-2026-10-30.md. Esta fase verifica .demo-dist/build:demo, doce enlaces complementarios y ausencia de administración pública; los requisitos productivos se conservan diferidos.
 
 Concluir trabajo independiente y mantener abiertas las tareas que requieran recursos o servicios ausentes.
 
-- [ ] T023 Conectar layout a `src/pages/index.astro`, `src/pages/historias.astro`, `src/pages/app.astro` y `src/pages/contacto.astro` cuando existan contenidos de 002–005; verificar archivos dist/*.html y anclas casos/descarga/escribir sobre build real. Si no existen, registrar bloqueo sin implementarlas fuera de alcance. Depende de T013/T017/T022 y 002–005.
+- [X] T023 Conectar/verificar DemoLayout en las cuatro páginas de demo y los archivos .demo-dist/*.html; comprobar anclas casos/descarga/escribir y paridad con páginas reales publicadas, sin crear contenido ficticio como relleno. Alcance demo aprobado2026-10-30.
 - [X] T024 Integrar recursos oficiales recibidos en `public/brand/` y referencias de `src/components/SiteHeader.astro`/`src/components/SiteFooter.astro`; inventario y faltantes en `specs/001-navegacion-global/evidence/resources.md`. No inventar logo/tipografía/hex; fidelidad sigue bloqueada mientras falten. Depende de T020 y recursos oficiales.
-- [ ] T025 Completar matriz automatizada en `tests/e2e/navigation-accessibility.spec.ts`: Chromium a cada ancho 360/390/430/768/1024/1280/1440 px con texto 100%, repitiendo 16 recorridos del menú, cuatro retornos por logo, cuatro CTA y 16 enlaces del footer con teclado/puntero; comprobar destinos/títulos visibles, sin overflow, foco/resize y axe; recorridos principales Firefox/WebKit; ausencia de cookies/storage/solicitudes externas de navegación. No declarar auditoría completa por axe. Depende de T023–T024 para la aceptación final; puede adelantarse en fixtures tras T022.
-- [ ] T026 Repetir a texto realmente ampliado al 200% en cada uno de los siete anchos la matriz de T025 (16 recorridos de menú, cuatro logos, cuatro CTA y 16 enlaces de footer, teclado/puntero); revisar lector de pantalla, foco, contraste 4.5:1 normal y 3:1 grande/componentes, controles aproximadamente 44 px y fidelidad; guardar método, entorno, capturas y resultado en `specs/001-navegacion-global/evidence/accessibility.md`. Si no hay capacidad o recurso necesario, registrar no ejecutado/bloqueado, no aprobación. Depende de T025.
-- [ ] T027 Ejecutar check/build de aplicación desde T023, check:contract/build:contract y suites contractuales y `tests/e2e/navigation-integration.spec.ts` con destinos reales 005/006/010; registrar comandos, conteos y resultados separados en `specs/001-navegacion-global/evidence/integration.md`; G05 exige autorización real, no 404 o login estático vacío. Depende de T023–T026 y servicios/contenidos reales.
-- [ ] T028 Actualizar `specs/001-navegacion-global/quickstart.md`, `specs/TRACEABILITY.md` y `specs/001-navegacion-global/tasks.md` con evidencia por G01–G06/SC-001–005; marcar solo tareas efectivamente completadas y dejar aceptación integrada abierta ante bloqueos. No presentar edición del PDF o despliegue como realizados. Depende de T027 para cierre total; registrar progreso independiente antes si hay bloqueos.
+- [X] T025 Completar matriz automatizada demo a360/390/430/768/1024/1280/1440px y texto100% en Chromium:16recorridos de menú,4logos,4CTA y12enlaces del footer por teclado/puntero. Comprobar activo, títulos, foco, overflow, objetivos44px, axe y ausencia de cookies/storage/tráfico externo de navegación. Recorridos publicados enFirefox/WebKit. No equivale a auditoría manual.
+- [X] T026 Repetir la matriz demo deT025a texto realmente ampliado200% en siete anchos, revisar controles/contraste/foco y registrar revisión humana de lector/fidelidad sobre las cuatro páginas. Separar automatización de revisión humana; no aprobar una sesión no ejecutada.
+- [X] T027 Ejecutar check/build:demo y navegación-demo sobre las cuatro páginas y destinos informativos publicados; contrastar artefactos reales sin mocks y fronteras demo sin ofrecer administración. No contar404como autenticación006. Guardar resultados separados; build completo y operación productiva permanecen diferidos por aprobación explícita.
+- [X] T028 Sincronizar spec/plan/tasks/quickstart/TRACEABILITY y evidenciaG01–G06/SC-001–005 del cierre demo. Marcar solo lo comprobado; conservar revisión manual pendiente y requisitos productivos diferidos, sin atribuir edición delPDF ni certificación productiva. Cierre integral después deT026/T027.
 
 ## Dependencies & Execution Order
 
@@ -164,3 +166,7 @@ T023/T025/T026/T027/T028 permanecen parciales según sus criterios originales;23
 Reproducida antes de corregir la pérdida de foco de G01 al ocultar el botón en un cambio compacto → expandido. `src/scripts/navigation.ts` transfiere ahora el foco al enlace actual visible. Regresión nueva con menú abierto/cerrado y continuación por teclado; T011/T025/T026 se revalidan en su parte independiente sin alterar sus dependencias de cierre. Se adapta el recorrido de enlaces a Option+Tab en WebKit/macOS, preservando Tab en los otros entornos.
 
 T023/T027: URL real local disponible y cinco casos integrados ejecutados, todos fallidos por login/API404, Contacto500 y documentos en borrador. Los guards de 003/004 siguen rechazando revisión editorial; imágenes ya recibidas no son el bloqueo actual. T028: spec, plan, contrato, guía, matriz y evidencia actualizados. **23/28; las cinco casillas permanecen abiertas.** [Resultados, comandos y siguientes acciones por dependencia](evidence/review-2026-10-27.md).
+
+## Cierre del alcance demo — 2026-10-30
+
+T023/T025/T026/T027/T028 cerradas con la aprobación de alcance, las pruebas finales y la revisión con VoiceOver reportada por la responsable. 28/28 tareas demo. No se cierran requisitos productivos de otras features. Ver evidence/demo-closure-2026-10-30.md.

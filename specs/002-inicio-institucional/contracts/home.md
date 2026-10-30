@@ -61,3 +61,7 @@ Cambiar anclas/ruta o componentes compartidos exige actualizar consumidores/docu
 regresión 001, sin dar por probados sus destinos privados o legales aún ausentes.
 
 Decisión vigente 2026-10-28: audios identificados por la responsable como recreaciones educativas. Ajustar títulos, descripciones y metodología para expresarlo; retirar auditorías y recursos continuos no acreditados, usando el alcance educativo aprobado en Inicio. No aprueba ejercicios ni publicación del catálogo.
+
+## Cierre demo vigente — 2026-10-30
+
+I01–I04 no cambian. La aceptación integrada usa las páginas reales publicadas y build:demo; el footer sigue el alcance demo aprobado001. Los requisitos productivos de009/010/build completo quedan diferidos sin ser aprobados por esta excepción de alcance. Ver ../demo-scope-2026-10-30.md.

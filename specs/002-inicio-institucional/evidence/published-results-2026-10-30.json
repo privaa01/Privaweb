@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-30",
+  "baseURL": "https://priva-785cb.web.app",
+  "scope": "published-demo-home",
+  "matrixCells": 42,
+  "principalJourneys": 18,
+  "stats": {
+    "expected": 60,
+    "unexpected": 0,
+    "skipped": 0,
+    "duration": 112106.083
+  },
+  "assets": [
+    {
+      "path": "/images/home/hero.png",
+      "status": 200,
+      "matchesApprovedLocalFile": true,
+      "sha256": "46a871b3fc5e04b2476ac6c92260dbd942af9517a532d6d8f3881913c55280a7"
+    },
+    {
+      "path": "/images/home/identidad.png",
+      "status": 200,
+      "matchesApprovedLocalFile": true,
+      "sha256": "6a797e643eaffd20f175cd3b0a662aaf818ec0cb4b99da86eab9a50f1ecde0ac"
+    },
+    {
+      "path": "/images/home/cierre.png",
+      "status": 200,
+      "matchesApprovedLocalFile": true,
+      "sha256": "3d83d918c7d9edc355ec04e68af48b4da632a89ddf2d2825b6be7516c5420333"
+    }
+  ],
+  "astroCheck": {
+    "files": 95,
+    "errors": 0,
+    "warnings": 0,
+    "hints": 1
+  },
+  "demoBuildExitCode": 0,
+  "completeBuildExitCode": 1,
+  "remainingCompleteBuildBlock": "documents010/privacy009",
+  "productionClosure": false
+}

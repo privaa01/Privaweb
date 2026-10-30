@@ -2,11 +2,15 @@
 
 **Feature Directory**: `specs/002-inicio-institucional`
 **Created**: 2026-10-16
-**Updated**: 2026-10-28 (America/Bogota)
-**Status**: componentes validados contractualmente en Chromium y Firefox; cinco textos educativos y recursos comunes aprobados/recibidos. Imágenes institucionales recibidas; revisión visual/manual aceptada por la usuaria. Chromium/Firefox/WebKit verificados; navegación real a Historias verificada (18/18); build completo bloqueado por 010/009.
+**Updated**: 2026-10-30 (America/Bogota)
+**Status**: 002 cerrada: 33/33 tareas para la demo publicada. Contenidos/recursos aprobados, matriz previa 60/60 y regresión actual 18/18 en tres motores. Check/build y paridad de demo conformes; build completo y operación productiva diferidos.
 **Input**: `/speckit-specify 002`: desarrollar la especificación existente conservando alcance e IDs.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), I01–I04,
 PDF página 1 y [constitución 1.0.0](../../.specify/memory/constitution.md).
+
+## Alcance vigente de cierre demo — 2026-10-30
+
+Se continúa la002sobre la demo publicada tras el cierre demo aprobado de001. [Alcance y evidencia reutilizada](demo-scope-2026-10-30.md). I01–I04 y sus criterios funcionales permanecen; el build de aceptación es build:demo con páginas reales. El build y la operación del producto completo se conservan diferidos, sin aprobar009/010 ni retirar sus guards. No hay cambios nuevos de textos o imágenes por este cierre.
 
 ## User Scenarios & Testing
 

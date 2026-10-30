@@ -15,7 +15,11 @@ G01: logo → /index.html; las cuatro entradas en ese orden; solo una actual. La
 puede servir index.html, manteniendo Inicio como actual, sin cambiar enlaces canónicos.
 No se impone presentación de este menú a rutas privadas o auxiliares.
 
-## Footer
+## Footer de demo vigente — 2026-10-30
+
+Por aprobación de la responsable, el cierre demo usa identidad «Priva · Demostración educativa» y tres enlaces: Términos de la demo→/terminos.html, Privacidad de la demo→/manifiesto-datos.html, Contacto→/contacto.html. Doce recorridos desde las cuatro páginas. No hay enlace administrativo; su contrato original se conserva diferido. Build de aceptación: build:demo/.demo-dist. [Decisión](../demo-scope-approval-2026-10-30.md).
+
+## Footer de producción diferido
 
 G04: logo; lema “Defendiendo la soberanía digital individual.”; texto exacto
 “© 2026 Priva. Todos los derechos reservados. Navega con dignidad.”.
@@ -86,3 +90,7 @@ sin cookie y cookie inválida; su banco tiene templates sintéticos y solo acred
 no el login visual real, el correo o el alojamiento. Los casos integrados usan un origen
 real suministrado, sin mocks, y comprueban401/403 exactos;404 nunca acredita protección.
 Faltan entorno integrado, documentos010 aprobados y recursos oficiales para cerrar G05/G06.
+
+## Validación del cierre demo — 2026-10-30
+
+G01–G03 y G04/G06 demo comprobados; G05 producción diferido. Foco mínimo3:1, medición publicada11,12:1. Navegación sin JS y menús/foco/resize en tres motores conformes; revisión humana reportada. [Evidencia](../evidence/demo-closure-2026-10-30.md).

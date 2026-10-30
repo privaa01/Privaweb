@@ -486,3 +486,9 @@ Sin commit/push/despliegue en esta incorporación. [Recursos](001-navegacion-glo
 2026-10-28 —006/AD01–AD02,T058:90/90UI(3motores),16/24servicio real (Chromium/Firefox),8fallosWebKit por cookieSecureenHTTPdel banco. Correcciones solo de tests/servidor de prueba; sin despliegue ni cambios de autenticación. T058parcial,58/63. Evidencia:006-acceso-administrativo/revalidation-2026-10-28.md.
 
 2026-10-30 — 008/T060/SC-006: 57/57 UI en tres motores (42 celdas + 15 estados); casilla de revisión sin desbordamiento, teclado/foco/errores/axe conformes. Pendiente lector y comparación manual P04/011; 60/66. Evidencia: 008-bandeja-respuestas/accessibility-review-2026-10-30.md.
+
+2026-10-30 — 002/I01–I04/SC-001–005:60/60sobreFirebase público (18recorridos,42celdas), imágenes oficiales verificadas, check y builddemo conformes. T027/T031 conservan buildcompleto010/009 y T028cierreintegral;30/33. Evidencia:002-inicio-institucional/evidence/published-review-2026-10-30.md.
+
+2026-10-30 — 001 cerrada para la demo aprobada:28/28. G01–G03 y G04/G06 demo; matriz14/14 (1008activaciones), publicación15/15, revisión humana teclado/VoiceOver reportada. Foco del footer corregido2,66→11,12:1 y publicado. G05/administración y requisitos de producción diferidos explícitamente. Evidencia:001-navegacion-global/evidence/demo-closure-2026-10-30.md.
+
+2026-10-30 — 002 cerrada para la demo publicada:33/33. I01–I04/SC-001–005:matriz60/60previa y regresión18/18actual, imágenes oficiales, check/build/paridad demo conformes. T027/T031/T028completas en este alcance; operación y build productivos diferidos. Evidencia:002-inicio-institucional/evidence/demo-closure-2026-10-30.md.

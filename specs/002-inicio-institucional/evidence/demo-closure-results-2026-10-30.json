@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-30",
+  "scope": "published-demo-home-002",
+  "baseURL": "https://priva-785cb.web.app",
+  "currentPrincipalJourneys": {
+    "expected": 18,
+    "unexpected": 0,
+    "skipped": 0,
+    "duration": 13902.446
+  },
+  "previousCompleteCampaign": {
+    "reference": "published-results-2026-10-30.json",
+    "matrixCells": 42,
+    "principalJourneys": 18,
+    "passed": 60
+  },
+  "sharedLayoutRegression": "001/evidence/demo-closure-results-2026-10-30.json",
+  "homeContentChanged": false,
+  "tasksComplete": 33,
+  "tasksTotal": 33,
+  "completeProductionDeferred": true
+}

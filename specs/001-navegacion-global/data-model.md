@@ -22,7 +22,11 @@ localStorage o coincidencia parcial de cadenas. Entrada directa y recarga usan e
 
 Inicio/Historias → casos; App/Contacto → descarga. No contiene URLs de tiendas.
 
-## FooterDefinition
+## DemoFooterDefinition vigente
+
+Por aprobación del2026-10-30, DemoLayout define la identidad educativa y tres enlaces compartidos: Términos de la demo, Privacidad de la demo y Contacto. No depende de sesión ni ofrece administración. El foco usa color de la paleta con contraste mínimo3:1 sobre el fondo. El modelo productivo siguiente se conserva diferido.
+
+## FooterDefinition de producción diferido
 
 Logo oficial enlazado a Inicio; lema fijo; copyright fijo 2026; enlaces panel administrador,
 Términos de Servicio, Manifiesto de Datos y Contacto Seguro con destinos del contrato.

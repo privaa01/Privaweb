@@ -3,7 +3,7 @@
 **Branch real**: `main` | **Date**: 2026-10-16 | **Spec**: [spec.md](spec.md)
 **Feature Directory**: `specs/002-inicio-institucional`
 **Input**: I01–I04, constitución 1.0.0 y componentes existentes de 001.
-**Estado**: componentes y banco contractual implementados; Chromium/Firefox verificados, cinco textos educativos aprobados y recursos comunes recibidos. Imágenes institucionales recibidas; revisión visual/manual aceptada por la usuaria. Chromium/Firefox/WebKit verificados; navegación real a Historias verificada (18/18); build completo bloqueado por 010/009.
+**Estado**: 002 cerrada: 33/33 tareas para la demo publicada. Contenidos/recursos aprobados, matriz previa 60/60 y regresión actual 18/18 en tres motores. Check/build y paridad de demo conformes; build completo y operación productiva diferidos.
 El BRANCH de los scripts SDD representa la feature activa, no una rama Git creada.
 
 ## Summary
@@ -180,3 +180,7 @@ La responsable respondió «Sí, apruebo los textos públicos corregidos» para 
 Verificación: 45/45 pruebas Node Inicio/Historias, guard003 salida 0 y Astro check (95 archivos, 0 errores/advertencias, 1 hint previo). Integración real002: 18/18 aprobadas, seis recorridos por motor Chromium/Firefox/WebKit. Historias HTTP200; /api/public/historias HTTP404: el catálogo007 aún no está conectado al servidor local. Captura .test-output/stories-approved.png. Build completo conserva salida1 en guard010/009.
 
 La navegación desde Inicio ya está verificada; T027/T031 de002 mantienen el requisito residual de build completo, y T028 el cierre integral: 30/33 tareas. No se confunde renderizado de Historias con disponibilidad del catálogo, aprobación de ejercicios ni publicación productiva. Logs: .test-output/stories-approved-unit.log, stories-approved-check.log, home-approved-integration.log y home-approved-build.log.
+
+## Plan de cierre demo — 2026-10-30
+
+Continuar el alcance de demo de001según demo-scope-2026-10-30.md. Reutilizar la matriz publicada60/60y las revisiones ya aceptadas; HomeContent no cambió. Revalidar18recorridos principales por el ajuste compartido del foco del footer, usar check/build/paridad actuales001y cerrarT027/T031/T028 si pasan. Conservar la calificación productiva como etapa posterior.

@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-30",
+  "scope": "approved-published-demo-001",
+  "baseURL": "https://priva-785cb.web.app",
+  "matrix": {
+    "expected": 14,
+    "unexpected": 0,
+    "skipped": 0,
+    "duration": 81340.003
+  },
+  "published": {
+    "expected": 15,
+    "unexpected": 0,
+    "skipped": 0,
+    "duration": 166637.25400000002
+  },
+  "matrixControlActivations": 1008,
+  "publishedParity": [
+    {
+      "path": "/index.html",
+      "status": 200,
+      "buildAndTestSnapshotMatchPublished": true,
+      "sha256": "bb307733afb33f4b3bb4864e4d9df7800a41aa5899fc7302fa30cba2e7996c12"
+    },
+    {
+      "path": "/historias.html",
+      "status": 200,
+      "buildAndTestSnapshotMatchPublished": true,
+      "sha256": "78f0e4ea54179a3ef16a158ef408ac3e4ce2f302f630c879c0dc92e949448d9e"
+    },
+    {
+      "path": "/app.html",
+      "status": 200,
+      "buildAndTestSnapshotMatchPublished": true,
+      "sha256": "ee8fab96147284b096b0ac2f19790fe2e192d4f9eb435e07f8d6cc0c7065e7da"
+    },
+    {
+      "path": "/contacto.html",
+      "status": 200,
+      "buildAndTestSnapshotMatchPublished": true,
+      "sha256": "e1606d8fa5496bd487e11180ae0bc8e046b1744dad00ce6ad601aded7abe015e"
+    },
+    {
+      "path": "/terminos.html",
+      "status": 200,
+      "buildAndTestSnapshotMatchPublished": true,
+      "sha256": "54527ce64158440a71b3fd33842809a6055edee4c9c5b3acbed4b05e8e5d050c"
+    },
+    {
+      "path": "/manifiesto-datos.html",
+      "status": 200,
+      "buildAndTestSnapshotMatchPublished": true,
+      "sha256": "787c744cffa15043a2a45a78e5d90d30d08fd5f599eb9bfd8578aa0baed201cc"
+    },
+    {
+      "path": "/404.html",
+      "status": 200,
+      "buildAndTestSnapshotMatchPublished": true,
+      "sha256": "e2cf00390d11e8fcb0260c8ec88e93ac0d5d8b94b77289d10ed013f6905381e4"
+    }
+  ],
+  "focusContrast": {
+    "outline": "rgb(215, 228, 216)",
+    "background": "rgb(16, 46, 35)",
+    "ratio": 11.118469549389385
+  },
+  "manualReview": {
+    "source": "Owner response to question covering four published pages/menu/current-page/CTAs/footer",
+    "response": "Revisé con teclado y VoiceOver: todo funciona",
+    "versions": "not supplied"
+  },
+  "tasksComplete": 28,
+  "tasksTotal": 28,
+  "productionAdministrationDeferred": true,
+  "anchorInventory": [
+    {
+      "file": "historias.html",
+      "anchor": "casos",
+      "occurrences": 1
+    },
+    {
+      "file": "app.html",
+      "anchor": "descarga",
+      "occurrences": 1
+    },
+    {
+      "file": "contacto.html",
+      "anchor": "escribir",
+      "occurrences": 1
+    }
+  ]
+}

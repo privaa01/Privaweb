@@ -1,3 +1,11 @@
+# Cierre vigente de la demo — 2026-10-30
+
+002 cerrada: 33/33 tareas para la demo publicada. Contenidos/recursos aprobados, matriz previa 60/60 y regresión actual 18/18 en tres motores. Check/build y paridad de demo conformes; build completo y operación productiva diferidos. [Cierre y evidencia](demo-closure-2026-10-30.md). Los estados siguientes son históricos y conservan el alcance anterior.
+
+# Estado vigente — 2026-10-30
+
+30/33 tareas. Inicio publicado en Firebase verificado con 60/60 pruebas en tres motores (42 celdas + 18 recorridos), imágenes oficiales por SHA256, Astro check y build demo conformes. El build completo sigue detenido por 010/009; T027/T031 conservan ese requisito y T028 el cierre integral. [Detalle](published-review-2026-10-30.md). Los registros siguientes son históricos y no describen la disponibilidad actual de la demo.
+
 # Resultado vigente tras aprobación editorial
 
 18/18 pruebas de integración Inicio–Historias aprobadas. Historias HTTP200; catálogo007 HTTP404 pendiente de conexión. Build completo bloqueado por010/009; 30/33 tareas, cierre total pendiente. [Registro](review-2026-10-28.md). Los resultados siguientes son históricos.

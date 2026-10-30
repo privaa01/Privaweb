@@ -1,14 +1,14 @@
 # Guía de validación — Inicio 002
 
-**Estado**: Chromium, Firefox y pruebas de publicación verificados contractualmente. Cinco textos educativos aprobados; marca, fuente y paleta recibidas. Imágenes institucionales recibidas; revisión visual/manual aceptada por la usuaria. Chromium/Firefox/WebKit verificados; navegación real a Historias verificada (18/18); build completo bloqueado por 010/009.
+**Estado**: 002 cerrada: 33/33 tareas para la demo publicada. Contenidos/recursos aprobados, matriz previa 60/60 y regresión actual 18/18 en tres motores. Check/build y paridad de demo conformes; build completo y operación productiva diferidos.
 
 ## Prerrequisitos y comandos existentes
 
-Checkout /workspace/Privaweb; Node >=22.22.0, npm y Python 3. Usar el checkout aislado
+Desde la raíz del checkout; Node >=22.22.0, npm y Python 3. Usar el checkout aislado
 existente; no crear worktree salvo solicitud explícita. Versiones fijadas por package-lock.
 
 ```bash
-cd /workspace/Privaweb
+# Ejecutar desde la raíz del repositorio
 export npm_config_cache=/tmp/priva-npm-cache
 npm ci
 .specify/scripts/bash/check-prerequisites.sh --paths-only --json
@@ -130,3 +130,11 @@ La responsable respondió «Sí, apruebo los textos públicos corregidos» para 
 Verificación: 45/45 pruebas Node Inicio/Historias, guard003 salida 0 y Astro check (95 archivos, 0 errores/advertencias, 1 hint previo). Integración real002: 18/18 aprobadas, seis recorridos por motor Chromium/Firefox/WebKit. Historias HTTP200; /api/public/historias HTTP404: el catálogo007 aún no está conectado al servidor local. Captura .test-output/stories-approved.png. Build completo conserva salida1 en guard010/009.
 
 La navegación desde Inicio ya está verificada; T027/T031 de002 mantienen el requisito residual de build completo, y T028 el cierre integral: 30/33 tareas. No se confunde renderizado de Historias con disponibilidad del catálogo, aprobación de ejercicios ni publicación productiva. Logs: .test-output/stories-approved-unit.log, stories-approved-check.log, home-approved-integration.log y home-approved-build.log.
+
+## Validación de la demo publicada
+
+[Comandos y resultados actuales](evidence/published-review-2026-10-30.md). La suite integrada ahora contiene60pruebas en3motores; no usa mocks ni arranca servidor local cuando PRIVA_TEST_MODE=integration. El build completo sigue siendo independiente del builddemo autorizado.
+
+## Cierre vigente
+
+002:33/33para la demo. [Evidencia y regresión focalizada](evidence/demo-closure-2026-10-30.md). El build completo y sus comandos históricos se conservan para producción, fuera de este cierre demo. No es necesario repetir aprobaciones de contenidos ni la matriz si sus componentes no cambian.

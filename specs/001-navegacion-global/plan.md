@@ -4,7 +4,7 @@
 **Feature**: `001-navegacion-global`
 **Input**: G01–G06; constitución 1.0.0. El valor BRANCH devuelto por Spec Kit identifica
 la feature seleccionada; no acredita una rama Git creada.
-**Estado**: reanudado2026-10-20;23/28 tareas completas, revalidadas2026-10-23. Contrato006 recibido, guard local probado y foco de fragmento repetido corregido paraFirefox. Recursos comunes recibidos; fidelidad final y entrega integrada pendientes; evidencia en evidence/summary.md.
+**Estado**: 001 cerrada: 28/28 tareas para el alcance demo aprobado el 2026-10-30. Matriz 14/14 y sitio publicado 15/15 en tres motores; revisión humana con teclado/VoiceOver reportada por la responsable. Foco del footer corregido y publicado. Administración y producción conservadas como alcance diferido.
 
 ## Summary
 
@@ -182,3 +182,7 @@ Navegación001 revalidada en Chromium/Firefox y guard006; pruebas adicionales de
 ## Ajuste técnico y verificación — 2026-10-27
 
 Se conserva la arquitectura y alcance. Al cambiar a modo expandido, si el botón compacto tiene foco, `navigation.ts` muestra primero el nav, enfoca el enlace `aria-current="page"` (o el primero en auxiliares) y después oculta el botón. Se mantiene el tratamiento inverso existente al reducir el ancho y no se altera el foco si permanece en otro control visible. Regresión añadida a `tests/e2e/navigation-accessibility.spec.ts`; Option+Tab solo para recorrido de enlaces en WebKit/macOS, sin preferencias del sistema modificadas. Chrome instalado y Firefox/WebKit oficiales permiten verificación local en Mac; el wrapper Linux no es necesario en este entorno. [Evidencia y límites de integración](evidence/review-2026-10-27.md). Las cinco tareas finales permanecen parciales por los destinos y el build conjunto, no por ausencia de runner o URL local.
+
+## Plan de cierre de la demo aprobado el 30 de octubre de 2026
+
+Aplicar demo-scope-approval-2026-10-30.md antes de nuevas verificaciones. Mantener Header y navegación; verificar el footer de DemoLayout y sus tres destinos. Matriz exhaustiva sobre .demo-dist real en Chromium, con recorridos publicados en tres motores; sin mocks ni formularios enviados. Check/build:demo y paridad de artefactos publicados; producción/administración diferidas. Registrar aparte la revisión manual todavía no ejecutada.

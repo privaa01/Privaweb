@@ -1,6 +1,6 @@
 # Guía de validación — 001
 
-**Estado**: actualizado2026-10-27. Corrección de foco al ampliar el menú y regresión en Mac en [evidence/review-2026-10-27.md](evidence/review-2026-10-27.md). Componentes y páginas públicas existen; contrato006 recibido. La baseURL local ya es accesible desde el runner del Mac, pero los destinos finales, servicios privados y build/entrega integrada siguen bloqueados por revisión editorial y operación009/010. Las imágenes de Historias/App ya están recibidas.
+**Estado**: 001 cerrada: 28/28 tareas para el alcance demo aprobado el 2026-10-30. Matriz 14/14 y sitio publicado 15/15 en tres motores; revisión humana con teclado/VoiceOver reportada por la responsable. Foco del footer corregido y publicado. Administración y producción conservadas como alcance diferido.
 
 ## Prerrequisitos
 
@@ -190,3 +190,7 @@ npm run test:e2e:contract:webkit
 ```
 
 32casos aprobados el2026-10-26. El wrapper genera una caché privada real y usa bwrap rootless; no modifica el sistema ni omite verificación de dependencias. Requiere bibliotecas Debian verificadas disponibles y permiso de namespaces del ejecutor. Configurables PRIVA_WEBKIT_LIB_DIR y PLAYWRIGHT_BROWSERS_PATH. En Mac usar el runner Playwright nativo. No mezclar este resultado contractual con aceptación de destinos reales; ver evidence/webkit-runtime.md.
+
+## Aceptación de la demo vigente
+
+Usar playwright.navigation.demo.config.ts según [cierre demo](evidence/demo-closure-2026-10-30.md). La matriz se ejecuta sobre una copia aislada de .demo-dist y los recorridos publicados sobre Firebase, sin mocks. Panel administrativo y build productivo quedan diferidos por aprobación explícita. Los comandos de integración productiva de las secciones anteriores se conservan como referencia futura y no son prerrequisitos del cierre demo.

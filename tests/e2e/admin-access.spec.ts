@@ -84,7 +84,9 @@ test("lost login response checks actual account and never accepts another prior 
 });
 test("keyboard operates visibility and submits once while pending", async ({
   page,
+  browserName,
 }) => {
+  const nextControl = browserName === "webkit" && process.platform === "darwin" ? "Alt+Tab" : "Tab";
   let posts = 0;
   await page.route("**/api/admin/acceso", async (r) => {
     posts++;
@@ -95,9 +97,9 @@ test("keyboard operates visibility and submits once while pending", async ({
   const email = page.getByLabel("Correo", { exact: true });
   await email.focus();
   await page.keyboard.type("one@example.com");
-  await page.keyboard.press("Tab");
+  await page.keyboard.press(nextControl);
   await page.keyboard.type("synthetic private phrase 2026");
-  await page.keyboard.press("Tab");
+  await page.keyboard.press(nextControl);
   await expect(
     page.getByRole("button", { name: "Mostrar contraseña" }),
   ).toBeFocused();
@@ -106,7 +108,7 @@ test("keyboard operates visibility and submits once while pending", async ({
     "type",
     "text",
   );
-  await page.keyboard.press("Tab");
+  await page.keyboard.press(nextControl);
   await page.keyboard.press("Enter");
   await page.keyboard.press("Enter");
   await expect(page.getByRole("status")).toContainText(

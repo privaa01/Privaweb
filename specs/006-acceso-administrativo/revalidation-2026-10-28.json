@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-28",
+  "scope": "local-synthetic-administration",
+  "ui": {
+    "expected": 90,
+    "unexpected": 0,
+    "skipped": 0,
+    "duration": 95713.101
+  },
+  "service": {
+    "expected": 16,
+    "unexpected": 8,
+    "skipped": 0,
+    "duration": 70829.986
+  },
+  "secureCookieDiagnostic": [
+    {
+      "browser": "chromium",
+      "contextStatus": 200,
+      "serverSetsSecureCookie": true,
+      "storedPreauthCookie": true
+    },
+    {
+      "browser": "webkit",
+      "contextStatus": 200,
+      "serverSetsSecureCookie": true,
+      "storedPreauthCookie": false
+    }
+  ],
+  "productionQualified": false
+}

@@ -4,7 +4,7 @@
 **Input**: [spec.md](spec.md), [plan.md](plan.md), [research.md](research.md),
 [data-model.md](data-model.md), [contratos](contracts/admin-access.md), [quickstart.md](quickstart.md)
 y [constitución](../../.specify/memory/constitution.md).
-**Estado**: 58/63 tareas verificadas localmente; T058–T062 abiertas por dependencias externas y build de entrega. Ver [evidencia](evidence.md).
+**Estado**: 58/63 tareas verificadas localmente; T058 parcial con UI90/90 en3motores y servicio16/24 (WebKit requiereHTTPSconfiable). T059–T062 abiertas por revisión y operación/build de entrega. Ver [evidencia](evidence.md).
 **Tests**: requeridos por los escenarios y SC-001–SC-007. Escribir las pruebas de comportamiento
 antes de implementar cada regla y observar el fallo pertinente; no llamar prueba de negocio a
 un error de importación/infraestructura. Registrar ejecución/evidencia después de verificar.
@@ -241,3 +241,5 @@ huérfana. Cobertura prevista no acredita ejecución ni aceptación.
 
 63 tareas: preparación4, fundamentos8, US1=12, US2=9, US3=7, US4=15, cierre8.
 11 tareas [P]. 58 verificadas localmente; cinco pendientes (T058–T062). La aceptación final y el correo real siguen abiertos.
+
+2026-10-28 — T058revalidada parcialmente:90/90UIy16/24servicio (Chromium/Firefox conformes);8fallosWebKit por cookieSecure sobreHTTP, diagnóstico sin secretos confirmado. Corregidos duplicados de cuentas ficticias por motor, tecladoAlt+TabMac y servidorUI concurrente. T058abierta hasta servicioWebKit enHTTPSconfiable;58/63. Ver revalidation-2026-10-28.md.

@@ -1,13 +1,13 @@
 # Guía de validación — 006
 
-Fecha: 2026-10-19. Implementación local disponible; la aceptación final está pendiente.
+Actualización2026-10-28: UI90/90en3motores;servicio16/24,WebKit requiereHTTPSconfiable por cookiesSecure. [Resultados actuales](revalidation-2026-10-28.md). Implementación local disponible; aceptación final pendiente.
 Resultados y bloqueos: [evidence.md](evidence.md). El correo del banco es un doble privado,
 no recepción productiva. Requisitos AD01/AD02; [contrato](contracts/admin-access.md).
 
 ## Entorno y comandos
 
-Usar el checkout existente `/workspace/Privaweb`, Node24+ para el servicio, dependencias del lock,
-Python3 y Chromium `/usr/bin/chromium`. No hacen falta paquetes nuevos ni modificar el lock.
+Ejecutar desde la raíz del checkout, con Node24+ para el servicio, dependencias del lock,
+Python3 y PRIVA_CHROMIUM_EXECUTABLE apuntando al Chrome/Chromium instalado. En el host macOS de esta revisión: `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`; los ejemplos `/usr/bin/chromium` corresponden al host Linux anterior. No hacen falta paquetes nuevos ni modificar el lock.
 Mantener TLS, integridad de paquetes, Secure y sandbox. Revisar cambios locales antes de trabajar.
 
 ```bash

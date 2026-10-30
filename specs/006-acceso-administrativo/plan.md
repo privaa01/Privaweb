@@ -2,7 +2,7 @@
 
 **Rama real**: `main` | **Fecha**: 2026-10-19 | **Spec**: [spec.md](spec.md)
 **Feature activa**: `006-acceso-administrativo`; la selección SDD no crea una rama Git.
-**Estado**: implementación local verificada según [tareas](tasks.md) y [evidencia](evidence.md); operación/aceptación final pendientes.
+**Estado**:58/63tareas; revalidación2026-10-28:UI90/90,servicio16/24conWebKit pendiente deHTTPSconfiable. [Detalle](revalidation-2026-10-28.md). Operación/aceptación final pendientes.
 **Input**: AD01/AD02, C26, capturas administrativas y constitución 1.0.0.
 Clarificación previa: no se encontraron preguntas funcionales críticas; políticas técnicas para este plan.
 

@@ -1,3 +1,7 @@
+# Estado vigente — 2026-10-28
+
+T058parcial:90/90UI en Chromium/Firefox/WebKit;16/24servicio real (8Chromium+8Firefox),8fallosWebKit por rechazo de cookieSecure sobreHTTPdel banco. Corregidos aislamiento de cuentas, servidorUI y tecladoMac en tests. Se requiereHTTPSconfiable para calificar WebKit del servicio.58/63tareas; demo pública intacta. [Detalle y comandos](revalidation-2026-10-28.md). Registros de2026-10-19 siguientes históricos.
+
 # Evidencia de implementación — 006
 
 Fecha: 2026-10-19 (America/Bogota). AD01/AD02, US1–US4, SC-001–007.
@@ -128,7 +132,7 @@ Provider falla fuera del request, mediante doble privado. El cuerpo/status/heade
 
 | Tarea | Estado y acción necesaria |
 |---|---|
-| T058 | Chromium verificado; Firefox falla `Could not find profile folder` con TMPDIR predeterminado y también bajo workspace. WebKit carece de libgtk-4, libgraphene, libharfbuzz-icu, libmanette, libhyphen y libGLESv2. APT con metadata/firma/TLS preservados hacia snapshot.debian.org recibió403 del proxy; no se instaló nada ni se desactivó seguridad. Reparar esos prerrequisitos y ejecutar ambas suites con Firefox/WebKit. |
+| T058 | Actualizado2026-10-28:UI90/90en3motores;servicio16/24conChromium/Firefox conformes. WebKit ejecuta, pero el bancoHTTPno conserva su cookieSecure:8fallos; requiereHTTPSconfiable. Los bloqueos de binarios/bibliotecas anteriores ya no aplican al hostmacOS. Ver revalidation-2026-10-28.md. |
 | T059 | Faltan archivos oficiales, revisión exacta de copy/alternativas/identidad, comparación visual y lector de pantalla manual. No sustituirlos con un logo inventado o marcar fidelidad por aprobar axe. |
 | T060 | Calificar responsable/provisión, proveedor/adaptador/remitente/buzón, origenHTTPS/proxy/conexión confiable, almacenamiento/claves/copias/rotación, capacidad/denylist/abuso/tiempos y políticas009/avisos010. Suministrar valores solo por configuración segura, no por chat. |
 | T061 | Falta PRIVA_INTEGRATION_BASE_URL HTTPS y adaptador privado autorizado de provisión/verificación/buzón. Ejecutar flujo con cuenta sintética controlada y comprobar recepción real; no usar terceros ni atribuir recepción al doble/aceptación del proveedor. |

@@ -1,4 +1,4 @@
-from http.server import HTTPServer, SimpleHTTPRequestHandler
+from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from urllib.parse import urlsplit
 class Handler(SimpleHTTPRequestHandler):
     def log_message(self,*args):pass
@@ -10,4 +10,4 @@ class Handler(SimpleHTTPRequestHandler):
             self.path='/'+('panel' if path=='/admin' else path.rsplit('/',1)[1])+'.html'
         super().do_GET()
     def __init__(self,*args,**kwargs):super().__init__(*args,directory='.test-output/admin',**kwargs)
-HTTPServer(('127.0.0.1',4328),Handler).serve_forever()
+ThreadingHTTPServer(('127.0.0.1',4328),Handler).serve_forever()

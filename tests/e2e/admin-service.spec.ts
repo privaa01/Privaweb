@@ -96,12 +96,14 @@ test.beforeEach(() => {
 });
 test("real recovery via private local inbox activates pending account and resets once without auto-login", async ({
   page,
+  browserName,
 }) => {
-  control({ action: "create", email: "activation@example.com" });
+  const email = `activation-${browserName}@example.com`;
+  control({ action: "create", email });
   await page.goto("/admin/recuperar");
   await page
     .getByLabel("Correo", { exact: true })
-    .fill("activation@example.com");
+    .fill(email);
   await page.getByRole("button", { name: "Solicitar recuperación" }).click();
   await expect(page.getByRole("status")).toContainText(
     "Esta respuesta no confirma envío ni entrega",
@@ -111,7 +113,7 @@ test("real recovery via private local inbox activates pending account and resets
     .poll(() => {
       const mail = control({
         action: "inbox",
-        email: "activation@example.com",
+        email,
       });
       link = mail?.resetURL ?? "";
       return Boolean(link);
@@ -128,13 +130,13 @@ test("real recovery via private local inbox activates pending account and resets
   await page.goto("/admin/login");
   await page
     .getByLabel("Correo", { exact: true })
-    .fill("activation@example.com");
+    .fill(email);
   await page
     .getByLabel("Contraseña", { exact: true })
     .fill("activated synthetic phrase 2026");
   await page.getByRole("button", { name: "Entrar", exact: true }).click();
   await expect(page.locator("[data-identity]")).toHaveText(
-    "activation@example.com",
+    email,
   );
   await page.goto(link);
   await page
@@ -229,12 +231,14 @@ test("real Node process restart preserves authenticated access and private keys 
 });
 test("reset response lost after real commit never replays password, new credential works", async ({
   page,
+  browserName,
 }) => {
-  control({ action: "create", email: "lost-reset@example.com" });
+  const email = `lost-reset-${browserName}@example.com`;
+  control({ action: "create", email });
   await page.goto("/admin/recuperar");
   await page
     .getByLabel("Correo", { exact: true })
-    .fill("lost-reset@example.com");
+    .fill(email);
   await page.getByRole("button", { name: "Solicitar recuperación" }).click();
   await expect(page.getByRole("status")).toContainText(
     "Esta respuesta no confirma envío ni entrega",
@@ -243,7 +247,7 @@ test("reset response lost after real commit never replays password, new credenti
   await expect
     .poll(() => {
       link =
-        control({ action: "inbox", email: "lost-reset@example.com" })
+        control({ action: "inbox", email })
           ?.resetURL ?? "";
       return Boolean(link);
     })
@@ -268,12 +272,12 @@ test("reset response lost after real commit never replays password, new credenti
   await page.goto("/admin/login");
   await page
     .getByLabel("Correo", { exact: true })
-    .fill("lost-reset@example.com");
+    .fill(email);
   await page
     .getByLabel("Contraseña", { exact: true })
     .fill("new unknown synthetic phrase 2026");
   await page.getByRole("button", { name: "Entrar", exact: true }).click();
   await expect(page.locator("[data-identity]")).toHaveText(
-    "lost-reset@example.com",
+    email,
   );
 });

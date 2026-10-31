@@ -30,17 +30,17 @@ try{
  for(const [name,type] of Object.entries({chromium,firefox,webkit})){
   const browser=await type.launch(name==='chromium'?{executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'}:{});
   try{const context=await browser.newContext();const page=await context.newPage();const requests=[];page.on('request',r=>{if(r.url()===demoEndpoint)requests.push(r);});await page.goto(base+'/contacto.html');
-   await page.locator('[data-demo-contact] button[type=submit]:enabled').waitFor();assert.equal(await page.locator('textarea').count(),0);assert.equal(await page.locator('[name=consent]').isChecked(),false);
-   await page.getByRole('button',{name:'Enviar prueba'}).click();assert.equal(requests.length,0);
-   await page.locator('[name=consent]').check();const responsePromise=page.waitForResponse(r=>r.url()===demoEndpoint);await page.getByRole('button',{name:'Enviar prueba'}).click();await page.locator('form').evaluate(form=>form.requestSubmit());const result=await responsePromise;assert.equal(result.status(),200);
+   await page.locator('[data-demo-contact] button[type=submit]:enabled').waitFor();assert.equal(await page.locator('textarea').count(),1);
+   await page.getByRole('button',{name:'Enviar mensaje'}).click();assert.equal(requests.length,0);
+   await page.locator('[name=nameOrAlias]').fill(demoContact.aliases[0]);await page.locator('[name=email]').fill(demoContact.email);await page.locator('[name=message]').fill(demoContact.messages[0]);const responsePromise=page.waitForResponse(r=>r.url()===demoEndpoint);await page.getByRole('button',{name:'Enviar mensaje'}).click();await page.locator('form').evaluate(form=>form.requestSubmit());const result=await responsePromise;assert.equal(result.status(),200);
    await page.getByRole('status').filter({hasText:'Prueba guardada en Firestore.'}).waitFor();assert.equal(requests.length,1);
    const payload=requests[0].postDataJSON();const id=payload.writes[0].update.name.split('/').at(-1);ids.push(id);const doc=await getDoc(id);assert.equal(doc.fields.mode.stringValue,'demo');assert.equal(doc.fields.consent.booleanValue,true);
-   assert.equal(await page.getByRole('button',{name:'Enviar prueba'}).isDisabled(),true);
+   assert.equal(await page.getByRole('button',{name:'Enviar mensaje'}).isDisabled(),true);
    assert.equal((await new AxeBuilder({page}).analyze()).violations.length,0);
-   await page.getByRole('button',{name:'Nueva prueba'}).click();assert.equal(await page.locator('[name=consent]').isChecked(),false);
+   await page.getByRole('button',{name:'Nuevo mensaje'}).click();assert.equal(await page.locator('[name=nameOrAlias]').inputValue(),'');
    await page.setViewportSize({width:390,height:900});await page.evaluate(()=>document.documentElement.style.fontSize='200%');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
    assert.deepEqual(await context.cookies(),[]);assert.equal(await page.evaluate(()=>localStorage.length+sessionStorage.length),0);
-   browsers.push({name,submit:200,persisted:true,consentRequired:true,noDoubleSubmit:true,noPublicRead:true,axeViolations:0,mobile200NoOverflow:true});
+   browsers.push({name,submit:200,persisted:true,requiredFields:true,noDoubleSubmit:true,noPublicRead:true,axeViolations:0,mobile200NoOverflow:true});
   }finally{await browser.close();}
  }
  console.log(JSON.stringify({rulesChecks:outcomes.length,browsers},null,2));writeFileSync('.test-output/demo-contact-results.json',JSON.stringify({date:new Intl.DateTimeFormat('en-CA',{timeZone:'America/Bogota',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()),rulesChecks:outcomes,browsers},null,2));

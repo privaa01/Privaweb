@@ -1,4 +1,4 @@
-import {demoWrite,demoEndpoint} from '../contact-model';
+import {demoWrite,demoEndpoint,demoContact} from '../contact-model';
 const form=document.querySelector<HTMLFormElement>('[data-demo-contact]');
 if(form){
  const button=form.querySelector<HTMLButtonElement>('button[type=submit]')!;
@@ -9,7 +9,7 @@ if(form){
  form.addEventListener('submit',async event=>{
   event.preventDefault();if(busy||done||!form.reportValidity())return;
   const data=new FormData(form);let payload;
-  try{payload=demoWrite(id,String(data.get('nameOrAlias')),String(data.get('message')),data.get('consent')==='on');}catch(error){status.textContent=(error as Error).message;return;}
+  try{if(String(data.get('email'))!==demoContact.email)throw Error('La demo solo admite prueba@example.test.');payload=demoWrite(id,String(data.get('nameOrAlias')),String(data.get('message')),true);}catch(error){status.textContent=(error as Error).message;return;}
   busy=true;button.disabled=true;form.setAttribute('aria-busy','true');status.textContent='Guardando prueba en Firestore…';
   const controller=new AbortController();const deadline=setTimeout(()=>controller.abort(),15000);
   try{
@@ -20,5 +20,5 @@ if(form){
   }catch{status.textContent='No se pudo confirmar el envío. Puede haberse guardado si hubo un fallo de conexión. Reintentar conserva el mismo identificador de prueba.';}
   finally{clearTimeout(deadline);busy=false;button.disabled=done;form.removeAttribute('aria-busy');}
  });
- again.addEventListener('click',()=>{form.reset();id=crypto.randomUUID();done=false;button.disabled=false;again.hidden=true;status.textContent='Puedes enviar otra prueba ficticia.';form.querySelector<HTMLSelectElement>('select')?.focus();});
+ again.addEventListener('click',()=>{form.reset();id=crypto.randomUUID();done=false;button.disabled=false;again.hidden=true;status.textContent='Puedes enviar otra prueba ficticia.';form.querySelector<HTMLInputElement>('input')?.focus();});
 }

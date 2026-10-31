@@ -2,7 +2,11 @@
 
 Fecha inicial: 2026-10-16. Actualización007: productor local implementado; operación productiva no calificada.
 
-## C1 — Lectura de catálogo (H02–H09 / US1–3)
+## C1 demo vigente — 2026-10-30
+
+GET /demo/catalog.json, mismo esquemaPublicStory completo y solo cuatro materiales públicos aprobados. Build/verificación por hashes, actualización/retiro mediante redeploy. Catálogo no-store; audios públicosSHA256con caché1hora/Range. No hay administración en la demo. [Alcance](../demo-scope-2026-10-30.md). Las condiciones deAPI007 siguientes se conservan para producción diferida, no como requisito del cierre demo.
+
+## C1 de producción diferido — Lectura de catálogo (H02–H09 / US1–3)
 
 - `GET /api/public/historias`, same-origin, lectura anónima; fetch con credentials=omit y cache=no-store.
 - 200 application/json: `{ "schemaVersion": 1, "stories": [...] }`, PublicStory según

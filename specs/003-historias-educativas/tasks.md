@@ -4,7 +4,7 @@
 **Input**: [spec.md](spec.md), [plan.md](plan.md), [research.md](research.md),
 [data-model.md](data-model.md), [contrato](contracts/historias.md), [quickstart.md](quickstart.md)
 y constitución 1.0.0. H01–H12 y SC-001–007 permanecen vigentes.
-**Estado**: 32/35 tareas completas; 3 parciales/bloqueadas. Ver [evidence/summary.md](evidence/summary.md).
+**Estado**: 35/35 tareas completas para la demo; producción diferida. Ver [evidence/summary.md](evidence/summary.md).
 La generación inicial no implementó código; los resultados posteriores están registrados por tarea.
 **Pruebas**: incluidas para los escenarios y verificaciones exigidos por spec/contrato.
 Escribir primero las pruebas de comportamiento y comprobar fallo significativo antes de implementar.
@@ -91,6 +91,10 @@ URL de prueba; verificar tres pasos, copyC16 y enlaces sin necesitar catálogo/a
 **Checkpoint**: pruebas T019 primero; T020/T021/T022 en paralelo por archivos separados;
 T023 espera esos tres y T011 para no colisionar con composición compartida.
 
+## Alcance vigente de cierre de la demo
+
+Continuación solicitada tras001/002, documentada en demo-scope-2026-10-30.md. T031/T032conservan materiales y revisión humana; T033evalúa snapshot público y build:demo, manteniendo diferidas las obligaciones deAPI/administración/retirada007 y build productivo009/010.
+
 ## Fase 7 — Publicación, calidad y cierre transversal
 
 **Objetivo**: verificar comportamiento y bloquear entrega incompleta sin ocultar faltantes.
@@ -102,9 +106,9 @@ T023 espera esos tres y T011 para no colisionar con composición compartida.
 - [x] T028 [P] Crear `tests/e2e/stories-integration.spec.ts` para catálogo007 real: tres iniciales+nueva elegible+borrador+inactiva, publicar/desactivar/reactivar/editar conservandoIDs, nueva lectura sin caché obsoleta, ausencia de datos privados y acceso a recursos excluidos; enlacesInicio/Instagram compartido005 y medios finales. Sin entorno/servicio/material no saltar silenciosamente: registrar bloqueo (SC-001–007).
 - [x] T029 Ejecutar check/build del banco, unitarias y suitesChromium, más regresión001/002 afectada conforme `specs/003-historias-educativas/quickstart.md`; almacenar JSON/evidencias en `.test-output/stories-results.json` y `specs/003-historias-educativas/evidence/contract.md`, verificar bloqueos del build real y gate de entrada sin presentarlos como éxito integrado.
 - [x] T030 Ejecutar recorridos principales Firefox/WebKit y documentar en `specs/003-historias-educativas/evidence/accessibility.md`; resolver o registrar fallo de perfil/bibliotecas con evidencia actual, sin contar Chromium como validación de otros motores (depende T029).
-- [ ] T031 Incorporar solo materiales oficiales recibidos en `public/images/stories/` y referencias de `src/content/stories.ts`, coordinar recursos/catálogos007 y `src/config/social.ts`; validar tres relatos/audio/transcripciones, nueve explicaciones/riesgo-prevención, correspondencia de imágenes y textos, coherencia con las recreaciones aportadas y sus protagonistas/P03 y URLInstagram con referencias de aprobación en `specs/003-historias-educativas/evidence/materials.md`. Bloqueada hasta P01/P03/P04/005/007; estado vacío no exime entregar los tres iniciales.
-- [ ] T032 Realizar comparación renderizada PDF2 y pruebas manuales de teclado/controles nativos/anuncios con lector de pantalla y activos finales; medir contraste/dimensiones y documentar navegador/tecnología/fallos en `specs/003-historias-educativas/evidence/accessibility.md` y `specs/003-historias-educativas/evidence/visual.md` (depende T027/T031).
-- [ ] T033 Ejecutar aceptación integrada T028 con servicio007/destinos002/005 reales, revisar Cache-Control/origen/CDN/Range y tratamiento de URLs privadas/desactivadas, medir carga de colección representativa sin truncamiento y verificar build completo si existen todas las páginas; registrar en `specs/003-historias-educativas/evidence/integration.md`. Bloqueada por entorno, recursos y servicios; no construir backend007 dentro de003 (depende T026/T028/T031).
+- [x] T031 Incorporar solo materiales oficiales recibidos en `public/images/stories/` y referencias de `src/content/stories.ts`, coordinar recursos/catálogos007 y `src/config/social.ts`; validar tres relatos/audio/transcripciones, nueve explicaciones/riesgo-prevención, correspondencia de imágenes y textos, coherencia con las recreaciones aportadas y sus protagonistas/P03 y URLInstagram con referencias de aprobación en `specs/003-historias-educativas/evidence/materials.md`. Bloqueada hasta P01/P03/P04/005/007; estado vacío no exime entregar los tres iniciales.
+- [x] T032 Validar la composición de la demo previamente aceptada y realizar pruebas manuales de teclado/controles nativos/anuncios con lector de pantalla y activos finales; medir contraste/dimensiones y documentar navegador/tecnología/fallos en `specs/003-historias-educativas/evidence/accessibility.md` y `specs/003-historias-educativas/evidence/visual.md` (depende T027/T031). Cotejo nuevo contra PDF2 original diferido a producción; evidencia demo-closure-2026-10-30.md.
+- [x] T033 Verificar la demo publicada con cuatro historias aprobadas y destinos002/005: esquema completo, origen/CDN/caché/Range, audios y ejercicios sin envío ni persistencia, paridad de materiales y build:demo. API/gestión007, retirada de URLs privadas/desactivadas, volumen futuro y build productivo009/010 se conservan diferidos según demo-scope-2026-10-30.md. Registrar resultados sin calificarlos como operación productiva.
 - [x] T034 Corregir fallos observados en `src/components/stories/`, `src/scripts/stories-catalog.ts`, `src/scripts/stories-audio.ts`, `src/scripts/stories-exercise.ts` y `src/styles/stories.css` según evidencia; repetir solo pruebas afectadas y regresión justificada, registrar correcciones/resultados en `specs/003-historias-educativas/evidence/summary.md`; si no hay fallos, documentar revisión sin refactor innecesario.
 - [x] T035 Sincronizar estado por H01–H12/SC-001–007 y tareas en `specs/003-historias-educativas/spec.md`, `specs/003-historias-educativas/plan.md`, `specs/003-historias-educativas/tasks.md`, `specs/TRACEABILITY.md` y `specs/003-historias-educativas/evidence/summary.md`; fecha/entorno/navegador/criterio/resultado/evidencia, separar aprobado contractual de cierre integrado y mantener casillas bloqueadas abiertas (depende resultados T029–T034).
 
@@ -162,7 +166,7 @@ Son oportunidades de organización, no instrucciones para lanzar agentes automá
 | H11 | US4 T019/T021/T023; T028/T033 | SC-005/006 |
 | H12 | US4 T019/T022/T023; T024–T026/T031/T033 | SC-005/007 |
 
-Calidad transversal: T024–T035. Resultados contractuales y bloqueos en [evidence/summary.md](evidence/summary.md); no hay cierre integrado.
+Calidad transversal: T024–T035. Cierre demo en [evidence/demo-closure-2026-10-30.md](evidence/demo-closure-2026-10-30.md); producción diferida.
 
 ## Registro de ejecución
 
@@ -214,3 +218,5 @@ T028/T030 cerradas:32/35tareas.30/30recorridos principalesFirefox/WebKit y9/9int
 T032: corrección adicional de desbordamiento interno del control Leer transcripción a200% mediante overflow-wrap:anywhere; aserción específica añadida a la matriz de materiales oficiales.
 
 2026-10-28 — T033 parcial: auditoría real de cuatroMP3 conSHA256, GET/HEAD/Range/sufijo/rango inválido conformes; catálogo completo sin truncamiento, no-store/Host403/recurso404. Build completo intentado y bloqueado por guard010/009. Sin origen/CDN desplegado ni volumen futuro acordado. Evidencia:delivery-review-2026-10-28.md y delivery-audit-2026-10-28.json. Aceptación visual general de la responsable registrada;32/35.
+
+2026-10-30 — T031/T032/T033 completas para la demo:35/35. Responsable confirma escucha de cuatro audios y teclado/VoiceOver de controles educativos.51/51 pruebas publicadas y paridad de materiales conformes. Véase evidence/demo-closure-2026-10-30.md; registros previos históricos.

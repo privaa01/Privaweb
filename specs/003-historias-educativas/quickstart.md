@@ -1,6 +1,6 @@
 # Guía de validación — 003
 
-Actualización:2026-10-28. Implementación/pruebas locales vigentes;32/35tareas, sin cierre productivo. Registros iniciales de planificación se conservan como históricos.
+Actualización:2026-10-30. Demo cerrada:35/35tareas;51/51 pruebas publicadas y revisión humana confirmada. [Cierre y reproducción](evidence/demo-closure-2026-10-30.md). Producción diferida. Registros iniciales de planificación se conservan como históricos.
 
 ## Prerrequisitos
 

@@ -1,3 +1,7 @@
+# Estado vigente — 2026-10-30
+
+003 cerrada para la demo: 35/35. [Evidencia y límites](demo-closure-2026-10-30.md). Registros anteriores se conservan como históricos.
+
 # Revisión visual de estructura — no aceptación final
 
 2026-10-17. Inspección de desktop-fixture.png(1440px) y mobile-fixture.png(390px): orden hero,

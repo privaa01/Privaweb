@@ -2,7 +2,11 @@
 
 **Branch real**: `main` | **Date**: 2026-10-16 | **Spec**: [spec.md](spec.md)
 **Feature activa de los scripts**: `003-historias-educativas` (no crea rama Git).
-**Estado**: textos públicos aprobados; guard editorial y render HTTP200. Cuatro historias publicadas/activas localmente con mandato de la responsable; revisión final y cierre productivo pendientes.
+**Estado**: 35/35 tareas cerradas para la demo publicada el 2026-10-30; producción diferida. Ver [evidencia](evidence/demo-closure-2026-10-30.md).
+
+## Alcance activo
+
+La demo usa snapshot público generado /demo/catalog.json y build:demo; los requisitos de API dinámica/administración que siguen en este plan corresponden a producción diferida. Véase [alcance](demo-scope-2026-10-30.md).
 
 ## Summary
 

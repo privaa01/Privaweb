@@ -2,8 +2,12 @@
 
 **Branch real**: `main` | **Date**: 2026-10-17 | **Spec**: [spec.md](spec.md)
 **Feature activa**: `004-presentacion-app`; el BRANCH del script es selección SDD, no rama creada.
-**Estado**: 30/32 tareas. Recursos y copy aprobados; página real habilitada.53/53Node,9/9integración real y20/20adaptación/render. Revisión manual/fidelidad y build/calificaciónintegrada pendientes.
+**Estado**: 32/32 tareas completas para la demo publicada. Revisión específica de teclado/VoiceOver confirmada por la responsable el2026-10-30. Producción diferida. [Evidencia](evidence/demo-review-2026-10-30.md).
 **Input**: A01–A07, PDF 3, decisiones C13/C14/C17/C23/C31 y constitución 1.0.0.
+
+## Alcance activo
+
+La entrega actual usa DemoLayout, AppContent real y build:demo, sin modificar guards editoriales ni disponibilidad. Véase [alcance](demo-scope-2026-10-30.md). El build completo y la habilitación real futura de tiendas no forman parte de esta aceptación.
 
 ## Summary
 

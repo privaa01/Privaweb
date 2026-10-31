@@ -2,9 +2,9 @@ import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
 for(const width of [360,390,430,768,1024,1280,1440])for(const scale of [100,200]){
- test(`real matrix ${width}px text ${scale}%`,async({page,context,browserName})=>{
+ test(`real matrix ${width}px text ${scale}%`,async({page,context,browserName,baseURL})=>{
   const remote:string[]=[];
-  page.on('request',request=>{if(!request.url().startsWith('http://127.0.0.1:4321/'))remote.push(request.url());});
+  page.on('request',request=>{if(new URL(request.url()).origin!==new URL(baseURL!).origin)remote.push(request.url());});
   await page.setViewportSize({width,height:1000});
   await page.addInitScript(scale=>document.addEventListener('DOMContentLoaded',()=>document.documentElement.style.fontSize=`${16*scale/100}px`),scale);
   await page.emulateMedia({reducedMotion:'reduce'});

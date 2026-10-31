@@ -1,3 +1,7 @@
+# Estado vigente — 2026-10-30
+
+003 cerrada para la demo: 35/35. [Evidencia y límites](demo-closure-2026-10-30.md). Registros anteriores se conservan como históricos.
+
 # Estado vigente de regresión e integración — 2026-10-28
 
 32/35tareas: T028/T030 completas.30/30pruebas principalesFirefox/WebKit y9/9integración real007, con transiciones aisladas y recursos oficiales. Pendientes cotejo/coherencia de materiales, revisión manual y calificación/build. [Evidencia](transitions-review-2026-10-28.md). Registros siguientes históricos.

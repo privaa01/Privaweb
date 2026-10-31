@@ -1,0 +1,13 @@
+# Cierre de Historias en la demo — 2026-10-30
+
+35/35 tareas del alcance demo completadas. [Alcance](../demo-scope-2026-10-30.md), [resultados](demo-closure-2026-10-30.json). Sitio verificado: https://priva-785cb.web.app/historias.html.
+
+T031: cuatro fichas públicas completas coinciden con los borradores aprobados y TXT; PDF fuente conserva SHA256. Cuatro MP3 descargados coinciden por SHA256 con originales y las portadas con los archivos oficiales. Se conserva el cotejo PDF/TXT y revisión de doce explicaciones del 28 de octubre. La responsable confirmó el 30 de octubre: «Sí, los cuatro coinciden con sus transcripciones». Es escucha reportada por la responsable, no transcripción automática ni escucha independiente del agente.
+
+T032: 42/42 comprobaciones publicadas (7 anchos, texto 100/200%, Chromium/Firefox/WebKit), contraste, dimensiones y desbordamiento. La responsable confirmó específicamente reproductores, transcripciones y ejercicios: «Sí, todo funciona con teclado y VoiceOver». No proporcionó versión del navegador/VoiceOver. Se conserva la aceptación visual previa de la demo; no se afirma comparación nueva contra PDF2 original ausente. El cotejo del original queda pendiente para producción.
+
+T033: 9/9 recorridos adicionales en tres motores: cuatro audios con reproducción/pausa/seek, expansión de tres a cuatro historias, doce opciones y explicación correspondiente, independencia, reset al recargar y ausencia de cookies/storage/envíos. Un caso por motor induce explícitamente fallo del audio para verificar transcripción/ejercicio disponibles; los demás usan catálogo y medios reales sin sustitución. Catálogo no-store, audios públicos caché una hora y Range206. Build:demo de siete páginas y paridad pública ya verificados en el cierre001 del mismo snapshot; no hubo cambios de producto posteriores. Check previo95 archivos/0 errores/0 advertencias/1 hint; tipado estricto de nuevos tests conforme.
+
+Reproducción: PRIVA_INTEGRATION_BASE_URL=https://priva-785cb.web.app con Playwright, configs playwright.stories.real.config.ts (42) y playwright.stories.demo.config.ts (9). Chrome instalado vía PRIVA_CHROMIUM_EXECUTABLE; Firefox/WebKit instalados. Logs locales stories-demo-matrix-2026-10-30.log y stories-demo-functional-2026-10-30.log bajo .test-output. Las cifras son 51 casos únicos de esta campaña.
+
+Producción pendiente: catálogo/API y administración007, retirada/autorización de medios privados, volumen futuro, cotejo contra PDF2 original y build completo condicionado por009/010. Los guards productivos se conservan. No se despliega código nuevo ni se realiza commit/push como parte de este cierre documental.

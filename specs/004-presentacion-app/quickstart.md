@@ -1,12 +1,11 @@
 # Guía de validación — 004
 
-Actualización2026-10-28.30/32 tareas; recursos/copy aprobados, guardApp pasa.53/53Node,9/9integración real y20/20render/adaptación. Revisión manual y build completo pendientes. [Evidencia vigente](evidence/review-2026-10-28.md).
+Actualización2026-10-30. 32/32 tareas completas para la demo publicada. Revisión específica de teclado/VoiceOver confirmada por la responsable el2026-10-30. Producción diferida. [Evidencia](evidence/demo-review-2026-10-30.md).
 
 ## Prerrequisitos y comandos actuales
 
 Desde /workspace/Privaweb, Node>=22.22 (actual24.19.0), npm yPython3; dependencias del lock actual.
-No paquete/proveedor nuevo previsto. Chromium sistema disponible;Firefox/WebKit requieren
-resolver o registrar problemas de arranque confirmados en evidencia003.
+No paquete/proveedor nuevo previsto. Chromium del sistema, Firefox y WebKit disponibles y verificados en la campaña publicada del30 de octubre.
 
 ```bash
 cd /workspace/Privaweb

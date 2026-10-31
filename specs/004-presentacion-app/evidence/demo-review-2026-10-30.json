@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-30",
+  "url": "https://priva-785cb.web.app/app.html",
+  "scope": "demo",
+  "assets": [
+    {
+      "path": "/app.html",
+      "status": 200,
+      "cacheControl": "no-store",
+      "sha256": "ee8fab96147284b096b0ac2f19790fe2e192d4f9eb435e07f8d6cc0c7065e7da",
+      "matchesLocal": true
+    },
+    {
+      "path": "/images/app/asistente-zyro.png",
+      "status": 200,
+      "cacheControl": "no-store",
+      "sha256": "e408675e13081afeea83cc5b53e4c39e9e9817d3599bacde165b3867c54df60a",
+      "matchesLocal": true
+    }
+  ],
+  "tasks": {
+    "complete": 32,
+    "total": 32,
+    "pending": []
+  },
+  "manualReview": {
+    "date": "2026-10-30",
+    "source": "owner-reported manual review",
+    "technology": "VoiceOver",
+    "statement": "Sí, todo funciona con teclado y VoiceOver",
+    "scope": "Descargar app, Ver cómo funciona, secciones de destino, alternativas de imágenes y avisos Próximamente",
+    "versions": "not supplied"
+  },
+  "unit": {
+    "passed": 53,
+    "failed": 0,
+    "skipped": 0
+  },
+  "publicationGuard": "passed",
+  "strictTypecheck": "passed",
+  "demoBuild": "reused same snapshot from 001 closure; HTML parity verified",
+  "production": "deferred",
+  "presentation": {
+    "startTime": "2026-10-31T00:08:03.371Z",
+    "duration": 109425.59599999999,
+    "expected": 48,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "integration": {
+    "startTime": "2026-10-31T00:08:07.486Z",
+    "duration": 15598.855000000001,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "engines": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ]
+}

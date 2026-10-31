@@ -2,11 +2,15 @@
 
 **Feature Directory**: `specs/004-presentacion-app`
 **Created**: 2026-10-16
-**Updated**: 2026-10-28
-**Status**: 30/32 tareas; recursos y textos aprobados, página real habilitada y recorridos integrados conformes. Revisión manual/fidelidad y build/calificaciónintegrada pendientes.
+**Updated**: 2026-10-30
+**Status**: 32/32 tareas completas para la demo publicada. Revisión específica de teclado/VoiceOver confirmada por la responsable el2026-10-30. Producción diferida. [Evidencia](evidence/demo-review-2026-10-30.md).
 **Input**: `/speckit-specify 004`: desarrollar la feature existente sin ampliar el alcance.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), A01–A07, PDF 3 y
 [constitución 1.0.0](../../.specify/memory/constitution.md), especialmente CONST-03/08–10.
+
+## Alcance vigente de la demo — 2026-10-30
+
+Se continúa la demo publicada con plataformas pendientes válidas y materiales aprobados. [Decisiones y límites](demo-scope-2026-10-30.md). La aceptación usa build:demo; habilitación futura de tiendas y build productivo009/010 se conservan pendientes. La revisión manual de App se registra por separado.
 
 ## User Scenarios & Testing
 

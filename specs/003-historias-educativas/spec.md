@@ -2,11 +2,15 @@
 
 **Feature Directory**: `specs/003-historias-educativas`
 **Created**: 2026-10-16
-**Updated**: 2026-10-17
-**Status**: Textos públicos aprobados explícitamente el 2026-10-28; guard editorial y render HTTP200. Cuatro historias publicadas/activas localmente con mandato de la responsable; revisión manual final y cierre productivo pendientes.
+**Updated**: 2026-10-30
+**Status**: 35/35 tareas cerradas para la demo publicada el 2026-10-30; producción diferida. Ver [evidencia](evidence/demo-closure-2026-10-30.md).
 **Input**: `/speckit-specify 003`: desarrollar el spec existente sin ampliar alcance.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), H01–H12, PDF 2 y
 [constitución 1.0.0](../../.specify/memory/constitution.md), en particular CONST-03/05/07–10.
+
+## Alcance vigente de cierre demo — 2026-10-30
+
+Continuación de la demo tras001/002: [alcance y límites](demo-scope-2026-10-30.md). Se mantienen contenidos y comportamientos educativos H01–H12; el catálogo público usa /demo/catalog.json generado desde materiales aprobados y el build de aceptación es build:demo. Gestión/APIproductiva007 y operación009/010 quedan diferidas. La revisión humana de audio/transcripciones y lector se registra por separado, sin inventar ejecución por aprobar alcance.
 
 ## User Scenarios & Testing
 

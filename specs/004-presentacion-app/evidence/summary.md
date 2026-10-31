@@ -1,3 +1,7 @@
+# Estado vigente — 2026-10-30
+
+32/32 tareas de la demo. T029/T030 cerradas; revisión específica de teclado/VoiceOver confirmada por la responsable.48/48 pruebas de presentación,9/9 integración publicada y53/53 Node. Recursos/textos oficiales aprobados; comparación nueva contra PDF3 y producción diferidas. [Resultados y límites](demo-review-2026-10-30.md). Registros siguientes históricos.
+
 # Estado vigente tras aprobación editorial — 2026-10-28
 
 30/32tareas. Recursos/copy aprobados; guard pasa y App real200.53/53Node,9/9integración y20/20adaptación/render. T029manual/fidelidad y T030build/calificaciónintegrada pendientes. [Evidencia actual](approval-2026-10-28.md). Los registros siguientes son históricos.

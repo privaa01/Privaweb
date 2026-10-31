@@ -1,3 +1,7 @@
+# Estado vigente — 2026-10-30
+
+003 cerrada para la demo: 35/35. [Evidencia y límites](demo-closure-2026-10-30.md). Registros anteriores se conservan como históricos.
+
 # Inventario de materiales — Historias003
 
 Actualización: 2026-10-26 (America/Bogota).

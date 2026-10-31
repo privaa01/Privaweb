@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-30",
+  "scope": "published-demo-stories",
+  "catalogBytes": 14224,
+  "catalogCacheControl": "no-store",
+  "pdfSha256": "a8a9a7eb01c3c7ade87ee907347c25f84fd410b69388032af99a5f3183fd3b28",
+  "stories": [
+    {
+      "id": "enlace-falso",
+      "completeDraftMatch": true,
+      "transcriptMatch": true,
+      "options": 3,
+      "audioSha256": "28a3a3c0aed63c378163bc1c1920b407322b7a2b5becaa6e054228191c66654e",
+      "audioBytes": 3444518,
+      "rangeStatus": 206,
+      "imageMatch": true,
+      "audioCacheControl": "public, max-age=3600"
+    },
+    {
+      "id": "llamada-sospechosa",
+      "completeDraftMatch": true,
+      "transcriptMatch": true,
+      "options": 3,
+      "audioSha256": "e2b5cc15f2f5441b5e5af0f0b0d34958d0b9ce718de5b1eea02d361ab1ec5c4a",
+      "audioBytes": 2870231,
+      "rangeStatus": 206,
+      "imageMatch": true,
+      "audioCacheControl": "public, max-age=3600"
+    },
+    {
+      "id": "contrasena-compartida",
+      "completeDraftMatch": true,
+      "transcriptMatch": true,
+      "options": 3,
+      "audioSha256": "9c2e77e15c19926031f11c18d731771fb08918818bf2f5eb2917b04d67f69ba0",
+      "audioBytes": 3344328,
+      "rangeStatus": 206,
+      "imageMatch": true,
+      "audioCacheControl": "public, max-age=3600"
+    },
+    {
+      "id": "numero-desconocido",
+      "completeDraftMatch": true,
+      "transcriptMatch": true,
+      "options": 3,
+      "audioSha256": "de2e1d6f92ec362d70b2038350efea267e62c007970f43dd75878f49c21fcc55",
+      "audioBytes": 2652951,
+      "rangeStatus": 206,
+      "imageMatch": true,
+      "audioCacheControl": "public, max-age=3600"
+    }
+  ],
+  "listeningVerification": {
+    "source": "owner-reported manual review",
+    "date": "2026-10-30",
+    "statement": "Sí, los cuatro coinciden con sus transcripciones"
+  },
+  "screenReaderReview": {
+    "source": "owner-reported manual review",
+    "technology": "VoiceOver",
+    "statement": "Sí, todo funciona con teclado y VoiceOver",
+    "scope": "reproductores, transcripciones y ejercicios; browser/OS version not supplied"
+  },
+  "browserTests": {
+    "matrix": 42,
+    "functional": 9,
+    "passed": 51,
+    "failed": 0,
+    "engines": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ]
+  }
+}

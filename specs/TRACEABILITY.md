@@ -14,25 +14,25 @@
 | I02 | Quiénes somos | [002-inicio-institucional](002-inicio-institucional/spec.md) | Inicio aprobado; contrato y navegación real a Historias pasan en tres motores; build completo pendiente010/009 |
 | I03 | Qué hacemos: introducción y cuatro tarjetas | [002-inicio-institucional](002-inicio-institucional/spec.md) | Inicio aprobado; contrato y navegación real a Historias pasan en tres motores; build completo pendiente010/009 |
 | I04 | CTA final de Inicio | [002-inicio-institucional](002-inicio-institucional/spec.md) | Inicio aprobado; contrato y navegación real a Historias pasan en tres motores; build completo pendiente010/009 |
-| H01 | Hero Historias | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
-| H02 | Casos destacados: encabezado y Ver más historias | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
-| H03 | Caso 1: Enlace falso / Ingeniería social | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
-| H04 | Caso 2: La llamada sospechosa / Suplantación de identidad | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
-| H05 | Caso 3: La contraseña compartida / Contraseñas | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
-| H06 | Audio de cada caso | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
-| H07 | Ejercicio Caso 1 | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
-| H08 | Ejercicio Caso 2 | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
-| H09 | Ejercicio Caso 3 | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
-| H10 | Metodología con imagen | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
-| H11 | Identidad en dos bloques y SABER MÁS | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
-| H12 | CTA final de Historias | [003-historias-educativas](003-historias-educativas/spec.md) | Contrato verificado; cierre integrado pendiente |
-| A01 | Hero de Priva App | [004-presentacion-app](004-presentacion-app/spec.md) | Contrato verificado; cierre integrado pendiente |
-| A02 | Qué es Priva App y mockup Conversar | [004-presentacion-app](004-presentacion-app/spec.md) | Contrato verificado; cierre integrado pendiente |
-| A03 | Tres beneficios del prototipo | [004-presentacion-app](004-presentacion-app/spec.md) | Contrato verificado; cierre integrado pendiente |
-| A04 | Cómo se usa el prototipo | [004-presentacion-app](004-presentacion-app/spec.md) | Contrato verificado; cierre integrado pendiente |
-| A05 | Para qué serviría Priva App | [004-presentacion-app](004-presentacion-app/spec.md) | Contrato verificado; cierre integrado pendiente |
-| A06 | Descarga por plataforma | [004-presentacion-app](004-presentacion-app/spec.md) | Contrato verificado; cierre integrado pendiente |
-| A07 | Texto bajo descargas | [004-presentacion-app](004-presentacion-app/spec.md) | Contrato verificado; cierre integrado pendiente |
+| H01 | Hero Historias | [003-historias-educativas](003-historias-educativas/spec.md) | Demo cerrada35/35; producción diferida |
+| H02 | Casos destacados: encabezado y Ver más historias | [003-historias-educativas](003-historias-educativas/spec.md) | Demo cerrada35/35; producción diferida |
+| H03 | Caso 1: Enlace falso / Ingeniería social | [003-historias-educativas](003-historias-educativas/spec.md) | Demo cerrada35/35; producción diferida |
+| H04 | Caso 2: La llamada sospechosa / Suplantación de identidad | [003-historias-educativas](003-historias-educativas/spec.md) | Demo cerrada35/35; producción diferida |
+| H05 | Caso 3: La contraseña compartida / Contraseñas | [003-historias-educativas](003-historias-educativas/spec.md) | Demo cerrada35/35; producción diferida |
+| H06 | Audio de cada caso | [003-historias-educativas](003-historias-educativas/spec.md) | Demo cerrada35/35; producción diferida |
+| H07 | Ejercicio Caso 1 | [003-historias-educativas](003-historias-educativas/spec.md) | Demo cerrada35/35; producción diferida |
+| H08 | Ejercicio Caso 2 | [003-historias-educativas](003-historias-educativas/spec.md) | Demo cerrada35/35; producción diferida |
+| H09 | Ejercicio Caso 3 | [003-historias-educativas](003-historias-educativas/spec.md) | Demo cerrada35/35; producción diferida |
+| H10 | Metodología con imagen | [003-historias-educativas](003-historias-educativas/spec.md) | Demo cerrada35/35; producción diferida |
+| H11 | Identidad en dos bloques y SABER MÁS | [003-historias-educativas](003-historias-educativas/spec.md) | Demo cerrada35/35; producción diferida |
+| H12 | CTA final de Historias | [003-historias-educativas](003-historias-educativas/spec.md) | Demo cerrada35/35; producción diferida |
+| A01 | Hero de Priva App | [004-presentacion-app](004-presentacion-app/spec.md) | Demo cerrada32/32; producción diferida |
+| A02 | Qué es Priva App y mockup Conversar | [004-presentacion-app](004-presentacion-app/spec.md) | Demo cerrada32/32; producción diferida |
+| A03 | Tres beneficios del prototipo | [004-presentacion-app](004-presentacion-app/spec.md) | Demo cerrada32/32; producción diferida |
+| A04 | Cómo se usa el prototipo | [004-presentacion-app](004-presentacion-app/spec.md) | Demo cerrada32/32; producción diferida |
+| A05 | Para qué serviría Priva App | [004-presentacion-app](004-presentacion-app/spec.md) | Demo cerrada32/32; producción diferida |
+| A06 | Descarga por plataforma | [004-presentacion-app](004-presentacion-app/spec.md) | Demo cerrada32/32; producción diferida |
+| A07 | Texto bajo descargas | [004-presentacion-app](004-presentacion-app/spec.md) | Demo cerrada32/32; producción diferida |
 | C01 | Hero Contacto e imagen | [005-contacto-publico](005-contacto-publico/spec.md) | No ejecutado |
 | C02 | Indicadores del hero de Contacto | [005-contacto-publico](005-contacto-publico/spec.md) | No ejecutado |
 | C03 | Tarjeta Instagram | [005-contacto-publico](005-contacto-publico/spec.md) | No ejecutado |
@@ -492,3 +492,9 @@ Sin commit/push/despliegue en esta incorporación. [Recursos](001-navegacion-glo
 2026-10-30 — 001 cerrada para la demo aprobada:28/28. G01–G03 y G04/G06 demo; matriz14/14 (1008activaciones), publicación15/15, revisión humana teclado/VoiceOver reportada. Foco del footer corregido2,66→11,12:1 y publicado. G05/administración y requisitos de producción diferidos explícitamente. Evidencia:001-navegacion-global/evidence/demo-closure-2026-10-30.md.
 
 2026-10-30 — 002 cerrada para la demo publicada:33/33. I01–I04/SC-001–005:matriz60/60previa y regresión18/18actual, imágenes oficiales, check/build/paridad demo conformes. T027/T031/T028completas en este alcance; operación y build productivos diferidos. Evidencia:002-inicio-institucional/evidence/demo-closure-2026-10-30.md.
+
+2026-10-30 —003 cerrada35/35 para la demo:51/51 pruebas publicadas, cuatro materiales conformes y confirmación de escucha/teclado/VoiceOver de la responsable. [Evidencia y límites](003-historias-educativas/evidence/demo-closure-2026-10-30.md).
+
+2026-10-30 —004:31/32 tareas demo; T030 completa, T029 pendiente de teclado/VoiceOver específico.48/48 pruebas publicadas de presentación,9/9 integración y53/53 Node. [Evidencia](004-presentacion-app/evidence/demo-review-2026-10-30.md).
+
+2026-10-30 —004 cerrada32/32 para la demo tras confirmación específica de teclado/VoiceOver de la responsable. [Evidencia](004-presentacion-app/evidence/demo-review-2026-10-30.md).

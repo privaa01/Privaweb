@@ -2,6 +2,10 @@
 
 Fecha2026-10-17. Contratos de página/configuración, no API ni instalador nuevo.
 
+## Alcance demo vigente
+
+Para la demo se usa DemoLayout y el footer aprobado de001; recursos y contenido de App se mantienen. C5/SC-006 conserva la aceptación visual previa de la demo y exige revisión específica de lector; un cotejo nuevo contra PDF3 se difiere a producción. T030 verifica build:demo y el estado real00, sin habilitar tiendas ficticias. [Alcance](../demo-scope-2026-10-30.md).
+
 ## C1 — Composición y contenido (A01–A05)
 
 /app.html, PublicLayout pageId=app/contentLayout=full, lang=es, un h1. Ordenhero→overview con

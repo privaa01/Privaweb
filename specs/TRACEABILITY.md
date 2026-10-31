@@ -498,3 +498,9 @@ Sin commit/push/despliegue en esta incorporación. [Recursos](001-navegacion-glo
 2026-10-30 —004:31/32 tareas demo; T030 completa, T029 pendiente de teclado/VoiceOver específico.48/48 pruebas publicadas de presentación,9/9 integración y53/53 Node. [Evidencia](004-presentacion-app/evidence/demo-review-2026-10-30.md).
 
 2026-10-30 —004 cerrada32/32 para la demo tras confirmación específica de teclado/VoiceOver de la responsable. [Evidencia](004-presentacion-app/evidence/demo-review-2026-10-30.md).
+
+2026-10-30 —005 cerrada53/53 para la demo ficticia publicada:45/45 matriz,15 condiciones de reglas y3 navegadores/guardado real; revisión específica teclado/VoiceOver confirmada. Se restauraron reglas limitadas y corrigieron selectores WebKit. [Evidencia y límites](005-contacto-publico/demo-review-2026-10-30.md).
+
+2026-10-30 —005: corregida simplificación visual indebida de Contacto tras observación de la responsable. Hero/ilustración, Instagram, columnas/orden móvil y cierre recuperados; envío sigue ficticio. T045 reabierta para aceptación visual,52/53. Ver005/wireframe-correction-2026-10-30.md.
+
+2026-10-30 —005: aceptación expresa de Contacto corregido («esta perfecto»). T045 cerrada;53/53 tareas demo. [Evidencia](005-contacto-publico/wireframe-correction-2026-10-30.md).

@@ -2,6 +2,10 @@
 
 Fecha 2026-10-17. Diseño previo a implementación; no endpoint desplegado ni proveedor configurado.
 
+## Perfil demo publicado — vigente2026-10-30
+
+El contratoC1–C6 siguiente se conserva para producto completo/servicio local. La demo conserva la estructura del wireframe con controles ficticios y Firestore REST/create-only, según [alcance](../demo-scope-2026-10-30.md). No cumple ni afirma ledger/replay/retención productiva por esa conexión. Sin correo ni consultas reales; aceptación por build:demo y pruebas públicas/operador.
+
 ## C1 — Documento y formulario
 
 /contacto.html, PublicLayout pageId=contacto/contentLayout=full, lang=es/unh1. OrdenPDF4:

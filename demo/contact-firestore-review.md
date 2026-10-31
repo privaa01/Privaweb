@@ -1,3 +1,15 @@
+# Aceptación del diseño corregido
+
+La responsable confirmó «esta perfecto» tras ver Contacto publicado con los bloques recuperados. T045 cerrada;005 completa53/53 para la demo. Registros siguientes históricos.
+
+# Corrección visual posterior
+
+Contacto recupera hero/imagen oficial, Instagram, columnas y bloque final. T045 visual reabierta tras observación de la responsable. [Detalle](../specs/005-contacto-publico/wireframe-correction-2026-10-30.md). Las pruebas de reglas/persistencia siguientes conservan su alcance.
+
+# Revalidación vigente —2026-10-30
+
+Reglas limitadas restablecidas y tamaño de selectores WebKit corregido/publicado.45/45 matriz y15 condiciones de reglas+3recorridos reales conformes; manual teclado/VoiceOver confirmado. [Cierre005 y límites](../specs/005-contacto-publico/demo-review-2026-10-30.md). Registro siguiente histórico.
+
 # Contacto demo en Firestore
 
 2026-10-28. Cambio expresamente solicitado por la responsable: conexión directa sin backend propio y publicación de la demo.

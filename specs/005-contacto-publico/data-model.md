@@ -2,6 +2,10 @@
 
 Diseño 2026-10-17. Entidades de contrato; no se creó DB ni se guardaron consultas en esta fase.
 
+## Modelo demo activo
+
+Separado del modelo productivo siguiente: demo_contact con mode, revision, nameOrAlias/email/message ficticios predefinidos, consent y createdAt del servidor; UUID/create-only. Sin estado Pendiente, ledger ni respuestas administrativas. [Alcance](demo-scope-2026-10-30.md).
+
 ## ContactInput / NormalizedContact (v1)
 
 | Campo | Regla compartida |

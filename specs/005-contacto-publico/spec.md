@@ -2,11 +2,15 @@
 
 **Feature Directory**: `specs/005-contacto-publico`
 **Created**: 2026-10-16
-**Updated**: 2026-10-27
-**Status**: MVP local integrado y verificado (49/53 tareas); T044 y T050–T053 completas. Entrega productiva pendiente de T045–T048. Solo datos ficticios, sin correo real. Véase [evidence.md](evidence.md).
+**Updated**: 2026-10-30
+**Status**: 53/53 tareas de la demo; diseño corregido aceptado por la responsable el2026-10-30 («esta perfecto»); producción diferida. Véase [demo-review-2026-10-30.md](demo-review-2026-10-30.md).
 **Input**: `/speckit-specify 005`: desarrollar la feature existente, sin ampliar el alcance.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), C01–C07, PDF 4 y
 [constitución 1.0.0](../../.specify/memory/constitution.md), especialmente CONST-05/06/08–10.
+
+## Alcance activo de demo
+
+[Decisión y límites](demo-scope-2026-10-30.md). Se conserva el contrato del producto completo como producción diferida. La demo publicada solo admite valores ficticios predefinidos y no envía correos.
 
 ## Clarifications
 

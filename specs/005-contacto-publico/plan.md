@@ -2,8 +2,12 @@
 
 **Branch real**: `main` | **Date**: 2026-10-17 | **Spec**: [spec.md](spec.md)
 **Feature activa**: `005-contacto-publico`; el BRANCH de scripts es selección SDD, no rama creada.
-**Estado**: MVP local integrado y verificado en 49/53 tareas (2026-10-27); entrega final T045–T048 bloqueada según [evidence.md](evidence.md).
+**Estado**: 53/53 tareas de la demo; diseño corregido aceptado por la responsable el2026-10-30 («esta perfecto»); producción diferida. Véase [demo-review-2026-10-30.md](demo-review-2026-10-30.md).
 **Input**: C01–C07, PDF4/R35, constitución 1.0.0 y aclaración 005 opción A.
+
+## Alcance activo de demo
+
+[Decisión y límites](demo-scope-2026-10-30.md). La demo usa DemoLayout y formulario ficticio directo a Firestore. La arquitectura Node/SQLite y el formulario completo descritos después corresponden al producto completo, no al despliegue demo.
 
 ## Summary
 

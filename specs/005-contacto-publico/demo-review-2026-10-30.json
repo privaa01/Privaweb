@@ -1,0 +1,145 @@
+{
+  "date": "2026-10-30",
+  "timezone": "America/Bogota",
+  "scope": "published-demo-only",
+  "url": "https://priva-785cb.web.app/contacto.html",
+  "tasks": {
+    "complete": 53,
+    "total": 53,
+    "pending": []
+  },
+  "matrix": {
+    "startTime": "2026-10-31T00:14:34.130Z",
+    "duration": 31704.134000000002,
+    "expected": 45,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "rulesChecks": [
+    "valid-create-and-admin-verification",
+    "real-email-denied",
+    "free-message-denied",
+    "free-alias-denied",
+    "extra-field-denied",
+    "missing-confirmation-denied",
+    "wrong-mode-denied",
+    "wrong-revision-denied",
+    "fake-time-denied",
+    "other-collection-denied",
+    "invalid-id-denied",
+    "read-denied",
+    "list-denied",
+    "delete-denied",
+    "update-denied"
+  ],
+  "browsers": [
+    {
+      "name": "chromium",
+      "submit": 200,
+      "persisted": true,
+      "consentRequired": true,
+      "noDoubleSubmit": true,
+      "noPublicRead": true,
+      "axeViolations": 0,
+      "mobile200NoOverflow": true
+    },
+    {
+      "name": "firefox",
+      "submit": 200,
+      "persisted": true,
+      "consentRequired": true,
+      "noDoubleSubmit": true,
+      "noPublicRead": true,
+      "axeViolations": 0,
+      "mobile200NoOverflow": true
+    },
+    {
+      "name": "webkit",
+      "submit": 200,
+      "persisted": true,
+      "consentRequired": true,
+      "noDoubleSubmit": true,
+      "noPublicRead": true,
+      "axeViolations": 0,
+      "mobile200NoOverflow": true
+    }
+  ],
+  "manualReview": {
+    "source": "owner-reported",
+    "statement": "Sí, todo funciona con teclado y VoiceOver",
+    "scope": "opciones ficticias, correo solo lectura, confirmación, envío, resultado y nueva prueba",
+    "versions": "not supplied"
+  },
+  "fixes": {
+    "firestore": "Published restrictions restored after unauthenticated invalid-email write unexpectedly returned200; final15 checks passed",
+    "webkitSelectHeightsBefore": 26,
+    "webkitSelectHeightsAfter": [
+      47,
+      68
+    ]
+  },
+  "cleanup": {
+    "finalRunCreatedDocumentsRemoved": 4,
+    "failedRunCreatedDocumentsRemoved": 2,
+    "targetsOtherThanOwnedSyntheticDocuments": "none"
+  },
+  "htmlParity": [
+    {
+      "path": "/index.html",
+      "status": 200,
+      "sha256": "bb307733afb33f4b3bb4864e4d9df7800a41aa5899fc7302fa30cba2e7996c12",
+      "matchesBuild": true
+    },
+    {
+      "path": "/historias.html",
+      "status": 200,
+      "sha256": "78f0e4ea54179a3ef16a158ef408ac3e4ce2f302f630c879c0dc92e949448d9e",
+      "matchesBuild": true
+    },
+    {
+      "path": "/app.html",
+      "status": 200,
+      "sha256": "ee8fab96147284b096b0ac2f19790fe2e192d4f9eb435e07f8d6cc0c7065e7da",
+      "matchesBuild": true
+    },
+    {
+      "path": "/contacto.html",
+      "status": 200,
+      "sha256": "7d4ed6a5bcf20162c15428425bcc0e3f0b20558cccf6f63cd3d4b02539b1aa65",
+      "matchesBuild": true
+    },
+    {
+      "path": "/terminos.html",
+      "status": 200,
+      "sha256": "54527ce64158440a71b3fd33842809a6055edee4c9c5b3acbed4b05e8e5d050c",
+      "matchesBuild": true
+    },
+    {
+      "path": "/manifiesto-datos.html",
+      "status": 200,
+      "sha256": "787c744cffa15043a2a45a78e5d90d30d08fd5f599eb9bfd8578aa0baed201cc",
+      "matchesBuild": true
+    },
+    {
+      "path": "/404.html",
+      "status": 200,
+      "sha256": "e2cf00390d11e8fcb0260c8ec88e93ac0d5d8b94b77289d10ed013f6905381e4",
+      "matchesBuild": true
+    }
+  ],
+  "check": {
+    "files": 95,
+    "errors": 0,
+    "warnings": 0,
+    "hints": 1
+  },
+  "production": "deferred per demo-scope-2026-10-30.md",
+  "supersedingVisualReview": "wireframe-correction-2026-10-30.md",
+  "visualAcceptance": {
+    "date": "2026-10-30",
+    "source": "owner",
+    "statement": "esta perfecto, realiza commit y sube cambios",
+    "scope": "corrected published demo; not independent original-PDF comparison"
+  }
+}

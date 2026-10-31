@@ -1,3 +1,7 @@
+# Estado vigente — demo2026-10-30
+
+53/53 tareas de la demo; diseño corregido aceptado por la responsable el2026-10-30 («esta perfecto»); producción diferida. Véase [demo-review-2026-10-30.md](demo-review-2026-10-30.md). Revisión específica teclado/VoiceOver confirmada;45/45 matriz publicada,15 restricciones de reglas y3 recorridos reales con lectura privada/limpieza propia. Los registros anteriores de SQLite/MVP se conservan como históricos y no describen el despliegue Firebase actual.
+
 # Evidencia de implementación — 005
 
 **Revisión vigente: 2026-10-27, America/Bogota.** Ejecución solicitada de spec005 después de confirmar Firebase futuro, correo sin proveedor y uso exclusivo de datos ficticios. **MVP local integrado y verificado; 49/53 tareas completas.** T045–T048 conservan condiciones productivas abiertas. El bloque histórico al final describe la primera ejecución, no los bloqueos actuales del Mac.

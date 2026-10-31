@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';import {createRequire} from 'node:module
 mkdirSync('.test-output',{recursive:true});import {randomUUID} from 'node:crypto';
 import {chromium,firefox,webkit} from '@playwright/test';import AxeBuilder from '@axe-core/playwright';
 import {demoWrite,demoEndpoint,demoContact} from '../demo/src/contact-model.ts';
+const base=process.env.PRIVA_DEMO_URL;if(!base)throw Error('PRIVA_DEMO_URL real is required; no fixture fallback.');
 if(!process.env.FIREBASE_TOOLS_LIB)throw Error('Set FIREBASE_TOOLS_LIB to the firebase-tools/lib directory for the authenticated operator.');
 const req=createRequire(process.env.FIREBASE_TOOLS_LIB+'/index.js');const auth=req('./auth');const {requireAuth}=req('./requireAuth');const {Client}=req('./apiv2');const options={project:'priva-785cb',nonInteractive:true};auth.setActiveAccount(options,auth.getGlobalDefaultAccount());await requireAuth(options);const admin=new Client({urlPrefix:'https://firestore.googleapis.com',apiVersion:'v1'});
 const docBase='/projects/priva-785cb/databases/(default)/documents/';
@@ -23,10 +24,9 @@ try{
  ['fake-time',p=>{p.writes[0].updateTransforms=[];p.writes[0].update.fields.createdAt={timestampValue:'2000-01-01T00:00:00Z'};}],
  ['other-collection',p=>p.writes[0].update.name=p.writes[0].update.name.replace('/demo_contact/','/other_collection/')],
  ['invalid-id',p=>p.writes[0].update.name=p.writes[0].update.name.replace(/[^/]+$/,'invalid-id')],
- ]){const p=valid();mutate(p);const r=await commit(p);assert.equal(r.status,403,label);outcomes.push(label+'-denied');}
+ ]){const p=valid();mutate(p);const target=p.writes[0].update.name;if(target.includes('/demo_contact/')&&!target.endsWith('/invalid-id'))ids.push(target.split('/').at(-1));const r=await commit(p);assert.equal(r.status,403,label);outcomes.push(label+'-denied');}
  for(const [label,url,method] of [['read','demo_contact/'+id,'GET'],['list','demo_contact','GET'],['delete','demo_contact/'+id,'DELETE']]){const r=await fetch('https://firestore.googleapis.com/v1'+docBase+url,{method});assert.equal(r.status,403,label);outcomes.push(label+'-denied');}
  const update=JSON.parse(JSON.stringify(sample));delete update.writes[0].currentDocument;assert.equal((await commit(update)).status,403);outcomes.push('update-denied');
- const base=process.env.PRIVA_DEMO_URL??'http://127.0.0.1:4330';
  for(const [name,type] of Object.entries({chromium,firefox,webkit})){
   const browser=await type.launch(name==='chromium'?{executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'}:{});
   try{const context=await browser.newContext();const page=await context.newPage();const requests=[];page.on('request',r=>{if(r.url()===demoEndpoint)requests.push(r);});await page.goto(base+'/contacto.html');
@@ -43,5 +43,5 @@ try{
    browsers.push({name,submit:200,persisted:true,consentRequired:true,noDoubleSubmit:true,noPublicRead:true,axeViolations:0,mobile200NoOverflow:true});
   }finally{await browser.close();}
  }
- console.log(JSON.stringify({rulesChecks:outcomes.length,browsers},null,2));writeFileSync('.test-output/demo-contact-results.json',JSON.stringify({date:'2026-10-28',rulesChecks:outcomes,browsers},null,2));
-}finally{for(const id of ids)await admin.delete(docBase+'demo_contact/'+id);console.log('Synthetic test documents removed:',ids.length);}
+ console.log(JSON.stringify({rulesChecks:outcomes.length,browsers},null,2));writeFileSync('.test-output/demo-contact-results.json',JSON.stringify({date:new Intl.DateTimeFormat('en-CA',{timeZone:'America/Bogota',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()),rulesChecks:outcomes,browsers},null,2));
+}finally{for(const id of ids){try{await admin.delete(docBase+'demo_contact/'+id);}catch(error){if(error.status!==404)throw error;}}console.log('Synthetic test document targets cleaned:',ids.length);}

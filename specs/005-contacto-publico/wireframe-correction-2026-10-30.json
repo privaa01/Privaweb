@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-30",
+  "url": "https://priva-785cb.web.app/contacto.html",
+  "published": true,
+  "htmlMatchesBuild": true,
+  "tests": {
+    "startTime": "2026-10-31T00:19:37.970Z",
+    "duration": 43526.354999999996,
+    "expected": 45,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "visualAcceptance": {
+    "date": "2026-10-30",
+    "source": "owner",
+    "statement": "esta perfecto, realiza commit y sube cambios",
+    "scope": "corrected published demo; not independent original-PDF comparison"
+  },
+  "tasksComplete": 53,
+  "tasksTotal": 53
+}

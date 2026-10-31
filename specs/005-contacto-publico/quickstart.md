@@ -1,8 +1,12 @@
 # Guía de validación — 005
 
-Actualización 2026-10-27. Guía de reproducción de la implementación local y del MVP integrado. Resultados y bloqueos vigentes en [evidence.md](evidence.md); no hay despliegue productivo.
+Actualización2026-10-30. 53/53 tareas de la demo; diseño corregido aceptado por la responsable el2026-10-30 («esta perfecto»); producción diferida. Véase [demo-review-2026-10-30.md](demo-review-2026-10-30.md).
 
-## MVP integrado: ejecutar Contacto con datos ficticios
+## Demo publicada activa
+
+Reproducción de Firestore y matriz en [demo-review-2026-10-30.md](demo-review-2026-10-30.md); decisiones/límites en [alcance](demo-scope-2026-10-30.md). Los comandos siguientes corresponden al perfil local Node/SQLite histórico y al producto completo; no arrancan ni certifican la demo Firebase.
+
+## MVP integrado local: ejecutar Contacto con datos ficticios
 
 Node 24+ y dependencias del proyecto. Desde el checkout existente:
 

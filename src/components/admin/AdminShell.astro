@@ -1,9 +1,12 @@
 ---
+import AdminBrand from './AdminBrand.astro';
 import AdminNavigation from './AdminNavigation.astro';
+import AdminIcon from './AdminIcon.astro';
 interface Props {section?:'panel'|'historias'|'contacto'}
 const {section='panel'}=Astro.props;
+const hasManagement=section==='historias'&&Astro.slots.has('default');
 const title=section==='historias'?'Historias':section==='contacto'?'Contacto privado':'Panel administrativo';
 ---
 <main class="admin-shell"><h1 data-access-title>Acceso administrativo</h1><p role="status" aria-live="polite" data-session-feedback>Comprobando acceso…</p><div class="admin-retry"><a href="/admin/login">Inicia sesión</a><button type="button" data-logout-retry hidden>Reintentar cierre</button></div>
-<div data-private hidden><aside><a class="admin-brand" href="/admin">Priva</a><AdminNavigation/><p data-identity></p></aside><section><p class="admin-eyebrow">Consola administrativa</p><h1>{title}</h1>{section==='panel'?<p>Accede a Historias o Contacto privado desde la navegación.</p>:<p>{section==='historias'?'Prepara borradores y controla su publicación en la web.':'Gestiona las consultas privadas recibidas desde Contacto.'}</p>}<slot/></section></div><noscript><p>Activa JavaScript para comprobar la sesión y mostrar el panel.</p></noscript></main>
+<div data-private hidden><aside class="admin-sidebar"><AdminBrand href="/admin"/><AdminNavigation section={section}/><div class="admin-account"><AdminIcon name="user"/><p data-identity></p><button type="button" data-logout aria-label="Cerrar sesión" title="Cerrar sesión"><AdminIcon name="logout"/></button></div></aside><div class="admin-main"><header class="admin-topbar"><p class="admin-eyebrow">Consola administrativa</p></header><section class="admin-workspace">{!hasManagement&&<><h1>{title}</h1>{section==='panel'?<p>Accede a Historias o Contacto privado desde la navegación.</p>:<p>{section==='historias'?'Prepara borradores y controla su publicación en la web.':'Gestiona las consultas privadas recibidas desde Contacto.'}</p>}</>}<slot/></section></div></div><noscript><p>Activa JavaScript para comprobar la sesión y mostrar el panel.</p></noscript></main>
 <script>import '../../scripts/admin-session';</script>

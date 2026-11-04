@@ -2,6 +2,12 @@ import { spawn, spawnSync, type ChildProcess } from "node:child_process";
 import { existsSync, openSync, closeSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { privatePath } from "./storage.ts";
+export const macLockHelper = fileURLToPath(new URL('../../scripts/privacy-flock-macos.py', import.meta.url));
+function lockCommand(args: string[]) {
+  return process.platform === 'darwin'
+    ? { command: '/usr/bin/python3', args: [macLockHelper, ...args] }
+    : { command: 'flock', args };
+}
 /** flock holder releases on stdin EOF or process death. Never unlink the shared inode. */
 export async function sharedLock(path: string) {
   privatePath(path, true);
@@ -13,9 +19,7 @@ export async function sharedLock(path: string) {
     }
   }
   privatePath(path);
-  const child = spawn(
-    "flock",
-    [
+  const invocation = lockCommand([
       "--shared",
       "--timeout",
       "5",
@@ -23,7 +27,10 @@ export async function sharedLock(path: string) {
       process.execPath,
       "-e",
       "console.log('ready');process.stdin.resume();process.stdin.on('end',()=>process.exit(0));",
-    ],
+    ]);
+  const child = spawn(
+    invocation.command,
+    invocation.args,
     { stdio: ["pipe", "pipe", "ignore"] },
   );
   await new Promise<void>((resolve, reject) => {
@@ -62,16 +69,17 @@ export function exclusiveRun(lock: string, args: string[]) {
     }
   }
   privatePath(lock);
-  const result = spawnSync(
-    "flock",
-    [
+  const invocation = lockCommand([
       "--exclusive",
       "--nonblock",
       lock,
       process.execPath,
       "--experimental-strip-types",
       ...args,
-    ],
+    ]);
+  const result = spawnSync(
+    invocation.command,
+    invocation.args,
     {
       stdio: ["ignore", "pipe", "pipe"],
       timeout: 30000,

@@ -46,3 +46,7 @@ continúan null hasta evidencia productiva verificable por hash/revisión/fecha/
 Firebase elegido para alojamiento de la página. Servicio de datos privados, región, subservicios, ubicación/ciclos de copias y configuración aún por definir/verificar. Correo en modo de prueba sin proveedor real; no hay entrega externa acreditada. La etapa MVP no determina identidades autorizadas ni permite inferir ausencia de copias. Los scopes productivos permanecen sin calificar. Ver [decisiones del MVP y marco normativo](../010-documentos-recuperacion/mvp-decisions-2026-10-27.md).
 
 2026-10-27 — Confirmación de la responsable: MVP de Contacto solo con datos ficticios de prueba. Se añade esta limitación a Términos y Manifiesto en revisión. Sin proveedor de correo real ni recepción de consultas reales; se mantienen controles y condiciones de cierre productivo para una etapa posterior.
+
+## Inventario actual — 2026-11-04
+
+Panel localSQLite y Firestore(default)/nam5 con registros ficticios. La responsable rechazó copias y envío de códigos por correo; se ejecuta conservación90d desde el equipo, sin serviciosBlaze. No hay restauración desde copias dePriva en este perfil. Firestore mantiene IDs mínimos privados anti-recreación, sin texto/correo/nombre; no son copias de conversación. Ciclos internosGoogle/TimeMachine/exportaciones ajenas no calificados. Operación detallada en computer-execution-2026-11-04.md.

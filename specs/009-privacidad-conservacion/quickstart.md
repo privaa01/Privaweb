@@ -22,7 +22,7 @@ npm run check:admin:service
 Pruebas implementadas, sin correo o datos de producción:
 
 ```bash
-node --experimental-strip-types --testtests/privacy-*.test.ts
+node --experimental-strip-types --test tests/privacy-*.test.ts
 npx playwright test --config=playwright.privacy.service.config.ts
 ```
 
@@ -119,3 +119,7 @@ Objetivo técnico: lotes100,p95≤5s con1000consultas/10respuestas,30muestras co
 calentamiento; consulta indexada medida aparte. Tick60s y deadlines absolutos no se sustituyen
 por los tiempos acelerados del reloj de prueba. Una hora/24h productivas requieren calificación
 operativa real,además de las pruebas locales de frontera y duración.
+
+## Perfil real gratuito desde el computador — 2026-11-04
+
+Decisión vigente: ambos entornos, sin copias dePriva y sin correo. Inicio/parada con scripts/admin-local.sh; al iniciar realiza mantenimiento y lo repite local60s/Firestore15min, mientras el proceso esté encendido. Inspección manual remota: node scripts/privacy-firestore.mjs --inspect. Ejecución explícita limitada a registros ficticios vencidos: node scripts/privacy-firestore.mjs --execute-demo-only. No imprime datos privados ni usa credenciales en el navegador. El perfil productivo con copias/correo descrito arriba sigue separado; no activarlo por defecto. Ver computer-execution-2026-11-04.md.

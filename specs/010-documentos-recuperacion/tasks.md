@@ -1,7 +1,7 @@
 # Tasks: Documentos informativos y recuperación 404
 
 **Input**: [spec.md](spec.md), [plan.md](plan.md), [research.md](research.md), [data-model.md](data-model.md), [contracts/](contracts/public-documents.md), [quickstart.md](quickstart.md).
-**Fecha**: 2026-10-20. **Rama real**: `main`; selección010. **Estado**: 35/44 tareas verificadas localmente; 9 parciales/bloqueadas. Detalle en `evidence.md`; sin cierre productivo.
+**Fecha**: 2026-10-20. **Rama real**: `main`; selección010. **Estado**: 36/44 tareas verificadas para el alcance actual; 8 parciales/bloqueadas. Detalle en `evidence.md`; sin cierre productivo.
 
 ## Formato y reglas de ejecución
 
@@ -93,7 +93,7 @@ Las pruebas están justificadas por los escenarios/criterios verificables del sp
 - [x] T031 Implementar correspondencia evidencia009 scope `notices`↔huella exacta del bundle/revisión de entrega en `server/privacy/readiness.ts` y `src/config/documents.ts`, mediante entrada explícita o adaptador acíclico sin imports de contenido público hacia servicios; preservar otros scopes/fechas/hashes, sin fabricar evidencia productiva; ejecutar después los casos de T030 y comprobar que pasan.
 - [x] T032 Conectar `scripts/require-documents-publication.mjs`, auxiliares en `scripts/require-pages.mjs` y gate en `package.json` antes de Astro; conservar gates005–009 y sin bypass productivo; comprobar exit no cero con datos actuales y regresión de controles relacionados.
 - [X] T033 [P] Crear/ejecutar V12 en `tests/e2e/documents-accessibility.spec.ts`: auxiliares y aviso a360/390/430/768/1024/1280/1440px, texto200% real, teclado/foco/skip-link/menú/enlaces, contraste/tamaño de controles y axe; sin cortes que impidan leer/recuperarse y sin confundir captura ampliada con texto ampliado.
-- [ ] T034 Registrar revisión manual visual/lector de pantalla, recursos y límites de diseño011 en `specs/010-documentos-recuperacion/accessibility-review.md`; si falta material, navegador o tecnología de asistencia, mantener pendiente, sin certificar fidelidad.
+- [x] T034 Registrar revisión manual visual/lector de pantalla, recursos y límites de diseño011 en `specs/010-documentos-recuperacion/accessibility-review.md`; si falta material, navegador o tecnología de asistencia, mantener pendiente, sin certificar fidelidad.
 - [ ] T035 Auditar tráfico/storage/referrer/logs en documentos, aviso y404 y su integración con recorridos009 en `specs/010-documentos-recuperacion/delivery-review.md`; sin cookies/rastreo nuevos ni datos privados y claims solo tras evidencia real; auditoría local no cierra la productiva.
 - [x] T036 Ejecutar regresión afectada001/005/009 y checks Astro/TypeScript, revisar aislamiento de fixtures y escapes; registrar comandos/resultados únicos y fallos en `specs/010-documentos-recuperacion/evidence.md`, sin repetir suites no afectadas ni contar reintentos como casos nuevos.
 - [ ] T037 Completar datos reales P02, políticas propias de categorías, responsable/canal/proveedores/ubicación/buzones/copias y referencias verificadas en `specs/010-documentos-recuperacion/content-review.md` y `src/config/documents.ts`; bloqueada hasta información oficial, sin elegirla por inferencia ni publicar secretos.
@@ -177,3 +177,7 @@ T037 parcial: Firebase seleccionado para la web y registrado en el borrador; cor
 ## Destinos y accesibilidad completados — 2026-10-28
 
 T028/T033 completas:35/44tareas.9/9pruebas locales reales (6destinos+3tráfico/storage), matriz contractual84celdas/3motores aprobada,27/27Node y Astrocheckconforme. T035avanza solo en auditoría local: no cierra cabecera404,administración ni entrega productiva. Textos continúan en revisión, Contacto solo ficticio. [Evidencia y límites](local-review-2026-10-28.md).
+
+2026-11-03 — Revisión parcial de demoT035/T037/T040/T041/T043: hechos actualizados, 27/27Node y dos casos únicosChrome aprobados, uno por retest;21celdas de lectura al200%. Manual/lector y revisión humana siguen pendientes;35/44sin cambios. Evidencia:demo-review-2026-11-03.md.
+
+2026-11-03 — T034: responsable confirmó expresamente títulos, enlaces y retornoInicio/Contacto de Términos/Privacidad/404 publicados con teclado y VoiceOver. Revisión registrada para la demo actual, junto con las comprobaciones visuales/adaptables y recursos compartidos ya documentados; no certifica fidelidad a un wireframe auxiliar inexistente ni revisión legal/editorial de la versión completa.36/44; ocho cierres originales siguen pendientes.

@@ -3,7 +3,9 @@
 **Date**: 2026-10-20 | **Feature Directory**: `specs/009-privacidad-conservacion` | **Rama real**: `main`.
 **Input**: [spec](spec.md), [plan](plan.md), [research](research.md), [data-model](data-model.md),
 [contrato](contracts/privacy.md), [quickstart](quickstart.md) y constitución del proyecto.
-**Estado**:57/67 tareas verificadas localmente;10 parciales/bloqueadas. [Evidencia y límites](evidence.md). Una tarea local completa no acredita producción ni cierra SC-005/007/008 globalmente.
+**Estado**:59/69 tareas verificadas;10 cierres integrales originales fuera del perfil actual o pendientes. [Evidencia y límites](evidence.md). Una tarea local completa no acredita producción ni cierra SC-005/007/008 globalmente.
+
+2026-11-03: avance parcialT060 en el perfil local006/008,6/6 pruebas de fronteras90d, lecturas sin prolongación, barrido/persistencia y no resurrección. Sin migración009, correo/canal ni calificación de copias/borrado físico; casillas y total sin cambio.
 
 **Format**: `- [ ] Tnnn [P opcional] [USn en historias] Acción y ruta`. Rutas relativas al repositorio;
 los archivos nuevos son objetivos para implementación. Cada tarea enumera dependencias explícitas.
@@ -268,3 +270,11 @@ El checklist de requisitos permanece intacto16/16; sus notas históricas no son 
 ## Progreso documental — 2026-10-27
 
 Registradas las decisiones Firebase/correo de prueba/MVP y referencias colombianas de la responsable. T061 avanza solo en la selección del alojamiento web; proveedor de correo productivo queda diferido expresamente. T062–T065 mantienen requisitos de almacenamiento, copias, operación y evidencia reales. No se cierran casillas por elegir una plataforma o citar normas. Ver [decisiones del MVP y marco normativo](../010-documentos-recuperacion/mvp-decisions-2026-10-27.md).
+
+
+## Perfil gratuito aprobado — 2026-11-04
+
+- [x] T068 Adaptar mantenimiento al kernel macOS sin quitar exclusión/descriptor heredado, verificar la suite009 completa con migración/borrado/restore/dobles e identificar límites de producción.44/44 conforme.
+- [x] T069 Ejecutar conservación90d en SQLite local yFirestore desde el computador, sin copias/correo/Blaze según decisión expresa: drenaje y limpieza, regla anti-recreación, prueba real con vencido/vigente, periodicidad y aviso revisable. Ver computer-execution-2026-11-04.md.
+
+Las casillas originales de calificación de correo/copias/producción no se marcan por funciones rechazadas en el perfil actual. El aviso público actualizado espera revisión humana010; las reglas y el proceso ya están activos.

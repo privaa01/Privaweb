@@ -1,3 +1,21 @@
+# Perfil local funcional activo —2026-10-31
+
+HTTPS4354 conectado a autenticación/SQLite/medios reales;4historias aprobadas en copia local.2/2 pruebas nuevas de ciclo completo conformes. Configuración inicial de contraseña queda a cargo de la responsable. [Funcionamiento y límites](local-functional-2026-10-31.md). No se publica administración enFirebase ni se habilita correo/bandeja no configurados.
+
+# Avance visual del panel —2026-10-31
+
+Estructura del panel actualizada; vista local4353 solo de lectura y datos de maqueta identificados. [Resultados y límites](panel-review-2026-10-31.md).59/63 tareas006 sin cierre adicional. Registros siguientes corresponden a campañas previas.
+
+# Estado vigente —2026-10-31
+
+59/63 tareas verificadas localmente; T058 cerrada con24/24 servicioHTTPS y90/90 UI en3motores. T059 revisión manual/visual parcial; T060–T062 productivas pendientes. [Evidencia](verification-2026-10-31.md). Confianza temporal retirada, iconos refinados y6/6 pruebas focalizadas conformes. Los registros siguientes son históricos.
+
+# Avance vigente —2026-10-31
+
+58/63 tareas verificadas localmente. Banco HTTPS opcional preparado;2/2 pruebas de transporte y8/8 regresión Chromium conformes. T058 sigue pendiente de confianza de certificado y WebKit; T059 de aprobación de textos y revisión manual. Operación productiva T060/T061 y build T062 pendientes.
+
+[Plan HTTPS y pruebas](https-test-plan-2026-10-31.md). [Textos pendientes de revisión](text-review-2026-10-31.md). No se modificó Firebase, confianza del sistema, cuentas reales ni correo externo. Checklist16/16; sin hooks. Los registros siguientes son históricos.
+
 # Estado vigente — 2026-10-28
 
 T058parcial:90/90UI en Chromium/Firefox/WebKit;16/24servicio real (8Chromium+8Firefox),8fallosWebKit por rechazo de cookieSecure sobreHTTPdel banco. Corregidos aislamiento de cuentas, servidorUI y tecladoMac en tests. Se requiereHTTPSconfiable para calificar WebKit del servicio.58/63tareas; demo pública intacta. [Detalle y comandos](revalidation-2026-10-28.md). Registros de2026-10-19 siguientes históricos.
@@ -140,3 +158,6 @@ Provider falla fuera del request, mediante doble privado. El cuerpo/status/heade
 
 La lectura/revisión de checklist de requisitos fue16/16 PASS, sin modificar sus casillas ni atribuirles implementación.
 No hay `.specify/extensions.yml`: hooks before/after no registrados. Sin commit, push ni despliegue automático.
+# Confirmación del acceso local — 2026-11-03
+
+La responsable confirmó que el inicio de sesión está bien tras configurar personalmente su acceso. Observación del navegador integrado en https://localhost:4354/admin: «Sesión verificada» y gestor con cuatro historias activas. No se capturaron campos de contraseña ni se usó su cuenta para mutaciones de prueba. Producción, recuperación por correo y revisión manual de accesibilidad administrativa siguen separadas de esta confirmación.

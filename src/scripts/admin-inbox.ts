@@ -2,6 +2,7 @@ import { observeAdminAccess, inboxRequest } from "./admin-session";
 import { replyText } from "../lib/inbox-validation";
 const root = document.querySelector<HTMLElement>("[data-inbox]");
 if (root) {
+  const repliesDisabled = root.dataset.repliesDisabled === "true";
   const find = <T extends HTMLElement>(s: string) => root.querySelector<T>(s)!;
   const list = find("[data-inbox-list]"),
     detail = find("[data-inbox-detail]"),
@@ -41,8 +42,8 @@ if (root) {
   function controls() {
     find("[data-reply-count]").textContent =
       `${[...text.value].length} / 5000 caracteres`;
-    send.disabled = !access || posting || !!operation || !reviewed.checked;
-    text.readOnly = posting || !!operation;
+    send.disabled = repliesDisabled || !access || posting || !!operation || !reviewed.checked;
+    text.readOnly = repliesDisabled || posting || !!operation;
     check.hidden = !operation;
   }
   function dirty() {
@@ -302,7 +303,7 @@ if (root) {
   }
   find<HTMLFormElement>("[data-reply-form]").onsubmit = async (e) => {
     e.preventDefault();
-    if (!access || posting || operation) return;
+    if (repliesDisabled || !access || posting || operation) return;
     if (!reviewed.checked) {
       error.textContent =
         "Revisa la consulta y su historial actual antes de enviar.";

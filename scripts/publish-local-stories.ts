@@ -1,5 +1,5 @@
 // Explicit operator command. No HTTP route, credentials, fixture data or automatic startup.
-import {readFileSync,writeFileSync,existsSync} from 'node:fs';
+import {readFileSync,writeFileSync,existsSync,realpathSync,statSync} from 'node:fs';
 import {Readable} from 'node:stream';
 import type {IncomingMessage} from 'node:http';
 import {randomUUID,createHash} from 'node:crypto';
@@ -43,12 +43,14 @@ try{
  const fourth=JSON.parse(readFileSync(resolve('content/stories/drafts/numero-desconocido.json'),'utf8'));
  fourth.imageAlt=initialStoryImages['llamada-sospechosa'].alt;
  if(createHash('sha256').update(JSON.stringify(fourth)).digest('hex')!==mandate.stories['numero-desconocido'])throw Error('Changed fourth authorized content');
- const receiptPath=resolve('specs/003-historias-educativas/evidence/local-fourth-receipt.json');
+ const receiptDirectory=process.env.PRIVA_STORIES_RECEIPT_DIR;
+ if(receiptDirectory&&(realpathSync(receiptDirectory)!==resolve(receiptDirectory)||(statSync(receiptDirectory).mode&0o077)!==0))throw Error('Receipt directory must be canonical and private');
+ const receiptPath=receiptDirectory?resolve(receiptDirectory,'local-fourth-receipt.json'):resolve('specs/003-historias-educativas/evidence/local-fourth-receipt.json');
  let id=existsSync(receiptPath)?JSON.parse(readFileSync(receiptPath,'utf8')).storyId:null;
  if(!id){
   if(runtime.repository.all().some(story=>story.working.title===fourth.title))throw Error('Existing fourth story needs operator review');
   id=operator.service.change(operator.token,'create',null,{operationId:randomUUID(),working:emptyDraft()}).storyId;
-  writeFileSync(receiptPath,JSON.stringify({scope:'local',storyId:id},null,2)+'\n');
+  writeFileSync(receiptPath,JSON.stringify({scope:'local',storyId:id},null,2)+'\n',{mode:0o600});
  }
  let fourthStory=operator.service.get(operator.token,id);
  if(!fourthStory.published){

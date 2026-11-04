@@ -1,1 +1,6 @@
-<nav aria-label="Administración"><a href="/admin/historias">Historias</a><a href="/admin/contacto">Contacto privado</a><button type="button" data-logout>Cerrar sesión</button></nav>
+---
+import AdminIcon from './AdminIcon.astro';
+interface Props {section?:'panel'|'historias'|'contacto'}
+const {section='panel'}=Astro.props;
+---
+<nav aria-label="Administración"><a href="/admin/historias" aria-current={section==='historias'?'page':undefined}><AdminIcon name="microphone"/>Historias</a><a href="/admin/contacto" aria-current={section==='contacto'?'page':undefined}><AdminIcon name="message"/>Contacto privado</a></nav>

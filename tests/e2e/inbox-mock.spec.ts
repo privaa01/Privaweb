@@ -57,6 +57,22 @@ test.beforeEach(async ({ page }) => {
     await route.fulfill({ json: value });
   });
 });
+test("local reading profile opens details and keeps reply controls disabled", async ({page}) => {
+  let sends = 0;
+  await page.route("**/api/admin/contacto/consultas/*/respuestas", async route => {
+    sends++;
+    await route.fulfill({status:503,json:{result:"error",code:"mail_unavailable"}});
+  });
+  await page.goto("/contacto-local");
+  await expect(page.getByText("El envío de respuestas está desactivado.",{exact:false})).toBeVisible();
+  await page.locator("[data-inbox-list] button").filter({hasText:"Primera"}).click();
+  await expect(page.locator("[data-detail-title]")).toHaveText("Consulta de Primera");
+  await expect(page.getByRole("button",{name:"Enviar respuesta"})).toBeDisabled();
+  await expect(page.getByLabel("Tu respuesta",{exact:false})).toBeDisabled();
+  await expect(page.getByLabel("He revisado",{exact:false})).toBeDisabled();
+  expect(sends).toBe(0);
+  expect((await new AxeBuilder({page}).include('[data-inbox]').analyze()).violations).toEqual([]);
+});
 test("load failure is distinct from empty and can be retried", async ({
   page,
 }) => {

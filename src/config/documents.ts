@@ -4,15 +4,19 @@ export const documents=draftDocuments();
 documents.operation.responsible='Priva';
 documents.operation.contact='mailto:Priva202611@gmail.com';
 documents.operation.channel='mailto:Priva202611@gmail.com';
-documents.operation.providers='Firebase seleccionado para el alojamiento de la web, pendiente de configuración y verificación. El envío de correos permanece en modo de prueba, sin proveedor de correo contratado ni entrega real acreditada. El servicio y almacenamiento de datos privados aún no están definidos.';
+documents.operation.providers='La demo pública está publicada en Firebase Hosting. Contacto guarda exclusivamente registros ficticios predefinidos en Firestore de Google, sin lectura pública. La administración funcional se ejecuta por separado en el computador de la responsable, con Node y SQLite privados. No hay proveedor de envío de correos ni entrega real acreditada.';
+documents.operation.location='Sitio público: https://priva-785cb.web.app/. La base Firestore de pruebas está configurada en nam5, verificada el 2026-11-03. Las cuentas, sesiones, historias y consultas del panel local se almacenan en el computador de la responsable, fuera de los archivos públicos del sitio. La ubicación y operación de una futura administración productiva siguen pendientes.';
+documents.operation.copies='Por decisión de la responsable, Priva no crea copias de seguridad en este perfil. La eliminación de registros no ofrece recuperación desde una copia de Priva. Los ciclos internos de Firebase y las copias del sistema operativo no se consideran comprobados por esta decisión.';
 applyOperation(documents);
 // Owner decisions update the draft; they do not approve its text or production readiness.
-documents.revision='010-mvp-draft-2026-10-27';
+documents.revision='010-mvp-draft-2026-11-04';
 for (const document of Object.values(documents.documents)) document.sections.push({
  id:'estado-mvp',title:'Estado del producto mínimo viable',paragraphs:[
-  'Priva está en etapa de producto mínimo viable. Firebase es el alojamiento seleccionado para la web; la configuración y el despliegue aún están pendientes de verificar.',
+  'Priva está en etapa de producto mínimo viable. La demo pública está disponible en Firebase Hosting. Sus documentos describen exclusivamente esa demostración; este borrador de la versión completa no constituye una política final aprobada.',
   'En esta etapa, las pruebas del formulario de Contacto se limitan a datos ficticios. No introduzcas datos personales reales ni consultas de personas reales.',
   'El envío de correos está en modo de prueba, sin proveedor externo de envío. Las pruebas de respuesta, recuperación de acceso y confirmación de eliminación no acreditan recepción de correos reales.',
+  'El inicio de sesión y la gestión de historias funcionan de forma local en el computador de la responsable. La bandeja local permite lectura; su envío de respuestas está desactivado y no recibe los registros ficticios de Firestore. Las sesiones administrativas utilizan cookies necesarias para autenticar el acceso.',
+  'La responsable eligió mantener el plan gratuito de Firebase, ejecutar el mantenimiento de ambas bases desde su computador, no crear copias de seguridad y mantener el correo desactivado. El proceso comprueba vencimientos de 90 días; su ejecución depende de que el computador y el proceso estén encendidos. La eliminación anticipada con comprobación por correo continúa deshabilitada.',
   'Este documento permanece en revisión. Las condiciones de acceso, almacenamiento privado y copias de seguridad deben concretarse antes de habilitar la recepción de consultas reales.'
  ]
 });

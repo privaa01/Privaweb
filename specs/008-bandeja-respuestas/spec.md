@@ -319,5 +319,5 @@ con etiquetas visibles, foco, teclado, errores asociados y confirmaciones anunci
 | CT01 | FR-005 | US3.2/4/8, US4.1–6 | SC-003/007/008 | Parcial local; recepción y operación reales pendientes |
 
 Los escenarios locales desarrollan R35; no sustituyen los 195 criterios del documento 07 ausente.
-Los documentos históricos 03/05/06 tampoco se inventan. El [plan](plan.md), sus artefactos de diseño y las [66 tareas locales](tasks.md) están redactados;
+Los documentos históricos 03/05/06 tampoco se inventan. El [plan](plan.md), sus artefactos de diseño y las [67 tareas locales](tasks.md) están redactados;
 el estado de tareas y las evidencias de ejecución local están en [evidence.md](evidence.md); la matriz compartida conserva un único responsable por ID original.

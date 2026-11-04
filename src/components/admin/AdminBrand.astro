@@ -1,0 +1,6 @@
+---
+import logo from '../../../public/brand/priva-logo.png?url';
+interface Props {href?:string}
+const {href='/'}=Astro.props;
+---
+<a class="admin-brand" href={href}><img src={logo} alt="Priva" width="104" height="40"/></a>

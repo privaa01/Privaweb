@@ -183,3 +183,7 @@ Estas reglas R-01–R-09 desarrollan FR-001; no añaden requisitos originales al
 ## Decisiones del MVP — 2026-10-27
 
 La responsable elige Firebase para alojar la web y correo solo en modo de prueba sin proveedor por ahora. Confirma etapa MVP; no define ni elimina por ello políticas de acceso/copias. Se incorpora Colombia (Ley 1581/Decreto 1377 y compilación reglamentaria) como marco de revisión de documentos010. La elección no califica canal, recepción, almacenamiento o borrado real ni cambia los 90 días/deadlines aprobados. La responsable confirmó uso exclusivo de datos ficticios de prueba; no se habilitan consultas reales en esta etapa. Detalle en [decisiones del MVP y marco normativo](../010-documentos-recuperacion/mvp-decisions-2026-10-27.md).
+
+## Perfil aprobado por la responsable — 2026-11-04
+
+Para la demo actual se ejecuta conservación de90d en SQLite y Firestore desde su computador, plan gratuito, sin copias creadas porPriva y sin correo. No se exige activar estos servicios rechazados para operar este perfil. Los requisitos originales de producción/confirmación/copias/restauración siguen diferenciados y no se declaran cumplidos. La ejecución depende del equipo/proceso encendidos; no se garantiza1h durante interrupciones. Ver computer-execution-2026-11-04.md.

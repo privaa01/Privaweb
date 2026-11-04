@@ -253,7 +253,7 @@ export function createAdminHandler(o: HandlerOptions) {
         r.withAuthorizedTransaction(token, () => null);
         file = privatePaths[path] + ".html";
       } else if (
-        /^\/admin\/_astro\/[A-Za-z0-9_.-]+\.(?:js|css|svg|woff2)$/.test(path)
+        /^\/admin\/_astro\/[A-Za-z0-9_.-]+\.(?:js|css|svg|woff2|png|ttf)$/.test(path)
       )
         file = path.slice("/admin/".length);
       if (!file) throw new AdminError(404, "not_found");
@@ -278,7 +278,11 @@ export function createAdminHandler(o: HandlerOptions) {
             ? "text/javascript"
             : target.endsWith(".svg")
               ? "image/svg+xml"
-              : "font/woff2";
+              : target.endsWith(".png")
+              ? "image/png"
+              : target.endsWith(".ttf")
+                ? "font/ttf"
+                : "font/woff2";
       res.setHeader("Content-Type", type + "; charset=utf-8");
       res.statusCode = 200;
       res.end(method === "HEAD" ? undefined : readFileSync(target));

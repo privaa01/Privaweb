@@ -20,3 +20,5 @@ GET/HEAD local:404 con cuerpo propio en rutas simples/anidadas/query; salidaInic
 404 no refleja la URL. Respuesta no-referrer y meta temprano evitan reenviar ruta al volver; sentinelas sintéticos no aparecen en DOM. Auditoría local en documentos/error: ninguna petición externa, localStorage/sessionStorage vacíos, sin cookies nuevas. Aviso/regreso comprobado sin datos persistidos. El servidor010 no registra peticiones ni query. El host real sí recibe la URL y necesita política y configuración revisadas.
 
 T028/T035/T040/T041 siguen parciales/bloqueadas: alojamiento/CDN, cache/proxy, rutas privadas, cinco recorridos009 y proveedores reales pendientes. No son sustituidos por pruebas de fixture. No despliegue ni envío de correo real.
+
+2026-11-03 — Verificada demo publicada: documentos200, rutas inexistentes404con cuerpo propio, HEADsin cuerpo y no-referrer/no-store; enlaces/footer/regreso y lectura ampliadaChrome conformes. APIadministrativa no desplegada: /api/admin/sesion404estático, no aceptación del401de un servicio completo. T040/T041parciales para la demo, sin calificación productiva. Ver demo-review-2026-11-03.md.

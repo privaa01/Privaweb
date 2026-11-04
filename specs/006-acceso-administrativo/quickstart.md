@@ -1,6 +1,6 @@
 # Guía de validación — 006
 
-Actualización2026-10-28: UI90/90en3motores;servicio16/24,WebKit requiereHTTPSconfiable por cookiesSecure. [Resultados actuales](revalidation-2026-10-28.md). Implementación local disponible; aceptación final pendiente.
+Actualización2026-10-31: 59/63 tareas verificadas localmente; T058 cerrada con24/24 servicioHTTPS y90/90 UI en3motores. T059 revisión manual/visual parcial; T060–T062 productivas pendientes. [Evidencia](verification-2026-10-31.md).
 Resultados y bloqueos: [evidence.md](evidence.md). El correo del banco es un doble privado,
 no recepción productiva. Requisitos AD01/AD02; [contrato](contracts/admin-access.md).
 
@@ -133,3 +133,11 @@ retiraron verificaciones para aprobar. Volver a ejecutar cuando el entorno tenga
 
 Regresión afectada: `test:e2e:contract` y `test:e2e:contact:contract` con Chromium del sistema, más
 Node de002–005; resultados en evidence.md. Los fallos de build/recurso/navegador son bloqueos abiertos.
+
+## HTTPS opcional del banco local
+
+Definir juntas PRIVA_ADMIN_TEST_TLS_CERT y PRIVA_ADMIN_TEST_TLS_KEY, rutas absolutas a certificado vigente para localhost y clave privada fuera de raíces servidas. Con ellas el origen pasa a https://localhost:4329 para servidor, recuperación y Playwright. Sin ambas se conserva el HTTP histórico; con solo una se rechaza configuración. No hay ignoreHTTPSErrors ni flags de bypass.
+
+El navegador debe confiar en el emisor mediante autorización del operador; generar un certificado no crea confianza. Para el procesoNode de Playwright/polling/API, NODE_EXTRA_CA_CERTS puede apuntar al certificado público de esa CA al lanzar Node, conservando validación de cadena. No poner claves en variables ni Git. El certificado preparado no está instalado; no ejecutar la campaña como si lo estuviera. [Plan de revisión](https-test-plan-2026-10-31.md).
+
+La campañaHTTPS autorizada ya pasó24/24 y se retiró certificado/confianza al finalizar. No se presume confianza persistente para otra campaña: consultar verification-2026-10-31.md. Vista local visual opcional: python3 tests/fixtures/admin/serve.py 4352 tras build:admin:contract; no es servicio de cuentas ni debe recibir credenciales reales.

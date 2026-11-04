@@ -7,9 +7,20 @@ import {
 } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { exclusiveRun } from "./maintenance.ts";
+import { exclusiveRun, macLockHelper } from "./maintenance.ts";
+import { spawnSync } from 'node:child_process';
 import { privatePath } from "./storage.ts";
 export function underExclusive(lock: string) {
+  if(process.platform==='darwin') {
+    const fd=Number(process.env.PRIVA_PRIVACY_LOCK_FD);
+    if(!Number.isInteger(fd)||fd<3)return false;
+    try {
+      return spawnSync('/usr/bin/python3',[macLockHelper,'--verify-exclusive',lock],{
+        stdio:['ignore','pipe','ignore',fd],
+        env:{...process.env,PRIVA_PRIVACY_LOCK_FD:'3'},timeout:3000,
+      }).status===0;
+    } catch {return false;}
+  }
   for (const fd of readdirSync("/proc/self/fd")) {
     try {
       if (

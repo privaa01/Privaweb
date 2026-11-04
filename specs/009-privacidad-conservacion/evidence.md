@@ -1,4 +1,18 @@
+# Estado vigente — 2026-11-04
+
+59/69: T068/T069 ejecutadas para el perfil aprobado en ambos entornos, desde el computador, sin copias/correo. Las10tareas originales de cierre integral siguen diferenciadas; no se certifica producción24/7. Ver computer-execution-2026-11-04.md. Los apartados fechados anteriores conservan su alcance histórico.
+
 # Evidencia009 — Privacidad y ciclo de vida de datos
+
+## Revisión del perfil administrativo local — 2026-11-03
+
+Después de retirar expresamente los dos ejemplos008 solicitados por la responsable, se verificó el alcance de conservación en el servidor local. Checklist documental009:16/16 satisfechos; T060 avanza parcialmente sin cerrar dependencias ni cambiar el total57/67.
+
+Pruebas seleccionadas: tests/privacy-policy.test.ts, tests/privacy-local-retention.test.ts y tests/inbox-retention.test.ts. Resultado6/6 conformes,0fallos/omitidas, SQLite en directorios temporales y reloj controlado. La nueva prueba usa composeLocalInbox real: retira vencidos antes de habilitar lectura, comprueba el límite exacto90d y el milisegundo anterior, excluye vencidos de detalle/resumen008 y conteo007 antes del barrido, retira intentos005 para impedir replay, conserva consultas vigentes y verifica integridad/FK. Abrir, filtrar y actualizar no cambian lastActivityAt. Sin worker de correo ni llamadas externas; no se cambiaron las fechas del servidor de la responsable. Typecheck009 conforme. Log ignorado:.test-output/privacy-local-2026-11-03.log.
+
+El perfil local actual utiliza esquema008 y barrido al inicio/cada60s. No ejecuta la composición productiva009, migración9, diario/réplica, barrera interproceso, confirmación por correo ni verificación de borrado físico. La ausencia de filas no acredita eliminación en SSD/WAL/copias; estos requisitos y el cierre de solicitudes anticipadas siguen pendientes para producción. No se ha relajado readiness ni elegido proveedor o canal.
+
+Normalización008: scripts/seed-local-inbox-demo.ts --remove-fictitious-only retiró solo los dos IDs y marcadores conocidos; prueba1/1 verifica conservación de otra consulta, idempotencia y retirada de sus respuestas/operaciones. Navegador integrado comprobado:0consultas/0pendientes/0respondidas. Captura ignorada:.test-output/inbox-clean-2026-11-03.jpg.
 
 **Fecha**: 2026-10-20 (America/Bogota). **Estado**:57/67 tareas verificadas localmente;
 10 parciales/bloqueadas. X02/FR-001 no tiene cierre productivo. Q1–Q4 conservadas.
@@ -95,3 +109,7 @@ requisitos16/16 intacto:significa calidad documental,no que las métricas produc
   No se omite la validación del host ni se cuenta un caso no ejecutado como éxito.
 - Guardadas instrucciones de inicio009 en el borrador del entorno; guardar no publica el entorno
   ni aplica cambios en máquinas futuras. Recursos reales,P02 y aprobación productiva no se inventan.
+
+## Ejecución real local yFirestore — 2026-11-04
+
+T068/T069 completas: adaptador macOS44/44pruebas009 conformes; mantenimiento real ambos entornos activo, plan gratuito/sin copias/sin correo según decisión expresa. Pruebas nuevas yHTTPS3/3, Node finales29/29. Firestore real: vencido eliminado/vigente conservado, lectura/recreación denegadas403 y ejemplos retirados. Reglas desplegadas; avisoHosting preparado pendiente de revisión humana010. [Alcance, decisiones, comandos y recibos](computer-execution-2026-11-04.md).

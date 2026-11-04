@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-31",
+  "tasks": {
+    "complete": 59,
+    "total": 63,
+    "pending": [
+      "T059",
+      "T060",
+      "T061",
+      "T062"
+    ]
+  },
+  "httpsService": {
+    "startTime": "2026-10-31T13:36:12.478Z",
+    "duration": 38369.536,
+    "expected": 24,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "uiMatrix": {
+    "passed": 90,
+    "failed": 0,
+    "engines": 3,
+    "sourceLog": "admin-wireframe-ui-final-2026-10-31.log"
+  },
+  "iconsFocusedRegression": {
+    "startTime": "2026-10-31T13:40:33.611Z",
+    "duration": 10278.402999999998,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "httpNode": {
+    "passed": 8,
+    "failed": 0
+  },
+  "transportNode": {
+    "passed": 2,
+    "failed": 0
+  },
+  "temporaryTrust": {
+    "authorizedBy": "dale",
+    "trustRemoved": true,
+    "certificateRemoved": true,
+    "removalExitCodes": [
+      0,
+      0
+    ]
+  },
+  "astroCheck": {
+    "files": 96,
+    "errors": 0,
+    "warnings": 0,
+    "hints": 1
+  },
+  "scope": "local synthetic administration only; no production mail or public admin deployment",
+  "loginVisualAcceptance": {
+    "date": "2026-10-31",
+    "source": "owner",
+    "statement": "El diseño del acceso está bien",
+    "scope": "visual login preview only; no screen-reader or production approval"
+  }
+}

@@ -1,5 +1,7 @@
 # Guía de validación — 008
 
+2026-11-03: lectura008 conectada al servidor persistente https://localhost:4354/admin/contacto. Arranque/parada mediante scripts/admin-local.sh iniciar|detener con la autorización temporal de certificado ya documentada en006. Base local inicialmente vacía, sin copia de Firestore; correo y editor deshabilitados. Ver [alcance y pruebas locales](local-reading-2026-11-03.md). No sustituye la calificación productiva.
+
 Estado: implementación local. Los comandos 008 están disponibles; resultados y bloqueos en
 [evidence.md](evidence.md). Las fixtures no califican correo ni privacidad productivos. Ver [plan](plan.md), [modelo](data-model.md) y [contrato](contracts/inbox.md).
 

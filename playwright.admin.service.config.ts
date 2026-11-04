@@ -2,6 +2,9 @@
 process.env.PLAYWRIGHT_NO_COPY_PROMPT = "1";
 import { defineConfig } from "@playwright/test";
 import { projects } from "./playwright.admin.projects";
+const hasCert=Boolean(process.env.PRIVA_ADMIN_TEST_TLS_CERT),hasKey=Boolean(process.env.PRIVA_ADMIN_TEST_TLS_KEY);
+if(hasCert!==hasKey)throw Error("TLS fixture requires both certificate and private key paths.");
+const baseURL=`${hasCert?"https":"http"}://localhost:4329`;
 export default defineConfig({
   testDir: "./tests/e2e",
   testMatch: "**/admin-service.spec.ts",
@@ -13,7 +16,7 @@ export default defineConfig({
     ["json", { outputFile: ".test-output/admin-service-results.json" }],
   ],
   use: {
-    baseURL: "http://localhost:4329",
+    baseURL,
     trace: "off",
     screenshot: "off",
     video: "off",
@@ -22,7 +25,7 @@ export default defineConfig({
   webServer: {
     command:
       "npm run build:admin:views:local && node --experimental-strip-types tests/fixtures/admin-service/serve.ts",
-    url: "http://localhost:4329/admin/login",
+    url: baseURL+"/admin/login",
     reuseExistingServer: false,
     timeout: 120000,
   },

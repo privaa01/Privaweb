@@ -2,7 +2,7 @@
 
 **Input**: [spec](spec.md), [plan](plan.md), [investigación](research.md), [modelo](data-model.md),
 [contrato](contracts/inbox.md) y [guía](quickstart.md). Constitución vigente y Q1=A.
-**Fecha**: 2026-10-19. **Estado**: implementación local, 60/66 verificadas;
+**Fecha**: 2026-10-19. **Estado**: implementación local, 61/67 verificadas;
 T056/T057/T060/T062/T063/T064 pendientes. Ver [evidence.md](evidence.md).
 **Tests**: requeridos por spec SC-001–008, CT01 y CONST-06/10; escribir las pruebas críticas antes
 que su implementación, comprobar fallo por comportamiento ausente (no importación) y volver a
@@ -177,6 +177,10 @@ Cerrar únicamente lo probado. Las dependencias externas permanecen abiertas sin
 
 - [x] T066 Sincronizar `specs/008-bandeja-respuestas/spec.md`, `specs/008-bandeja-respuestas/plan.md`, `specs/008-bandeja-respuestas/tasks.md`, `specs/008-bandeja-respuestas/evidence.md` y `specs/TRACEABILITY.md`: cinco FR/26 escenarios/ocho SC con tarea/prueba/evidencia o bloqueo, conservar Q1 y pendientes reales; checkbox solo con evidencia propia, no cierre de 009/010/011 ni aprobación productiva implícita.
 
+## Extensión local autorizada — 2026-11-03
+
+- [x] T067 Conectar la lectura de Contacto008 al perfil HTTPS persistente de `server/admin/local.ts` mediante `server/inbox/local.ts`, con base privada nueva vacía, filtros/detalle/historial y total007 coherentes. Mantener respuestas deshabilitadas tanto en UI como en servidor, sin worker/proveedor ni copia de Firestore; probar persistencia, guards006/CSRF, ausencia de intención de correo y estados vacíos con consultas sintéticas aisladas. Registrar aprobación local006/007 ya recibida y evidencia008, sin cerrar producción ni correo. Ver `local-reading-2026-11-03.md`.
+
 ## Dependencies & Execution Order
 
 ```text
@@ -252,7 +256,7 @@ T060 (parte manual/motores ausentes), T063 o T064 si faltan condiciones material
 tareas terminadas parcialmente. Otros bloqueos encontrados se documentan igual, no se presuponen
 resultados. T066 puede registrar estado parcial sin cerrar 008 ni políticas ajenas.
 
-Se ejecutó la implementación local: 60 tareas verificadas y seis abiertas. Las pruebas y límites
+Se ejecutó la implementación local: 61 tareas verificadas y seis abiertas. Las pruebas y límites
 se describen en [evidence.md](evidence.md); marcar trabajo local no califica correo, privacidad ni
 entorno productivos. No se hace commit/push/despliegue por implementar esta lista. Para cierre
 integrado, resolver las dependencias externas de las seis tareas abiertas y ejecutar su aceptación.

@@ -1,3 +1,7 @@
+# Actualización vigente — 2026-11-03
+
+Lectura008 conectada al perfil HTTPS persistente; T067 completa,61/67. Pruebas nuevas:1/1 integración,7/7Node,20/20Chrome; otros40casos bloqueados por ejecutablesFirefox/WebKit ausentes. Correo deshabilitado y sin conexión a Firestore. Ver [evidencia local](local-reading-2026-11-03.md). Los apartados fechados siguientes son históricos.
+
 # Actualización del 30 de octubre de 2026
 
 T060 parcial: 57/57 pruebas UI aprobadas en Chromium, Firefox y WebKit (42 celdas de accesibilidad + 15 casos existentes). Corregido el desbordamiento de la casilla de revisión. Pendientes lector y comparación manual P04/011; total 60/66. [Evidencia actual](accessibility-review-2026-10-30.md). Los registros siguientes conservan sus fechas y alcances históricos.
@@ -168,3 +172,17 @@ la presencia y el conteo real de casos en los JSON, además del exitcode de cada
 Checklist documental no alterado; sin hooks de extensión configurados. Sin commit/push/despliegue
 por esta implementación. Las referencias readiness 008 permanecen null y el arranque/build productivo
 falla cerrado. El trabajo local no acredita recepción real, privacidad operativa ni entrega final.
+
+## Lectura persistente local — 2026-11-03
+
+T067 completada: bandeja008 conectada a HTTPS local con base privada vacía, filtros/detalle/historial y total007 real; respuestas deshabilitadas en servidor y UI. 1/1 integraciónHTTPS, 7/7 regresiónNode y20/20Chrome;40errores de lanzamientoFirefox/WebKit por ejecutables ausentes. Typecheck/build/vistas conformes. Ver [alcance, evidencia y límites](local-reading-2026-11-03.md). Estado61/67; seis tareas de cierre originales abiertas.
+
+## Demostración de los tres controles — 2026-11-03
+
+La responsable pidió ejemplos para ver Pendiente, Respondido y Actualizar bandeja. Se cargaron expresamente dos registros ficticios locales, identificados como «Ejemplo pendiente» y «Ejemplo respondido» con correo reservado example.test; el historial dice «RESPUESTA FICTICIA, NO ENVIADA». Son snapshots de demostración, no evidencia de aceptación/recepción de correo. No se creó cuenta ni sesión administrativa para generarlos y no se habilitó worker/envío.
+
+Herramientas: scripts/seed-local-inbox-demo.ts --fictitious-only y server/inbox/local-demo.ts, restringidas a modo local. Inserción transaccional e idempotente, sin reemplazar otros mensajes. Prueba tests/inbox-local-demo.test.ts:1/1 conforme; comprueba ambos filtros, historial, conservación de otra consulta, ausencia de nuevas sesiones/operaciones pendientes y cero llamadas al doble de correo. Typecheck008 y diff conformes.
+
+Verificación con navegador integrado autenticado: Pendiente muestra un ejemplo y permite abrirlo sin historial; Respondido muestra el otro y su respuesta ficticia; Actualizar bandeja recarga los datos y cierra el detalle conservando el filtro. Resumen real de la base de demostración:2consultas/1pendiente/1respondida. Se dejó abierto el ejemplo respondido. Captura ignorada:.test-output/inbox-demo-respondido-2026-11-03.jpg. El editor permanece deshabilitado según el alcance sin proveedor. La base ya no está vacía porque la responsable autorizó estos ejemplos; la descripción de vacío inicial del registro anterior es histórica.
+
+2026-11-03 — La responsable pidió volver a la normalidad: se retiraron exclusivamente los dos ejemplos y su historial con la utilidad local restringida. Resultado2retirados, sin correo; nueva prueba de retirada1/1conforme, conserva otras consultas y no duplica efectos. Navegador: resumen0/0/0. Los registros anteriores de la demostración son históricos.

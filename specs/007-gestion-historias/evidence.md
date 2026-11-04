@@ -1,3 +1,7 @@
+# Actualización visual del panel —2026-10-31
+
+Estructura del gestor alineada con referencia administrativa recibida: resumen/búsqueda/tabla/cierre y nuevo shell006.14/14 Chromium con servicio de prueba y90 casosUI generales verificados; estas capas no califican producción007 ni Firefox/WebKit del servicio007. [Evidencia](../006-acceso-administrativo/panel-review-2026-10-31.md). Los registros siguientes conservan su alcance histórico; tareas007 siguen59/63.
+
 # Evidencia de implementación local — 007
 
 Fecha: 2026-10-19 (America/Bogota). Rama Git real: `main`. Implementación local; no entrega ni
@@ -212,3 +216,12 @@ sin eliminación definitiva, historial navegable, moderación pública o persist
 ## Estado vigente del inspector macOS
 
 2026-10-28: adaptación implementada;42/42 pruebas007 aprobadas, incluidas subidas/importación y aislamiento nativo. Las limitaciones anteriores de FFmpeg ausente son históricas. `npm run build:media:macos` construye el supervisor y `npm run test:story-management:macos` verifica la suite. Memoria física supervisada cada5ms en Mac, sin afirmar equivalencia al límite virtual duro Linux. [Evidencia final y límites](macos-media-validation.md). No se publicaron fichas pendientes ni se cerró operación productiva.
+# Gestión de historias en el perfil local persistente — 2026-11-03
+
+Checklist documental: requirements.md, 16/16 satisfechos; no equivale a aceptación de implementación. Navegador integrado en https://localhost:4354/admin con sesión de la responsable: cuatro historias activas, búsqueda por «Número desconocido» devuelve una fila sin alterar los contadores; Editar recupera texto, transcripción, tres opciones y recursos guardados. Se cerró sin guardar y se restableció la lista completa. Las historias de la responsable permanecen intactas.
+
+Se amplió tests/admin-local-runtime.test.ts para el perfil HTTPS real: catálogo de demo idéntico al productor007, audio con Range206/16bytes, guardar cambios privados conserva íntegro el catálogo publicado tras reiniciar, desactivar retira el audio público (404), reactivar recupera la publicación anterior sin publicar los cambios pendientes. Incluye además configuración, login, creación/edición, inspección real de PNG/MP3 y cierre de sesión. Resultado 1/1, cero fallos/omitidas; base, cuenta y certificados efímeros separados del servidor de la responsable. Log ignorado .test-output/admin-local-stories-2026-11-03.log. Typecheck administrativo conforme.
+
+Avance parcial de T056/T059 para el entorno local; no cierra T056–T059 completos, calificación productiva ni revisión con lector de pantalla. No se desplegó Firebase ni se habilitó correo/Contacto008.
+
+2026-11-03: la responsable confirmó «listo todo esta correcto» tras revisar007local. Aprobación funcional/visual local registrada; no acredita VoiceOver ni despliegue. El total de consultas ahora lee la base local008; vacío real0 en lugar de No disponible.

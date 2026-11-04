@@ -1,6 +1,6 @@
 # Validación010
 
-**Estado**: implementación local verificada, 2026-10-20 (America/Bogota). Los comandos010 existen; destinos reales y matriz contractual al200% validados en Chromium/Firefox/WebKit.35/44tareas; integración productiva pendiente. [Evidencia actual](local-review-2026-10-28.md).
+**Estado**: implementación local verificada, 2026-10-20 (America/Bogota). Los comandos010 existen; destinos reales y matriz contractual al200% validados en Chromium/Firefox/WebKit.36/44tareas tras confirmación manual de la responsable el2026-11-03; integración productiva pendiente. [Evidencia actual](local-review-2026-10-28.md).
 
 ## Prerrequisitos
 

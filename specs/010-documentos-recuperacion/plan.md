@@ -2,7 +2,7 @@
 
 **Branch real**: `main` | **Selección Spec Kit**: `010-documentos-recuperacion` | **Date**: 2026-10-20 | **Spec**: [spec.md](spec.md)
 **Input**: `specs/010-documentos-recuperacion/spec.md`, X03/FR-001, tres historias y 16 escenarios.
-**Estado**: implementación local35/44 tareas verificadas; publicación bloqueada por P02/P03 y calificación integrada. Evidencia y límites en `evidence.md`.
+**Estado**: implementación36/44 tareas verificadas para el alcance actual; publicación bloqueada por P02/P03 y calificación integrada. Evidencia y límites en `evidence.md`.
 
 ## Summary
 

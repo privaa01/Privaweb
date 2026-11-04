@@ -1,3 +1,11 @@
+# Revisión manual confirmada — 2026-11-03
+
+La responsable respondió «Sí, lo comprobé con teclado y VoiceOver» a la pregunta específica sobre títulos, enlaces y vuelta a Inicio/Contacto en Términos de la demo, Privacidad de la demo y página404 publicadas. Se registra como declaración de prueba de la responsable, sin atribuir escucha automática al agente. Antes de esta confirmación hubo dificultad de foco en el navegador integrado; se abrió el documento público en Safari y se situó el foco en contenidoHTML. No se presupone cuál navegador utilizó para cada página.
+
+T034 completa para los documentos de la demo actual, en conjunto con las revisiones visuales y matrices adaptables ya registradas. Recursos: tipografía/identidad/layout compartidos existentes, sin nuevos archivos oficiales requeridos para estas páginas auxiliares. No se recibió wireframe específico de documentos ni se certifica equivalencia a uno. Esta confirmación no aprueba contenido legal, vigencia o condiciones productivas; T038/T039 y demás gates permanecen separados. Estado36/44, ocho tareas abiertas.
+
+Los apartados siguientes conservan resultados históricos.
+
 # Estado vigente — 2026-10-28
 
 35/44tareas: T028destinos reales y T033accesibilidad completas.9/9pruebas locales reales,3/3pruebas de matriz(84celdas) y27/27Node aprobadas. Documentos sin aprobación editorial/calificación productiva. Lector manual, HTTPno-referrer/admin y configuración de entrega continúan pendientes. [Detalle y comandos](local-review-2026-10-28.md). Los registros siguientes son históricos.

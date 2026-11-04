@@ -504,3 +504,17 @@ Sin commit/push/despliegue en esta incorporación. [Recursos](001-navegacion-glo
 2026-10-30 —005: corregida simplificación visual indebida de Contacto tras observación de la responsable. Hero/ilustración, Instagram, columnas/orden móvil y cierre recuperados; envío sigue ficticio. T045 reabierta para aceptación visual,52/53. Ver005/wireframe-correction-2026-10-30.md.
 
 2026-10-30 —005: aceptación expresa de Contacto corregido («esta perfecto»). T045 cerrada;53/53 tareas demo. [Evidencia](005-contacto-publico/wireframe-correction-2026-10-30.md).
+
+2026-10-31 —006 avanza59/63: T058 cerrada,90/90 UI y24/24 HTTPS. Referencias administrativas recibidas; vista de acceso/iconos ajustados. Certificado temporal retirado; T059 manual/visual yT060–T062 producción pendientes. [Evidencia](006-acceso-administrativo/verification-2026-10-31.md).
+
+2026-10-31 — Panel006/007: sidebar/cabecera/gestor alineados con captura recibida;90 casosUI verificados y14 gestorChromium. Vista local de solo lectura con muestras públicas, sin administración desplegada o datos privados. [Evidencia](006-acceso-administrativo/panel-review-2026-10-31.md).
+
+2026-11-03 — 008: T067 conecta lectura privada al perfil HTTPS local, sin envío/proveedor ni copiaFirestore. 61/67 tareas; seis cierres originales pendientes. Evidencia: specs/008-bandeja-respuestas/local-reading-2026-11-03.md. Aprobación local006/007 recibida; no equivale a producción.
+
+2026-11-03 — 009/T060 parcial:6/6 pruebas de conservación en la composición local008, límites90d y lecturas sin prolongación; typecheck conforme. Estado57/67 sin cambios; diario, réplica, borrado físico, canal/correo y operación productivos siguen pendientes. Retirados los ejemplos008 a petición expresa.
+
+2026-11-03 — 010: revisión de demo publicada y borrador actualizado a infraestructura real. 27/27Node, dos casos únicosChrome de navegación/404 y lectura200% conformes; sin despliegue/aprobación editorial final.35/44, pendientes manual/lector y operación009/productiva. Ver010-documentos-recuperacion/demo-review-2026-11-03.md.
+
+2026-11-03 — 010/T034: confirmación expresa de la responsable de títulos, enlaces y retornoInicio/Contacto en Términos/Privacidad/404 publicados con teclado y VoiceOver. Revisión manual registrada para la demo,36/44; ocho tareas abiertas y aprobación editorial/operación productiva pendientes.
+
+2026-11-04 — 009/T068/T069: conservación real ambos entornos desde computador, sin copias/correo por decisión expresa.44/44Node009 y prueba realFirestore conformes; reglas activas, supervisor encendido.59/69;10cierres originales separados del perfil aprobado. Ver009-privacidad-conservacion/computer-execution-2026-11-04.md. Aviso010 preparado para revisión.

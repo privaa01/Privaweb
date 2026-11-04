@@ -3,6 +3,7 @@ service cloud.firestore {
   match /databases/{database}/documents {
     match /demo_contact/{id} {
       allow create: if id.matches('[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}')
+        && !exists(/databases/$(database)/documents/privacy_suppressions/$(id))
         && request.resource.data.keys().hasAll(['mode','revision','nameOrAlias','email','message','consent','createdAt'])
         && request.resource.data.keys().hasOnly(['mode','revision','nameOrAlias','email','message','consent','createdAt'])
         && request.resource.data.mode == 'demo'

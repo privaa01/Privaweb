@@ -3,4 +3,4 @@ import AdminDocument from '../../../../../src/components/admin/AdminDocument.ast
 import InboxManager from '../../../../../src/components/admin/InboxManager.astro';
 import AdminShell from '../../../../../src/components/admin/AdminShell.astro';
 ---
-<AdminDocument title="Administración"><AdminShell section="contacto"><InboxManager/></AdminShell></AdminDocument>
+<AdminDocument title="Administración"><AdminShell section="contacto"><InboxManager readOnly={process.env.PRIVA_ADMIN_MODE==='local'}/></AdminShell></AdminDocument>

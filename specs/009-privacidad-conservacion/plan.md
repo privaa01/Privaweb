@@ -81,7 +81,7 @@ specs/009-privacidad-conservacion/
   quickstart.md
 ```
 
-[tasks.md](tasks.md) generado posteriormente con `$speckit-tasks 009`:67 tareas con dependencias y verificación por historia; estado actual57/67 verificadas localmente. El plan conserva su alcance de diseño; generar tareas no acredita implementación.
+[tasks.md](tasks.md) generado posteriormente con `$speckit-tasks 009`:67 tareas con dependencias y verificación por historia; estado actual59/69 verificadas para el perfil aprobado. El plan conserva su alcance de diseño; generar tareas no acredita implementación.
 
 ### Source Code (repository root)
 
@@ -150,3 +150,7 @@ reaparición y acreditar el borrado; reutilizar solo DELETE o recibos005 de24h n
 ## Actualización de arquitectura — 2026-10-27
 
 Firebase seleccionado para alojamiento web; backend Node/SQLite, Linux/flock, medios y persistencia requieren diseño compatible explícito antes de despliegue. No se seleccionan Firestore, Functions, Cloud Run, región o plan por inferencia. Correo restringido a pruebas sin proveedor en esta etapa; no habilitar códigos o despachos reales mediante dobles productivos. Acceso y copias siguen pendientes de política concreta; MVP no es una excepción a seguridad. Ver [decisiones del MVP y marco normativo](../010-documentos-recuperacion/mvp-decisions-2026-10-27.md).
+
+## Ejecución seleccionada — 2026-11-04
+
+Adaptador macOS de flock del kernel y supervisor del panel con drenaje/limpieza; operadorFirestoreREST cada15min, desde el computador, sin CloudFunctions ni gasto configurado. Sin backups/correo por decisión expresa. Perfil actual no migra a9: usa la eliminación compartida esquema8, exclusión por90d y saneamiento exclusivo. No se reutilizan dobles como proveedores reales. Ver computer-execution-2026-11-04.md.

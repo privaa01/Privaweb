@@ -36,7 +36,7 @@ export function enableToggle(root: HTMLElement) {
       if (!input) return;
       const show = input.type === "password";
       input.type = show ? "text" : "password";
-      button.textContent = show ? "Ocultar" : "Mostrar";
+      if(!button.hasAttribute("data-icon-toggle"))button.textContent = show ? "Ocultar" : "Mostrar";
       button.setAttribute(
         "aria-label",
         show ? "Ocultar contraseña" : "Mostrar contraseña",

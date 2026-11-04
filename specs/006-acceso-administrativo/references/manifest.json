@@ -1,0 +1,15 @@
+{
+  "receivedDate": "2026-10-31",
+  "source": "original administrative images attached by owner in chat",
+  "files": [
+    {
+      "path": "references/inicio-de-sesion.jpeg",
+      "sha256": "e6dae6165e04f38f68cf69782318307962a3b18d22b66c84e0c878038a0a61fa"
+    },
+    {
+      "path": "references/panel-administrativo.jpeg",
+      "sha256": "585dbfeb9454b382e2ce28c0e04650d38d737c373cb7599d74d65241ba920a7a"
+    }
+  ],
+  "status": "received-and-inspected; implementation comparison and manual acceptance remain pending"
+}

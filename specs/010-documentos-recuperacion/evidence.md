@@ -1,3 +1,7 @@
+# Estado vigente — 2026-11-03
+
+36/44: T034 completada para la demo publicada tras confirmación expresa de teclado/VoiceOver en Términos, Privacidad y404. Evidencia declarada por la responsable; no aprobación legal/editorial ni cierre productivo. Ver accessibility-review.md. Ocho tareas continúan abiertas. Los apartados siguientes son históricos.
+
 # Estado vigente — 2026-10-28
 
 35/44tareas: T028destinos reales y T033accesibilidad completas.9/9pruebas locales reales,3/3pruebas de matriz(84celdas) y27/27Node aprobadas. Documentos sin aprobación editorial/calificación productiva. Lector manual, HTTPno-referrer/admin y configuración de entrega continúan pendientes. [Detalle y comandos](local-review-2026-10-28.md). Los registros siguientes son históricos.
@@ -66,3 +70,11 @@ Priva y `mailto:Priva202611@gmail.com` incorporados a la configuración document
 ## Guía aportada por la responsable — 2026-10-28
 
 Recibida y revisada guía Word de protección/conservación de contactos en Colombia, cinco páginas. Copia de referencia no pública y correspondencia con pendientes009/010 en [revisión de la guía](../009-privacidad-conservacion/received-guide-review-2026-10-28.md). Aporta base de redacción y normativa; sus ejemplos no constituyen política final de Priva ni evidencia de controles implantados. No se vuelven a solicitar guía/hosting/correo ya recibidos, ni se cierran revisiones/calificación por recepción documental.
+
+## Revisión de la demo publicada — 2026-11-03
+
+Borrador actualizado a Firebase publicado/Firestore nam5/panel local separado, sin aprobar documentos finales ni habilitar correo. 27/27Node, dos casos únicos de navegadorChrome conformes (navegación/404 y21celdas de lectura200%), Astrocheck97archivos0errores/0warnings/1hint. La matriz tuvo un timeout inicial; retest del caso afectado conforme. Gate010 continúa bloqueado y total35/44sin cambios. [Alcance, pruebas y revisión pendiente](demo-review-2026-11-03.md).
+
+2026-11-04 — Aviso actualizado preparado y mostrado según decisiones explícitas009(sin copias/correo, plan gratuito y ejecución desde computador). Builddemo7páginas,27Node de documentos incluidos en29pruebas finales, prueba de lectura adaptada1/1conforme(21celdas). La conservación está activa; Hosting espera aprobación del texto solicitada porT038. No se marca completa revisión del conjunto productivo.
+
+2026-11-04 — Decisión posterior: la responsable no quiere publicar el aviso actualizado. Se conserva en specs/010-documentos-recuperacion/privacy-notice-proposal.md y se retira de la fuente publicable de la demo, que mantiene su aviso anterior. No se despliegaHosting ni se infiere autorización para retirar el aviso público existente.

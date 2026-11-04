@@ -1,5 +1,6 @@
 // Synthetic process supervisor only. No production entry imports this fixture.
-import { createServer } from "node:http";
+import { testTransport } from "./transport.ts";
+const transport = testTransport();
 import { spawn, type ChildProcess } from "node:child_process";
 import { rmSync, mkdirSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -68,7 +69,7 @@ if (!process.argv.includes("--fixture-child")) {
     runtime.hasher,
     runtime.abuseKey,
     runtime.mailKey,
-    "http://localhost:4329",
+    transport.origin,
   );
   const worker = new MailWorker(
     runtime.repository,
@@ -90,12 +91,12 @@ if (!process.argv.includes("--fixture-child")) {
     runtime.hasher,
     runtime.abuseKey,
   );
-  const server = createServer(
+  const server = transport.listen(
     createAdminHandler({
       ...runtime,
       service,
       recovery,
-      origin: "http://localhost:4329",
+      origin: transport.origin,
       viewsRoot: resolve(".private-build/admin"),
     }),
   );

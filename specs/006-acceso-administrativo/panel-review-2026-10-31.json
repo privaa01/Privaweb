@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-31",
+  "scope": "local panel visual structure; production not deployed",
+  "uiCampaign": {
+    "startTime": "2026-10-31T13:53:18.267Z",
+    "duration": 418518.109,
+    "expected": 89,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "uiTimeoutRecheck": {
+    "startTime": "2026-10-31T14:06:12.342Z",
+    "duration": 5538.718000000001,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "uniqueVerifiedUICases": 90,
+  "managementChromium": {
+    "passed": 14,
+    "failed": 0
+  },
+  "astroCheck": {
+    "files": 97,
+    "errors": 0,
+    "warnings": 0,
+    "hints": 1
+  },
+  "preview": {
+    "url": "http://127.0.0.1:4353/",
+    "readOnly": true,
+    "apiResponses": "explicit visual fixtures; not real private data",
+    "account": "synthetic"
+  },
+  "feature006Tasks": "59/63",
+  "feature007Tasks": "59/63"
+}

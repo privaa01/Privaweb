@@ -75,7 +75,7 @@ specs/008-bandeja-respuestas/
 └── quickstart.md
 ```
 
-Las [tareas](tasks.md) se generaron posteriormente con `$speckit-tasks 008`: 66 tareas con estado actualizado en su archivo; no confundir tareas locales con cierre productivo.
+Las [tareas](tasks.md) incluyen 66 tareas originales y T067 para conectar la lectura al perfil local persistente; no confundir tareas locales con cierre productivo.
 [evidence.md](evidence.md) registra la implementación y la verificación local; este plan conserva las decisiones de diseño.
 
 ### Source Code (repository root)

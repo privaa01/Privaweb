@@ -2,7 +2,7 @@
 
 **Rama real**: `main` | **Fecha**: 2026-10-19 | **Spec**: [spec.md](spec.md)
 **Feature activa**: `006-acceso-administrativo`; la selección SDD no crea una rama Git.
-**Estado**:58/63tareas; revalidación2026-10-28:UI90/90,servicio16/24conWebKit pendiente deHTTPSconfiable. [Detalle](revalidation-2026-10-28.md). Operación/aceptación final pendientes.
+**Estado**: 59/63 tareas verificadas localmente; T058 cerrada con24/24 servicioHTTPS y90/90 UI en3motores. T059 revisión manual/visual parcial; T060–T062 productivas pendientes. [Evidencia](verification-2026-10-31.md).
 **Input**: AD01/AD02, C26, capturas administrativas y constitución 1.0.0.
 Clarificación previa: no se encontraron preguntas funcionales críticas; políticas técnicas para este plan.
 
@@ -175,3 +175,5 @@ pruebas de aplicación, benchmark, correos, creación de cuentas ni despliegue.
 2026-10-19 — Implementación local: vistas privadas fuera de dist, servicio independiente, guard
 transaccional, scrypt/cookies/CSRF, reset de un uso y worker cifrado. T058–T062 abiertas;
 no se eligió proveedor, remitente ni política productiva. Resultados en evidence.md.
+
+2026-10-31 — Preparado transporte HTTPS opcional del banco, con validación de certificado/clave y sin bypass.2/2 pruebas de transporte y8/8 servicio Chromium conformes. Certificado local preparado pero no confiado/instalado; autorización solicitada. Textos propuestos en text-review-2026-10-31.md, sin aprobar ni habilitar cuentas. T058/T059 siguen parciales. Véase https-test-plan-2026-10-31.md.

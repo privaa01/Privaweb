@@ -14,6 +14,7 @@ export function createInboxHandler(o: {
   service: InboxService;
   origin: string;
   csrfKey: Buffer;
+  repliesEnabled?: boolean;
   log?: (v: { event: string; code: string; duration: number }) => void;
 }) {
   const r = o.service.repository,
@@ -129,6 +130,8 @@ export function createInboxHandler(o: {
             rate(account, "read", 60);
             v = o.service.history(token, id, body);
           } else if (action === "respuestas" && req.method === "POST") {
+            if (o.repliesEnabled === false)
+              throw new InboxError(503, "mail_unavailable");
             const opId = (body as any)?.operationId;
             if (typeof opId !== "string" || !r.op(opId)) {
               rate(account, "send", 10);

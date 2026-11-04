@@ -2,7 +2,7 @@ import type { AdminReadiness } from "../lib/admin-contract.ts";
 export const adminReadiness: AdminReadiness = {
   testOnly: false,
   reviewedContent: null,
-  officialBrand: null,
+  officialBrand: "/brand/priva-logo.png",
   references: {
     provision: null,
     mailAdapter: null,

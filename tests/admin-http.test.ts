@@ -345,3 +345,10 @@ test("new anonymous contexts limited before insertion, same-origin reusable cont
     await f.close();
   }
 });
+test('compiled official PNG and TTF assets are public with exact MIME; private and unsupported files remain denied',async()=>{
+ const f=await bank();try{
+  const assets=join(f.dir,'views','_astro');mkdirSync(assets);writeFileSync(join(assets,'brand.test.png'),Buffer.from([137,80,78,71]));writeFileSync(join(assets,'font.test.ttf'),'synthetic font');writeFileSync(join(assets,'private.sqlite'),'private synthetic');
+  for(const [file,type]of [['brand.test.png','image/png'],['font.test.ttf','font/ttf']]){const response=await fetch(f.base+'/admin/_astro/'+file);assert.equal(response.status,200);assert.equal(response.headers.get('content-type')?.split(';')[0],type);assert.equal(response.headers.get('x-content-type-options'),'nosniff');}
+  assert.equal((await fetch(f.base+'/admin/_astro/private.sqlite')).status,404);assert.equal((await fetch(f.base+'/admin')).status,401);
+ }finally{await f.close();}
+});

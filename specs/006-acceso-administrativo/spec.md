@@ -3,7 +3,7 @@
 **Feature Directory**: `specs/006-acceso-administrativo`
 **Created**: 2026-10-16
 **Updated**: 2026-10-19
-**Status**: Implementación local verificada; aceptación final pendiente de T058–T062. Ver [evidencia](evidence.md).
+**Status**: 59/63 tareas verificadas localmente; T058 cerrada con24/24 servicioHTTPS y90/90 UI en3motores. T059 revisión manual/visual parcial; T060–T062 productivas pendientes. [Evidencia](verification-2026-10-31.md).
 **Input**: `/speckit-specify 006`: desarrollar la feature existente sin ampliar el alcance.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), AD01/AD02 y C26;
 [constitución 1.0.0](../../.specify/memory/constitution.md), especialmente CONST-03–06/08–10;

@@ -17,7 +17,7 @@ export interface HomeData {
 export const closingText = 'Aprende a reconocer riesgos y toma decisiones más informadas sobre tus datos personales.';
 export const areaTitles = ['Educación Digital', 'Historias educativas', 'Herramientas Seguras', 'Acompañamiento'] as const;
 const approvedReview = (reviewedText: string): Review => ({ status: 'revisado', decisionReference: 'specs/002-inicio-institucional/evidence/editorial-review.md — aprobación explícita de la usuaria, 2026-10-21', reviewedText });
-const officialHomeImage = (block: 'hero' | 'identidad' | 'cierre'): ImageResource => ({ block, status: 'verificado', src: `/images/home/${block}.png`, width: 500, height: 350, purpose: 'decorativo', alt: '', sourceReference: 'Imágenes de Inicio aportadas e identificadas por la usuaria; carga GitHub 10e683a, 2026-10-23. Inventario: specs/002-inicio-institucional/evidence/resources.md' });
+const officialHomeImage = (block: 'hero' | 'identidad' | 'cierre'): ImageResource => ({ block, status: 'verificado', src: block === 'hero' ? '/images/home/hero-proteccion.png' : block === 'identidad' ? '/images/home/identidad-comunidad.png' : '/images/home/cierre-seguridad.png', width: 500, height: 350, purpose: 'decorativo', alt: '', sourceReference: block === 'hero' ? 'Inicio arriba.png aportada por la responsable el 2026-11-06 para la primera imagen de Inicio.' : block === 'identidad' ? 'inicio medio.png aportada por la responsable el 2026-11-06 para la segunda imagen de Inicio (Somos Priva).' : 'inicio final.png aportada por la responsable el 2026-11-06 para la última imagen de Inicio.' });
 // Educational copy approved; official institutional images received and inspected.
 export const homeContent: HomeData = {
  testOnly: false,

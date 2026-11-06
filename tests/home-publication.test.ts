@@ -47,7 +47,7 @@ for (const [name, mutate] of invalid) test(`rechaza ${name}`, () => {
 });
 
 test('official home images, brand and editorial pass publication with real local files',()=>{
- assert.equal(homeContent.brand.src,'/brand/priva-logo.png');assert.equal(homeContent.brand.width,104);assert.equal(homeContent.brand.height,40);assert.equal(homeContent.brand.status,'verificado');
+ assert.equal(homeContent.brand.src,'/brand/priva-logo.svg');assert.equal(homeContent.brand.width,104);assert.equal(homeContent.brand.height,47.08);assert.equal(homeContent.brand.status,'verificado');
  assert.equal(homeContent.visual.typography.status,'verificado');assert.equal(homeContent.visual.palette.status,'verificado');
  for (const image of [homeContent.hero.image, homeContent.identity.image, homeContent.closing.image]) {
   const png = readFileSync(join('public', image.src.slice(1)));

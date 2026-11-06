@@ -2,7 +2,7 @@
 
 **Feature Directory**: `specs/011-accesibilidad-fidelidad`
 **Created**: 2026-10-16
-**Status**: Borrador derivado de R35; implementación y pruebas no ejecutadas.
+**Status**: Verificación automática y manual del recorrido demo/local completada, 2026-11-04; fidelidad exacta y entrega del PDF pendientes; ver plan.md y tasks.md. R35 y las decisiones posteriores de alcance demo/local gobiernan.
 **Input**: Separación funcional del SPEC PRIVA R35 aportado por la usuaria.
 **Fuente**: [SPEC original](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md). Requisitos originales: X01, X04, X05.
 
@@ -66,7 +66,7 @@ Como persona usuaria o responsable de Priva, quiero cerrar fidelidad con evidenc
 
 ### Reglas y contenido complementario
 
-Orden de bloques del PDF y capturas, aplicando las diferencias funcionales del spec. Instagram antes del formulario al apilar. Teclado, foco visible, anuncio de feedback, errores textuales asociados, imágenes informativas con alternativas y decorativas adecuadas, transcripciones equivalentes y controles cómodos. Objetivos técnicos originales: contraste 4.5:1 en texto normal y 3:1 en texto grande/componentes; controles de aproximadamente 44 px, sin afirmar que sean mediciones del PDF. Inventario de logo/imágenes/audios/enlaces recibido/pendiente; cero placeholders finales. Fuente y colores exactos pendientes. La entrega del PDF solo autoriza cambiar 2025 a 2026; no redibujar referencias por diferencias aprobadas de implementación. Mantener spec, plan, tareas, matriz e historial sincronizados; evidencia separada de decisión y resultado de pruebas.
+Orden de bloques del PDF y capturas, aplicando las diferencias funcionales del spec. Instagram antes del formulario al apilar. Teclado, foco visible, anuncio de feedback, errores textuales asociados, imágenes informativas con alternativas y decorativas adecuadas, transcripciones equivalentes y controles cómodos. Objetivos técnicos originales: contraste 4.5:1 en texto normal y 3:1 en texto grande/componentes; controles de aproximadamente 44 px, sin afirmar que sean mediciones del PDF. Inventario de logo/imágenes/audios/enlaces recibido/pendiente; cero placeholders finales. Fuente y paleta disponibles en disenovisual/referencias.txt y aplicadas en los estilos; ver resource-inventory.md. La entrega del PDF solo autoriza cambiar 2025 a 2026; no redibujar referencias por diferencias aprobadas de implementación. Mantener spec, plan, tareas, matriz e historial sincronizados; evidencia separada de decisión y resultado de pruebas.
 
 ### Key Entities
 
@@ -83,18 +83,18 @@ Recurso oficial; pantalla de referencia; evidencia de prueba; requisito trazable
 ## Assumptions
 
 - Se conserva el alcance del R35; la prioridad de estas historias y la división son una propuesta de organización, no decisiones nuevas de producto.
-- La documentación no equivale a implementación. No hay pruebas de aplicación ejecutadas por esta separación.
+- La documentación no equivale a implementación. La separación inicial no ejecutó pruebas; esta revisión consolida evidencia previa y registra una campaña integrada nueva.
 - Dependencias de trabajo: No exige otra feature para redactar o planificar; su validación final depende de los recorridos que afecta.
 - Las restricciones transversales de 009 y 011 aplican donde corresponda, aunque cada ID original tenga un único responsable.
 
 ## Pendientes y condiciones de cierre
 
-P01: recursos originales. P04: fuente y colores exactos. P05: revisión visual completa, modificación exclusiva del año del PDF y entrega material aún no realizadas. No se incluyen aquí cambios al PDF ni se afirma haberlos realizado. Faltan documentos 03/05/06/07 citados por el spec; no es posible validar sus 195 criterios.
+P01: inventario de recursos oficiales actualizado en resource-inventory.md. P04: fuente/paleta recibidas. P05: cotejo exacto/edición/entrega de losPDFs visuales originales no realizados por ausencia del archivo; lectura manual específica del menú, editor y bandeja vacía del panel confirmada por la responsable el 2026-11-04. No se incluyen aquí cambios al PDF ni se afirma haberlos realizado. Faltan documentos 03/05/06/07 citados por el spec; no es posible validar sus 195 criterios.
 
 ## Trazabilidad y verificación
 
 | ID original | Requisito local | Fuente original | Estado |
 |---|---|---|---|
-| X01 | FR-001 | Derivado UX | No ejecutado |
-| X04 | FR-002 | Derivado QA | No ejecutado |
-| X05 | FR-003 | Derivado gestión | No ejecutado |
+| X01 | FR-001 | Derivado UX | Matriz pública 98 combinaciones y banco privado 17/17; VoiceOver del menú/editor/bandeja vacía confirmado por la responsable |
+| X04 | FR-002 | Derivado QA | Inventario y capturas revisados; cotejo/edición PDF original pendiente |
+| X05 | FR-003 | Derivado gestión | Plan, tareas, inventario y evidencia sincronizados; confirmación manual registrada; entrega PDF pendiente |

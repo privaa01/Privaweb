@@ -13,7 +13,7 @@ const manifest=json('content/stories/audio/manifest.json');
 rmSync('demo/public',{recursive:true,force:true});cpSync('public','demo/public',{recursive:true});mkdirSync('demo/public/demo',{recursive:true});mkdirSync('demo/public/media/public',{recursive:true});
 const stories=[];
 for(const id of ['enlace-falso','llamada-sospechosa','contrasena-compartida','numero-desconocido']){
- const draft=json(`content/stories/drafts/${id}.json`),image=initialStoryImages[id==='numero-desconocido'?'llamada-sospechosa':id];draft.imageAlt=image.alt;
+ const draft=json(`content/stories/drafts/${id}.json`),image=initialStoryImages[id];draft.imageAlt=image.alt;
  if(createHash('sha256').update(JSON.stringify(draft)).digest('hex')!==mandate.stories[id])throw Error(`Unapproved changed story: ${id}`);
  validateDraft(draft);
  const a=manifest.files.find(a=>(a.materialKey??a.storyId)===id);if(!a?.approvedByProjectOwner)throw Error('Unapproved audio');

@@ -2,12 +2,13 @@ import {createServer} from 'node:http';
 import {readFileSync,realpathSync,statSync} from 'node:fs';
 import {resolve,relative,isAbsolute,extname} from 'node:path';
 import {pathToFileURL} from 'node:url';
-const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.woff2':'font/woff2','.ttf':'font/ttf'};
+const mime={'.json':'application/json; charset=utf-8','.mp3':'audio/mpeg','.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.woff2':'font/woff2','.ttf':'font/ttf'};
 /** Local validation only. Private services must be routed separately by real hosting. */
 export function documentsServer(directory){
  const root=realpathSync(directory);
  const file=(path)=>{const actual=realpathSync(resolve(root,'.'+path));const rel=relative(root,actual);if(rel.startsWith('..')||isAbsolute(rel)||!statSync(actual).isFile())throw Error('Not a public file');return readFileSync(actual);};
  return createServer((req,res)=>{
+ res.setHeader('Cache-Control','no-store');
  res.setHeader('Referrer-Policy','no-referrer');res.setHeader('X-Content-Type-Options','nosniff');
  const send=(code,bytes,type='text/plain; charset=utf-8')=>{res.statusCode=code;res.setHeader('Content-Type',type);res.setHeader('Content-Length',Buffer.byteLength(bytes));if(code!==200)res.setHeader('Cache-Control','no-store');res.end(req.method==='HEAD'?undefined:bytes);};
  if(req.method!=='GET'&&req.method!=='HEAD'){res.setHeader('Allow','GET, HEAD');send(405,'Method not allowed');return;}

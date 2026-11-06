@@ -41,7 +41,7 @@ try{
   results.push({id,status:'published-active'});
  }
  const fourth=JSON.parse(readFileSync(resolve('content/stories/drafts/numero-desconocido.json'),'utf8'));
- fourth.imageAlt=initialStoryImages['llamada-sospechosa'].alt;
+ fourth.imageAlt=initialStoryImages['numero-desconocido'].alt;
  if(createHash('sha256').update(JSON.stringify(fourth)).digest('hex')!==mandate.stories['numero-desconocido'])throw Error('Changed fourth authorized content');
  const receiptDirectory=process.env.PRIVA_STORIES_RECEIPT_DIR;
  if(receiptDirectory&&(realpathSync(receiptDirectory)!==resolve(receiptDirectory)||(statSync(receiptDirectory).mode&0o077)!==0))throw Error('Receipt directory must be canonical and private');

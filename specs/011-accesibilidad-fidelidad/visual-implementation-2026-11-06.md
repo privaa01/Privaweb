@@ -30,3 +30,7 @@ La confirmación manual VoiceOver anterior sigue como evidencia de su recorrido 
 ## Aceptación final — 2026-11-06
 
 La responsable respondió «Sí, apruebo el resultado visual de la 011» a la pregunta sobre Inicio, Historias, Priva App, Contacto y panel local, conservando imágenes/textos aprobados y las diferencias del panel (filtros/acciones con texto, datos reales y Contacto privado). La pregunta aclaró que la aprobación no publica el sitio. Se completa T015 y se cierra la 011 para el alcance demo/local. No es una declaración de igualdad píxel a píxel ni de preparación productiva; no se reabren los requisitos diferidos de 006–010. El PDF ya contiene2026 y no requirió edición. Commit/push/publicación no ejecutados por esta aceptación.
+
+## Ajuste posterior: preguntas dentro de su panel
+
+Por observación de la responsable, se baja la pregunta del borde superior al interior del fieldset: padding1.25rem, legend flotante con separación inferior y opciones con clear. Se conserva semántica legend/fieldset y el texto; no se modifica contenido editorial. Se oculta el feedback vacío. Build correcto; cuatro episodios comprobados a1440/390px: título al menos18px dentro del panel, opciones/feedback funcionales, axe sin infracciones y sin desbordamiento. La primera llamada al bancoaxe utilizó contexto implícito y se repitió correctamente con newContext. Capturas .test-output/story-question-spacing-1440.png y story-question-spacing-390.png. Ajuste local pendiente de commit y publicación.

@@ -37,3 +37,15 @@ A petición de la responsable se añade «Entrar al panel administrativo» al fo
 ## Corrección de la vista local de Historias — 2026-11-06
 
 La responsable detecta catálogo ausente en puerto 4355. Causa: scripts/serve-documents.mjs carecía de MIME application/json; el cliente rechaza respuestas octet-stream y conserva nosniff. Se añaden tipos JSON y audio/mpeg, sin relajar la validación del catálogo. Reiniciado únicamente el servidor estático local. Pruebas HTTP 3/3, incluida regresión MIME GET/HEAD. En Chrome se verifican tres tarjetas iniciales y cuarta al expandir; los cuatro audios cargan metadatos y avanzan su reproducción, las cuatro transcripciones abren con contenido y las preguntas muestran feedback al seleccionar respuesta. Captura: .test-output/stories-catalog-restored.png. No se borraron ni regeneraron contenidos; no se desplegó Firebase.
+
+## Actualización 2026-11-06: PDF recibido
+
+La ausencia del wireframe deja de ser un bloqueo. Ver wireframe-review-2026-11-06.md: seis páginas inspeccionadas, cotejo de cuatro páginas publicadas y acceso local, panel contrastado con código/evidencia previa sin nueva captura autenticada. Se registran diferencias visuales pendientes T010–T015. El año público ya es 2026; no se altera el original ni se declara cierre de fidelidad.
+
+## Implementación posterior al cotejo — 2026-11-06
+
+T010–T013 implementadas localmente,7/7casos públicos(98combinaciones) y repetición final Contacto1/1(14combinaciones) aprobados; Astrocheck0errores. Evidencia y límites en visual-implementation-2026-11-06.md. T014 requiere sesión autenticada y T015 aceptación visual final; no se cierra X04.
+
+T014 completada posteriormente: revisión real con sesión iniciada por la responsable, composición1280px, cuatro historias, apertura/cierre de editor y bandeja vacía, sin guardar cambios. Evidencia descriptiva y diferencias en visual-implementation-2026-11-06.md. Aceptación visual final T015 registrada el 2026-11-06.
+
+Cierre 2026-11-06: la responsable aprobó expresamente el resultado visual de la 011, incluidas sus diferencias de alcance demo/local. T001–T015 completadas; evidencia vigente en visual-implementation-2026-11-06.md. Las referencias anteriores a aceptación pendiente son históricas y quedan superadas. Sin commit, push ni despliegue por esta confirmación.

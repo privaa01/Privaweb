@@ -1,6 +1,7 @@
 ---
+import PublicIcon from '../ui/PublicIcon.astro';
 import type {AppData} from '../../content/app';
 interface Props{content:AppData['features']}
 const {content}=Astro.props;
 ---
-<section class="app-section" data-app-block="features"><h2>{content.title}</h2><p>{content.description}</p><div class="app-features">{content.items.map(item=><div data-feature><h3>{item.title}</h3><p>{item.description}</p></div>)}</div></section>
+<section class="app-section" data-app-block="features"><h2>{content.title}</h2><p>{content.description}</p><div class="app-features">{content.items.map((item,index)=><div data-feature><span class="app-icon-tile"><PublicIcon name={(['book','message','shield'] as const)[index]}/></span><h3>{item.title}</h3><p>{item.description}</p></div>)}</div></section>

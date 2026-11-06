@@ -4,13 +4,13 @@
 |---|---|---|
 | Identidad | public/brand/priva-logo.svg, src/config/brand.ts | Logo oficial declarado y usado; no reconstruido |
 | Tipografía y colores | disenovisual/referencias.txt, src/styles/global.css y fuentesTTF locales | FuentePlusJakartaSans y paleta aportadas. La indicación original de que estaban pendientes queda superada por estos archivos. Sin necesidad de cargarGoogleFonts externo |
-| Inicio | Evidencias002 de publicación, capturas1440/390, aprobación visual/editorial | Alcance educativo aprobado; cotejo contraPDF original limitado por archivo ausente |
-| Historias | initialStoryImages, content/stories/audio/manifest.json, TRANSCRIPCIONES.pdf y aprobaciones003 | Cuatro audios aprobados, portadas reales; cuarta reutiliza teléfono por decisión expresa. VoiceOver/teclado y equivalencia de las cuatro transcripciones confirmadas por la responsable |
+| Inicio | Evidencias002 de publicación, capturas1440/390, aprobación visual/editorial | Alcance educativo aprobado; cotejo realizado el 2026-11-06; diferencias en wireframe-review-2026-11-06.md |
+| Historias | initialStoryImages, content/stories/audio/manifest.json, TRANSCRIPCIONES.pdf y aprobaciones003 | Cuatro audios aprobados, portadas reales; cuatro portadas propias autorizadas el 2026-11-06. VoiceOver/teclado y equivalencia de las cuatro transcripciones confirmadas por la responsable |
 | PrivaApp | Aprobaciones004 y recursos públicos existentes | Prototipo, funciones previstas y Próximamente aprobados; sin inventar enlaces de descarga |
 | Contacto | Corrección/aceptación005 y textos exactos aportados | Instagram antes del formulario; demo ficticiaFirestore. Aprobación visual/teclado/VoiceOver registrada. No certificación operativa de promesas absolutas de la captura |
 | Acceso/panel | Capturas006/references/inicio-de-sesion.jpeg y panel-administrativo.jpeg, manifestSHA256 | Referencias recibidas. Usuario→Correo, Comentarios→Contacto privado, sin cifras/cuentas ficticias. Diseño del acceso y funcionalidad local aprobados por la responsable |
 | Documentos/404 | Demo publicada y revisión010 | Teclado/VoiceOver confirmados por la responsable. Aviso nuevo rechazado; propuesta guardada fuera de páginas publicables y aviso anterior conservado |
-| PDFs visuales originales | No presentes en el inventario versionado | No afirmar igualdad píxel a píxel, edición del año ni entrega dePDF modificado. El PDF de transcripciones es otro material, no sustituye wireframes |
+| PDF visual | wireframes web (3).pdf aportado el 2026-11-06, seis páginas | Cotejo completo inicial registrado; ya muestra 2026. No se afirma igualdad píxel a píxel ni edición. Ver wireframe-review-2026-11-06.md |
 
 Las aprobaciones previas se conservan; no se vuelven a solicitar textos ni recursos ya recibidos. No se certifica ausencia de rastreo de proveedores externos, jurisdicción,100%confidencialidad ni producción por una captura o por un resultadoaxe. Mantener diferencias aprobadas y límites de009/010.
 
@@ -75,3 +75,7 @@ La responsable aporta «Mesa de trabajo 6.png» (421 × 129) para Luisa. Copia o
 ## Portada Número desconocido / Salomé — 2026-11-06
 
 La responsable aporta «Mesa de trabajo 8.png» (421 × 129) para Salomé, cuarta historia. Copia original: public/images/stories/numero-salome.png; mapa y alternativa «No todo lo que ves es real. El caso de Salomé.» actualizados. Se actualiza solo el hash autorizado del episodio por imageAlt; audio, título, transcripción y pregunta conservados. Compilación demo correcta; Chrome verifica tres historias iniciales, cuarta al expandir, portada nueva, metadatos de audio, transcripción y opciones; capturas .test-output/salome-cover-desktop.png y salome-cover-mobile.png. Las cuatro portadas quedan reemplazadas según las instrucciones de la responsable. Sin modificar registros privados existentes ni publicar Firebase.
+
+## Wireframe original recibido — 2026-11-06
+
+Fuente, SHA256, páginas y resultados en wireframe-review-2026-11-06.md. Quedan superadas las menciones históricas a ausencia del PDF visual. No es un documento de criterios ni modifica decisiones previas de producto.

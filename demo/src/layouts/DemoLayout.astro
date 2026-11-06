@@ -1,11 +1,16 @@
 ---
 import Layout from '../../../src/layouts/PublicLayout.astro';
+import {officialBrand} from '../../../src/config/brand';
+import {footer} from '../../../src/config/navigation';
 import LocalAdminAccess from '../../../src/components/LocalAdminAccess.astro';
 const {title,pageId}=Astro.props;
 ---
 <Layout title={title} pageId={pageId} contentLayout="full" noReferrer>
  <aside class="demo-notice" aria-label="Estado de la demostración"><strong>Demo pública de Priva.</strong> Historias educativas y presentación del prototipo. Contacto permite guardar únicamente pruebas ficticias en Firestore.</aside>
  <slot />
- <footer slot="footer" class="demo-footer"><p>Priva · Demostración educativa</p><nav aria-label="Enlaces complementarios"><a href="/terminos.html">Términos de la demo</a> · <a href="/manifiesto-datos.html">Privacidad de la demo</a> · <a href="/contacto.html">Contacto</a></nav><LocalAdminAccess /></footer>
+ <footer slot="footer" class="demo-footer"><div class="demo-footer-inner"><div class="demo-footer-row"><div class="demo-footer-identity"><a class="demo-footer-brand" href="/index.html" aria-label="Priva — Inicio"><img src={officialBrand.src} alt="Priva" width={officialBrand.width} height={officialBrand.height}/></a><p>{footer.tagline}</p></div><nav aria-label="Enlaces complementarios"><LocalAdminAccess /><a href="/terminos.html">Términos de la demo</a><a href="/manifiesto-datos.html">Privacidad de la demo</a><a href="/contacto.html">Contacto</a></nav></div><p class="demo-footer-copyright">{footer.copyright}</p></div></footer>
 </Layout>
-<style>.demo-notice{padding:1rem 1.5rem;background:#e4f3eb;color:#123c2d;border-bottom:1px solid #406b59;overflow-wrap:anywhere}.demo-footer{padding:2rem;background:#102e23;color:white}.demo-footer a{color:white;display:inline-block;padding:.5rem}.demo-footer :focus-visible{outline-color:var(--primary-lightest)}</style>
+<style>
+.demo-notice{padding:1rem 1.5rem;background:#e4f3eb;color:#123c2d;border-bottom:1px solid #406b59;overflow-wrap:anywhere}
+.demo-footer{padding:2rem 1.5rem;background:#102e23;color:#fff}.demo-footer-inner{max-width:80rem;margin:auto}.demo-footer-row,.demo-footer-identity{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}.demo-footer-row{justify-content:space-between}.demo-footer-identity p{font-size:.8rem;margin:0;color:#c3d5ca}.demo-footer-brand{display:inline-flex;align-items:center;min-height:44px;background:#f6f9f6;border-radius:.5rem;padding:.25rem .45rem}.demo-footer-brand img{display:block;width:104px;height:auto}.demo-footer nav{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem}.demo-footer nav a{color:#fff;display:inline-flex;align-items:center;min-height:44px;padding:.5rem;font-size:.8rem}.demo-footer-copyright{border-top:1px solid #648274;margin:1.5rem 0 0;padding-top:1.5rem;font-size:.8rem;color:#c3d5ca;overflow-wrap:anywhere}.demo-footer :focus-visible{outline:3px solid #b8f4ce;outline-offset:3px}@media(max-width:48rem){.demo-footer-row{align-items:flex-start;flex-direction:column}.demo-footer nav{align-items:flex-start}}
+</style>

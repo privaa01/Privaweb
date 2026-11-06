@@ -31,3 +31,6 @@
 .home-closing .home-button { background: var(--primary-lightest); color: var(--primary-darker); }
 .home-closing :focus-visible { outline-color: var(--primary-lightest); }
 .home-closing .home-visual { background: var(--primary-dark); border-color: var(--primary-light); }
+
+/* 011: desktop composition from received wireframe, with approved copy/assets. */
+.home-title-emphasis{text-decoration:underline;text-decoration-color:#d8e6dc;text-decoration-thickness:.25em;text-underline-offset:-.1em;text-decoration-skip-ink:none}.home-badge::before{content:"";display:inline-block;width:.45em;height:.45em;border-radius:50%;background:#047857;margin-right:.6em;vertical-align:middle}.home-hero .home-row,.home-closing .home-row{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}@media(max-width:50rem){.home-hero .home-row,.home-closing .home-row{grid-template-columns:minmax(0,1fr)}}

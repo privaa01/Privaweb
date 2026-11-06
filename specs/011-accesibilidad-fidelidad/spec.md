@@ -2,7 +2,7 @@
 
 **Feature Directory**: `specs/011-accesibilidad-fidelidad`
 **Created**: 2026-10-16
-**Status**: Verificación automática y manual del recorrido demo/local completada, 2026-11-04; fidelidad exacta y entrega del PDF pendientes; ver plan.md y tasks.md. R35 y las decisiones posteriores de alcance demo/local gobiernan.
+**Status**: Completada y aceptada para el alcance demo/panel local el 2026-11-06. T001–T015 completadas; ver visual-implementation-2026-11-06.md. No implica despliegue ni habilitación productiva.
 **Input**: Separación funcional del SPEC PRIVA R35 aportado por la usuaria.
 **Fuente**: [SPEC original](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md). Requisitos originales: X01, X04, X05.
 
@@ -89,12 +89,12 @@ Recurso oficial; pantalla de referencia; evidencia de prueba; requisito trazable
 
 ## Pendientes y condiciones de cierre
 
-P01: inventario de recursos oficiales actualizado en resource-inventory.md. P04: fuente/paleta recibidas. P05: cotejo exacto/edición/entrega de losPDFs visuales originales no realizados por ausencia del archivo; lectura manual específica del menú, editor y bandeja vacía del panel confirmada por la responsable el 2026-11-04. No se incluyen aquí cambios al PDF ni se afirma haberlos realizado. Faltan documentos 03/05/06/07 citados por el spec; no es posible validar sus 195 criterios.
+P01: inventario actualizado en resource-inventory.md. P04: fuente/paleta recibidas. P05: PDF visual de seis páginas recibido y cotejado el 2026-11-06; ver wireframe-review-2026-11-06.md. Se supera la ausencia del archivo, T010–T013 de presentación ya están implementadas y verificadas localmente (visual-implementation-2026-11-06.md); el cotejo visual autenticado del panel ya se realizó con sesión iniciada por la responsable; la responsable aprobó expresamente el resultado visual y las diferencias conservadas el 2026-11-06. El PDF ya contiene 2026; no se ha editado ni es necesario cambiar ese año. La responsable confirmó el recorrido manual del menú/editor/bandeja con teclado y VoiceOver. No cerrar fidelidad visual por esa confirmación. Los documentos 03/05/06/07 del spec siguen siendo materiales distintos: no se afirma validar sus 195 criterios con este PDF.
 
 ## Trazabilidad y verificación
 
 | ID original | Requisito local | Fuente original | Estado |
 |---|---|---|---|
 | X01 | FR-001 | Derivado UX | Matriz pública 98 combinaciones y banco privado 17/17; VoiceOver del menú/editor/bandeja vacía confirmado por la responsable |
-| X04 | FR-002 | Derivado QA | Inventario y capturas revisados; cotejo/edición PDF original pendiente |
-| X05 | FR-003 | Derivado gestión | Plan, tareas, inventario y evidencia sincronizados; confirmación manual registrada; entrega PDF pendiente |
+| X04 | FR-002 | Derivado QA | PDF recibido y cotejado; ajustes públicos implementados; cotejo autenticado completado; aceptación visual final registrada |
+| X05 | FR-003 | Derivado gestión | Plan, tareas, inventario y evidencia sincronizados; confirmación manual y cotejo registrados; evidencia actualizada; T014/T015 completadas y aceptación registrada |

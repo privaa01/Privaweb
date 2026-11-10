@@ -3,7 +3,21 @@ service cloud.firestore {
   match /databases/{database}/documents {
     function isAdmin() {
       return request.auth != null
-        && request.auth.token.admin == true;
+        && exists(/databases/$(database)/documents/administradores/$(request.auth.uid))
+        && get(/databases/$(database)/documents/administradores/$(request.auth.uid)).data.active == true;
+    }
+    function owns(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+    function validStandardUser(uid, data) {
+      return data.keys().hasAll(['schemaVersion','uid','tipo','nombre','createdAt','updatedAt'])
+        && data.keys().hasOnly(['schemaVersion','uid','tipo','nombre','createdAt','updatedAt'])
+        && data.schemaVersion == 1
+        && data.uid == uid
+        && data.tipo == 'estandar'
+        && data.nombre is string && data.nombre.size() <= 80
+        && data.createdAt is timestamp
+        && data.updatedAt is timestamp;
     }
     function validText(value, maximum) {
       return value is string && value.size() > 0 && value.size() <= maximum;
@@ -37,8 +51,25 @@ service cloud.firestore {
         && data.order is int && data.order >= 0 && data.order <= 999
         && data.createdAt is timestamp && data.updatedAt is timestamp && data.createdBy is string;
     }
-    match /admin_users/{uid} {
-      allow read, write: if false;
+    match /administradores/{uid} {
+      allow get: if owns(uid) && resource.data.active == true;
+      allow list, create, update, delete: if false;
+    }
+    match /usuarios/{uid} {
+      allow create: if owns(uid)
+        && validStandardUser(uid, request.resource.data)
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+      allow get: if owns(uid) || isAdmin();
+      allow list: if isAdmin();
+      allow update: if owns(uid)
+        && validStandardUser(uid, request.resource.data)
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.tipo == resource.data.tipo
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['nombre','updatedAt']);
+      allow delete: if false;
     }
     match /stories/{storyId} {
       allow read: if (resource.data.status == 'published' && resource.data.active == true) || isAdmin();

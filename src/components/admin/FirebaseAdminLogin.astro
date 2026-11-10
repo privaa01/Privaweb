@@ -1,0 +1,10 @@
+---
+import AdminBrand from './AdminBrand.astro';
+---
+<main class="admin-auth admin-login"><AdminBrand/><h1>Bienvenido de nuevo</h1><p>Inicia sesión para acceder al panel administrativo y gestionar la comunidad.</p>
+<form data-firebase-login novalidate>
+  <label for="firebase-admin-email">Correo</label><input id="firebase-admin-email" name="email" type="email" autocomplete="username" required/>
+  <label for="firebase-admin-password">Contraseña</label><input id="firebase-admin-password" name="password" type="password" autocomplete="current-password" required maxlength="128"/>
+  <button type="submit">Entrar</button><p role="status" aria-live="polite" data-login-status></p>
+</form><noscript><p>Activa JavaScript para iniciar sesión.</p></noscript></main>
+<script>import '../../scripts/firebase-admin-login';</script>

@@ -1,0 +1,29 @@
+<main class="admin-shell firebase-admin" data-firebase-stories>
+  <h1>Gestionar historias</h1><p>Las historias se guardan en la colección <code>stories</code> de Firestore.</p>
+  <p role="status" aria-live="polite" data-admin-status>Comprobando acceso…</p>
+  <div data-admin-private hidden>
+    <p><strong data-admin-email></strong> <button type="button" data-admin-logout>Cerrar sesión</button></p>
+    <section aria-labelledby="firebase-story-list-heading"><h2 id="firebase-story-list-heading">Historias guardadas</h2><button type="button" data-new-story>Nueva historia</button><ul data-firestore-stories></ul></section>
+    <section aria-labelledby="firebase-story-editor-heading"><h2 id="firebase-story-editor-heading">Crear o editar historia</h2>
+      <form data-firestore-story-form novalidate>
+        <label>Identificador <input name="slug" required pattern="[a-z0-9]+(?:-[a-z0-9]+)*" maxlength="80" placeholder="nombre-de-la-historia"/></label>
+        <label>Título <input name="title" required maxlength="160"/></label>
+        <label>Nombre de la protagonista <input name="personName" maxlength="100"/></label>
+        <label>Categoría <input name="category" required maxlength="80"/></label>
+        <label>Descripción <textarea name="description" required maxlength="3000" rows="3"></textarea></label>
+        <label>URL HTTPS de la imagen <input name="imageUrl" type="url" required placeholder="https://…"/></label>
+        <label>Texto alternativo de la imagen <input name="imageAlt" required maxlength="500"/></label>
+        <div class="story-inline"><label>Ancho <input name="imageWidth" type="number" min="1" max="5000" required/></label><label>Alto <input name="imageHeight" type="number" min="1" max="5000" required/></label></div>
+        <label>Enlace del episodio de Spotify <input name="spotifyUrl" type="url" required placeholder="https://open.spotify.com/episode/…"/></label>
+        <label>Duración en segundos <input name="durationSeconds" type="number" min="1" max="7200" required/></label>
+        <label>Transcripción <textarea name="transcript" required maxlength="20000" rows="8"></textarea></label>
+        <label>Pregunta <input name="question" required maxlength="300"/></label>
+        {[0,1,2].map((index)=><fieldset><legend>Opción {index+1}</legend><label>Texto <input name={`optionLabel${index}`} required maxlength="500"/></label><label>Explicación <textarea name={`optionExplanation${index}`} required maxlength="3000" rows="3"></textarea></label></fieldset>)}
+        <label>Orden <input name="order" type="number" min="0" max="999" value="0" required/></label>
+        <label><input name="published" type="checkbox"/> Publicada</label><label><input name="active" type="checkbox"/> Activa en la web</label>
+        <button type="submit">Guardar en Firestore</button><button type="button" data-cancel-story>Limpiar formulario</button>
+      </form>
+    </section>
+  </div>
+</main>
+<script>import '../../scripts/firebase-stories';</script>

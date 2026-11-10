@@ -1,6 +1,56 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.admin == true;
+    }
+    function validText(value, maximum) {
+      return value is string && value.size() > 0 && value.size() <= maximum;
+    }
+    function validOption(option) {
+      return option is map
+        && option.keys().hasAll(['id','label','explanation'])
+        && option.keys().hasOnly(['id','label','explanation'])
+        && option.id is string && option.id.matches('[a-z0-9]+(-[a-z0-9]+)*') && option.id.size() <= 80
+        && validText(option.label, 500) && validText(option.explanation, 3000);
+    }
+    function validStory(data) {
+      return data.keys().hasAll(['schemaVersion','slug','title','personName','category','description','transcript','question','options','image','podcast','status','active','order','createdAt','updatedAt','createdBy'])
+        && data.keys().hasOnly(['schemaVersion','slug','title','personName','category','description','transcript','question','options','image','podcast','status','active','order','createdAt','updatedAt','createdBy'])
+        && data.schemaVersion == 1
+        && data.slug is string && data.slug.matches('[a-z0-9]+(-[a-z0-9]+)*') && data.slug.size() <= 80
+        && validText(data.title,160) && data.personName is string && data.personName.size() <= 100
+        && validText(data.category,80) && validText(data.description,3000)
+        && validText(data.transcript,20000) && validText(data.question,300)
+        && data.options is list && data.options.size() == 3
+        && validOption(data.options[0]) && validOption(data.options[1]) && validOption(data.options[2])
+        && data.image is map && data.image.keys().hasAll(['url','alt','width','height']) && data.image.keys().hasOnly(['url','alt','width','height'])
+        && data.image.url is string && data.image.url.matches('https://[^\\s]+') && data.image.url.size() <= 1500
+        && validText(data.image.alt,500) && data.image.width is int && data.image.width > 0 && data.image.width <= 5000 && data.image.height is int && data.image.height > 0 && data.image.height <= 5000
+        && data.podcast is map && data.podcast.keys().hasAll(['provider','episodeId','publicUrl','embedUrl','durationSeconds']) && data.podcast.keys().hasOnly(['provider','episodeId','publicUrl','embedUrl','durationSeconds'])
+        && data.podcast.provider == 'spotify' && data.podcast.episodeId is string && data.podcast.episodeId.matches('[A-Za-z0-9]{22}')
+        && data.podcast.publicUrl == 'https://open.spotify.com/episode/' + data.podcast.episodeId
+        && data.podcast.embedUrl == 'https://open.spotify.com/embed/episode/' + data.podcast.episodeId
+        && data.podcast.durationSeconds is int && data.podcast.durationSeconds > 0 && data.podcast.durationSeconds <= 7200
+        && data.status in ['draft','published'] && data.active is bool && (data.active == false || data.status == 'published')
+        && data.order is int && data.order >= 0 && data.order <= 999
+        && data.createdAt is timestamp && data.updatedAt is timestamp && data.createdBy is string;
+    }
+    match /admin_users/{uid} {
+      allow read, write: if false;
+    }
+    match /stories/{storyId} {
+      allow read: if (resource.data.status == 'published' && resource.data.active == true) || isAdmin();
+      allow create: if isAdmin() && storyId == request.resource.data.slug && validStory(request.resource.data)
+        && request.resource.data.createdAt == request.time && request.resource.data.updatedAt == request.time
+        && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isAdmin() && storyId == request.resource.data.slug && validStory(request.resource.data)
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.createdBy == resource.data.createdBy
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if isAdmin();
+    }
     match /demo_contact/{id} {
       allow create: if id.matches('[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}')
         && !exists(/databases/$(database)/documents/privacy_suppressions/$(id))

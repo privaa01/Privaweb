@@ -8,4 +8,3 @@ export const firebaseConfig = {
 } as const;
 
 export const storiesCollection = "stories";
-export const adminUsersCollection = "admin_users";

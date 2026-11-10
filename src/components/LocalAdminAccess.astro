@@ -1,13 +1,12 @@
-<a class="local-admin-access" href="https://localhost:4354/admin/login" hidden>Entrar al panel administrativo</a>
+<a class="local-admin-access" href="/admin/login.html">Entrar al panel administrativo</a>
 <script is:inline>
-  // El panel funciona únicamente en el computador de la responsable.
+  // En desarrollo conserva el acceso al servidor administrativo local.
   if (['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname)) {
     document.querySelectorAll('.local-admin-access').forEach(link => {
-      link.hidden = false;
+      link.href = 'https://localhost:4354/admin/login';
     });
   }
 </script>
 <style>
-  .local-admin-access[hidden] { display: none !important; }
   .local-admin-access { display: inline-flex; align-items: center; min-height: 44px; padding: .65rem 1rem; border: 1px solid currentColor; border-radius: 999px; color: inherit; margin: 0; }
 </style>

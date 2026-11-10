@@ -16,7 +16,7 @@ export interface StoriesBlock { title:string; description:string; image:ImageRes
 export interface StoriesData {
  testOnly:boolean; hero:StoriesBlock; method:StoriesBlock; closing:StoriesBlock;
  identity: { title:string; description:string; href:string; review:Review }[];
- brand:ImageResource; social:SocialLink; endpoint:string; mediaOrigins:string[];
+ brand:ImageResource; social:SocialLink; endpoint:string; mediaOrigins:string[]; firestore?:boolean;
  visual:{ typography: {status:string;sourceReference:string};palette:{status:string;sourceReference:string} };
 }
 const review=():Review=>({status:'pendiente',decisionReference:'',reviewedText:''});

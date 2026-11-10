@@ -181,7 +181,7 @@ export class StoriesService {
               width: img.width!,
               height: img.height!,
             },
-            audio: { src: "/media/public/" + audio.id, type: audio.mime },
+            audio: { provider:"file" as const,src: "/media/public/" + audio.id, type: audio.mime },
             transcript: d.transcript,
             question: d.question,
             options: d.options,

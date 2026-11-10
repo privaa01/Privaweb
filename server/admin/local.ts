@@ -12,6 +12,7 @@ import {composeLocalInbox} from '../inbox/local.ts';
 import {localBootstrap,localJson,localSetupBody,type LocalOwner} from './local-bootstrap.ts';
 import {AdminError} from '../../src/lib/admin-contract.ts';
 import {sharedLock} from '../privacy/maintenance.ts';
+import {FirebaseStoriesPublisher} from '../stories/firebase-publisher.ts';
 if(process.env.PRIVA_ADMIN_MODE!=='local'||!process.env.PRIVA_ADMIN_LOCAL_CONFIG)throw Error('Explicit local configuration required');
 const configPath=realpathSync(process.env.PRIVA_ADMIN_LOCAL_CONFIG);if((lstatSync(configPath).mode&0o077)!==0)throw Error('Local configuration must be private');
 const config=JSON.parse(readFileSync(configPath,'utf8')) as {directory:string;owner:LocalOwner;certificate:string;key:string;origin:string};
@@ -21,7 +22,7 @@ if((lstatSync(config.key).mode&0o077)!==0)throw Error('TLS key must be private')
 const runtime=openAdminRuntime(config.directory,[resolve('.'),resolve('public'),resolve('dist'),resolve('.demo-dist'),resolve('.private-build')]);
 const releasePrivacyLock=await sharedLock(join(config.directory,'contact.sqlite.maintenance.lock'));
 const inbox=composeLocalInbox({repository:runtime.repository,directory:config.directory,origin:origin.origin,csrfKey:runtime.csrfKey});
-const bootstrap=localBootstrap(runtime,config.owner,origin.origin),stories=composeStories({repository:runtime.repository,directory:config.directory,origin:origin.origin,csrfKey:runtime.csrfKey,contactDatabase:inbox.contactDatabase});
+const bootstrap=localBootstrap(runtime,config.owner,origin.origin),stories=composeStories({repository:runtime.repository,directory:config.directory,origin:origin.origin,csrfKey:runtime.csrfKey,contactDatabase:inbox.contactDatabase,firebasePublisher:new FirebaseStoriesPublisher()});
 const handler=createAdminHandler({...runtime,service:new AdminService(runtime.repository,runtime.hasher,runtime.abuseKey),recovery:new RecoveryService(runtime.repository,runtime.hasher,runtime.abuseKey,runtime.mailKey,origin.origin),origin:origin.origin,viewsRoot:resolve('.private-build/admin'),stories:stories.handler,inbox:inbox.handler});
 const instance=randomUUID();
 const setupFiles=new Map([['/admin/configurar',['index.html','text/html']],['/admin/local-setup.js',['setup.js','text/javascript']],['/admin/local-setup.css',['setup.css','text/css']]]);

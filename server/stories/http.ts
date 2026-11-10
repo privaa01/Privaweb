@@ -12,11 +12,13 @@ import {
 } from "../admin/sessions.ts";
 import type { StoriesService } from "./service.ts";
 import type { StoryMedia } from "./media.ts";
+import { FirebaseStoryInputError, type FirebaseStoriesPublisher } from './firebase-publisher.ts';
 export function createStoriesHandler(o: {
   service: StoriesService;
   media: StoryMedia;
   origin: string;
   csrfKey: Buffer;
+  firebasePublisher?:FirebaseStoriesPublisher;
   log?: (v: {
     operationId: string | undefined;
     kind: string;
@@ -168,7 +170,29 @@ export function createStoriesHandler(o: {
         return true;
       }
       const idPattern =
-        "(?:historia-[a-f0-9-]{36}|enlace-falso|llamada-sospechosa|contrasena-compartida)";
+        "(?:historia-[a-f0-9-]{36}|enlace-falso|llamada-sospechosa|contrasena-compartida|numero-desconocido)";
+      m = new RegExp("^/api/admin/historias/("+idPattern+")/firestore$").exec(path);
+      if(m){
+        if(!o.firebasePublisher)throw new StoryError(503,"firebase_unavailable");
+        if(method==="GET"){
+          s.authorize(token);
+          const story=await o.firebasePublisher.get(m[1]);
+          json(story?200:404,{story});
+          return true;
+        }
+        if(method!=="POST")throw new StoryError(405,"method_not_allowed");
+        if(!/^application\/json(?:;\s*charset=utf-8)?$/i.test(req.headers["content-type"]??""))throw new StoryError(415,"invalid");
+        const chunks:Buffer[]=[];let bytes=0;
+        for await(const part of req){const chunk=Buffer.from(part);bytes+=chunk.length;if(bytes>32768)throw new StoryError(413,"invalid");chunks.push(chunk);}
+        let body:any;try{body=JSON.parse(new TextDecoder("utf-8",{fatal:true}).decode(Buffer.concat(chunks)));}catch{throw new StoryError(400,"invalid");}
+        const allowed=['operationId','personName','imageUrl','imageAlt','imageWidth','imageHeight','spotifyUrl','durationSeconds','order'];
+        if(!body||typeof body!=='object'||Array.isArray(body)||Object.keys(body).length!==allowed.length||allowed.some(key=>!Object.hasOwn(body,key))||typeof body.operationId!=='string'||!uuidPattern.test(body.operationId))throw new StoryError(422,"invalid");
+        op=body.operationId;
+        const actor=s.authorize(token),managed=s.get(token,m[1]),draft=managed.working;
+        try{json(200,await o.firebasePublisher.save({schemaVersion:1,slug:managed.id,title:draft.title,personName:body.personName,category:draft.category,description:draft.description,transcript:draft.transcript,question:draft.question,options:draft.options,image:{url:body.imageUrl,alt:body.imageAlt||draft.imageAlt,width:body.imageWidth,height:body.imageHeight},podcast:{provider:'spotify',episodeId:'',publicUrl:body.spotifyUrl,embedUrl:'',durationSeconds:body.durationSeconds},status:'published',active:true,order:body.order},actor));}
+        catch(error){if(error instanceof FirebaseStoryInputError)throw new StoryError(422,'invalid',{form:error.message});throw error;}
+        return true;
+      }
       m = new RegExp(
         "^/api/admin/historias/(" + idPattern + ")/recursos/([a-f0-9-]+)$",
       ).exec(path);

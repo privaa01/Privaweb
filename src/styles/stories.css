@@ -13,3 +13,6 @@
 
 /* Keep each question inside the exercise panel instead of on its top border. */
 .story-body fieldset{padding:1.25rem}.story-body legend{float:left;width:100%;padding:0;margin:0 0 .8rem;line-height:1.5}.story-body [data-options]{clear:both}.story-feedback:empty{display:none}
+
+/* Third-party audio is opt-in: the iframe is created only after the visitor requests it. */
+.story-audio [data-spotify-frame] iframe{display:block;width:100%;border:0;border-radius:.8rem;margin-top:.8rem}.story-audio [data-spotify-link]{display:inline-flex;align-items:center;min-height:44px}.story-audio [data-load-spotify]{max-width:100%;white-space:normal}

@@ -13,6 +13,7 @@
   },
   "include": [
     "./*.ts",
+    "../../src/lib/firebase-story.ts",
     "../../src/lib/story-management-*.ts",
     "../../tests/story-management-*.test.ts",
     "../../tests/fixtures/story-management-service/*.ts"

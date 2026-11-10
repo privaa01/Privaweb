@@ -6,6 +6,7 @@ import {
   type StoryReceipt,
 } from "../lib/story-management-contract";
 import { validateDraft } from "../lib/story-management-validation";
+import { validateFirebaseStory } from "../lib/firebase-story";
 const root = document.querySelector<HTMLElement>("[data-story-manager]");
 if (root) {
   const el = <T extends HTMLElement = HTMLElement>(selector: string) =>
@@ -79,7 +80,7 @@ if (root) {
     urls = [];
     root!.querySelectorAll("[data-preview]").forEach((n) => n.remove());
   }
-  function show(s: ManagedStory | null) {
+  function show(s: ManagedStory | null, cloud: any = null) {
     selected = s;
     const d = s?.working ?? emptyDraft();
     form.reset();
@@ -89,7 +90,6 @@ if (root) {
       "title",
       "category",
       "description",
-      "imageAlt",
       "transcript",
       "question",
     ] as const)
@@ -98,12 +98,15 @@ if (root) {
       field("option-" + i).value = o.label;
       field("explanation-" + i).value = o.explanation;
     });
-    for (const kind of ["image", "audio"] as const)
-      el(`[data-file-status="${kind}"]`).textContent = d[
-        kind === "image" ? "imageResourceId" : "audioResourceId"
-      ]
-        ? "Recurso guardado."
-        : "Sin recurso seleccionado.";
+    const firebaseDefaults=cloud?{personName:cloud.personName,imageUrl:cloud.image.url,imageAlt:cloud.image.alt,width:String(cloud.image.width),height:String(cloud.image.height),spotifyUrl:cloud.podcast.publicUrl,duration:String(cloud.podcast.durationSeconds),order:String(cloud.order)}:s?.id==='contrasena-compartida'?{personName:'Luisa',imageUrl:'https://priva-785cb.web.app/images/stories/contrasena-luisa.png',imageAlt:'Si te presionan, desconfía. El caso de Luisa.',width:'421',height:'129',spotifyUrl:'https://open.spotify.com/episode/52y1zIOZ1J4WgW1PKxeWiu',duration:'138',order:'3'}:null;
+    field('personName').value=firebaseDefaults?.personName??'';
+    field('imageUrl').value=firebaseDefaults?.imageUrl??'';
+    field('firestoreImageAlt').value=firebaseDefaults?.imageAlt??d.imageAlt;
+    field('imageWidth').value=firebaseDefaults?.width??'';
+    field('imageHeight').value=firebaseDefaults?.height??'';
+    field('spotifyUrl').value=firebaseDefaults?.spotifyUrl??'';
+    field('durationSeconds').value=firebaseDefaults?.duration??'';
+    field('storyOrder').value=firebaseDefaults?.order??'0';
     editor.hidden = false;
     el("[data-editor-state]").textContent = s
       ? `${s.published ? "Publicada" : "Borrador"} · ${s.active ? "Activa" : "Inactiva"}${s.pendingChanges ? " · Cambios sin publicar" : ""}`
@@ -117,11 +120,11 @@ if (root) {
       "title",
       "category",
       "description",
-      "imageAlt",
       "transcript",
       "question",
     ] as const)
       d[k] = field(k).value;
+    d.imageAlt = field("firestoreImageAlt").value;
     d.options = d.options.map((o, i) => ({
       ...o,
       label: field("option-" + i).value,
@@ -265,10 +268,10 @@ if (root) {
     busy = true;
     lock();
     try {
-      const r = await storyRequest("/" + id);
+      const [r,cloudResponse] = await Promise.all([storyRequest("/" + id),storyRequest("/"+id+"/firestore")]);
       if (g !== generation || !authorized) return;
       if (!r.ok) throw Error();
-      show(r.value);
+      show(r.value,cloudResponse.ok?cloudResponse.value.story:null);
       field("title").focus();
     } catch {
       if (g === generation && authorized)
@@ -372,7 +375,7 @@ if (root) {
   form.addEventListener("input", () => {
     dirty = true;
   });
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (busy || pending) return;
     let d;
@@ -383,33 +386,36 @@ if (root) {
       message("Revisa los campos.");
       return;
     }
-    void mutate({
-      path: selected ? "/" + selected.id : "",
-      method: selected ? "PUT" : "POST",
-      body: {
-        operationId: crypto.randomUUID(),
-        ...(selected ? { expectedRevision: selected.revision } : {}),
-        working: d,
-      },
-      id: selected?.id ?? "",
-      generation,
-    });
-  });
-  el("[data-publish]").addEventListener("click", () => {
-    if (!selected || dirty) {
-      message("Guarda primero los cambios del borrador antes de publicar.");
-      return;
-    }
-    void mutate({
-      path: `/${selected.id}/publicar`,
-      method: "POST",
-      body: {
-        operationId: crypto.randomUUID(),
-        expectedRevision: selected.revision,
-      },
-      id: selected.id,
-      generation,
-    });
+    const required=['imageUrl','firestoreImageAlt','imageWidth','imageHeight','spotifyUrl','durationSeconds','storyOrder'] as const;
+    const missing=required.find(name=>!field(name).value.trim());
+    if(missing){message('Completa la imagen, Spotify, duración y orden para guardar en Firestore.');field(missing).focus();return;}
+    const cloud={operationId:crypto.randomUUID(),personName:field('personName').value,imageUrl:field('imageUrl').value,imageAlt:field('firestoreImageAlt').value,imageWidth:Number(field('imageWidth').value),imageHeight:Number(field('imageHeight').value),spotifyUrl:field('spotifyUrl').value,durationSeconds:Number(field('durationSeconds').value),order:Number(field('storyOrder').value)};
+    try{validateFirebaseStory({schemaVersion:1,slug:selected?.id??'historia-temporal',title:d.title,personName:cloud.personName,category:d.category,description:d.description,transcript:d.transcript,question:d.question,options:d.options,image:{url:cloud.imageUrl,alt:cloud.imageAlt,width:cloud.imageWidth,height:cloud.imageHeight},podcast:{provider:'spotify',episodeId:'',publicUrl:cloud.spotifyUrl,embedUrl:'',durationSeconds:cloud.durationSeconds},status:'published',active:true,order:cloud.order});}
+    catch(error){message(`No se puede publicar todavía: ${error instanceof Error?error.message:'revisa los campos obligatorios.'}`);return;}
+    const g=generation;
+    busy=true;lock();clearErrors();message('Guardando la historia completa…');
+    try{
+      const local=await storyRequest(selected?`/${selected.id}`:'',selected?'PUT':'POST',{operationId:crypto.randomUUID(),...(selected?{expectedRevision:selected.revision}:{}),working:d});
+      if(!local.ok){
+        if(local.status===422)errors(local.value.errors??{});
+        message(local.status===422?'Revisa los campos indicados.':'No se pudo guardar el contenido de la historia.');
+        return;
+      }
+      if(!authorized||g!==generation)return;
+      const storyId=local.value.storyId as string;
+      const savedLocal=await storyRequest(`/${storyId}`);
+      if(savedLocal.ok)selected=savedLocal.value;
+      const response=await storyRequest(`/${storyId}/firestore`,'POST',cloud);
+      if(!response.ok){
+        message(response.status===422?`No se pudo publicar: ${response.value.errors?.form??'revisa los datos obligatorios, la imagen y Spotify.'}`:'El texto se guardó, pero Firestore no confirmó la portada y Spotify. Puedes reintentar sin perder los datos.');
+        return;
+      }
+      dirty=false;
+      await open(storyId);
+      await refresh();
+      if(authorized)message('Historia guardada en Firestore y publicada con el audio de Spotify.');
+    }catch{message('No se pudo confirmar el guardado completo. Los datos permanecen en el formulario para reintentar.');}
+    finally{if(authorized&&g===generation){busy=false;lock();}}
   });
   el("[data-add-story]").addEventListener("click", () => {
     if (mayLeave()) {
@@ -480,62 +486,6 @@ if (root) {
       }
     }
   });
-  form.querySelectorAll<HTMLInputElement>("[data-upload]").forEach((input) =>
-    input.addEventListener("change", () => {
-      const file = input.files?.[0];
-      if (!file) return;
-      if (!selected) {
-        message("Guarda primero el borrador para cargar archivos.");
-        input.value = "";
-        return;
-      }
-      const kind = input.dataset.upload as "image" | "audio";
-      const allowed =
-        kind === "image"
-          ? ["image/png", "image/jpeg", "image/webp"]
-          : ["audio/mpeg", "audio/wav"];
-      if (
-        !allowed.includes(file.type) ||
-        file.size > (kind === "image" ? 8 : 50) * 1048576 ||
-        !file.size
-      ) {
-        message(
-          "Revisa el formato y tamaño del archivo. Tu texto se conserva.",
-        );
-        input.value = "";
-        return;
-      }
-      cleanup();
-      const url = URL.createObjectURL(file);
-      urls.push(url);
-      const preview = document.createElement(
-        kind === "image" ? "img" : "audio",
-      );
-      preview.dataset.preview = "";
-      preview.src = url;
-      if (preview instanceof HTMLImageElement) {
-        preview.alt = "Vista previa local, pendiente de validación";
-        preview.width = 160;
-      } else {
-        preview.controls = true;
-        preview.preload = "metadata";
-        preview.setAttribute(
-          "aria-label",
-          "Vista previa local del audio, pendiente de validación",
-        );
-      }
-      input.after(preview);
-      const uuid = crypto.randomUUID();
-      void mutate({
-        path: `/${selected.id}/recursos/${uuid}`,
-        method: "PUT",
-        body: file,
-        id: selected.id,
-        resourceKind: kind,
-        generation,
-      });
-    }),
-  );
   window.addEventListener("beforeunload", (e) => {
     if (dirty || pending) {
       e.preventDefault();

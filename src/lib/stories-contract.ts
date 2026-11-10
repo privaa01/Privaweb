@@ -1,5 +1,6 @@
 export interface PublicImage { src:string;alt:string;width:number;height:number }
-export interface PublicStory { id:string;title:string;category:string;description:string;image:PublicImage;audio:{src:string;type:string};transcript:string;question:string;options:{id:string;label:string;explanation:string}[] }
+export type PublicAudio = {provider:'file';src:string;type:string;durationSeconds?:number}|{provider:'spotify';src:string;type:'audio/spotify';episodeId:string;publicUrl:string;embedUrl:string;durationSeconds:number};
+export interface PublicStory { id:string;title:string;category:string;description:string;image:PublicImage;audio:PublicAudio;transcript:string;question:string;options:{id:string;label:string;explanation:string}[] }
 export interface PublicCatalog { schemaVersion:1;stories:PublicStory[] }
 export interface CatalogPolicy { baseURL:string;mediaOrigins:readonly string[] }
 const fail=():never=>{throw new Error('Catálogo público inválido.');};
@@ -35,7 +36,7 @@ export function parseCatalog(value:unknown,policy:CatalogPolicy):PublicCatalog{
   if((typeof s.question!=='string'||!s.question.trim())||!Array.isArray(s.options)||s.options.length!==3)return fail();
   const optionIds=new Set<string>();
   const options=s.options.map(v=>{const o=record(v,['id','label','explanation']);const optionId=id(o.id);if(optionIds.has(optionId))return fail();optionIds.add(optionId);return{id:optionId,label:text(o.label),explanation:text(o.explanation)};});
-  return {id:storyId,title:text(s.title),category:text(s.category),description:text(s.description),image:{src:safeMediaURL(img.src,policy),alt:text(img.alt),width:img.width,height:img.height},audio:{src:safeMediaURL(audio.src,policy),type},transcript:text(s.transcript),question:text(s.question),options};
+  return {id:storyId,title:text(s.title),category:text(s.category),description:text(s.description),image:{src:safeMediaURL(img.src,policy),alt:text(img.alt),width:img.width,height:img.height},audio:{provider:'file' as const,src:safeMediaURL(audio.src,policy),type},transcript:text(s.transcript),question:text(s.question),options};
  });
  return{schemaVersion:1,stories};
 }

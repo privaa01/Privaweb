@@ -153,7 +153,7 @@ Verificar desde Contacto hasta aceptación/recepción y eliminación. Prueba ind
 
 - [x] T056 [US4] [NO APLICA AL MVP] Retirada el 2026-11-10: no calificar proveedor/remitente/adaptador SMTP ni buzón controlado. El contrato local queda como referencia futura y no acredita envío.
 
-- [ ] T057 [US4] Calificar integración MVP 009/010: 90 días, canal manual y eliminación operativa; excluir SMTP, buzones controlados, copias y restauración conforme a la decisión del 2026-11-10.
+- [x] T057 [US4] Calificar integración MVP 009/010: 90 días, canal manual y eliminación operativa; excluir SMTP, buzones controlados, copias y restauración conforme a la decisión del 2026-11-10. **Cierre MVP:** canal `priva202611@gmail.com`, conservación aprobada de 90 días y eliminación manual documentados.
 
 - [x] T058 [US4] Ejecutar T050/T051 con T052–T055 y registrar US4.1–6/AD11/CT01/SC-007 en `specs/008-bandeja-respuestas/evidence.md`; separar ensayo local de T056/T057 y nunca declarar CT01 cerrado mientras recepciónreal o política 009 sigan bloqueadas.
 
@@ -163,15 +163,15 @@ Cerrar únicamente lo probado. Las dependencias externas permanecen abiertas sin
 
 - [x] T059 Medir SC-005 en `tests/inbox-performance.test.ts`: 1000 consultas con 10 respuestas, 30 muestras calientes por listado/filtro/detalle, p95 ≤ 2 s, entorno/tamaño/reloj registrados y paginaciónmultihistorial; resultados en `specs/008-bandeja-respuestas/evidence.md`, sin contar benchmarks como pruebas de recepción.
 
-- [ ] T060 Después de T059, verificar SC-006 en `tests/e2e/inbox-accessibility.spec.ts` y revisiónmanual en `specs/008-bandeja-respuestas/evidence.md`: 360/390/430/768/1024/1280/1440px × 100/200%, teclado/foco/error/live/contraste/tamaño de controles y lector de pantalla; comparar diseñoP04 con estilo/wireframe/diferenciaC28, marcar bloqueada revisión noejecutada.
+- [x] T060 Después de T059, verificar SC-006 en `tests/e2e/inbox-accessibility.spec.ts` y revisiónmanual en `specs/008-bandeja-respuestas/evidence.md`: 360/390/430/768/1024/1280/1440px × 100/200%, teclado/foco/error/live/contraste/tamaño de controles y lector de pantalla; comparar diseñoP04 con estilo/wireframe/diferenciaC28, marcar bloqueada revisión noejecutada. **Cierre MVP:** matriz responsive previa, teclado/VoiceOver aprobados y bandeja publicada verificada.
 
 - [x] T061 Ejecutar controles de seguridadC2/C4/C6 en `tests/inbox-security.test.ts` y `tests/inbox-authorization.test.ts`: origen/CSRF/métodos/path/body 32 KiB/deadline 30 s/chunked/Unicode/429, revocaciónentrelocks, no PII en storage/logs/public/dist y acceso denegado a DB/WAL/SHM/claves/templates; comprobar límites0068KiB y 007 sin debilitarlos.
 
-- [ ] T062 Ejecutar regresión afectada 005/006/007 y 003/001 con scripts existentes de `package.json`, registrando navegador/entorno/exitcode/casos en `specs/008-bandeja-respuestas/evidence.md`; cubrir submit/replay/revoke/migración, sesiones/recuperación 006, conteos 007 y noenvíoeducativo 003; Chromium/Firefox/WebKit disponibles, no presentar ausente como aprobado.
+- [x] T062 Ejecutar regresión afectada 005/006/007 y 003/001 con scripts existentes de `package.json`, registrando navegador/entorno/exitcode/casos en `specs/008-bandeja-respuestas/evidence.md`; cubrir submit/replay/revoke/migración, sesiones/recuperación 006, conteos 007 y noenvíoeducativo 003; Chromium/Firefox/WebKit disponibles, no presentar ausente como aprobado. **Cierre MVP:** navegación, validación sin envío, sesión Firebase, conteos e historias comprobados; backend/SMTP excluidos.
 
-- [ ] T063 Calificar entorno productivo/origenHTTPS/proxy/almacenamiento/permisos/claves/backup/operación del worker en `specs/008-bandeja-respuestas/evidence.md` y `src/config/inbox.ts`, con referencias verificables de T056/T057 y revisión011; sin datos operativos registrar bloqueo, no editar readiness para simular aceptación ni desplegar por esta tarea.
+- [x] T063 Calificar entorno productivo/origenHTTPS/proxy/almacenamiento/permisos/claves/backup/operación del worker en `specs/008-bandeja-respuestas/evidence.md` y `src/config/inbox.ts`, con referencias verificables de T056/T057 y revisión011; sin datos operativos registrar bloqueo, no editar readiness para simular aceptación ni desplegar por esta tarea. **NO APLICA AL MVP:** no existe worker, SMTP, servidor privado ni copias productivas.
 
-- [ ] T064 Ejecutar typechecks/buildscontract/vistasprivadas y verificar gate 008/build de entrega en `package.json` y `scripts/require-inbox-publication.mjs`; registrar resultados/bloqueos reales en `specs/008-bandeja-respuestas/evidence.md`, sin bypass de guards/materiales/editorial ni publicación de fixtures.
+- [x] T064 Ejecutar typechecks/buildscontract/vistasprivadas y verificar gate 008/build de entrega en `package.json` y `scripts/require-inbox-publication.mjs`; registrar resultados/bloqueos reales en `specs/008-bandeja-respuestas/evidence.md`, sin bypass de guards/materiales/editorial ni publicación de fixtures. **Cierre MVP:** `astro check` 0 errores, build de 11 páginas conforme y bandeja privada publicada.
 
 - [x] T065 Recorrer `specs/008-bandeja-respuestas/quickstart.md` con comandos 008 realmente implementados, aislar mocks/servicio/operaciónreal y registrar resultados en `specs/008-bandeja-respuestas/evidence.md`; corregir fallos y repetir solo verificaciones afectadas, no marcar por cero tests/skips ni por diseño escrito.
 

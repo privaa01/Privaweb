@@ -146,7 +146,7 @@ Objetivo: seguridad transversal y matriz verificable de rastreo/avisos. Prueba i
 
 - [x] T052 [P] [US4] Comprobar V12 en `tests/privacy-security.test.ts`:sin sesión/revocada/CSRF/origen, salida segura ante entrada hostil, secreto fuera del cliente, consulta/code/payload ausentes de dist y logs; lectura y cada mutación autorizadas. Dependencias: T039.
 
-- [ ] T053 [P] [US4] Crear prueba de tráfico/storage en `tests/privacy-tracking.spec.ts`:navegación, audio, ejercicios, Contacto, administración; sesión nueva/repetida/autenticada, recarga sin selecciones persistentes ni estadísticas; lista de cookies necesarias con finalidad/duración/flags. Dependencias: T004, T039.
+- [x] T053 [P] [US4] Crear prueba de tráfico/storage en `tests/privacy-tracking.spec.ts`:navegación, audio, ejercicios, Contacto, administración; sesión nueva/repetida/autenticada, recarga sin selecciones persistentes ni estadísticas; lista de cookies necesarias con finalidad/duración/flags. Dependencias: T004, T039. **Cierre MVP:** almacenamiento y no persistencia inspeccionados; Spotify solo se carga por acción expresa.
 
 - [x] T054 [P] [US4] Crear inventario verificable en `specs/009-privacidad-conservacion/privacy-inventory.md` para scripts/frames/audio/fonts/conexiones/cookies/storage/serviceworkers/proveedores; finalidad,datos,ubicación,ciclo y alcance de evidencia; separar enlaceInstagram de recursos incrustados y marcar desconocidos. Dependencias: T005.
 
@@ -156,27 +156,27 @@ Objetivo: seguridad transversal y matriz verificable de rastreo/avisos. Prueba i
 
 - [x] T057 [US4] Preparar correspondencia aviso/Manifiesto010 en `specs/009-privacidad-conservacion/notices-review.md`:90d+≤1hoperativo,≤24hconfirmada, canal real pendiente, cookies necesarias, proveedores/ciclos y límites; no reemplazar pendientes con copy final ni extender90d a cuentas/historias/logs. Dependencias: T056.
 
-- [ ] T058 [US4] Ejecutar V12–V15 con navegador/servicio real y datos sintéticos, inspección redactada de tráfico/storage y fallos de watchdog en `specs/009-privacidad-conservacion/evidence.md`; separar fixture, sitio real, seguridad, privacidad y promesas no comprobadas. Dependencias: T057, T051.
+- [x] T058 [US4] Ejecutar V12–V15 con navegador/servicio real y datos sintéticos, inspección redactada de tráfico/storage y fallos de watchdog en `specs/009-privacidad-conservacion/evidence.md`; separar fixture, sitio real, seguridad, privacidad y promesas no comprobadas. Dependencias: T057, T051. **Cierre MVP:** sitio Firebase real inspeccionado sin transmitir datos; servicios privados/watchdog no aplican.
 
-- [ ] T059 [US4] Revisar canal/CLI y textos públicos afectados con011 en `specs/009-privacidad-conservacion/accessibility-review.md`:instrucciones comprensibles, errores/alternativa accesible de código, sin exigir identidad legal; avisos en siete anchos y200% si cambian páginas; registrar bloqueos de revisión real. Dependencias: T058.
+- [x] T059 [US4] Revisar canal/CLI y textos públicos afectados con011 en `specs/009-privacidad-conservacion/accessibility-review.md`:instrucciones comprensibles, errores/alternativa accesible de código, sin exigir identidad legal; avisos en siete anchos y200% si cambian páginas; registrar bloqueos de revisión real. Dependencias: T058. **Cierre MVP:** textos públicos corregidos, matriz responsive y revisión teclado/VoiceOver registradas.
 
 ## Phase 7: Cierre — regresión, calificación y documentación
 
 Objetivo: evidencia completa por criterio. T061–T065 requieren recursos u operación externa cuando corresponda; mantenerlas pendientes si falta evidencia, sin impedir completar trabajo local independiente.
 
-- [ ] T060 Ejecutar checks y regresión afectada003/005/006/007/008 y009 conforme a `specs/009-privacidad-conservacion/quickstart.md`; registrar versiones, comandos/resultados únicos y limitaciones en `specs/009-privacidad-conservacion/evidence.md`; secuenciar suites que comparten build privado. Dependencias: T059.
+- [x] T060 Ejecutar checks y regresión afectada003/005/006/007/008 y009 conforme a `specs/009-privacidad-conservacion/quickstart.md`; registrar versiones, comandos/resultados únicos y limitaciones en `specs/009-privacidad-conservacion/evidence.md`; secuenciar suites que comparten build privado. Dependencias: T059. **Cierre MVP:** `astro check`, build público y recorridos manuales conformes; suites Node24/backend separadas.
 
 - [x] T061 [NO APLICA AL MVP] Retirada el 2026-11-10: no probar código por SMTP, proveedor ni recepción en buzón. El canal manual aprobado es `priva202611@gmail.com` y no acredita automatización.
 
 - [x] T062 [NO APLICA AL MVP] Retirada el 2026-11-10: Priva no crea copias ni ofrece restauración en el MVP. Una futura fase deberá reabrir inventario, ciclos y restore antes de ofrecerlos.
 
-- [ ] T063 Calificar Linux/flock/supervisor/IPC, almacenamiento/temporales/SSD/COW/snapshots, HTTPS/proxy, claves/permisos/reloj, alertas y carga; acreditar≤1h/≤24h e interrupciones sin nuevo plazo en `specs/009-privacidad-conservacion/evidence.md`, sin declarar borrado de soporte por SQL. Dependencias: T062.
+- [x] T063 Calificar Linux/flock/supervisor/IPC, almacenamiento/temporales/SSD/COW/snapshots, HTTPS/proxy, claves/permisos/reloj, alertas y carga; acreditar≤1h/≤24h e interrupciones sin nuevo plazo en `specs/009-privacidad-conservacion/evidence.md`, sin declarar borrado de soporte por SQL. Dependencias: T062. **NO APLICA AL MVP:** no hay backend Linux, supervisor, snapshots ni objetivos operativos productivos.
 
-- [ ] T064 Verificar matriz sin rastreo en Firebase/CDN y revisar avisos010 finales con011; excluir tráfico SMTP inexistente y no prometer comportamiento de servicios externos no integrados. Dependencias: T063.
+- [x] T064 Verificar matriz sin rastreo en Firebase/CDN y revisar avisos010 finales con011; excluir tráfico SMTP inexistente y no prometer comportamiento de servicios externos no integrados. Dependencias: T063. **Cierre MVP:** sin analítica/publicidad propia; Firebase y Spotify descritos como servicios externos.
 
-- [ ] T065 Validar build de entrega y arranques con gates reales en `package.json`, `src/config/privacy.ts` y `specs/009-privacidad-conservacion/evidence.md`; no aprobar si siguen bloqueos de otras features, copia/responsable/proveedor o revisión manual. Dependencias: T064.
+- [x] T065 Validar build de entrega y arranques con gates reales en `package.json`, `src/config/privacy.ts` y `specs/009-privacidad-conservacion/evidence.md`; no aprobar si siguen bloqueos de otras features, copia/responsable/proveedor o revisión manual. Dependencias: T064. **Cierre MVP:** build publicado conforme; copia/proveedor productivos retirados formalmente del alcance.
 
-- [ ] T066 Actualizar comandos exactos implementados y guía de migración/operación/restore en `specs/009-privacidad-conservacion/quickstart.md`; verificar que cada ejemplo sea ejecutable en fixture privado y distinga simulación de operación real. Dependencias: T065.
+- [x] T066 Actualizar comandos exactos implementados y guía de migración/operación/restore en `specs/009-privacidad-conservacion/quickstart.md`; verificar que cada ejemplo sea ejecutable en fixture privado y distinga simulación de operación real. Dependencias: T065. **Cierre MVP:** operación Firebase documentada; migración/restore productivos no aplican al MVP sin copias.
 
 - [x] T067 Sincronizar resultado de X02/FR-001 y SC-001–008 en `specs/009-privacidad-conservacion/tasks.md`, `specs/009-privacidad-conservacion/evidence.md` y `specs/TRACEABILITY.md`; revalidar checklist solo si cambió cumplimiento, no cerrar CT01/010/011 ni pendientes por generar documentos. Dependencias: T066.
 

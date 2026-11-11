@@ -411,9 +411,12 @@ if (root) {
         return;
       }
       dirty=false;
-      await open(storyId);
       await refresh();
-      if(authorized)message('Historia guardada en Firestore y publicada con el audio de Spotify.');
+      if(authorized){
+        show(null);
+        message('Historia guardada en Firestore y publicada con el audio de Spotify. El formulario quedó limpio para crear otra historia.');
+        status.focus();
+      }
     }catch{message('No se pudo confirmar el guardado completo. Los datos permanecen en el formulario para reintentar.');}
     finally{if(authorized&&g===generation){busy=false;lock();}}
   });

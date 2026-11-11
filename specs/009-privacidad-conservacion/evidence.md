@@ -113,3 +113,11 @@ requisitos16/16 intacto:significa calidad documental,no que las métricas produc
 ## Ejecución real local yFirestore — 2026-11-04
 
 T068/T069 completas: adaptador macOS44/44pruebas009 conformes; mantenimiento real ambos entornos activo, plan gratuito/sin copias/sin correo según decisión expresa. Pruebas nuevas yHTTPS3/3, Node finales29/29. Firestore real: vencido eliminado/vigente conservado, lectura/recreación denegadas403 y ejemplos retirados. Reglas desplegadas; avisoHosting preparado pendiente de revisión humana010. [Alcance, decisiones, comandos y recibos](computer-execution-2026-11-04.md).
+
+## Revisión manual de privacidad educativa — 2026-11-10
+
+En Historias se seleccionó una opción y se recargó la página: cero radios permanecieron seleccionados. `localStorage` y `sessionStorage` estuvieron vacíos antes de la recarga. El reproductor Spotify solo se creó después de activar explícitamente su botón. Esta evidencia cierra la comprobación manual de no persistencia educativa para el navegador revisado; no sustituye auditoría de red/CDN ni revisión de cookies de terceros tras cargar Spotify.
+
+## Corrección de afirmaciones públicas — 2026-11-10
+
+Contacto ya no presenta las afirmaciones absolutas “100% Confidencial” ni “Servidores en jurisdicción estricta”. La versión publicada usa descripciones comprobables del alcance MVP: acceso restringido al equipo administrador, ausencia de publicidad personalizada y solicitudes de privacidad por correo.

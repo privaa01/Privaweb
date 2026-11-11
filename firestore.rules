@@ -80,7 +80,10 @@ service cloud.firestore {
         && request.resource.data.message in ['Mensaje ficticio para probar el formulario.','Prueba educativa sobre privacidad.','Comprobación de conexión con Firestore.']
         && request.resource.data.consent == true
         && request.resource.data.createdAt == request.time;
-      allow read, update, delete: if false;
+      // La bandeja publicada es de solo lectura y únicamente para cuentas
+      // registradas como administradoras activas.
+      allow read: if isAdmin();
+      allow update, delete: if false;
     }
     match /{document=**} {
       allow read, write: if false;

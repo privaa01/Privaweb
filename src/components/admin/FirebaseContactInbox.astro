@@ -1,0 +1,14 @@
+<main class="admin-shell firebase-admin" data-firebase-contact>
+  <nav class="firebase-admin-nav" aria-label="Administración"><a href="/admin/historias.html">Historias</a><a href="/admin/contacto.html" aria-current="page">Contacto privado</a></nav>
+  <h1>Contacto privado</h1>
+  <p>Bandeja de solo lectura para los mensajes de prueba guardados en Firestore.</p>
+  <p role="status" aria-live="polite" data-admin-status>Comprobando acceso…</p>
+  <div data-admin-private hidden>
+    <p class="firebase-admin-account"><strong data-admin-email></strong> <button type="button" data-admin-logout>Cerrar sesión</button></p>
+    <section class="inbox" aria-labelledby="firebase-contact-list-heading">
+      <div class="firebase-inbox-heading"><div><h2 id="firebase-contact-list-heading">Mensajes recibidos</h2><p>Se muestran hasta 100 registros, del más reciente al más antiguo.</p></div><button type="button" data-refresh-contact>Actualizar bandeja</button></div>
+      <div data-contact-list></div>
+    </section>
+  </div>
+</main>
+<script>import '../../scripts/firebase-contact-inbox';</script>

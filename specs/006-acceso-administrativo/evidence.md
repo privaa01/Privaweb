@@ -158,6 +158,10 @@ Provider falla fuera del request, mediante doble privado. El cuerpo/status/heade
 
 La lectura/revisión de checklist de requisitos fue16/16 PASS, sin modificar sus casillas ni atribuirles implementación.
 No hay `.specify/extensions.yml`: hooks before/after no registrados. Sin commit, push ni despliegue automático.
+
+## Revisión manual del MVP publicado — 2026-11-10
+
+En el navegador integrado se abrió `/admin/login.html` y se verificaron marca, título, campos Correo/Contraseña y botón Entrar. La sesión administrativa vigente permitió acceder directamente a `/admin/historias.html`; la página mostró el correo autorizado, Cerrar sesión y cuatro historias activas. Editar “La llamada sospechosa” recuperó identificador, textos, portada, Spotify, duración, transcripción, tres opciones, explicaciones, orden y estados. “Limpiar formulario” retiró todos los valores sin guardar. No se ejecutó recuperación por correo ni SMTP, fuera del alcance MVP. Resultado: acceso y editor conformes; revisión de lector de pantalla se conserva como confirmación previa de la responsable.
 # Confirmación del acceso local — 2026-11-03
 
 La responsable confirmó que el inicio de sesión está bien tras configurar personalmente su acceso. Observación del navegador integrado en https://localhost:4354/admin: «Sesión verificada» y gestor con cuatro historias activas. No se capturaron campos de contraseña ni se usó su cuenta para mutaciones de prueba. Producción, recuperación por correo y revisión manual de accesibilidad administrativa siguen separadas de esta confirmación.

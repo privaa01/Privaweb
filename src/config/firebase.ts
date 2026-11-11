@@ -9,3 +9,4 @@ export const firebaseConfig = {
 
 export const storiesCollection = "stories";
 export const administratorsCollection = "administradores";
+export const demoContactCollection = "demo_contact";

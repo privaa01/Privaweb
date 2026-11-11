@@ -225,3 +225,7 @@ Se amplió tests/admin-local-runtime.test.ts para el perfil HTTPS real: catálog
 Avance parcial de T056/T059 para el entorno local; no cierra T056–T059 completos, calificación productiva ni revisión con lector de pantalla. No se desplegó Firebase ni se habilitó correo/Contacto008.
 
 2026-11-03: la responsable confirmó «listo todo esta correcto» tras revisar007local. Aprobación funcional/visual local registrada; no acredita VoiceOver ni despliegue. El total de consultas ahora lee la base local008; vacío real0 en lugar de No disponible.
+
+## Revisión manual del catálogo publicado — 2026-11-10
+
+El navegador integrado cargó tres historias iniciales y, al activar “Ver más historias”, cuatro casos: Enlace falso, La contraseña compartida, Número desconocido y La llamada sospechosa. Se observaron 12 opciones de ejercicio. La primera selección mostró explicación específica de riesgo y prevención; la transcripción se abrió; “Cargar reproductor de Spotify” creó el iframe del episodio `47UPXky82JMcS1ABhDPn1U`. Tras recargar, ninguna opción quedó seleccionada y `localStorage`/`sessionStorage` permanecieron vacíos. Resultado manual conforme para catálogo, ejercicio, transcripción, carga opt-in y no persistencia. No se atribuye reproducción completa de los cuatro episodios a esta pasada.

@@ -186,3 +186,11 @@ Herramientas: scripts/seed-local-inbox-demo.ts --fictitious-only y server/inbox/
 Verificación con navegador integrado autenticado: Pendiente muestra un ejemplo y permite abrirlo sin historial; Respondido muestra el otro y su respuesta ficticia; Actualizar bandeja recarga los datos y cierra el detalle conservando el filtro. Resumen real de la base de demostración:2consultas/1pendiente/1respondida. Se dejó abierto el ejemplo respondido. Captura ignorada:.test-output/inbox-demo-respondido-2026-11-03.jpg. El editor permanece deshabilitado según el alcance sin proveedor. La base ya no está vacía porque la responsable autorizó estos ejemplos; la descripción de vacío inicial del registro anterior es histórica.
 
 2026-11-03 — La responsable pidió volver a la normalidad: se retiraron exclusivamente los dos ejemplos y su historial con la utilidad local restringida. Resultado2retirados, sin correo; nueva prueba de retirada1/1conforme, conserva otras consultas y no duplica efectos. Navegador: resumen0/0/0. Los registros anteriores de la demostración son históricos.
+
+## Revisión manual del Hosting — 2026-11-10
+
+Bloqueo confirmado: `https://priva-785cb.web.app/admin/contacto.html` responde con la página “Página no encontrada”. El Hosting publicado solo redirige `/admin.html` a `/admin/historias.html`; no ofrece bandeja privada de Contacto. Por tanto 008 no se cierra con la revisión manual, aunque SMTP esté fuera del MVP. Acción pendiente: publicar una ruta privada de lectura o retirar formalmente la bandeja del alcance MVP.
+
+## Resolución del bloqueo publicado — 2026-11-10
+
+Se publicó `https://priva-785cb.web.app/admin/contacto.html` como bandeja de solo lectura. La ruta exige sesión de Firebase Authentication y documento activo en `administradores/{uid}`; las reglas permiten a ese administrador leer `demo_contact`, pero continúan negando actualización y eliminación. La compilación generó la ruta y el despliegue de Hosting y reglas terminó correctamente. SMTP, respuesta y cambios de estado permanecen fuera del MVP.

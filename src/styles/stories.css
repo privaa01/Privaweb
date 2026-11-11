@@ -16,3 +16,12 @@
 
 /* Third-party audio is opt-in: the iframe is created only after the visitor requests it. */
 .story-audio [data-spotify-frame] iframe{display:block;width:100%;border:0;border-radius:.8rem;margin-top:.8rem}.story-audio [data-spotify-link]{display:inline-flex;align-items:center;min-height:44px}.story-audio [data-load-spotify]{max-width:100%;white-space:normal}
+
+/* Keep podcast cards visually consistent even when Firestore images use
+   different source dimensions (for example, square and panoramic covers). */
+.stories-grid{align-items:stretch}
+.story-card{display:flex;flex-direction:column;height:100%}
+.story-card>img{height:9rem;object-fit:contain;background:#dff1e8}
+.story-body{display:flex;flex:1;flex-direction:column}
+.story-body fieldset{margin-top:auto}
+@media(max-width:64rem){.story-card>img{height:clamp(8rem,28vw,12rem)}}

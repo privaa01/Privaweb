@@ -3,27 +3,27 @@
 **Feature Directory**: `specs/008-bandeja-respuestas`
 **Feature Branch**: `main` (directorio independiente de la rama; no se crea una nueva).
 **Created**: 2026-10-16
-**Updated**: 2026-10-19
-**Status**: Implementación y verificación local; cierre integrado pendiente. Ver [evidence.md](evidence.md).
+**Updated**: 2026-11-10
+**Status**: MVP con bandeja privada de lectura; composición, envío automático y pruebas SMTP retirados del alcance vigente.
 **Input**: `/speckit-specify 008`: desarrollar la funcionalidad existente sin ampliar su alcance.
 **Fuente**: [SPEC original R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), AD07, AD08, AD09, AD11 y CT01; [constitución](../../.specify/memory/constitution.md).
 
 ## Alcance
 
-El equipo autorizado consulta los mensajes recibidos exclusivamente por Contacto, redacta una
-respuesta al correo guardado y conserva la asociación e historial privados. La consulta cambia de
-Pendiente a Respondido únicamente al comprobar aceptación real del servicio de correo.
-Aceptación, recepción en buzón y lectura son hechos distintos.
+El equipo autorizado consulta los mensajes recibidos exclusivamente por Contacto. En el MVP no se
+redactan ni envían respuestas desde el panel y no existe transición automática basada en correo.
 
 **Incluye**: filtros Pendiente/Respondido, listado y detalle privados, contadores reales,
-composición, validación, confirmación del envío, conservación del texto ante fallo y resolución de
-resultados inciertos sin duplicados; integración con acceso 006, recepción 005 y conservación 009.
+integración con acceso 006, recepción 005 y conservación 009.
 
 **Fuera de alcance**: comentarios públicos, Aprobar/Aprobados, asociación a historias o casos,
 formularios de comentarios en Historias, estadísticas de ejercicios, registro de visitantes,
 nuevos roles, destinatarios editables, copias a terceros, adjuntos, campañas, conversaciones
 entrantes por correo y garantías de respuesta en 24 horas, entrega o lectura. No crea una
 consola de eliminación ni sustituye la operación transversal de 009.
+
+También quedan fuera del MVP el proveedor SMTP, remitente automatizado, buzón controlado y pruebas
+de envío/recepción. `priva202611@gmail.com` es un canal manual externo al panel.
 
 La captura administrativa conserva jerarquía y estilo. La sustitución de comentarios públicos por
 Contacto privado es la diferencia aprobada C28. Los detalles de composición no dibujados son
@@ -182,10 +182,10 @@ No exige materiales oficiales de historias y nunca utiliza mensajes reales en ev
 ### Functional Requirements
 
 - **FR-001 / AD07 — Bandeja privada de Contacto**: Consultar comentarios Pendiente/Respondido con nombre/alias, correo y mensaje; sin comentarios públicos ni aprobación para publicar; filtros/listado privados, contadores reales (C28).
-- **FR-002 / AD08 — Estado Pendiente → Respondido**: Transición solo tras aceptación real del servicio de correo; fallo conserva Pendiente y texto para reintento; sin duplicados. Sustituye acción de aprobación pública de captura (C28).
-- **FR-003 / AD09 — Redactar y conservar respuesta**: Administrador responde desde panel al correo almacenado correcto; conservar respuesta enviada asociada al comentario; acceso privado y error/reintento; no prometer entrega/lectura por mera aceptación (C04/C28).
+- **FR-002 / AD08 — Estado del MVP**: la bandeja permite consultar registros; la transición automática Pendiente → Respondido por correo queda diferida.
+- **FR-003 / AD09 — Respuesta futura**: redactar, enviar y conservar respuestas desde el panel queda fuera del MVP hasta disponer de proveedor transaccional.
 - **FR-004 / AD11 — Origen de comentarios y alcance público**: Comentarios entran únicamente por Contacto y son privados; sin formulario de comentarios en Historias; sus ejercicios son locales sin guardado. Captura con comentarios por caso queda registrada como diferencia aprobada (C28).
-- **FR-005 / CT01 — Flujo completo de Contacto**: Enviar comentario → guardado → consulta privada → respuesta por correo guardada → Respondido tras aceptación de servicio; verificar recepción aparte, errores y reintento sin duplicados; aplicar retención y eliminación.
+- **FR-005 / CT01 — Flujo del MVP**: guardar pruebas de Contacto y consultarlas privadamente; la respuesta automática, recepción, reintentos SMTP y cambio a Respondido quedan fuera del alcance vigente.
 
 ### Reglas y contenido complementario
 

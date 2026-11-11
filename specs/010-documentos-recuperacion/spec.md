@@ -2,8 +2,8 @@
 
 **Feature Directory**: `specs/010-documentos-recuperacion`
 **Created**: 2026-10-16
-**Updated**: 2026-10-27
-**Status**: Implementado/verificado localmente de forma parcial (33/44 tareas); cierre integrado, revisión de textos y operación pendientes. Véase `evidence.md`; no acredita publicación o aprobación legal.
+**Updated**: 2026-11-10
+**Status**: MVP público aprobado por la responsable; los requisitos de correo automático, backend productivo, copias y restauración quedan fuera del alcance vigente y no se consideran implementados.
 **Input**: `/speckit-specify 010`, desarrollando la feature existente sin ampliar su alcance.
 **Fuente**: [SPEC original R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), X03/C32; [constitución](../../.specify/memory/constitution.md), CONST-01–10/12; decisiones vigentes de [009](../009-privacidad-conservacion/spec.md).
 
@@ -13,6 +13,8 @@ Permitir consultar las condiciones del servicio y el tratamiento real de datos a
 
 **Fuera de alcance**: inventar responsable, jurisdicción, licencias, proveedores o textos aprobados; crear registro público, casilla obligatoria de aceptación, pantalla de autoservicio de eliminación, gestor editorial de documentos o nuevo procedimiento de recuperación de contraseña. La recuperación aquí es de navegación, no la recuperación de cuentas de 006 ni la restauración de datos de 009. No sustituye la implementación de retención, correo, autorización o accesibilidad transversal de sus features responsables.
 
+Para el MVP aprobado el 2026-11-10 también quedan fuera de alcance: envío automático de correo desde la web o el panel, recuperación por correo, backend privado permanente, secretos de servidor, copias de seguridad y restauración. El canal `priva202611@gmail.com` se atiende manualmente fuera del panel.
+
 ## Clarifications
 
 ### Session 2026-10-20
@@ -20,6 +22,16 @@ Permitir consultar las condiciones del servicio y el tratamiento real de datos a
 Revisión mediante `$speckit-clarify 010`: no se detectaron ambigüedades críticas que requieran nuevas decisiones de producto; cero preguntas formuladas y cero respuestas atribuidas a la usuaria. Se mantienen las decisiones ya aprobadas de 009, las rutas de 001 y los límites de C32.
 
 Se revisaron alcance, entidades y estados, recorridos, accesibilidad, privacidad, dependencias, errores, restricciones, terminología y criterios de cierre. P02/P03 son datos y evidencias pendientes expresamente identificados, no valores que puedan deducirse de esta revisión. Su ausencia bloquea las partes dependientes y la publicación; no impide planificar el trabajo independiente. Las elecciones de alojamiento y mecanismo de entrega de 404 corresponden al plan, conservando el resultado público exigido en R-06.
+
+### Session 2026-11-10
+
+- Q: ¿Quién es el responsable y cuál es el canal oficial de privacidad y eliminación? → A: Priva; `priva202611@gmail.com`.
+- Q: ¿Se mantiene la conservación de Contacto durante 90 días? → A: Sí, para los registros del MVP desde su última actividad.
+- Q: ¿Qué ocurre con los datos eliminados? → A: Se eliminan de la operación del MVP; no se crean copias de seguridad de Priva y no se promete controlar ciclos internos no documentados de terceros.
+- Q: ¿El MVP incluye correo automático, backend permanente, secretos, recuperación, copias o restauración? → A: No; se aprueba retirarlos del alcance del MVP.
+- Q: ¿Cuál es el estado aprobado del producto? → A: Continúa como MVP; Android está disponible mediante Google Drive, iPhone fue retirado y el aviso “Demo pública” no se muestra.
+
+La responsable aprobó los textos públicos de Términos, Manifiesto, aviso de Contacto, categorías de datos, proveedores/ubicación/conservación y procedimiento de eliminación para este alcance MVP. Esta aprobación editorial no constituye revisión jurídica ni acredita capacidades productivas excluidas.
 
 ## User Scenarios & Testing
 
@@ -93,10 +105,10 @@ Como visitante que abre una dirección inexistente, quiero reconocer el error y 
 Las reglas siguientes desarrollan X03; no crean IDs originales nuevos ni reasignan responsabilidades de otras features.
 
 - **R-01 — Acceso y orientación**: ofrecer Términos en `/terminos.html` y Manifiesto en `/manifiesto-datos.html`, coherentes con 001. Identificar cada documento por título, usar secciones comprensibles y permitir volver a Inicio. El aviso de Contacto debe estar junto al formulario y disponible antes de enviar, con enlace al Manifiesto y regreso a Contacto.
-- **R-02 — Términos**: desarrollar el borrador C32 con finalidad educativa, límites sin garantías, condiciones reales del prototipo y descargas, ejercicios sin persistencia, Contacto privado sin plazo de respuesta garantizado, administración restringida sin registro público y enlaces externos identificados. Completar responsable/contacto, fecha de vigencia y titularidad/permisos y condiciones aplicables mediante revisión; no deducirlos del nombre del proyecto o de la fecha del spec.
+- **R-02 — Términos**: desarrollar el borrador C32 con finalidad educativa, límites sin garantías, disponibilidad de Priva App para Android mediante el enlace oficial de Google Drive y ausencia de versión iPhone, ejercicios sin persistencia, Contacto privado sin plazo de respuesta garantizado, administración restringida sin registro público y enlaces externos identificados. Responsable y canal del MVP: Priva, `priva202611@gmail.com`.
 - **R-03 — Manifiesto y aviso**: cubrir datos obligatorios de Contacto, finalidad, guardado, acceso autorizado, respuesta privada asociada, ausencia de publicación, precauciones, responsable, canal, proveedores/destinatarios, ubicación y condiciones comprobadas. Explicar ejercicios locales sin envío ni persistencia y las cookies necesarias verificadas. Cuentas administrativas, historias y registros de seguridad requieren su descripción y política propia revisada; no heredan los 90 días de Contacto.
 - **R-04 — Conservación fiel a 009**: explicar 90 días desde la recepción inicial o la aceptación original comprobada de una nueva respuesta por el servicio de correo, lo que ocurra después. Lecturas, borradores, fallos, resultado desconocido, repetición de confirmaciones y correo de verificación de eliminación no reinician el plazo. Al vencer se bloquean acceso ordinario y nuevos envíos; se revisan vencimientos al menos cada hora y se completa el borrado operativo como máximo una hora después del vencimiento. Publicar esos compromisos exige su calificación real en 009; el objetivo técnico interno de 15 minutos no es una promesa pública nueva.
-- **R-05 — Solicitud y copias**: explicar el canal oficial verificado y la comprobación de control del correo guardado mediante enlace o código de un solo uso, sin pedir documentos de identidad. El borrado operativo se completa como máximo 24 horas después de confirmación válida, o antes si lo exige el límite de conservación; no prometer ese plazo desde la primera solicitud ni como plazo general de respuesta de Contacto. Distinguir datos operativos, proveedores, buzones y respaldos con sus ciclos y límites comprobados; no prometer retirada de correos enviados, eliminación inmediata total ni éxito cuando existen fallos o actuaciones pendientes.
+- **R-05 — Solicitud y copias del MVP**: publicar `priva202611@gmail.com` como canal manual para solicitudes, sin afirmar confirmación automática, enlace o código de un solo uso. Priva no crea copias de seguridad en este alcance y no ofrece restauración; la eliminación retira los registros de la operación controlada por Priva. No prometer eliminación inmediata de correos ya enviados ni control sobre ciclos internos no documentados de Firebase, Google u otros terceros.
 - **R-06 — Recuperación pública**: mostrar página no encontrada ante una ruta pública inexistente, con estado de respuesta 404 y salida visible a Inicio. `/404.html` es la ruta auxiliar de presentación; su acceso directo no reemplaza la comprobación de rutas inexistentes. No redirigir silenciosamente errores a una página de éxito, generar bucles, reflejar direcciones completas potencialmente sensibles ni exponer datos o detalles privados. Preservar autorización y errores privados de sus features responsables.
 - **R-07 — Destinos comprobados**: comprobar los destinos de la tabla, también por teclado y con el encabezado de destino visible. No crear `#maria`, enlaces vacíos o `#` como sustitutos. Si un QR forma parte del material aprobado, su destino requiere aprobación y comprobación del enlace y de su lectura antes de publicarse; esta feature no obliga a crear un QR ni decide su URL.
 
@@ -133,13 +145,13 @@ Las reglas siguientes desarrollan X03; no crean IDs originales nuevos ni reasign
 
 - **A1 — Continuidad**: las rutas ya establecidas en 001 y el contenido base C32 se conservan; los textos finales se redactarán y revisarán a partir de esa base, sin considerar aprobado el borrador original.
 - **A2 — Presentación mínima revisable**: los documentos serán públicos en español; la 404 ofrecerá al menos salida a Inicio. No se añaden buscador, formulario de error, QR nuevo ni funciones editoriales por inferencia.
-- **A3 — Dependencias operativas**: se incorporan las cuatro decisiones de conservación y eliminación ya elegidas en 009. Su implementación local no acredita el canal, proveedores, copias, ausencia de rastreo o ejecución productiva. El contenido público necesita evidencia real antes de aprobarse.
+- **A3 — Dependencias operativas del MVP**: el canal manual, la conservación de 90 días y la ausencia de copias propias están aprobados para el MVP. Correo automático, recuperación, backend productivo, restauración y calificación de ciclos internos de terceros quedan fuera de alcance y no deben presentarse como funciones disponibles.
 - **A4 — Alcance documental**: esta fase especifica resultados y criterios; no publica textos, aprueba condiciones legales ni ejecuta pruebas de aplicación. La revisión de preparación documental es distinta del cumplimiento de SC-001–007.
 
 ## Pendientes y condiciones de cierre
 
-- **P02**: identificar y verificar responsable/contacto, canal y atención previa a confirmar eliminación, proveedores/destinatarios/remitente/buzones, ubicación y condiciones reales, ciclos de copias y políticas de cuentas/historias/registros. No elegir valores ficticios para completar el Manifiesto.
-- **P03**: completar y revisar los tres textos finales, vigencia y titularidad/permisos y condiciones aplicables; la fecha de esta especificación no es la fecha de vigencia de los Términos.
+- **P02 MVP resuelto**: responsable Priva; canal manual `priva202611@gmail.com`; Firebase Hosting/Firestore como servicios declarados; sin proveedor de envío, remitente automatizado, backend permanente ni copias propias. La calificación productiva de servicios excluidos se difiere hasta una ampliación formal de alcance.
+- **P03 MVP resuelto**: la responsable aprobó el 2026-11-10 los tres textos y las categorías/condiciones declaradas para el alcance MVP. Una revisión jurídica o una operación productiva completa no se infieren de esta aprobación.
 - **Integración**: [001](../001-navegacion-global/spec.md) aporta navegación/footer; [003](../003-historias-educativas/spec.md), [004](../004-presentacion-app/spec.md) y [005](../005-contacto-publico/spec.md) aportan contenido y secciones; [006](../006-acceso-administrativo/spec.md)/[008](../008-bandeja-respuestas/spec.md) condicionan cuentas, cookies y respuesta; [009](../009-privacidad-conservacion/spec.md) y su [revisión de avisos](../009-privacidad-conservacion/notices-review.md) condicionan compromisos; [011](../011-accesibilidad-fidelidad/spec.md) verifica calidad transversal. Corregir cualquier discrepancia antes de publicar, sin que el código existente cambie el requisito.
 - El trabajo documental y los recorridos independientes pueden avanzar; la publicación y cierre integrado requieren todos los datos, revisión y evidencias aplicables. Registrar cada dependencia o prueba bloqueada como tal, nunca como cumplimiento.
 

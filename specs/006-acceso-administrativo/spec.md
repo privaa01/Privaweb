@@ -2,8 +2,8 @@
 
 **Feature Directory**: `specs/006-acceso-administrativo`
 **Created**: 2026-10-16
-**Updated**: 2026-10-19
-**Status**: 59/63 tareas verificadas localmente; T058 cerrada con24/24 servicioHTTPS y90/90 UI en3motores. T059 revisión manual/visual parcial; T060–T062 productivas pendientes. [Evidencia](verification-2026-10-31.md).
+**Updated**: 2026-11-10
+**Status**: MVP con acceso administrativo funcional; recuperación y pruebas SMTP retiradas del alcance vigente por decisión de la responsable.
 **Input**: `/speckit-specify 006`: desarrollar la feature existente sin ampliar el alcance.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), AD01/AD02 y C26;
 [constitución 1.0.0](../../.specify/memory/constitution.md), especialmente CONST-03–06/08–10;
@@ -11,8 +11,8 @@ capturas de login y consola administrativa aportadas por la usuaria.
 
 ## Alcance
 
-Permitir que cada persona autorizada acceda con su propia cuenta de correo/contraseña,
-recupere acceso mediante verificación por correo y cierre su sesión. Ofrecer navegación privada
+Permitir que cada persona autorizada acceda con su propia cuenta de correo/contraseña y cierre
+su sesión. Ofrecer navegación privada
 hacia Historias y la bandeja de Contacto, con un único tipo de administrador y permisos iguales.
 El acceso exige una sesión válida y autorización comprobadas en cada lectura y modificación privada.
 
@@ -20,6 +20,10 @@ El acceso exige una sesión válida y autorización comprobadas en cada lectura 
 roles editor/superadministrador, gestión web de cuentas no aprobada, acceso social, recuperación
 por preguntas o canales alternativos no acordados, dashboard de estadísticas nuevo, publicación de
 comentarios y funciones propias de 007/008. La provisión restringida no crea un rol adicional.
+
+En el MVP no hay SMTP, proveedor transaccional ni recuperación por correo. El código y las pruebas
+locales con dobles se conservan como trabajo futuro, pero no forman parte de la aceptación ni bloquean
+el cierre del MVP.
 
 ## User Scenarios & Testing
 
@@ -199,7 +203,7 @@ por el simple hecho de aceptar una solicitud o entregar un mensaje al servicio d
 
 ### Functional Requirements
 
-- **FR-001 / AD01 — Acceso, recuperación y cierre de sesión**: Correo/contraseña por cuenta individual, sin registro público; recuperación verificada por correo sin revelar existencia de cuenta; sesión cerrada impide acceso; provisión restringida por definir (C26).
+- **FR-001 / AD01 — Acceso y cierre de sesión del MVP**: Correo/contraseña por cuenta individual, sin registro público; sesión cerrada impide acceso. Recuperación por correo queda fuera del MVP hasta disponer de proveedor transaccional.
 - **FR-002 / AD02 — Panel y permisos**: Un tipo de administrador con acceso a historias y comentarios de Contacto; todas las cuentas autorizadas con mismos permisos; navegación privada legible y coherente; sin rol editor adicional (C26).
 
 ### Reglas y contenido complementario
@@ -233,13 +237,13 @@ invalidación remota por redirigir al login. No se presume cierre global de otro
 ese botón. El restablecimiento de contraseña sí invalida las sesiones previas de la cuenta.
 Las acciones privadas no se reenvían automáticamente al autenticar de nuevo tras expiración.
 
-**Recuperación**: solo por verificación del correo de una cuenta autorizada, con comprobación
+**Recuperación futura**: fuera del alcance del MVP. Si se habilita en una fase posterior, será solo por verificación del correo de una cuenta autorizada, con comprobación
 acotada en tiempo, ligada a esa cuenta y de un solo uso para cambiar contraseña. Definir y probar
 la política de credenciales, caducidad y límites de intentos antes de implementar la parte afectada;
 sus valores técnicos y el proveedor se documentan en el plan sin atribuirlos al wireframe.
 Solicitud aceptada no acredita envío, entrega ni lectura. El comportamiento público, incluidos
 fallos observables, no permite conocer si existe una cuenta. La prueba integral exige correo real
-a buzón controlado; los dobles de prueba solo acreditan el contrato que sustituyen.
+a buzón controlado; los dobles de prueba solo acreditan el contrato que sustituyen y no se ejecutan como gate del MVP.
 
 **Privacidad**: no usar el plazo de 90 días de Contacto para cuentas, sesiones o registros de
 seguridad. Su finalidad, conservación, revocación y datos operativos se definen con 009/P02.

@@ -166,13 +166,13 @@ Objetivo: evidencia completa por criterio. T061–T065 requieren recursos u oper
 
 - [ ] T060 Ejecutar checks y regresión afectada003/005/006/007/008 y009 conforme a `specs/009-privacidad-conservacion/quickstart.md`; registrar versiones, comandos/resultados únicos y limitaciones en `specs/009-privacidad-conservacion/evidence.md`; secuenciar suites que comparten build privado. Dependencias: T059.
 
-- [ ] T061 Calificar responsable/canal oficialP02, atención previa a confirmación, código por proveedor real y recepción en buzón controlado; registrar solo referencias redactadas en `specs/009-privacidad-conservacion/evidence.md`, sin enviar nada sin autorización operativa explícita. Dependencias: T060.
+- [x] T061 [NO APLICA AL MVP] Retirada el 2026-11-10: no probar código por SMTP, proveedor ni recepción en buzón. El canal manual aprobado es `priva202611@gmail.com` y no acredita automatización.
 
-- [ ] T062 Calificar réplica independiente, horizonte de copias/buzones/proveedores y restore real con datos sintéticos; guardar ciclos/fechas/evidencia por ubicación en `specs/009-privacidad-conservacion/privacy-inventory.md` y `specs/009-privacidad-conservacion/evidence.md`; sin P02 mantener SC-005 bloqueado. Dependencias: T061.
+- [x] T062 [NO APLICA AL MVP] Retirada el 2026-11-10: Priva no crea copias ni ofrece restauración en el MVP. Una futura fase deberá reabrir inventario, ciclos y restore antes de ofrecerlos.
 
 - [ ] T063 Calificar Linux/flock/supervisor/IPC, almacenamiento/temporales/SSD/COW/snapshots, HTTPS/proxy, claves/permisos/reloj, alertas y carga; acreditar≤1h/≤24h e interrupciones sin nuevo plazo en `specs/009-privacidad-conservacion/evidence.md`, sin declarar borrado de soporte por SQL. Dependencias: T062.
 
-- [ ] T064 Verificar matriz sin rastreo en despliegue/correo/CDN/proveedores reales y revisar avisos010 finales con011 en `specs/009-privacidad-conservacion/evidence.md`; ceroHARcrudo/cookies/tokens/contenido privado y cero promesas externas no verificadas. Dependencias: T063.
+- [ ] T064 Verificar matriz sin rastreo en Firebase/CDN y revisar avisos010 finales con011; excluir tráfico SMTP inexistente y no prometer comportamiento de servicios externos no integrados. Dependencias: T063.
 
 - [ ] T065 Validar build de entrega y arranques con gates reales en `package.json`, `src/config/privacy.ts` y `specs/009-privacidad-conservacion/evidence.md`; no aprobar si siguen bloqueos de otras features, copia/responsable/proveedor o revisión manual. Dependencias: T064.
 

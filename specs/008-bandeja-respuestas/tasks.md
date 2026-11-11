@@ -151,9 +151,9 @@ Verificar desde Contacto hasta aceptación/recepción y eliminación. Prueba ind
 
 - [x] T055 [US4] Completar fixture integrada y prueba CT01 en `tests/fixtures/inbox-service/serve.ts`, `tests/fixtures/inbox-service/helpers.ts` y `tests/e2e/inbox-contact-flow.spec.ts`: recepción 005 real, cuenta 006 real, worker 008 y lectura tras reinicio; fallo/reintento y borrado coordinado, screenshots sintéticas si procede; mantener APIpública 005 sin IDinterno ni información de respuesta.
 
-- [ ] T056 [US4] Calificar proveedor/remitente/adaptador 008 y buzóncontrolado solo cuando P02 esté disponible, mediante contrato en `server/inbox/mail-adapter.ts` y registro en `specs/008-bandeja-respuestas/evidence.md`: documentar scope/ventanas/idempotencia/lookup/proof/acceptedAt/rechazo y verificar recepción aparte de aceptación/estado; no elegir proveedor ni enviar a terceros por defecto; si falta, registrar tarea bloqueada y no marcarla completa.
+- [x] T056 [US4] [NO APLICA AL MVP] Retirada el 2026-11-10: no calificar proveedor/remitente/adaptador SMTP ni buzón controlado. El contrato local queda como referencia futura y no acredita envío.
 
-- [ ] T057 [US4] Calificar integración 009/010 real en `specs/008-bandeja-respuestas/evidence.md` y referencias de `src/config/inbox.ts`: criterio operativo de 90 días, frecuencia/canal/verificaciónsolicitud, backups/buzones/proveedor y restauración; demostrar eliminación con límites reales y avisos coherentes; sin evidencia mantén bloqueo, sin extender 90 días a cuentas/logs ni prometer borradoabsoluto.
+- [ ] T057 [US4] Calificar integración MVP 009/010: 90 días, canal manual y eliminación operativa; excluir SMTP, buzones controlados, copias y restauración conforme a la decisión del 2026-11-10.
 
 - [x] T058 [US4] Ejecutar T050/T051 con T052–T055 y registrar US4.1–6/AD11/CT01/SC-007 en `specs/008-bandeja-respuestas/evidence.md`; separar ensayo local de T056/T057 y nunca declarar CT01 cerrado mientras recepciónreal o política 009 sigan bloqueadas.
 

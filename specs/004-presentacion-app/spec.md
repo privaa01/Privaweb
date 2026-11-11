@@ -2,15 +2,23 @@
 
 **Feature Directory**: `specs/004-presentacion-app`
 **Created**: 2026-10-16
-**Updated**: 2026-10-30
-**Status**: 32/32 tareas completas para la demo publicada. Revisión específica de teclado/VoiceOver confirmada por la responsable el2026-10-30. Producción diferida. [Evidencia](evidence/demo-review-2026-10-30.md).
+**Updated**: 2026-11-10
+**Status**: 32/32 tareas completas para el MVP publicado. Android disponible mediante enlace oficial de Google Drive; iPhone retirado por decisión de la responsable.
 **Input**: `/speckit-specify 004`: desarrollar la feature existente sin ampliar el alcance.
 **Fuentes**: [SPEC R35](../reference/01_PRIVA_WEB_SPEC_DEFINITIVO.md), A01–A07, PDF 3 y
 [constitución 1.0.0](../../.specify/memory/constitution.md), especialmente CONST-03/08–10.
 
-## Alcance vigente de la demo — 2026-10-30
+## Alcance vigente del MVP — 2026-11-10
 
-Se continúa la demo publicada con plataformas pendientes válidas y materiales aprobados. [Decisiones y límites](demo-scope-2026-10-30.md). La aceptación usa build:demo; habilitación futura de tiendas y build productivo009/010 se conservan pendientes. La revisión manual de App se registra por separado.
+Se mantiene la presentación web y sus funciones informativas. La aplicación Android está disponible mediante el enlace oficial de Google Drive aportado y verificado por la responsable. No se presenta ni ofrece descarga para iPhone. La disponibilidad del APK no convierte los mockups de chat o diagnóstico en controles funcionales de la web.
+
+## Clarifications
+
+### Session 2026-11-10
+
+- Q: ¿Priva App continúa pendiente de descarga? → A: No; el APK Android está activo y fue probado en un dispositivo Android.
+- Q: ¿Cómo se distribuye el APK? → A: Mediante el enlace oficial de Google Drive aportado por la responsable.
+- Q: ¿Debe mantenerse iPhone como plataforma pendiente? → A: No; iPhone se retira de la interfaz y del alcance vigente.
 
 ## User Scenarios & Testing
 
@@ -49,15 +57,14 @@ beneficios y pasos se entienden sin abrir un chat, formulario o evaluación.
 
 ### User Story 2 — Llegar a la explicación o las descargas (Priority: P1)
 
-Como visitante, quiero encontrar cómo se usaría Priva App y su disponibilidad para recorrer
-la página sin perderme ni activar una descarga inexistente.
+Como visitante, quiero encontrar cómo se usaría Priva App y descargar la versión Android desde
+su destino oficial, sin perderme ni encontrar una opción iPhone inexistente.
 
 **Why this priority**: Los dos CTA del hero y el encabezado conectan la presentación con sus
 secciones, incluso cuando ninguna plataforma está disponible.
 
-**Independent Test**: Con ambas plataformas pendientes, activar Descargar app y Ver cómo
-funciona con teclado y puntero, visitar directamente ambas anclas y comprobar encabezados
-visibles y foco de destino sin requerir enlace a una tienda.
+**Independent Test**: Activar Descargar app y Ver cómo funciona con teclado y puntero, visitar
+directamente ambas anclas, comprobar encabezados visibles y abrir el enlace Android verificado.
 
 **Acceptance Scenarios**:
 
@@ -77,44 +84,35 @@ visibles y foco de destino sin requerir enlace a una tienda.
 
 ### User Story 3 — Consultar disponibilidad por plataforma (Priority: P2)
 
-Como visitante, quiero distinguir si Android o iPhone tienen una descarga oficial disponible
-para usar únicamente un destino verificado de mi plataforma.
+Como visitante, quiero descargar la versión Android desde un destino oficial verificado.
 
 **Why this priority**: La disponibilidad debe ser independiente y honesta; una URL pendiente
 no puede presentarse como descarga funcional.
 
-**Independent Test**: Probar las cuatro combinaciones de disponibilidad con destinos de prueba
-identificados; comprobar etiquetas, acciones y coherencia del mockup, sin construir una app móvil.
-Los destinos de prueba no acreditan enlaces oficiales ni instalación real.
+**Independent Test**: Comprobar que la sección muestra únicamente Android, que el enlace coincide
+con el destino de Google Drive aprobado, que no aparece iPhone ni “Próximamente” y que el APK se
+descarga sin solicitar permisos adicionales de Drive.
 
 **Acceptance Scenarios**:
 
-1. **Dado** Android e iPhone sin URL oficial verificada, **cuando** consulto #descarga,
-   **entonces** identifico ambas plataformas y veo Próximamente en ambas, sin enlace de
-   descarga accionable, destino vacío ni sustitución por registro o lista de espera. (A06)
-2. **Dado** solo Android con URL oficial verificada, **cuando** consulto la sección,
-   **entonces** solo su control lleva a esa URL; iPhone conserva Próximamente sin acción. (A06)
-3. **Dado** solo iPhone con URL oficial verificada, **cuando** consulto la sección,
-   **entonces** solo su control lleva a esa URL; Android conserva Próximamente sin acción. (A06)
-4. **Dado** ambas URL oficiales verificadas, **cuando** activo cada control con teclado o
-   puntero, **entonces** cada uno abre el destino verificado de su plataforma, sin intercambiar
-   enlaces ni afirmar que la persona ya instaló la aplicación. (A06)
-5. **Dado** una URL recibida pero no verificada, inválida o detectada como inaccesible durante
-   su revisión, **cuando** se decide habilitar la plataforma, **entonces** permanece pendiente,
-   con Próximamente sin acción; recibir una dirección no acredita su disponibilidad. (A06)
-6. **Dado** cualquier combinación de estados, **cuando** consulto el texto bajo descargas y
-   el mockup, **entonces** leo exactamente “Orientación para cuidar tus datos personales”; no
-   veo Gratis, Android 10+, iOS 15+, garantías del 100% ni disponibilidad general contradicha
-   por una plataforma pendiente. (A06/A07)
+1. **Dado** el APK Android verificado, **cuando** consulto #descarga, **entonces** encuentro un
+   único control “Descargar para Android” que abre el enlace oficial de Google Drive. (A06)
+2. **Dado** el alcance vigente sin iPhone, **cuando** consulto la sección, **entonces** no aparece
+   una plataforma iPhone, un control iOS ni el texto “Próximamente”. (A06)
+3. **Dado** el enlace Android publicado, **cuando** lo activo con teclado o puntero, **entonces**
+   abre el destino aprobado sin que la web afirme instalación o ejecución exitosa. (A06)
+4. **Dado** una sustitución futura del APK, **cuando** la nueva URL no haya sido verificada,
+   **entonces** no reemplaza silenciosamente el destino publicado. (A06)
+5. **Dado** la sección de descarga, **cuando** consulto el texto y el mockup, **entonces** leo
+   “Orientación para cuidar tus datos personales”; no veo Gratis, versiones mínimas ni garantías
+   del 100%. (A06/A07)
 
 ### Edge Cases
 
-- Ambas plataformas pendientes es un estado válido de la presentación; no obliga a inventar
-  enlaces ni bloquea por sí solo la página completa. Sí impide declarar esas descargas disponibles.
-- Cambiar la disponibilidad de una plataforma no habilita ni deshabilita la otra. Probar también
-  la vuelta a pendiente si la revisión retira la verificación de un enlace.
-- Un control pendiente no lleva a #, no navega a otra sección para aparentar descarga, ni se
-  activa con Enter/Space; su estado es legible sin depender solo del color.
+- Si el enlace Android deja de estar accesible, la web no debe afirmar que la instalación se
+  completó; se corrige o retira el enlace hasta contar con un destino verificado.
+- iPhone no se representa como pendiente ni como “Próximamente”; una versión futura requiere
+  una nueva decisión y verificación antes de añadirse.
 - Si una tienda o destino falla después de la visita, la web no confirma instalación ni éxito.
   No se añade un servicio de vigilancia de tiendas ni un instalador como parte de esta feature.
 - Si un mockup contiene Listo para descargar o texto incompatible con la disponibilidad real,
@@ -138,7 +136,7 @@ Los destinos de prueba no acreditan enlaces oficiales ni instalación real.
 - **FR-003 / A03 — Tres beneficios del prototipo**: Guía paso a paso, Privacidad digital, Ayuda clara y rápida presentados como previstos; no certificar funcionamiento.
 - **FR-004 / A04 — Cómo se usa el prototipo**: Escribe tu duda, Recibe instrucciones, Aplica los cambios, Mantente seguro, en orden 1–4; explicar como flujo previsto, sin promesa de funcionamiento actual.
 - **FR-005 / A05 — Para qué serviría Priva App**: Tips, Asistente IA y Diagnóstico de Seguridad como funciones previstas del prototipo; no implementarlas en la web; revisar copy final/errata de referencia.
-- **FR-006 / A06 — Descarga por plataforma**: Android/iPhone identificados; Próximamente sin acción hasta URL oficial verificada; habilitar independientemente; probar ambas pendientes, mixto y ambas disponibles; CTA mantiene #descarga; mockup no afirma disponibilidad inexistente (C14).
+- **FR-006 / A06 — Descarga Android**: mostrar únicamente Android y enlazar el APK oficial verificado en Google Drive; retirar iPhone y “Próximamente”; el CTA mantiene #descarga y el mockup no confirma instalación (C14).
 - **FR-007 / A07 — Texto bajo descargas**: Usar Orientación para cuidar tus datos personales; retirar Gratis y versiones mínimas Android 10+/iOS 15+ hasta datos oficiales; sin garantía del 100% (C17/C23).
 
 ### Reglas que precisan los requisitos
@@ -161,18 +159,9 @@ visual; no tienen acción propia ni foco de control web. Las imágenes tienen al
 su propósito y no pueden contradecir los estados de disponibilidad ni simular un chat operativo.
 Los recursos oficiales y sus variantes coherentes quedan sujetos a P01/P03/P04.
 
-**Disponibilidad independiente**:
-
-| Android | iPhone | Resultado de los controles por plataforma |
-|---|---|---|
-| Pendiente | Pendiente | Ambos Próximamente, sin acción |
-| Verificada | Pendiente | Solo Android enlaza; iPhone Próximamente |
-| Pendiente | Verificada | Solo iPhone enlaza; Android Próximamente |
-| Verificada | Verificada | Cada plataforma enlaza a su URL oficial |
-
-“Verificada” requiere URL oficial válida y comprobación documentada de su correspondencia con
-Priva App y la plataforma. No se presume tienda, proveedor, fecha de lanzamiento, precio,
-versión mínima o disponibilidad por tener un mockup o una dirección sin revisar.
+**Disponibilidad vigente**: Android enlaza al APK verificado en Google Drive. iPhone no forma
+parte del alcance ni de la interfaz. La verificación exige comprobar la correspondencia del
+destino con Priva App y no permite presumir instalación, precio o versión mínima.
 La forma técnica de configurar y verificar enlaces corresponde al plan; no se exige un
 servicio nuevo de monitorización ni una consulta continua a tiendas en esta especificación.
 
@@ -190,8 +179,7 @@ activa lista de espera. Una descarga enlazada no demuestra instalación ni uso d
 | Ver cómo funciona | #como-funciona | 004 |
 | DESCARGAR APP del encabezado de App | #descarga | 001 consume sección de 004 |
 | DESCARGAR APP del encabezado de Contacto | /app.html#descarga | Integración 001/005 |
-| Descarga Android | URL oficial propia verificada o Próximamente | 004 / P01 |
-| Descarga iPhone | URL oficial propia verificada o Próximamente | 004 / P01 |
+| Descarga Android | URL oficial de Google Drive verificada | 004 / P01 |
 | Conversar del teléfono | Sin destino; parte de la imagen | 004 |
 
 Las rutas son contratos del SPEC; no prueban que las páginas o destinos externos estén
@@ -204,8 +192,8 @@ operativos. 004 reutiliza navegación/footer de 001 sin redefinirlos ni duplicar
 - **Beneficio previsto**: uno de los tres títulos de A03 y explicación revisada.
 - **Paso previsto**: posición 1–4, título y explicación; orden fijo de A04.
 - **Función prevista**: Tips, Asistente IA o Diagnóstico de Seguridad; información, sin acción web.
-- **Plataforma de descarga**: Android o iPhone; estado pendiente/verificado, URL oficial cuando
-  exista y referencia de verificación. Estado independiente de la otra plataforma.
+- **Descarga Android**: APK, URL oficial de Google Drive y referencia de verificación. iPhone no
+  forma parte del alcance vigente.
 - **Recurso visual**: imagen del hero, teléfono de explicación o mockup de descarga; alternativa,
   referencia oficial y estado de revisión/recepción. Conversar no es entidad interactiva.
 - **Destino de sección**: #como-funciona o #descarga, con título identificable y accesible.
@@ -219,14 +207,13 @@ operativos. 004 reutiliza navegación/footer de 001 sin redefinirlos ni duplicar
   es visible al consultar la presentación, sin chat web, diagnóstico o servicio operativo simulado.
 - **SC-002**: Los dos CTA del hero, los dos accesos de encabezado App/Contacto y las visitas
   directas/recargas de ambas anclas llegan al destino correcto con título visible y foco
-  coherente; Descargar app del hero sigue funcionando como navegación con ambas plataformas pendientes.
-- **SC-003**: Las cuatro combinaciones de disponibilidad producen exactamente los controles
-  definidos en la tabla; cada plataforma habilitada abre solo su URL verificada. URL ausente,
-  inválida o sin verificación mantiene Próximamente sin acción. Retirar una verificación no
-  cambia la otra plataforma ni deja una descarga anterior habilitada.
-- **SC-004**: En todos los estados, el texto bajo descargas coincide exactamente con A07, sin
-  precio, versiones mínimas ni garantías retiradas; ningún texto o mockup contradice los estados
-  de Android/iPhone. Conversar no es accionable con teclado o puntero ni tiene rol de control.
+  coherente; Descargar app del hero sigue funcionando como navegación hacia Android.
+- **SC-003**: La sección muestra un único enlace Android cuyo destino coincide con la URL de
+  Google Drive verificada; no muestra iPhone ni “Próximamente”. Un cambio de URL exige nueva
+  verificación y no deja habilitado silenciosamente un destino anterior.
+- **SC-004**: El texto bajo descargas coincide exactamente con A07, sin precio, versiones
+  mínimas ni garantías retiradas; ningún texto o mockup contradice la disponibilidad Android.
+  Conversar no es accionable con teclado o puntero ni tiene rol de control.
 - **SC-005**: En 360/390/430/768/1024/1280/1440 px y texto 100%/200%, los bloques conservan
   orden, títulos y controles legibles, sin recortes, scroll horizontal o trampas de foco.
   Se comprueban alternativas, foco, contraste 4.5:1 normal/3:1 grande y componentes, y controles
